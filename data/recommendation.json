@@ -1,0 +1,183 @@
+{
+  "schema_version": "1.0",
+  "run_id": "seed-20260723",
+  "generated_at": "2026-07-23T21:00:00+08:00",
+  "data_cutoff": "2026-07-23T21:00:00+08:00",
+  "status": "demo",
+  "capital_usd": "6000.00",
+  "model_score": 64,
+  "risk_level": "moderate",
+  "expected_horizon": "僅供第一版介面驗證；接入最新市場資料後必須重新評估",
+  "allocations": [
+    {
+      "symbol": "QQQ",
+      "asset_type": "etf",
+      "target_weight": "0.25",
+      "target_amount_usd": "1500.00",
+      "action": "buy",
+      "note": "大型科技與成長股核心曝險。"
+    },
+    {
+      "symbol": "SPY",
+      "asset_type": "etf",
+      "target_weight": "0.20",
+      "target_amount_usd": "1200.00",
+      "action": "buy",
+      "note": "分散科技集中風險。"
+    },
+    {
+      "symbol": "SMH",
+      "asset_type": "etf",
+      "target_weight": "0.15",
+      "target_amount_usd": "900.00",
+      "action": "buy",
+      "note": "半導體產業戰術曝險。"
+    },
+    {
+      "symbol": "NVDA",
+      "asset_type": "stock",
+      "target_weight": "0.10",
+      "target_amount_usd": "600.00",
+      "action": "buy",
+      "note": "高波動個股部位限制在 10%。"
+    },
+    {
+      "symbol": "GLD",
+      "asset_type": "commodity_etf",
+      "target_weight": "0.10",
+      "target_amount_usd": "600.00",
+      "action": "buy",
+      "note": "非股票風險分散。"
+    },
+    {
+      "symbol": "CASH",
+      "asset_type": "cash",
+      "target_weight": "0.20",
+      "target_amount_usd": "1200.00",
+      "action": "reduce",
+      "note": "保留事件風險與後續加碼彈性。"
+    }
+  ],
+  "top_reasons": [
+    {
+      "id": 1,
+      "title": "科技核心曝險",
+      "summary": "QQQ 提供大型科技與成長股曝險，作為示範配置的主要成長引擎。",
+      "confidence": 70,
+      "category": "diversification",
+      "affected_assets": [
+        "QQQ"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "降低單一產業集中",
+      "summary": "SPY 納入更多產業，可降低組合只集中科技與半導體的風險。",
+      "confidence": 75,
+      "category": "diversification",
+      "affected_assets": [
+        "SPY",
+        "QQQ"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "保留半導體主題",
+      "summary": "SMH 讓組合保留半導體產業的成長曝險，同時分散單一公司風險。",
+      "confidence": 68,
+      "category": "momentum",
+      "affected_assets": [
+        "SMH"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "限制高波動個股",
+      "summary": "NVDA 作為高波動、高潛在報酬部位，但權重只占 10%。",
+      "confidence": 60,
+      "category": "risk",
+      "affected_assets": [
+        "NVDA"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "加入非股票資產",
+      "summary": "GLD 提供部分風險分散，降低股票市場單一方向曝險。",
+      "confidence": 66,
+      "category": "diversification",
+      "affected_assets": [
+        "GLD"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "保留現金彈性",
+      "summary": "20% 現金可應對突發事件、回撤與後續加碼，不必被迫追價。",
+      "confidence": 82,
+      "category": "liquidity",
+      "affected_assets": [
+        "CASH"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "控制單一個股風險",
+      "summary": "單一個股配置限制在 10%，避免一家公司事件主導整體績效。",
+      "confidence": 84,
+      "category": "risk",
+      "affected_assets": [
+        "NVDA"
+      ]
+    },
+    {
+      "id": 8,
+      "title": "ETF 作為主要核心",
+      "summary": "ETF 合計占多數，個股只作戰術性配置，方便後續委員會調整。",
+      "confidence": 78,
+      "category": "diversification",
+      "affected_assets": [
+        "QQQ",
+        "SPY",
+        "SMH",
+        "GLD"
+      ]
+    },
+    {
+      "id": 9,
+      "title": "第一版避免槓桿",
+      "summary": "尚無即時資料與績效紀錄，因此暫不使用槓桿 ETF、融資或選擇權。",
+      "confidence": 90,
+      "category": "risk",
+      "affected_assets": [
+        "CASH"
+      ]
+    },
+    {
+      "id": 10,
+      "title": "等待最新資料驗證",
+      "summary": "此配置是 seed data，第一層 Action 接入最新行情與 AI 委員會後必須重算。",
+      "confidence": 100,
+      "category": "news",
+      "affected_assets": [
+        "QQQ",
+        "SPY",
+        "SMH",
+        "NVDA",
+        "GLD",
+        "CASH"
+      ]
+    }
+  ],
+  "invalidation_conditions": [
+    "第一層分析 Action 尚未成功取得最新市場資料。",
+    "使用者已成交部位與 actual_portfolio.json 不一致。",
+    "市場出現重大事件，導致資料截止時間失去代表性。"
+  ],
+  "major_risks": [
+    "科技與半導體合計曝險仍高，可能在成長股修正時同步下跌。",
+    "目前沒有即時價格，因此本頁不得作為實際進場價依據。",
+    "模型分數是共識指標，不是成功機率或報酬保證。"
+  ],
+  "disclaimer": "DEMO DATA／尚未執行。這是系統驗證用配置，不是依最新行情產生的投資建議；系統不存取券商、不自動下單。"
+}

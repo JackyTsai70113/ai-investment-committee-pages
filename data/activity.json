@@ -1,0 +1,20 @@
+[
+  {
+    "event_id": "seed-portfolio-initialized",
+    "occurred_at": "2026-07-23T21:00:00+08:00",
+    "event_type": "portfolio_initialized",
+    "actor": "user",
+    "run_id": null,
+    "summary": "初始實際部位已建立：6,000 美元現金。",
+    "execution_confirmed": true
+  },
+  {
+    "event_id": "seed-20260723-recommendation",
+    "occurred_at": "2026-07-23T21:00:00+08:00",
+    "event_type": "recommendation_created",
+    "actor": "committee",
+    "run_id": "seed-20260723",
+    "summary": "建立第一版示範建議；尚未執行任何交易。",
+    "execution_confirmed": false
+  }
+]

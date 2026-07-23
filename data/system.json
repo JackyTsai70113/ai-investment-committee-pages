@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0",
+  "version": "0.1.0",
+  "updated_at": "2026-07-23T21:00:00+08:00",
+  "environment": "seed",
+  "latest_commit": "unavailable until GitHub Action runs",
+  "data_pipeline": "Layer 1 · Investment Committee",
+  "site_pipeline": "Layer 2 · Static Dashboard",
+  "execution_policy": "manual only",
+  "broker_access": false,
+  "automatic_trading": false
+}

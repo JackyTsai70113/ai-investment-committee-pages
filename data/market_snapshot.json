@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-07-23T21:00:00+08:00",
+  "mode": "demo",
+  "source": "seed data",
+  "quotes": [
+    {
+      "symbol": "SPY",
+      "price": null,
+      "previous_close": null,
+      "change_percent": null,
+      "volume": null,
+      "as_of": "2026-07-23T21:00:00+08:00",
+      "source": "not connected"
+    },
+    {
+      "symbol": "QQQ",
+      "price": null,
+      "previous_close": null,
+      "change_percent": null,
+      "volume": null,
+      "as_of": "2026-07-23T21:00:00+08:00",
+      "source": "not connected"
+    },
+    {
+      "symbol": "SMH",
+      "price": null,
+      "previous_close": null,
+      "change_percent": null,
+      "volume": null,
+      "as_of": "2026-07-23T21:00:00+08:00",
+      "source": "not connected"
+    },
+    {
+      "symbol": "NVDA",
+      "price": null,
+      "previous_close": null,
+      "change_percent": null,
+      "volume": null,
+      "as_of": "2026-07-23T21:00:00+08:00",
+      "source": "not connected"
+    },
+    {
+      "symbol": "GLD",
+      "price": null,
+      "previous_close": null,
+      "change_percent": null,
+      "volume": null,
+      "as_of": "2026-07-23T21:00:00+08:00",
+      "source": "not connected"
+    }
+  ],
+  "warnings": [
+    "DEMO DATA：尚未執行第一層即時分析 Action。",
+    "所有價格欄位均為空值；系統沒有捏造行情。"
+  ]
+}

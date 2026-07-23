@@ -1,0 +1,390 @@
+{
+  "schema_version": "1.0",
+  "run_id": "seed-20260723",
+  "generated_at": "2026-07-23T21:00:00+08:00",
+  "mode": "demo",
+  "agent_model": "demo-agent",
+  "cio_model": "demo-cio",
+  "proposals": [
+    {
+      "agent": "macro",
+      "stance": "neutral",
+      "confidence": 45,
+      "preferred_assets": [
+        "SPY",
+        "GLD",
+        "CASH"
+      ],
+      "cash_preference": "0.25",
+      "arguments": [
+        "尚未接入最新總經資料。",
+        "保留現金可降低資料缺口風險。"
+      ],
+      "risks": [
+        "利率資料缺失。",
+        "宏觀事件時間未驗證。"
+      ],
+      "invalidation_conditions": [
+        "取得最新 Fed 與利率資料後重新評估。"
+      ]
+    },
+    {
+      "agent": "technical",
+      "stance": "neutral",
+      "confidence": 40,
+      "preferred_assets": [
+        "QQQ",
+        "SPY"
+      ],
+      "cash_preference": "0.20",
+      "arguments": [
+        "尚未接入價格資料。",
+        "ETF 適合第一版配置驗證。"
+      ],
+      "risks": [
+        "無法確認趨勢。",
+        "無法確認成交量。"
+      ],
+      "invalidation_conditions": [
+        "取得最新價格與成交量後重新評估。"
+      ]
+    },
+    {
+      "agent": "momentum",
+      "stance": "neutral",
+      "confidence": 38,
+      "preferred_assets": [
+        "SMH",
+        "QQQ"
+      ],
+      "cash_preference": "0.25",
+      "arguments": [
+        "半導體保留戰術性權重。",
+        "未驗證動能前不增加槓桿。"
+      ],
+      "risks": [
+        "相對強度資料缺失。",
+        "可能追逐過期趨勢。"
+      ],
+      "invalidation_conditions": [
+        "完成最新相對強度比較。"
+      ]
+    },
+    {
+      "agent": "news",
+      "stance": "neutral",
+      "confidence": 30,
+      "preferred_assets": [
+        "CASH",
+        "SPY"
+      ],
+      "cash_preference": "0.35",
+      "arguments": [
+        "沒有最新新聞資料。",
+        "不得捏造事件催化劑。"
+      ],
+      "risks": [
+        "重大消息可能尚未反映。",
+        "資料截止時間是示範值。"
+      ],
+      "invalidation_conditions": [
+        "取得可驗證的最新新聞來源。"
+      ]
+    },
+    {
+      "agent": "etf",
+      "stance": "bullish",
+      "confidence": 55,
+      "preferred_assets": [
+        "QQQ",
+        "SPY",
+        "SMH",
+        "GLD"
+      ],
+      "cash_preference": "0.20",
+      "arguments": [
+        "ETF 可降低單一個股風險。",
+        "不同資產有助配置分散。"
+      ],
+      "risks": [
+        "科技曝險仍偏高。",
+        "GLD 不保證與股票負相關。"
+      ],
+      "invalidation_conditions": [
+        "ETF 流動性或風險政策改變。"
+      ]
+    },
+    {
+      "agent": "valuation",
+      "stance": "neutral",
+      "confidence": 35,
+      "preferred_assets": [
+        "SPY",
+        "CASH"
+      ],
+      "cash_preference": "0.30",
+      "arguments": [
+        "未接入估值資料。",
+        "廣泛市場可降低單一估值風險。"
+      ],
+      "risks": [
+        "價格可能已反映高成長。",
+        "無法比較盈利品質。"
+      ],
+      "invalidation_conditions": [
+        "取得最新財報與估值資料。"
+      ]
+    },
+    {
+      "agent": "portfolio",
+      "stance": "bullish",
+      "confidence": 60,
+      "preferred_assets": [
+        "QQQ",
+        "SPY",
+        "SMH",
+        "NVDA",
+        "GLD"
+      ],
+      "cash_preference": "0.20",
+      "arguments": [
+        "6,000 美元可分成核心與戰術部位。",
+        "20% 現金保留調整彈性。"
+      ],
+      "risks": [
+        "實際成交價格未知。",
+        "碎股支援尚未確認。"
+      ],
+      "invalidation_conditions": [
+        "使用者回報不同的實際部位。"
+      ]
+    },
+    {
+      "agent": "liquidity",
+      "stance": "neutral",
+      "confidence": 65,
+      "preferred_assets": [
+        "CASH",
+        "SPY",
+        "QQQ"
+      ],
+      "cash_preference": "0.20",
+      "arguments": [
+        "大型 ETF 通常較適合小額配置。",
+        "保留現金可避免被迫賣出。"
+      ],
+      "risks": [
+        "券商手續費未知。",
+        "碎股成交條件未知。"
+      ],
+      "invalidation_conditions": [
+        "確認券商成本與交易規則。"
+      ]
+    }
+  ],
+  "critiques": [
+    {
+      "reviewer": "risk",
+      "challenged_agents": [
+        "technical",
+        "momentum",
+        "portfolio"
+      ],
+      "strongest_objection": "沒有最新行情時，不應把 seed 配置描述成可執行交易建議。",
+      "hidden_assumptions": [
+        "假設 ETF 可在合理價差成交。",
+        "假設使用者尚無其他美股曝險。"
+      ],
+      "required_changes": [
+        "醒目標示 DEMO DATA。",
+        "禁止提供進場價與股數。"
+      ],
+      "veto_recommended": false
+    },
+    {
+      "reviewer": "devil_advocate",
+      "challenged_agents": [
+        "macro",
+        "etf",
+        "portfolio"
+      ],
+      "strongest_objection": "多個看似分散的標的仍高度曝險於美國大型科技股。",
+      "hidden_assumptions": [
+        "黃金能有效對沖股票。",
+        "成長股風險溢酬仍具吸引力。"
+      ],
+      "required_changes": [
+        "保留至少 20% 現金。",
+        "限制 NVDA 為 10%。"
+      ],
+      "veto_recommended": false
+    }
+  ],
+  "final_decision": {
+    "market_stance": "neutral",
+    "model_score": 64,
+    "risk_level": "moderate",
+    "expected_horizon": "僅供第一版介面驗證；接入最新市場資料後必須重新評估",
+    "allocations": [
+      {
+        "symbol": "QQQ",
+        "asset_type": "etf",
+        "target_weight": "0.25",
+        "note": "大型科技核心曝險。"
+      },
+      {
+        "symbol": "SPY",
+        "asset_type": "etf",
+        "target_weight": "0.20",
+        "note": "分散產業。"
+      },
+      {
+        "symbol": "SMH",
+        "asset_type": "etf",
+        "target_weight": "0.15",
+        "note": "半導體戰術曝險。"
+      },
+      {
+        "symbol": "NVDA",
+        "asset_type": "stock",
+        "target_weight": "0.10",
+        "note": "個股權重上限。"
+      },
+      {
+        "symbol": "GLD",
+        "asset_type": "commodity_etf",
+        "target_weight": "0.10",
+        "note": "非股票分散。"
+      },
+      {
+        "symbol": "CASH",
+        "asset_type": "cash",
+        "target_weight": "0.20",
+        "note": "等待最新資料。"
+      }
+    ],
+    "top_reasons": [
+      {
+        "id": 1,
+        "title": "科技核心曝險",
+        "summary": "QQQ 提供大型科技與成長股曝險，作為示範配置的主要成長引擎。",
+        "confidence": 70,
+        "category": "diversification",
+        "affected_assets": [
+          "QQQ"
+        ]
+      },
+      {
+        "id": 2,
+        "title": "降低單一產業集中",
+        "summary": "SPY 納入更多產業，可降低組合只集中科技與半導體的風險。",
+        "confidence": 75,
+        "category": "diversification",
+        "affected_assets": [
+          "SPY",
+          "QQQ"
+        ]
+      },
+      {
+        "id": 3,
+        "title": "保留半導體主題",
+        "summary": "SMH 讓組合保留半導體產業的成長曝險，同時分散單一公司風險。",
+        "confidence": 68,
+        "category": "momentum",
+        "affected_assets": [
+          "SMH"
+        ]
+      },
+      {
+        "id": 4,
+        "title": "限制高波動個股",
+        "summary": "NVDA 作為高波動、高潛在報酬部位，但權重只占 10%。",
+        "confidence": 60,
+        "category": "risk",
+        "affected_assets": [
+          "NVDA"
+        ]
+      },
+      {
+        "id": 5,
+        "title": "加入非股票資產",
+        "summary": "GLD 提供部分風險分散，降低股票市場單一方向曝險。",
+        "confidence": 66,
+        "category": "diversification",
+        "affected_assets": [
+          "GLD"
+        ]
+      },
+      {
+        "id": 6,
+        "title": "保留現金彈性",
+        "summary": "20% 現金可應對突發事件、回撤與後續加碼，不必被迫追價。",
+        "confidence": 82,
+        "category": "liquidity",
+        "affected_assets": [
+          "CASH"
+        ]
+      },
+      {
+        "id": 7,
+        "title": "控制單一個股風險",
+        "summary": "單一個股配置限制在 10%，避免一家公司事件主導整體績效。",
+        "confidence": 84,
+        "category": "risk",
+        "affected_assets": [
+          "NVDA"
+        ]
+      },
+      {
+        "id": 8,
+        "title": "ETF 作為主要核心",
+        "summary": "ETF 合計占多數，個股只作戰術性配置，方便後續委員會調整。",
+        "confidence": 78,
+        "category": "diversification",
+        "affected_assets": [
+          "QQQ",
+          "SPY",
+          "SMH",
+          "GLD"
+        ]
+      },
+      {
+        "id": 9,
+        "title": "第一版避免槓桿",
+        "summary": "尚無即時資料與績效紀錄，因此暫不使用槓桿 ETF、融資或選擇權。",
+        "confidence": 90,
+        "category": "risk",
+        "affected_assets": [
+          "CASH"
+        ]
+      },
+      {
+        "id": 10,
+        "title": "等待最新資料驗證",
+        "summary": "此配置是 seed data，第一層 Action 接入最新行情與 AI 委員會後必須重算。",
+        "confidence": 100,
+        "category": "news",
+        "affected_assets": [
+          "QQQ",
+          "SPY",
+          "SMH",
+          "NVDA",
+          "GLD",
+          "CASH"
+        ]
+      }
+    ],
+    "invalidation_conditions": [
+      "第一層分析 Action 尚未成功取得最新市場資料。",
+      "使用者已成交部位與 actual_portfolio.json 不一致。",
+      "市場出現重大事件，導致資料截止時間失去代表性。"
+    ],
+    "major_risks": [
+      "科技與半導體合計曝險仍高。",
+      "目前沒有即時價格，不得直接下單。",
+      "模型分數不是成功機率。"
+    ],
+    "risk_veto": false,
+    "veto_reason": null
+  }
+}
