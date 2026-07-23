@@ -457,14 +457,13 @@
   };
 
   Promise.all([
-    fetchJson("actual_portfolio.json"),
     fetchJson("recommendation.json"),
     fetchJson("committee.json"),
     fetchJson("activity.json"),
     fetchJson("market_snapshot.json"),
     fetchJson("system.json"),
   ])
-    .then(([, recommendation, committee, activity, market, system]) =>
+    .then(([recommendation, committee, activity, market, system]) =>
       render({ recommendation, committee, activity, market, system }),
     )
     .catch((error) => {
