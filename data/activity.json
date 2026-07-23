@@ -16,5 +16,14 @@
     "run_id": "seed-20260723",
     "summary": "建立第一版示範建議；尚未執行任何交易。",
     "execution_confirmed": false
+  },
+  {
+    "event_id": "manual-20260724T014200+0800-recommendation",
+    "occurred_at": "2026-07-24T01:46:00+08:00",
+    "event_type": "recommendation_created",
+    "actor": "committee",
+    "run_id": "manual-20260724T014200+0800",
+    "summary": "依 2026-07-24 01:43（台北時間）延遲市場快照、官方財報與總經資料，建立 6,000 美元極高風險短線建議；尚未執行任何交易。",
+    "execution_confirmed": false
   }
 ]

@@ -1,57 +1,147 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-23T21:00:00+08:00",
-  "mode": "demo",
-  "source": "seed data",
+  "generated_at": "2026-07-23T17:43:21.745224Z",
+  "mode": "live",
+  "source": "Yahoo Finance via yfinance",
   "quotes": [
     {
       "symbol": "SPY",
-      "price": null,
-      "previous_close": null,
-      "change_percent": null,
-      "volume": null,
-      "as_of": "2026-07-23T21:00:00+08:00",
-      "source": "not connected"
+      "price": "737.719971",
+      "previous_close": "747.409973",
+      "change_percent": "-1.296478",
+      "volume": 31405995,
+      "as_of": "2026-07-23T17:43:21.745224Z",
+      "source": "Yahoo Finance via yfinance"
     },
     {
       "symbol": "QQQ",
-      "price": null,
-      "previous_close": null,
-      "change_percent": null,
-      "volume": null,
-      "as_of": "2026-07-23T21:00:00+08:00",
-      "source": "not connected"
+      "price": "691.650024",
+      "previous_close": "705.349976",
+      "change_percent": "-1.942291",
+      "volume": 27446960,
+      "as_of": "2026-07-23T17:43:21.745224Z",
+      "source": "Yahoo Finance via yfinance"
     },
     {
       "symbol": "SMH",
-      "price": null,
-      "previous_close": null,
-      "change_percent": null,
-      "volume": null,
-      "as_of": "2026-07-23T21:00:00+08:00",
-      "source": "not connected"
+      "price": "578.330017",
+      "previous_close": "586.909973",
+      "change_percent": "-1.461886",
+      "volume": 3789565,
+      "as_of": "2026-07-23T17:43:21.745224Z",
+      "source": "Yahoo Finance via yfinance"
+    },
+    {
+      "symbol": "SOXL",
+      "price": "154.375",
+      "previous_close": "160.990005",
+      "change_percent": "-4.108954",
+      "volume": 38671977,
+      "as_of": "2026-07-23T17:43:21.745224Z",
+      "source": "Yahoo Finance via yfinance"
+    },
+    {
+      "symbol": "TQQQ",
+      "price": "66.169998",
+      "previous_close": "70.279999",
+      "change_percent": "-5.848037",
+      "volume": 61491214,
+      "as_of": "2026-07-23T17:43:21.745224Z",
+      "source": "Yahoo Finance via yfinance"
     },
     {
       "symbol": "NVDA",
-      "price": null,
-      "previous_close": null,
-      "change_percent": null,
-      "volume": null,
-      "as_of": "2026-07-23T21:00:00+08:00",
-      "source": "not connected"
+      "price": "209.440002",
+      "previous_close": "212.059998",
+      "change_percent": "-1.235497",
+      "volume": 61973208,
+      "as_of": "2026-07-23T17:43:21.745224Z",
+      "source": "Yahoo Finance via yfinance"
+    },
+    {
+      "symbol": "AMD",
+      "price": "533.340027",
+      "previous_close": "552.330017",
+      "change_percent": "-3.43816",
+      "volume": 16686808,
+      "as_of": "2026-07-23T17:43:21.745224Z",
+      "source": "Yahoo Finance via yfinance"
+    },
+    {
+      "symbol": "PLTR",
+      "price": "122.059898",
+      "previous_close": "124.57",
+      "change_percent": "-2.015013",
+      "volume": 17155205,
+      "as_of": "2026-07-23T17:43:21.745224Z",
+      "source": "Yahoo Finance via yfinance"
+    },
+    {
+      "symbol": "ERX",
+      "price": "95.402496",
+      "previous_close": "93.889999",
+      "change_percent": "1.610924",
+      "volume": 179166,
+      "as_of": "2026-07-23T17:43:21.745224Z",
+      "source": "Yahoo Finance via yfinance"
     },
     {
       "symbol": "GLD",
-      "price": null,
-      "previous_close": null,
-      "change_percent": null,
-      "volume": null,
-      "as_of": "2026-07-23T21:00:00+08:00",
-      "source": "not connected"
+      "price": "371.002594",
+      "previous_close": "379.119995",
+      "change_percent": "-2.141117",
+      "volume": 6505227,
+      "as_of": "2026-07-23T17:43:21.745224Z",
+      "source": "Yahoo Finance via yfinance"
+    },
+    {
+      "symbol": "TLT",
+      "price": "83.150002",
+      "previous_close": "83.440002",
+      "change_percent": "-0.347556",
+      "volume": 20781703,
+      "as_of": "2026-07-23T17:43:21.745224Z",
+      "source": "Yahoo Finance via yfinance"
+    },
+    {
+      "symbol": "SQQQ",
+      "price": "43.330502",
+      "previous_close": "40.939999",
+      "change_percent": "5.83904",
+      "volume": 40907372,
+      "as_of": "2026-07-23T17:43:21.745224Z",
+      "source": "Yahoo Finance via yfinance"
+    },
+    {
+      "symbol": "CL=F",
+      "price": "92.660004",
+      "previous_close": "86.830002",
+      "change_percent": "6.714271",
+      "volume": 303386,
+      "as_of": "2026-07-23T17:43:21.745224Z",
+      "source": "Yahoo Finance via yfinance"
+    },
+    {
+      "symbol": "^VIX",
+      "price": "19.219999",
+      "previous_close": "16.639999",
+      "change_percent": "15.504808",
+      "volume": 0,
+      "as_of": "2026-07-23T17:43:21.745224Z",
+      "source": "Yahoo Finance via yfinance"
+    },
+    {
+      "symbol": "^TNX",
+      "price": "4.699",
+      "previous_close": "4.657",
+      "change_percent": "0.901874",
+      "volume": 0,
+      "as_of": "2026-07-23T17:43:21.745224Z",
+      "source": "Yahoo Finance via yfinance"
     }
   ],
   "warnings": [
-    "DEMO DATA：尚未執行第一層即時分析 Action。",
-    "所有價格欄位均為空值；系統沒有捏造行情。"
+    "Yahoo Finance 資料可能延遲，僅供研究；下單前必須向券商核對價格。",
+    "這是 2026-07-24 01:43（台北時間）的快照，不是持續更新的即時報價。"
   ]
 }
