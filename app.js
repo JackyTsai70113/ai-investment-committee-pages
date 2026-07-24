@@ -103,7 +103,137 @@
       </div>`;
   };
 
-  const render = ({ recommendation, committee, activity, market, system }) => {
+  const renderHistoricalRecord = (record) => {
+    const archivedCommittee = record.committee;
+    const archivedRecommendation = record.recommendation;
+    const review = record.decision_review;
+    const timestamp =
+      review?.generated_at ||
+      archivedCommittee?.generated_at ||
+      archivedRecommendation?.generated_at;
+
+    return `
+      <details class="archive-card">
+        <summary>
+          <span>
+            <strong>${escapeHtml(record.archive_id)}</strong>
+            <small>${escapeHtml(dateTime(timestamp))}</small>
+          </span>
+          <span class="archive-types">
+            ${review ? "績效驗證" : ""}
+            ${archivedCommittee ? "委員會討論" : ""}
+            ${archivedRecommendation ? "決策配置" : ""}
+          </span>
+        </summary>
+        <div class="archive-body">
+          ${
+            review
+              ? `
+                <section class="archive-review">
+                  <div class="archive-review-metrics">
+                    <span>起始 <strong>${money(review.starting_value_usd)}</strong></span>
+                    <span>期末 <strong>${money(review.ending_value_usd)}</strong></span>
+                    <span>損益 <strong>${escapeHtml(review.profit_loss_usd)} USD</strong></span>
+                    <span>報酬 <strong>${escapeHtml(review.return_percent)}%</strong></span>
+                  </div>
+                  <p>${escapeHtml(review.assessment?.summary)}</p>
+                  <div class="committee-columns">
+                    <section class="committee-block">
+                      <h3>支持原決策的證據</h3>
+                      <ul>${renderList(review.assessment?.supported_points)}</ul>
+                    </section>
+                    <section class="committee-block">
+                      <h3>挑戰原決策的證據</h3>
+                      <ul>${renderList(review.assessment?.challenged_points)}</ul>
+                    </section>
+                    <section class="committee-block">
+                      <h3>公開方法與限制</h3>
+                      <ul>${renderList(review.methodology?.warnings)}</ul>
+                    </section>
+                  </div>
+                </section>`
+              : ""
+          }
+          ${
+            archivedRecommendation
+              ? `
+                <section class="archive-allocation">
+                  <h3>當時最終配置</h3>
+                  <div class="final-allocation-grid">
+                    ${archivedRecommendation.allocations
+                      .map(
+                        (item) => `
+                          <article class="final-allocation">
+                            <strong>${escapeHtml(item.symbol)}</strong>
+                            <span>${money(item.target_amount_usd)} · ${percent(item.target_weight)}</span>
+                            <small>${escapeHtml(item.note)}</small>
+                          </article>`,
+                      )
+                      .join("")}
+                  </div>
+                </section>`
+              : ""
+          }
+          ${
+            archivedCommittee
+              ? `
+                <section class="archive-discussion">
+                  <h3>完整結構化討論</h3>
+                  ${archivedCommittee.proposals
+                    .map(
+                      (proposal) => `
+                        <article class="archive-agent">
+                          <header>
+                            <strong>${escapeHtml(proposal.agent)}</strong>
+                            <span>${escapeHtml(proposal.stance)} · ${escapeHtml(proposal.confidence)}/100</span>
+                          </header>
+                          <div class="committee-columns">
+                            <section class="committee-block">
+                              <h3>論點</h3>
+                              <ol>${renderList(proposal.arguments)}</ol>
+                            </section>
+                            <section class="committee-block">
+                              <h3>風險</h3>
+                              <ul>${renderList(proposal.risks)}</ul>
+                            </section>
+                            <section class="committee-block">
+                              <h3>失效條件</h3>
+                              <ul>${renderList(proposal.invalidation_conditions)}</ul>
+                            </section>
+                          </div>
+                        </article>`,
+                    )
+                    .join("")}
+                  ${archivedCommittee.critiques
+                    .map(
+                      (critique) => `
+                        <article class="archive-agent critique">
+                          <header>
+                            <strong>${escapeHtml(critique.reviewer)}</strong>
+                            <span>${critique.veto_recommended ? "建議否決" : "不否決"}</span>
+                          </header>
+                          <p>${escapeHtml(critique.strongest_objection)}</p>
+                          <div class="committee-columns">
+                            <section class="committee-block">
+                              <h3>隱含假設</h3>
+                              <ul>${renderList(critique.hidden_assumptions)}</ul>
+                            </section>
+                            <section class="committee-block">
+                              <h3>要求修正</h3>
+                              <ul>${renderList(critique.required_changes)}</ul>
+                            </section>
+                          </div>
+                        </article>`,
+                    )
+                    .join("")}
+                </section>`
+              : ""
+          }
+        </div>
+      </details>`;
+  };
+
+  const render = ({ recommendation, committee, activity, market, system, history }) => {
     const isLive = recommendation.status === "live";
     const statusLabel = isLive ? "CURRENT RESEARCH" : "RESEARCH REVIEW";
     const invested = recommendation.allocations
@@ -425,6 +555,29 @@
             </div>
           </section>
 
+          <section class="panel archive" id="archive">
+            <header class="panel-header">
+              <div>
+                <span class="section-kicker">Public Decision Archive</span>
+                <h2>歷史決策、討論與驗證</h2>
+              </div>
+              <span class="panel-meta">${escapeHtml(history.length)}<br />PUBLIC RECORDS</span>
+            </header>
+            <div class="committee-intro">
+              <p>
+                公開資訊與非個人資料會保留在此。內容包含結構化提案、批判、CIO 決策與
+                假設績效驗證；不包含實際帳戶、來源帳戶、個人識別、成交或隱藏推理。
+              </p>
+            </div>
+            <div class="archive-list">
+              ${history
+                .slice()
+                .reverse()
+                .map((record) => renderHistoricalRecord(record))
+                .join("")}
+            </div>
+          </section>
+
           <section class="panel" id="risk">
             <header class="panel-header">
               <div>
@@ -462,9 +615,10 @@
     fetchJson("activity.json"),
     fetchJson("market_snapshot.json"),
     fetchJson("system.json"),
+    fetchJson("history.json"),
   ])
-    .then(([recommendation, committee, activity, market, system]) =>
-      render({ recommendation, committee, activity, market, system }),
+    .then(([recommendation, committee, activity, market, system, history]) =>
+      render({ recommendation, committee, activity, market, system, history }),
     )
     .catch((error) => {
       root.innerHTML = `
