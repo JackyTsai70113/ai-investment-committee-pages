@@ -64,6 +64,39 @@
     return `conic-gradient(${segments.join(",")})`;
   };
 
+  const buildPerformanceChart = (points) => {
+    const values = points.map((item) => Number(item.value_usd));
+    const minimum = Math.min(...values);
+    const maximum = Math.max(...values);
+    const spread = Math.max(maximum - minimum, 1);
+    const width = 900;
+    const height = 280;
+    const padding = 34;
+    const coordinates = points.map((item, index) => {
+      const x =
+        points.length === 1
+          ? width / 2
+          : padding + (index / (points.length - 1)) * (width - padding * 2);
+      const y =
+        height -
+        padding -
+        ((Number(item.value_usd) - minimum) / spread) * (height - padding * 2);
+      return { item, x, y };
+    });
+    return `
+      <svg class="performance-chart" viewBox="0 0 ${width} ${height}" role="img" aria-label="假設策略淨值走勢">
+        <line x1="${padding}" y1="${height - padding}" x2="${width - padding}" y2="${height - padding}" class="chart-axis" />
+        <polyline points="${coordinates.map(({ x, y }) => `${x},${y}`).join(" ")}" class="chart-line" />
+        ${coordinates
+          .map(
+            ({ item, x, y }) => `
+              <circle cx="${x}" cy="${y}" r="6" class="chart-dot" />
+              <text x="${x}" y="${Math.max(y - 14, 18)}" text-anchor="middle" class="chart-value">${escapeHtml(money(item.value_usd))}</text>`,
+          )
+          .join("")}
+      </svg>`;
+  };
+
   const safeExternalUrl = (value) => {
     try {
       const parsed = new URL(String(value));
@@ -233,7 +266,15 @@
       </details>`;
   };
 
-  const render = ({ recommendation, committee, activity, market, system, history }) => {
+  const render = ({
+    recommendation,
+    committee,
+    market,
+    system,
+    history,
+    learning,
+    performance,
+  }) => {
     const isLive = recommendation.status === "live";
     const statusLabel = isLive ? "CURRENT RESEARCH" : "RESEARCH REVIEW";
     const invested = recommendation.allocations
@@ -243,8 +284,8 @@
     const modelScore = Math.max(0, Math.min(100, Number(recommendation.model_score) || 0));
     const scoreAngle = `${modelScore * 3.6}deg`;
     const donut = buildDonut(recommendation.allocations);
-    const latestEvent = activity.at(-1);
     const committeeSize = committee.proposals.length + committee.critiques.length + 1;
+    const latestPerformance = performance.points.at(-1);
 
     root.innerHTML = `
       <div class="app-shell">
@@ -531,27 +572,72 @@
             </div>
           </section>
 
-          <section class="panel activity" id="activity">
+          <section class="panel performance" id="performance">
             <header class="panel-header">
               <div>
-                <span class="section-kicker">Append-only Audit</span>
-                <h2>操作紀錄</h2>
+                <span class="section-kicker">Hypothetical Strategy Index</span>
+                <h2>USD 6,000 假設策略走勢</h2>
               </div>
-              <span class="panel-meta">${escapeHtml(activity.length)}<br />EVENTS</span>
+              <span class="panel-meta">${escapeHtml(performance.points.length)}<br />VALUATIONS</span>
             </header>
-            <div class="timeline">
-              ${activity
-                .slice()
-                .reverse()
+            <div class="performance-summary">
+              <span>起始 <strong>${money(performance.initial_value_usd)}</strong></span>
+              <span>最新 <strong>${money(latestPerformance?.value_usd)}</strong></span>
+              <span>累積損益 <strong>${escapeHtml(latestPerformance?.profit_loss_usd)} USD</strong></span>
+              <span>累積報酬 <strong>${escapeHtml(latestPerformance?.return_percent)}%</strong></span>
+            </div>
+            ${buildPerformanceChart(performance.points)}
+            <div class="performance-dates">
+              ${performance.points
                 .map(
-                  (event) => `
-                    <article class="timeline-item">
-                      <strong>${escapeHtml(event.event_type.replaceAll("_", " "))}</strong>
-                      <p>${escapeHtml(event.summary)}</p>
-                      <time datetime="${escapeHtml(event.occurred_at)}">${escapeHtml(dateTime(event.occurred_at))}</time>
+                  (point) => `
+                    <span>
+                      ${escapeHtml(dateTime(point.as_of))}
+                      <strong>${money(point.value_usd)}</strong>
+                    </span>`,
+                )
+                .join("")}
+            </div>
+            <p class="methodology-note">${escapeHtml(performance.methodology)}</p>
+          </section>
+
+          <section class="panel learning" id="learning">
+            <header class="panel-header">
+              <div>
+                <span class="section-kicker">Learning Loop</span>
+                <h2>這次假設驗證，我們學到什麼？</h2>
+              </div>
+              <span class="panel-meta">${escapeHtml(learning.verdict)}<br />${escapeHtml(dateTime(learning.evaluation_cutoff))}</span>
+            </header>
+            <div class="learning-grid">
+              ${learning.lessons
+                .map(
+                  (lesson) => `
+                    <article class="learning-card">
+                      <h3>${escapeHtml(lesson.title)}</h3>
+                      <p><strong>證據</strong>${escapeHtml(lesson.evidence)}</p>
+                      <p><strong>下輪影響</strong>${escapeHtml(lesson.implication)}</p>
+                      <div class="reason-meta">
+                        <span>confidence ${escapeHtml(lesson.confidence)}</span>
+                        <span>${escapeHtml(lesson.affected_assets.join(" · "))}</span>
+                      </div>
                     </article>`,
                 )
                 .join("")}
+            </div>
+            <div class="committee-columns learning-decisions">
+              <section class="committee-block">
+                <h3>委員會修正</h3>
+                <ul>${renderList(learning.committee_changes)}</ul>
+              </section>
+              <section class="committee-block">
+                <h3>是否新增委員</h3>
+                <p>${escapeHtml(learning.member_assessment)}</p>
+              </section>
+              <section class="committee-block">
+                <h3>是否需要 Skill</h3>
+                <p>${escapeHtml(learning.skill_assessment)}</p>
+              </section>
             </div>
           </section>
 
@@ -603,7 +689,7 @@
           <span>${escapeHtml(system.execution_policy)} · broker access ${escapeHtml(system.broker_access)}</span>
           <span>市場資料 ${escapeHtml(market.source)}</span>
           <span>最後更新 ${escapeHtml(dateTime(system.updated_at))}</span>
-          <span>${escapeHtml(latestEvent?.summary || "")}</span>
+          <span>每日收盤後重新驗證與決策</span>
         </footer>
       </div>
     `;
@@ -612,13 +698,14 @@
   Promise.all([
     fetchJson("recommendation.json"),
     fetchJson("committee.json"),
-    fetchJson("activity.json"),
     fetchJson("market_snapshot.json"),
     fetchJson("system.json"),
     fetchJson("history.json"),
+    fetchJson("learning.json"),
+    fetchJson("performance.json"),
   ])
-    .then(([recommendation, committee, activity, market, system, history]) =>
-      render({ recommendation, committee, activity, market, system, history }),
+    .then(([recommendation, committee, market, system, history, learning, performance]) =>
+      render({ recommendation, committee, market, system, history, learning, performance }),
     )
     .catch((error) => {
       root.innerHTML = `

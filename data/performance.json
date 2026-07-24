@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0",
+  "currency": "USD",
+  "initial_value_usd": "6000.00",
+  "updated_at": "2026-07-23T20:00:00Z",
+  "status": "hypothetical",
+  "methodology": "假設按每輪建議權重持有碎股，並在下一個評價點按最新建議重新平衡；忽略手續費、價差、滑價、稅負與匯率。這是研究策略指數，不是實際帳戶績效。",
+  "points": [
+    {
+      "as_of": "2026-07-23T17:43:21.745224Z",
+      "run_id": "manual-20260724T014200+0800",
+      "value_usd": "6000.00",
+      "profit_loss_usd": "0.00",
+      "return_percent": "0.0000",
+      "prices": [
+        {
+          "symbol": "AMD",
+          "price_usd": "533.340027"
+        },
+        {
+          "symbol": "PLTR",
+          "price_usd": "122.059898"
+        },
+        {
+          "symbol": "SOXL",
+          "price_usd": "154.375"
+        },
+        {
+          "symbol": "TQQQ",
+          "price_usd": "66.169998"
+        },
+        {
+          "symbol": "NVDA",
+          "price_usd": "209.440002"
+        },
+        {
+          "symbol": "ERX",
+          "price_usd": "95.402496"
+        }
+      ],
+      "note": "第一輪建議的假設起點；尚未執行任何交易。"
+    },
+    {
+      "as_of": "2026-07-23T20:00:00Z",
+      "run_id": "review-20260724T031844Z",
+      "value_usd": "6043.04",
+      "profit_loss_usd": "43.04",
+      "return_percent": "0.7173",
+      "prices": [
+        {
+          "symbol": "AMD",
+          "price_usd": "539.690002"
+        },
+        {
+          "symbol": "PLTR",
+          "price_usd": "123.370003"
+        },
+        {
+          "symbol": "SOXL",
+          "price_usd": "157.5"
+        },
+        {
+          "symbol": "TQQQ",
+          "price_usd": "66.300003"
+        },
+        {
+          "symbol": "NVDA",
+          "price_usd": "208.759995"
+        },
+        {
+          "symbol": "ERX",
+          "price_usd": "94.489998"
+        }
+      ],
+      "note": "第一輪建議至 2026-07-23 收盤的假設績效；不是 7 月 24 日收盤值。"
+    }
+  ]
+}

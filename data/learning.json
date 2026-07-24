@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "review_id": "review-20260724T031844Z",
+  "reviewed_run_id": "manual-20260724T014200+0800",
+  "generated_at": "2026-07-24T03:19:58Z",
+  "evaluation_cutoff": "2026-07-23T20:00:00Z",
+  "evidence_source": "Yahoo Finance via yfinance；第一輪建議快照至同日收盤的假設驗證",
+  "verdict": "too_early",
+  "lessons": [
+    {
+      "title": "半導體槓桿在短線反彈中有效",
+      "evidence": "SOXL 從建議快照至收盤上升約 2.02%，是本輪最大的正貢獻之一。",
+      "implication": "保留半導體槓桿表達，但必須維持短持有期與單一槓桿 ETF 上限。",
+      "confidence": 68,
+      "affected_assets": [
+        "SOXL",
+        "AMD"
+      ]
+    },
+    {
+      "title": "能源分散未在本輪產生正貢獻",
+      "evidence": "ERX 從建議快照至收盤下跌約 0.96%，未延續原油風險溢價論點。",
+      "implication": "能源配置應要求價格確認，不能只因原油單日上漲就假設 ERX 會持續受益。",
+      "confidence": 66,
+      "affected_assets": [
+        "ERX"
+      ]
+    },
+    {
+      "title": "兩小時樣本不足以驗證事件策略",
+      "evidence": "整體假設報酬約 0.72%，但評估窗只有約 2 小時 17 分。",
+      "implication": "在第 2 至第 3 個交易日再次驗證，避免把單次盤中波動誤認為可重複優勢。",
+      "confidence": 95,
+      "affected_assets": [
+        "AMD",
+        "PLTR",
+        "SOXL",
+        "TQQQ",
+        "NVDA",
+        "ERX"
+      ]
+    }
+  ],
+  "committee_changes": [
+    "新增 learning 委員，專門把假設驗證結果帶入下一輪提案。",
+    "每個交易日收盤後更新假設策略淨值與學習紀錄。",
+    "CIO 必須說明新配置如何回應已被挑戰的假設。"
+  ],
+  "member_assessment": "需要新增 learning 委員，因為現有角色負責事前研究，缺少專責的事後證據校準。",
+  "skill_assessment": "不需要建立 Codex skill；GitHub Action 中的 API 委員應透過 Pydantic 學習模型與持久化知識檔取得經驗。",
+  "warnings": [
+    "這是假設績效，不是實際帳戶報酬。",
+    "樣本期間極短，任何教訓都必須在後續交易日重複驗證。"
+  ]
+}

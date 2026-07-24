@@ -381,6 +381,122 @@ a {
   grid-column: span 12;
 }
 
+.panel.performance,
+.panel.learning {
+  grid-column: span 12;
+}
+
+.performance-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.performance-summary span {
+  display: grid;
+  gap: 6px;
+  padding: 14px;
+  border-radius: 14px;
+  background: var(--surface-2);
+  color: var(--muted);
+}
+
+.performance-summary strong {
+  color: var(--text);
+  font-size: 1.15rem;
+}
+
+.performance-chart {
+  display: block;
+  width: 100%;
+  min-height: 220px;
+  overflow: visible;
+}
+
+.chart-axis {
+  stroke: var(--line);
+}
+
+.chart-line {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.chart-dot {
+  fill: var(--background);
+  stroke: var(--accent);
+  stroke-width: 4;
+}
+
+.chart-value {
+  fill: var(--text);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.performance-dates {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  overflow-x: auto;
+}
+
+.performance-dates span {
+  display: grid;
+  min-width: 150px;
+  gap: 4px;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.performance-dates strong {
+  color: var(--text);
+}
+
+.methodology-note {
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.learning-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.learning-card {
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.learning-card h3 {
+  margin: 0 0 14px;
+}
+
+.learning-card p {
+  display: grid;
+  gap: 5px;
+  color: var(--muted);
+}
+
+.learning-card p strong {
+  color: var(--text);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.learning-decisions {
+  margin-top: 18px;
+}
+
 .archive-list {
   display: grid;
   gap: 12px;
@@ -1356,4 +1472,9 @@ td {
 
   .archive-review-metrics {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .performance-summary,
+  .learning-grid {
+    grid-template-columns: 1fr;
   }
