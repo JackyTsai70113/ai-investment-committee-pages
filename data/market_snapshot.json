@@ -155,6 +155,206 @@
       "source": "Yahoo Finance via yfinance"
     }
   ],
+  "features": [],
+  "regime": null,
+  "source_catalog": [
+    {
+      "source_id": "sec_edgar",
+      "name": "SEC EDGAR submissions and Company Facts",
+      "category": "filings",
+      "authority": "primary_regulator",
+      "cadence": "Real time as filings are disseminated",
+      "typical_latency": "Usually under one minute for XBRL; filing metadata typically under one second",
+      "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+      "intended_use": "10-K, 10-Q, 8-K and standardized company financial facts",
+      "limitations": [
+        "As-filed data can contain issuer errors or amended facts",
+        "XBRL concepts and fiscal periods are not perfectly comparable across issuers"
+      ],
+      "active": true
+    },
+    {
+      "source_id": "sec_form4",
+      "name": "SEC Forms 3, 4 and 5",
+      "category": "ownership",
+      "authority": "primary_regulator",
+      "cadence": "Event driven",
+      "typical_latency": "Most Form 4 transactions are due within two business days",
+      "url": "https://www.sec.gov/files/forms-3-4-5.pdf",
+      "intended_use": "Insider ownership changes and open-market purchase or sale context",
+      "limitations": [
+        "Transaction codes must distinguish purchases, sales, grants, exercises, gifts and tax withholding",
+        "A filing is not proof that an insider trade predicts future returns"
+      ],
+      "active": false
+    },
+    {
+      "source_id": "sec_13f",
+      "name": "SEC Form 13F data sets",
+      "category": "ownership",
+      "authority": "primary_regulator",
+      "cadence": "Quarterly",
+      "typical_latency": "Up to 45 days after quarter end",
+      "url": "https://www.sec.gov/data-research/sec-markets-data/form-13f-data-sets",
+      "intended_use": "Slow-moving institutional holdings, concentration and quarter-over-quarter changes",
+      "limitations": [
+        "Not a real-time institutional flow signal",
+        "Does not reveal every asset, short position, hedge or intra-quarter trade",
+        "As-filed records can contain filer errors and confidential-treatment omissions"
+      ],
+      "active": false
+    },
+    {
+      "source_id": "company_ir",
+      "name": "Issuer investor-relations releases",
+      "category": "company",
+      "authority": "primary_issuer",
+      "cadence": "Event driven",
+      "typical_latency": "At issuer publication",
+      "url": "https://www.sec.gov/edgar/searchedgar/companysearch",
+      "intended_use": "Earnings releases, guidance, presentations and material company events cross-checked with EDGAR",
+      "limitations": [
+        "Issuer materials are management communications and may emphasize favorable framing",
+        "Use SEC filings as the canonical record when disclosures differ"
+      ],
+      "active": false
+    },
+    {
+      "source_id": "fred_alfred",
+      "name": "Federal Reserve Bank of St. Louis FRED and ALFRED",
+      "category": "macro",
+      "authority": "official",
+      "cadence": "Series dependent",
+      "typical_latency": "Series dependent; many observations are revised",
+      "url": "https://fred.stlouisfed.org/docs/api/fred/fred/",
+      "intended_use": "Rates, credit spreads, labor, inflation, liquidity and financial conditions",
+      "limitations": [
+        "FRED combines many original publishers with different calendars",
+        "Use ALFRED vintages for backtests to avoid look-ahead from later revisions"
+      ],
+      "active": false
+    },
+    {
+      "source_id": "us_treasury_rates",
+      "name": "U.S. Treasury daily yield curve",
+      "category": "rates",
+      "authority": "official",
+      "cadence": "Daily business days",
+      "typical_latency": "End-of-day official curve",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve",
+      "intended_use": "Risk-free curve level, slope and rate-shock context",
+      "limitations": [
+        "Par yields are model-derived curve points, not executable trade prices"
+      ],
+      "active": false
+    },
+    {
+      "source_id": "federal_reserve",
+      "name": "Federal Reserve FOMC calendar, statements and projections",
+      "category": "macro",
+      "authority": "official",
+      "cadence": "Scheduled and event driven",
+      "typical_latency": "At official release time",
+      "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+      "intended_use": "Policy-event risk, rate decisions, minutes and Summary of Economic Projections",
+      "limitations": [
+        "Projections are conditional participant forecasts with substantial uncertainty"
+      ],
+      "active": false
+    },
+    {
+      "source_id": "cboe_vix",
+      "name": "Cboe VIX Index and methodology",
+      "category": "volatility",
+      "authority": "official",
+      "cadence": "Intraday and daily",
+      "typical_latency": "Public display may be delayed",
+      "url": "https://www.cboe.com/tradable-products/vix/",
+      "intended_use": "Option-implied S&P 500 volatility regime and tail-risk context",
+      "limitations": [
+        "VIX is not a direct forecast of portfolio loss",
+        "Mean reversion and futures term structure matter for VIX-linked products"
+      ],
+      "active": true
+    },
+    {
+      "source_id": "finra_short",
+      "name": "FINRA short-interest and short-sale-volume data",
+      "category": "positioning",
+      "authority": "primary_regulator",
+      "cadence": "Daily short-sale volume; short interest twice monthly",
+      "typical_latency": "Dataset dependent",
+      "url": "https://www.finra.org/finra-data/browse-catalog/short-sale-volume",
+      "intended_use": "Short positioning background and off-exchange short-sale activity",
+      "limitations": [
+        "Daily short-sale volume is not short interest",
+        "Daily files cover reported off-exchange activity and are not consolidated with all exchanges",
+        "Short-sale volume can include positions closed on the same day"
+      ],
+      "active": false
+    },
+    {
+      "source_id": "cftc_cot",
+      "name": "CFTC Commitments of Traders",
+      "category": "positioning",
+      "authority": "primary_regulator",
+      "cadence": "Weekly",
+      "typical_latency": "Usually Friday release for Tuesday positions",
+      "url": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/AbouttheCOTReports/index.htm",
+      "intended_use": "Futures positioning in equity indexes, rates, energy, metals and currencies",
+      "limitations": [
+        "Aggregated categories are not security-specific equity fund flows",
+        "The usual Tuesday-to-Friday delay limits short-horizon timing use"
+      ],
+      "active": false
+    },
+    {
+      "source_id": "eia",
+      "name": "U.S. Energy Information Administration Open Data",
+      "category": "energy",
+      "authority": "official",
+      "cadence": "Daily, weekly, monthly or annual by series",
+      "typical_latency": "Series dependent",
+      "url": "https://www.eia.gov/opendata/",
+      "intended_use": "Oil prices, inventories, production, imports, exports and refinery utilization",
+      "limitations": [
+        "Weekly estimates can be revised and may not align with equity-market timestamps"
+      ],
+      "active": false
+    },
+    {
+      "source_id": "geopolitical_official",
+      "name": "U.S. Treasury OFAC, USTR and Federal Register",
+      "category": "geopolitics",
+      "authority": "official",
+      "cadence": "Event driven",
+      "typical_latency": "At official publication",
+      "url": "https://ofac.treasury.gov/recent-actions",
+      "intended_use": "Sanctions, tariffs and regulatory actions with direct company or sector exposure",
+      "limitations": [
+        "Official actions do not capture every geopolitical development or market interpretation",
+        "Company exposure mapping requires verified issuer geography and supply-chain data"
+      ],
+      "active": false
+    },
+    {
+      "source_id": "yahoo_market",
+      "name": "Yahoo Finance via yfinance",
+      "category": "market",
+      "authority": "secondary",
+      "cadence": "Daily in this system",
+      "typical_latency": "May be delayed",
+      "url": "https://finance.yahoo.com/",
+      "intended_use": "Price, volume and deterministic trend or volatility features",
+      "limitations": [
+        "Not an official exchange feed",
+        "Corporate-action adjustments and occasional missing observations require validation"
+      ],
+      "active": true
+    }
+  ],
+  "filing_events": [],
+  "fundamental_facts": [],
   "warnings": [
     "Yahoo Finance 資料可能延遲，僅供研究；下單前必須向券商核對價格。"
   ]

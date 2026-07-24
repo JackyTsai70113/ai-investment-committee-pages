@@ -497,7 +497,7 @@
             <span class="eyebrow">Investment brief / ${escapeHtml(recommendation.run_id)}</span>
             <h1>6,000 美元，<br /><span>一個可稽核的決策。</span></h1>
             <p class="hero-lede">
-              八個專業研究角色、兩位批判者與一位 CIO，把市場觀點壓縮成一份
+              十個專業研究角色、兩位批判者與一位 CIO，把市場觀點壓縮成一份
               可驗證、不可自動執行的目標配置。
             </p>
             <div class="hero-strip">
@@ -892,6 +892,131 @@
                 .join("")}
             </div>
             <p class="methodology-note">${escapeHtml(performance.methodology)}</p>
+          </section>
+
+          <section class="panel evidence" id="evidence">
+            <header class="panel-header">
+              <div>
+                <span class="section-kicker">Evidence Engine</span>
+                <h2>市場、財報與來源證據</h2>
+              </div>
+              <span class="panel-meta">${escapeHtml((market.features || []).length)} FEATURES<br />${escapeHtml((market.filing_events || []).length)} FILINGS</span>
+            </header>
+            ${
+              market.regime
+                ? `
+                  <div class="regime-grid">
+                    <article><span>趨勢狀態</span><strong>${escapeHtml(market.regime.trend)}</strong></article>
+                    <article><span>波動狀態</span><strong>${escapeHtml(market.regime.volatility)}</strong></article>
+                    <article><span>利率狀態</span><strong>${escapeHtml(market.regime.rates)}</strong></article>
+                  </div>
+                  <ul class="evidence-notes">${renderList(market.regime.evidence)}</ul>`
+                : `<p class="methodology-note">這份舊資料尚未包含 deterministic 市場狀態；下一次正式委員會會開始產生。</p>`
+            }
+            ${
+              (market.features || []).length
+                ? `
+                  <div class="table-wrap evidence-table-wrap">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>標的</th>
+                          <th>1D / 5D / 20D</th>
+                          <th>20D 年化波動</th>
+                          <th>相對 MA20 / MA50</th>
+                          <th>RSI14</th>
+                          <th>量比</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        ${market.features
+                          .map(
+                            (item) => `
+                              <tr>
+                                <td>${escapeHtml(item.symbol)}</td>
+                                <td>${escapeHtml(item.return_1d_percent ?? "—")}% / ${escapeHtml(item.return_5d_percent ?? "—")}% / ${escapeHtml(item.return_20d_percent ?? "—")}%</td>
+                                <td>${escapeHtml(item.volatility_20d_annualized_percent ?? "—")}%</td>
+                                <td>${escapeHtml(item.distance_from_ma20_percent ?? "—")}% / ${escapeHtml(item.distance_from_ma50_percent ?? "—")}%</td>
+                                <td>${escapeHtml(item.rsi14 ?? "—")}</td>
+                                <td>${escapeHtml(item.volume_ratio_20d ?? "—")}×</td>
+                              </tr>`,
+                          )
+                          .join("")}
+                      </tbody>
+                    </table>
+                  </div>`
+                : ""
+            }
+            ${
+              (market.filing_events || []).length
+                ? `
+                  <div class="filing-grid">
+                    ${market.filing_events
+                      .slice(0, 24)
+                      .map(
+                        (event) => `
+                          <a class="filing-card" href="${escapeHtml(event.source_url)}" target="_blank" rel="noopener noreferrer">
+                            <span>${escapeHtml(event.symbol)} · ${escapeHtml(event.form)}</span>
+                            <strong>${escapeHtml(event.description)}</strong>
+                            <small>${escapeHtml(event.filing_date)}</small>
+                          </a>`,
+                      )
+                      .join("")}
+                  </div>`
+                : ""
+            }
+            ${
+              (market.fundamental_facts || []).length
+                ? `
+                  <details class="evidence-details">
+                    <summary>查看 SEC 結構化財務事實</summary>
+                    <div class="table-wrap">
+                      <table>
+                        <thead><tr><th>標的</th><th>指標</th><th>數值</th><th>期間</th><th>申報</th></tr></thead>
+                        <tbody>
+                          ${market.fundamental_facts
+                            .map(
+                              (fact) => `
+                                <tr>
+                                  <td>${escapeHtml(fact.symbol)}</td>
+                                  <td><a href="${escapeHtml(fact.source_url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(fact.metric)}</a></td>
+                                  <td>${escapeHtml(fact.value)} ${escapeHtml(fact.unit)}</td>
+                                  <td>${escapeHtml(fact.period_end)}</td>
+                                  <td>${escapeHtml(fact.form)} · ${escapeHtml(fact.filed_at)}</td>
+                                </tr>`,
+                            )
+                            .join("")}
+                        </tbody>
+                      </table>
+                    </div>
+                  </details>`
+                : ""
+            }
+            ${
+              (market.source_catalog || []).length
+                ? `
+                  <details class="evidence-details">
+                    <summary>查看資料來源、時效與限制</summary>
+                    <div class="source-grid">
+                      ${market.source_catalog
+                        .map(
+                          (source) => `
+                            <article class="source-card">
+                              <header>
+                                <a href="${escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(source.name)}</a>
+                                <span>${source.active ? "引擎支援" : "候選來源"}</span>
+                              </header>
+                              <p>${escapeHtml(source.intended_use)}</p>
+                              <small>${escapeHtml(source.cadence)} · ${escapeHtml(source.typical_latency)}</small>
+                              <ul>${renderList(source.limitations)}</ul>
+                            </article>`,
+                        )
+                        .join("")}
+                    </div>
+                  </details>`
+                : ""
+            }
+            <ul class="rebalance-warnings">${renderList(market.warnings)}</ul>
           </section>
 
           <section class="panel learning" id="learning">
