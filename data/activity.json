@@ -25,5 +25,14 @@
     "run_id": "manual-20260724T014200+0800",
     "summary": "依 2026-07-24 01:43（台北時間）延遲市場快照、官方財報與總經資料，建立 6,000 美元極高風險短線建議；尚未執行任何交易。",
     "execution_confirmed": false
+  },
+  {
+    "event_id": "policy-cadence-20260724T033014Z",
+    "occurred_at": "2026-07-24T03:30:14Z",
+    "event_type": "manual_correction",
+    "actor": "user",
+    "run_id": "manual-20260724T014200+0800",
+    "summary": "使用者將風險部位最長驗證週期縮短為 3 個交易日，並要求每週至少兩次正式決策檢視；舊 8 日建議因此標記為 stale，尚未產生新配置或執行交易。",
+    "execution_confirmed": false
   }
 ]
