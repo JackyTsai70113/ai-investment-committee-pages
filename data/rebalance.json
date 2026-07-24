@@ -1,75 +1,111 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-24T01:46:00+08:00",
-  "pricing_cutoff": "2026-07-24T01:43:21+08:00",
+  "generated_at": "2026-07-24T07:00:19.088457Z",
+  "pricing_cutoff": "2026-07-24T06:59:39.276777Z",
   "pricing_session": "2026-07-23",
   "from_run_id": "manual-20260724T014200+0800",
-  "to_run_id": "manual-20260724T014200+0800",
+  "to_run_id": "20260724T070019Z",
   "capital_usd": "6000.00",
   "status": "research_only",
-  "basis": "初始資料尚無前一輪可比較建議；本表以目前研究配置建立基準，後續每日顯示兩輪建議差額。",
+  "basis": "以前一輪研究配置為比較基準，差額股數採最近已完成交易日收盤價估算。",
   "instructions": [
     {
-      "symbol": "AMD",
-      "action": "hold",
-      "reference_close_usd": "533.340027",
-      "previous_target_usd": "1500.00",
-      "new_target_usd": "1500.00",
-      "change_usd": "0.00",
-      "estimated_share_change": "0.0000"
+      "symbol": "SQQQ",
+      "action": "add",
+      "reference_close_usd": "43.27",
+      "previous_target_usd": "0",
+      "new_target_usd": "300.00",
+      "change_usd": "300.00",
+      "estimated_share_change": "6.9332"
     },
     {
-      "symbol": "PLTR",
-      "action": "hold",
-      "reference_close_usd": "122.059898",
-      "previous_target_usd": "1200.00",
-      "new_target_usd": "1200.00",
-      "change_usd": "0.00",
-      "estimated_share_change": "0.0000"
-    },
-    {
-      "symbol": "SOXL",
-      "action": "hold",
-      "reference_close_usd": "154.375",
-      "previous_target_usd": "900.00",
-      "new_target_usd": "900.00",
-      "change_usd": "0.00",
-      "estimated_share_change": "0.0000"
+      "symbol": "QQQ",
+      "action": "add",
+      "reference_close_usd": "691.960022",
+      "previous_target_usd": "0",
+      "new_target_usd": "600.00",
+      "change_usd": "600.00",
+      "estimated_share_change": "0.8671"
     },
     {
       "symbol": "TQQQ",
-      "action": "hold",
-      "reference_close_usd": "66.169998",
+      "action": "exit",
+      "reference_close_usd": "66.300003",
       "previous_target_usd": "900.00",
-      "new_target_usd": "900.00",
-      "change_usd": "0.00",
-      "estimated_share_change": "0.0000"
-    },
-    {
-      "symbol": "NVDA",
-      "action": "hold",
-      "reference_close_usd": "209.440002",
-      "previous_target_usd": "600.00",
-      "new_target_usd": "600.00",
-      "change_usd": "0.00",
-      "estimated_share_change": "0.0000"
+      "new_target_usd": "0",
+      "change_usd": "-900.00",
+      "estimated_share_change": "-13.5747"
     },
     {
       "symbol": "ERX",
-      "action": "hold",
-      "reference_close_usd": "95.402496",
+      "action": "exit",
+      "reference_close_usd": "94.489998",
       "previous_target_usd": "600.00",
+      "new_target_usd": "0",
+      "change_usd": "-600.00",
+      "estimated_share_change": "-6.3499"
+    },
+    {
+      "symbol": "SPY",
+      "action": "add",
+      "reference_close_usd": "738.179993",
+      "previous_target_usd": "0",
+      "new_target_usd": "1500.00",
+      "change_usd": "1500.00",
+      "estimated_share_change": "2.0320"
+    },
+    {
+      "symbol": "PLTR",
+      "action": "exit",
+      "reference_close_usd": "123.370003",
+      "previous_target_usd": "1200.00",
+      "new_target_usd": "0",
+      "change_usd": "-1200.00",
+      "estimated_share_change": "-9.7268"
+    },
+    {
+      "symbol": "SOXL",
+      "action": "exit",
+      "reference_close_usd": "157.5",
+      "previous_target_usd": "900.00",
+      "new_target_usd": "0",
+      "change_usd": "-900.00",
+      "estimated_share_change": "-5.7143"
+    },
+    {
+      "symbol": "TLT",
+      "action": "add",
+      "reference_close_usd": "83.169998",
+      "previous_target_usd": "0",
       "new_target_usd": "600.00",
-      "change_usd": "0.00",
-      "estimated_share_change": "0.0000"
+      "change_usd": "600.00",
+      "estimated_share_change": "7.2141"
+    },
+    {
+      "symbol": "AMD",
+      "action": "exit",
+      "reference_close_usd": "539.690002",
+      "previous_target_usd": "1500.00",
+      "new_target_usd": "0",
+      "change_usd": "-1500.00",
+      "estimated_share_change": "-2.7794"
+    },
+    {
+      "symbol": "NVDA",
+      "action": "exit",
+      "reference_close_usd": "208.759995",
+      "previous_target_usd": "600.00",
+      "new_target_usd": "0",
+      "change_usd": "-600.00",
+      "estimated_share_change": "-2.8741"
     },
     {
       "symbol": "CASH",
-      "action": "hold",
+      "action": "add",
       "reference_close_usd": null,
       "previous_target_usd": "300.00",
-      "new_target_usd": "300.00",
-      "change_usd": "0.00",
+      "new_target_usd": "3000.00",
+      "change_usd": "2700.00",
       "estimated_share_change": null
     }
   ],

@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "currency": "USD",
   "initial_value_usd": "6000.00",
-  "updated_at": "2026-07-23T20:00:00Z",
+  "updated_at": "2026-07-24T06:59:39.276777Z",
   "status": "hypothetical",
   "methodology": "假設按每輪建議權重持有碎股，並在下一個評價點按最新建議重新平衡；忽略手續費、價差、滑價、稅負與匯率。這是研究策略指數，不是實際帳戶績效。",
   "points": [
@@ -73,6 +73,76 @@
         }
       ],
       "note": "第一輪建議至 2026-07-23 收盤的假設績效；不是 7 月 24 日收盤值。"
+    },
+    {
+      "as_of": "2026-07-24T06:59:39.276777Z",
+      "run_id": "learning-20260724T065940Z",
+      "value_usd": "6043.04",
+      "profit_loss_usd": "43.04",
+      "return_percent": "0.7173",
+      "prices": [
+        {
+          "symbol": "AMD",
+          "price_usd": "539.690002"
+        },
+        {
+          "symbol": "CL=F",
+          "price_usd": "91.07"
+        },
+        {
+          "symbol": "ERX",
+          "price_usd": "94.489998"
+        },
+        {
+          "symbol": "GLD",
+          "price_usd": "371.519989"
+        },
+        {
+          "symbol": "NVDA",
+          "price_usd": "208.759995"
+        },
+        {
+          "symbol": "PLTR",
+          "price_usd": "123.370003"
+        },
+        {
+          "symbol": "QQQ",
+          "price_usd": "691.960022"
+        },
+        {
+          "symbol": "SMH",
+          "price_usd": "580.169983"
+        },
+        {
+          "symbol": "SOXL",
+          "price_usd": "157.5"
+        },
+        {
+          "symbol": "SPY",
+          "price_usd": "738.179993"
+        },
+        {
+          "symbol": "SQQQ",
+          "price_usd": "43.27"
+        },
+        {
+          "symbol": "TLT",
+          "price_usd": "83.169998"
+        },
+        {
+          "symbol": "TQQQ",
+          "price_usd": "66.300003"
+        },
+        {
+          "symbol": "^TNX",
+          "price_usd": "4.703"
+        },
+        {
+          "symbol": "^VIX",
+          "price_usd": "18.700001"
+        }
+      ],
+      "note": "依上一輪建議權重與最新可得行情計算；假設績效，不代表實際成交。"
     }
   ]
 }

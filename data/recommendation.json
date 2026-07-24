@@ -1,236 +1,185 @@
 {
   "schema_version": "1.0",
-  "run_id": "manual-20260724T014200+0800",
-  "generated_at": "2026-07-24T01:46:00+08:00",
-  "data_cutoff": "2026-07-24T01:43:21+08:00",
-  "status": "stale",
+  "run_id": "20260724T070019Z",
+  "generated_at": "2026-07-24T07:00:19.088457Z",
+  "data_cutoff": "2026-07-24T06:59:39.276777Z",
+  "status": "live",
   "capital_usd": "6000.00",
-  "model_score": 66,
-  "risk_level": "very_high",
-  "expected_horizon": "數天至 8 個交易日；2026-07-29 FOMC 後，以及 2026-08-03 PLTR 與 2026-08-04 AMD 財報前後強制重新評估",
+  "model_score": 38,
+  "risk_level": "high",
+  "expected_horizon": "3 個交易日",
   "allocations": [
-    {
-      "symbol": "AMD",
-      "asset_type": "stock",
-      "target_weight": "0.25",
-      "target_amount_usd": "1500.00",
-      "action": "buy",
-      "note": "延遲參考價 533.34 美元；風險界線約 -8%，財報事件前後必須重評。"
-    },
-    {
-      "symbol": "PLTR",
-      "asset_type": "stock",
-      "target_weight": "0.20",
-      "target_amount_usd": "1200.00",
-      "action": "buy",
-      "note": "延遲參考價 122.06 美元；風險界線約 -9%，2026-08-03 財報前後必須重評。"
-    },
-    {
-      "symbol": "SOXL",
-      "asset_type": "leveraged_etf",
-      "target_weight": "0.15",
-      "target_amount_usd": "900.00",
-      "action": "buy",
-      "note": "延遲參考價 154.38 美元；3 倍每日半導體曝險，風險界線約 -9%，最多持有 8 個交易日。"
-    },
-    {
-      "symbol": "TQQQ",
-      "asset_type": "leveraged_etf",
-      "target_weight": "0.15",
-      "target_amount_usd": "900.00",
-      "action": "buy",
-      "note": "延遲參考價 66.17 美元；3 倍每日 Nasdaq-100 曝險，風險界線約 -7%，最多持有 8 個交易日。"
-    },
-    {
-      "symbol": "NVDA",
-      "asset_type": "stock",
-      "target_weight": "0.10",
-      "target_amount_usd": "600.00",
-      "action": "buy",
-      "note": "延遲參考價 209.44 美元；相對強勢的 AI 核心股，風險界線約 -7%。"
-    },
-    {
-      "symbol": "ERX",
-      "asset_type": "leveraged_etf",
-      "target_weight": "0.10",
-      "target_amount_usd": "600.00",
-      "action": "buy",
-      "note": "延遲參考價 95.40 美元；2 倍每日能源曝險，風險界線約 -7%，油價快速回落時退出。"
-    },
     {
       "symbol": "CASH",
       "asset_type": "cash",
+      "target_weight": "0.5",
+      "target_amount_usd": "3000.00",
+      "action": "reduce",
+      "note": "高現金防護底座，應對 VIX 升至 18.70 與高殖利率風險，大幅降低隔夜跳空與執行滑價風險。"
+    },
+    {
+      "symbol": "SPY",
+      "asset_type": "etf",
+      "target_weight": "0.25",
+      "target_amount_usd": "1500.00",
+      "action": "buy",
+      "note": "原型美股大盤 ETF，作為核心低耗損底座，提供跨產業分散性與高流動性。"
+    },
+    {
+      "symbol": "QQQ",
+      "asset_type": "etf",
+      "target_weight": "0.1",
+      "target_amount_usd": "600.00",
+      "action": "buy",
+      "note": "原型科技指數 ETF，適度保留優質科技資產基本曝險，避免極端均值回歸時的追高成本。"
+    },
+    {
+      "symbol": "TLT",
+      "asset_type": "etf",
+      "target_weight": "0.1",
+      "target_amount_usd": "600.00",
+      "action": "buy",
+      "note": "長天期美債 ETF，觀察 10 年期美債殖利率於 4.70% 上方的頂部對衝效果。"
+    },
+    {
+      "symbol": "SQQQ",
+      "asset_type": "leveraged_etf",
       "target_weight": "0.05",
       "target_amount_usd": "300.00",
-      "action": "reduce",
-      "note": "保留最低現金緩衝；這不是已成交部位。"
+      "action": "buy",
+      "note": "戰術性微量反向對衝，嚴格限制比重於 5%，防範極短線下行風險並減輕波動磨損與軋空風險。"
     }
   ],
   "top_reasons": [
     {
       "id": 1,
-      "title": "AMD 財報前具高彈性催化",
-      "summary": "AMD 第一季營收年增 38%，資料中心營收年增 57%，第二季營收指引中位數 112 億美元；8 月 4 日財報使它成為短線高波動主力。",
-      "confidence": 82,
-      "category": "news",
+      "title": "美債殖利率升至 4.703% 壓制高估值資產",
+      "summary": "10年期美債殖利率（^TNX）攀升至 4.703%，對高估值科技股帶來評價面折現壓力，限制大盤短線反彈空間。",
+      "confidence": 75,
+      "category": "macro",
       "affected_assets": [
-        "AMD"
+        "QQQ",
+        "NVDA",
+        "TLT"
       ],
-      "source_urls": [
-        "https://ir.amd.com/news-events/press-releases/detail/1284/amd-reports-first-quarter-2026-financial-results",
-        "https://ir.amd.com/news-events/press-releases/detail/1289/amd-to-report-fiscal-second-quarter-2026-financial-results"
-      ]
+      "source_urls": []
     },
     {
       "id": 2,
-      "title": "PLTR 成長與財報事件並存",
-      "summary": "Palantir 第一季營收年增 85%、美國商業營收年增 133%，且第二季財報排在 8 月 3 日；高估值同時帶來高報酬與跳空風險。",
-      "confidence": 80,
-      "category": "news",
+      "title": "VIX 恐慌指數急升至 18.70 顯示波動加劇",
+      "summary": "VIX 指數單日大漲 12.38% 至 18.70，反映短線避險情緒與市場下行風險升溫，需提升防守型現金比重。",
+      "confidence": 75,
+      "category": "risk",
       "affected_assets": [
-        "PLTR"
+        "SPY",
+        "QQQ",
+        "CASH"
       ],
-      "source_urls": [
-        "https://investors.palantir.com/files/Palantir%20-%20Q1%202026%20Business%20Update.pdf",
-        "https://www.nasdaq.com/press-release/palantir-announces-date-second-quarter-2026-earnings-release-and-webcast-2026-07-13"
-      ]
+      "source_urls": []
     },
     {
       "id": 3,
-      "title": "NVDA 基本面仍是 AI 核心",
-      "summary": "NVIDIA 2027 財年第一季營收年增 85%、資料中心營收年增 92%；在本次延遲快照中跌幅也小於 QQQ 與 AMD，因此保留 10% 戰術部位。",
-      "confidence": 78,
-      "category": "momentum",
-      "affected_assets": [
-        "NVDA"
-      ],
-      "source_urls": [
-        "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-First-Quarter-Fiscal-2027/default.aspx"
-      ]
-    },
-    {
-      "id": 4,
-      "title": "SOXL 放大半導體反彈",
-      "summary": "SOXL 追求半導體指數單日 300% 報酬；在財報密集期可放大反彈，但本次只配置 15%，並以短持有期與嚴格風險界線限制耗損。",
-      "confidence": 64,
-      "category": "technical",
-      "affected_assets": [
-        "SOXL"
-      ],
-      "source_urls": [
-        "https://www.direxion.com/product/daily-semiconductor-bull-bear-3x-etfs"
-      ]
-    },
-    {
-      "id": 5,
-      "title": "TQQQ 提供高 Beta 科技曝險",
-      "summary": "TQQQ 追求 Nasdaq-100 單日三倍報酬，可直接放大大型科技財報行情；15% 上限避免它在波動升高時支配整體損益。",
-      "confidence": 62,
-      "category": "technical",
-      "affected_assets": [
-        "TQQQ"
-      ],
-      "source_urls": [
-        "https://www.proshares.com/our-etfs/leveraged-and-inverse/tqqq"
-      ]
-    },
-    {
-      "id": 6,
-      "title": "能源部位對應油價急升",
-      "summary": "本次市場快照顯示原油單日上升約 6.7%，而 ERX 上升約 1.6%；10% 的兩倍能源部位可捕捉地緣政治與供給風險溢價。",
-      "confidence": 70,
-      "category": "macro",
-      "affected_assets": [
-        "ERX"
-      ],
-      "source_urls": [
-        "https://www.direxion.com/product/daily-energy-bull-bear-2x-etfs",
-        "https://www.eia.gov/petroleum/weekly/"
-      ]
-    },
-    {
-      "id": 7,
-      "title": "近期催化事件集中",
-      "summary": "7 月 29 日 FOMC、8 月 3 日 PLTR 財報與 8 月 4 日 AMD 財報構成明確短線時間窗，因此策略設為數天至 8 個交易日而非長期持有。",
-      "confidence": 86,
-      "category": "news",
-      "affected_assets": [
-        "AMD",
-        "PLTR",
-        "SOXL",
-        "TQQQ"
-      ],
-      "source_urls": [
-        "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-        "https://ir.amd.com/news-events/press-releases/detail/1289/amd-to-report-fiscal-second-quarter-2026-financial-results",
-        "https://www.nasdaq.com/press-release/palantir-announces-date-second-quarter-2026-earnings-release-and-webcast-2026-07-13"
-      ]
-    },
-    {
-      "id": 8,
-      "title": "利率與通膨限制總曝險",
-      "summary": "10 年期美債殖利率約 4.70%，五月核心 PCE 年增 3.4%；這些條件壓抑成長股估值，因此槓桿科技 ETF 合計只占 30%。",
-      "confidence": 84,
-      "category": "macro",
-      "affected_assets": [
-        "AMD",
-        "PLTR",
-        "SOXL",
-        "TQQQ",
-        "NVDA"
-      ],
-      "source_urls": [
-        "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?field_tdr_date_value=2026&type=daily_treasury_yield_curve",
-        "https://www.bea.gov/index.php/news/2026/personal-income-and-outlays-may-2026"
-      ]
-    },
-    {
-      "id": 9,
-      "title": "風險訊號要求能源分流",
-      "summary": "VIX 在快照中單日上升約 15.5%，QQQ 下跌約 1.9%；能源與現金合計 15%，用來降低整個組合只押科技同一方向的集中度。",
-      "confidence": 76,
-      "category": "diversification",
-      "affected_assets": [
-        "ERX",
-        "CASH",
-        "TQQQ",
-        "SOXL"
-      ],
-      "source_urls": [
-        "https://www.cboe.com/tradable_products/vix/",
-        "https://www.nasdaq.com/market-activity/index/ndx"
-      ]
-    },
-    {
-      "id": 10,
-      "title": "極高風險必須配合硬性重評",
-      "summary": "3 倍 ETF 以單日目標運作，長於一天的結果可能顯著偏離三倍；因此保留 5% 現金、限制持有期，並在 FOMC 與財報前後強制重評。",
-      "confidence": 94,
+      "title": "風控審查否決過度追空與低流動性標的",
+      "summary": "回應風控與反向審查意見，完全剔除成交量偏低之 ERX（24.2萬股），並嚴格限制 SQQQ 反向槓桿比重至 5%，避免波動耗損與軋空風險。",
+      "confidence": 85,
       "category": "risk",
       "affected_assets": [
-        "SOXL",
-        "TQQQ",
+        "SQQQ",
         "ERX",
         "CASH"
       ],
-      "source_urls": [
-        "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/leveraged-and-inverse-etfs-specialized-products-extra-risks-buy-and-hold-investors"
-      ]
+      "source_urls": []
+    },
+    {
+      "id": 4,
+      "title": "維持 50% 高現金儲備防範隔夜跳空風險",
+      "summary": "在波動度上升且缺少跨日最新行情下，配置 50% 高現金可確保充裕流動性，並大幅降低非交易時段之跳空與執行滑價風險。",
+      "confidence": 80,
+      "category": "liquidity",
+      "affected_assets": [
+        "CASH"
+      ],
+      "source_urls": []
+    },
+    {
+      "id": 5,
+      "title": "科技龍頭短線技術面承壓但未失控",
+      "summary": "QQQ 下跌 1.90%、TQQQ 下挫 5.66%，顯示短線多頭動能修正，但 VIX 未突破 20 關鍵恐慌門檻，不宜過度追空以防均值回歸。",
+      "confidence": 70,
+      "category": "technical",
+      "affected_assets": [
+        "QQQ",
+        "SPY"
+      ],
+      "source_urls": []
+    },
+    {
+      "id": 6,
+      "title": "以原型大盤 SPY 為核心持倉提供下檔支撐",
+      "summary": "配置 25% SPY 作為核心底座，相較於科技單一板塊具備更好的跨產業分散效果與較低之波動磨損。",
+      "confidence": 75,
+      "category": "diversification",
+      "affected_assets": [
+        "SPY"
+      ],
+      "source_urls": []
+    },
+    {
+      "id": 7,
+      "title": "戰術性微幅配置 5% SQQQ 進行下行對衝",
+      "summary": "僅保留 5% 低劑量 SQQQ 作為科技股下行之極短線對衝，嚴格遵守風控政策並避免高槓桿複合耗損。",
+      "confidence": 65,
+      "category": "momentum",
+      "affected_assets": [
+        "SQQQ"
+      ],
+      "source_urls": []
+    },
+    {
+      "id": 8,
+      "title": "TLT 長天期美債逢低觀察殖利率頂部壓力",
+      "summary": "配置 10% TLT 觀察長端殖利率是否在 4.70%-4.75% 區域見頂，若殖利率回落可提供債券資本利得與組合對衝效果。",
+      "confidence": 60,
+      "category": "valuation",
+      "affected_assets": [
+        "TLT"
+      ],
+      "source_urls": []
+    },
+    {
+      "id": 9,
+      "title": "保留 10% QQQ 核心科技流動性與優質資產",
+      "summary": "維持 10% QQQ 少量優質科技權重，避免在超賣回彈時完全缺乏科技股多頭部位而產生追高代價。",
+      "confidence": 65,
+      "category": "valuation",
+      "affected_assets": [
+        "QQQ"
+      ],
+      "source_urls": []
+    },
+    {
+      "id": 10,
+      "title": "落實歷史學習教訓與 3 交易日持倉上限",
+      "summary": "採納 Learning 委員教訓，嚴格限制所有戰術部位預期持倉期不超過 3 個交易日，並設有明確失效與停損機制。",
+      "confidence": 85,
+      "category": "risk",
+      "affected_assets": [
+        "CASH",
+        "SPY",
+        "SQQQ",
+        "QQQ",
+        "TLT"
+      ],
+      "source_urls": []
     }
   ],
   "invalidation_conditions": [
-    "組合淨值降至 5,400 美元或以下時，退出全部槓桿 ETF 並重新評估。",
-    "組合淨值降至 5,280 美元或以下時，退出全部風險資產；實際執行仍須由使用者確認。",
-    "10 年期美債殖利率升破 4.75%，或 FOMC 升息／給出明顯鷹派訊號時，降低 SOXL 與 TQQQ。",
-    "原油跌破 85 美元或能源風險溢價快速消退時，ERX 配置失效。",
-    "行情快照已過期、來源無法驗證，或使用者回報資金不再是 6,000 美元時，整份配置必須重算。"
+    "10年期美債殖利率（^TNX）快速跌破 4.55% 且 VIX 降至 15.00 以下，顯示市場恐慌全面消退。",
+    "QQQ 強勢反彈突破 705 美元並帶動大盤整體回補前一交易日跌幅。"
   ],
   "major_risks": [
-    "SOXL 與 TQQQ 是三倍每日槓桿 ETF，ERX 是兩倍每日槓桿 ETF；波動與複利耗損可能造成快速重大虧損。",
-    "AMD、PLTR、SOXL、TQQQ 與 NVDA 高度曝險於同一個 AI／半導體風險因子，名義分散不等於風險分散。",
-    "AMD 與 PLTR 財報可能造成隔夜跳空，預設風險界線不保證能在該價位成交。",
-    "油價、殖利率與 VIX 同時上升，代表目前市場風險偏高，科技反彈可能失敗。",
-    "頁面價格來自可能延遲的 Yahoo Finance 快照；下單前必須以券商報價核對。"
+    "美債殖利率突破 4.75% 觸發全市場資產無差別流動性緊縮與二次拋售風險。",
+    "反向槓桿 ETF（SQQQ）在科技股強勁 V 型均值回歸反彈時承受 3 倍放大回撤與每日再平衡磨損。"
   ],
-  "disclaimer": "這份舊建議的最長 8 個交易日持有期已不符合 2026-07-24 起生效的 3 個交易日重新驗證政策，因此標記為 stale，等待正式委員會重跑。建議尚未執行且不保證報酬；Model Score 66 是委員會共識分，不是獲利機率。"
+  "disclaimer": "研究建議，尚未執行。下單前須由使用者核對券商即時價格、成本與風險；系統不存取券商、不自動下單。"
 }
