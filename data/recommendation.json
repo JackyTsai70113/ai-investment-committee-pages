@@ -6,6 +6,7 @@
   "status": "live",
   "capital_usd": "6000.00",
   "model_score": 38,
+  "model_score_reason": "舊制資料未保存評分理由；此分數不可解讀為獲利機率或配置品質。",
   "risk_level": "high",
   "expected_horizon": "3 個交易日",
   "allocations": [

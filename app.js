@@ -462,11 +462,20 @@
       .reduce((total, item) => total + Number(item.target_amount_usd), 0);
     const cash = recommendation.allocations.find((item) => item.symbol === "CASH");
     const modelScore = Math.max(0, Math.min(100, Number(recommendation.model_score) || 0));
+    const scoreBand =
+      modelScore >= 80
+        ? "高度共識"
+        : modelScore >= 60
+          ? "中度共識"
+          : modelScore >= 40
+            ? "明顯分歧"
+            : "低共識／高不確定";
+    const scoreReason =
+      recommendation.model_score_reason ||
+      "舊制資料沒有保存評分理由；不可用這個數字判斷配置好壞。";
     const scoreAngle = `${modelScore * 3.6}deg`;
     const donut = buildDonut(recommendation.allocations);
     const committeeSize = committee.proposals.length + committee.critiques.length + 1;
-    const latestPerformance = performance.points.at(-1);
-
     root.innerHTML = `
       <div class="app-shell">
         <header class="topbar">
@@ -504,9 +513,14 @@
               aria-label="Model Score ${escapeHtml(recommendation.model_score)} out of 100"
             >
               <span class="score-number">${escapeHtml(modelScore)}<small>/100</small></span>
-              <span class="score-caption">Model Score<br />不是成功機率</span>
+              <span class="score-caption">委員共識度<br />不是成功機率</span>
             </div>
-            <p class="side-note">${escapeHtml(recommendation.expected_horizon)}</p>
+            <div class="score-explainer">
+              <strong>${escapeHtml(scoreBand)}</strong>
+              <p>${escapeHtml(scoreReason)}</p>
+              <small>100 代表方向高度一致且無批判者否決；0 代表方向高度衝突。與報酬、勝率及「配置有多好」無關。</small>
+            </div>
+            <p class="side-note">建議重新驗證期：${escapeHtml(recommendation.expected_horizon)}</p>
           </aside>
         </section>
 
@@ -806,12 +820,6 @@
               </div>
               <span class="panel-meta">${escapeHtml(performance.points.length)}<br />VALUATIONS</span>
             </header>
-            <div class="performance-summary">
-              <span>起始 <strong>${money(performance.initial_value_usd)}</strong></span>
-              <span>最新 <strong>${money(latestPerformance?.value_usd)}</strong></span>
-              <span>累積損益 <strong>${escapeHtml(latestPerformance?.profit_loss_usd)} USD</strong></span>
-              <span>累積報酬 <strong>${escapeHtml(latestPerformance?.return_percent)}%</strong></span>
-            </div>
             ${buildPerformanceChart(performance.points)}
             <div class="performance-dates">
               ${performance.points
