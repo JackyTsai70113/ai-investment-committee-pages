@@ -106,6 +106,50 @@
     }
   };
 
+  const googleFinanceExchange = {
+    AMD: "NASDAQ",
+    NVDA: "NASDAQ",
+    PLTR: "NASDAQ",
+    QQQ: "NASDAQ",
+    TQQQ: "NASDAQ",
+    SPY: "NYSEARCA",
+    SMH: "NASDAQ",
+    SOXL: "NYSEARCA",
+    ERX: "NYSEARCA",
+    GLD: "NYSEARCA",
+    TLT: "NASDAQ",
+    SQQQ: "NASDAQ",
+  };
+
+  const symbolLink = (symbol) => {
+    if (symbol === "CASH") return `<strong>${escapeHtml(symbol)}</strong>`;
+    const exchange = googleFinanceExchange[symbol];
+    if (!exchange) return `<strong>${escapeHtml(symbol)}</strong>`;
+    const url = `https://www.google.com/finance/beta/quote/${encodeURIComponent(symbol)}:${exchange}`;
+    return `
+      <a class="symbol-link" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">
+        ${escapeHtml(symbol)}
+      </a>`;
+  };
+
+  const rebalanceActionLabel = (value) => {
+    const labels = { add: "增加", hold: "維持", reduce: "減少", exit: "退出" };
+    return labels[value] || String(value || "");
+  };
+
+  const signedMoney = (value) => {
+    const numeric = Number(value || 0);
+    const sign = numeric > 0 ? "+" : "";
+    return `${sign}${money(numeric)}`;
+  };
+
+  const signedShares = (value) => {
+    if (value === null || value === undefined) return "—";
+    const numeric = Number(value);
+    const sign = numeric > 0 ? "+" : "";
+    return `${sign}${numeric.toFixed(4)} 股`;
+  };
+
   const renderList = (items, emptyMessage = "未提供") => {
     const values = Array.isArray(items) ? items : [];
     if (values.length === 0) return `<li class="empty-item">${escapeHtml(emptyMessage)}</li>`;
@@ -274,6 +318,7 @@
     history,
     learning,
     performance,
+    rebalance,
   }) => {
     const isLive = recommendation.status === "live";
     const statusLabel = isLive ? "CURRENT RESEARCH" : "RESEARCH REVIEW";
@@ -562,7 +607,7 @@
                   .map(
                     (item) => `
                       <article class="final-allocation">
-                        <strong>${escapeHtml(item.symbol)}</strong>
+                        ${symbolLink(item.symbol)}
                         <span>${percent(item.target_weight)}</span>
                         <small>${escapeHtml(item.note)}</small>
                       </article>`,
@@ -570,6 +615,52 @@
                   .join("")}
               </div>
             </div>
+          </section>
+
+          <section class="panel rebalance" id="rebalance">
+            <header class="panel-header">
+              <div>
+                <span class="section-kicker">Research Rebalance Brief</span>
+                <h2>本輪建議如何調整</h2>
+              </div>
+              <span class="panel-meta">${escapeHtml(rebalance.pricing_session)} 收盤<br />RESEARCH ONLY</span>
+            </header>
+            <p class="methodology-note">${escapeHtml(rebalance.basis)}</p>
+            <div class="table-wrap strategy-table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>標的</th>
+                    <th>方向</th>
+                    <th>建議金額變化</th>
+                    <th>估算股數變化</th>
+                    <th>調整後配置</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${rebalance.instructions
+                    .map(
+                      (item) => `
+                        <tr>
+                          <td data-label="標的">${symbolLink(item.symbol)}</td>
+                          <td data-label="方向">${escapeHtml(rebalanceActionLabel(item.action))}</td>
+                          <td data-label="建議金額變化">${escapeHtml(signedMoney(item.change_usd))}</td>
+                          <td data-label="估算股數變化">
+                            ${escapeHtml(signedShares(item.estimated_share_change))}
+                            ${
+                              item.reference_close_usd
+                                ? `<small class="close-reference">@ ${money(item.reference_close_usd)}</small>`
+                                : ""
+                            }
+                          </td>
+                          <td data-label="調整後配置">${money(item.new_target_usd)}</td>
+                        </tr>`,
+                    )
+                    .join("")}
+                </tbody>
+              </table>
+            </div>
+            <ul class="rebalance-warnings">${renderList(rebalance.warnings)}</ul>
           </section>
 
           <section class="panel performance" id="performance">
@@ -703,9 +794,10 @@
     fetchJson("history.json"),
     fetchJson("learning.json"),
     fetchJson("performance.json"),
+    fetchJson("rebalance.json"),
   ])
-    .then(([recommendation, committee, market, system, history, learning, performance]) =>
-      render({ recommendation, committee, market, system, history, learning, performance }),
+    .then(([recommendation, committee, market, system, history, learning, performance, rebalance]) =>
+      render({ recommendation, committee, market, system, history, learning, performance, rebalance }),
     )
     .catch((error) => {
       root.innerHTML = `

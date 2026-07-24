@@ -1129,6 +1129,30 @@ td {
   font: 750 0.74rem/1.2 ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
+.symbol-link {
+  color: inherit;
+  font-weight: 800;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+}
+
+.symbol-link:hover,
+.symbol-link:focus-visible {
+  color: var(--accent);
+}
+
+.close-reference {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--muted);
+}
+
+.rebalance-warnings {
+  margin: 1rem 0 0;
+  color: var(--muted);
+}
+
 .final-allocation span {
   color: var(--acid);
 }
