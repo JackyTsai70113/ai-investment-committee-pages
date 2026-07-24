@@ -291,6 +291,9 @@
       "veto_recommended": true
     }
   ],
+  "reconciliation_responses": [],
+  "critique_resolutions": [],
+  "final_decision_audits": [],
   "final_decision": {
     "market_stance": "bearish",
     "model_score": 38,

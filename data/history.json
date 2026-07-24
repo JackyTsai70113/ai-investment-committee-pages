@@ -294,6 +294,9 @@
           "veto_recommended": true
         }
       ],
+      "reconciliation_responses": [],
+      "critique_resolutions": [],
+      "final_decision_audits": [],
       "final_decision": {
         "market_stance": "bearish",
         "model_score": 38,
@@ -1404,6 +1407,9 @@
           "veto_recommended": false
         }
       ],
+      "reconciliation_responses": [],
+      "critique_resolutions": [],
+      "final_decision_audits": [],
       "final_decision": {
         "market_stance": "neutral",
         "model_score": 66,
@@ -2027,8 +2033,31 @@
   {
     "archive_id": "review-20260724T031844Z",
     "decision_review": {
-      "reviewed_run_id": "manual-20260724T014200+0800",
+      "committee_rerun": {
+        "requested_at": "2026-07-24T03:19:15Z",
+        "github_actions_run_id": "30063924394",
+        "status": "rejected",
+        "reason": "GitHub Actions 未設定 OPENAI_API_KEY；安全閘門在任何模型呼叫或資料寫入前中止。",
+        "recommendation_changed": false
+      },
       "evaluation_end": "2026-07-23T20:00:00Z",
+      "profit_loss_usd": "43.04",
+      "return_percent": "0.7173",
+      "assessment": {
+        "verdict": "too_early_to_validate",
+        "summary": "從建議快照到同一交易日收盤，假設組合為正報酬；AMD、PLTR 與 SOXL 是主要正貢獻，NVDA 與 ERX 為負貢獻。評估期間只有約 2 小時 17 分，仍不足以判定原始決策整體正確；依更新後政策，必須在第 2 至第 3 個交易日內完成正式驗證，且每週至少完成兩次決策檢視。",
+        "supported_points": [
+          "財報前高波動科技曝險在評估期間產生正貢獻。",
+          "SOXL 放大半導體反彈的短線表達在評估期間有效。"
+        ],
+        "challenged_points": [
+          "ERX 未延續原油風險溢價帶來的正向貢獻。",
+          "NVDA 的相對強勢論點在評估期間未轉化為正報酬。",
+          "極短評估窗不足以檢驗事件催化或風險界線；最遲須在第 3 個交易日重新決策。"
+        ]
+      },
+      "generated_at": "2026-07-24T03:19:58Z",
+      "starting_value_usd": "6000.00",
       "ending_value_usd": "6043.04",
       "methodology": {
         "pricing_source": "Yahoo Finance via yfinance",
@@ -2044,26 +2073,10 @@
           "Yahoo Finance 資料可能延遲；任何人工交易前仍須向券商核對價格。"
         ]
       },
-      "assessment": {
-        "verdict": "too_early_to_validate",
-        "summary": "從建議快照到同一交易日收盤，假設組合為正報酬；AMD、PLTR 與 SOXL 是主要正貢獻，NVDA 與 ERX 為負貢獻。評估期間只有約 2 小時 17 分，仍不足以判定原始決策整體正確；依更新後政策，必須在第 2 至第 3 個交易日內完成正式驗證，且每週至少完成兩次決策檢視。",
-        "supported_points": [
-          "財報前高波動科技曝險在評估期間產生正貢獻。",
-          "SOXL 放大半導體反彈的短線表達在評估期間有效。"
-        ],
-        "challenged_points": [
-          "ERX 未延續原油風險溢價帶來的正向貢獻。",
-          "NVDA 的相對強勢論點在評估期間未轉化為正報酬。",
-          "極短評估窗不足以檢驗事件催化或風險界線；最遲須在第 3 個交易日重新決策。"
-        ]
-      },
-      "schema_version": "1.0",
-      "profit_loss_usd": "43.04",
-      "currency": "USD",
-      "generated_at": "2026-07-24T03:19:58Z",
       "evaluation_start": "2026-07-23T17:43:21.745224Z",
       "status": "hypothetical",
       "review_id": "review-20260724T031844Z",
+      "currency": "USD",
       "positions": [
         {
           "symbol": "AMD",
@@ -2129,15 +2142,8 @@
           "ending_value_usd": "300.00"
         }
       ],
-      "starting_value_usd": "6000.00",
-      "return_percent": "0.7173",
-      "committee_rerun": {
-        "requested_at": "2026-07-24T03:19:15Z",
-        "github_actions_run_id": "30063924394",
-        "status": "rejected",
-        "reason": "GitHub Actions 未設定 OPENAI_API_KEY；安全閘門在任何模型呼叫或資料寫入前中止。",
-        "recommendation_changed": false
-      }
+      "reviewed_run_id": "manual-20260724T014200+0800",
+      "schema_version": "1.0"
     }
   }
 ]

@@ -727,6 +727,65 @@
                   )
                   .join("")}
               </div>
+              ${
+                (committee.reconciliation_responses || []).length
+                  ? `
+                    <div class="reconciliation-section">
+                      <header class="subsection-header">
+                        <span class="section-kicker">Reconciliation Gate</span>
+                        <h3>否決後協商與第二次裁決</h3>
+                      </header>
+                      <div class="reconciliation-grid">
+                        ${(committee.reconciliation_responses || [])
+                          .map((response, index) => {
+                            const resolution = (committee.critique_resolutions || [])[index];
+                            const audit = (committee.final_decision_audits || []).find(
+                              (item) => item.reviewer === response.reviewer,
+                            );
+                            return `
+                              <article class="critique-card reconciliation-card">
+                                <div class="critique-heading">
+                                  <strong>${escapeHtml(response.reviewer)}</strong>
+                                  <span class="veto-chip ${resolution?.veto_maintained ? "veto" : ""}">
+                                    ${
+                                      resolution?.consensus_reached
+                                        ? "已取得共識"
+                                        : resolution?.veto_maintained
+                                          ? "維持否決"
+                                          : "等待裁決"
+                                    }
+                                  </span>
+                                </div>
+                                <div class="committee-columns">
+                                  <section class="committee-block">
+                                    <h3>提案者承認與修正</h3>
+                                    <ul>${renderList(response.conceded_points)}</ul>
+                                    <ul>${renderList(response.proposed_changes)}</ul>
+                                  </section>
+                                  <section class="committee-block">
+                                    <h3>證據式反駁</h3>
+                                    <ul>${renderList(response.rebuttals)}</ul>
+                                  </section>
+                                  <section class="committee-block">
+                                    <h3>第二次裁決</h3>
+                                    <p>${escapeHtml(resolution?.resolution_summary || "尚無裁決")}</p>
+                                    <ul>${renderList(resolution?.binding_constraints, "沒有未解除的硬性限制")}</ul>
+                                  </section>
+                                </div>
+                                ${
+                                  audit
+                                    ? `<p class="final-audit ${audit.decision_acceptable ? "accepted" : "rejected"}">
+                                        最終審核：${escapeHtml(audit.audit_summary)}
+                                      </p>`
+                                    : ""
+                                }
+                              </article>`;
+                          })
+                          .join("")}
+                      </div>
+                    </div>`
+                  : ""
+              }
             </div>
 
             <div class="cio-decision">
@@ -737,7 +796,7 @@
                 </div>
                 <div class="cio-score">
                   <strong>${escapeHtml(committee.final_decision.model_score)}</strong>
-                  <span>Model Score</span>
+                  <span>委員共識度</span>
                 </div>
               </header>
               <div class="decision-facts">

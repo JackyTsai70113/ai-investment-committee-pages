@@ -689,6 +689,46 @@ a {
   border-color: rgba(255, 152, 100, 0.35);
 }
 
+.reconciliation-section {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.subsection-header h3 {
+  margin: 0.35rem 0 0;
+  font-size: 1.15rem;
+}
+
+.reconciliation-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.reconciliation-card {
+  border-color: rgba(103, 183, 255, 0.28);
+}
+
+.final-audit {
+  margin: 1rem 0 0;
+  padding: 0.8rem;
+  border-radius: 12px;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.final-audit.accepted {
+  background: rgba(126, 203, 131, 0.09);
+  color: var(--acid-2);
+}
+
+.final-audit.rejected {
+  background: rgba(255, 109, 104, 0.09);
+  color: var(--danger);
+}
+
 .panel-header {
   display: flex;
   align-items: end;
