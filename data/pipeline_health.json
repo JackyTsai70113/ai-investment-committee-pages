@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0",
+  "attempted_at": "2026-07-24T14:28:11.111867Z",
+  "status": "failed",
+  "trigger": "schedule",
+  "committee_outcome": "failure",
+  "failure_kind": "provider_rate_limited",
+  "run_url": "https://github.com/JackyTsai70113/ai-investment-committee/actions/runs/30100852727",
+  "last_successful_run_id": "20260724T070019Z",
+  "last_successful_data_cutoff": "2026-07-24T06:59:39.276777Z",
+  "message": "最新排程因模型服務配額限制未完成；沿用上一份成功建議，不得把本次執行視為新決策。"
+}

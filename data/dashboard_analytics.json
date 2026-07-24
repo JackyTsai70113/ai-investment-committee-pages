@@ -1,0 +1,169 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-07-24T17:32:57.116821Z",
+  "data_cutoff": "2026-07-24T06:59:39.276777Z",
+  "portfolio_health": {
+    "score": 65,
+    "grade": "caution",
+    "summary": "現金與低槓桿使組合本身具防護，但最新模型管線失敗、委員共識偏低且樣本不足，健康分數不能解讀為獲利機率。",
+    "components": [
+      {
+        "component": "分散度",
+        "score": 16,
+        "maximum": 20,
+        "explanation": "目前有 3 個非現金標的；最大風險部位 25.0000%。"
+      },
+      {
+        "component": "流動性",
+        "score": 20,
+        "maximum": 20,
+        "explanation": "現金比重 60.0000%。"
+      },
+      {
+        "component": "槓桿控制",
+        "score": 18,
+        "maximum": 20,
+        "explanation": "槓桿／反向 ETF 合計 5.0000%。"
+      },
+      {
+        "component": "管線可靠性",
+        "score": 5,
+        "maximum": 20,
+        "explanation": "最新正式委員會失敗，目前沿用上一份決策。"
+      },
+      {
+        "component": "證據與共識",
+        "score": 6,
+        "maximum": 20,
+        "explanation": "委員共識度 38/100；研究準備度 not_ready_for_event_driven_trading。"
+      }
+    ]
+  },
+  "performance": {
+    "completed_points": 3,
+    "completed_intervals": 2,
+    "ending_value_usd": "6043.04",
+    "total_return_percent": "0.7173",
+    "maximum_drawdown_percent": "0.0000",
+    "sharpe_ratio": null,
+    "win_rate_percent": null,
+    "benchmark_status": "missing",
+    "sample_status": "too_early",
+    "methodology": "只使用已保存的完成評價點。少於 20 個區間時不顯示 Sharpe 與勝率；目前尚未保存同步 SPY／QQQ 基準、滑價、價差、費用與稅負。"
+  },
+  "agent_leaderboard": [
+    {
+      "rank": 1,
+      "agent": "liquidity",
+      "evaluated_calls": 1,
+      "correct_calls": 1,
+      "hit_rate_percent": "100.0000",
+      "average_confidence": "77.5000",
+      "status": "too_early",
+      "note": "以相鄰決策點的 SPY 方向做粗略 shadow 評價；少於 20 次不得調整投票權重，此命中率不是個別標的獲利勝率。"
+    },
+    {
+      "rank": 2,
+      "agent": "news",
+      "evaluated_calls": 1,
+      "correct_calls": 1,
+      "hit_rate_percent": "100.0000",
+      "average_confidence": "67.5000",
+      "status": "too_early",
+      "note": "以相鄰決策點的 SPY 方向做粗略 shadow 評價；少於 20 次不得調整投票權重，此命中率不是個別標的獲利勝率。"
+    },
+    {
+      "rank": 3,
+      "agent": "earnings",
+      "evaluated_calls": 1,
+      "correct_calls": 0,
+      "hit_rate_percent": "0.0000",
+      "average_confidence": "69.0000",
+      "status": "too_early",
+      "note": "以相鄰決策點的 SPY 方向做粗略 shadow 評價；少於 20 次不得調整投票權重，此命中率不是個別標的獲利勝率。"
+    },
+    {
+      "rank": 4,
+      "agent": "etf",
+      "evaluated_calls": 1,
+      "correct_calls": 0,
+      "hit_rate_percent": "0.0000",
+      "average_confidence": "70.0000",
+      "status": "too_early",
+      "note": "以相鄰決策點的 SPY 方向做粗略 shadow 評價；少於 20 次不得調整投票權重，此命中率不是個別標的獲利勝率。"
+    },
+    {
+      "rank": 5,
+      "agent": "macro",
+      "evaluated_calls": 1,
+      "correct_calls": 0,
+      "hit_rate_percent": "0.0000",
+      "average_confidence": "78.5000",
+      "status": "too_early",
+      "note": "以相鄰決策點的 SPY 方向做粗略 shadow 評價；少於 20 次不得調整投票權重，此命中率不是個別標的獲利勝率。"
+    },
+    {
+      "rank": 6,
+      "agent": "momentum",
+      "evaluated_calls": 1,
+      "correct_calls": 0,
+      "hit_rate_percent": "0.0000",
+      "average_confidence": "70.0000",
+      "status": "too_early",
+      "note": "以相鄰決策點的 SPY 方向做粗略 shadow 評價；少於 20 次不得調整投票權重，此命中率不是個別標的獲利勝率。"
+    },
+    {
+      "rank": 7,
+      "agent": "portfolio",
+      "evaluated_calls": 1,
+      "correct_calls": 0,
+      "hit_rate_percent": "0.0000",
+      "average_confidence": "65.5000",
+      "status": "too_early",
+      "note": "以相鄰決策點的 SPY 方向做粗略 shadow 評價；少於 20 次不得調整投票權重，此命中率不是個別標的獲利勝率。"
+    },
+    {
+      "rank": 8,
+      "agent": "technical",
+      "evaluated_calls": 1,
+      "correct_calls": 0,
+      "hit_rate_percent": "0.0000",
+      "average_confidence": "73.0000",
+      "status": "too_early",
+      "note": "以相鄰決策點的 SPY 方向做粗略 shadow 評價；少於 20 次不得調整投票權重，此命中率不是個別標的獲利勝率。"
+    },
+    {
+      "rank": 9,
+      "agent": "learning",
+      "evaluated_calls": 0,
+      "correct_calls": 0,
+      "hit_rate_percent": null,
+      "average_confidence": "75.0000",
+      "status": "too_early",
+      "note": "以相鄰決策點的 SPY 方向做粗略 shadow 評價；少於 20 次不得調整投票權重，此命中率不是個別標的獲利勝率。"
+    },
+    {
+      "rank": 10,
+      "agent": "ownership",
+      "evaluated_calls": 0,
+      "correct_calls": 0,
+      "hit_rate_percent": null,
+      "average_confidence": null,
+      "status": "too_early",
+      "note": "以相鄰決策點的 SPY 方向做粗略 shadow 評價；少於 20 次不得調整投票權重，此命中率不是個別標的獲利勝率。"
+    }
+  ],
+  "actual_comparison_status": "private_not_published",
+  "actual_comparison_message": "公開網站不發布實際持股或成交。Recommendation vs Actual 僅能在私人環境使用使用者確認的 execution 記錄計算；目前公開頁只比較相鄰兩輪研究建議。",
+  "excluded_symbols": [
+    "AMZN",
+    "GOOGL",
+    "QQQ",
+    "VTI"
+  ],
+  "warnings": [
+    "Portfolio Health Score 是資料、風控與流程完整度，不是獲利機率。",
+    "Agent 命中率樣本極少，不得據此調整投票權重。",
+    "Sharpe、勝率與基準在樣本或資料不足時顯示 N/A，不以零冒充。"
+  ]
+}

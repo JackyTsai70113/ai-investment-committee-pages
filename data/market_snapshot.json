@@ -263,6 +263,21 @@
       "active": false
     },
     {
+      "source_id": "nyse_calendar",
+      "name": "NYSE trading hours and holiday calendar",
+      "category": "market",
+      "authority": "official",
+      "cadence": "Calendar and session dependent",
+      "typical_latency": "Published exchange schedule",
+      "url": "https://www.nyse.com/trade/hours-calendars",
+      "intended_use": "Determine regular sessions, holidays, early closes and whether a daily bar is complete",
+      "limitations": [
+        "Calendar data does not provide prices or guarantee data-vendor bar finality",
+        "Provider integration is not active yet; the current 16:15 ET cutoff is only a conservative fallback"
+      ],
+      "active": false
+    },
+    {
       "source_id": "cboe_vix",
       "name": "Cboe VIX Index and methodology",
       "category": "volatility",
@@ -276,6 +291,36 @@
         "Mean reversion and futures term structure matter for VIX-linked products"
       ],
       "active": true
+    },
+    {
+      "source_id": "cboe_vix_term_structure",
+      "name": "Cboe VIX term structure",
+      "category": "volatility",
+      "authority": "official",
+      "cadence": "Intraday",
+      "typical_latency": "Public display may be delayed",
+      "url": "https://www.cboe.com/tradable-products/vix/term-structure",
+      "intended_use": "Compare VIX9D, VIX, VIX3M, VIX6M and VIX1Y for event stress and volatility-curve regime",
+      "limitations": [
+        "Index levels are not direct executable hedging costs",
+        "A single curve snapshot requires timestamp alignment with the portfolio decision"
+      ],
+      "active": false
+    },
+    {
+      "source_id": "occ_options_open_interest",
+      "name": "OCC exchange option volume and open interest",
+      "category": "positioning",
+      "authority": "official",
+      "cadence": "Daily",
+      "typical_latency": "Report dependent",
+      "url": "https://www.theocc.com/market-data/market-data-reports/volume-and-open-interest/exchange-volume-by-class",
+      "intended_use": "Options activity and open-interest context for crowding, hedging demand and event risk",
+      "limitations": [
+        "Aggregated volume does not identify investor intent or directional exposure",
+        "Open interest must be combined with strike, expiry and underlying context"
+      ],
+      "active": false
     },
     {
       "source_id": "finra_short",

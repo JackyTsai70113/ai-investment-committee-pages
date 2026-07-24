@@ -315,6 +315,153 @@
       </div>`;
   };
 
+  const researchStatusLabel = (value) => {
+    const labels = {
+      untested: "尚未驗證",
+      partially_tested: "部分驗證",
+      supported: "暫時支持",
+      challenged: "受到挑戰",
+      invalidated: "已失效",
+      mixed: "證據混合",
+      too_early: "樣本太早",
+      insufficient: "樣本不足",
+      provisional: "暫定",
+      usable: "可評估",
+    };
+    return labels[value] || String(value || "未分類");
+  };
+
+  const pipelineFailureLabel = (value) => {
+    const labels = {
+      provider_rate_limited: "模型配額／限速",
+      provider_rpm_limit: "每分鐘請求數（RPM）",
+      provider_tpm_limit: "每分鐘 Token 數（TPM）",
+      provider_daily_quota: "當日模型配額",
+      provider_model_capacity: "模型容量不足",
+      provider_auth: "模型驗證／權限",
+      provider_invalid_request: "無效模型請求",
+      provider_unavailable: "模型服務不可用",
+      credential_missing: "憑證未設定",
+      committee_error: "委員會執行錯誤",
+    };
+    return labels[value] || String(value || "未知");
+  };
+
+  const readinessLabel = (value) => {
+    const labels = {
+      not_ready_for_event_driven_trading: "每日研究可用 · 即時事件不足",
+      ready_for_daily_research: "每日研究可用",
+      ready_for_event_driven_trading: "事件驅動已通過",
+    };
+    return labels[value] || String(value || "未評估");
+  };
+
+  const healthGradeLabel = (value) => {
+    const labels = {
+      strong: "強健",
+      stable: "穩定",
+      caution: "需警戒",
+      fragile: "脆弱",
+    };
+    return labels[value] || String(value || "未評估");
+  };
+
+  const statistic = (value, suffix = "") =>
+    value === null || value === undefined
+      ? "N/A"
+      : `${Number(value).toFixed(2)}${suffix}`;
+
+  const comparisonRecords = (history, recommendation) => {
+    const records = new Map();
+    history.forEach((item) => {
+      if (item.recommendation) {
+        records.set(item.recommendation.run_id, item.recommendation);
+      }
+    });
+    records.set(recommendation.run_id, recommendation);
+    return [...records.values()].sort(
+      (left, right) => new Date(left.generated_at) - new Date(right.generated_at),
+    );
+  };
+
+  const buildComparisonRows = (fromRecommendation, toRecommendation) => {
+    const from = new Map(
+      fromRecommendation.allocations.map((item) => [item.symbol, item]),
+    );
+    const to = new Map(toRecommendation.allocations.map((item) => [item.symbol, item]));
+    return [...new Set([...from.keys(), ...to.keys()])]
+      .sort()
+      .map((symbol) => {
+        const previous = from.get(symbol);
+        const current = to.get(symbol);
+        const previousAmount = Number(previous?.target_amount_usd || 0);
+        const currentAmount = Number(current?.target_amount_usd || 0);
+        return {
+          symbol,
+          previousAmount,
+          currentAmount,
+          changeAmount: currentAmount - previousAmount,
+          previousWeight: Number(previous?.target_weight || 0),
+          currentWeight: Number(current?.target_weight || 0),
+        };
+      });
+  };
+
+  const installDecisionComparison = (records) => {
+    const fromSelect = document.querySelector("[data-compare-from]");
+    const toSelect = document.querySelector("[data-compare-to]");
+    const result = document.querySelector("[data-compare-result]");
+    if (!fromSelect || !toSelect || !result || records.length < 2) return;
+
+    const renderComparison = () => {
+      const fromRecommendation = records.find((item) => item.run_id === fromSelect.value);
+      const toRecommendation = records.find((item) => item.run_id === toSelect.value);
+      if (!fromRecommendation || !toRecommendation) return;
+      const rows = buildComparisonRows(fromRecommendation, toRecommendation);
+      const previousReasons = new Map(
+        fromRecommendation.top_reasons.map((item) => [item.id, item.title]),
+      );
+      const changedReasons = toRecommendation.top_reasons.filter(
+        (item) => previousReasons.get(item.id) !== item.title,
+      );
+      result.innerHTML = `
+        <div class="comparison-summary">
+          <span>${escapeHtml(fromRecommendation.run_id)}</span>
+          <strong>→</strong>
+          <span>${escapeHtml(toRecommendation.run_id)}</span>
+          <small>${changedReasons.length} / 10 個理由標題改變</small>
+        </div>
+        <div class="comparison-grid">
+          ${rows
+            .map(
+              (item) => `
+                <article>
+                  <strong>${escapeHtml(item.symbol)}</strong>
+                  <span>${money(item.previousAmount)} → ${money(item.currentAmount)}</span>
+                  <small>${signedMoney(item.changeAmount)} · ${percent(item.previousWeight)} → ${percent(item.currentWeight)}</small>
+                </article>`,
+            )
+            .join("")}
+        </div>
+        <div class="changed-reasons">
+          <strong>十大理由變化</strong>
+          ${
+            changedReasons.length
+              ? `<ol>${changedReasons
+                  .map(
+                    (item) =>
+                      `<li><span>${String(item.id).padStart(2, "0")}</span>${escapeHtml(item.title)}</li>`,
+                  )
+                  .join("")}</ol>`
+              : "<p>兩輪理由標題沒有變化。</p>"
+          }
+        </div>`;
+    };
+    fromSelect.addEventListener("change", renderComparison);
+    toSelect.addEventListener("change", renderComparison);
+    renderComparison();
+  };
+
   const renderHistoricalRecord = (record) => {
     const archivedCommittee = record.committee;
     const archivedRecommendation = record.recommendation;
@@ -454,6 +601,10 @@
     learning,
     performance,
     rebalance,
+    pipelineHealth,
+    researchJournal,
+    dashboardAnalytics,
+    providerTelemetry,
   }) => {
     const isLive = recommendation.status === "live";
     const statusLabel = isLive ? "CURRENT RESEARCH" : "RESEARCH REVIEW";
@@ -476,6 +627,9 @@
     const scoreAngle = `${modelScore * 3.6}deg`;
     const donut = buildDonut(recommendation.allocations);
     const committeeSize = committee.proposals.length + committee.critiques.length + 1;
+    const comparableRecommendations = comparisonRecords(history, recommendation);
+    const health = dashboardAnalytics.portfolio_health;
+    const analyticsPerformance = dashboardAnalytics.performance;
     root.innerHTML = `
       <div class="app-shell">
         <header class="topbar">
@@ -532,6 +686,37 @@
           </p>
         </aside>
 
+        <aside class="policy-notice" role="status">
+          <strong>HARD EXCLUSION POLICY</strong>
+          <p>
+            不得購買或推薦：
+            ${dashboardAnalytics.excluded_symbols
+              .map((symbol) => `<span>${escapeHtml(symbol)}</span>`)
+              .join("")}
+          </p>
+        </aside>
+
+        <aside class="pipeline-notice ${pipelineHealth.status}" role="status">
+          <div>
+            <strong>${pipelineHealth.status === "healthy" ? "PIPELINE HEALTHY" : "PIPELINE FAILED · 沿用前次決策"}</strong>
+            <p>${escapeHtml(pipelineHealth.message)}</p>
+          </div>
+          <div class="pipeline-facts">
+            <span>最近嘗試 ${escapeHtml(dateTime(pipelineHealth.attempted_at))}</span>
+            <span>最近成功 ${escapeHtml(pipelineHealth.last_successful_run_id)}</span>
+            ${
+              pipelineHealth.status === "failed"
+                ? `<span>原因 ${escapeHtml(pipelineFailureLabel(pipelineHealth.failure_kind))}</span>`
+                : ""
+            }
+            ${
+              safeExternalUrl(pipelineHealth.run_url)
+                ? `<a href="${escapeHtml(pipelineHealth.run_url)}" target="_blank" rel="noopener noreferrer">查看執行紀錄</a>`
+                : ""
+            }
+          </div>
+        </aside>
+
         <section class="metrics" aria-label="Portfolio overview">
           <article class="metric">
             <span class="metric-label">總策略資金</span>
@@ -555,7 +740,103 @@
           </article>
         </section>
 
+        <section class="terminal-grid" aria-label="Bloomberg-style strategy analytics">
+          <article class="terminal-card health-terminal">
+            <div class="terminal-card-head">
+              <div>
+                <span class="section-kicker">Portfolio Health Score</span>
+                <h2>組合健康度</h2>
+              </div>
+              <div class="health-score grade-${escapeHtml(health.grade)}">
+                <strong>${escapeHtml(health.score)}</strong>
+                <span>/ 100</span>
+              </div>
+            </div>
+            <p>${escapeHtml(healthGradeLabel(health.grade))} · ${escapeHtml(health.summary)}</p>
+            <div class="health-components">
+              ${health.components
+                .map(
+                  (item) => `
+                    <div>
+                      <span>${escapeHtml(item.component)}</span>
+                      <div class="health-bar"><i style="--health-width:${escapeHtml((Number(item.score) / Number(item.maximum)) * 100)}%"></i></div>
+                      <strong>${escapeHtml(item.score)} / ${escapeHtml(item.maximum)}</strong>
+                      <small>${escapeHtml(item.explanation)}</small>
+                    </div>`,
+                )
+                .join("")}
+            </div>
+          </article>
+
+          <article class="terminal-card performance-terminal">
+            <div class="terminal-card-head">
+              <div>
+                <span class="section-kicker">Risk-adjusted Analytics</span>
+                <h2>績效統計</h2>
+              </div>
+              <span class="research-status ${escapeHtml(analyticsPerformance.sample_status)}">${escapeHtml(researchStatusLabel(analyticsPerformance.sample_status))}</span>
+            </div>
+            <div class="terminal-stats">
+              <div><span>累積報酬</span><strong>${statistic(analyticsPerformance.total_return_percent, "%")}</strong></div>
+              <div><span>最大回撤</span><strong>${statistic(analyticsPerformance.maximum_drawdown_percent, "%")}</strong></div>
+              <div><span>Sharpe</span><strong>${statistic(analyticsPerformance.sharpe_ratio)}</strong></div>
+              <div><span>勝率</span><strong>${statistic(analyticsPerformance.win_rate_percent, "%")}</strong></div>
+            </div>
+            <p>${escapeHtml(analyticsPerformance.methodology)}</p>
+            <div class="telemetry-strip">
+              <span>最近模型執行 ${escapeHtml(providerTelemetry.status)}</span>
+              <span>${escapeHtml(providerTelemetry.total_requests)} requests</span>
+              <span>${escapeHtml(providerTelemetry.total_retries)} retries</span>
+              <span>${escapeHtml(providerTelemetry.total_estimated_input_tokens)} estimated input tokens</span>
+              <span>failure ${escapeHtml(providerTelemetry.terminal_failure_category)}</span>
+            </div>
+          </article>
+        </section>
+
         <div class="dashboard-grid">
+          <section class="panel leaderboard" id="leaderboard">
+            <header class="panel-header">
+              <div>
+                <span class="section-kicker">Agent Leaderboard</span>
+                <h2>各 Agent 命中率排行榜</h2>
+              </div>
+              <span class="panel-meta">SHADOW TEST<br />NOT VOTE WEIGHTS</span>
+            </header>
+            <p class="methodology-note">
+              以相鄰決策點的 SPY 方向做粗略評價；樣本未滿 20 次前不得據此調整權重，
+              命中率也不是獲利勝率。
+            </p>
+            <div class="table-wrap leaderboard-table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>排名</th>
+                    <th>Agent</th>
+                    <th>命中</th>
+                    <th>命中率</th>
+                    <th>平均信心</th>
+                    <th>狀態</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${dashboardAnalytics.agent_leaderboard
+                    .map(
+                      (item) => `
+                        <tr>
+                          <td>${escapeHtml(item.rank)}</td>
+                          <td><span class="symbol">${escapeHtml(item.agent)}</span></td>
+                          <td>${escapeHtml(item.correct_calls)} / ${escapeHtml(item.evaluated_calls)}</td>
+                          <td>${statistic(item.hit_rate_percent, "%")}</td>
+                          <td>${statistic(item.average_confidence)}</td>
+                          <td><span class="research-status ${escapeHtml(item.status)}">${escapeHtml(researchStatusLabel(item.status))}</span></td>
+                        </tr>`,
+                    )
+                    .join("")}
+                </tbody>
+              </table>
+            </div>
+          </section>
+
           <section class="panel strategy" id="portfolio">
             <header class="panel-header">
               <div>
@@ -645,7 +926,7 @@
           <section class="panel committee" id="committee">
             <header class="panel-header">
               <div>
-                <span class="section-kicker">Full Committee Record</span>
+                <span class="section-kicker">Committee Replay / Full Record</span>
                 <h2>委員會實際內容</h2>
               </div>
               <span class="panel-meta">${escapeHtml(committee.mode)}<br />${escapeHtml(committee.agent_model)}</span>
@@ -655,6 +936,42 @@
                 每位 Agent 的觀點、理由、風險與失效條件均完整保留。
                 以下是結構化研究摘要，不包含隱藏推理過程。
               </p>
+            </div>
+            ${
+              committee.decision_origin === "policy_override"
+                ? `
+                  <div class="policy-override-note">
+                    <strong>本輪最終配置已套用使用者硬限制</strong>
+                    <ul>${renderList(committee.policy_override_notes)}</ul>
+                  </div>`
+                : ""
+            }
+            <div class="committee-replay" aria-label="Committee replay">
+              <article>
+                <span>01</span>
+                <strong>資料封存</strong>
+                <small>${escapeHtml(dateTime(recommendation.data_cutoff))}</small>
+              </article>
+              <article>
+                <span>02</span>
+                <strong>獨立提案</strong>
+                <small>${escapeHtml(committee.proposals.length)} 位 Agent</small>
+              </article>
+              <article>
+                <span>03</span>
+                <strong>反方批判</strong>
+                <small>${escapeHtml(committee.critiques.length)} 份 Critique</small>
+              </article>
+              <article>
+                <span>04</span>
+                <strong>否決協商</strong>
+                <small>${escapeHtml((committee.critique_resolutions || []).length)} 次裁決</small>
+              </article>
+              <article>
+                <span>05</span>
+                <strong>CIO 決策</strong>
+                <small>${escapeHtml(committee.final_decision.market_stance)}</small>
+              </article>
             </div>
             <div class="committee-list proposal-list">
               ${committee.proposals
@@ -892,6 +1209,26 @@
                 .join("")}
             </div>
             <p class="methodology-note">${escapeHtml(performance.methodology)}</p>
+            <div class="performance-audit">
+              <article>
+                <span>最後完成評價</span>
+                <strong>${preciseMoney(researchJournal.performance.last_completed_value_usd)}</strong>
+                <small>${escapeHtml(researchJournal.performance.last_completed_return_percent)}% · ${escapeHtml(dateTime(researchJournal.performance.last_completed_evaluation_at))}</small>
+              </article>
+              <article class="provisional">
+                <span>盤中暫估</span>
+                <strong>${preciseMoney(researchJournal.performance.provisional_intraday_value_usd)}</strong>
+                <small>${escapeHtml(researchJournal.performance.provisional_intraday_return_percent)}% · ${escapeHtml(dateTime(researchJournal.performance.provisional_intraday_at))}</small>
+              </article>
+              <article>
+                <span>前一配置短窗</span>
+                <strong>+${escapeHtml(researchJournal.performance.provisional_period_return_percent)}%</strong>
+                <small>${escapeHtml(researchStatusLabel(researchJournal.performance.sample_assessment))}</small>
+              </article>
+            </div>
+            <p class="methodology-note provisional-note">
+              盤中暫估會隨市場變動，不是正式收盤績效。${escapeHtml(researchJournal.performance.methodology)}
+            </p>
           </section>
 
           <section class="panel evidence" id="evidence">
@@ -1059,6 +1396,145 @@
             </div>
           </section>
 
+          <section class="panel research-journal" id="research-journal">
+            <header class="panel-header">
+              <div>
+                <span class="section-kicker">Daily AI Journal</span>
+                <h2>每日 AI 投資日誌：假設、驗證與學習</h2>
+              </div>
+              <span class="panel-meta">${escapeHtml(readinessLabel(researchJournal.readiness))}<br />${escapeHtml(dateTime(researchJournal.data_cutoff))}</span>
+            </header>
+            <div class="readiness-verdict ${researchJournal.readiness}">
+              <strong>目前系統判定：不足以應付即時事件驅動盤勢</strong>
+              <p>${escapeHtml(researchJournal.readiness_summary)}</p>
+            </div>
+            <div class="journal-layout">
+              <section class="journal-column">
+                <header>
+                  <span>01</span>
+                  <h3>我們假設什麼</h3>
+                </header>
+                <div class="journal-cards">
+                  ${researchJournal.assumptions
+                    .map(
+                      (item) => `
+                        <article class="journal-card">
+                          <div class="journal-card-head">
+                            <strong>${escapeHtml(item.hypothesis_id)}</strong>
+                            <span class="research-status ${escapeHtml(item.status)}">${escapeHtml(researchStatusLabel(item.status))}</span>
+                          </div>
+                          <p>${escapeHtml(item.statement)}</p>
+                          <small><strong>怎麼驗證</strong>${escapeHtml(item.observable_test)}</small>
+                          <small><strong>目前證據</strong>${escapeHtml(item.evidence)}</small>
+                        </article>`,
+                    )
+                    .join("")}
+                </div>
+              </section>
+              <section class="journal-column">
+                <header>
+                  <span>02</span>
+                  <h3>我們驗證了什麼</h3>
+                </header>
+                <div class="journal-cards">
+                  ${researchJournal.validations
+                    .map(
+                      (item) => `
+                        <article class="journal-card">
+                          <div class="journal-card-head">
+                            <strong>Evidence</strong>
+                            <span class="research-status ${escapeHtml(item.result)}">${escapeHtml(researchStatusLabel(item.result))}</span>
+                          </div>
+                          <p>${escapeHtml(item.claim)}</p>
+                          <small>${escapeHtml(item.evidence)}</small>
+                          ${renderSourceLinks(item.source_urls)}
+                        </article>`,
+                    )
+                    .join("")}
+                </div>
+              </section>
+              <section class="journal-column lessons">
+                <header>
+                  <span>03</span>
+                  <h3>我們學到了什麼</h3>
+                </header>
+                <ol class="journal-list">
+                  ${researchJournal.lessons
+                    .map((item) => `<li>${escapeHtml(item)}</li>`)
+                    .join("")}
+                </ol>
+              </section>
+              <section class="journal-column next">
+                <header>
+                  <span>04</span>
+                  <h3>下一步怎麼精進</h3>
+                </header>
+                <div class="next-step-list">
+                  ${researchJournal.next_steps
+                    .map(
+                      (item) => `
+                        <article class="next-step">
+                          <div class="next-step-head">
+                            <span>${escapeHtml(item.priority)}</span>
+                            <strong>${escapeHtml(item.gap)}</strong>
+                          </div>
+                          <p>${escapeHtml(item.action)}</p>
+                          <small><strong>完成條件</strong>${escapeHtml(item.acceptance_test)}</small>
+                          ${renderSourceLinks(item.source_urls)}
+                        </article>`,
+                    )
+                    .join("")}
+                </div>
+              </section>
+            </div>
+            <ul class="rebalance-warnings">${renderList(researchJournal.warnings)}</ul>
+          </section>
+
+          <section class="panel decision-compare" id="decision-compare">
+            <header class="panel-header">
+              <div>
+                <span class="section-kicker">Decision Diff Terminal</span>
+                <h2>比較任兩輪配置與十大理由</h2>
+              </div>
+              <span class="panel-meta">${escapeHtml(comparableRecommendations.length)} RUNS<br />PUBLIC RESEARCH</span>
+            </header>
+            <div class="privacy-boundary">
+              <strong>Recommendation vs Actual：私人資料，不在公開網站發布</strong>
+              <p>${escapeHtml(dashboardAnalytics.actual_comparison_message)}</p>
+            </div>
+            ${
+              comparableRecommendations.length >= 2
+                ? `
+                  <div class="comparison-controls">
+                    <label>
+                      <span>起始決策</span>
+                      <select data-compare-from>
+                        ${comparableRecommendations
+                          .map(
+                            (item, index) =>
+                              `<option value="${escapeHtml(item.run_id)}"${index === comparableRecommendations.length - 2 ? " selected" : ""}>${escapeHtml(item.run_id)}</option>`,
+                          )
+                          .join("")}
+                      </select>
+                    </label>
+                    <span class="comparison-arrow">→</span>
+                    <label>
+                      <span>目標決策</span>
+                      <select data-compare-to>
+                        ${comparableRecommendations
+                          .map(
+                            (item, index) =>
+                              `<option value="${escapeHtml(item.run_id)}"${index === comparableRecommendations.length - 1 ? " selected" : ""}>${escapeHtml(item.run_id)}</option>`,
+                          )
+                          .join("")}
+                      </select>
+                    </label>
+                  </div>
+                  <div data-compare-result></div>`
+                : `<p class="methodology-note">目前只有一輪可比較建議；累積第二輪後才會啟用差異檢視。</p>`
+            }
+          </section>
+
           <section class="panel archive" id="archive">
             <header class="panel-header">
               <div>
@@ -1112,6 +1588,7 @@
       </div>
     `;
     installPerformanceChart(performance.points);
+    installDecisionComparison(comparableRecommendations);
   };
 
   Promise.all([
@@ -1123,9 +1600,40 @@
     fetchJson("learning.json"),
     fetchJson("performance.json"),
     fetchJson("rebalance.json"),
+    fetchJson("pipeline_health.json"),
+    fetchJson("research_journal.json"),
+    fetchJson("dashboard_analytics.json"),
+    fetchJson("provider_telemetry.json"),
   ])
-    .then(([recommendation, committee, market, system, history, learning, performance, rebalance]) =>
-      render({ recommendation, committee, market, system, history, learning, performance, rebalance }),
+    .then(
+      ([
+        recommendation,
+        committee,
+        market,
+        system,
+        history,
+        learning,
+        performance,
+        rebalance,
+        pipelineHealth,
+        researchJournal,
+        dashboardAnalytics,
+        providerTelemetry,
+      ]) =>
+        render({
+          recommendation,
+          committee,
+          market,
+          system,
+          history,
+          learning,
+          performance,
+          rebalance,
+          pipelineHealth,
+          researchJournal,
+          dashboardAnalytics,
+          providerTelemetry,
+        }),
     )
     .catch((error) => {
       root.innerHTML = `

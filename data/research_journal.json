@@ -1,0 +1,207 @@
+{
+  "schema_version": "1.0",
+  "journal_id": "audit-20260725T013015+0800",
+  "generated_at": "2026-07-24T17:30:15Z",
+  "data_cutoff": "2026-07-24T17:30:15Z",
+  "readiness": "not_ready_for_event_driven_trading",
+  "readiness_summary": "現有系統已具備結構化多 Agent、獨立提案、批判、否決協商、資料來源目錄與公開稽核，因此足以做每日研究；但模型配額曾讓最新排程失敗，行情仍以延遲的單一二手來源為主，尚未整合官方事件日曆、波動期限結構、交易成本、基準與情境壓力測試，所以不足以支援即時消息或盤中事件驅動操作。",
+  "performance": {
+    "last_completed_evaluation_at": "2026-07-23T20:00:00Z",
+    "last_completed_value_usd": "6043.04",
+    "last_completed_return_percent": "0.7173",
+    "provisional_intraday_at": "2026-07-24T16:49:23.436231Z",
+    "provisional_intraday_value_usd": "6049.98",
+    "provisional_intraday_return_percent": "0.8330",
+    "provisional_period_return_percent": "0.1148",
+    "sample_assessment": "too_early",
+    "methodology": "最後完成評價沿用已保存的 2026-07-23 收盤點；盤中暫估依 2026-07-24 12:49 ET 的 Yahoo Finance daily bar 計算。兩者均假設碎股、無滑價、無價差、無手續費、無稅負且按建議權重重平衡，不是實際成交績效。"
+  },
+  "assumptions": [
+    {
+      "hypothesis_id": "H1",
+      "statement": "高殖利率與高於常態的波動會持續壓抑高估值科技資產。",
+      "observable_test": "觀察 10 年期殖利率是否維持高於 4.55%、VIX 是否維持高於 15，並比較 QQQ 相對 SPY 的短期報酬。",
+      "status": "partially_tested",
+      "evidence": "盤中 ^TNX 約 4.667、VIX 約 18.64，QQQ 當日約 -0.85%，SPY 約持平；方向一致，但樣本未滿一個完整持有交易日。"
+    },
+    {
+      "hypothesis_id": "H2",
+      "statement": "小比例 SQQQ 能在科技下跌時提供有效對衝，且不讓反向槓桿主導組合。",
+      "observable_test": "將 SQQQ 的加權損益貢獻與 QQQ 的負貢獻比較，並檢查 SQQQ 比重是否維持不超過 5%。",
+      "status": "supported",
+      "evidence": "盤中 SQQQ 約 +3.07%，對組合貢獻約 +0.154 個百分點；QQQ 約 -0.85%，貢獻約 -0.085 個百分點，5% 對衝暫時有效。"
+    },
+    {
+      "hypothesis_id": "H3",
+      "statement": "50% 現金能在方向分歧時降低曝險並保留重新部署能力。",
+      "observable_test": "比較組合波動與風險資產跌幅，並記錄下一次明確催化後是否能以現金重新配置。",
+      "status": "partially_tested",
+      "evidence": "現金在 QQQ 與半導體下跌時降低了損失，但尚未發生重新部署，機會價值仍未驗證。"
+    },
+    {
+      "hypothesis_id": "H4",
+      "statement": "TLT 在長端殖利率盤中回落時可提供正向分散。",
+      "observable_test": "比較 ^TNX 與 TLT 的同期間方向，確認殖利率下降時 TLT 是否上升。",
+      "status": "supported",
+      "evidence": "^TNX 盤中約 -0.77%，TLT 約 +0.43%，在本次短窗內方向符合假設。"
+    },
+    {
+      "hypothesis_id": "H5",
+      "statement": "目前委員會流程能在每天正式更新時穩定產生一份新決策。",
+      "observable_test": "每次排程都必須完成模型呼叫、資料驗證、commit 與網站發布；任何失敗都要公開標示且不可偽裝成成功。",
+      "status": "challenged",
+      "evidence": "最新排程因模型服務配額限制中止，沒有新配置；原 workflow 卻以成功結論結束，代表運作可靠性不足。"
+    },
+    {
+      "hypothesis_id": "H6",
+      "statement": "全域 Gemini limiter、分類重試與角色化 context 能降低 429 並保留可診斷證據。",
+      "observable_test": "觀察至少 20 次正式排程的完成率、RPM／TPM 分類、重試次數、估算輸入 Token、延遲與終止原因。",
+      "status": "partially_tested",
+      "evidence": "63 項 Python 測試已驗證跨 Provider 共用 limiter、Retry-After、bounded retry、不可恢復錯誤不重試與 telemetry；尚未累積正式排程樣本。"
+    },
+    {
+      "hypothesis_id": "H7",
+      "statement": "AMZN、GOOGL、QQQ、VTI 能由確定性政策完全排除，不依賴模型自行遵守。",
+      "observable_test": "逐一將四個禁買標的注入 Agent preferred_assets 與 CIO allocation，兩層都必須拒絕，且公開最新配置不得含任一標的。",
+      "status": "supported",
+      "evidence": "四個標的均已從 allowed_symbols 移除並加入 excluded_symbols；提案與最終配置各有參數化測試，最新配置只含 CASH、SPY、TLT、SQQQ。"
+    }
+  ],
+  "validations": [
+    {
+      "claim": "目前配置的兩個市場失效條件尚未觸發。",
+      "result": "supported",
+      "evidence": "盤中 ^TNX 約 4.667 且 VIX 約 18.64，未同時跌破 4.55 與 15；QQQ 約 686.11，也未突破 705。",
+      "source_urls": [
+        "https://finance.yahoo.com/",
+        "https://www.cboe.com/tradable-products/vix/term-structure"
+      ]
+    },
+    {
+      "claim": "目前防守配置在最新盤中時點仍為正貢獻。",
+      "result": "supported",
+      "evidence": "自上一評價點至盤中，假設策略約 +0.1148%；SQQQ 與 TLT 的正貢獻高於 QQQ 的負貢獻。",
+      "source_urls": [
+        "https://finance.yahoo.com/"
+      ]
+    },
+    {
+      "claim": "累積 +0.8330% 足以證明策略有效。",
+      "result": "too_early",
+      "evidence": "樣本由一段約 2 小時 17 分的盤中至收盤，以及下一交易日盤中組成；尚未涵蓋一個完整持有交易日，也未扣除交易摩擦。",
+      "source_urls": [
+        "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2460551",
+        "https://arxiv.org/abs/2603.27539"
+      ]
+    },
+    {
+      "claim": "GitHub Actions 排程可被視為準時的市場事件觸發器。",
+      "result": "challenged",
+      "evidence": "最新排程相對設定時間延遲約 99 分鐘；GitHub 官方也說 scheduled events 可能延遲或在高負載時被丟棄。",
+      "source_urls": [
+        "https://docs.github.com/en/actions/how-tos/troubleshoot-workflows"
+      ]
+    },
+    {
+      "claim": "三倍槓桿與反向 ETF 可用一般多日倍數直覺評估。",
+      "result": "challenged",
+      "evidence": "這些產品追求每日目標，超過一天可能因每日重設與波動而大幅偏離標示倍數；目前系統尚未量化路徑耗損。",
+      "source_urls": [
+        "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-alerts/sec"
+      ]
+    },
+    {
+      "claim": "修正後的 workflow 仍會把模型失敗顯示為成功。",
+      "result": "challenged",
+      "evidence": "workflow 現在會先保存失敗 health 與 telemetry，再以非零狀態終止；CI 測試確認 terminal failure gate 存在。正式排程端到端驗證仍待下一次執行。",
+      "source_urls": [
+        "https://github.com/JackyTsai70113/ai-investment-committee/pull/23"
+      ]
+    },
+    {
+      "claim": "只在 Prompt 寫禁買清單就足以形成硬限制。",
+      "result": "challenged",
+      "evidence": "Prompt 只是第一層；目前另以 Agent preferred_assets validator 與 CIO allocation validator fail closed，才形成不依賴模型服從的硬限制。",
+      "source_urls": [
+        "https://github.com/JackyTsai70113/ai-investment-committee/pull/23"
+      ]
+    }
+  ],
+  "lessons": [
+    "對衝不是越多越好：5% SQQQ 已能抵銷 QQQ 的部分下跌，避免用反向槓桿取代完整投資組合。",
+    "現金與 TLT 在這一個短窗中降低科技下跌影響，但尚未證明能跨盤勢重複有效。",
+    "同一交易日的盤中 daily bar 不能寫成正式收盤績效；盤中暫估與完成交易日評價必須分開。",
+    "模型配額與排程延遲是決策風險，不只是工程問題；沒有新資料就必須明示沿用舊決策。",
+    "舊版只留下 generic 429，現在已無法回推它是 RPM、TPM 或其他 quota；無法驗證的原因必須標記 unknown，不能猜。",
+    "禁買條件必須同時存在於 Prompt、提案驗證與 CIO 配置驗證；只靠 Agent 自律不足以稱為硬限制。"
+  ],
+  "next_steps": [
+    {
+      "priority": "P0",
+      "gap": "Provider 修正尚未經正式排程證明",
+      "action": "連續保存至少 20 次正式排程的 request telemetry 與完成狀態，設定完成率與延遲 SLO；若 Gemini 仍不穩，再加入不重複決策的 Provider failover。",
+      "acceptance_test": "至少 20 次 run 可區分 RPM、TPM、每日配額、容量與其他錯誤，並能計算完成率、P95 延遲與每輪估算 input tokens。",
+      "source_urls": [
+        "https://ai.google.dev/gemini-api/docs/rate-limits",
+        "https://docs.github.com/en/actions/how-tos/troubleshoot-workflows"
+      ]
+    },
+    {
+      "priority": "P0",
+      "gap": "績效缺少基準與交易摩擦",
+      "action": "加入 SPY、QQQ 基準、換手率、價差、滑價與費用假設；在至少 20 個完成交易日以前禁止宣稱策略有效。",
+      "acceptance_test": "每個評價點同時保存策略與基準淨值、成本前後報酬及 turnover，並顯示樣本數。",
+      "source_urls": [
+        "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2460551",
+        "https://arxiv.org/abs/2603.27539"
+      ]
+    },
+    {
+      "priority": "P1",
+      "gap": "缺少官方事件與市場日曆",
+      "action": "串接 Fed 會議、FRED/ALFRED 發布、NYSE 交易日與公司財報事件；任何高風險配置都要標記距離事件的時間。",
+      "acceptance_test": "委員會輸入包含 point-in-time event calendar，並能在 FOMC 或財報前自動降低或明示保留風險。",
+      "source_urls": [
+        "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "https://fred.stlouisfed.org/docs/api/fred/realtime_period.html",
+        "https://www.nyse.com/trade/hours-calendars"
+      ]
+    },
+    {
+      "priority": "P1",
+      "gap": "波動與選擇權只看單點 VIX",
+      "action": "加入 Cboe VIX 期限結構與 OCC 交易量／未平倉量，並讓風控角色區分短端壓力、期限結構與單點 VIX。",
+      "acceptance_test": "風控輸出至少包含 VIX9D、VIX、VIX3M 的相對結構與資料時間，不再只用 VIX 20/30 的固定門檻。",
+      "source_urls": [
+        "https://www.cboe.com/tradable-products/vix/term-structure",
+        "https://www.theocc.com/market-data/market-data-reports/volume-and-open-interest/exchange-volume-by-class"
+      ]
+    },
+    {
+      "priority": "P1",
+      "gap": "風險限制未轉成部位級壓力測試",
+      "action": "把 max_risk_per_trade 落實為每個標的的失效價、估算損失、隔夜跳空情境與組合最大損失，而不只限制權重。",
+      "acceptance_test": "每個非現金標的都有可驗證的失效條件與美元風險；任何情境超限時由 deterministic risk gate 拒絕。",
+      "source_urls": [
+        "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-alerts/sec"
+      ]
+    },
+    {
+      "priority": "P2",
+      "gap": "多 Agent 是否真的優於簡單基準尚未驗證",
+      "action": "建立單 Agent、規則策略與多 Agent 的並行 shadow benchmark，使用 point-in-time 資料做 walk-forward 比較。",
+      "acceptance_test": "至少累積 60 個完成交易日，報告淨成本後報酬、最大回撤、Sharpe、相對 SPY/QQQ 與模型呼叫成本。",
+      "source_urls": [
+        "https://arxiv.org/abs/2510.11695",
+        "https://arxiv.org/abs/2602.23330",
+        "https://arxiv.org/abs/2603.27539"
+      ]
+    }
+  ],
+  "warnings": [
+    "所有績效都是研究策略假設，不是實際帳戶、成交或可保證報酬。",
+    "盤中暫估使用二手延遲資料，數值仍可能在收盤前改變。",
+    "目前樣本極短，任何 supported 都只代表這個時點未被否定，不代表可重複獲利。",
+    "公開頁面不包含實際帳戶、持股、買力、帳號或成交紀錄。"
+  ]
+}

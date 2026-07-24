@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "version": "0.3.1",
-  "updated_at": "2026-07-24T07:01:46.929503Z",
+  "version": "1.0.0",
+  "updated_at": "2026-07-24T16:49:23.436231Z",
   "environment": "live",
   "latest_commit": "9c7e8cefcb620eebfb20630f8c27395c6642bb54",
   "data_pipeline": "Layer 1 · Investment Committee",

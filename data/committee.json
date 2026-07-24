@@ -294,6 +294,11 @@
   "reconciliation_responses": [],
   "critique_resolutions": [],
   "final_decision_audits": [],
+  "decision_origin": "policy_override",
+  "policy_override_notes": [
+    "本輪模型提案早於使用者新增的策略隔離規則；AMZN、GOOGL、QQQ、VTI 已由確定性 policy override 禁止購買與推薦。",
+    "原 QQQ 10% 最終配置改為 CASH；原始 Agent 提案保留供稽核，不代表目前仍可推薦。"
+  ],
   "final_decision": {
     "market_stance": "bearish",
     "model_score": 38,
@@ -304,20 +309,14 @@
       {
         "symbol": "CASH",
         "asset_type": "cash",
-        "target_weight": "0.5",
-        "note": "高現金防護底座，應對 VIX 升至 18.70 與高殖利率風險，大幅降低隔夜跳空與執行滑價風險。"
+        "target_weight": "0.6",
+        "note": "高現金防護底座，並承接使用者禁止配置 QQQ 後釋出的 10%；應對 VIX 升至 18.70 與高殖利率風險，降低隔夜跳空與執行滑價風險。"
       },
       {
         "symbol": "SPY",
         "asset_type": "etf",
         "target_weight": "0.25",
         "note": "原型美股大盤 ETF，作為核心低耗損底座，提供跨產業分散性與高流動性。"
-      },
-      {
-        "symbol": "QQQ",
-        "asset_type": "etf",
-        "target_weight": "0.1",
-        "note": "原型科技指數 ETF，適度保留優質科技資產基本曝險，避免極端均值回歸時的追高成本。"
       },
       {
         "symbol": "TLT",
@@ -374,8 +373,8 @@
       },
       {
         "id": 4,
-        "title": "維持 50% 高現金儲備防範隔夜跳空風險",
-        "summary": "在波動度上升且缺少跨日最新行情下，配置 50% 高現金可確保充裕流動性，並大幅降低非交易時段之跳空與執行滑價風險。",
+        "title": "維持 60% 高現金儲備防範隔夜跳空風險",
+        "summary": "在波動度上升、缺少跨日最新行情且套用禁買政策後，配置 60% 高現金可保留流動性，並降低非交易時段之跳空與執行滑價風險。",
         "confidence": 80,
         "category": "liquidity",
         "affected_assets": [
@@ -430,12 +429,12 @@
       },
       {
         "id": 9,
-        "title": "保留 10% QQQ 核心科技流動性與優質資產",
-        "summary": "維持 10% QQQ 少量優質科技權重，避免在超賣回彈時完全缺乏科技股多頭部位而產生追高代價。",
-        "confidence": 65,
-        "category": "valuation",
+        "title": "使用者策略隔離規則排除四個既有資產",
+        "summary": "AMZN、GOOGL、QQQ、VTI 被列為不可購買與不可推薦標的；原 QQQ 10% 目標改留現金，避免策略帳與既有核心資產重疊。",
+        "confidence": 100,
+        "category": "policy",
         "affected_assets": [
-          "QQQ"
+          "CASH"
         ],
         "source_urls": []
       },
@@ -449,7 +448,6 @@
           "CASH",
           "SPY",
           "SQQQ",
-          "QQQ",
           "TLT"
         ],
         "source_urls": []

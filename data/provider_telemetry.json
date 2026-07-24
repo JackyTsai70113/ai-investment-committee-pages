@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "run_id": "30100852727",
+  "started_at": "2026-07-24T14:24:30.535059Z",
+  "completed_at": "2026-07-24T14:28:11.111867Z",
+  "status": "failure",
+  "terminal_failure_category": "rate_limit_unknown",
+  "total_requests": 0,
+  "total_retries": 0,
+  "total_estimated_input_tokens": 0,
+  "elapsed_seconds": "220.577",
+  "requests": []
+}

@@ -19,15 +19,6 @@
       "estimated_share_change": "6.9332"
     },
     {
-      "symbol": "QQQ",
-      "action": "add",
-      "reference_close_usd": "691.960022",
-      "previous_target_usd": "0",
-      "new_target_usd": "600.00",
-      "change_usd": "600.00",
-      "estimated_share_change": "0.8671"
-    },
-    {
       "symbol": "TQQQ",
       "action": "exit",
       "reference_close_usd": "66.300003",
@@ -104,8 +95,8 @@
       "action": "add",
       "reference_close_usd": null,
       "previous_target_usd": "300.00",
-      "new_target_usd": "3000.00",
-      "change_usd": "2700.00",
+      "new_target_usd": "3600.00",
+      "change_usd": "3300.00",
       "estimated_share_change": null
     }
   ],
