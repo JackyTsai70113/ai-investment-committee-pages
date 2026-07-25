@@ -342,6 +342,7 @@
       provider_invalid_request: "無效模型請求",
       provider_unavailable: "模型服務不可用",
       credential_missing: "憑證未設定",
+      artifact_validation: "產出驗證失敗",
       committee_error: "委員會執行錯誤",
     };
     return labels[value] || String(value || "未知");

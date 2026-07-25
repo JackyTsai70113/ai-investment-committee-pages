@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "currency": "USD",
   "initial_value_usd": "6000.00",
-  "updated_at": "2026-07-24T06:59:39.276777Z",
+  "updated_at": "2026-07-25T10:00:20.353794Z",
   "status": "hypothetical",
   "methodology": "假設按每輪建議權重持有碎股，並在下一個評價點按最新建議重新平衡；忽略手續費、價差、滑價、稅負與匯率。這是研究策略指數，不是實際帳戶績效。",
   "points": [
@@ -140,6 +140,76 @@
         {
           "symbol": "^VIX",
           "price_usd": "18.700001"
+        }
+      ],
+      "note": "依上一輪建議權重與最新可得行情計算；假設績效，不代表實際成交。"
+    },
+    {
+      "as_of": "2026-07-25T10:00:20.353794Z",
+      "run_id": "learning-20260725T100032Z",
+      "value_usd": "6055.77",
+      "profit_loss_usd": "55.77",
+      "return_percent": "0.9295",
+      "prices": [
+        {
+          "symbol": "AMD",
+          "price_usd": "521.950012"
+        },
+        {
+          "symbol": "CL=F",
+          "price_usd": "89.309998"
+        },
+        {
+          "symbol": "ERX",
+          "price_usd": "95.260002"
+        },
+        {
+          "symbol": "GLD",
+          "price_usd": "371.899994"
+        },
+        {
+          "symbol": "NVDA",
+          "price_usd": "206.839996"
+        },
+        {
+          "symbol": "PLTR",
+          "price_usd": "122.919998"
+        },
+        {
+          "symbol": "QQQ",
+          "price_usd": "684.22998"
+        },
+        {
+          "symbol": "SMH",
+          "price_usd": "561.190002"
+        },
+        {
+          "symbol": "SOXL",
+          "price_usd": "136.809998"
+        },
+        {
+          "symbol": "SPY",
+          "price_usd": "738.929993"
+        },
+        {
+          "symbol": "SQQQ",
+          "price_usd": "44.790001"
+        },
+        {
+          "symbol": "TLT",
+          "price_usd": "83.25"
+        },
+        {
+          "symbol": "TQQQ",
+          "price_usd": "64.0"
+        },
+        {
+          "symbol": "^TNX",
+          "price_usd": "4.679"
+        },
+        {
+          "symbol": "^VIX",
+          "price_usd": "18.58"
         }
       ],
       "note": "依上一輪建議權重與最新可得行情計算；假設績效，不代表實際成交。"

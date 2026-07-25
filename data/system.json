@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0",
   "version": "1.0.0",
-  "updated_at": "2026-07-24T16:49:23.436231Z",
+  "updated_at": "2026-07-25T10:07:44.448731Z",
   "environment": "live",
-  "latest_commit": "9c7e8cefcb620eebfb20630f8c27395c6642bb54",
+  "latest_commit": "c1f2a32eb2fc8c48afb67e8478f2faf94eb5b0ed",
   "data_pipeline": "Layer 1 · Investment Committee",
   "site_pipeline": "Layer 2 · Static Dashboard",
   "execution_policy": "manual only",

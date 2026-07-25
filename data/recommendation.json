@@ -1,13 +1,13 @@
 {
   "schema_version": "1.0",
-  "run_id": "20260724T070019Z",
-  "generated_at": "2026-07-24T07:00:19.088457Z",
-  "data_cutoff": "2026-07-24T06:59:39.276777Z",
+  "run_id": "20260725T100049Z",
+  "generated_at": "2026-07-25T10:00:49.664439Z",
+  "data_cutoff": "2026-07-25T10:00:20.353794Z",
   "status": "live",
   "capital_usd": "6000.00",
-  "model_score": 38,
-  "model_score_reason": "舊制資料未保存評分理由；此分數不可解讀為獲利機率或配置品質。",
-  "risk_level": "high",
+  "model_score": 94,
+  "model_score_reason": "方向一致度 94/100；10 位提案委員按信心加權，0 項協商後否決仍未解除，扣除 0 分。",
+  "risk_level": "moderate",
   "expected_horizon": "3 個交易日",
   "allocations": [
     {
@@ -16,7 +16,7 @@
       "target_weight": "0.6",
       "target_amount_usd": "3600.00",
       "action": "reduce",
-      "note": "高現金防護底座，並承接使用者禁止配置 QQQ 後釋出的 10%；應對 VIX 升至 18.70 與高殖利率風險，降低隔夜跳空與執行滑價風險。"
+      "note": "核心防守部位，保留高現金緩衝以抵禦高利率與半導體拉回壓力，避開槓桿產品之每日再平衡磨損。"
     },
     {
       "symbol": "SPY",
@@ -24,7 +24,7 @@
       "target_weight": "0.25",
       "target_amount_usd": "1500.00",
       "action": "buy",
-      "note": "原型美股大盤 ETF，作為核心低耗損底座，提供跨產業分散性與高流動性。"
+      "note": "原型大盤 ETF 作為資產組合底座，發揮跨產業分散與極低年化波動率（11.66%）之抗跌效益。"
     },
     {
       "symbol": "TLT",
@@ -32,62 +32,102 @@
       "target_weight": "0.1",
       "target_amount_usd": "600.00",
       "action": "buy",
-      "note": "長天期美債 ETF，觀察 10 年期美債殖利率於 4.70% 上方的頂部對衝效果。"
+      "note": "長天期美債 ETF，於 RSI 20.90 之極端超賣區進行戰術性收益與避險分散配置。"
     },
     {
-      "symbol": "SQQQ",
-      "asset_type": "leveraged_etf",
+      "symbol": "NVDA",
+      "asset_type": "stock",
       "target_weight": "0.05",
       "target_amount_usd": "300.00",
       "action": "buy",
-      "note": "戰術性微量反向對衝，嚴格限制比重於 5%，防範極短線下行風險並減輕波動磨損與軋空風險。"
+      "note": "精選 AI 晶片龍頭小額戰術配置，最新 10-Q 營運現金流達 503 億美元，基本面品質堅實。"
     }
   ],
   "top_reasons": [
     {
       "id": 1,
-      "title": "美債殖利率升至 4.703% 壓制高估值資產",
-      "summary": "10年期美債殖利率（^TNX）攀升至 4.703%，對高估值科技股帶來評價面折現壓力，限制大盤短線反彈空間。",
+      "title": "10年期美債殖利率高位震盪壓抑風險資產估值",
+      "summary": "10年期美債殖利率（^TNX）最新收在 4.679%，20日累積增幅達 6.53%，且 RSI14 達 70.33，顯示高利率環境持續對高估值風險資產形成壓迫。",
       "confidence": 75,
       "category": "macro",
       "affected_assets": [
-        "QQQ",
-        "NVDA",
-        "TLT"
+        "^TNX",
+        "SPY"
       ],
       "source_urls": []
     },
     {
       "id": 2,
-      "title": "VIX 恐慌指數急升至 18.70 顯示波動加劇",
-      "summary": "VIX 指數單日大漲 12.38% 至 18.70，反映短線避險情緒與市場下行風險升溫，需提升防守型現金比重。",
-      "confidence": 75,
-      "category": "risk",
+      "title": "原油價格高位拉回但20日漲幅仍顯著",
+      "summary": "原油期貨（CL=F）最新價格為每桶 89.31 美元，單日拉回 3.12%，但 20日累積漲幅仍達 24.18%，RSI14 高達 82.40，反映通膨黏性疑慮尚未完全消除。",
+      "confidence": 70,
+      "category": "macro",
       "affected_assets": [
-        "SPY",
-        "QQQ",
-        "CASH"
+        "CL=F"
       ],
       "source_urls": []
     },
     {
       "id": 3,
-      "title": "風控審查否決過度追空與低流動性標的",
-      "summary": "回應風控與反向審查意見，完全剔除成交量偏低之 ERX（24.2萬股），並嚴格限制 SQQQ 反向槓桿比重至 5%，避免波動耗損與軋空風險。",
-      "confidence": 85,
-      "category": "risk",
+      "title": "半導體板塊短線重挫且成交量比率放大",
+      "summary": "半導體 ETF（SMH）單日下跌 3.27% 收在 561.19 美元，20日成交量比率達 1.70，顯示半導體族群短線面臨集中賣壓與技術面修正。",
+      "confidence": 80,
+      "category": "technical",
       "affected_assets": [
-        "SQQQ",
-        "ERX",
-        "CASH"
+        "SMH",
+        "SOXL"
       ],
       "source_urls": []
     },
     {
       "id": 4,
-      "title": "維持 60% 高現金儲備防範隔夜跳空風險",
-      "summary": "在波動度上升、缺少跨日最新行情且套用禁買政策後，配置 60% 高現金可保留流動性，並降低非交易時段之跳空與執行滑價風險。",
+      "title": "大盤原型 ETF（SPY）展現相對抗跌韌性",
+      "summary": "SPY 當日微幅上漲 0.10% 收在 738.93 美元，20日報酬率保持正值 0.63%，年化波動率僅 11.66%，在科技股拉回之際發揮穩健抗跌作用。",
       "confidence": 80,
+      "category": "technical",
+      "affected_assets": [
+        "SPY"
+      ],
+      "source_urls": []
+    },
+    {
+      "id": 5,
+      "title": "核心科技龍頭最新 10-Q 展現強勁獲利品質",
+      "summary": "NVDA 申報之 10-Q 顯示當季稀釋 EPS 達 2.39 美元（去年同期為 0.76 美元），當季營運現金流達 503.44 億美元，基本面具備充沛現金流支持。",
+      "confidence": 75,
+      "category": "valuation",
+      "affected_assets": [
+        "NVDA"
+      ],
+      "source_urls": []
+    },
+    {
+      "id": 6,
+      "title": "市場恐慌指數 VIX 維持於 18 上方高位震盪",
+      "summary": "恐慌指數（^VIX）最新收在 18.58，高於其 20 日均線 9.56%，反映科技股與半導體拉回過程中市場情緒仍偏謹慎防守。",
+      "confidence": 75,
+      "category": "risk",
+      "affected_assets": [
+        "^VIX"
+      ],
+      "source_urls": []
+    },
+    {
+      "id": 7,
+      "title": "美債 ETF（TLT）短線極度超賣提供戰術配置價值",
+      "summary": "長天期美債 ETF（TLT）14日 RSI 已降至 20.90 之極端超賣區，20日下跌 4.69%，具備戰術性資產分散與收益緩衝作用。",
+      "confidence": 70,
+      "category": "diversification",
+      "affected_assets": [
+        "TLT"
+      ],
+      "source_urls": []
+    },
+    {
+      "id": 8,
+      "title": "高現金部位提供市場波動下的戰術調度彈性",
+      "summary": "面對科技股震盪與高利率環境，保留 60% 現金部位（CASH）可有效消除槓桿產品之路徑複利損耗，並在市場極端跳空時避免被迫折價變現。",
+      "confidence": 85,
       "category": "liquidity",
       "affected_assets": [
         "CASH"
@@ -95,83 +135,36 @@
       "source_urls": []
     },
     {
-      "id": 5,
-      "title": "科技龍頭短線技術面承壓但未失控",
-      "summary": "QQQ 下跌 1.90%、TQQQ 下挫 5.66%，顯示短線多頭動能修正，但 VIX 未突破 20 關鍵恐慌門檻，不宜過度追空以防均值回歸。",
-      "confidence": 70,
-      "category": "technical",
+      "id": 9,
+      "title": "嚴格遵守槓桿與反向產品風控限制與持有期限",
+      "summary": "鑑於槓桿 ETF（如 SOXL 20日年化波動率高達 175.33%）存在顯著每日再平衡波動磨損，本輪決策避免追高槓桿工具，並將所有部位持有期限定於 3 個交易日內。",
+      "confidence": 85,
+      "category": "policy",
       "affected_assets": [
-        "QQQ",
-        "SPY"
-      ],
-      "source_urls": []
-    },
-    {
-      "id": 6,
-      "title": "以原型大盤 SPY 為核心持倉提供下檔支撐",
-      "summary": "配置 25% SPY 作為核心底座，相較於科技單一板塊具備更好的跨產業分散效果與較低之波動磨損。",
-      "confidence": 75,
-      "category": "diversification",
-      "affected_assets": [
-        "SPY"
-      ],
-      "source_urls": []
-    },
-    {
-      "id": 7,
-      "title": "戰術性微幅配置 5% SQQQ 進行下行對衝",
-      "summary": "僅保留 5% 低劑量 SQQQ 作為科技股下行之極短線對衝，嚴格遵守風控政策並避免高槓桿複合耗損。",
-      "confidence": 65,
-      "category": "momentum",
-      "affected_assets": [
+        "SOXL",
         "SQQQ"
       ],
       "source_urls": []
     },
     {
-      "id": 8,
-      "title": "TLT 長天期美債逢低觀察殖利率頂部壓力",
-      "summary": "配置 10% TLT 觀察長端殖利率是否在 4.70%-4.75% 區域見頂，若殖利率回落可提供債券資本利得與組合對衝效果。",
-      "confidence": 60,
-      "category": "valuation",
-      "affected_assets": [
-        "TLT"
-      ],
-      "source_urls": []
-    },
-    {
-      "id": 9,
-      "title": "使用者策略隔離規則排除四個既有資產",
-      "summary": "AMZN、GOOGL、QQQ、VTI 被列為不可購買與不可推薦標的；原 QQQ 10% 目標改留現金，避免策略帳與既有核心資產重疊。",
-      "confidence": 100,
-      "category": "policy",
+      "id": 10,
+      "title": "籌碼端數據源未啟用需依據數據不確定性降低部位",
+      "summary": "市場快照中 SEC Form 4 與 13F 資料源均為未啟用狀態（active: false），依據風控政策，在籌碼面資訊真空狀況下必須調降信心度並採高現金防守。",
+      "confidence": 80,
+      "category": "news",
       "affected_assets": [
         "CASH"
-      ],
-      "source_urls": []
-    },
-    {
-      "id": 10,
-      "title": "落實歷史學習教訓與 3 交易日持倉上限",
-      "summary": "採納 Learning 委員教訓，嚴格限制所有戰術部位預期持倉期不超過 3 個交易日，並設有明確失效與停損機制。",
-      "confidence": 85,
-      "category": "risk",
-      "affected_assets": [
-        "CASH",
-        "SPY",
-        "SQQQ",
-        "TLT"
       ],
       "source_urls": []
     }
   ],
   "invalidation_conditions": [
-    "10年期美債殖利率（^TNX）快速跌破 4.55% 且 VIX 降至 15.00 以下，顯示市場恐慌全面消退。",
-    "QQQ 強勢反彈突破 705 美元並帶動大盤整體回補前一交易日跌幅。"
+    "^TNX 10 年期美債殖利率突破並站穩 4.85% 以上，或 ^VIX 飆升突破 22，顯示市場恐慌與利率壓力全面惡化。",
+    "SPY 跌破 50 日均線且 20 日報酬轉負，顯示跨板塊輪動抗跌性失效，大盤轉入全面單邊下行。"
   ],
   "major_risks": [
-    "美債殖利率突破 4.75% 觸發全市場資產無差別流動性緊縮與二次拋售風險。",
-    "反向槓桿 ETF（SQQQ）在科技股強勁 V 型均值回歸反彈時承受 3 倍放大回撤與每日再平衡磨損。"
+    "原油與商品價格若再度飆升引發二次通膨疑慮，可能促使聯準會維持更長時間高利率，壓抑總體資產估值。",
+    "半導體及科技板塊若受財報或監管利空影響出現隔夜極端跳空下跌（Gap Risk），個股與 ETF 部位將承壓。"
   ],
   "disclaimer": "研究建議，尚未執行。下單前須由使用者核對券商即時價格、成本與風險；系統不存取券商、不自動下單。"
 }
