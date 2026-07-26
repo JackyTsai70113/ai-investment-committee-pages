@@ -780,8 +780,12 @@
             <div class="terminal-stats">
               <div><span>累積報酬</span><strong>${statistic(analyticsPerformance.total_return_percent, "%")}</strong></div>
               <div><span>最大回撤</span><strong>${statistic(analyticsPerformance.maximum_drawdown_percent, "%")}</strong></div>
-              <div><span>Sharpe</span><strong>${statistic(analyticsPerformance.sharpe_ratio)}</strong></div>
-              <div><span>勝率</span><strong>${statistic(analyticsPerformance.win_rate_percent, "%")}</strong></div>
+              <div><span>3 日滾動</span><strong>${statistic(analyticsPerformance.latest_3_session_return_percent, "%")}</strong></div>
+              <div><span>7 日滾動</span><strong>${statistic(analyticsPerformance.latest_7_session_return_percent, "%")}</strong></div>
+              <div><span>完成收盤日</span><strong>${escapeHtml(analyticsPerformance.distinct_completed_sessions)}</strong></div>
+              <div><span>3 日正視窗</span><strong>${escapeHtml(analyticsPerformance.positive_3_session_windows)} / ${escapeHtml(analyticsPerformance.completed_3_session_windows)}</strong></div>
+              <div><span>7 日正視窗</span><strong>${escapeHtml(analyticsPerformance.positive_7_session_windows)} / ${escapeHtml(analyticsPerformance.completed_7_session_windows)}</strong></div>
+              <div><span>Sharpe／勝率</span><strong>${statistic(analyticsPerformance.sharpe_ratio)} / ${statistic(analyticsPerformance.win_rate_percent, "%")}</strong></div>
             </div>
             <p>${escapeHtml(analyticsPerformance.methodology)}</p>
             <div class="telemetry-strip">
@@ -1216,19 +1220,19 @@
                 <strong>${preciseMoney(researchJournal.performance.last_completed_value_usd)}</strong>
                 <small>${escapeHtml(researchJournal.performance.last_completed_return_percent)}% · ${escapeHtml(dateTime(researchJournal.performance.last_completed_evaluation_at))}</small>
               </article>
-              <article class="provisional">
-                <span>盤中暫估</span>
-                <strong>${preciseMoney(researchJournal.performance.provisional_intraday_value_usd)}</strong>
-                <small>${escapeHtml(researchJournal.performance.provisional_intraday_return_percent)}% · ${escapeHtml(dateTime(researchJournal.performance.provisional_intraday_at))}</small>
+              <article>
+                <span>3 日滾動淨績效</span>
+                <strong>${statistic(analyticsPerformance.latest_3_session_return_percent, "%")}</strong>
+                <small>${escapeHtml(analyticsPerformance.positive_3_session_windows)} / ${escapeHtml(analyticsPerformance.completed_3_session_windows)} 個正視窗</small>
               </article>
               <article>
-                <span>前一配置短窗</span>
-                <strong>+${escapeHtml(researchJournal.performance.provisional_period_return_percent)}%</strong>
-                <small>${escapeHtml(researchStatusLabel(researchJournal.performance.sample_assessment))}</small>
+                <span>7 日滾動淨績效</span>
+                <strong>${statistic(analyticsPerformance.latest_7_session_return_percent, "%")}</strong>
+                <small>${escapeHtml(analyticsPerformance.positive_7_session_windows)} / ${escapeHtml(analyticsPerformance.completed_7_session_windows)} 個正視窗</small>
               </article>
             </div>
-            <p class="methodology-note provisional-note">
-              盤中暫估會隨市場變動，不是正式收盤績效。${escapeHtml(researchJournal.performance.methodology)}
+            <p class="methodology-note">
+              ${escapeHtml(researchJournal.performance.methodology)}
             </p>
           </section>
 
