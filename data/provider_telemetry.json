@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0",
-  "run_id": "30390275724",
-  "started_at": "2026-07-28T19:04:23.788382Z",
-  "completed_at": "2026-07-28T19:07:04.039562Z",
+  "run_id": "30391527564",
+  "started_at": "2026-07-28T19:21:21.757378Z",
+  "completed_at": "2026-07-28T19:22:41.132824Z",
   "status": "failure",
-  "terminal_failure_category": "invalid_response",
+  "terminal_failure_category": "daily_quota",
   "total_requests": 2,
   "total_retries": 0,
-  "total_estimated_input_tokens": 3872,
-  "elapsed_seconds": "160.251",
+  "total_estimated_input_tokens": 3928,
+  "elapsed_seconds": "79.375",
   "requests": [
     {
       "request_number": 1,
@@ -16,13 +16,13 @@
       "provider": "gemini",
       "model": "gemini-2.5-flash",
       "attempt": 1,
-      "estimated_input_tokens": 597,
+      "estimated_input_tokens": 596,
       "limiter_wait_seconds": "0.0",
-      "duration_ms": 85872,
+      "duration_ms": 51372,
       "outcome": "success",
       "failure_category": "none",
       "retry_delay_seconds": null,
-      "started_at": "2026-07-28T19:04:40.345281Z"
+      "started_at": "2026-07-28T19:21:35.946594Z"
     },
     {
       "request_number": 2,
@@ -30,13 +30,13 @@
       "provider": "gemini",
       "model": "gemini-2.5-flash",
       "attempt": 1,
-      "estimated_input_tokens": 3275,
-      "limiter_wait_seconds": "0.0",
-      "duration_ms": 57821,
+      "estimated_input_tokens": 3332,
+      "limiter_wait_seconds": "13.628",
+      "duration_ms": 170,
       "outcome": "failure",
-      "failure_category": "invalid_response",
+      "failure_category": "daily_quota",
       "retry_delay_seconds": null,
-      "started_at": "2026-07-28T19:06:06.217427Z"
+      "started_at": "2026-07-28T19:22:40.961288Z"
     }
   ]
 }
