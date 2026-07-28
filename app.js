@@ -341,6 +341,7 @@
       provider_model_capacity: "模型容量不足",
       provider_auth: "模型驗證／權限",
       provider_invalid_request: "無效模型請求",
+      provider_invalid_response: "模型回應格式無效",
       provider_unavailable: "模型服務不可用",
       credential_missing: "憑證未設定",
       artifact_validation: "產出驗證失敗",

@@ -1,56 +1,42 @@
 {
   "schema_version": "1.0",
-  "run_id": "30383535117",
-  "started_at": "2026-07-28T17:35:40.665078Z",
-  "completed_at": "2026-07-28T17:39:12.839578Z",
+  "run_id": "30387601502",
+  "started_at": "2026-07-28T18:29:20.050423Z",
+  "completed_at": "2026-07-28T18:30:41.840382Z",
   "status": "failure",
   "terminal_failure_category": "invalid_request",
-  "total_requests": 3,
+  "total_requests": 2,
   "total_retries": 0,
-  "total_estimated_input_tokens": 4420,
-  "elapsed_seconds": "212.174",
+  "total_estimated_input_tokens": 3605,
+  "elapsed_seconds": "81.79",
   "requests": [
     {
       "request_number": 1,
-      "operation": "market_research_survey",
+      "operation": "market_research_search",
       "provider": "gemini",
       "model": "gemini-2.5-flash",
       "attempt": 1,
       "estimated_input_tokens": 597,
       "limiter_wait_seconds": "0.0",
-      "duration_ms": 30878,
-      "outcome": "failure",
-      "failure_category": "invalid_response",
-      "retry_delay_seconds": null,
-      "started_at": "2026-07-28T17:35:54.236802Z"
-    },
-    {
-      "request_number": 2,
-      "operation": "market_research_search_fallback",
-      "provider": "gemini",
-      "model": "gemini-2.5-flash",
-      "attempt": 1,
-      "estimated_input_tokens": 597,
-      "limiter_wait_seconds": "34.122",
-      "duration_ms": 45377,
+      "duration_ms": 45872,
       "outcome": "success",
       "failure_category": "none",
       "retry_delay_seconds": null,
-      "started_at": "2026-07-28T17:36:59.271517Z"
+      "started_at": "2026-07-28T18:29:35.516584Z"
     },
     {
-      "request_number": 3,
-      "operation": "market_research_structure_fallback",
+      "request_number": 2,
+      "operation": "market_research_structure",
       "provider": "gemini",
-      "model": "gemini-2.5-flash",
+      "model": "gemini-3.1-flash-lite",
       "attempt": 1,
-      "estimated_input_tokens": 3226,
-      "limiter_wait_seconds": "19.623",
-      "duration_ms": 68546,
+      "estimated_input_tokens": 3008,
+      "limiter_wait_seconds": "19.128",
+      "duration_ms": 1303,
       "outcome": "failure",
-      "failure_category": "invalid_response",
+      "failure_category": "invalid_request",
       "retry_delay_seconds": null,
-      "started_at": "2026-07-28T17:38:04.292053Z"
+      "started_at": "2026-07-28T18:30:40.536655Z"
     }
   ]
 }
