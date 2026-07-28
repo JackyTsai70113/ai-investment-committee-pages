@@ -5854,6 +5854,68 @@
     }
   },
   {
+    "archive_id": "manual-intraday-20260728T143206Z",
+    "learning": {
+      "schema_version": "1.0",
+      "review_id": "manual-intraday-20260728T143206Z",
+      "reviewed_run_id": "policy-20260726T072038Z",
+      "generated_at": "2026-07-28T14:32:06Z",
+      "evaluation_cutoff": "2026-07-28T14:14:22Z",
+      "evidence_source": "使用者提供的券商盤中截圖；公開盤中市場報價；Federal Reserve 官方行事曆",
+      "verdict": "too_early",
+      "lessons": [
+        {
+          "title": "科技與半導體空頭延續，但尚非全面市場崩跌",
+          "evidence": "盤中公開報價顯示 QQQ 約下跌 2.02%、SMH 約下跌 4.98%，但 SPY 約下跌 0.33%、IWM 約下跌 0.71%，MSFT 仍約上漲 1.24%；使用者截圖亦顯示 QQQ 670.30、SPY 737.65、SQQQ 47.57。",
+          "implication": "Agent 必須先用 SPY、IWM 與科技／半導體相對強弱區分板塊下跌和全面 risk-off；板塊下跌時不應自動賣出全部 SPY，也不應把 SQQQ 擴大成整體市場空頭押注。",
+          "confidence": 90,
+          "affected_assets": [
+            "QQQ",
+            "SMH",
+            "SPY",
+            "IWM",
+            "SQQQ"
+          ]
+        },
+        {
+          "title": "確認式空頭觸發得到價格延續支持，但沒有成交績效證據",
+          "evidence": "前次盤中規則要求 QQQ 跌破 676 並無法快速收復後才考慮分批增加 SQQQ；本輪 QQQ 已進一步降至約 668 至 670，SQQQ 由前次截圖的 46.12 上升至本次 47.57，但使用者未確認加碼成交。",
+          "implication": "可以保留『跌破確認後才分批』的訊號規則，但不得將未成交的反事實部位記成獲利，也不得據此提高 Agent 命中率。",
+          "confidence": 88,
+          "affected_assets": [
+            "QQQ",
+            "SQQQ"
+          ]
+        },
+        {
+          "title": "SQQQ 接近盤中高點時追價風險上升",
+          "evidence": "公開報價截止時 SQQQ 約 47.96、盤中高點約 47.98且單日約上漲 6.06%；同時 7 月 28 至 29 日 FOMC 會議正在進行，事件反轉與隔夜跳空風險提高。",
+          "implication": "反向三倍部位應採分批、價格確認與最大權重限制；接近盤中高點時優先保護既有部位，不以單日跌幅擴大為理由追價。",
+          "confidence": 92,
+          "affected_assets": [
+            "SQQQ",
+            "QQQ",
+            "CASH"
+          ]
+        }
+      ],
+      "committee_changes": [
+        "所有方向性提案必須先把行情分類為科技／半導體板塊下跌或全面 risk-off，並列出 SPY、IWM、QQQ、SMH 的同步證據。",
+        "SQQQ 初始戰術權重以 10% 為上限；只有完成價格確認且不是追逐盤中高點時，才可在整體政策上限內分批增加。",
+        "盤中觀察一律標記 too_early，不得建立完成收盤績效點，不得把未確認成交計入策略或 Agent 績效。",
+        "FOMC、CPI或大型科技財報等高跳空事件前，槓桿／反向部位必須說明隔夜持有必要性與退出條件。"
+      ],
+      "member_assessment": "現有 Macro、Technical、Risk 與 Learning 角色足以處理本輪資訊，但 Technical 和 Portfolio 必須加入市場廣度分類與分批觸發規則，避免把科技板塊賣壓錯判為整體市場崩跌。",
+      "skill_assessment": "目前不需新增 Codex skill；應優先把盤中訊號分類、未成交隔離與事件風險規則納入既有 Agent 政策和結構化知識。",
+      "warnings": [
+        "本紀錄是盤中 provisional 學習，不是 2026-07-28 完整收盤績效。",
+        "使用者沒有確認本輪加碼成交，因此不得計算假設外的實際獲利或 Agent 命中率。",
+        "公開報價與券商截圖存在分鐘級時間差，所有價格只作當時市場狀態佐證。",
+        "SQQQ 每日反向三倍且每日重設，可能因反彈、跳空和路徑磨損快速虧損。"
+      ]
+    }
+  },
+  {
     "archive_id": "policy-20260726T072038Z",
     "committee": {
       "schema_version": "1.0",
@@ -9572,8 +9634,49 @@
   {
     "archive_id": "review-20260724T031844Z",
     "decision_review": {
-      "generated_at": "2026-07-24T03:19:58Z",
-      "evaluation_end": "2026-07-23T20:00:00Z",
+      "starting_value_usd": "6000.00",
+      "ending_value_usd": "6043.04",
+      "profit_loss_usd": "43.04",
+      "assessment": {
+        "verdict": "too_early_to_validate",
+        "summary": "從建議快照到同一交易日收盤，假設組合為正報酬；AMD、PLTR 與 SOXL 是主要正貢獻，NVDA 與 ERX 為負貢獻。評估期間只有約 2 小時 17 分，仍不足以判定原始決策整體正確；依更新後政策，必須在第 2 至第 3 個交易日內完成正式驗證，且每週至少完成兩次決策檢視。",
+        "supported_points": [
+          "財報前高波動科技曝險在評估期間產生正貢獻。",
+          "SOXL 放大半導體反彈的短線表達在評估期間有效。"
+        ],
+        "challenged_points": [
+          "ERX 未延續原油風險溢價帶來的正向貢獻。",
+          "NVDA 的相對強勢論點在評估期間未轉化為正報酬。",
+          "極短評估窗不足以檢驗事件催化或風險界線；最遲須在第 3 個交易日重新決策。"
+        ]
+      },
+      "methodology": {
+        "pricing_source": "Yahoo Finance via yfinance",
+        "assumptions": [
+          "假設在原建議市場快照價格按目標美元金額建立碎股部位。",
+          "以 yfinance 在 2026-07-24T03:18:44.509208Z 回傳的最新 2026-07-23 收盤價評價。",
+          "未計入手續費、買賣價差、滑價、稅負、匯率或融資成本。",
+          "現金報酬設為零。"
+        ],
+        "warnings": [
+          "這是未成交建議的假設績效，不是實際帳戶報酬。",
+          "2026-07-24 美股正常盤在評估產生時尚未開盤，因此本紀錄不是 7 月 24 日完整交易日績效。",
+          "Yahoo Finance 資料可能延遲；任何人工交易前仍須向券商核對價格。"
+        ]
+      },
+      "reviewed_run_id": "manual-20260724T014200+0800",
+      "committee_rerun": {
+        "requested_at": "2026-07-24T03:19:15Z",
+        "github_actions_run_id": "30063924394",
+        "status": "rejected",
+        "reason": "GitHub Actions 未設定 OPENAI_API_KEY；安全閘門在任何模型呼叫或資料寫入前中止。",
+        "recommendation_changed": false
+      },
+      "return_percent": "0.7173",
+      "evaluation_start": "2026-07-23T17:43:21.745224Z",
+      "schema_version": "1.0",
+      "status": "hypothetical",
+      "review_id": "review-20260724T031844Z",
       "positions": [
         {
           "symbol": "AMD",
@@ -9639,50 +9742,9 @@
           "ending_value_usd": "300.00"
         }
       ],
-      "review_id": "review-20260724T031844Z",
-      "status": "hypothetical",
-      "currency": "USD",
-      "profit_loss_usd": "43.04",
-      "return_percent": "0.7173",
-      "evaluation_start": "2026-07-23T17:43:21.745224Z",
-      "committee_rerun": {
-        "requested_at": "2026-07-24T03:19:15Z",
-        "github_actions_run_id": "30063924394",
-        "status": "rejected",
-        "reason": "GitHub Actions 未設定 OPENAI_API_KEY；安全閘門在任何模型呼叫或資料寫入前中止。",
-        "recommendation_changed": false
-      },
-      "starting_value_usd": "6000.00",
-      "assessment": {
-        "verdict": "too_early_to_validate",
-        "summary": "從建議快照到同一交易日收盤，假設組合為正報酬；AMD、PLTR 與 SOXL 是主要正貢獻，NVDA 與 ERX 為負貢獻。評估期間只有約 2 小時 17 分，仍不足以判定原始決策整體正確；依更新後政策，必須在第 2 至第 3 個交易日內完成正式驗證，且每週至少完成兩次決策檢視。",
-        "supported_points": [
-          "財報前高波動科技曝險在評估期間產生正貢獻。",
-          "SOXL 放大半導體反彈的短線表達在評估期間有效。"
-        ],
-        "challenged_points": [
-          "ERX 未延續原油風險溢價帶來的正向貢獻。",
-          "NVDA 的相對強勢論點在評估期間未轉化為正報酬。",
-          "極短評估窗不足以檢驗事件催化或風險界線；最遲須在第 3 個交易日重新決策。"
-        ]
-      },
-      "reviewed_run_id": "manual-20260724T014200+0800",
-      "ending_value_usd": "6043.04",
-      "methodology": {
-        "pricing_source": "Yahoo Finance via yfinance",
-        "assumptions": [
-          "假設在原建議市場快照價格按目標美元金額建立碎股部位。",
-          "以 yfinance 在 2026-07-24T03:18:44.509208Z 回傳的最新 2026-07-23 收盤價評價。",
-          "未計入手續費、買賣價差、滑價、稅負、匯率或融資成本。",
-          "現金報酬設為零。"
-        ],
-        "warnings": [
-          "這是未成交建議的假設績效，不是實際帳戶報酬。",
-          "2026-07-24 美股正常盤在評估產生時尚未開盤，因此本紀錄不是 7 月 24 日完整交易日績效。",
-          "Yahoo Finance 資料可能延遲；任何人工交易前仍須向券商核對價格。"
-        ]
-      },
-      "schema_version": "1.0"
+      "generated_at": "2026-07-24T03:19:58Z",
+      "evaluation_end": "2026-07-23T20:00:00Z",
+      "currency": "USD"
     }
   }
 ]
