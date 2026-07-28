@@ -2803,6 +2803,9 @@
       "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001046179.json"
     }
   ],
+  "research_evidence": [],
+  "research_mode": null,
+  "research_generated_at": null,
   "warnings": [
     "Yahoo Finance 資料可能延遲，僅供研究；下單前必須向券商核對價格。"
   ]

@@ -1361,6 +1361,47 @@
             <ul class="rebalance-warnings">${renderList(market.warnings)}</ul>
           </section>
 
+          <section class="panel learning" id="market-survey">
+            <header class="panel-header">
+              <div>
+                <span class="section-kicker">Grounded Market Survey</span>
+                <h2>本輪市場與全球情勢調查</h2>
+              </div>
+              <span class="panel-meta">${escapeHtml(
+                market.research_mode === "non_trading_day_survey"
+                  ? "休市日全面調查"
+                  : market.research_mode === "completed_session_review"
+                    ? "完成交易日複核"
+                    : "等待下一輪調查",
+              )}<br />${escapeHtml(dateTime(market.research_generated_at || market.generated_at))}</span>
+            </header>
+            ${
+              (market.research_evidence || []).length
+                ? `
+                  <div class="learning-grid">
+                    ${market.research_evidence
+                      .map(
+                        (item) => `
+                          <article class="learning-card">
+                            <h3>${escapeHtml(item.title)}</h3>
+                            <p>${escapeHtml(item.summary)}</p>
+                            <p><strong>3–7 日關聯</strong>${escapeHtml(item.market_relevance)}</p>
+                            <div class="reason-meta">
+                              <span>${escapeHtml(item.category)} · ${escapeHtml(item.region)}</span>
+                              <a href="${escapeHtml(item.source_url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.source_title)}</a>
+                            </div>
+                          </article>`,
+                      )
+                      .join("")}
+                  </div>`
+                : `
+                  <div class="readiness-verdict research_only">
+                    <strong>尚無完成的即時網路調查</strong>
+                    <p>目前顯示上一份成功配置；下一輪端到端流程完成後才會加入可驗證來源。</p>
+                  </div>`
+            }
+          </section>
+
           <section class="panel learning" id="learning">
             <header class="panel-header">
               <div>
