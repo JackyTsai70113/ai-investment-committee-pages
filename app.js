@@ -337,6 +337,7 @@
       provider_rpm_limit: "每分鐘請求數（RPM）",
       provider_tpm_limit: "每分鐘 Token 數（TPM）",
       provider_daily_quota: "當日模型配額",
+      provider_plan_or_billing_quota: "方案／計費配額不可用",
       provider_model_capacity: "模型容量不足",
       provider_auth: "模型驗證／權限",
       provider_invalid_request: "無效模型請求",
