@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0",
-  "run_id": "policy-20260726T072038Z",
-  "generated_at": "2026-07-26T07:20:38.640083Z",
-  "data_cutoff": "2026-07-25T10:00:20.353794Z",
+  "run_id": "20260729T011318Z",
+  "generated_at": "2026-07-29T01:13:18.709253Z",
+  "data_cutoff": "2026-07-29T01:10:51.913502Z",
   "status": "live",
   "capital_usd": "6000.00",
-  "model_score": 94,
-  "model_score_reason": "方向一致度 94/100；10 位提案委員按信心加權，0 項協商後否決仍未解除，扣除 0 分。 本輪配置另由確定性短窗報酬政策覆寫；此分數不代表現金配置品質或獲利機率。",
-  "risk_level": "low",
-  "expected_horizon": "3 與 7 個完成交易日滾動檢視",
+  "model_score": 95,
+  "model_score_reason": "方向一致度 95/100；10 位提案委員按信心加權，0 項協商後否決仍未解除，扣除 0 分。",
+  "risk_level": "high",
+  "expected_horizon": "3 trading days",
   "allocations": [
     {
       "symbol": "CASH",
@@ -16,38 +16,44 @@
       "target_weight": "1",
       "target_amount_usd": "6000.00",
       "action": "hold",
-      "note": "保證式正報酬目標無法由市場風險資產滿足；在使用者放寬為機率型目標前，風險水位維持 0%。"
+      "note": "依據風控政策中短視窗績效與滾動樣本未達標之強制規定（fail_closed_symbol），且面對科技半導體回檔與 risk_off 體制，維持 100% 現金以保護初始 6,000 美元本金免受路徑磨損與流動性衝擊。"
     }
   ],
   "top_reasons": [
     {
       "id": 1,
-      "title": "無法誠實保證 3／7 日正報酬",
-      "summary": "任何市場風險資產都可能在 3 或 7 個交易日內虧損；把目標寫成保證會製造不存在的確定性，因此確定性風控閘門拒絕所有風險曝險。",
-      "confidence": 100,
-      "category": "policy",
+      "title": "大盤與技術結構偏向空頭防守",
+      "summary": "市場快照顯示 SPY 20 日報酬為 -0.018895% 且低於 50 日均線 -0.536669%，整體宏觀與技術體制判定為 risk_off。",
+      "confidence": 85,
+      "category": "technical",
       "affected_assets": [
-        "CASH"
+        "SPY",
+        "QQQ"
       ],
       "source_urls": [
-        "https://www.investor.gov/build-wealth-over-time-through-saving-and-investing"
+        "https://finance.yahoo.com/"
       ]
     },
     {
       "id": 2,
-      "title": "100% 現金是目前唯一的 fail-closed 配置",
-      "summary": "政策要求無法證明正報酬時水位歸零；因此本輪將股票、ETF、槓桿與反向產品的合計權重限制為 0%，研究資金全部保留為 CASH。",
-      "confidence": 100,
-      "category": "risk",
+      "title": "半導體與高 Beta 科技板塊重挫",
+      "summary": "半導體 ETF (SMH) 下跌 3.45%、槓桿半導體 (SOXL) 重挫 14.52%，AMD 與 PLTR 分別下跌 8.15% 與 6.08%，顯示高風險資產面臨強烈回撤壓力。",
+      "confidence": 90,
+      "category": "momentum",
       "affected_assets": [
-        "CASH"
+        "SMH",
+        "SOXL",
+        "AMD",
+        "PLTR"
       ],
-      "source_urls": []
+      "source_urls": [
+        "https://finance.yahoo.com/"
+      ]
     },
     {
       "id": 3,
-      "title": "有效收盤樣本仍不足",
-      "summary": "目前績效檔只有 2 個明確標記且去重的完成交易日；政策要求至少 20 個完整視窗後才可評估短窗優勢，現階段不足以支持重新承擔風險。",
+      "title": "滾動視窗樣本數不足強制執行保險防守",
+      "summary": "政策規定短期績效必須分別使用 3 與 7 個完成交易日的滾動視窗評估，目前樣本完成數未達標，必須強制採用 fail_closed_symbol (CASH)。",
       "confidence": 100,
       "category": "policy",
       "affected_assets": [
@@ -57,31 +63,52 @@
     },
     {
       "id": 4,
-      "title": "3 日滾動績效尚不能驗證",
-      "summary": "目前完整 3 日視窗數為 0，正視窗數為 0；沒有完整樣本就不能把單日結果外推成可重複的 3 日優勢。",
-      "confidence": 100,
-      "category": "risk",
+      "title": "利率水準維持與評價調整壓力",
+      "summary": "聯準會將聯邦基金利率目標維持在 3.50% 至 3.75%，伴隨潛在升息定價，對高倍數成長與科技資產的評價面形成壓抑。",
+      "confidence": 80,
+      "category": "macro",
       "affected_assets": [
-        "CASH"
+        "TLT",
+        "SPY",
+        "QQQ"
       ],
-      "source_urls": []
+      "source_urls": [
+        "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+      ]
     },
     {
       "id": 5,
-      "title": "7 日滾動績效尚不能驗證",
-      "summary": "目前完整 7 日視窗數為 0，正視窗數為 0；尚無證據可證明策略跨一週持續為正。",
-      "confidence": 100,
-      "category": "risk",
+      "title": "地緣政治與能源供應尾端風險",
+      "summary": "中東地區持續的地緣政治對抗對荷姆茲海峽的能源運輸與全球通膨構成潛在尾端風險，加劇市場不確定性。",
+      "confidence": 75,
+      "category": "news",
       "affected_assets": [
-        "CASH"
+        "XLE",
+        "CL=F"
       ],
-      "source_urls": []
+      "source_urls": [
+        "https://ofac.treasury.gov/recent-actions"
+      ]
     },
     {
       "id": 6,
-      "title": "交易摩擦尚未納入淨績效",
-      "summary": "目前研究指數尚未保存價差、滑價、費用、稅負與換手成本；在成本未知時，小幅毛利不能視為可實現的正報酬，必須先保持零風險水位。",
+      "title": "槓桿 ETF 路徑磨損與高波動風險",
+      "summary": "SOXL 20 日年化波動率高達 169.65%，在下行趨勢中每日重設會產生嚴重的複利減損與路徑磨損，不宜在低能見度期間持有。",
       "confidence": 95,
+      "category": "risk",
+      "affected_assets": [
+        "SOXL",
+        "TQQQ"
+      ],
+      "source_urls": [
+        "https://finance.yahoo.com/"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "歷史現金防守有效規避回撤",
+      "summary": "在先前科技重挫期間，維持 100% 現金水位成功保護資產免受單日大跌與流動性摩擦衝擊，具備可重複驗證的防禦價值。",
+      "confidence": 90,
       "category": "liquidity",
       "affected_assets": [
         "CASH"
@@ -89,64 +116,59 @@
       "source_urls": []
     },
     {
-      "id": 7,
-      "title": "槓桿或反向 ETF 不能提供多日保證",
-      "summary": "槓桿與反向 ETF 每日重設，超過一天可能因路徑與波動而偏離直覺倍數；它們不能用來保證 3／7 日組合報酬，因此本輪權重為零。",
-      "confidence": 100,
-      "category": "risk",
+      "id": 8,
+      "title": "機構持股與申報顯示防守態勢",
+      "summary": "透過 SEC 13F 與最新 filing 事件觀察，機構與內部人正處於調節與防守階段，缺乏即時的強多頭支撐訊號。",
+      "confidence": 80,
+      "category": "valuation",
       "affected_assets": [
-        "SOXL",
-        "SOXS",
-        "TQQQ",
-        "SQQQ"
+        "NVDA",
+        "AMD",
+        "TSLA"
       ],
       "source_urls": [
-        "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-alerts/sec"
+        "https://www.sec.gov/search-filings/edgar-application-programming-interfaces"
       ]
     },
     {
-      "id": 8,
-      "title": "官方事件日曆仍未進入確定性風控",
-      "summary": "Fed、經濟數據、交易所日曆等 point-in-time 事件尚未完整程式化進入每輪決策；無法量化事件跳空風險時，不符合嚴格保本目標。",
-      "confidence": 95,
-      "category": "macro",
-      "affected_assets": [
-        "CASH"
-      ],
-      "source_urls": []
-    },
-    {
       "id": 9,
-      "title": "波動期限結構資料仍不完整",
-      "summary": "目前風控尚未把 VIX9D、VIX 與 VIX3M 的期限結構正式納入每次快照；只看單點 VIX 無法充分掌握 3／7 日尾端風險。",
-      "confidence": 95,
-      "category": "risk",
+      "title": "AI 資本支出循環與盈利實現檢驗",
+      "summary": "雖然 2026 年預期大型科技公司 AI 資本支出高達 7250 億美元，但市場正重新定價短期盈利實現與高估值的匹配風險。",
+      "confidence": 75,
+      "category": "valuation",
       "affected_assets": [
-        "CASH"
+        "NVDA",
+        "MSFT",
+        "META",
+        "AVGO"
       ],
       "source_urls": [
-        "https://www.cboe.com/tradable-products/vix/term-structure"
+        "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000060/nvda-20260628.htm"
       ]
     },
     {
       "id": 10,
-      "title": "硬排除清單與資金隔離維持不變",
-      "summary": "AMZN、GOOGL、QQQ、VTI 繼續只可作基準或風險訊號，不可購買或推薦；本輪 100% CASH 也避免與既有長期部位形成重複曝險。",
-      "confidence": 100,
-      "category": "policy",
+      "title": "波動率指標反映正常偏高之避險需求",
+      "summary": "VIX 指數處於 18.21，顯示市場隱含波動率保持在正常偏高水位，風險資產回撤壓力尚未解除。",
+      "confidence": 85,
+      "category": "risk",
       "affected_assets": [
-        "CASH"
+        "^VIX"
       ],
-      "source_urls": []
+      "source_urls": [
+        "https://www.cboe.com/tradable-products/vix/"
+      ]
     }
   ],
   "invalidation_conditions": [
-    "使用者明確取消正報酬保證，改採可量化但不保證的風險預算。",
-    "至少累積政策要求的完整 3／7 日視窗，納入交易成本、基準與事件風險後，再由委員會重新驗證。"
+    "SPY 與 QQQ 帶量突破 50 日均線並站穩，且 20 日報酬率轉為正值。",
+    "完成交易日的滾動視窗樣本數正式達到政策門檻（20個完成視窗），且勝率與淨利邊際符合政策標準。",
+    "VIX 指數顯著回落至 15 以下，市場整體宏觀與技術體制從 risk_off 轉為 risk_on。"
   ],
   "major_risks": [
-    "CASH 在研究指數按零報酬處理，無法滿足每天或每個短窗都必須為正的要求。",
-    "長期停留現金會承受通膨與機會成本；非 FDIC 現金替代品仍可能有本金風險。"
+    "若市場情緒與技術面快速反轉，全面現金配置將面臨機會成本與資產閒置風險。",
+    "地緣政治衝突突然升溫或能源價格暴衝可能引發跨日隔夜跳空風險。",
+    "短天期滾動視窗樣本數不足，無法透過統計顯著性完全排除突發性反彈的錯失風險。"
   ],
-  "disclaimer": "研究建議，尚未執行。正報酬無法保證；100% CASH 代表停止承擔市場風險，在研究指數按零報酬建模，不代表利息、存款保障或正報酬。"
+  "disclaimer": "研究建議，尚未執行。下單前須由使用者核對券商即時價格、成本與風險；系統不存取券商、不自動下單。"
 }

@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0",
-  "run_id": "30411154911",
-  "started_at": "2026-07-29T00:27:07.406853Z",
-  "completed_at": "2026-07-29T01:09:07.090730Z",
-  "status": "failure",
-  "terminal_failure_category": "model_capacity",
-  "total_requests": 21,
-  "total_retries": 5,
-  "total_estimated_input_tokens": 245709,
-  "elapsed_seconds": "2519.684",
+  "run_id": "30413302032",
+  "started_at": "2026-07-29T01:10:50.327481Z",
+  "completed_at": "2026-07-29T01:27:27.510237Z",
+  "status": "success",
+  "terminal_failure_category": "none",
+  "total_requests": 16,
+  "total_retries": 0,
+  "total_estimated_input_tokens": 135243,
+  "elapsed_seconds": "997.183",
   "requests": [
     {
       "request_number": 1,
@@ -16,13 +16,13 @@
       "provider": "gemini",
       "model": "gemini-2.5-flash-lite",
       "attempt": 1,
-      "estimated_input_tokens": 604,
+      "estimated_input_tokens": 603,
       "limiter_wait_seconds": "0.0",
-      "duration_ms": 15612,
+      "duration_ms": 9899,
       "outcome": "success",
       "failure_category": "none",
       "retry_delay_seconds": null,
-      "started_at": "2026-07-29T00:27:26.508954Z"
+      "started_at": "2026-07-29T01:11:04.490289Z"
     },
     {
       "request_number": 2,
@@ -30,13 +30,13 @@
       "provider": "gemini",
       "model": "gemini-3.5-flash-lite",
       "attempt": 1,
-      "estimated_input_tokens": 3818,
-      "limiter_wait_seconds": "49.387",
-      "duration_ms": 8172,
+      "estimated_input_tokens": 4073,
+      "limiter_wait_seconds": "55.1",
+      "duration_ms": 6059,
       "outcome": "success",
       "failure_category": "none",
       "retry_delay_seconds": null,
-      "started_at": "2026-07-29T00:28:31.543472Z"
+      "started_at": "2026-07-29T01:12:09.546357Z"
     },
     {
       "request_number": 3,
@@ -44,13 +44,13 @@
       "provider": "gemini",
       "model": "gemini-3.5-flash-lite",
       "attempt": 1,
-      "estimated_input_tokens": 7310,
-      "limiter_wait_seconds": "56.791",
-      "duration_ms": 3337,
+      "estimated_input_tokens": 7491,
+      "limiter_wait_seconds": "58.904",
+      "duration_ms": 4071,
       "outcome": "success",
       "failure_category": "none",
       "retry_delay_seconds": null,
-      "started_at": "2026-07-29T00:29:36.583917Z"
+      "started_at": "2026-07-29T01:13:14.570140Z"
     },
     {
       "request_number": 4,
@@ -58,13 +58,13 @@
       "provider": "gemini",
       "model": "gemini-3.5-flash-lite",
       "attempt": 1,
-      "estimated_input_tokens": 6522,
-      "limiter_wait_seconds": "61.594",
-      "duration_ms": 2162,
+      "estimated_input_tokens": 6567,
+      "limiter_wait_seconds": "60.86",
+      "duration_ms": 2383,
       "outcome": "success",
       "failure_category": "none",
       "retry_delay_seconds": null,
-      "started_at": "2026-07-29T00:30:41.645885Z"
+      "started_at": "2026-07-29T01:14:19.592041Z"
     },
     {
       "request_number": 5,
@@ -72,13 +72,13 @@
       "provider": "gemini",
       "model": "gemini-3.5-flash-lite",
       "attempt": 1,
-      "estimated_input_tokens": 4350,
-      "limiter_wait_seconds": "62.838",
-      "duration_ms": 2520,
+      "estimated_input_tokens": 5213,
+      "limiter_wait_seconds": "62.616",
+      "duration_ms": 2032,
       "outcome": "success",
       "failure_category": "none",
       "retry_delay_seconds": null,
-      "started_at": "2026-07-29T00:31:46.664964Z"
+      "started_at": "2026-07-29T01:15:24.598708Z"
     },
     {
       "request_number": 6,
@@ -86,13 +86,13 @@
       "provider": "gemini",
       "model": "gemini-3.5-flash-lite",
       "attempt": 1,
-      "estimated_input_tokens": 7597,
-      "limiter_wait_seconds": "62.48",
-      "duration_ms": 2275,
+      "estimated_input_tokens": 7979,
+      "limiter_wait_seconds": "62.967",
+      "duration_ms": 2159,
       "outcome": "success",
       "failure_category": "none",
       "retry_delay_seconds": null,
-      "started_at": "2026-07-29T00:32:51.728525Z"
+      "started_at": "2026-07-29T01:16:29.659310Z"
     },
     {
       "request_number": 7,
@@ -100,13 +100,13 @@
       "provider": "gemini",
       "model": "gemini-3.5-flash-lite",
       "attempt": 1,
-      "estimated_input_tokens": 5027,
-      "limiter_wait_seconds": "62.725",
-      "duration_ms": 1576,
+      "estimated_input_tokens": 5835,
+      "limiter_wait_seconds": "62.841",
+      "duration_ms": 1873,
       "outcome": "success",
       "failure_category": "none",
       "retry_delay_seconds": null,
-      "started_at": "2026-07-29T00:33:56.792408Z"
+      "started_at": "2026-07-29T01:17:34.696037Z"
     },
     {
       "request_number": 8,
@@ -114,13 +114,13 @@
       "provider": "gemini",
       "model": "gemini-3.5-flash-lite",
       "attempt": 1,
-      "estimated_input_tokens": 3917,
-      "limiter_wait_seconds": "63.424",
-      "duration_ms": 1806,
+      "estimated_input_tokens": 4455,
+      "limiter_wait_seconds": "63.127",
+      "duration_ms": 1665,
       "outcome": "success",
       "failure_category": "none",
       "retry_delay_seconds": null,
-      "started_at": "2026-07-29T00:35:01.800972Z"
+      "started_at": "2026-07-29T01:18:39.759680Z"
     },
     {
       "request_number": 9,
@@ -128,13 +128,13 @@
       "provider": "gemini",
       "model": "gemini-3.5-flash-lite",
       "attempt": 1,
-      "estimated_input_tokens": 4974,
-      "limiter_wait_seconds": "63.194",
-      "duration_ms": 2307,
+      "estimated_input_tokens": 5793,
+      "limiter_wait_seconds": "63.334",
+      "duration_ms": 1880,
       "outcome": "success",
       "failure_category": "none",
       "retry_delay_seconds": null,
-      "started_at": "2026-07-29T00:36:06.824976Z"
+      "started_at": "2026-07-29T01:19:44.792548Z"
     },
     {
       "request_number": 10,
@@ -142,13 +142,13 @@
       "provider": "gemini",
       "model": "gemini-3.5-flash-lite",
       "attempt": 1,
-      "estimated_input_tokens": 4535,
-      "limiter_wait_seconds": "62.693",
-      "duration_ms": 1869,
+      "estimated_input_tokens": 5055,
+      "limiter_wait_seconds": "63.12",
+      "duration_ms": 2229,
       "outcome": "success",
       "failure_category": "none",
       "retry_delay_seconds": null,
-      "started_at": "2026-07-29T00:37:11.829664Z"
+      "started_at": "2026-07-29T01:20:49.800052Z"
     },
     {
       "request_number": 11,
@@ -156,13 +156,13 @@
       "provider": "gemini",
       "model": "gemini-3.5-flash-lite",
       "attempt": 1,
-      "estimated_input_tokens": 4463,
-      "limiter_wait_seconds": "63.131",
-      "duration_ms": 2187,
+      "estimated_input_tokens": 4441,
+      "limiter_wait_seconds": "62.771",
+      "duration_ms": 2271,
       "outcome": "success",
       "failure_category": "none",
       "retry_delay_seconds": null,
-      "started_at": "2026-07-29T00:38:16.872930Z"
+      "started_at": "2026-07-29T01:21:54.819127Z"
     },
     {
       "request_number": 12,
@@ -170,13 +170,13 @@
       "provider": "gemini",
       "model": "gemini-3.5-flash-lite",
       "attempt": 1,
-      "estimated_input_tokens": 7011,
-      "limiter_wait_seconds": "62.813",
-      "duration_ms": 1996,
+      "estimated_input_tokens": 7394,
+      "limiter_wait_seconds": "62.729",
+      "duration_ms": 2480,
       "outcome": "success",
       "failure_category": "none",
       "retry_delay_seconds": null,
-      "started_at": "2026-07-29T00:39:21.904965Z"
+      "started_at": "2026-07-29T01:22:59.883688Z"
     },
     {
       "request_number": 13,
@@ -184,13 +184,13 @@
       "provider": "gemini",
       "model": "gemini-3.5-flash-lite",
       "attempt": 1,
-      "estimated_input_tokens": 4379,
-      "limiter_wait_seconds": "63.004",
-      "duration_ms": 2135,
+      "estimated_input_tokens": 5120,
+      "limiter_wait_seconds": "62.52",
+      "duration_ms": 2161,
       "outcome": "success",
       "failure_category": "none",
       "retry_delay_seconds": null,
-      "started_at": "2026-07-29T00:40:26.920934Z"
+      "started_at": "2026-07-29T01:24:04.933777Z"
     },
     {
       "request_number": 14,
@@ -198,13 +198,13 @@
       "provider": "gemini",
       "model": "gemini-3.5-flash-lite",
       "attempt": 1,
-      "estimated_input_tokens": 20816,
-      "limiter_wait_seconds": "62.863",
-      "duration_ms": 2833,
+      "estimated_input_tokens": 20878,
+      "limiter_wait_seconds": "62.837",
+      "duration_ms": 7610,
       "outcome": "success",
       "failure_category": "none",
       "retry_delay_seconds": null,
-      "started_at": "2026-07-29T00:41:31.984912Z"
+      "started_at": "2026-07-29T01:25:09.976237Z"
     },
     {
       "request_number": 15,
@@ -212,97 +212,27 @@
       "provider": "gemini",
       "model": "gemini-3.5-flash-lite",
       "attempt": 1,
-      "estimated_input_tokens": 20802,
-      "limiter_wait_seconds": "62.167",
-      "duration_ms": 3383,
+      "estimated_input_tokens": 20864,
+      "limiter_wait_seconds": "57.39",
+      "duration_ms": 3425,
       "outcome": "success",
       "failure_category": "none",
       "retry_delay_seconds": null,
-      "started_at": "2026-07-29T00:42:37.016937Z"
+      "started_at": "2026-07-29T01:26:15.032061Z"
     },
     {
       "request_number": 16,
       "operation": "cio",
       "provider": "gemini",
-      "model": "gemini-3.5-flash",
+      "model": "gemini-3.5-flash-lite",
       "attempt": 1,
-      "estimated_input_tokens": 23264,
-      "limiter_wait_seconds": "61.616",
-      "duration_ms": 4574,
-      "outcome": "retry",
-      "failure_category": "model_capacity",
-      "retry_delay_seconds": "60.255",
-      "started_at": "2026-07-29T00:43:42.056944Z"
-    },
-    {
-      "request_number": 17,
-      "operation": "cio",
-      "provider": "gemini",
-      "model": "gemini-3.5-flash",
-      "attempt": 2,
-      "estimated_input_tokens": 23264,
-      "limiter_wait_seconds": "60.426",
-      "duration_ms": 5267,
-      "outcome": "retry",
-      "failure_category": "model_capacity",
-      "retry_delay_seconds": "120.063",
-      "started_at": "2026-07-29T00:44:47.112800Z"
-    },
-    {
-      "request_number": 18,
-      "operation": "cio",
-      "provider": "gemini",
-      "model": "gemini-3.5-flash",
-      "attempt": 3,
-      "estimated_input_tokens": 23264,
-      "limiter_wait_seconds": "120.063",
-      "duration_ms": 6967,
-      "outcome": "retry",
-      "failure_category": "model_capacity",
-      "retry_delay_seconds": "240.772",
-      "started_at": "2026-07-29T00:46:52.520929Z"
-    },
-    {
-      "request_number": 19,
-      "operation": "cio",
-      "provider": "gemini",
-      "model": "gemini-3.5-flash",
-      "attempt": 4,
-      "estimated_input_tokens": 23264,
-      "limiter_wait_seconds": "240.772",
-      "duration_ms": 3558,
-      "outcome": "retry",
-      "failure_category": "model_capacity",
-      "retry_delay_seconds": "480.963",
-      "started_at": "2026-07-29T00:51:00.334938Z"
-    },
-    {
-      "request_number": 20,
-      "operation": "cio",
-      "provider": "gemini",
-      "model": "gemini-3.5-flash",
-      "attempt": 5,
-      "estimated_input_tokens": 23264,
-      "limiter_wait_seconds": "480.963",
-      "duration_ms": 1041,
-      "outcome": "retry",
-      "failure_category": "model_capacity",
-      "retry_delay_seconds": "600.0",
-      "started_at": "2026-07-29T00:59:04.913650Z"
-    },
-    {
-      "request_number": 21,
-      "operation": "cio",
-      "provider": "gemini",
-      "model": "gemini-3.5-flash",
-      "attempt": 6,
-      "estimated_input_tokens": 23264,
-      "limiter_wait_seconds": "600.0",
-      "duration_ms": 1034,
-      "outcome": "failure",
-      "failure_category": "model_capacity",
+      "estimated_input_tokens": 23482,
+      "limiter_wait_seconds": "61.573",
+      "duration_ms": 7440,
+      "outcome": "success",
+      "failure_category": "none",
       "retry_delay_seconds": null,
-      "started_at": "2026-07-29T01:09:06.055413Z"
+      "started_at": "2026-07-29T01:27:20.056079Z"
     }
   ]
 }

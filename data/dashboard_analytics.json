@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-29T01:09:07.659868Z",
-  "data_cutoff": "2026-07-25T10:00:20.353794Z",
+  "generated_at": "2026-07-29T01:27:32.134769Z",
+  "data_cutoff": "2026-07-29T01:10:51.913502Z",
   "portfolio_health": {
-    "score": 61,
-    "grade": "caution",
-    "summary": "現金與低槓桿使組合本身具防護；最新模型管線失敗，目前沿用上一份決策，委員共識高，但績效樣本仍不足。健康分數不能解讀為獲利機率。",
+    "score": 76,
+    "grade": "stable",
+    "summary": "現金與低槓桿使組合本身具防護；最新模型管線成功完成，委員共識高，但績效樣本仍不足。健康分數不能解讀為獲利機率。",
     "components": [
       {
         "component": "分散度",
@@ -27,22 +27,22 @@
       },
       {
         "component": "管線可靠性",
-        "score": 5,
+        "score": 20,
         "maximum": 20,
-        "explanation": "最新正式委員會失敗，目前沿用上一份決策。"
+        "explanation": "最新正式委員會成功完成。"
       },
       {
         "component": "證據與共識",
         "score": 12,
         "maximum": 20,
-        "explanation": "委員共識度 94/100；研究準備度 not_ready。"
+        "explanation": "委員共識度 95/100；研究準備度 not_ready。"
       }
     ]
   },
   "performance": {
-    "completed_points": 3,
-    "completed_intervals": 2,
-    "distinct_completed_sessions": 2,
+    "completed_points": 4,
+    "completed_intervals": 3,
+    "distinct_completed_sessions": 3,
     "ending_value_usd": "6055.77",
     "total_return_percent": "0.9295",
     "latest_3_session_return_percent": null,
@@ -62,100 +62,100 @@
     {
       "rank": 1,
       "agent": "liquidity",
-      "evaluated_calls": 2,
-      "correct_calls": 2,
+      "evaluated_calls": 3,
+      "correct_calls": 3,
       "hit_rate_percent": "100.0000",
-      "average_confidence": "76.6667",
+      "average_confidence": "81.2500",
       "status": "too_early",
       "note": "以相鄰決策點的 SPY 方向做粗略 shadow 評價；少於 20 次不得調整投票權重，此命中率不是個別標的獲利勝率。"
     },
     {
       "rank": 2,
-      "agent": "earnings",
-      "evaluated_calls": 2,
+      "agent": "ownership",
+      "evaluated_calls": 1,
       "correct_calls": 1,
-      "hit_rate_percent": "50.0000",
-      "average_confidence": "71.0000",
+      "hit_rate_percent": "100.0000",
+      "average_confidence": "55.0000",
       "status": "too_early",
       "note": "以相鄰決策點的 SPY 方向做粗略 shadow 評價；少於 20 次不得調整投票權重，此命中率不是個別標的獲利勝率。"
     },
     {
       "rank": 3,
       "agent": "news",
-      "evaluated_calls": 2,
-      "correct_calls": 1,
-      "hit_rate_percent": "50.0000",
-      "average_confidence": "66.6667",
+      "evaluated_calls": 3,
+      "correct_calls": 2,
+      "hit_rate_percent": "66.6667",
+      "average_confidence": "68.7500",
       "status": "too_early",
       "note": "以相鄰決策點的 SPY 方向做粗略 shadow 評價；少於 20 次不得調整投票權重，此命中率不是個別標的獲利勝率。"
     },
     {
       "rank": 4,
       "agent": "portfolio",
-      "evaluated_calls": 2,
-      "correct_calls": 1,
-      "hit_rate_percent": "50.0000",
-      "average_confidence": "67.6667",
+      "evaluated_calls": 3,
+      "correct_calls": 2,
+      "hit_rate_percent": "66.6667",
+      "average_confidence": "69.5000",
       "status": "too_early",
       "note": "以相鄰決策點的 SPY 方向做粗略 shadow 評價；少於 20 次不得調整投票權重，此命中率不是個別標的獲利勝率。"
     },
     {
       "rank": 5,
-      "agent": "etf",
+      "agent": "learning",
       "evaluated_calls": 2,
-      "correct_calls": 0,
-      "hit_rate_percent": "0.0000",
-      "average_confidence": "71.6667",
+      "correct_calls": 1,
+      "hit_rate_percent": "50.0000",
+      "average_confidence": "81.6667",
       "status": "too_early",
       "note": "以相鄰決策點的 SPY 方向做粗略 shadow 評價；少於 20 次不得調整投票權重，此命中率不是個別標的獲利勝率。"
     },
     {
       "rank": 6,
-      "agent": "macro",
-      "evaluated_calls": 2,
-      "correct_calls": 0,
-      "hit_rate_percent": "0.0000",
-      "average_confidence": "74.0000",
+      "agent": "earnings",
+      "evaluated_calls": 3,
+      "correct_calls": 1,
+      "hit_rate_percent": "33.3333",
+      "average_confidence": "72.0000",
       "status": "too_early",
       "note": "以相鄰決策點的 SPY 方向做粗略 shadow 評價；少於 20 次不得調整投票權重，此命中率不是個別標的獲利勝率。"
     },
     {
       "rank": 7,
-      "agent": "momentum",
-      "evaluated_calls": 2,
-      "correct_calls": 0,
-      "hit_rate_percent": "0.0000",
-      "average_confidence": "71.6667",
+      "agent": "etf",
+      "evaluated_calls": 3,
+      "correct_calls": 1,
+      "hit_rate_percent": "33.3333",
+      "average_confidence": "75.0000",
       "status": "too_early",
       "note": "以相鄰決策點的 SPY 方向做粗略 shadow 評價；少於 20 次不得調整投票權重，此命中率不是個別標的獲利勝率。"
     },
     {
       "rank": 8,
-      "agent": "technical",
-      "evaluated_calls": 2,
-      "correct_calls": 0,
-      "hit_rate_percent": "0.0000",
-      "average_confidence": "73.6667",
+      "agent": "macro",
+      "evaluated_calls": 3,
+      "correct_calls": 1,
+      "hit_rate_percent": "33.3333",
+      "average_confidence": "76.7500",
       "status": "too_early",
       "note": "以相鄰決策點的 SPY 方向做粗略 shadow 評價；少於 20 次不得調整投票權重，此命中率不是個別標的獲利勝率。"
     },
     {
       "rank": 9,
-      "agent": "learning",
-      "evaluated_calls": 1,
-      "correct_calls": 0,
-      "hit_rate_percent": "0.0000",
+      "agent": "momentum",
+      "evaluated_calls": 3,
+      "correct_calls": 1,
+      "hit_rate_percent": "33.3333",
       "average_confidence": "75.0000",
       "status": "too_early",
       "note": "以相鄰決策點的 SPY 方向做粗略 shadow 評價；少於 20 次不得調整投票權重，此命中率不是個別標的獲利勝率。"
     },
     {
       "rank": 10,
-      "agent": "ownership",
-      "evaluated_calls": 0,
+      "agent": "technical",
+      "evaluated_calls": 3,
       "correct_calls": 0,
-      "hit_rate_percent": null,
-      "average_confidence": "25.0000",
+      "hit_rate_percent": "0.0000",
+      "average_confidence": "76.5000",
       "status": "too_early",
       "note": "以相鄰決策點的 SPY 方向做粗略 shadow 評價；少於 20 次不得調整投票權重，此命中率不是個別標的獲利勝率。"
     }
