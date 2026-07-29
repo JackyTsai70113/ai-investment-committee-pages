@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0",
-  "run_id": "30431101029",
-  "started_at": "2026-07-29T07:17:48.795308Z",
-  "completed_at": "2026-07-29T07:18:10.707794Z",
+  "run_id": "30477604269",
+  "started_at": "2026-07-29T17:56:49.060860Z",
+  "completed_at": "2026-07-29T17:57:12.144200Z",
   "status": "failure",
   "terminal_failure_category": "invalid_response",
   "total_requests": 1,
   "total_retries": 0,
   "total_estimated_input_tokens": 603,
-  "elapsed_seconds": "21.912",
+  "elapsed_seconds": "23.083",
   "requests": [
     {
       "request_number": 1,
@@ -18,11 +18,11 @@
       "attempt": 1,
       "estimated_input_tokens": 603,
       "limiter_wait_seconds": "0.0",
-      "duration_ms": 8157,
+      "duration_ms": 8055,
       "outcome": "failure",
       "failure_category": "invalid_response",
       "retry_delay_seconds": null,
-      "started_at": "2026-07-29T07:18:02.549528Z"
+      "started_at": "2026-07-29T17:57:04.088500Z"
     }
   ]
 }
