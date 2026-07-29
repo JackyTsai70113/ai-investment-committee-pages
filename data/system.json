@@ -4,8 +4,9 @@
   "updated_at": "2026-07-25T10:07:44.448731Z",
   "environment": "live",
   "latest_commit": "c1f2a32eb2fc8c48afb67e8478f2faf94eb5b0ed",
-  "data_pipeline": "Layer 1 · Investment Committee",
-  "site_pipeline": "Layer 2 · Static Dashboard",
+  "data_pipeline": "Continuous Research-to-Publication",
+  "site_pipeline": "Continuous Research-to-Publication",
+  "committee_strategy_fingerprint": null,
   "execution_policy": "manual only",
   "broker_access": false,
   "automatic_trading": false
