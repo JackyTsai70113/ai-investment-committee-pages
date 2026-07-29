@@ -4,6 +4,153 @@
   const root = document.getElementById("dashboard-root");
   const base = (root?.dataset.base || ".").replace(/\/$/, "");
   const colors = ["#c7f15b", "#67b7ff", "#ae91ff", "#ff9864", "#7ecb83", "#f3f0d8"];
+  const agentProfiles = {
+    macro: {
+      title: "Macro Agent",
+      label: "總體經濟研究員",
+      summary: "判斷利率、通膨、美元與全球經濟環境對美股風險偏好的影響。",
+      responsibility: "分析 Fed、利率、通膨、美元、美債、就業與全球總體風險。",
+      inputs: "官方總經資料、央行訊息、殖利率、美元與已驗證的全球市場事件。",
+      purpose: "避免委員會只看個股，而忽略能同時改變整體市場估值與資金成本的因素。",
+      goal: "提出有資料截止時間的市場方向、風險情境與失效條件。",
+      boundary: "不挑選單一公司，也不假裝擁有未提供的即時總經資料。",
+    },
+    technical: {
+      title: "Technical Agent",
+      label: "技術面研究員",
+      summary: "用價格與成交行為判斷趨勢是否成立，以及何時需要重新驗證。",
+      responsibility: "分析趨勢、均線、成交量、波動與相對強弱；偏空時評估反向工具條件。",
+      inputs: "已完成交易時段的價格特徵、成交量、波動率與相對強度。",
+      purpose: "檢查市場實際走勢是否支持新聞、財報或總經敘事。",
+      goal: "找出趨勢、反轉與失效水位，降低只憑故事配置的風險。",
+      boundary: "不讀不相關的財報全文，也不把單一指標當成必然的買賣訊號。",
+    },
+    momentum: {
+      title: "Momentum Agent",
+      label: "動能與輪動研究員",
+      summary: "比較哪些資產正在領漲或轉弱，評估趨勢延續與擁擠反轉風險。",
+      responsibility: "追蹤相對強度、產業輪動、價格動能與相關產業催化。",
+      inputs: "跨資產價格表現、相對強弱、產業分組與已驗證催化事件。",
+      purpose: "讓短期組合跟隨真正的資金方向，而不是停留在過時的市場領袖。",
+      goal: "辨認可延續的強勢與需要避開的衰退動能。",
+      boundary: "不把過去漲幅直接外推為未來報酬，也不忽略追高與反轉風險。",
+    },
+    news: {
+      title: "News Agent",
+      label: "事件與新聞研究員",
+      summary: "只整理有來源與時間的市場事件，判斷哪些新資訊真正改變投資假設。",
+      responsibility: "驗證事件、來源網址、發布時間及其可能影響的資產。",
+      inputs: "可追溯新聞、官方公告、公司聲明與研究流程提供的引用。",
+      purpose: "把市場雜訊與會改變價格或風險的事件分開。",
+      goal: "提供可查證、具時效性的催化因素與事件風險。",
+      boundary: "不捏造新聞，不補寫未引用事件，也不把傳聞當成已證實事實。",
+    },
+    earnings: {
+      title: "Earnings Agent",
+      label: "財報研究員",
+      summary: "檢查公司成長是否由營收、獲利、成本與財測共同支持。",
+      responsibility: "分析財報、財測、營收、淨利、成本結構與盈利品質。",
+      inputs: "已驗證財報數字、公司財測、法說資訊與可追溯的基本面資料。",
+      purpose: "防止委員會只看股價或題材，卻忽略企業實際賺錢能力。",
+      goal: "找出基本面改善、惡化與市場預期落差。",
+      boundary: "資料不足時必須降低信心，不估造缺失數字或把預測當成已實現結果。",
+    },
+    etf: {
+      title: "ETF Agent",
+      label: "ETF 工具研究員",
+      summary: "比較用哪一種 ETF 表達多空觀點最有效率，並揭露槓桿與每日重設風險。",
+      responsibility: "比較大盤、產業、商品、槓桿與反向 ETF 的曝險效率及路徑風險。",
+      inputs: "ETF 結構、追蹤標的、價格特徵、流動性及委員會的市場方向。",
+      purpose: "避免方向判斷正確，卻因選錯工具、持有時間或每日重設而受損。",
+      goal: "為多頭、空頭或避險情境找出風險可解釋的配置工具。",
+      boundary: "不因市場偏空就強迫持有反向 ETF；必須同時比較現金與反向工具。",
+    },
+    ownership: {
+      title: "Ownership Agent",
+      label: "持股與交易揭露研究員",
+      summary: "檢查機構與內部人揭露，理解持股變化但清楚標示資料延遲。",
+      responsibility: "分析 13F、Form 4、FINRA 與已提供的持股或交易證據。",
+      inputs: "官方申報、監管資料與附有日期的所有權證據。",
+      purpose: "補充價格與財報看不到的機構、內部人及市場結構線索。",
+      goal: "找出有證據支持的持股變化與潛在利益一致性。",
+      boundary: "不把短售量當成空頭未平倉，也不把延遲申報解讀成即時交易。",
+    },
+    liquidity: {
+      title: "Liquidity Agent",
+      label: "流動性研究員",
+      summary: "確認組合能否合理進出，並評估交易摩擦、跳空與現金緩衝。",
+      responsibility: "評估現金、成交流動性、價差、交易摩擦、事件跳空與退出能力。",
+      inputs: "標的流動性特徵、配置金額、波動、事件日程與現金需求。",
+      purpose: "避免紙上報酬看似理想，但實際難以成交、退出或承受跳空。",
+      goal: "讓 6,000 美元策略在合理成本與風險下保持調整能力。",
+      boundary: "不重新分析不必要的公司長文，也不把 buying power 當成可承受風險。",
+    },
+    learning: {
+      title: "Learning Agent",
+      label: "假設驗證研究員",
+      summary: "回看先前判斷與後續證據，將可重複教訓和一次性雜訊分開。",
+      responsibility: "驗證歷次假設、記錄支持與反對證據，更新可復用的委員會知識。",
+      inputs: "歷史決策、完成交易時段績效、先前假設與後續市場證據。",
+      purpose: "防止委員會重複犯錯，或因一兩次偶然結果就過度調整策略。",
+      goal: "只保留能改善下一輪決策、且可被後續資料推翻的教訓。",
+      boundary: "不把相關性當因果，不以未成熟小樣本重設 Agent 權重。",
+    },
+    portfolio: {
+      title: "Portfolio Agent",
+      label: "組合建構研究員",
+      summary: "把不同專家意見轉成總額正確、符合政策且可理解的 6,000 美元配置。",
+      responsibility: "整合專家觀點、集中度、現金、曝險與標的限制，提出配置草案。",
+      inputs: "各研究 Agent 的結構化結論、政策限制、風險預算與策略資金。",
+      purpose: "將分散的市場看法轉成一個可以比較、驗證與審核的組合。",
+      goal: "產生合計 100%、金額合計 6,000 美元且理由一致的配置。",
+      boundary: "不把建議當成成交，不更改實際持股，也不重新吞入全部原始資料。",
+    },
+    risk: {
+      title: "Risk Agent",
+      label: "風險審查員",
+      summary: "從可能虧多少與如何失敗出發，檢查組合是否違反硬性風控。",
+      responsibility: "檢查集中度、槓桿、回撤、跳空、事件風險、停損落差與美元損失。",
+      inputs: "所有提案摘要、配置草案、風險政策、波動與事件資料。",
+      purpose: "在樂觀共識形成後仍保留一個能阻擋不可接受風險的獨立關卡。",
+      goal: "要求可驗證的風險修正；必要時對不合規配置提出否決。",
+      boundary: "不以『一定不虧』作承諾，也不因不確定性就自動把所有風險歸零。",
+    },
+    devil_advocate: {
+      title: "Devil’s Advocate",
+      label: "反方審查員",
+      summary: "刻意建立最強反例，找出多數意見中的盲點、偏誤與未驗證假設。",
+      responsibility: "挑戰共識、隱含假設、資料時效、敘事偏誤與最壞情境。",
+      inputs: "匿名提案摘要、來源證據、失效條件與其他 Agent 沒有處理的風險。",
+      purpose: "降低群體附和，讓 CIO 在決策前必須正面回應最有力的反對意見。",
+      goal: "找出足以改變或限制配置的反證，而不是為反對而反對。",
+      boundary: "不直接取代 CIO 決策；批判必須具體、可驗證並提出必要修正。",
+    },
+    cio: {
+      title: "CIO Agent",
+      label: "最終決策整合者",
+      summary: "在研究、批判與風控完成後，形成唯一的最終建議配置與十大理由。",
+      responsibility: "整合提案、批判、協商結果、硬性政策與風險限制。",
+      inputs: "所有結構化研究摘要、Risk 與 Devil’s Advocate 意見及約束條件。",
+      purpose: "讓委員會最後只有一份一致、可稽核的結論，而不是互相衝突的建議清單。",
+      goal: "輸出合規配置、共識度、風險、期限、失效條件與剛好十項理由。",
+      boundary: "不能忽略硬性政策、不能捏造共識，也不能把建議描述成已執行交易。",
+    },
+  };
+  const agentProfileOrder = [
+    "macro",
+    "technical",
+    "momentum",
+    "news",
+    "earnings",
+    "etf",
+    "ownership",
+    "liquidity",
+    "learning",
+    "portfolio",
+    "risk",
+    "devil_advocate",
+    "cio",
+  ];
 
   const escapeHtml = (value) =>
     String(value ?? "")
@@ -315,6 +462,79 @@
       </div>`;
   };
 
+  const normalizeAgentName = (value) =>
+    String(value || "")
+      .trim()
+      .toLowerCase()
+      .replaceAll("’", "'")
+      .replaceAll("devil's advocate", "devil_advocate")
+      .replaceAll(" ", "_");
+
+  const agentLink = (value) => {
+    const key = normalizeAgentName(value);
+    const profile = agentProfiles[key];
+    if (!profile) return `<strong>${escapeHtml(value)}</strong>`;
+    return `
+      <a
+        class="agent-profile-link"
+        href="#agent-profile-${escapeHtml(key)}"
+        title="查看 ${escapeHtml(profile.title)} 的角色說明"
+        aria-label="查看 ${escapeHtml(profile.title)} 的角色說明"
+        onclick="event.stopPropagation()"
+      >${escapeHtml(value)}</a>`;
+  };
+
+  const renderAgentDirectory = () => `
+    <section class="agent-directory" id="agent-directory" aria-labelledby="agent-directory-title">
+      <header class="agent-directory-header">
+        <div>
+          <span class="section-kicker">Agent Directory</span>
+          <h3 id="agent-directory-title">認識投資委員會</h3>
+        </div>
+        <p>點擊委員會紀錄中的 Agent 名稱，可直接跳到它的角色說明。</p>
+      </header>
+      <div class="agent-profile-grid">
+        ${agentProfileOrder
+          .map(
+            (key) => {
+              const profile = agentProfiles[key];
+              return `
+              <article class="agent-profile-card" id="agent-profile-${escapeHtml(key)}">
+                <header>
+                  <span>${escapeHtml(profile.title)}</span>
+                  <h4>${escapeHtml(profile.label)}</h4>
+                  <p>${escapeHtml(profile.summary)}</p>
+                </header>
+                <dl>
+                  <div>
+                    <dt>負責內容</dt>
+                    <dd>${escapeHtml(profile.responsibility)}</dd>
+                  </div>
+                  <div>
+                    <dt>使用資訊</dt>
+                    <dd>${escapeHtml(profile.inputs)}</dd>
+                  </div>
+                  <div>
+                    <dt>存在原因</dt>
+                    <dd>${escapeHtml(profile.purpose)}</dd>
+                  </div>
+                  <div>
+                    <dt>目標</dt>
+                    <dd>${escapeHtml(profile.goal)}</dd>
+                  </div>
+                  <div>
+                    <dt>不負責</dt>
+                    <dd>${escapeHtml(profile.boundary)}</dd>
+                  </div>
+                </dl>
+                <a class="agent-profile-back" href="#committee">返回委員會內容</a>
+              </article>`;
+            },
+          )
+          .join("")}
+      </div>
+    </section>`;
+
   const researchStatusLabel = (value) => {
     const labels = {
       untested: "尚未驗證",
@@ -527,7 +747,7 @@
                       (proposal) => `
                         <article class="archive-agent">
                           <header>
-                            <strong>${escapeHtml(proposal.agent)}</strong>
+                            ${agentLink(proposal.agent)}
                             <span>${escapeHtml(proposal.stance)} · ${escapeHtml(proposal.confidence)}/100</span>
                           </header>
                           <div class="committee-columns">
@@ -552,7 +772,7 @@
                       (critique) => `
                         <article class="archive-agent critique">
                           <header>
-                            <strong>${escapeHtml(critique.reviewer)}</strong>
+                            ${agentLink(critique.reviewer)}
                             <span>${critique.veto_recommended ? "建議否決" : "不否決"}</span>
                           </header>
                           <p>${escapeHtml(critique.strongest_objection)}</p>
@@ -634,7 +854,7 @@
             <span class="eyebrow">Investment brief / ${escapeHtml(recommendation.run_id)}</span>
             <h1>6,000 美元，<br /><span>一個可稽核的決策。</span></h1>
             <p class="hero-lede">
-              十個專業研究角色、兩位批判者與一位 CIO，把市場觀點壓縮成一份
+              十個專業研究角色、兩位批判者與一位 ${agentLink("cio")}，把市場觀點壓縮成一份
               可驗證、不可自動執行的目標配置。
             </p>
             <div class="hero-strip">
@@ -661,24 +881,6 @@
           </aside>
         </section>
 
-        <aside class="execution-notice" role="status">
-          <strong>READ-ONLY RESEARCH</strong>
-          <p>
-            研究建議／尚未執行／不自動下單。
-            ${escapeHtml(recommendation.disclaimer)}
-          </p>
-        </aside>
-
-        <aside class="policy-notice" role="status">
-          <strong>HARD EXCLUSION POLICY</strong>
-          <p>
-            不得購買或推薦：
-            ${dashboardAnalytics.excluded_symbols
-              .map((symbol) => `<span>${escapeHtml(symbol)}</span>`)
-              .join("")}
-          </p>
-        </aside>
-
         <section class="metrics" aria-label="Portfolio overview">
           <article class="metric">
             <span class="metric-label">總策略資金</span>
@@ -698,7 +900,7 @@
           <article class="metric">
             <span class="metric-label">委員會</span>
             <strong class="metric-value">${escapeHtml(committeeSize)}</strong>
-            <span class="metric-foot">${escapeHtml(committee.proposals.length)} Agent · ${escapeHtml(committee.critiques.length)} 批判 · 1 CIO</span>
+            <span class="metric-foot">${escapeHtml(committee.proposals.length)} Agent · ${escapeHtml(committee.critiques.length)} 批判 · 1 ${agentLink("cio")}</span>
           </article>
         </section>
 
@@ -790,7 +992,7 @@
                       (item) => `
                         <tr>
                           <td>${escapeHtml(item.rank)}</td>
-                          <td><span class="symbol">${escapeHtml(item.agent)}</span></td>
+                          <td>${agentLink(item.agent)}</td>
                           <td>${escapeHtml(item.correct_calls)} / ${escapeHtml(item.evaluated_calls)}</td>
                           <td>${statistic(item.hit_rate_percent, "%")}</td>
                           <td>${statistic(item.average_confidence)}</td>
@@ -900,7 +1102,7 @@
             <div class="committee-intro">
               <p>
                 每位 Agent 的觀點、理由、風險與失效條件均完整保留。
-                以下是結構化研究摘要，不包含隱藏推理過程。
+                點擊 Agent 名稱可查看其職責、資訊範圍、存在目的與目標。
               </p>
             </div>
             ${
@@ -935,7 +1137,7 @@
               </article>
               <article>
                 <span>05</span>
-                <strong>CIO 決策</strong>
+                <strong>${agentLink("cio")} 決策</strong>
                 <small>${escapeHtml(committee.final_decision.market_stance)}</small>
               </article>
             </div>
@@ -946,7 +1148,7 @@
                     <details class="committee-card">
                       <summary>
                         <span class="agent-name">
-                          <strong>${escapeHtml(proposal.agent)}</strong>
+                          ${agentLink(proposal.agent)}
                           <span>${escapeHtml((proposal.arguments || [])[0] || "查看完整內容")}</span>
                         </span>
                         <span class="stance">${escapeHtml(proposal.stance.replaceAll("_", " "))}</span>
@@ -980,7 +1182,7 @@
             <div class="committee-subsection">
               <header class="subsection-header">
                 <span class="section-kicker">Cross Examination</span>
-                <h3>Risk 與 Devil's Advocate 批判</h3>
+                <h3>${agentLink("risk")} 與 ${agentLink("devil_advocate")} 批判</h3>
               </header>
               <div class="critique-grid">
                 ${committee.critiques
@@ -988,7 +1190,7 @@
                     (critique) => `
                       <article class="critique-card">
                         <div class="critique-heading">
-                          <strong>${escapeHtml(critique.reviewer)}</strong>
+                          ${agentLink(critique.reviewer)}
                           <span class="veto-chip ${critique.veto_recommended ? "veto" : ""}">
                             ${critique.veto_recommended ? "建議否決" : "不否決"}
                           </span>
@@ -1028,7 +1230,7 @@
                             return `
                               <article class="critique-card reconciliation-card">
                                 <div class="critique-heading">
-                                  <strong>${escapeHtml(response.reviewer)}</strong>
+                                  ${agentLink(response.reviewer)}
                                   <span class="veto-chip ${resolution?.veto_maintained ? "veto" : ""}">
                                     ${
                                       resolution?.consensus_reached
@@ -1075,7 +1277,7 @@
               <header class="cio-header">
                 <div>
                   <span class="section-kicker">CIO Synthesis</span>
-                  <h3>最終結論</h3>
+                  <h3>${agentLink("cio")} · 最終結論</h3>
                 </div>
                 <div class="cio-score">
                   <strong>${escapeHtml(committee.final_decision.model_score)}</strong>
@@ -1106,6 +1308,7 @@
                   .join("")}
               </div>
             </div>
+            ${renderAgentDirectory()}
           </section>
 
           <section class="panel rebalance" id="rebalance">
@@ -1552,7 +1755,7 @@
             </header>
             <div class="committee-intro">
               <p>
-                公開資訊與非個人資料會保留在此。內容包含結構化提案、批判、CIO 決策與
+                公開資訊與非個人資料會保留在此。內容包含結構化提案、批判、${agentLink("cio")} 決策與
                 假設績效驗證；不包含實際帳戶、來源帳戶、個人識別、成交或隱藏推理。
               </p>
             </div>
