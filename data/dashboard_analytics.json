@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-29T18:28:16.088516Z",
+  "generated_at": "2026-07-29T18:42:26.427140Z",
   "data_cutoff": "2026-07-29T18:10:26.733146Z",
   "portfolio_health": {
-    "score": 82,
-    "grade": "stable",
-    "summary": "現金與低槓桿使組合本身具防護；最新模型管線成功完成，委員共識高，但績效樣本仍不足。健康分數不能解讀為獲利機率。",
+    "score": 67,
+    "grade": "caution",
+    "summary": "現金與低槓桿使組合本身具防護；最新模型管線失敗，目前沿用上一份決策，委員共識高，但績效樣本仍不足。健康分數不能解讀為獲利機率。",
     "components": [
       {
         "component": "分散度",
@@ -27,9 +27,9 @@
       },
       {
         "component": "管線可靠性",
-        "score": 20,
+        "score": 5,
         "maximum": 20,
-        "explanation": "最新正式委員會成功完成。"
+        "explanation": "最新正式委員會失敗，目前沿用上一份決策。"
       },
       {
         "component": "證據與共識",

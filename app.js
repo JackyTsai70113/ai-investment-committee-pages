@@ -6,7 +6,7 @@
   const colors = ["#c7f15b", "#67b7ff", "#ae91ff", "#ff9864", "#7ecb83", "#f3f0d8"];
   const agentProfiles = {
     macro: {
-      title: "Macro Agent",
+      title: "總體經濟研究員",
       label: "總體經濟研究員",
       summary: "判斷利率、通膨、美元與全球經濟環境對美股風險偏好的影響。",
       responsibility: "分析 Fed、利率、通膨、美元、美債、就業與全球總體風險。",
@@ -16,7 +16,7 @@
       boundary: "不挑選單一公司，也不假裝擁有未提供的即時總經資料。",
     },
     technical: {
-      title: "Technical Agent",
+      title: "技術面研究員",
       label: "技術面研究員",
       summary: "用價格與成交行為判斷趨勢是否成立，以及何時需要重新驗證。",
       responsibility: "分析趨勢、均線、成交量、波動與相對強弱；偏空時評估反向工具條件。",
@@ -26,7 +26,7 @@
       boundary: "不讀不相關的財報全文，也不把單一指標當成必然的買賣訊號。",
     },
     momentum: {
-      title: "Momentum Agent",
+      title: "動能與輪動研究員",
       label: "動能與輪動研究員",
       summary: "比較哪些資產正在領漲或轉弱，評估趨勢延續與擁擠反轉風險。",
       responsibility: "追蹤相對強度、產業輪動、價格動能與相關產業催化。",
@@ -36,7 +36,7 @@
       boundary: "不把過去漲幅直接外推為未來報酬，也不忽略追高與反轉風險。",
     },
     news: {
-      title: "News Agent",
+      title: "事件與新聞研究員",
       label: "事件與新聞研究員",
       summary: "只整理有來源與時間的市場事件，判斷哪些新資訊真正改變投資假設。",
       responsibility: "驗證事件、來源網址、發布時間及其可能影響的資產。",
@@ -46,7 +46,7 @@
       boundary: "不捏造新聞，不補寫未引用事件，也不把傳聞當成已證實事實。",
     },
     earnings: {
-      title: "Earnings Agent",
+      title: "財報研究員",
       label: "財報研究員",
       summary: "檢查公司成長是否由營收、獲利、成本與財測共同支持。",
       responsibility: "分析財報、財測、營收、淨利、成本結構與盈利品質。",
@@ -56,7 +56,7 @@
       boundary: "資料不足時必須降低信心，不估造缺失數字或把預測當成已實現結果。",
     },
     etf: {
-      title: "ETF Agent",
+      title: "ETF 工具研究員",
       label: "ETF 工具研究員",
       summary: "比較用哪一種 ETF 表達多空觀點最有效率，並揭露槓桿與每日重設風險。",
       responsibility: "比較大盤、產業、商品、槓桿與反向 ETF 的曝險效率及路徑風險。",
@@ -66,7 +66,7 @@
       boundary: "不因市場偏空就強迫持有反向 ETF；必須同時比較現金與反向工具。",
     },
     ownership: {
-      title: "Ownership Agent",
+      title: "持股與交易揭露研究員",
       label: "持股與交易揭露研究員",
       summary: "檢查機構與內部人揭露，理解持股變化但清楚標示資料延遲。",
       responsibility: "分析 13F、Form 4、FINRA 與已提供的持股或交易證據。",
@@ -76,7 +76,7 @@
       boundary: "不把短售量當成空頭未平倉，也不把延遲申報解讀成即時交易。",
     },
     liquidity: {
-      title: "Liquidity Agent",
+      title: "流動性研究員",
       label: "流動性研究員",
       summary: "確認組合能否合理進出，並評估交易摩擦、跳空與現金緩衝。",
       responsibility: "評估現金、成交流動性、價差、交易摩擦、事件跳空與退出能力。",
@@ -86,27 +86,27 @@
       boundary: "不重新分析不必要的公司長文，也不把 buying power 當成可承受風險。",
     },
     learning: {
-      title: "Learning Agent",
+      title: "假設驗證研究員",
       label: "假設驗證研究員",
       summary: "回看先前判斷與後續證據，將可重複教訓和一次性雜訊分開。",
       responsibility: "驗證歷次假設、記錄支持與反對證據，更新可復用的委員會知識。",
       inputs: "歷史決策、完成交易時段績效、先前假設與後續市場證據。",
       purpose: "防止委員會重複犯錯，或因一兩次偶然結果就過度調整策略。",
       goal: "只保留能改善下一輪決策、且可被後續資料推翻的教訓。",
-      boundary: "不把相關性當因果，不以未成熟小樣本重設 Agent 權重。",
+      boundary: "不把相關性當因果，不以未成熟小樣本重設研究員權重。",
     },
     portfolio: {
-      title: "Portfolio Agent",
+      title: "組合建構研究員",
       label: "組合建構研究員",
       summary: "把不同專家意見轉成總額正確、符合政策且可理解的 6,000 美元配置。",
       responsibility: "整合專家觀點、集中度、現金、曝險與標的限制，提出配置草案。",
-      inputs: "各研究 Agent 的結構化結論、政策限制、風險預算與策略資金。",
+      inputs: "各研究員的結構化結論、政策限制、風險預算與策略資金。",
       purpose: "將分散的市場看法轉成一個可以比較、驗證與審核的組合。",
       goal: "產生合計 100%、金額合計 6,000 美元且理由一致的配置。",
       boundary: "不把建議當成成交，不更改實際持股，也不重新吞入全部原始資料。",
     },
     risk: {
-      title: "Risk Agent",
+      title: "風險審查員",
       label: "風險審查員",
       summary: "從可能虧多少與如何失敗出發，檢查組合是否違反硬性風控。",
       responsibility: "檢查集中度、槓桿、回撤、跳空、事件風險、停損落差與美元損失。",
@@ -116,21 +116,21 @@
       boundary: "不以『一定不虧』作承諾，也不因不確定性就自動把所有風險歸零。",
     },
     devil_advocate: {
-      title: "Devil’s Advocate",
+      title: "反方審查員",
       label: "反方審查員",
       summary: "刻意建立最強反例，找出多數意見中的盲點、偏誤與未驗證假設。",
       responsibility: "挑戰共識、隱含假設、資料時效、敘事偏誤與最壞情境。",
-      inputs: "匿名提案摘要、來源證據、失效條件與其他 Agent 沒有處理的風險。",
-      purpose: "降低群體附和，讓 CIO 在決策前必須正面回應最有力的反對意見。",
+      inputs: "匿名提案摘要、來源證據、失效條件與其他研究員沒有處理的風險。",
+      purpose: "降低群體附和，讓最終決策整合者在決策前必須正面回應最有力的反對意見。",
       goal: "找出足以改變或限制配置的反證，而不是為反對而反對。",
-      boundary: "不直接取代 CIO 決策；批判必須具體、可驗證並提出必要修正。",
+      boundary: "不直接取代最終決策；批判必須具體、可驗證並提出必要修正。",
     },
     cio: {
-      title: "CIO Agent",
+      title: "最終決策整合者",
       label: "最終決策整合者",
       summary: "在研究、批判與風控完成後，形成唯一的最終建議配置與十大理由。",
       responsibility: "整合提案、批判、協商結果、硬性政策與風險限制。",
-      inputs: "所有結構化研究摘要、Risk 與 Devil’s Advocate 意見及約束條件。",
+      inputs: "所有結構化研究摘要、風險審查員與反方審查員意見及約束條件。",
       purpose: "讓委員會最後只有一份一致、可稽核的結論，而不是互相衝突的建議清單。",
       goal: "輸出合規配置、共識度、風險、期限、失效條件與剛好十項理由。",
       boundary: "不能忽略硬性政策、不能捏造共識，也不能把建議描述成已執行交易。",
@@ -195,7 +195,7 @@
 
   const dateTime = (value) => {
     const parsed = new Date(value);
-    if (Number.isNaN(parsed.getTime())) return "Unavailable";
+    if (Number.isNaN(parsed.getTime())) return "無法取得";
     return new Intl.DateTimeFormat("zh-TW", {
       dateStyle: "medium",
       timeStyle: "short",
@@ -481,17 +481,17 @@
         title="查看 ${escapeHtml(profile.title)} 的角色說明"
         aria-label="查看 ${escapeHtml(profile.title)} 的角色說明"
         onclick="event.stopPropagation()"
-      >${escapeHtml(value)}</a>`;
+      >${escapeHtml(profile.label)}</a>`;
   };
 
   const renderAgentDirectory = () => `
     <section class="agent-directory" id="agent-directory" aria-labelledby="agent-directory-title">
       <header class="agent-directory-header">
         <div>
-          <span class="section-kicker">Agent Directory</span>
+          <span class="section-kicker">角色目錄</span>
           <h3 id="agent-directory-title">認識投資委員會</h3>
         </div>
-        <p>點擊委員會紀錄中的 Agent 名稱，可直接跳到它的角色說明。</p>
+        <p>點擊委員會紀錄中的研究員名稱，可直接跳到它的角色說明。</p>
       </header>
       <div class="agent-profile-grid">
         ${agentProfileOrder
@@ -534,6 +534,206 @@
           .join("")}
       </div>
     </section>`;
+
+  const decisionLabel = (value) => {
+    const labels = {
+      bullish: "偏多",
+      bearish: "偏空",
+      neutral: "中立",
+      strong_bullish: "強烈偏多",
+      strong_bearish: "強烈偏空",
+      risk_on: "風險偏好",
+      risk_off: "風險趨避",
+      high: "高",
+      moderate: "中等",
+      low: "低",
+      live: "目前研究",
+      review: "研究複核",
+      research_only: "僅供研究",
+      structured: "結構化",
+      policy_override: "政策覆寫",
+      buy: "買入",
+      hold: "維持",
+      reduce: "減少",
+      exit: "退出",
+      increase: "增加",
+      technical: "技術面",
+      momentum: "動能",
+      macro: "總體經濟",
+      diversification: "分散配置",
+      policy: "政策",
+      valuation: "估值",
+      news: "新聞",
+      risk: "風險",
+      none: "無",
+      success: "成功",
+      failure: "失敗",
+      healthy: "正常",
+      failed: "失敗",
+      provider_invalid_response: "模型回應無效",
+      model_capacity: "模型容量不足",
+      rpm: "每分鐘請求額度",
+      tpm: "每分鐘 Token 額度",
+      daily_quota: "每日額度",
+      normal: "一般",
+      elevated: "偏高",
+      stressed: "壓力",
+      rising: "上升",
+      falling: "下降",
+      stable: "穩定",
+    };
+    return labels[value] || String(value || "未分類").replaceAll("_", " ");
+  };
+
+  const renderCommitteeChat = (committee, recommendation) => {
+    const proposals = Array.isArray(committee.proposals) ? committee.proposals : [];
+    const critiques = Array.isArray(committee.critiques) ? committee.critiques : [];
+    const responses = Array.isArray(committee.reconciliation_responses)
+      ? committee.reconciliation_responses
+      : [];
+    const resolutions = Array.isArray(committee.critique_resolutions)
+      ? committee.critique_resolutions
+      : [];
+
+    const proposalMessages = proposals
+      .map(
+        (proposal) => `
+          <article class="chat-message">
+            <div class="chat-avatar" aria-hidden="true">${escapeHtml(
+              (agentProfiles[normalizeAgentName(proposal.agent)]?.label || proposal.agent).slice(0, 1),
+            )}</div>
+            <div class="chat-bubble">
+              <header>
+                <strong>${agentLink(proposal.agent)}</strong>
+                <span>第一輪獨立提案</span>
+              </header>
+              <div class="chat-meta">
+                <span>立場：${escapeHtml(decisionLabel(proposal.stance))}</span>
+                <span>信心：${escapeHtml(proposal.confidence)}/100</span>
+                <span>現金偏好：${percent(proposal.cash_preference)}</span>
+              </div>
+              <div class="chat-copy">
+                ${(proposal.arguments || []).map((item) => `<p>${escapeHtml(item)}</p>`).join("")}
+              </div>
+              <div class="asset-tags">${renderAssetTags(proposal.preferred_assets)}</div>
+              <details class="chat-details">
+                <summary>查看風險與失效條件</summary>
+                <strong>主要風險</strong>
+                <ul>${renderList(proposal.risks)}</ul>
+                <strong>失效條件</strong>
+                <ul>${renderList(proposal.invalidation_conditions)}</ul>
+              </details>
+            </div>
+          </article>`,
+      )
+      .join("");
+
+    const critiqueMessages = critiques
+      .map(
+        (critique) => `
+          <article class="chat-message reviewer-message">
+            <div class="chat-avatar" aria-hidden="true">審</div>
+            <div class="chat-bubble">
+              <header>
+                <strong>${agentLink(critique.reviewer)}</strong>
+                <span>交叉質詢</span>
+              </header>
+              <p>${escapeHtml(critique.strongest_objection)}</p>
+              <div class="chat-status ${critique.veto_recommended ? "veto" : ""}">
+                ${critique.veto_recommended ? "建議否決" : "本輪不否決"}
+              </div>
+              <details class="chat-details">
+                <summary>查看隱含假設與要求修正</summary>
+                <strong>隱含假設</strong>
+                <ul>${renderList(critique.hidden_assumptions)}</ul>
+                <strong>要求修正</strong>
+                <ul>${renderList(critique.required_changes)}</ul>
+              </details>
+            </div>
+          </article>`,
+      )
+      .join("");
+
+    const reconciliationMessages = responses
+      .map((response, index) => {
+        const resolution = resolutions[index];
+        return `
+          <article class="chat-message reviewer-message">
+            <div class="chat-avatar" aria-hidden="true">議</div>
+            <div class="chat-bubble">
+              <header>
+                <strong>${agentLink(response.reviewer)}</strong>
+                <span>協商與第二次裁決</span>
+              </header>
+              <strong>提案者承認與修正</strong>
+              <ul>${renderList(response.conceded_points)}</ul>
+              <ul>${renderList(response.proposed_changes)}</ul>
+              <strong>證據式反駁</strong>
+              <ul>${renderList(response.rebuttals)}</ul>
+              <p>${escapeHtml(resolution?.resolution_summary || "尚無第二次裁決")}</p>
+            </div>
+          </article>`;
+      })
+      .join("");
+
+    const finalDecision = committee.final_decision;
+    return `
+      <section class="committee-chat" aria-label="投資委員會群組對話">
+        <header class="chat-room-header">
+          <div>
+            <span class="live-dot" aria-hidden="true"></span>
+            <strong>投資委員會群組</strong>
+          </div>
+          <span>執行編號 ${escapeHtml(committee.run_id)}</span>
+        </header>
+        <article class="chat-message system-message">
+          <div class="chat-bubble">
+            <strong>系統訊息</strong>
+            <p>
+              資料已封存至 ${escapeHtml(dateTime(recommendation.data_cutoff))}。
+              以下內容是各角色公開提交的結構化摘要、批判與裁決，不包含隱藏思考鏈。
+            </p>
+          </div>
+        </article>
+        <div class="chat-stage-label">第一階段 · 獨立研究</div>
+        ${proposalMessages}
+        <div class="chat-stage-label">第二階段 · 交叉質詢</div>
+        ${critiqueMessages}
+        ${
+          reconciliationMessages
+            ? `<div class="chat-stage-label">第三階段 · 協商修正</div>${reconciliationMessages}`
+            : ""
+        }
+        <div class="chat-stage-label">最終階段 · 整合裁決</div>
+        <article class="chat-message cio-message">
+          <div class="chat-avatar" aria-hidden="true">決</div>
+          <div class="chat-bubble">
+            <header>
+              <strong>${agentLink("cio")}</strong>
+              <span>最終決策</span>
+            </header>
+            <p>${escapeHtml(finalDecision.model_score_reason)}</p>
+            <div class="chat-meta">
+              <span>市場立場：${escapeHtml(decisionLabel(finalDecision.market_stance))}</span>
+              <span>風險：${escapeHtml(decisionLabel(finalDecision.risk_level))}</span>
+              <span>共識度：${escapeHtml(finalDecision.model_score)}/100</span>
+            </div>
+            <div class="final-allocation-grid">
+              ${(finalDecision.allocations || [])
+                .map(
+                  (item) => `
+                    <article class="final-allocation">
+                      ${symbolLink(item.symbol)}
+                      <span>${percent(item.target_weight)}</span>
+                      <small>${escapeHtml(item.note)}</small>
+                    </article>`,
+                )
+                .join("")}
+            </div>
+          </div>
+        </article>
+      </section>`;
+  };
 
   const researchStatusLabel = (value) => {
     const labels = {
@@ -810,7 +1010,7 @@
     providerTelemetry,
   }) => {
     const isLive = recommendation.status === "live";
-    const statusLabel = isLive ? "CURRENT RESEARCH" : "RESEARCH REVIEW";
+    const statusLabel = isLive ? "目前研究" : "研究複核";
     const invested = recommendation.allocations
       .filter((item) => item.symbol !== "CASH")
       .reduce((total, item) => total + Number(item.target_amount_usd), 0);
@@ -839,8 +1039,8 @@
           <div class="brand">
             <span class="brand-mark">AIC</span>
             <span class="brand-copy">
-              <strong>AI Investment Committee</strong>
-              <span>GitOps Portfolio Research</span>
+              <strong>AI 投資委員會</strong>
+              <span>GitOps 組合研究</span>
             </span>
           </div>
           <div class="topbar-meta">
@@ -851,7 +1051,7 @@
 
         <section class="hero">
           <div class="hero-main">
-            <span class="eyebrow">Investment brief / ${escapeHtml(recommendation.run_id)}</span>
+            <span class="eyebrow">投資摘要 / ${escapeHtml(recommendation.run_id)}</span>
             <h1>6,000 美元，<br /><span>一個可稽核的決策。</span></h1>
             <p class="hero-lede">
               十個專業研究角色、兩位批判者與一位 ${agentLink("cio")}，把市場觀點壓縮成一份
@@ -859,7 +1059,7 @@
             </p>
             <div class="hero-strip">
               <span class="pill">資料截止 ${escapeHtml(dateTime(recommendation.data_cutoff))}</span>
-              <span class="pill">風險 ${escapeHtml(recommendation.risk_level)}</span>
+              <span class="pill">風險 ${escapeHtml(decisionLabel(recommendation.risk_level))}</span>
               <span class="pill">研究建議 · 尚未執行</span>
             </div>
           </div>
@@ -867,7 +1067,7 @@
             <div
               class="score-orbit"
               style="--score-angle:${escapeHtml(scoreAngle)}"
-              aria-label="Model Score ${escapeHtml(recommendation.model_score)} out of 100"
+              aria-label="模型評分 ${escapeHtml(recommendation.model_score)}，滿分 100"
             >
               <span class="score-number">${escapeHtml(modelScore)}<small>/100</small></span>
               <span class="score-caption">委員共識度<br />不是成功機率</span>
@@ -881,7 +1081,7 @@
           </aside>
         </section>
 
-        <section class="metrics" aria-label="Portfolio overview">
+        <section class="metrics" aria-label="投資組合總覽">
           <article class="metric">
             <span class="metric-label">總策略資金</span>
             <strong class="metric-value">${money(recommendation.capital_usd)}</strong>
@@ -900,15 +1100,15 @@
           <article class="metric">
             <span class="metric-label">委員會</span>
             <strong class="metric-value">${escapeHtml(committeeSize)}</strong>
-            <span class="metric-foot">${escapeHtml(committee.proposals.length)} Agent · ${escapeHtml(committee.critiques.length)} 批判 · 1 ${agentLink("cio")}</span>
+            <span class="metric-foot">${escapeHtml(committee.proposals.length)} 位研究員 · ${escapeHtml(committee.critiques.length)} 份批判 · 1 位${agentLink("cio")}</span>
           </article>
         </section>
 
-        <section class="terminal-grid" aria-label="Bloomberg-style strategy analytics">
+        <section class="terminal-grid" aria-label="彭博風格策略分析">
           <article class="terminal-card health-terminal">
             <div class="terminal-card-head">
               <div>
-                <span class="section-kicker">Portfolio Health Score</span>
+                <span class="section-kicker">投資組合健康分數</span>
                 <h2>組合健康度</h2>
               </div>
               <div class="health-score grade-${escapeHtml(health.grade)}">
@@ -935,7 +1135,7 @@
           <article class="terminal-card performance-terminal">
             <div class="terminal-card-head">
               <div>
-                <span class="section-kicker">Risk-adjusted Analytics</span>
+                <span class="section-kicker">風險調整分析</span>
                 <h2>績效統計</h2>
               </div>
               <span class="research-status ${escapeHtml(analyticsPerformance.sample_status)}">${escapeHtml(researchStatusLabel(analyticsPerformance.sample_status))}</span>
@@ -948,15 +1148,15 @@
               <div><span>完成收盤日</span><strong>${escapeHtml(analyticsPerformance.distinct_completed_sessions)}</strong></div>
               <div><span>3 日正視窗</span><strong>${escapeHtml(analyticsPerformance.positive_3_session_windows)} / ${escapeHtml(analyticsPerformance.completed_3_session_windows)}</strong></div>
               <div><span>7 日正視窗</span><strong>${escapeHtml(analyticsPerformance.positive_7_session_windows)} / ${escapeHtml(analyticsPerformance.completed_7_session_windows)}</strong></div>
-              <div><span>Sharpe／勝率</span><strong>${statistic(analyticsPerformance.sharpe_ratio)} / ${statistic(analyticsPerformance.win_rate_percent, "%")}</strong></div>
+              <div><span>夏普比率／勝率</span><strong>${statistic(analyticsPerformance.sharpe_ratio)} / ${statistic(analyticsPerformance.win_rate_percent, "%")}</strong></div>
             </div>
             <p>${escapeHtml(analyticsPerformance.methodology)}</p>
             <div class="telemetry-strip">
-              <span>最近模型執行 ${escapeHtml(providerTelemetry.status)}</span>
-              <span>${escapeHtml(providerTelemetry.total_requests)} requests</span>
-              <span>${escapeHtml(providerTelemetry.total_retries)} retries</span>
-              <span>${escapeHtml(providerTelemetry.total_estimated_input_tokens)} estimated input tokens</span>
-              <span>failure ${escapeHtml(providerTelemetry.terminal_failure_category)}</span>
+              <span>最近模型執行 ${escapeHtml(decisionLabel(providerTelemetry.status))}</span>
+              <span>${escapeHtml(providerTelemetry.total_requests)} 次請求</span>
+              <span>${escapeHtml(providerTelemetry.total_retries)} 次重試</span>
+              <span>${escapeHtml(providerTelemetry.total_estimated_input_tokens)} 估算輸入 Token</span>
+              <span>失敗分類 ${escapeHtml(decisionLabel(providerTelemetry.terminal_failure_category))}</span>
             </div>
           </article>
         </section>
@@ -965,10 +1165,10 @@
           <section class="panel leaderboard" id="leaderboard">
             <header class="panel-header">
               <div>
-                <span class="section-kicker">Agent Leaderboard</span>
-                <h2>各 Agent 命中率排行榜</h2>
+                <span class="section-kicker">研究員表現排行</span>
+                <h2>各研究員命中率排行榜</h2>
               </div>
-              <span class="panel-meta">SHADOW TEST<br />NOT VOTE WEIGHTS</span>
+              <span class="panel-meta">影子測試<br />不影響投票權重</span>
             </header>
             <p class="methodology-note">
               以相鄰決策點的 SPY 方向做粗略評價；樣本未滿 20 次前不得據此調整權重，
@@ -979,7 +1179,7 @@
                 <thead>
                   <tr>
                     <th>排名</th>
-                    <th>Agent</th>
+                    <th>研究員</th>
                     <th>命中</th>
                     <th>命中率</th>
                     <th>平均信心</th>
@@ -1008,17 +1208,17 @@
           <section class="panel strategy" id="portfolio">
             <header class="panel-header">
               <div>
-                <span class="section-kicker">Short-term Allocation</span>
+                <span class="section-kicker">短期配置</span>
                 <h2>6,000 美元短線建議配置</h2>
               </div>
-              <span class="panel-meta">RESEARCH ONLY<br />NOT EXECUTED</span>
+              <span class="panel-meta">僅供研究<br />尚未執行</span>
             </header>
             <div class="strategy-layout">
               <div class="allocation-visual">
                 <div class="donut" style="--donut:${escapeHtml(donut)}">
                   <div class="donut-center">
                     <strong>${money(recommendation.capital_usd)}</strong>
-                    <span>strategy capital</span>
+                    <span>策略資金</span>
                   </div>
                 </div>
                 <div class="legend">
@@ -1067,10 +1267,10 @@
           <section class="panel" id="reasons">
             <header class="panel-header">
               <div>
-                <span class="section-kicker">Committee Rationale</span>
+                <span class="section-kicker">委員會理由</span>
                 <h2>十大理由</h2>
               </div>
-              <span class="panel-meta">10 / 10<br />STRUCTURED</span>
+              <span class="panel-meta">10 / 10<br />結構化</span>
             </header>
             <div class="reasons-grid">
               ${recommendation.top_reasons
@@ -1081,8 +1281,8 @@
                       <h3>${escapeHtml(reason.title)}</h3>
                       <p>${escapeHtml(reason.summary)}</p>
                       <div class="reason-meta">
-                        <span>${escapeHtml(reason.category)}</span>
-                        <span>score ${escapeHtml(reason.confidence)}</span>
+                        <span>${escapeHtml(decisionLabel(reason.category))}</span>
+                        <span>信心 ${escapeHtml(reason.confidence)}</span>
                       </div>
                       ${renderSourceLinks(reason.source_urls)}
                     </article>`,
@@ -1094,15 +1294,15 @@
           <section class="panel committee" id="committee">
             <header class="panel-header">
               <div>
-                <span class="section-kicker">Committee Replay / Full Record</span>
+                <span class="section-kicker">委員會重播 / 完整紀錄</span>
                 <h2>委員會實際內容</h2>
               </div>
-              <span class="panel-meta">${escapeHtml(committee.mode)}<br />${escapeHtml(committee.agent_model)}</span>
+              <span class="panel-meta">${escapeHtml(decisionLabel(committee.mode))}<br />${escapeHtml(committee.agent_model)}</span>
             </header>
             <div class="committee-intro">
               <p>
-                每位 Agent 的觀點、理由、風險與失效條件均完整保留。
-                點擊 Agent 名稱可查看其職責、資訊範圍、存在目的與目標。
+                每位研究員的觀點、理由、風險與失效條件均完整保留。
+                點擊研究員名稱可查看其職責、資訊範圍、存在目的與目標。
               </p>
             </div>
             ${
@@ -1114,7 +1314,7 @@
                   </div>`
                 : ""
             }
-            <div class="committee-replay" aria-label="Committee replay">
+            <div class="committee-replay" aria-label="委員會重播">
               <article>
                 <span>01</span>
                 <strong>資料封存</strong>
@@ -1123,12 +1323,12 @@
               <article>
                 <span>02</span>
                 <strong>獨立提案</strong>
-                <small>${escapeHtml(committee.proposals.length)} 位 Agent</small>
+                <small>${escapeHtml(committee.proposals.length)} 位研究員</small>
               </article>
               <article>
                 <span>03</span>
                 <strong>反方批判</strong>
-                <small>${escapeHtml(committee.critiques.length)} 份 Critique</small>
+                <small>${escapeHtml(committee.critiques.length)} 份批判</small>
               </article>
               <article>
                 <span>04</span>
@@ -1138,9 +1338,10 @@
               <article>
                 <span>05</span>
                 <strong>${agentLink("cio")} 決策</strong>
-                <small>${escapeHtml(committee.final_decision.market_stance)}</small>
+                <small>${escapeHtml(decisionLabel(committee.final_decision.market_stance))}</small>
               </article>
             </div>
+            ${renderCommitteeChat(committee, recommendation)}
             <div class="committee-list proposal-list">
               ${committee.proposals
                 .map(
@@ -1151,7 +1352,7 @@
                           ${agentLink(proposal.agent)}
                           <span>${escapeHtml((proposal.arguments || [])[0] || "查看完整內容")}</span>
                         </span>
-                        <span class="stance">${escapeHtml(proposal.stance.replaceAll("_", " "))}</span>
+                        <span class="stance">${escapeHtml(decisionLabel(proposal.stance))}</span>
                         <span class="confidence">${escapeHtml(proposal.confidence)}/100</span>
                       </summary>
                       <div class="committee-card-body">
@@ -1181,7 +1382,7 @@
 
             <div class="committee-subsection">
               <header class="subsection-header">
-                <span class="section-kicker">Cross Examination</span>
+                <span class="section-kicker">交叉質詢</span>
                 <h3>${agentLink("risk")} 與 ${agentLink("devil_advocate")} 批判</h3>
               </header>
               <div class="critique-grid">
@@ -1217,7 +1418,7 @@
                   ? `
                     <div class="reconciliation-section">
                       <header class="subsection-header">
-                        <span class="section-kicker">Reconciliation Gate</span>
+                        <span class="section-kicker">協商關卡</span>
                         <h3>否決後協商與第二次裁決</h3>
                       </header>
                       <div class="reconciliation-grid">
@@ -1276,7 +1477,7 @@
             <div class="cio-decision">
               <header class="cio-header">
                 <div>
-                  <span class="section-kicker">CIO Synthesis</span>
+                  <span class="section-kicker">最終整合</span>
                   <h3>${agentLink("cio")} · 最終結論</h3>
                 </div>
                 <div class="cio-score">
@@ -1285,9 +1486,9 @@
                 </div>
               </header>
               <div class="decision-facts">
-                <span>市場立場 <strong>${escapeHtml(committee.final_decision.market_stance)}</strong></span>
-                <span>風險 <strong>${escapeHtml(committee.final_decision.risk_level)}</strong></span>
-                <span>Risk Gate <strong>${escapeHtml(committee.final_decision.risk_veto ? "VETO" : "PASSED")}</strong></span>
+                <span>市場立場 <strong>${escapeHtml(decisionLabel(committee.final_decision.market_stance))}</strong></span>
+                <span>風險 <strong>${escapeHtml(decisionLabel(committee.final_decision.risk_level))}</strong></span>
+                <span>風險關卡 <strong>${escapeHtml(committee.final_decision.risk_veto ? "否決" : "通過")}</strong></span>
               </div>
               <p class="decision-horizon">${escapeHtml(committee.final_decision.expected_horizon)}</p>
               ${
@@ -1314,10 +1515,10 @@
           <section class="panel rebalance" id="rebalance">
             <header class="panel-header">
               <div>
-                <span class="section-kicker">Research Rebalance Brief</span>
+                <span class="section-kicker">研究配置調整摘要</span>
                 <h2>本輪建議如何調整</h2>
               </div>
-              <span class="panel-meta">${escapeHtml(rebalance.pricing_session)} 收盤<br />RESEARCH ONLY</span>
+              <span class="panel-meta">${escapeHtml(rebalance.pricing_session)} 收盤<br />僅供研究</span>
             </header>
             <p class="methodology-note">${escapeHtml(rebalance.basis)}</p>
             <div class="table-wrap strategy-table-wrap">
@@ -1360,10 +1561,10 @@
           <section class="panel performance" id="performance">
             <header class="panel-header">
               <div>
-                <span class="section-kicker">Hypothetical Strategy Index</span>
+                <span class="section-kicker">假設策略指數</span>
                 <h2>USD 6,000 假設策略走勢</h2>
               </div>
-              <span class="panel-meta">${escapeHtml(performance.points.length)}<br />VALUATIONS</span>
+              <span class="panel-meta">${escapeHtml(performance.points.length)}<br />評價點</span>
             </header>
             ${buildPerformanceChart(performance.points)}
             <div class="performance-dates">
@@ -1403,21 +1604,21 @@
           <section class="panel evidence" id="evidence">
             <header class="panel-header">
               <div>
-                <span class="section-kicker">Evidence Engine</span>
+                <span class="section-kicker">證據引擎</span>
                 <h2>市場、財報與來源證據</h2>
               </div>
-              <span class="panel-meta">${escapeHtml((market.features || []).length)} FEATURES<br />${escapeHtml((market.filing_events || []).length)} FILINGS</span>
+              <span class="panel-meta">${escapeHtml((market.features || []).length)} 項特徵<br />${escapeHtml((market.filing_events || []).length)} 份申報</span>
             </header>
             ${
               market.regime
                 ? `
                   <div class="regime-grid">
-                    <article><span>趨勢狀態</span><strong>${escapeHtml(market.regime.trend)}</strong></article>
-                    <article><span>波動狀態</span><strong>${escapeHtml(market.regime.volatility)}</strong></article>
-                    <article><span>利率狀態</span><strong>${escapeHtml(market.regime.rates)}</strong></article>
+                    <article><span>趨勢狀態</span><strong>${escapeHtml(decisionLabel(market.regime.trend))}</strong></article>
+                    <article><span>波動狀態</span><strong>${escapeHtml(decisionLabel(market.regime.volatility))}</strong></article>
+                    <article><span>利率狀態</span><strong>${escapeHtml(decisionLabel(market.regime.rates))}</strong></article>
                   </div>
                   <ul class="evidence-notes">${renderList(market.regime.evidence)}</ul>`
-                : `<p class="methodology-note">這份舊資料尚未包含 deterministic 市場狀態；下一次正式委員會會開始產生。</p>`
+                : `<p class="methodology-note">這份舊資料尚未包含確定性市場狀態；下一次正式委員會會開始產生。</p>`
             }
             ${
               (market.features || []).length
@@ -1528,7 +1729,7 @@
           <section class="panel learning" id="market-survey">
             <header class="panel-header">
               <div>
-                <span class="section-kicker">Grounded Market Survey</span>
+                <span class="section-kicker">有來源市場調查</span>
                 <h2>本輪市場與全球情勢調查</h2>
               </div>
               <span class="panel-meta">${escapeHtml(
@@ -1569,10 +1770,10 @@
           <section class="panel learning" id="learning">
             <header class="panel-header">
               <div>
-                <span class="section-kicker">Learning Loop</span>
+                <span class="section-kicker">學習循環</span>
                 <h2>這次假設驗證，我們學到什麼？</h2>
               </div>
-              <span class="panel-meta">${escapeHtml(learning.verdict)}<br />${escapeHtml(dateTime(learning.evaluation_cutoff))}</span>
+              <span class="panel-meta">${escapeHtml(researchStatusLabel(learning.verdict))}<br />${escapeHtml(dateTime(learning.evaluation_cutoff))}</span>
             </header>
             <div class="learning-grid">
               ${learning.lessons
@@ -1583,7 +1784,7 @@
                       <p><strong>證據</strong>${escapeHtml(lesson.evidence)}</p>
                       <p><strong>下輪影響</strong>${escapeHtml(lesson.implication)}</p>
                       <div class="reason-meta">
-                        <span>confidence ${escapeHtml(lesson.confidence)}</span>
+                        <span>信心 ${escapeHtml(lesson.confidence)}</span>
                         <span>${escapeHtml(lesson.affected_assets.join(" · "))}</span>
                       </div>
                     </article>`,
@@ -1609,7 +1810,7 @@
           <section class="panel research-journal" id="research-journal">
             <header class="panel-header">
               <div>
-                <span class="section-kicker">Daily AI Journal</span>
+                <span class="section-kicker">每日 AI 日誌</span>
                 <h2>每日 AI 投資日誌：假設、驗證與學習</h2>
               </div>
               <span class="panel-meta">${escapeHtml(readinessLabel(researchJournal.readiness))}<br />${escapeHtml(dateTime(researchJournal.data_cutoff))}</span>
@@ -1652,7 +1853,7 @@
                       (item) => `
                         <article class="journal-card">
                           <div class="journal-card-head">
-                            <strong>Evidence</strong>
+                            <strong>證據</strong>
                             <span class="research-status ${escapeHtml(item.result)}">${escapeHtml(researchStatusLabel(item.result))}</span>
                           </div>
                           <p>${escapeHtml(item.claim)}</p>
@@ -1703,13 +1904,13 @@
           <section class="panel decision-compare" id="decision-compare">
             <header class="panel-header">
               <div>
-                <span class="section-kicker">Decision Diff Terminal</span>
+                <span class="section-kicker">決策差異終端</span>
                 <h2>比較任兩輪配置與十大理由</h2>
               </div>
-              <span class="panel-meta">${escapeHtml(comparableRecommendations.length)} RUNS<br />PUBLIC RESEARCH</span>
+              <span class="panel-meta">${escapeHtml(comparableRecommendations.length)} 次執行<br />公開研究</span>
             </header>
             <div class="privacy-boundary">
-              <strong>Recommendation vs Actual：私人資料，不在公開網站發布</strong>
+              <strong>建議與實際部位比較：私人資料，不在公開網站發布</strong>
               <p>${escapeHtml(dashboardAnalytics.actual_comparison_message)}</p>
             </div>
             ${
@@ -1748,10 +1949,10 @@
           <section class="panel archive" id="archive">
             <header class="panel-header">
               <div>
-                <span class="section-kicker">Public Decision Archive</span>
+                <span class="section-kicker">公開決策封存</span>
                 <h2>歷史決策、討論與驗證</h2>
               </div>
-              <span class="panel-meta">${escapeHtml(history.length)}<br />PUBLIC RECORDS</span>
+              <span class="panel-meta">${escapeHtml(history.length)}<br />公開紀錄</span>
             </header>
             <div class="committee-intro">
               <p>
@@ -1771,10 +1972,10 @@
           <section class="panel" id="risk">
             <header class="panel-header">
               <div>
-                <span class="section-kicker">Risk Gate</span>
+                <span class="section-kicker">風險關卡</span>
                 <h2>風險與失效條件</h2>
               </div>
-              <span class="panel-meta">${escapeHtml(committee.final_decision.risk_veto ? "VETO" : "PASSED")}<br />RISK REVIEW</span>
+              <span class="panel-meta">${escapeHtml(committee.final_decision.risk_veto ? "否決" : "通過")}<br />風險審查</span>
             </header>
             <div class="risk-grid">
               <div class="risk-box">
@@ -1845,7 +2046,7 @@
     .catch((error) => {
       root.innerHTML = `
         <section class="error-state" role="alert">
-          <span class="section-kicker">Data Load Failed</span>
+          <span class="section-kicker">資料載入失敗</span>
           <h1>無法載入投資委員會資料</h1>
           <p>靜態資料未完成或格式驗證失敗。</p>
           <pre>${escapeHtml(error.message)}</pre>
