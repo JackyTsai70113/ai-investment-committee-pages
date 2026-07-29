@@ -8893,6 +8893,4049 @@
     }
   },
   {
+    "archive_id": "20260729T015913Z",
+    "committee": {
+      "schema_version": "1.0",
+      "run_id": "20260729T015913Z",
+      "generated_at": "2026-07-29T01:59:13.108828Z",
+      "mode": "live",
+      "agent_model": "gemini-3.5-flash-lite",
+      "cio_model": "gemini-3.5-flash-lite",
+      "proposals": [
+        {
+          "agent": "earnings",
+          "stance": "bearish",
+          "confidence": 75,
+          "preferred_assets": [
+            "CASH"
+          ],
+          "cash_preference": "0.55",
+          "arguments": [
+            "台積電第二季財報顯示先進製程需求強勁並調高2026年資本支出至640億美元，反映AI基礎設施長線動能仍在，但個別企業如特斯拉第二季營業利益降至3.98億美元、淨利11.14億美元，顯示高成本與獲利品質分化。",
+            "半導體晶片供應鏈與主要科技權值股短期面臨明顯回檔壓力，AMD單日重挫8.15%、PLTR下跌6.08%，市場整體趨勢處於 risk_off 狀態。",
+            "依據短期績效政策與樣本限制規範，樣本未達統計成熟前風險資產上限為0.50，現金配置不高於0.60且無正式risk veto時不超過0.60，目前維持防守性現金與適度風險資產配置。"
+          ],
+          "risks": [
+            "全球半導體與AI資本支出成長若因總體經濟放緩或供應鏈瓶頸而不如預期，將直接衝擊相關發行人的盈利品質與現金流。",
+            "總體利率環境若再度出現劇烈波動，將對高本益比科技股與成長股的估值結構造成顯著壓抑。",
+            "地緣政治與供應鏈變數隨時可能影響跨國科技企業的成本結構與實際獲利。"
+          ],
+          "invalidation_conditions": [
+            "標普500指數（SPY）與那斯達克相關基準指數連續收復50日均線並轉為多頭趨勢。",
+            "主要科技與半導體標的（如NVDA、AMD、TSM）財報與營收展望超乎預期，帶動市場全面翻多。",
+            "總體經濟數據顯示通膨與利率風險完全消解，市場波動率指數（VIX）顯著回落至低檔區。"
+          ]
+        },
+        {
+          "agent": "etf",
+          "stance": "bearish",
+          "confidence": 85,
+          "preferred_assets": [
+            "CASH",
+            "TLT",
+            "GLD"
+          ],
+          "cash_preference": "0.5",
+          "arguments": [
+            "市場快照顯示 SPY 的 20 日報酬為 -0.018895% 且低於 50 日均線，且 VIX 處於 18.21 的 normal 狀態，整體趨勢判別為 risk_off，符合 bearish 結論。",
+            "半導體板塊（SMH）單日下跌 3.45%，20 日報酬跌幅擴大至 -16.20%，槓桿型半導體（SOXL）單日大跌 14.52%，顯示科技與半導體供應鏈面臨顯著的籌碼鬆動與回檔壓力。",
+            "針對 bearish 市場情境，反向 ETF 與現金之特性比較如下：SQQQ（追蹤納斯達克100指數之三倍反向）、SOXS（追蹤半導體指數之三倍反向）與 SPXU（追蹤標普500指數之三倍反向）均採用每日重設機制，僅適合最多 1 個交易日的短線持有，若逢市場劇烈反彈將面臨嚴重的複利侵蝕與路徑風險（如 SOXL 單日重挫對應的反向飆升或隨後的反彈損失）；現金（CASH）則無路徑風險與每日重設摩擦，但無法參與反向標的之單日下跌獲利表達。",
+            "依據短期績效政策，樣本未達 20 個完整視窗前，風險資產合計上限設定為 0.50，同時在沒有正式 risk veto 前現金不得高於 0.60，因此將現金水位配置於 0.50，其餘配置於防禦性資產如 TLT 與 GLD。"
+          ],
+          "risks": [
+            "槓桿與反向 ETF（如 SQQQ、SOXS、SPXU）每日重設機制在盤勢震盪或反轉時會產生極大的路徑損耗與反彈損失，持有超過 1 個交易日將嚴重偏離標的指數的多日倍數表現。",
+            "樣本數不足統計成熟門檻，短期滾動視窗尚未累積達 20 個完整視窗，可能導致勝率與統計優勢評估不穩定。",
+            "總體經濟如 AI 基礎設施需求維持強勁，可能隨時引發科技股短線急彈，對採取偏空或防守態勢的部位造成突發性回補損失。"
+          ],
+          "invalidation_conditions": [
+            "SPY 重新站回 50 日均線之上，且 20 日報酬由負轉正，帶動趨勢由 risk_off 轉為 risk_on。",
+            "VIX 指數顯著滑落且半導體板塊（SMH）收復 20 日均線，顯示科技股賣壓消退。",
+            "總體政策或聯準會利率路徑出現對風險資產有利的轉向，使短線回檔結構失效。"
+          ]
+        },
+        {
+          "agent": "learning",
+          "stance": "neutral",
+          "confidence": 90,
+          "preferred_assets": [
+            "CASH",
+            "TLT",
+            "GLD"
+          ],
+          "cash_preference": "0.5",
+          "arguments": [
+            "歷次假設驗證顯示 3 與 7 個完成交易日的滾動視窗樣本數仍未達標（distinct_completed_sessions 為 2），依據規範判定驗證結果為 too_early，且樣本不足不得單獨作為 100% CASH 的強制理由。",
+            "上一個交易日（2026-07-28）科技與半導體板塊顯著回檔（QQQ 下跌 0.97%、SMH 下跌 3.45%、SOXL 大跌 14.52%），而防守型資產如 TLT 微揚 0.59%、GLD 承壓但維持避險屬性，印證了區分板塊壓力與總體風險的重要教訓。",
+            "在市場面臨科技股回撤與總體經濟雜訊（如 7 月 FOMC 期間與就業數據降溫）時，必須嚴格區分單日價格雜訊與多日完成視窗績效，過往單日現金避險的成功不代表未來必然具備統計優勢。"
+          ],
+          "risks": [
+            "3 與 7 個完成交易日的滾動視窗樣本未達 20 個完整視窗的統計成熟門檻，無法宣稱統計優勢。",
+            "若配置現金比例超過 0.60，在缺乏正式 risk veto 或強制回撤閘門時將違反短期績效政策。",
+            "槓桿與反向 ETF（如 SQQQ、SOXS、SPXU）具備每日重設與路徑磨損特性，僅能持有 1 個交易日，盲目追價或跨日持有將面臨快速遞減風險。"
+          ],
+          "invalidation_conditions": [
+            "當 3 與 7 個完成交易日的滾動視窗正式達標並累積足夠樣本時，若勝率未達 0.60 政策門檻，須無條件調整防守配置。",
+            "若總體市場 regime 從 risk_off 明顯轉為強勢多頭，且 QQQ 與 SMH 突破 20 日與 50 日均線阻力，原先的防守假設即告失效。"
+          ]
+        },
+        {
+          "agent": "liquidity",
+          "stance": "bearish",
+          "confidence": 75,
+          "preferred_assets": [
+            "CASH",
+            "TLT"
+          ],
+          "cash_preference": "0.5",
+          "arguments": [
+            "市場快照顯示 QQQ 單日下跌 0.97%，SMH 下跌 3.45%，SOXL 重挫 14.52%，半導體與高 Beta 科技股面臨顯著流動性撤離與短線拋壓。",
+            "VIX 處於 18.21 的正常偏高區間，且宏觀面臨聯準會七月利率維持不變但九月升息預期攀升的壓力，流動性成本保持高檔。",
+            "依據政策要求，在市場偏向 bearish 時比較 SQQQ、SOXS、SPXU 與現金：SQQQ（追蹤納指反向 3x）、SOXS（追蹤半導體反向 3x）與 SPXU（追蹤標普反向 3x）均採每日重設機制，僅適合最多 1 個交易日之極短線對沖，長期持有可能遭受複利減損與反彈損失；現金則無摩擦且無滾動減損風險。",
+            "樣本不足（3 與 7 日滾動視窗未達 20 個）不作為 100% 現金的唯一理由，因此流動性配置現金比例設定為 0.50，其餘配置防禦性資產或保留動態進場空間。"
+          ],
+          "risks": [
+            "高 Beta 標的如 SOXL、SMH 單日跌幅極深，流動性衝擊可能導致進出價差擴大，退出能力面臨考驗。",
+            "槓桿及反向 ETF 每日重設特性在劇烈震盪盤勢中會產生顯著的波動耗損，不當延長持有天數將造成本金侵蝕。",
+            "總體經濟數據變動快速，若通膨或升息預期反轉，可能引發市場短線強烈反彈，導致反向持倉面臨嚴重回補損失。"
+          ],
+          "invalidation_conditions": [
+            "QQQ 與 SMH 站回 20 日均線之上，且成交量比率恢復至 1.0 以上，顯示主動買盤回流。",
+            "VIX 大幅回落至 15 以下，且十公債殖利率（^TNX）穩定下滑，總體利率及流動性壓力緩解。",
+            "3 與 7 個完成交易日的滾動視窗正式達到 20 個樣本且勝率符合統計優勢要求。"
+          ]
+        },
+        {
+          "agent": "macro",
+          "stance": "bearish",
+          "confidence": 75,
+          "preferred_assets": [
+            "CASH",
+            "TL5"
+          ],
+          "cash_preference": "0.5",
+          "arguments": [
+            "美國2026年六月非農就業僅增加57,000人，勞動市場動能放緩，但油價回升及AI電子零組件需求推升通膨黏性，市場預期九月升息預期攀升。",
+            "總體市場處於 risk_off 狀態，SPY 20日報酬率為負且低於50日均線，SMH半導體類股短線重挫，反映高動能科技資產面臨明顯拉回壓力。",
+            "全球總體風險包含中國第二季GDP成長率放緩至4.3%以及地緣政治衝突（如荷莫茲海峽風險），對國際供應鏈與原物料構成潛在威脅。"
+          ],
+          "risks": [
+            "通膨數據若再度高於預期，將促使聯準會更為鷹派，進一步推高公債殖利率並壓抑風險資產估值。",
+            "地緣政治風險升溫可能突發性推高能源價格，加劇停滯性通膨疑慮。",
+            "樣本不足與波動加劇可能導致短線模型誤判市場方向。"
+          ],
+          "invalidation_conditions": [
+            "美國核心通膨數據顯著低於預期且聯準會轉為明確鴿派寬鬆立場。",
+            "SPY 與 SMH 等主要風險資產成功站回 50 日均線上方且成交量顯著放大。",
+            "非農就業與經濟成長數據重新展現強勁擴張動能。"
+          ]
+        },
+        {
+          "agent": "momentum",
+          "stance": "bearish",
+          "confidence": 75,
+          "preferred_assets": [
+            "CASH",
+            "TLT"
+          ],
+          "cash_preference": "0.5",
+          "arguments": [
+            "SPY 20日報酬為 -0.018895% 且低於 50日均線，QQQ 與半導體板塊（SMH、SOXL、AMD）近期跌幅顯著，顯示整體科技與成長股動能轉弱並面臨趨勢延續風險。",
+            "VIX 處於正常水準 18.21 但高Beta資產如 SMH 的 20日年化波動率高達 47.95%，且 RSI 指標偏低，反映市場資金正在撤離高動能科技股。",
+            "當市場偏向 bearish 時，需針對 SQQQ、SOXS、SPXU 與現金進行報酬表達與風險特性比較：SQQQ 與 SOXS 採每日重設槓桿機制，僅適合最多 1 個交易日的短線戰術避險，若持有多日將面臨波動損耗與反彈損失；SPXU 則針對標普 500 指數進行反向追蹤，同樣受限於 1 個交易日的嚴格持有上限；現金則無重設損耗與反彈風險，適合作為防守核心。"
+          ],
+          "risks": [
+            "若半導體與 AI 基礎設施需求（如台積電資本支出與全球半導體成長預期）引發超跌後的強烈技術性反彈，反向 ETF（如 SQQQ、SOXS）與現金將面臨每日重設造成的交割損耗與機會成本。",
+            "樣本數未達 20 個完成交易日，統計優勢尚未成熟，過度偏向現金或防守資產可能錯失盤勢反轉時的動能追價機會。"
+          ],
+          "invalidation_conditions": [
+            "QQQ 與 SMH 顯著收復 20 日與 50 日均線，且 20 日報酬轉為正值並伴隨成交量放大。",
+            "VIX 大幅回落且高 Beta 科技股動能指標（如 RSI14）回升至 50 以上。"
+          ]
+        },
+        {
+          "agent": "news",
+          "stance": "bearish",
+          "confidence": 75,
+          "preferred_assets": [
+            "CASH"
+          ],
+          "cash_preference": "0.5",
+          "arguments": [
+            "根據市況快照，AMD 與 PLTR 在 2026-07-28 分別大跌 8.15% 與 6.08%，顯示高成長科技與 AI 相關標的遭受顯著賣壓。",
+            "市場政經情緒偏向 risk_off，SPY 20 日報酬落於負值且低於 50 日均線，VIX 處於 18.21 的一般波動狀態。",
+            "依據新聞與地緣政治驗證，美國與伊朗對抗及荷莫茲海峽風險構成潛在的能源與供應鏈尾端危機。"
+          ],
+          "risks": [
+            "若總體半導體需求持續熱絡（如台積電資本支出上調與全球半導體市場突破 1.5 兆美元），可能引發跌深科技股的反彈風險。",
+            "反向與槓桿 ETF 每日重設特性在盤勢震盪時會產生磨損（Volatility Drag），不適合多日持有。"
+          ],
+          "invalidation_conditions": [
+            "SPY 重新站回 50 日均線之上且 20 日報酬轉正。",
+            "AMD 與 PLTR 的 5 日與 20 日跌幅顯著收斂，技術指標 RSI 回升至 50 以上。"
+          ]
+        },
+        {
+          "agent": "ownership",
+          "stance": "bearish",
+          "confidence": 75,
+          "preferred_assets": [
+            "CASH",
+            "GLD"
+          ],
+          "cash_preference": "0.5",
+          "arguments": [
+            "根據 Yahoo Finance 與 SEC 申報（如台積電 6-K 與 NVDA、AMD 相關 filing_events），半導體與高成長科技板塊近期面臨較大回撤壓力，AMD 跌幅達 8.15%、PLTR 下跌 6.08%。",
+            "市場政經環境顯示 trend 為 risk_off，SPY 跌破 50 日均線且 20 日報酬為負，VIX 處於 18.21 的 normal 波動狀態但短線下行風險顯著。",
+            "樣本滾動視窗尚未達到 20 個完整視窗門檻，因此將風險資產權重控制在 0.50 以下，未達統計成熟前不強求承擔高額市場風險。",
+            "當前為 bearish 結論，針對 SQQQ、SOXS、SPXU 與現金進行報酬表達比較：SQQQ 與 SOXS 分別追蹤納斯達克 100 與半導體指數的單日反向兩倍（-2x）表現，SPXU 為標普 500 的單日反向三倍（-3x）表現。這類槓桿反向 ETF 具備每日重設特性，長期持有會因複利損耗與反彈損失導致路徑偏差，且最多僅能持有 1 個交易日，失效條件為指數強勢反彈或突破關鍵均線阻力；相較之下，現金（CASH）無重設風險與摩擦成本，適合在樣本未達標與短線熊市風險下作為防守配置。"
+          ],
+          "risks": [
+            "短線價格變動劇烈，若科技股出現非理性超跌後反彈，反向 ETF 與現金可能面臨機會成本或反彈損失。",
+            "持股交易證據與 13F/Form 4 申報多為歷史延遲數據，無法即時反映盤中機構突發性的大規模資金流向。",
+            "短期績效滾動視窗樣本不足，無法直接宣稱具備統計優勢或穩定勝率。"
+          ],
+          "invalidation_conditions": [
+            "SPY 與納斯達克指數帶量突破 50 日均線並扭轉 20 日下行趨勢，轉為 risk_on 狀態。",
+            "半導體與科技權值股（如 NVDA、AMD）止跌回升，且 3 與 7 日滾動視窗完成正報酬累積達標。",
+            "總體經濟或利率（^TNX）出現強烈利多，使市場風險情緒全面翻多。"
+          ]
+        },
+        {
+          "agent": "portfolio",
+          "stance": "bearish",
+          "confidence": 75,
+          "preferred_assets": [
+            "SPY",
+            "TLT",
+            "GLD",
+            "CASH"
+          ],
+          "cash_preference": "0.5",
+          "arguments": [
+            "市場結構顯示風險趨避（risk_off）態勢，SPY 20日報酬率為 -0.018895% 且低於 50 日均線，QQQ 與半導體類股（SMH、SOXL）面臨顯著回檔壓力。",
+            "美國總體經濟數據顯示六月非農就業僅增 57,000 人，且通膨黏性與油價回升推升九月升息預期，利率路徑與地緣政治風險對高估值資產構成壓抑。",
+            "在統計樣本未達 20 個完整視窗前，風險資產上限為 0.50，現金水位設定為 0.50 符合積極戰術預算與政策規範。"
+          ],
+          "risks": [
+            "若聯準會七月/九月決策或總經數據意外轉佳，可能引發空頭回補與市場反彈，導致防守型與反向配置面臨路徑損失。",
+            "槓桿及反向 ETF（如 SQQQ、SOXS、SPXU）每日重設與路徑磨損特性在盤勢震盪時會加速侵蝕本金，因此持倉時間嚴格限制在 1 個交易日以內並需重新驗證。",
+            "地緣政治衝突（如荷莫茲海峽與中東局勢）可能隨時引發國際能源與供應鏈跳空風險。"
+          ],
+          "invalidation_conditions": [
+            "SPY 與 QQQ 成功帶量突破並站穩 20 日與 50 日均線之上，且總體經濟與就業動能重新加速。",
+            "VIX 波動率指數大幅滑落至 15 以下，且半導體板塊（SMH）止跌回升，技術面重回多頭結構。"
+          ]
+        },
+        {
+          "agent": "technical",
+          "stance": "bearish",
+          "confidence": 80,
+          "preferred_assets": [
+            "CASH",
+            "TLT"
+          ],
+          "cash_preference": "0.5",
+          "arguments": [
+            "SPY 20 日報酬為 -0.018895% 且位於 50 日均線下方，顯示整體大盤偏向弱勢整理與 risk_off 狀態。",
+            "QQQ 與 SMH 跌幅顯著，分別距離 20 日均線 -4.60% 與 -9.60%，且 RSI14 處於 33 附近的弱勢區間。",
+            "SOXL 單日大跌 14.52%，20 日滾動報酬達 -53.69%，半導體與科技股承受極大下行壓力。",
+            "當市場結論偏向 bearish 時，必須明確比較 SQQQ、SOXS、SPXU 與現金的報酬表達：SQQQ 提供納斯達克 100 指數的 -3 倍每日槓桿，SOXS 提供半導體指數的 -3 倍每日槓桿，SPXU 提供標普 500 指數的 -3 倍每日槓桿；此類反向 ETF 具備每日重設特性，在盤勢反彈時會遭受每日複利耗損與反彈損失，且最大持有期僅限 1 個交易日必須每日重新驗證，不等於必須買進。"
+          ],
+          "risks": [
+            "短線樣本未達 20 個完整視窗的統計成熟門檻，風險資產配置上限受限於 0.50。",
+            "若美股科技板塊出現技術性超賣後的劇烈反彈，反向 ETF 如 SQQQ 與 SOXS 將面臨顯著的複合回撤損失。",
+            "地緣政治風險與能源價格波動可能干擾宏觀利率路徑，進一步加劇股市波動。"
+          ],
+          "invalidation_conditions": [
+            "SPY 與 QQQ 帶量站回 20 日與 50 日均線之上，且 RSI14 回升至 50 以上。",
+            "VIX 指數跌破 15 且市場轉為 risk_on 結構。",
+            "半導體指數 SMH 止跌回穩並收復跌幅，消除短線崩跌形態。"
+          ]
+        }
+      ],
+      "critiques": [
+        {
+          "reviewer": "risk",
+          "challenged_agents": [
+            "earnings",
+            "etf",
+            "learning",
+            "liquidity",
+            "macro",
+            "momentum",
+            "news",
+            "ownership",
+            "portfolio",
+            "technical"
+          ],
+          "strongest_objection": "多數Agent在推論中仍將現金偏好設定在0.50，雖未超過0.60上限，但在未達20個完成視窗統計成熟前，各Agent僅機械式重複法規文字，未能針對每個部位失效後的絕對美元損失、隔夜跳空與交易摩擦提供具體量化風控評估。",
+          "hidden_assumptions": [
+            "假設持有現金或防守性資產（如TLT、GLD）在當前VIX normal（18.21）及回檔結構下能完全免疫於總體利率與地緣政治尾端風險。",
+            "假設各Agent提及的反向ETF（SQQQ、SOXS、SPXU）僅因政策要求進行比較，而無形中忽略了若實際短線觸發避險時的流動性衝擊與盤中跳空風險。"
+          ],
+          "required_changes": [
+            "必須針對風險資產上限0.50與現金水位0.50的組合，具體計算單一交易部位失效後的美元損失（基於6000美元初始資金與1%單筆風險上限）。",
+            "在市場面臨科技股與半導體（如SOXL單日重挫14.52%）極端波動時，必須明確評估隔夜跳空情境對現有防守資產與候選資產的衝擊。",
+            "確保所有Agent嚴格遵守反向與槓桿ETF最多持有1個交易日的限制，禁止任何跨日留倉意圖。"
+          ],
+          "veto_recommended": false
+        },
+        {
+          "reviewer": "devil_advocate",
+          "challenged_agents": [
+            "earnings",
+            "etf",
+            "learning",
+            "liquidity",
+            "macro",
+            "momentum",
+            "news",
+            "ownership",
+            "portfolio",
+            "technical"
+          ],
+          "strongest_objection": "多數共識一致認定當前為 bearish / risk_off 並全面給予現金 0.50 配置，同時附上防禦性資產或討論反向 ETF，但忽略了樣本不足（distinct_completed_sessions 為 2，3 與 7 日滾動視窗為 0）的核心前提：『樣本不足本身不禁止承擔市場風險，也不得單獨作為 risk veto 或 100% CASH 的理由』。各委員雖然在數字上寫了 0.50 現金，但實質上的論述邏輯與過去多輪完全一致，把『樣本不足/未達統計成熟』變相作為不承擔任何風險、偏好防守的隱性理由，並在未經驗證的情況下反覆套用公式化反向 ETF 比較，流於形式主義。",
+          "hidden_assumptions": [
+            "假設只要標普跌破 50 日均線、VIX 處於 18 附近，市場就必然延續空頭，忽略了 2026-07-28 SPY 單日逆勢上漲 0.24% 的微幅反彈可能暗示技術性支撐的韌性。",
+            "假設反向 ETF（SQQQ、SOXS、SPXU）的『比較』等於完成合規審查，卻未檢視在當前波動率下每日重設（volatility drag）對跨日或短線持倉的實際損耗成本是否大於現金機會成本。",
+            "假設 3 與 7 日視窗樣本數未達標（2個交易日）就必須採取防守姿態，這與短期績效政策明文規定的『樣本不足不禁止承擔風險』存在邏輯上的摩擦與過度防守偏誤。"
+          ],
+          "required_changes": [
+            "修正防守理由：不得將『樣本未達 20 個完整視窗』或『滾動視窗不足』作為實質降低風險資產配置、甚至將現金維持在高檔的唯一正當化依據，必須回歸基本面與技術面的獨立風險評估。",
+            "落實反向 ETF 的條件約束：既然政策明確規定『比較不等於必須買進』且『最多持有 1 個交易日，下一個完成交易日必須重新驗證』，各委員在未提供明確進場點、摩擦成本試算與次日退出機制前，不應流於形式地反覆貼上一模一樣的反向 ETF 比較文字。",
+            "嚴格校準現金與風險資產的動態預算：在沒有正式 risk veto 的前提下，現金配置不得盲目鎖死在 0.50 或接近上限的 0.60 區間，應依據盤中與收盤真實變動給予更具彈性的戰術空間。"
+          ],
+          "veto_recommended": false
+        }
+      ],
+      "reconciliation_responses": [],
+      "critique_resolutions": [],
+      "final_decision_audits": [],
+      "decision_origin": "model",
+      "policy_override_notes": [],
+      "final_decision": {
+        "market_stance": "bearish",
+        "model_score": 97,
+        "model_score_reason": "方向一致度 97/100；10 位提案委員按信心加權，0 項協商後否決仍未解除，扣除 0 分。",
+        "risk_level": "high",
+        "expected_horizon": "3 交易日",
+        "allocations": [
+          {
+            "symbol": "CASH",
+            "asset_type": "cash",
+            "target_weight": "0.5",
+            "note": "依據政策規範在樣本未達統計成熟且無正式 risk veto 時將現金維持於 0.50，合乎 0.20 至 0.60 區間。"
+          },
+          {
+            "symbol": "TLT",
+            "asset_type": "etf",
+            "target_weight": "0.25",
+            "note": "配置防禦性長天期美債 ETF，因應 10 年期公債殖利率回落與市場避險需求。"
+          },
+          {
+            "symbol": "GLD",
+            "asset_type": "commodity_etf",
+            "target_weight": "0.25",
+            "note": "配置黃金商品 ETF，作為地緣政治與通膨黏性之避險組合。"
+          }
+        ],
+        "top_reasons": [
+          {
+            "id": 1,
+            "title": "科技與半導體板塊短線籌碼鬆動與顯著回檔",
+            "summary": "市場快照顯示半導體板塊（SMH）單日下跌 3.45%，槓桿半導體（SOXL）大跌 14.52%，AMD 下跌 8.15%，反映高動能科技資產面臨強烈拋壓。",
+            "confidence": 85,
+            "category": "technical",
+            "affected_assets": [
+              "SMH",
+              "SOXL",
+              "AMD",
+              "QQQ"
+            ],
+            "source_urls": [
+              "https://finance.yahoo.com/"
+            ]
+          },
+          {
+            "id": 2,
+            "title": "大盤處於 risk_off 狀態且跌破短中期均線",
+            "summary": "SPY 20 日報酬率為 -0.018895% 且低於 50 日均線，^TNX 與 VIX（18.21）呈現正常但波動率擴張的防禦格局。",
+            "confidence": 80,
+            "category": "macro",
+            "affected_assets": [
+              "SPY",
+              "TLT",
+              "GLD"
+            ],
+            "source_urls": [
+              "https://finance.yahoo.com/"
+            ]
+          },
+          {
+            "id": 3,
+            "title": "台灣半導體資本支出擴張與基本面分化",
+            "summary": "台積電第二季淨利年增 77.4% 並將 2026 年資本支出上限調高至 640 億美元，顯示 AI 長線需求穩健，但個股短期表現受總體資金撤離壓抑。",
+            "confidence": 75,
+            "category": "valuation",
+            "affected_assets": [
+              "TSM",
+              "NVDA",
+              "AMD"
+            ],
+            "source_urls": [
+              "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000459/tsm-monthend6kx20260724.htm"
+            ]
+          },
+          {
+            "id": 4,
+            "title": "美國總體經濟成長溫和與就業動能放緩",
+            "summary": "美國 2026 年六月非農就業僅增加 57,000 人，失業率維持低點但就業成長放緩，預期 2026 年實質 GDP 成長率為 2.0%。",
+            "confidence": 70,
+            "category": "macro",
+            "affected_assets": [
+              "SPY",
+              "TLT"
+            ],
+            "source_urls": [
+              "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3pw5v1oAWzbjTgaJXQBfrjBnKjPn_pn8KGpfQHkuqtmt-_fYb5WQQG0MsiRjKjSY39S20STt180BsEJImgksfNMk5vyqMH4HrX-5nIqnBZ6lfxgnP3ByFYo-7AxkuOQKpkKGXkP69JmoWLTL9ZuyxxTgCrWXeXelnAPkK5mUMfkjOsqUl-lTxWb0-19fv9fw74uuVafs-kYrMm0DJxOIp6au3Th7XZgkHrJWkXBirgDzByT8iZXz7tMlGQYX09Q59eTqcUZn1gpAWWWuba2A="
+            ]
+          },
+          {
+            "id": 5,
+            "title": "聯準會利率路徑與通膨黏性隱憂",
+            "summary": "油價回升及 AI 供應鏈需求推升通膨壓力，市場預期聯準會七月維持利率不變，九月升息預期正在攀升。",
+            "confidence": 75,
+            "category": "policy",
+            "affected_assets": [
+              "TLT",
+              "SPY",
+              "QQQ"
+            ],
+            "source_urls": [
+              "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBn7cWQmJkwMI0F0UbwK0jnGBHTX9mzjY8XAk8zOohUWVap2ryDXe0JZIpaIj0fOfayx1FhXDfbJEnIc67K_fm5wFA8Qr0iJfIOPIlQDU7r2ApZMCx4FygM7yslKbBvlHFdrqf9NXtiQHV9J5X0iThYJ59Na0Jir77lY9jhQ=="
+            ]
+          },
+          {
+            "id": 6,
+            "title": "地緣政治與荷莫茲海峽能源風險",
+            "summary": "美國與伊朗持續對抗可能對國際航運與能源供應構成尾端風險，對原物料與跨國供應鏈形成潛在干擾。",
+            "confidence": 70,
+            "category": "risk",
+            "affected_assets": [
+              "GLD",
+              "ERX",
+              "CL=F"
+            ],
+            "source_urls": [
+              "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFEq079z01hQXAwS-0HXCq_YiWN0beuvqaiojPDB9QeUJrmQXBq3YVYMZARmFJ87m1IBEQmlsvl3jrqMpG-_Ayd7N9kC6yGeppQ1ikOLohYRRuPSxHT9uMMm3YFZn8gKsVACV5N_ImZhxD8djzW60XMAaOshMr0OjOTU55ibV1C-KTLQQsTkjadEMUwFfuo--8CT1SAPBeoiFKmUw50A9zoqA=="
+            ]
+          },
+          {
+            "id": 7,
+            "title": "短期績效樣本未達成熟門檻",
+            "summary": "3 與 7 個完成交易日的滾動視窗樣本數仍未達 20 個完整視窗的統計成熟要求，依政策限制維持合規防禦配置。",
+            "confidence": 90,
+            "category": "risk",
+            "affected_assets": [
+              "CASH",
+              "TLT",
+              "GLD"
+            ],
+            "source_urls": [
+              "https://finance.yahoo.com/"
+            ]
+          },
+          {
+            "id": 8,
+            "title": "反向 ETF 每日重設與路徑磨損特性比較",
+            "summary": "當前結論為 bearish，經比較 SQQQ、SOXS、SPXU 與現金發現：反向 ETF 採每日重設機制，僅適合最多 1 個交易日的短線戰術避險，跨日持有將遭受複利耗損與反彈損失，現金則無此摩擦。",
+            "confidence": 90,
+            "category": "risk",
+            "affected_assets": [
+              "SQQQ",
+              "SOXS",
+              "SPXU",
+              "CASH"
+            ],
+            "source_urls": [
+              "https://finance.yahoo.com/"
+            ]
+          },
+          {
+            "id": 9,
+            "title": "歐洲半導體設備龍頭營運展望熱絡",
+            "summary": "艾司摩爾（ASML）預計 2026 年全年營收達 430 億至 450 億歐元，反映半導體前端擴產需求依舊強勁，可支撐中長線產業基本面。",
+            "confidence": 75,
+            "category": "valuation",
+            "affected_assets": [
+              "SMH",
+              "SOXX",
+              "TSM"
+            ],
+            "source_urls": [
+              "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFfaPJ89PjVJcgpD2XAr-osujKivelGMyTMHHOaMHykYPIgYHE4ZCZclr1juQubxRyV5XtqUe8hnMDMbLoMekcEKmq4e7VOCMv5jUP4mRvZNilT7FIr5YV1_26IBI8bdvwVlJCqJmJ4uwFmqU_uSQd0UPHY6haoGckbhkjwrIecoXaoUQ4QBL4RWIRiNfqQw0="
+            ]
+          },
+          {
+            "id": 10,
+            "title": "亞洲半導體出口國經濟成長上修",
+            "summary": "台灣與韓國 2026 年經濟成長預測分別被上修至 10% 以上與 3.0%，突顯亞洲半導體供應鏈在全球 AI 建設中的核心樞紐地位。",
+            "confidence": 75,
+            "category": "macro",
+            "affected_assets": [
+              "TSM",
+              "SMH"
+            ],
+            "source_urls": [
+              "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF6ihdXZ2nAecs4qMTReiUyFrCy2N4RA3gLHQoyisMCg5SJXCYW-JnkrbTzlozEAnqjbsjSH9QM4aDJHi8Cj7nr1dhYM62KSpS1GpRD269x3m3GgvrxIhu6DR2eGR4bf-_PBWg3-8-sDTAdmTB9hJtUEzhV2t-FUJDObIT3O29qupBZZOVEdlvZpbjhMeFaN3ha00pnxJSiO3Dj6kI="
+            ]
+          }
+        ],
+        "invalidation_conditions": [
+          "SPY 與 QQQ 帶量收復 20 日與 50 日均線，且 20 日報酬轉為正值。",
+          "VIX 顯著回落至 15 以下，且半導體板塊（SMH）止跌回升並突破關鍵技術反壓。",
+          "總體經濟數據顯示通膨壓力完全消解，聯準會利率政策轉向明確寬鬆。"
+        ],
+        "major_risks": [
+          "科技股若出現超跌後的技術性急彈，防守型或反向配置可能面臨機會成本與反彈損失。",
+          "地緣政治衝突或能源價格突發跳空，可能透過成本管道打擊風險資產估值。",
+          "樣本數未達 20 個完整交易日成熟門檻，短期統計優勢尚未確立。"
+        ],
+        "risk_veto": false,
+        "veto_reason": null
+      }
+    },
+    "recommendation": {
+      "schema_version": "1.0",
+      "run_id": "20260729T015913Z",
+      "generated_at": "2026-07-29T01:59:13.108828Z",
+      "data_cutoff": "2026-07-29T01:56:46.331210Z",
+      "status": "live",
+      "capital_usd": "6000.00",
+      "model_score": 97,
+      "model_score_reason": "方向一致度 97/100；10 位提案委員按信心加權，0 項協商後否決仍未解除，扣除 0 分。",
+      "risk_level": "high",
+      "expected_horizon": "3 交易日",
+      "allocations": [
+        {
+          "symbol": "CASH",
+          "asset_type": "cash",
+          "target_weight": "0.5",
+          "target_amount_usd": "3000.00",
+          "action": "reduce",
+          "note": "依據政策規範在樣本未達統計成熟且無正式 risk veto 時將現金維持於 0.50，合乎 0.20 至 0.60 區間。"
+        },
+        {
+          "symbol": "TLT",
+          "asset_type": "etf",
+          "target_weight": "0.25",
+          "target_amount_usd": "1500.00",
+          "action": "buy",
+          "note": "配置防禦性長天期美債 ETF，因應 10 年期公債殖利率回落與市場避險需求。"
+        },
+        {
+          "symbol": "GLD",
+          "asset_type": "commodity_etf",
+          "target_weight": "0.25",
+          "target_amount_usd": "1500.00",
+          "action": "buy",
+          "note": "配置黃金商品 ETF，作為地緣政治與通膨黏性之避險組合。"
+        }
+      ],
+      "top_reasons": [
+        {
+          "id": 1,
+          "title": "科技與半導體板塊短線籌碼鬆動與顯著回檔",
+          "summary": "市場快照顯示半導體板塊（SMH）單日下跌 3.45%，槓桿半導體（SOXL）大跌 14.52%，AMD 下跌 8.15%，反映高動能科技資產面臨強烈拋壓。",
+          "confidence": 85,
+          "category": "technical",
+          "affected_assets": [
+            "SMH",
+            "SOXL",
+            "AMD",
+            "QQQ"
+          ],
+          "source_urls": [
+            "https://finance.yahoo.com/"
+          ]
+        },
+        {
+          "id": 2,
+          "title": "大盤處於 risk_off 狀態且跌破短中期均線",
+          "summary": "SPY 20 日報酬率為 -0.018895% 且低於 50 日均線，^TNX 與 VIX（18.21）呈現正常但波動率擴張的防禦格局。",
+          "confidence": 80,
+          "category": "macro",
+          "affected_assets": [
+            "SPY",
+            "TLT",
+            "GLD"
+          ],
+          "source_urls": [
+            "https://finance.yahoo.com/"
+          ]
+        },
+        {
+          "id": 3,
+          "title": "台灣半導體資本支出擴張與基本面分化",
+          "summary": "台積電第二季淨利年增 77.4% 並將 2026 年資本支出上限調高至 640 億美元，顯示 AI 長線需求穩健，但個股短期表現受總體資金撤離壓抑。",
+          "confidence": 75,
+          "category": "valuation",
+          "affected_assets": [
+            "TSM",
+            "NVDA",
+            "AMD"
+          ],
+          "source_urls": [
+            "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000459/tsm-monthend6kx20260724.htm"
+          ]
+        },
+        {
+          "id": 4,
+          "title": "美國總體經濟成長溫和與就業動能放緩",
+          "summary": "美國 2026 年六月非農就業僅增加 57,000 人，失業率維持低點但就業成長放緩，預期 2026 年實質 GDP 成長率為 2.0%。",
+          "confidence": 70,
+          "category": "macro",
+          "affected_assets": [
+            "SPY",
+            "TLT"
+          ],
+          "source_urls": [
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3pw5v1oAWzbjTgaJXQBfrjBnKjPn_pn8KGpfQHkuqtmt-_fYb5WQQG0MsiRjKjSY39S20STt180BsEJImgksfNMk5vyqMH4HrX-5nIqnBZ6lfxgnP3ByFYo-7AxkuOQKpkKGXkP69JmoWLTL9ZuyxxTgCrWXeXelnAPkK5mUMfkjOsqUl-lTxWb0-19fv9fw74uuVafs-kYrMm0DJxOIp6au3Th7XZgkHrJWkXBirgDzByT8iZXz7tMlGQYX09Q59eTqcUZn1gpAWWWuba2A="
+          ]
+        },
+        {
+          "id": 5,
+          "title": "聯準會利率路徑與通膨黏性隱憂",
+          "summary": "油價回升及 AI 供應鏈需求推升通膨壓力，市場預期聯準會七月維持利率不變，九月升息預期正在攀升。",
+          "confidence": 75,
+          "category": "policy",
+          "affected_assets": [
+            "TLT",
+            "SPY",
+            "QQQ"
+          ],
+          "source_urls": [
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBn7cWQmJkwMI0F0UbwK0jnGBHTX9mzjY8XAk8zOohUWVap2ryDXe0JZIpaIj0fOfayx1FhXDfbJEnIc67K_fm5wFA8Qr0iJfIOPIlQDU7r2ApZMCx4FygM7yslKbBvlHFdrqf9NXtiQHV9J5X0iThYJ59Na0Jir77lY9jhQ=="
+          ]
+        },
+        {
+          "id": 6,
+          "title": "地緣政治與荷莫茲海峽能源風險",
+          "summary": "美國與伊朗持續對抗可能對國際航運與能源供應構成尾端風險，對原物料與跨國供應鏈形成潛在干擾。",
+          "confidence": 70,
+          "category": "risk",
+          "affected_assets": [
+            "GLD",
+            "ERX",
+            "CL=F"
+          ],
+          "source_urls": [
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFEq079z01hQXAwS-0HXCq_YiWN0beuvqaiojPDB9QeUJrmQXBq3YVYMZARmFJ87m1IBEQmlsvl3jrqMpG-_Ayd7N9kC6yGeppQ1ikOLohYRRuPSxHT9uMMm3YFZn8gKsVACV5N_ImZhxD8djzW60XMAaOshMr0OjOTU55ibV1C-KTLQQsTkjadEMUwFfuo--8CT1SAPBeoiFKmUw50A9zoqA=="
+          ]
+        },
+        {
+          "id": 7,
+          "title": "短期績效樣本未達成熟門檻",
+          "summary": "3 與 7 個完成交易日的滾動視窗樣本數仍未達 20 個完整視窗的統計成熟要求，依政策限制維持合規防禦配置。",
+          "confidence": 90,
+          "category": "risk",
+          "affected_assets": [
+            "CASH",
+            "TLT",
+            "GLD"
+          ],
+          "source_urls": [
+            "https://finance.yahoo.com/"
+          ]
+        },
+        {
+          "id": 8,
+          "title": "反向 ETF 每日重設與路徑磨損特性比較",
+          "summary": "當前結論為 bearish，經比較 SQQQ、SOXS、SPXU 與現金發現：反向 ETF 採每日重設機制，僅適合最多 1 個交易日的短線戰術避險，跨日持有將遭受複利耗損與反彈損失，現金則無此摩擦。",
+          "confidence": 90,
+          "category": "risk",
+          "affected_assets": [
+            "SQQQ",
+            "SOXS",
+            "SPXU",
+            "CASH"
+          ],
+          "source_urls": [
+            "https://finance.yahoo.com/"
+          ]
+        },
+        {
+          "id": 9,
+          "title": "歐洲半導體設備龍頭營運展望熱絡",
+          "summary": "艾司摩爾（ASML）預計 2026 年全年營收達 430 億至 450 億歐元，反映半導體前端擴產需求依舊強勁，可支撐中長線產業基本面。",
+          "confidence": 75,
+          "category": "valuation",
+          "affected_assets": [
+            "SMH",
+            "SOXX",
+            "TSM"
+          ],
+          "source_urls": [
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFfaPJ89PjVJcgpD2XAr-osujKivelGMyTMHHOaMHykYPIgYHE4ZCZclr1juQubxRyV5XtqUe8hnMDMbLoMekcEKmq4e7VOCMv5jUP4mRvZNilT7FIr5YV1_26IBI8bdvwVlJCqJmJ4uwFmqU_uSQd0UPHY6haoGckbhkjwrIecoXaoUQ4QBL4RWIRiNfqQw0="
+          ]
+        },
+        {
+          "id": 10,
+          "title": "亞洲半導體出口國經濟成長上修",
+          "summary": "台灣與韓國 2026 年經濟成長預測分別被上修至 10% 以上與 3.0%，突顯亞洲半導體供應鏈在全球 AI 建設中的核心樞紐地位。",
+          "confidence": 75,
+          "category": "macro",
+          "affected_assets": [
+            "TSM",
+            "SMH"
+          ],
+          "source_urls": [
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF6ihdXZ2nAecs4qMTReiUyFrCy2N4RA3gLHQoyisMCg5SJXCYW-JnkrbTzlozEAnqjbsjSH9QM4aDJHi8Cj7nr1dhYM62KSpS1GpRD269x3m3GgvrxIhu6DR2eGR4bf-_PBWg3-8-sDTAdmTB9hJtUEzhV2t-FUJDObIT3O29qupBZZOVEdlvZpbjhMeFaN3ha00pnxJSiO3Dj6kI="
+          ]
+        }
+      ],
+      "invalidation_conditions": [
+        "SPY 與 QQQ 帶量收復 20 日與 50 日均線，且 20 日報酬轉為正值。",
+        "VIX 顯著回落至 15 以下，且半導體板塊（SMH）止跌回升並突破關鍵技術反壓。",
+        "總體經濟數據顯示通膨壓力完全消解，聯準會利率政策轉向明確寬鬆。"
+      ],
+      "major_risks": [
+        "科技股若出現超跌後的技術性急彈，防守型或反向配置可能面臨機會成本與反彈損失。",
+        "地緣政治衝突或能源價格突發跳空，可能透過成本管道打擊風險資產估值。",
+        "樣本數未達 20 個完整交易日成熟門檻，短期統計優勢尚未確立。"
+      ],
+      "disclaimer": "研究建議，尚未執行。下單前須由使用者核對券商即時價格、成本與風險；系統不存取券商、不自動下單。"
+    },
+    "market_snapshot": {
+      "schema_version": "1.0",
+      "generated_at": "2026-07-29T01:56:46.331210Z",
+      "mode": "live",
+      "source": "Yahoo Finance via yfinance",
+      "quotes": [
+        {
+          "symbol": "SPY",
+          "price": "740.859985",
+          "previous_close": "739.090027",
+          "change_percent": "0.239478",
+          "volume": 40901869,
+          "as_of": "2026-07-29T01:56:46.331210Z",
+          "price_session": "2026-07-28",
+          "source": "Yahoo Finance via yfinance"
+        },
+        {
+          "symbol": "QQQ",
+          "price": "675.48999",
+          "previous_close": "682.119995",
+          "change_percent": "-0.97197",
+          "volume": 49675490,
+          "as_of": "2026-07-29T01:56:46.331210Z",
+          "price_session": "2026-07-28",
+          "source": "Yahoo Finance via yfinance"
+        },
+        {
+          "symbol": "SMH",
+          "price": "529.599976",
+          "previous_close": "548.549988",
+          "change_percent": "-3.454564",
+          "volume": 17209240,
+          "as_of": "2026-07-29T01:56:46.331210Z",
+          "price_session": "2026-07-28",
+          "source": "Yahoo Finance via yfinance"
+        },
+        {
+          "symbol": "SOXL",
+          "price": "109.540001",
+          "previous_close": "128.149994",
+          "change_percent": "-14.52204",
+          "volume": 119982290,
+          "as_of": "2026-07-29T01:56:46.331210Z",
+          "price_session": "2026-07-28",
+          "source": "Yahoo Finance via yfinance"
+        },
+        {
+          "symbol": "TQQQ",
+          "price": "61.560001",
+          "previous_close": "63.400002",
+          "change_percent": "-2.902208",
+          "volume": 70761137,
+          "as_of": "2026-07-29T01:56:46.331210Z",
+          "price_session": "2026-07-28",
+          "source": "Yahoo Finance via yfinance"
+        },
+        {
+          "symbol": "NVDA",
+          "price": "197.009995",
+          "previous_close": "196.509995",
+          "change_percent": "0.25444",
+          "volume": 125138253,
+          "as_of": "2026-07-29T01:56:46.331210Z",
+          "price_session": "2026-07-28",
+          "source": "Yahoo Finance via yfinance"
+        },
+        {
+          "symbol": "AMD",
+          "price": "454.619995",
+          "previous_close": "494.950012",
+          "change_percent": "-8.148301",
+          "volume": 35827897,
+          "as_of": "2026-07-29T01:56:46.331210Z",
+          "price_session": "2026-07-28",
+          "source": "Yahoo Finance via yfinance"
+        },
+        {
+          "symbol": "PLTR",
+          "price": "123.529999",
+          "previous_close": "131.529999",
+          "change_percent": "-6.082263",
+          "volume": 42804212,
+          "as_of": "2026-07-29T01:56:46.331210Z",
+          "price_session": "2026-07-28",
+          "source": "Yahoo Finance via yfinance"
+        },
+        {
+          "symbol": "ERX",
+          "price": "88.690002",
+          "previous_close": "91.110001",
+          "change_percent": "-2.656128",
+          "volume": 222437,
+          "as_of": "2026-07-29T01:56:46.331210Z",
+          "price_session": "2026-07-28",
+          "source": "Yahoo Finance via yfinance"
+        },
+        {
+          "symbol": "GLD",
+          "price": "369.369995",
+          "previous_close": "374.630005",
+          "change_percent": "-1.404055",
+          "volume": 4399564,
+          "as_of": "2026-07-29T01:56:46.331210Z",
+          "price_session": "2026-07-28",
+          "source": "Yahoo Finance via yfinance"
+        },
+        {
+          "symbol": "TLT",
+          "price": "84.239998",
+          "previous_close": "83.75",
+          "change_percent": "0.585072",
+          "volume": 25134648,
+          "as_of": "2026-07-29T01:56:46.331210Z",
+          "price_session": "2026-07-28",
+          "source": "Yahoo Finance via yfinance"
+        },
+        {
+          "symbol": "SQQQ",
+          "price": "46.509998",
+          "previous_close": "45.220001",
+          "change_percent": "2.852714",
+          "volume": 56056315,
+          "as_of": "2026-07-29T01:56:46.331210Z",
+          "price_session": "2026-07-28",
+          "source": "Yahoo Finance via yfinance"
+        },
+        {
+          "symbol": "CL=F",
+          "price": "82.93",
+          "previous_close": "82.610001",
+          "change_percent": "0.387362",
+          "volume": 40575,
+          "as_of": "2026-07-29T01:56:46.331210Z",
+          "price_session": "2026-07-28",
+          "source": "Yahoo Finance via yfinance"
+        },
+        {
+          "symbol": "^VIX",
+          "price": "18.209999",
+          "previous_close": "18.67",
+          "change_percent": "-2.463851",
+          "volume": 0,
+          "as_of": "2026-07-29T01:56:46.331210Z",
+          "price_session": "2026-07-28",
+          "source": "Yahoo Finance via yfinance"
+        },
+        {
+          "symbol": "^TNX",
+          "price": "4.604",
+          "previous_close": "4.641",
+          "change_percent": "-0.797236",
+          "volume": 0,
+          "as_of": "2026-07-29T01:56:46.331210Z",
+          "price_session": "2026-07-28",
+          "source": "Yahoo Finance via yfinance"
+        }
+      ],
+      "features": [
+        {
+          "symbol": "SPY",
+          "data_session": "2026-07-28",
+          "return_1d_percent": "0.239478",
+          "return_5d_percent": "-0.991613",
+          "return_20d_percent": "-0.018895",
+          "volatility_20d_annualized_percent": "9.702838",
+          "drawdown_20d_percent": "-1.866352",
+          "distance_from_ma20_percent": "-0.7756",
+          "distance_from_ma50_percent": "-0.536669",
+          "rsi14": "45.689293",
+          "volume_ratio_20d": "0.894815"
+        },
+        {
+          "symbol": "QQQ",
+          "data_session": "2026-07-28",
+          "return_1d_percent": "-0.97197",
+          "return_5d_percent": "-4.722341",
+          "return_20d_percent": "-6.710588",
+          "volatility_20d_annualized_percent": "21.191416",
+          "drawdown_20d_percent": "-8.271324",
+          "distance_from_ma20_percent": "-4.600365",
+          "distance_from_ma50_percent": "-5.756463",
+          "rsi14": "33.243206",
+          "volume_ratio_20d": "1.305922"
+        },
+        {
+          "symbol": "SMH",
+          "data_session": "2026-07-28",
+          "return_1d_percent": "-3.454564",
+          "return_5d_percent": "-9.327496",
+          "return_20d_percent": "-16.199881",
+          "volatility_20d_annualized_percent": "47.946018",
+          "drawdown_20d_percent": "-19.254759",
+          "distance_from_ma20_percent": "-9.606298",
+          "distance_from_ma50_percent": "-11.352983",
+          "rsi14": "33.280582",
+          "volume_ratio_20d": "1.334755"
+        },
+        {
+          "symbol": "SOXL",
+          "data_session": "2026-07-28",
+          "return_1d_percent": "-14.52204",
+          "return_5d_percent": "-30.907023",
+          "return_20d_percent": "-53.686792",
+          "volatility_20d_annualized_percent": "169.653069",
+          "drawdown_20d_percent": "-58.929172",
+          "distance_from_ma20_percent": "-34.779372",
+          "distance_from_ma50_percent": "-45.293841",
+          "rsi14": "31.258612",
+          "volume_ratio_20d": "1.832468"
+        },
+        {
+          "symbol": "TQQQ",
+          "data_session": "2026-07-28",
+          "return_1d_percent": "-2.902208",
+          "return_5d_percent": "-13.745273",
+          "return_20d_percent": "-20.248738",
+          "volatility_20d_annualized_percent": "62.901129",
+          "drawdown_20d_percent": "-23.999998",
+          "distance_from_ma20_percent": "-13.991112",
+          "distance_from_ma50_percent": "-18.729023",
+          "rsi14": "32.681563",
+          "volume_ratio_20d": "1.131906"
+        },
+        {
+          "symbol": "NVDA",
+          "data_session": "2026-07-28",
+          "return_1d_percent": "0.25444",
+          "return_5d_percent": "-4.959235",
+          "return_20d_percent": "1.046311",
+          "volatility_20d_annualized_percent": "39.583939",
+          "drawdown_20d_percent": "-7.289414",
+          "distance_from_ma20_percent": "-3.251709",
+          "distance_from_ma50_percent": "-5.20317",
+          "rsi14": "44.163521",
+          "volume_ratio_20d": "0.965034"
+        },
+        {
+          "symbol": "AMD",
+          "data_session": "2026-07-28",
+          "return_1d_percent": "-8.148301",
+          "return_5d_percent": "-16.496152",
+          "return_20d_percent": "-15.731524",
+          "volatility_20d_annualized_percent": "79.934164",
+          "drawdown_20d_percent": "-21.740026",
+          "distance_from_ma20_percent": "-13.813582",
+          "distance_from_ma50_percent": "-10.783323",
+          "rsi14": "38.959812",
+          "volume_ratio_20d": "1.296647"
+        },
+        {
+          "symbol": "PLTR",
+          "data_session": "2026-07-28",
+          "return_1d_percent": "-6.082263",
+          "return_5d_percent": "-6.882259",
+          "return_20d_percent": "6.767504",
+          "volatility_20d_annualized_percent": "55.623156",
+          "drawdown_20d_percent": "-8.394517",
+          "distance_from_ma20_percent": "-4.404453",
+          "distance_from_ma50_percent": "-6.017741",
+          "rsi14": "40.585048",
+          "volume_ratio_20d": "1.135919"
+        },
+        {
+          "symbol": "ERX",
+          "data_session": "2026-07-28",
+          "return_1d_percent": "-2.656128",
+          "return_5d_percent": "-3.450902",
+          "return_20d_percent": "14.690289",
+          "volatility_20d_annualized_percent": "42.732353",
+          "drawdown_20d_percent": "-6.896913",
+          "distance_from_ma20_percent": "3.662495",
+          "distance_from_ma50_percent": "2.269559",
+          "rsi14": "60.487253",
+          "volume_ratio_20d": "0.85889"
+        },
+        {
+          "symbol": "GLD",
+          "data_session": "2026-07-28",
+          "return_1d_percent": "-1.404055",
+          "return_5d_percent": "-1.451403",
+          "return_20d_percent": "0.214338",
+          "volatility_20d_annualized_percent": "21.281297",
+          "drawdown_20d_percent": "-3.33918",
+          "distance_from_ma20_percent": "-0.977439",
+          "distance_from_ma50_percent": "-4.760359",
+          "rsi14": "45.705093",
+          "volume_ratio_20d": "0.708762"
+        },
+        {
+          "symbol": "TLT",
+          "data_session": "2026-07-28",
+          "return_1d_percent": "0.585072",
+          "return_5d_percent": "0.693275",
+          "return_20d_percent": "-3.670668",
+          "volatility_20d_annualized_percent": "8.167734",
+          "drawdown_20d_percent": "-2.522565",
+          "distance_from_ma20_percent": "-0.141658",
+          "distance_from_ma50_percent": "-0.948191",
+          "rsi14": "48.369521",
+          "volume_ratio_20d": "1.161811"
+        },
+        {
+          "symbol": "SQQQ",
+          "data_session": "2026-07-28",
+          "return_1d_percent": "2.852714",
+          "return_5d_percent": "15.380791",
+          "return_20d_percent": "21.881547",
+          "volatility_20d_annualized_percent": "63.160014",
+          "drawdown_20d_percent": "0.0",
+          "distance_from_ma20_percent": "14.320121",
+          "distance_from_ma50_percent": "15.362479",
+          "rsi14": "67.257102",
+          "volume_ratio_20d": "1.059678"
+        },
+        {
+          "symbol": "CL=F",
+          "data_session": "2026-07-28",
+          "return_1d_percent": "0.387362",
+          "return_5d_percent": "-2.331885",
+          "return_20d_percent": "17.215548",
+          "volatility_20d_annualized_percent": "57.347367",
+          "drawdown_20d_percent": "-10.044475",
+          "distance_from_ma20_percent": "6.096078",
+          "distance_from_ma50_percent": "-0.879451",
+          "rsi14": "63.801708",
+          "volume_ratio_20d": "0.156291"
+        },
+        {
+          "symbol": "^VIX",
+          "data_session": "2026-07-28",
+          "return_1d_percent": "-2.463851",
+          "return_5d_percent": "6.803518",
+          "return_20d_percent": "3.172802",
+          "volatility_20d_annualized_percent": "105.592726",
+          "drawdown_20d_percent": "-2.983492",
+          "distance_from_ma20_percent": "7.120793",
+          "distance_from_ma50_percent": "4.843162",
+          "rsi14": "54.869885",
+          "volume_ratio_20d": null
+        },
+        {
+          "symbol": "^TNX",
+          "data_session": "2026-07-28",
+          "return_1d_percent": "-0.797236",
+          "return_5d_percent": "-0.518576",
+          "return_20d_percent": "5.258345",
+          "volatility_20d_annualized_percent": "12.441186",
+          "drawdown_20d_percent": "-2.105039",
+          "distance_from_ma20_percent": "0.719742",
+          "distance_from_ma50_percent": "1.739563",
+          "rsi14": "53.668799",
+          "volume_ratio_20d": null
+        }
+      ],
+      "regime": {
+        "trend": "risk_off",
+        "volatility": "normal",
+        "rates": "stable",
+        "evidence": [
+          "SPY 20 日報酬 -0.018895% 且低於 50 日均線 -0.536669%。",
+          "^TNX 五日相對變化 -0.518576%。",
+          "VIX 最新水準 18.209999，波動狀態為 normal。"
+        ]
+      },
+      "source_catalog": [
+        {
+          "source_id": "sec_edgar",
+          "name": "SEC EDGAR submissions and Company Facts",
+          "category": "filings",
+          "authority": "primary_regulator",
+          "cadence": "Real time as filings are disseminated",
+          "typical_latency": "Usually under one minute for XBRL; filing metadata typically under one second",
+          "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+          "intended_use": "10-K, 10-Q, 8-K and standardized company financial facts",
+          "limitations": [
+            "As-filed data can contain issuer errors or amended facts",
+            "XBRL concepts and fiscal periods are not perfectly comparable across issuers"
+          ],
+          "active": true
+        },
+        {
+          "source_id": "sec_form4",
+          "name": "SEC Forms 3, 4 and 5",
+          "category": "ownership",
+          "authority": "primary_regulator",
+          "cadence": "Event driven",
+          "typical_latency": "Most Form 4 transactions are due within two business days",
+          "url": "https://www.sec.gov/files/forms-3-4-5.pdf",
+          "intended_use": "Insider ownership changes and open-market purchase or sale context",
+          "limitations": [
+            "Transaction codes must distinguish purchases, sales, grants, exercises, gifts and tax withholding",
+            "A filing is not proof that an insider trade predicts future returns"
+          ],
+          "active": false
+        },
+        {
+          "source_id": "sec_13f",
+          "name": "SEC Form 13F data sets",
+          "category": "ownership",
+          "authority": "primary_regulator",
+          "cadence": "Quarterly",
+          "typical_latency": "Up to 45 days after quarter end",
+          "url": "https://www.sec.gov/data-research/sec-markets-data/form-13f-data-sets",
+          "intended_use": "Slow-moving institutional holdings, concentration and quarter-over-quarter changes",
+          "limitations": [
+            "Not a real-time institutional flow signal",
+            "Does not reveal every asset, short position, hedge or intra-quarter trade",
+            "As-filed records can contain filer errors and confidential-treatment omissions"
+          ],
+          "active": false
+        },
+        {
+          "source_id": "company_ir",
+          "name": "Issuer investor-relations releases",
+          "category": "company",
+          "authority": "primary_issuer",
+          "cadence": "Event driven",
+          "typical_latency": "At issuer publication",
+          "url": "https://www.sec.gov/edgar/searchedgar/companysearch",
+          "intended_use": "Earnings releases, guidance, presentations and material company events cross-checked with EDGAR",
+          "limitations": [
+            "Issuer materials are management communications and may emphasize favorable framing",
+            "Use SEC filings as the canonical record when disclosures differ"
+          ],
+          "active": false
+        },
+        {
+          "source_id": "fred_alfred",
+          "name": "Federal Reserve Bank of St. Louis FRED and ALFRED",
+          "category": "macro",
+          "authority": "official",
+          "cadence": "Series dependent",
+          "typical_latency": "Series dependent; many observations are revised",
+          "url": "https://fred.stlouisfed.org/docs/api/fred/fred/",
+          "intended_use": "Rates, credit spreads, labor, inflation, liquidity and financial conditions",
+          "limitations": [
+            "FRED combines many original publishers with different calendars",
+            "Use ALFRED vintages for backtests to avoid look-ahead from later revisions"
+          ],
+          "active": false
+        },
+        {
+          "source_id": "us_treasury_rates",
+          "name": "U.S. Treasury daily yield curve",
+          "category": "rates",
+          "authority": "official",
+          "cadence": "Daily business days",
+          "typical_latency": "End-of-day official curve",
+          "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve",
+          "intended_use": "Risk-free curve level, slope and rate-shock context",
+          "limitations": [
+            "Par yields are model-derived curve points, not executable trade prices"
+          ],
+          "active": false
+        },
+        {
+          "source_id": "federal_reserve",
+          "name": "Federal Reserve FOMC calendar, statements and projections",
+          "category": "macro",
+          "authority": "official",
+          "cadence": "Scheduled and event driven",
+          "typical_latency": "At official release time",
+          "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+          "intended_use": "Policy-event risk, rate decisions, minutes and Summary of Economic Projections",
+          "limitations": [
+            "Projections are conditional participant forecasts with substantial uncertainty"
+          ],
+          "active": false
+        },
+        {
+          "source_id": "nyse_calendar",
+          "name": "NYSE trading hours and holiday calendar",
+          "category": "market",
+          "authority": "official",
+          "cadence": "Calendar and session dependent",
+          "typical_latency": "Published exchange schedule",
+          "url": "https://www.nyse.com/trade/hours-calendars",
+          "intended_use": "Determine regular sessions, holidays, early closes and whether a daily bar is complete",
+          "limitations": [
+            "Calendar data does not provide prices or guarantee data-vendor bar finality",
+            "Provider integration is not active yet; the current 16:15 ET cutoff is only a conservative fallback"
+          ],
+          "active": false
+        },
+        {
+          "source_id": "cboe_vix",
+          "name": "Cboe VIX Index and methodology",
+          "category": "volatility",
+          "authority": "official",
+          "cadence": "Intraday and daily",
+          "typical_latency": "Public display may be delayed",
+          "url": "https://www.cboe.com/tradable-products/vix/",
+          "intended_use": "Option-implied S&P 500 volatility regime and tail-risk context",
+          "limitations": [
+            "VIX is not a direct forecast of portfolio loss",
+            "Mean reversion and futures term structure matter for VIX-linked products"
+          ],
+          "active": true
+        },
+        {
+          "source_id": "cboe_vix_term_structure",
+          "name": "Cboe VIX term structure",
+          "category": "volatility",
+          "authority": "official",
+          "cadence": "Intraday",
+          "typical_latency": "Public display may be delayed",
+          "url": "https://www.cboe.com/tradable-products/vix/term-structure",
+          "intended_use": "Compare VIX9D, VIX, VIX3M, VIX6M and VIX1Y for event stress and volatility-curve regime",
+          "limitations": [
+            "Index levels are not direct executable hedging costs",
+            "A single curve snapshot requires timestamp alignment with the portfolio decision"
+          ],
+          "active": false
+        },
+        {
+          "source_id": "occ_options_open_interest",
+          "name": "OCC exchange option volume and open interest",
+          "category": "positioning",
+          "authority": "official",
+          "cadence": "Daily",
+          "typical_latency": "Report dependent",
+          "url": "https://www.theocc.com/market-data/market-data-reports/volume-and-open-interest/exchange-volume-by-class",
+          "intended_use": "Options activity and open-interest context for crowding, hedging demand and event risk",
+          "limitations": [
+            "Aggregated volume does not identify investor intent or directional exposure",
+            "Open interest must be combined with strike, expiry and underlying context"
+          ],
+          "active": false
+        },
+        {
+          "source_id": "finra_short",
+          "name": "FINRA short-interest and short-sale-volume data",
+          "category": "positioning",
+          "authority": "primary_regulator",
+          "cadence": "Daily short-sale volume; short interest twice monthly",
+          "typical_latency": "Dataset dependent",
+          "url": "https://www.finra.org/finra-data/browse-catalog/short-sale-volume",
+          "intended_use": "Short positioning background and off-exchange short-sale activity",
+          "limitations": [
+            "Daily short-sale volume is not short interest",
+            "Daily files cover reported off-exchange activity and are not consolidated with all exchanges",
+            "Short-sale volume can include positions closed on the same day"
+          ],
+          "active": false
+        },
+        {
+          "source_id": "cftc_cot",
+          "name": "CFTC Commitments of Traders",
+          "category": "positioning",
+          "authority": "primary_regulator",
+          "cadence": "Weekly",
+          "typical_latency": "Usually Friday release for Tuesday positions",
+          "url": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/AbouttheCOTReports/index.htm",
+          "intended_use": "Futures positioning in equity indexes, rates, energy, metals and currencies",
+          "limitations": [
+            "Aggregated categories are not security-specific equity fund flows",
+            "The usual Tuesday-to-Friday delay limits short-horizon timing use"
+          ],
+          "active": false
+        },
+        {
+          "source_id": "eia",
+          "name": "U.S. Energy Information Administration Open Data",
+          "category": "energy",
+          "authority": "official",
+          "cadence": "Daily, weekly, monthly or annual by series",
+          "typical_latency": "Series dependent",
+          "url": "https://www.eia.gov/opendata/",
+          "intended_use": "Oil prices, inventories, production, imports, exports and refinery utilization",
+          "limitations": [
+            "Weekly estimates can be revised and may not align with equity-market timestamps"
+          ],
+          "active": false
+        },
+        {
+          "source_id": "geopolitical_official",
+          "name": "U.S. Treasury OFAC, USTR and Federal Register",
+          "category": "geopolitics",
+          "authority": "official",
+          "cadence": "Event driven",
+          "typical_latency": "At official publication",
+          "url": "https://ofac.treasury.gov/recent-actions",
+          "intended_use": "Sanctions, tariffs and regulatory actions with direct company or sector exposure",
+          "limitations": [
+            "Official actions do not capture every geopolitical development or market interpretation",
+            "Company exposure mapping requires verified issuer geography and supply-chain data"
+          ],
+          "active": false
+        },
+        {
+          "source_id": "yahoo_market",
+          "name": "Yahoo Finance via yfinance",
+          "category": "market",
+          "authority": "secondary",
+          "cadence": "Daily in this system",
+          "typical_latency": "May be delayed",
+          "url": "https://finance.yahoo.com/",
+          "intended_use": "Price, volume and deterministic trend or volatility features",
+          "limitations": [
+            "Not an official exchange feed",
+            "Corporate-action adjustments and occasional missing observations require validation"
+          ],
+          "active": true
+        }
+      ],
+      "filing_events": [
+        {
+          "symbol": "AAPL",
+          "form": "10-Q",
+          "filing_date": "2026-05-01",
+          "report_date": "2026-03-28",
+          "description": "10-Q",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm"
+        },
+        {
+          "symbol": "AAPL",
+          "form": "8-K",
+          "filing_date": "2026-04-30",
+          "report_date": "2026-04-30",
+          "description": "8-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000011/aapl-20260430.htm"
+        },
+        {
+          "symbol": "AAPL",
+          "form": "8-K",
+          "filing_date": "2026-04-20",
+          "report_date": "2026-04-17",
+          "description": "8-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000114036126015711/ef20071035_8k.htm"
+        },
+        {
+          "symbol": "AMD",
+          "form": "8-K",
+          "filing_date": "2026-07-01",
+          "report_date": "2026-06-26",
+          "description": "8-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000115/amd-20260626.htm"
+        },
+        {
+          "symbol": "AMD",
+          "form": "8-K",
+          "filing_date": "2026-05-15",
+          "report_date": "2026-05-13",
+          "description": "8-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2488/000119312526226746/d118163d8k.htm"
+        },
+        {
+          "symbol": "AMD",
+          "form": "10-Q",
+          "filing_date": "2026-05-06",
+          "report_date": "2026-03-28",
+          "description": "10-Q",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000076/amd-20260328.htm"
+        },
+        {
+          "symbol": "AMD",
+          "form": "8-K",
+          "filing_date": "2026-05-05",
+          "report_date": "2026-05-05",
+          "description": "8-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000072/amd-20260505.htm"
+        },
+        {
+          "symbol": "AVGO",
+          "form": "8-K",
+          "filing_date": "2026-07-06",
+          "report_date": "2026-07-06",
+          "description": "8-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526295589/d84378d8k.htm"
+        },
+        {
+          "symbol": "AVGO",
+          "form": "8-K",
+          "filing_date": "2026-06-18",
+          "report_date": "2026-06-17",
+          "description": "8-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526275077/d149683d8k.htm"
+        },
+        {
+          "symbol": "AVGO",
+          "form": "8-K",
+          "filing_date": "2026-06-11",
+          "report_date": "2026-06-11",
+          "description": "8-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526266777/d152717d8k.htm"
+        },
+        {
+          "symbol": "AVGO",
+          "form": "10-Q",
+          "filing_date": "2026-06-09",
+          "report_date": "2026-05-03",
+          "description": "10-Q",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1730168/000173016826000054/avgo-20260503.htm"
+        },
+        {
+          "symbol": "AVGO",
+          "form": "8-K",
+          "filing_date": "2026-06-03",
+          "report_date": "2026-06-03",
+          "description": "8-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1730168/000173016826000051/avgo-20260603.htm"
+        },
+        {
+          "symbol": "AVGO",
+          "form": "8-K",
+          "filing_date": "2026-04-21",
+          "report_date": "2026-04-20",
+          "description": "8-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1730168/000173016826000039/avgo-20260420.htm"
+        },
+        {
+          "symbol": "AVGO",
+          "form": "8-K",
+          "filing_date": "2026-04-06",
+          "report_date": "2026-04-06",
+          "description": "8-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526144028/d87999d8k.htm"
+        },
+        {
+          "symbol": "AVGO",
+          "form": "8-K",
+          "filing_date": "2026-04-02",
+          "report_date": "2026-03-30",
+          "description": "8-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526140574/d109450d8k.htm"
+        },
+        {
+          "symbol": "META",
+          "form": "8-K",
+          "filing_date": "2026-05-29",
+          "report_date": "2026-05-27",
+          "description": "8-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026039193/meta-20260527.htm"
+        },
+        {
+          "symbol": "META",
+          "form": "8-K",
+          "filing_date": "2026-05-04",
+          "report_date": "2026-04-30",
+          "description": "8-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000119312526204128/d134616d8k.htm"
+        },
+        {
+          "symbol": "META",
+          "form": "10-Q",
+          "filing_date": "2026-04-30",
+          "report_date": "2026-03-31",
+          "description": "10-Q",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026028526/meta-20260331.htm"
+        },
+        {
+          "symbol": "META",
+          "form": "8-K",
+          "filing_date": "2026-04-29",
+          "report_date": "2026-04-29",
+          "description": "8-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026028364/meta-20260429.htm"
+        },
+        {
+          "symbol": "META",
+          "form": "8-K",
+          "filing_date": "2026-04-14",
+          "report_date": "2026-04-08",
+          "description": "8-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025108/meta-20260408.htm"
+        },
+        {
+          "symbol": "MSFT",
+          "form": "8-K",
+          "filing_date": "2026-06-05",
+          "report_date": "2026-06-02",
+          "description": "8-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526258667/d26760d8k.htm"
+        },
+        {
+          "symbol": "MSFT",
+          "form": "8-K",
+          "filing_date": "2026-05-14",
+          "report_date": "2026-05-13",
+          "description": "8-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526224155/d125909d8k.htm"
+        },
+        {
+          "symbol": "MSFT",
+          "form": "10-Q",
+          "filing_date": "2026-04-29",
+          "report_date": "2026-03-31",
+          "description": "10-Q",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526191507/msft-20260331.htm"
+        },
+        {
+          "symbol": "MSFT",
+          "form": "8-K",
+          "filing_date": "2026-04-29",
+          "report_date": "2026-04-29",
+          "description": "8-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526191457/msft-20260429.htm"
+        },
+        {
+          "symbol": "NVDA",
+          "form": "8-K",
+          "filing_date": "2026-07-02",
+          "report_date": "2026-06-28",
+          "description": "8-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000060/nvda-20260628.htm"
+        },
+        {
+          "symbol": "NVDA",
+          "form": "8-K",
+          "filing_date": "2026-06-30",
+          "report_date": "2026-06-24",
+          "description": "8-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000056/nvda-20260624.htm"
+        },
+        {
+          "symbol": "NVDA",
+          "form": "8-K",
+          "filing_date": "2026-06-18",
+          "report_date": "2026-06-15",
+          "description": "8-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000119312526275783/d48176d8k.htm"
+        },
+        {
+          "symbol": "NVDA",
+          "form": "10-Q",
+          "filing_date": "2026-05-20",
+          "report_date": "2026-04-26",
+          "description": "10-Q",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000052/nvda-20260426.htm"
+        },
+        {
+          "symbol": "NVDA",
+          "form": "8-K",
+          "filing_date": "2026-05-20",
+          "report_date": "2026-05-20",
+          "description": "8-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/nvda-20260520.htm"
+        },
+        {
+          "symbol": "NVDA",
+          "form": "8-K",
+          "filing_date": "2026-05-08",
+          "report_date": "2026-05-07",
+          "description": "8-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000028/nvda-20260507.htm"
+        },
+        {
+          "symbol": "NVDA",
+          "form": "8-K",
+          "filing_date": "2026-04-27",
+          "report_date": "2026-04-24",
+          "description": "8-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000026/nvda-20260424.htm"
+        },
+        {
+          "symbol": "PLTR",
+          "form": "8-K",
+          "filing_date": "2026-06-09",
+          "report_date": "2026-06-03",
+          "description": "8-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000033/pltr-20260603.htm"
+        },
+        {
+          "symbol": "PLTR",
+          "form": "10-Q",
+          "filing_date": "2026-05-05",
+          "report_date": "2026-03-31",
+          "description": "10-Q",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000028/pltr-20260331.htm"
+        },
+        {
+          "symbol": "PLTR",
+          "form": "8-K",
+          "filing_date": "2026-05-04",
+          "report_date": "2026-05-04",
+          "description": "8-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000026/pltr-20260504.htm"
+        },
+        {
+          "symbol": "TSLA",
+          "form": "10-Q",
+          "filing_date": "2026-07-23",
+          "report_date": "2026-06-30",
+          "description": "10-Q",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049270/tsla-20260630.htm"
+        },
+        {
+          "symbol": "TSLA",
+          "form": "8-K",
+          "filing_date": "2026-07-22",
+          "report_date": "2026-07-22",
+          "description": "8-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049213/tsla-20260722.htm"
+        },
+        {
+          "symbol": "TSLA",
+          "form": "8-K",
+          "filing_date": "2026-07-02",
+          "report_date": "2026-07-02",
+          "description": "8-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026046717/tsla-20260702.htm"
+        },
+        {
+          "symbol": "TSLA",
+          "form": "10-Q",
+          "filing_date": "2026-04-23",
+          "report_date": "2026-03-31",
+          "description": "10-Q",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026026673/tsla-20260331.htm"
+        },
+        {
+          "symbol": "TSLA",
+          "form": "8-K",
+          "filing_date": "2026-04-22",
+          "report_date": "2026-04-22",
+          "description": "8-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026026551/tsla-20260422.htm"
+        },
+        {
+          "symbol": "TSLA",
+          "form": "8-K",
+          "filing_date": "2026-04-02",
+          "report_date": "2026-04-02",
+          "description": "8-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026022956/tsla-20260402.htm"
+        },
+        {
+          "symbol": "TSM",
+          "form": "6-K",
+          "filing_date": "2026-07-24",
+          "report_date": "2026-06-30",
+          "description": "6-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000459/tsm-monthend6kx20260724.htm"
+        },
+        {
+          "symbol": "TSM",
+          "form": "6-K",
+          "filing_date": "2026-07-16",
+          "report_date": "2026-06-30",
+          "description": "6-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000451/tsm-20260716x6k.htm"
+        },
+        {
+          "symbol": "TSM",
+          "form": "6-K",
+          "filing_date": "2026-07-13",
+          "report_date": "2026-06-30",
+          "description": "6-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000447/tsm-revenue20260713.htm"
+        },
+        {
+          "symbol": "TSM",
+          "form": "6-K",
+          "filing_date": "2026-07-02",
+          "report_date": "2026-07-02",
+          "description": "6-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000381/a20260702changeofaztreasur.htm"
+        },
+        {
+          "symbol": "TSM",
+          "form": "6-K",
+          "filing_date": "2026-06-25",
+          "report_date": "2026-05-31",
+          "description": "6-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000377/tsm-monthend6kx20260625.htm"
+        },
+        {
+          "symbol": "TSM",
+          "form": "6-K",
+          "filing_date": "2026-06-10",
+          "report_date": "2026-05-31",
+          "description": "6-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000367/tsm-revenue20260610.htm"
+        },
+        {
+          "symbol": "TSM",
+          "form": "6-K",
+          "filing_date": "2026-06-04",
+          "report_date": "2026-06-04",
+          "description": "6-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000302/tsm-agmx20260604x6k.htm"
+        },
+        {
+          "symbol": "TSM",
+          "form": "6-K",
+          "filing_date": "2026-05-27",
+          "report_date": "2026-05-27",
+          "description": "6-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000294/tsm-dividendadjustmentx202.htm"
+        },
+        {
+          "symbol": "TSM",
+          "form": "6-K",
+          "filing_date": "2026-05-26",
+          "report_date": "2026-04-30",
+          "description": "6-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000292/tsm-monthend6kx20260526.htm"
+        },
+        {
+          "symbol": "TSM",
+          "form": "6-K",
+          "filing_date": "2026-05-15",
+          "report_date": "2026-05-15",
+          "description": "6-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000280/tsmctosell81ofvanguardinte.htm"
+        },
+        {
+          "symbol": "TSM",
+          "form": "6-K",
+          "filing_date": "2026-05-15",
+          "report_date": "2026-03-31",
+          "description": "6-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000278/tsm-fsx20260515x6k.htm"
+        },
+        {
+          "symbol": "TSM",
+          "form": "6-K",
+          "filing_date": "2026-05-12",
+          "report_date": "2026-05-12",
+          "description": "6-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000275/a20260512boardofdirectorsr.htm"
+        },
+        {
+          "symbol": "TSM",
+          "form": "6-K",
+          "filing_date": "2026-05-12",
+          "report_date": "2026-05-12",
+          "description": "6-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000274/tsm-boardx20260512.htm"
+        },
+        {
+          "symbol": "TSM",
+          "form": "6-K",
+          "filing_date": "2026-05-08",
+          "report_date": "2026-05-08",
+          "description": "6-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000215/sonysemiconductorsolutions.htm"
+        },
+        {
+          "symbol": "TSM",
+          "form": "6-K",
+          "filing_date": "2026-05-08",
+          "report_date": "2026-04-30",
+          "description": "6-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000213/tsm-revenue20260508.htm"
+        },
+        {
+          "symbol": "TSM",
+          "form": "6-K",
+          "filing_date": "2026-04-24",
+          "report_date": "2026-03-31",
+          "description": "6-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000205/tsm-monthend6kx20260424.htm"
+        },
+        {
+          "symbol": "TSM",
+          "form": "6-K",
+          "filing_date": "2026-04-17",
+          "report_date": "2026-04-17",
+          "description": "6-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000203/tsm-boardx20260417x6k.htm"
+        },
+        {
+          "symbol": "TSM",
+          "form": "6-K",
+          "filing_date": "2026-04-16",
+          "report_date": "2025-12-31",
+          "description": "6-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000201/tsm_20260416.htm"
+        },
+        {
+          "symbol": "TSM",
+          "form": "6-K",
+          "filing_date": "2026-04-16",
+          "report_date": "2026-03-31",
+          "description": "6-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000199/tsm-20260416x6k.htm"
+        },
+        {
+          "symbol": "TSM",
+          "form": "20-F",
+          "filing_date": "2026-04-16",
+          "report_date": "2025-12-31",
+          "description": "20-F",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1046179/000162828026025362/tsm-20251231.htm"
+        }
+      ],
+      "fundamental_facts": [
+        {
+          "symbol": "AAPL",
+          "metric": "revenue",
+          "value": "254940000000",
+          "unit": "USD",
+          "period_start": "2025-09-28",
+          "period_end": "2026-03-28",
+          "filed_at": "2026-05-01",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
+        },
+        {
+          "symbol": "AAPL",
+          "metric": "revenue",
+          "value": "111184000000",
+          "unit": "USD",
+          "period_start": "2025-12-28",
+          "period_end": "2026-03-28",
+          "filed_at": "2026-05-01",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
+        },
+        {
+          "symbol": "AAPL",
+          "metric": "net_income",
+          "value": "71675000000",
+          "unit": "USD",
+          "period_start": "2025-09-28",
+          "period_end": "2026-03-28",
+          "filed_at": "2026-05-01",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
+        },
+        {
+          "symbol": "AAPL",
+          "metric": "net_income",
+          "value": "29578000000",
+          "unit": "USD",
+          "period_start": "2025-12-28",
+          "period_end": "2026-03-28",
+          "filed_at": "2026-05-01",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
+        },
+        {
+          "symbol": "AAPL",
+          "metric": "operating_income",
+          "value": "86737000000",
+          "unit": "USD",
+          "period_start": "2025-09-28",
+          "period_end": "2026-03-28",
+          "filed_at": "2026-05-01",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
+        },
+        {
+          "symbol": "AAPL",
+          "metric": "operating_income",
+          "value": "35885000000",
+          "unit": "USD",
+          "period_start": "2025-12-28",
+          "period_end": "2026-03-28",
+          "filed_at": "2026-05-01",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
+        },
+        {
+          "symbol": "AAPL",
+          "metric": "diluted_eps",
+          "value": "4.85",
+          "unit": "USD/shares",
+          "period_start": "2025-09-28",
+          "period_end": "2026-03-28",
+          "filed_at": "2026-05-01",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
+        },
+        {
+          "symbol": "AAPL",
+          "metric": "diluted_eps",
+          "value": "2.01",
+          "unit": "USD/shares",
+          "period_start": "2025-12-28",
+          "period_end": "2026-03-28",
+          "filed_at": "2026-05-01",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
+        },
+        {
+          "symbol": "AAPL",
+          "metric": "assets",
+          "value": "371082000000",
+          "unit": "USD",
+          "period_start": null,
+          "period_end": "2026-03-28",
+          "filed_at": "2026-05-01",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
+        },
+        {
+          "symbol": "AAPL",
+          "metric": "assets",
+          "value": "359241000000",
+          "unit": "USD",
+          "period_start": null,
+          "period_end": "2025-09-27",
+          "filed_at": "2026-05-01",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
+        },
+        {
+          "symbol": "AAPL",
+          "metric": "liabilities",
+          "value": "264591000000",
+          "unit": "USD",
+          "period_start": null,
+          "period_end": "2026-03-28",
+          "filed_at": "2026-05-01",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
+        },
+        {
+          "symbol": "AAPL",
+          "metric": "liabilities",
+          "value": "285508000000",
+          "unit": "USD",
+          "period_start": null,
+          "period_end": "2025-09-27",
+          "filed_at": "2026-05-01",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
+        },
+        {
+          "symbol": "AAPL",
+          "metric": "cash",
+          "value": "45572000000",
+          "unit": "USD",
+          "period_start": null,
+          "period_end": "2026-03-28",
+          "filed_at": "2026-05-01",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
+        },
+        {
+          "symbol": "AAPL",
+          "metric": "cash",
+          "value": "35934000000",
+          "unit": "USD",
+          "period_start": null,
+          "period_end": "2025-09-27",
+          "filed_at": "2026-05-01",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
+        },
+        {
+          "symbol": "AAPL",
+          "metric": "operating_cash_flow",
+          "value": "82627000000",
+          "unit": "USD",
+          "period_start": "2025-09-28",
+          "period_end": "2026-03-28",
+          "filed_at": "2026-05-01",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
+        },
+        {
+          "symbol": "AAPL",
+          "metric": "operating_cash_flow",
+          "value": "53887000000",
+          "unit": "USD",
+          "period_start": "2024-09-29",
+          "period_end": "2025-03-29",
+          "filed_at": "2026-05-01",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
+        },
+        {
+          "symbol": "AMD",
+          "metric": "revenue",
+          "value": "10253000000",
+          "unit": "USD",
+          "period_start": "2025-12-28",
+          "period_end": "2026-03-28",
+          "filed_at": "2026-05-06",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json"
+        },
+        {
+          "symbol": "AMD",
+          "metric": "revenue",
+          "value": "7438000000",
+          "unit": "USD",
+          "period_start": "2024-12-29",
+          "period_end": "2025-03-29",
+          "filed_at": "2026-05-06",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json"
+        },
+        {
+          "symbol": "AMD",
+          "metric": "net_income",
+          "value": "1383000000",
+          "unit": "USD",
+          "period_start": "2025-12-28",
+          "period_end": "2026-03-28",
+          "filed_at": "2026-05-06",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json"
+        },
+        {
+          "symbol": "AMD",
+          "metric": "net_income",
+          "value": "709000000",
+          "unit": "USD",
+          "period_start": "2024-12-29",
+          "period_end": "2025-03-29",
+          "filed_at": "2026-05-06",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json"
+        },
+        {
+          "symbol": "AMD",
+          "metric": "operating_income",
+          "value": "1476000000",
+          "unit": "USD",
+          "period_start": "2025-12-28",
+          "period_end": "2026-03-28",
+          "filed_at": "2026-05-06",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json"
+        },
+        {
+          "symbol": "AMD",
+          "metric": "operating_income",
+          "value": "806000000",
+          "unit": "USD",
+          "period_start": "2024-12-29",
+          "period_end": "2025-03-29",
+          "filed_at": "2026-05-06",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json"
+        },
+        {
+          "symbol": "AMD",
+          "metric": "diluted_eps",
+          "value": "0.84",
+          "unit": "USD/shares",
+          "period_start": "2025-12-28",
+          "period_end": "2026-03-28",
+          "filed_at": "2026-05-06",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json"
+        },
+        {
+          "symbol": "AMD",
+          "metric": "diluted_eps",
+          "value": "0.44",
+          "unit": "USD/shares",
+          "period_start": "2024-12-29",
+          "period_end": "2025-03-29",
+          "filed_at": "2026-05-06",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json"
+        },
+        {
+          "symbol": "AMD",
+          "metric": "assets",
+          "value": "79642000000",
+          "unit": "USD",
+          "period_start": null,
+          "period_end": "2026-03-28",
+          "filed_at": "2026-05-06",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json"
+        },
+        {
+          "symbol": "AMD",
+          "metric": "assets",
+          "value": "76926000000",
+          "unit": "USD",
+          "period_start": null,
+          "period_end": "2025-12-27",
+          "filed_at": "2026-05-06",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json"
+        },
+        {
+          "symbol": "AMD",
+          "metric": "cash",
+          "value": "5585000000",
+          "unit": "USD",
+          "period_start": null,
+          "period_end": "2026-03-28",
+          "filed_at": "2026-05-06",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json"
+        },
+        {
+          "symbol": "AMD",
+          "metric": "cash",
+          "value": "5539000000",
+          "unit": "USD",
+          "period_start": null,
+          "period_end": "2025-12-27",
+          "filed_at": "2026-05-06",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json"
+        },
+        {
+          "symbol": "AMD",
+          "metric": "operating_cash_flow",
+          "value": "2955000000",
+          "unit": "USD",
+          "period_start": "2025-12-28",
+          "period_end": "2026-03-28",
+          "filed_at": "2026-05-06",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json"
+        },
+        {
+          "symbol": "AMD",
+          "metric": "operating_cash_flow",
+          "value": "939000000",
+          "unit": "USD",
+          "period_start": "2024-12-29",
+          "period_end": "2025-03-29",
+          "filed_at": "2026-05-06",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json"
+        },
+        {
+          "symbol": "AVGO",
+          "metric": "revenue",
+          "value": "41498000000",
+          "unit": "USD",
+          "period_start": "2025-11-03",
+          "period_end": "2026-05-03",
+          "filed_at": "2026-06-09",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json"
+        },
+        {
+          "symbol": "AVGO",
+          "metric": "revenue",
+          "value": "22187000000",
+          "unit": "USD",
+          "period_start": "2026-02-02",
+          "period_end": "2026-05-03",
+          "filed_at": "2026-06-09",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json"
+        },
+        {
+          "symbol": "AVGO",
+          "metric": "net_income",
+          "value": "5895000000",
+          "unit": "USD",
+          "period_start": "2023-10-30",
+          "period_end": "2024-11-03",
+          "filed_at": "2024-12-20",
+          "form": "10-K",
+          "fiscal_year": 2024,
+          "fiscal_period": "FY",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json"
+        },
+        {
+          "symbol": "AVGO",
+          "metric": "net_income",
+          "value": "14082000000",
+          "unit": "USD",
+          "period_start": "2022-10-31",
+          "period_end": "2023-10-29",
+          "filed_at": "2024-12-20",
+          "form": "10-K",
+          "fiscal_year": 2024,
+          "fiscal_period": "FY",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json"
+        },
+        {
+          "symbol": "AVGO",
+          "metric": "operating_income",
+          "value": "19351000000",
+          "unit": "USD",
+          "period_start": "2025-11-03",
+          "period_end": "2026-05-03",
+          "filed_at": "2026-06-09",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json"
+        },
+        {
+          "symbol": "AVGO",
+          "metric": "operating_income",
+          "value": "10788000000",
+          "unit": "USD",
+          "period_start": "2026-02-02",
+          "period_end": "2026-05-03",
+          "filed_at": "2026-06-09",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json"
+        },
+        {
+          "symbol": "AVGO",
+          "metric": "diluted_eps",
+          "value": "3.41",
+          "unit": "USD/shares",
+          "period_start": "2025-11-03",
+          "period_end": "2026-05-03",
+          "filed_at": "2026-06-09",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json"
+        },
+        {
+          "symbol": "AVGO",
+          "metric": "diluted_eps",
+          "value": "1.91",
+          "unit": "USD/shares",
+          "period_start": "2026-02-02",
+          "period_end": "2026-05-03",
+          "filed_at": "2026-06-09",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json"
+        },
+        {
+          "symbol": "AVGO",
+          "metric": "assets",
+          "value": "179158000000",
+          "unit": "USD",
+          "period_start": null,
+          "period_end": "2026-05-03",
+          "filed_at": "2026-06-09",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json"
+        },
+        {
+          "symbol": "AVGO",
+          "metric": "assets",
+          "value": "171092000000",
+          "unit": "USD",
+          "period_start": null,
+          "period_end": "2025-11-02",
+          "filed_at": "2026-06-09",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json"
+        },
+        {
+          "symbol": "AVGO",
+          "metric": "liabilities",
+          "value": "91467000000",
+          "unit": "USD",
+          "period_start": null,
+          "period_end": "2026-05-03",
+          "filed_at": "2026-06-09",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json"
+        },
+        {
+          "symbol": "AVGO",
+          "metric": "liabilities",
+          "value": "89800000000",
+          "unit": "USD",
+          "period_start": null,
+          "period_end": "2025-11-02",
+          "filed_at": "2026-06-09",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json"
+        },
+        {
+          "symbol": "AVGO",
+          "metric": "cash",
+          "value": "19628000000",
+          "unit": "USD",
+          "period_start": null,
+          "period_end": "2026-05-03",
+          "filed_at": "2026-06-09",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json"
+        },
+        {
+          "symbol": "AVGO",
+          "metric": "cash",
+          "value": "16178000000",
+          "unit": "USD",
+          "period_start": null,
+          "period_end": "2025-11-02",
+          "filed_at": "2026-06-09",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json"
+        },
+        {
+          "symbol": "AVGO",
+          "metric": "operating_cash_flow",
+          "value": "18753000000",
+          "unit": "USD",
+          "period_start": "2025-11-03",
+          "period_end": "2026-05-03",
+          "filed_at": "2026-06-09",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json"
+        },
+        {
+          "symbol": "AVGO",
+          "metric": "operating_cash_flow",
+          "value": "12668000000",
+          "unit": "USD",
+          "period_start": "2024-11-04",
+          "period_end": "2025-05-04",
+          "filed_at": "2026-06-09",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json"
+        },
+        {
+          "symbol": "META",
+          "metric": "revenue",
+          "value": "56311000000",
+          "unit": "USD",
+          "period_start": "2026-01-01",
+          "period_end": "2026-03-31",
+          "filed_at": "2026-04-30",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json"
+        },
+        {
+          "symbol": "META",
+          "metric": "revenue",
+          "value": "42314000000",
+          "unit": "USD",
+          "period_start": "2025-01-01",
+          "period_end": "2025-03-31",
+          "filed_at": "2026-04-30",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json"
+        },
+        {
+          "symbol": "META",
+          "metric": "net_income",
+          "value": "26773000000",
+          "unit": "USD",
+          "period_start": "2026-01-01",
+          "period_end": "2026-03-31",
+          "filed_at": "2026-04-30",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json"
+        },
+        {
+          "symbol": "META",
+          "metric": "net_income",
+          "value": "16644000000",
+          "unit": "USD",
+          "period_start": "2025-01-01",
+          "period_end": "2025-03-31",
+          "filed_at": "2026-04-30",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json"
+        },
+        {
+          "symbol": "META",
+          "metric": "operating_income",
+          "value": "22872000000",
+          "unit": "USD",
+          "period_start": "2026-01-01",
+          "period_end": "2026-03-31",
+          "filed_at": "2026-04-30",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json"
+        },
+        {
+          "symbol": "META",
+          "metric": "operating_income",
+          "value": "17555000000",
+          "unit": "USD",
+          "period_start": "2025-01-01",
+          "period_end": "2025-03-31",
+          "filed_at": "2026-04-30",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json"
+        },
+        {
+          "symbol": "META",
+          "metric": "diluted_eps",
+          "value": "10.44",
+          "unit": "USD/shares",
+          "period_start": "2026-01-01",
+          "period_end": "2026-03-31",
+          "filed_at": "2026-04-30",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json"
+        },
+        {
+          "symbol": "META",
+          "metric": "diluted_eps",
+          "value": "6.43",
+          "unit": "USD/shares",
+          "period_start": "2025-01-01",
+          "period_end": "2025-03-31",
+          "filed_at": "2026-04-30",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json"
+        },
+        {
+          "symbol": "META",
+          "metric": "assets",
+          "value": "395250000000",
+          "unit": "USD",
+          "period_start": null,
+          "period_end": "2026-03-31",
+          "filed_at": "2026-04-30",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json"
+        },
+        {
+          "symbol": "META",
+          "metric": "assets",
+          "value": "366021000000",
+          "unit": "USD",
+          "period_start": null,
+          "period_end": "2025-12-31",
+          "filed_at": "2026-04-30",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json"
+        },
+        {
+          "symbol": "META",
+          "metric": "liabilities",
+          "value": "151569000000",
+          "unit": "USD",
+          "period_start": null,
+          "period_end": "2026-03-31",
+          "filed_at": "2026-04-30",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json"
+        },
+        {
+          "symbol": "META",
+          "metric": "liabilities",
+          "value": "148778000000",
+          "unit": "USD",
+          "period_start": null,
+          "period_end": "2025-12-31",
+          "filed_at": "2026-04-30",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json"
+        },
+        {
+          "symbol": "META",
+          "metric": "cash",
+          "value": "23426000000",
+          "unit": "USD",
+          "period_start": null,
+          "period_end": "2026-03-31",
+          "filed_at": "2026-04-30",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json"
+        },
+        {
+          "symbol": "META",
+          "metric": "cash",
+          "value": "35873000000",
+          "unit": "USD",
+          "period_start": null,
+          "period_end": "2025-12-31",
+          "filed_at": "2026-04-30",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json"
+        },
+        {
+          "symbol": "META",
+          "metric": "operating_cash_flow",
+          "value": "32226000000",
+          "unit": "USD",
+          "period_start": "2026-01-01",
+          "period_end": "2026-03-31",
+          "filed_at": "2026-04-30",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json"
+        },
+        {
+          "symbol": "META",
+          "metric": "operating_cash_flow",
+          "value": "24026000000",
+          "unit": "USD",
+          "period_start": "2025-01-01",
+          "period_end": "2025-03-31",
+          "filed_at": "2026-04-30",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json"
+        },
+        {
+          "symbol": "MSFT",
+          "metric": "revenue",
+          "value": "241832000000",
+          "unit": "USD",
+          "period_start": "2025-07-01",
+          "period_end": "2026-03-31",
+          "filed_at": "2026-04-29",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q3",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json"
+        },
+        {
+          "symbol": "MSFT",
+          "metric": "revenue",
+          "value": "82886000000",
+          "unit": "USD",
+          "period_start": "2026-01-01",
+          "period_end": "2026-03-31",
+          "filed_at": "2026-04-29",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q3",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json"
+        },
+        {
+          "symbol": "MSFT",
+          "metric": "net_income",
+          "value": "97983000000",
+          "unit": "USD",
+          "period_start": "2025-07-01",
+          "period_end": "2026-03-31",
+          "filed_at": "2026-04-29",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q3",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json"
+        },
+        {
+          "symbol": "MSFT",
+          "metric": "net_income",
+          "value": "31778000000",
+          "unit": "USD",
+          "period_start": "2026-01-01",
+          "period_end": "2026-03-31",
+          "filed_at": "2026-04-29",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q3",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json"
+        },
+        {
+          "symbol": "MSFT",
+          "metric": "operating_income",
+          "value": "114634000000",
+          "unit": "USD",
+          "period_start": "2025-07-01",
+          "period_end": "2026-03-31",
+          "filed_at": "2026-04-29",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q3",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json"
+        },
+        {
+          "symbol": "MSFT",
+          "metric": "operating_income",
+          "value": "38398000000",
+          "unit": "USD",
+          "period_start": "2026-01-01",
+          "period_end": "2026-03-31",
+          "filed_at": "2026-04-29",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q3",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json"
+        },
+        {
+          "symbol": "MSFT",
+          "metric": "diluted_eps",
+          "value": "13.14",
+          "unit": "USD/shares",
+          "period_start": "2025-07-01",
+          "period_end": "2026-03-31",
+          "filed_at": "2026-04-29",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q3",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json"
+        },
+        {
+          "symbol": "MSFT",
+          "metric": "diluted_eps",
+          "value": "4.27",
+          "unit": "USD/shares",
+          "period_start": "2026-01-01",
+          "period_end": "2026-03-31",
+          "filed_at": "2026-04-29",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q3",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json"
+        },
+        {
+          "symbol": "MSFT",
+          "metric": "assets",
+          "value": "694228000000",
+          "unit": "USD",
+          "period_start": null,
+          "period_end": "2026-03-31",
+          "filed_at": "2026-04-29",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q3",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json"
+        },
+        {
+          "symbol": "MSFT",
+          "metric": "assets",
+          "value": "619003000000",
+          "unit": "USD",
+          "period_start": null,
+          "period_end": "2025-06-30",
+          "filed_at": "2026-04-29",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q3",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json"
+        },
+        {
+          "symbol": "MSFT",
+          "metric": "liabilities",
+          "value": "279861000000",
+          "unit": "USD",
+          "period_start": null,
+          "period_end": "2026-03-31",
+          "filed_at": "2026-04-29",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q3",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json"
+        },
+        {
+          "symbol": "MSFT",
+          "metric": "liabilities",
+          "value": "275524000000",
+          "unit": "USD",
+          "period_start": null,
+          "period_end": "2025-06-30",
+          "filed_at": "2026-04-29",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q3",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json"
+        },
+        {
+          "symbol": "MSFT",
+          "metric": "cash",
+          "value": "32105000000",
+          "unit": "USD",
+          "period_start": null,
+          "period_end": "2026-03-31",
+          "filed_at": "2026-04-29",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q3",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json"
+        },
+        {
+          "symbol": "MSFT",
+          "metric": "cash",
+          "value": "30242000000",
+          "unit": "USD",
+          "period_start": null,
+          "period_end": "2025-06-30",
+          "filed_at": "2026-04-29",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q3",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json"
+        },
+        {
+          "symbol": "MSFT",
+          "metric": "operating_cash_flow",
+          "value": "127494000000",
+          "unit": "USD",
+          "period_start": "2025-07-01",
+          "period_end": "2026-03-31",
+          "filed_at": "2026-04-29",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q3",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json"
+        },
+        {
+          "symbol": "MSFT",
+          "metric": "operating_cash_flow",
+          "value": "46679000000",
+          "unit": "USD",
+          "period_start": "2026-01-01",
+          "period_end": "2026-03-31",
+          "filed_at": "2026-04-29",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q3",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json"
+        },
+        {
+          "symbol": "NVDA",
+          "metric": "revenue",
+          "value": "26914000000",
+          "unit": "USD",
+          "period_start": "2021-02-01",
+          "period_end": "2022-01-30",
+          "filed_at": "2022-03-18",
+          "form": "10-K",
+          "fiscal_year": 2022,
+          "fiscal_period": "FY",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json"
+        },
+        {
+          "symbol": "NVDA",
+          "metric": "revenue",
+          "value": "16675000000",
+          "unit": "USD",
+          "period_start": "2020-01-27",
+          "period_end": "2021-01-31",
+          "filed_at": "2022-03-18",
+          "form": "10-K",
+          "fiscal_year": 2022,
+          "fiscal_period": "FY",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json"
+        },
+        {
+          "symbol": "NVDA",
+          "metric": "net_income",
+          "value": "58321000000",
+          "unit": "USD",
+          "period_start": "2026-01-26",
+          "period_end": "2026-04-26",
+          "filed_at": "2026-05-20",
+          "form": "10-Q",
+          "fiscal_year": 2027,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json"
+        },
+        {
+          "symbol": "NVDA",
+          "metric": "net_income",
+          "value": "18775000000",
+          "unit": "USD",
+          "period_start": "2025-01-27",
+          "period_end": "2025-04-27",
+          "filed_at": "2026-05-20",
+          "form": "10-Q",
+          "fiscal_year": 2027,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json"
+        },
+        {
+          "symbol": "NVDA",
+          "metric": "operating_income",
+          "value": "53536000000",
+          "unit": "USD",
+          "period_start": "2026-01-26",
+          "period_end": "2026-04-26",
+          "filed_at": "2026-05-20",
+          "form": "10-Q",
+          "fiscal_year": 2027,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json"
+        },
+        {
+          "symbol": "NVDA",
+          "metric": "operating_income",
+          "value": "21638000000",
+          "unit": "USD",
+          "period_start": "2025-01-27",
+          "period_end": "2025-04-27",
+          "filed_at": "2026-05-20",
+          "form": "10-Q",
+          "fiscal_year": 2027,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json"
+        },
+        {
+          "symbol": "NVDA",
+          "metric": "diluted_eps",
+          "value": "2.39",
+          "unit": "USD/shares",
+          "period_start": "2026-01-26",
+          "period_end": "2026-04-26",
+          "filed_at": "2026-05-20",
+          "form": "10-Q",
+          "fiscal_year": 2027,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json"
+        },
+        {
+          "symbol": "NVDA",
+          "metric": "diluted_eps",
+          "value": "0.76",
+          "unit": "USD/shares",
+          "period_start": "2025-01-27",
+          "period_end": "2025-04-27",
+          "filed_at": "2026-05-20",
+          "form": "10-Q",
+          "fiscal_year": 2027,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json"
+        },
+        {
+          "symbol": "NVDA",
+          "metric": "assets",
+          "value": "259474000000",
+          "unit": "USD",
+          "period_start": null,
+          "period_end": "2026-04-26",
+          "filed_at": "2026-05-20",
+          "form": "10-Q",
+          "fiscal_year": 2027,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json"
+        },
+        {
+          "symbol": "NVDA",
+          "metric": "assets",
+          "value": "206803000000",
+          "unit": "USD",
+          "period_start": null,
+          "period_end": "2026-01-25",
+          "filed_at": "2026-05-20",
+          "form": "10-Q",
+          "fiscal_year": 2027,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json"
+        },
+        {
+          "symbol": "NVDA",
+          "metric": "liabilities",
+          "value": "64000000000",
+          "unit": "USD",
+          "period_start": null,
+          "period_end": "2026-04-26",
+          "filed_at": "2026-05-20",
+          "form": "10-Q",
+          "fiscal_year": 2027,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json"
+        },
+        {
+          "symbol": "NVDA",
+          "metric": "liabilities",
+          "value": "49510000000",
+          "unit": "USD",
+          "period_start": null,
+          "period_end": "2026-01-25",
+          "filed_at": "2026-05-20",
+          "form": "10-Q",
+          "fiscal_year": 2027,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json"
+        },
+        {
+          "symbol": "NVDA",
+          "metric": "cash",
+          "value": "13237000000",
+          "unit": "USD",
+          "period_start": null,
+          "period_end": "2026-04-26",
+          "filed_at": "2026-05-20",
+          "form": "10-Q",
+          "fiscal_year": 2027,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json"
+        },
+        {
+          "symbol": "NVDA",
+          "metric": "cash",
+          "value": "10605000000",
+          "unit": "USD",
+          "period_start": null,
+          "period_end": "2026-01-25",
+          "filed_at": "2026-05-20",
+          "form": "10-Q",
+          "fiscal_year": 2027,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json"
+        },
+        {
+          "symbol": "NVDA",
+          "metric": "operating_cash_flow",
+          "value": "50344000000",
+          "unit": "USD",
+          "period_start": "2026-01-26",
+          "period_end": "2026-04-26",
+          "filed_at": "2026-05-20",
+          "form": "10-Q",
+          "fiscal_year": 2027,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json"
+        },
+        {
+          "symbol": "NVDA",
+          "metric": "operating_cash_flow",
+          "value": "27414000000",
+          "unit": "USD",
+          "period_start": "2025-01-27",
+          "period_end": "2025-04-27",
+          "filed_at": "2026-05-20",
+          "form": "10-Q",
+          "fiscal_year": 2027,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json"
+        },
+        {
+          "symbol": "PLTR",
+          "metric": "revenue",
+          "value": "1632583000",
+          "unit": "USD",
+          "period_start": "2026-01-01",
+          "period_end": "2026-03-31",
+          "filed_at": "2026-05-05",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json"
+        },
+        {
+          "symbol": "PLTR",
+          "metric": "revenue",
+          "value": "883855000",
+          "unit": "USD",
+          "period_start": "2025-01-01",
+          "period_end": "2025-03-31",
+          "filed_at": "2026-05-05",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json"
+        },
+        {
+          "symbol": "PLTR",
+          "metric": "net_income",
+          "value": "870527000",
+          "unit": "USD",
+          "period_start": "2026-01-01",
+          "period_end": "2026-03-31",
+          "filed_at": "2026-05-05",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json"
+        },
+        {
+          "symbol": "PLTR",
+          "metric": "net_income",
+          "value": "214031000",
+          "unit": "USD",
+          "period_start": "2025-01-01",
+          "period_end": "2025-03-31",
+          "filed_at": "2026-05-05",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json"
+        },
+        {
+          "symbol": "PLTR",
+          "metric": "operating_income",
+          "value": "753998000",
+          "unit": "USD",
+          "period_start": "2026-01-01",
+          "period_end": "2026-03-31",
+          "filed_at": "2026-05-05",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json"
+        },
+        {
+          "symbol": "PLTR",
+          "metric": "operating_income",
+          "value": "176048000",
+          "unit": "USD",
+          "period_start": "2025-01-01",
+          "period_end": "2025-03-31",
+          "filed_at": "2026-05-05",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json"
+        },
+        {
+          "symbol": "PLTR",
+          "metric": "diluted_eps",
+          "value": "0.34",
+          "unit": "USD/shares",
+          "period_start": "2026-01-01",
+          "period_end": "2026-03-31",
+          "filed_at": "2026-05-05",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json"
+        },
+        {
+          "symbol": "PLTR",
+          "metric": "diluted_eps",
+          "value": "0.08",
+          "unit": "USD/shares",
+          "period_start": "2025-01-01",
+          "period_end": "2025-03-31",
+          "filed_at": "2026-05-05",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json"
+        },
+        {
+          "symbol": "PLTR",
+          "metric": "assets",
+          "value": "10199183000",
+          "unit": "USD",
+          "period_start": null,
+          "period_end": "2026-03-31",
+          "filed_at": "2026-05-05",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json"
+        },
+        {
+          "symbol": "PLTR",
+          "metric": "assets",
+          "value": "8900392000",
+          "unit": "USD",
+          "period_start": null,
+          "period_end": "2025-12-31",
+          "filed_at": "2026-05-05",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json"
+        },
+        {
+          "symbol": "PLTR",
+          "metric": "liabilities",
+          "value": "1642902000",
+          "unit": "USD",
+          "period_start": null,
+          "period_end": "2026-03-31",
+          "filed_at": "2026-05-05",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json"
+        },
+        {
+          "symbol": "PLTR",
+          "metric": "liabilities",
+          "value": "1412381000",
+          "unit": "USD",
+          "period_start": null,
+          "period_end": "2025-12-31",
+          "filed_at": "2026-05-05",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json"
+        },
+        {
+          "symbol": "PLTR",
+          "metric": "cash",
+          "value": "2291631000",
+          "unit": "USD",
+          "period_start": null,
+          "period_end": "2026-03-31",
+          "filed_at": "2026-05-05",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json"
+        },
+        {
+          "symbol": "PLTR",
+          "metric": "cash",
+          "value": "1423796000",
+          "unit": "USD",
+          "period_start": null,
+          "period_end": "2025-12-31",
+          "filed_at": "2026-05-05",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json"
+        },
+        {
+          "symbol": "PLTR",
+          "metric": "operating_cash_flow",
+          "value": "899165000",
+          "unit": "USD",
+          "period_start": "2026-01-01",
+          "period_end": "2026-03-31",
+          "filed_at": "2026-05-05",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json"
+        },
+        {
+          "symbol": "PLTR",
+          "metric": "operating_cash_flow",
+          "value": "310263000",
+          "unit": "USD",
+          "period_start": "2025-01-01",
+          "period_end": "2025-03-31",
+          "filed_at": "2026-05-05",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q1",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json"
+        },
+        {
+          "symbol": "TSLA",
+          "metric": "revenue",
+          "value": "50623000000",
+          "unit": "USD",
+          "period_start": "2026-01-01",
+          "period_end": "2026-06-30",
+          "filed_at": "2026-07-23",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json"
+        },
+        {
+          "symbol": "TSLA",
+          "metric": "revenue",
+          "value": "28236000000",
+          "unit": "USD",
+          "period_start": "2026-04-01",
+          "period_end": "2026-06-30",
+          "filed_at": "2026-07-23",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json"
+        },
+        {
+          "symbol": "TSLA",
+          "metric": "net_income",
+          "value": "1591000000",
+          "unit": "USD",
+          "period_start": "2026-01-01",
+          "period_end": "2026-06-30",
+          "filed_at": "2026-07-23",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json"
+        },
+        {
+          "symbol": "TSLA",
+          "metric": "net_income",
+          "value": "1114000000",
+          "unit": "USD",
+          "period_start": "2026-04-01",
+          "period_end": "2026-06-30",
+          "filed_at": "2026-07-23",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json"
+        },
+        {
+          "symbol": "TSLA",
+          "metric": "operating_income",
+          "value": "1339000000",
+          "unit": "USD",
+          "period_start": "2026-01-01",
+          "period_end": "2026-06-30",
+          "filed_at": "2026-07-23",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json"
+        },
+        {
+          "symbol": "TSLA",
+          "metric": "operating_income",
+          "value": "398000000",
+          "unit": "USD",
+          "period_start": "2026-04-01",
+          "period_end": "2026-06-30",
+          "filed_at": "2026-07-23",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json"
+        },
+        {
+          "symbol": "TSLA",
+          "metric": "diluted_eps",
+          "value": "0.45",
+          "unit": "USD/shares",
+          "period_start": "2026-01-01",
+          "period_end": "2026-06-30",
+          "filed_at": "2026-07-23",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json"
+        },
+        {
+          "symbol": "TSLA",
+          "metric": "diluted_eps",
+          "value": "0.32",
+          "unit": "USD/shares",
+          "period_start": "2026-04-01",
+          "period_end": "2026-06-30",
+          "filed_at": "2026-07-23",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json"
+        },
+        {
+          "symbol": "TSLA",
+          "metric": "assets",
+          "value": "148524000000",
+          "unit": "USD",
+          "period_start": null,
+          "period_end": "2026-06-30",
+          "filed_at": "2026-07-23",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json"
+        },
+        {
+          "symbol": "TSLA",
+          "metric": "assets",
+          "value": "137806000000",
+          "unit": "USD",
+          "period_start": null,
+          "period_end": "2025-12-31",
+          "filed_at": "2026-07-23",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json"
+        },
+        {
+          "symbol": "TSLA",
+          "metric": "liabilities",
+          "value": "61005000000",
+          "unit": "USD",
+          "period_start": null,
+          "period_end": "2026-06-30",
+          "filed_at": "2026-07-23",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json"
+        },
+        {
+          "symbol": "TSLA",
+          "metric": "liabilities",
+          "value": "54941000000",
+          "unit": "USD",
+          "period_start": null,
+          "period_end": "2025-12-31",
+          "filed_at": "2026-07-23",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json"
+        },
+        {
+          "symbol": "TSLA",
+          "metric": "cash",
+          "value": "15219000000",
+          "unit": "USD",
+          "period_start": null,
+          "period_end": "2026-06-30",
+          "filed_at": "2026-07-23",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json"
+        },
+        {
+          "symbol": "TSLA",
+          "metric": "cash",
+          "value": "16513000000",
+          "unit": "USD",
+          "period_start": null,
+          "period_end": "2025-12-31",
+          "filed_at": "2026-07-23",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json"
+        },
+        {
+          "symbol": "TSLA",
+          "metric": "operating_cash_flow",
+          "value": "8634000000",
+          "unit": "USD",
+          "period_start": "2026-01-01",
+          "period_end": "2026-06-30",
+          "filed_at": "2026-07-23",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json"
+        },
+        {
+          "symbol": "TSLA",
+          "metric": "operating_cash_flow",
+          "value": "4696000000",
+          "unit": "USD",
+          "period_start": "2025-01-01",
+          "period_end": "2025-06-30",
+          "filed_at": "2026-07-23",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json"
+        },
+        {
+          "symbol": "TSM",
+          "metric": "net_income",
+          "value": "1157523900000",
+          "unit": "TWD",
+          "period_start": "2024-01-01",
+          "period_end": "2024-12-31",
+          "filed_at": "2025-04-17",
+          "form": "20-F",
+          "fiscal_year": 2024,
+          "fiscal_period": "FY",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001046179.json"
+        },
+        {
+          "symbol": "TSM",
+          "metric": "net_income",
+          "value": "851027700000",
+          "unit": "TWD",
+          "period_start": "2023-01-01",
+          "period_end": "2023-12-31",
+          "filed_at": "2025-04-17",
+          "form": "20-F",
+          "fiscal_year": 2024,
+          "fiscal_period": "FY",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001046179.json"
+        },
+        {
+          "symbol": "TSM",
+          "metric": "assets",
+          "value": "6691764700000",
+          "unit": "TWD",
+          "period_start": null,
+          "period_end": "2024-12-31",
+          "filed_at": "2025-04-17",
+          "form": "20-F",
+          "fiscal_year": 2024,
+          "fiscal_period": "FY",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001046179.json"
+        },
+        {
+          "symbol": "TSM",
+          "metric": "assets",
+          "value": "5532196600000",
+          "unit": "TWD",
+          "period_start": null,
+          "period_end": "2023-12-31",
+          "filed_at": "2025-04-17",
+          "form": "20-F",
+          "fiscal_year": 2024,
+          "fiscal_period": "FY",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001046179.json"
+        },
+        {
+          "symbol": "TSM",
+          "metric": "liabilities",
+          "value": "2412493100000",
+          "unit": "TWD",
+          "period_start": null,
+          "period_end": "2024-12-31",
+          "filed_at": "2025-04-17",
+          "form": "20-F",
+          "fiscal_year": 2024,
+          "fiscal_period": "FY",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001046179.json"
+        },
+        {
+          "symbol": "TSM",
+          "metric": "liabilities",
+          "value": "2078330100000",
+          "unit": "TWD",
+          "period_start": null,
+          "period_end": "2023-12-31",
+          "filed_at": "2025-04-17",
+          "form": "20-F",
+          "fiscal_year": 2024,
+          "fiscal_period": "FY",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001046179.json"
+        }
+      ],
+      "research_evidence": [
+        {
+          "evidence_id": "ev_01",
+          "category": "us_economy",
+          "region": "US",
+          "title": "美國2026年中期經濟擴張與GDP預測",
+          "summary": "2026年中期美國經濟維持溫和擴張，主要依賴AI投資帶動的企業資本支出與消費者支出支撐，預期2026年實質GDP成長率為2.0%，2027年為1.9%。",
+          "market_relevance": "反映美國總體經濟韌性，為整體資本市場與風險偏好提供基本面支撐。",
+          "source_title": "美國經濟與景氣研究報告",
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3pw5v1oAWzbjTgaJXQBfrjBnKjPn_pn8KGpfQHkuqtmt-_fYb5WQQG0MsiRjKjSY39S20STt180BsEJImgksfNMk5vyqMH4HrX-5nIqnBZ6lfxgnP3ByFYo-7AxkuOQKpkKGXkP69JmoWLTL9ZuyxxTgCrWXeXelnAPkK5mUMfkjOsqUl-lTxWb0-19fv9fw74uuVafs-kYrMm0DJxOIp6au3Th7XZgkHrJWkXBirgDzByT8iZXz7tMlGQYX09Q59eTqcUZn1gpAWWWuba2A=",
+          "published_at": null,
+          "affected_symbols": []
+        },
+        {
+          "evidence_id": "ev_02",
+          "category": "labor",
+          "region": "US",
+          "title": "美國2026年六月非農就業與勞動市場",
+          "summary": "六月份非農就業僅增加57,000人，低於市場預期，失業率維持低點但勞動參與率下降，休閒與旅遊業出現就業損失。",
+          "market_relevance": "就業成長動能放緩，牽動聯準會對勞動市場降溫的評估與貨幣政策走向。",
+          "source_title": "美國經濟與景氣研究報告",
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8xzDsgMvhCh9JwHZlmlcDTEpSjCKIUrcd-bER7CYwC17iXYValGkgi36pqi8G5wGZLi4VOvOZXgjOdE_mAn4PUvdWLI0ll_kJyJgDHEo25wpc79sCbos4k2Afcf7X846vxSsw7twbUpGJi7yZB0_k7Q==",
+          "published_at": null,
+          "affected_symbols": []
+        },
+        {
+          "evidence_id": "ev_03",
+          "category": "rates",
+          "region": "US",
+          "title": "聯準會七月會議預期與通膨黏性",
+          "summary": "油價回升及AI相關電子零組件需求推升通膨壓力，市場預期聯準會七月將維持利率不變，但九月升息預期正在攀升。",
+          "market_relevance": "利率路徑變化將直接影響債市殖利率表現及各類資產的估值模型。",
+          "source_title": "利率、通膨、美元與美債研究報告",
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBn7cWQmJkwMI0F0UbwK0jnGBHTX9mzjY8XAk8zOohUWVap2ryDXe0JZIpaIj0fOfayx1FhXDfbJEnIc67K_fm5wFA8Qr0iJfIOPIlQDU7r2ApZMCx4FygM7yslKbBvlHFdrqf9NXtiQHV9J5X0iThYJ59Na0Jir77lY9jhQ==",
+          "published_at": null,
+          "affected_symbols": []
+        },
+        {
+          "evidence_id": "ev_04",
+          "category": "industry",
+          "region": "Global",
+          "title": "全球半導體市場與AI基礎設施規模",
+          "summary": "2026年全球半導體市場預計首次突破1.5兆美元，AI晶片為主要動能；AI數據中心至2026年底將佔全球記憶體晶片產出70%。",
+          "market_relevance": "凸顯AI基礎設施對半導體供應鏈的巨大拉動效果，推升相關供應商營運展望。",
+          "source_title": "關注產業的產品與供需研究報告",
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXKaWPH6beKNyVjHVcVWdMtbHQd1bQJwS_YvB3I5rhNwWb9U4xDAFZCNJ6o5osS9TODKByPZuNoHg5veY7egDdaI5VUqNW7mWKH4bN3gwMQd4oraE2ih4-u_t0dcIuAOKyKGRW8zQNCah0RubQGh5mbBFEhlE=",
+          "published_at": null,
+          "affected_symbols": []
+        },
+        {
+          "evidence_id": "ev_05",
+          "category": "company",
+          "region": "Taiwan",
+          "title": "台積電第二季財報與資本支出調高",
+          "summary": "台積電公布第二季淨利年增77.4%，先進製程貢獻77%營收，並將2026年資本支出上限提高至640億美元，計畫在美國亞利桑那州追加投資。",
+          "market_relevance": "引領全球半導體與AI晶片代工的強勁需求，增強資本市場對科技股的信心。",
+          "source_title": "公司營收、淨利與成本分布研究報告",
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEnhWVLi8yc8rVGvyGr2c0mB7cQbn-SOsq6rLg0XWmA78ijN2Pi4j33vESRRjE2FyyqU-VyGoV7Blk40-xkQbJIQRq6RmpvH_VoiRQsRTZ8AVwyacX9h9u53J_XgziNlTtazYa65ib7hvTI5kw=",
+          "published_at": null,
+          "affected_symbols": [
+            "TSMC"
+          ]
+        },
+        {
+          "evidence_id": "ev_06",
+          "category": "global_economy",
+          "region": "China",
+          "title": "中國2026年第二季GDP成長率放緩",
+          "summary": "中國2026年第二季GDP成長率放緩至4.3%，創三年來最低，主要受國內需求與家庭支出低迷影響，形成製造業強勁但消費疲軟的結構性分歧。",
+          "market_relevance": "中國內需疲弱可能對全球原物料與跨國企業在大陸市場的營收造成壓力。",
+          "source_title": "中國、台灣、日本、韓國與歐洲的經濟發展",
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-qL6GPgVbH_dax7IG1Hzt9keDg449A_Y4mHDuaiclcTaEGplWGOGpyldRhGszMw10yzK1mb1Kg6tzHk93OHhoHgvP4K0-GxBitbfPCE1O6rlxE_1_hMva_opEFG-RSNBA1AfcrtGxYR_GgcFIQyMYsQrPN0yc6rE3nWl5gBdAUpFotH-FGL_jB4TJZ7fpVgSmYQGlePoftWFgG97Eut0HH2aUbcy2bG0ImnKdN4zBGz00i5jjL7FvRQjYW35ahfdBxlBo",
+          "published_at": null,
+          "affected_symbols": []
+        },
+        {
+          "evidence_id": "ev_07",
+          "category": "global_economy",
+          "region": "Taiwan",
+          "title": "台灣2026年經濟成長率大幅上修",
+          "summary": "受AI需求帶動的高階晶片出口與投資強勁成長，台灣2026年經濟成長率被預測機構上修至10.16%至10.38%之間。",
+          "market_relevance": "突顯台灣在全球AI硬體供應鏈中的核心樞紐地位與亮眼的外銷表現。",
+          "source_title": "中國、台灣、日本、韓國與歐洲的經濟發展",
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF6ihdXZ2nAecs4qMTReiUyFrCy2N4RA3gLHQoyisMCg5SJXCYW-JnkrbTzlozEAnqjbsjSH9QM4aDJHi8Cj7nr1dhYM62KSpS1GpRD269x3m3GgvrxIhu6DR2eGR4bf-_PBWg3-8-sDTAdmTB9hJtUEzhV2t-FUJDObIT3O29qupBZZOVEdlvZpbjhMeFaN3ha00pnxJSiO3Dj6kI=",
+          "published_at": null,
+          "affected_symbols": []
+        },
+        {
+          "evidence_id": "ev_08",
+          "category": "global_economy",
+          "region": "Korea",
+          "title": "韓國2026年經濟成長預測上調",
+          "summary": "受惠於半導體與AI相關產品出口熱潮，IMF與韓國政府分別將韓國2026年經濟成長預測上調至2.6%與3.0%。",
+          "market_relevance": "反映亞洲半導體出口國同步受惠於全球AI基礎設施建設的大趨勢。",
+          "source_title": "中國、台灣、日本、韓國與歐洲的經濟發展",
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFDOHjVfNq3JyvO_9IQNy6wHIIskfqzE2kq7KnNMSl_YrAeDqqV9N1XOPArnq4F04saak4aXzJsOsx-8ANUwmgq1KbLzMkCAb-6x1RJem_OHCkTKbkCOln8jDOu8w9AaJXeiAhVkOvqVAQe_87Jl_zu2cB-1jHGuzb8aEsEf4mkAlIlVekal3XQZVh2662gX5MRMhlK1632row=",
+          "published_at": null,
+          "affected_symbols": []
+        },
+        {
+          "evidence_id": "ev_09",
+          "category": "geopolitics",
+          "region": "Global",
+          "title": "美國與伊朗對抗及荷莫茲海峽風險",
+          "summary": "美國與伊朗持續對抗可能對國際航運與能源供應構成風險，特別是荷莫茲海峽的通行安全受到地緣政治威脅。",
+          "market_relevance": "地緣政治衝突存在推高國際油價與擾亂全球供應鏈物流的尾端風險。",
+          "source_title": "全球地緣政治研究報告",
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFEq079z01hQXAwS-0HXCq_YiWN0beuvqaiojPDB9QeUJrmQXBq3YVYMZARmFJ87m1IBEQmlsvl3jrqMpG-_Ayd7N9kC6yGeppQ1ikOLohYRRuPSxHT9uMMm3YFZn8gKsVACV5N_ImZhxD8djzW60XMAaOshMr0OjOTU55ibV1C-KTLQQsTkjadEMUwFfuo--8CT1SAPBeoiFKmUw50A9zoqA==",
+          "published_at": null,
+          "affected_symbols": []
+        },
+        {
+          "evidence_id": "ev_10",
+          "category": "industry",
+          "region": "Europe",
+          "title": "艾司摩爾（ASML）2026年營收預期",
+          "summary": "受強勁設備需求推動，ASML預計2026年全年營收將達到430億至450億歐元，反映半導體前端設備景氣熱絡。",
+          "market_relevance": "作為全球微影設備龍頭，其業績展望是評估半導體擴產進度的關鍵風向球。",
+          "source_title": "關注產業的產品與供需研究報告",
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFfaPJ89PjVJcgpD2XAr-osujKivelGMyTMHHOaMHykYPIgYHE4ZCZclr1juQubxRyV5XtqUe8hnMDMbLoMekcEKmq4e7VOCMv5jUP4mRvZNilT7FIr5YV1_26IBI8bdvwVlJCqJmJ4uwFmqU_uSQd0UPHY6haoGckbhkjwrIecoXaoUQ4QBL4RWIRiNfqQw0=",
+          "published_at": null,
+          "affected_symbols": [
+            "ASML"
+          ]
+        }
+      ],
+      "research_mode": "non_trading_day_survey",
+      "research_generated_at": "2026-07-29T01:56:59.181437Z",
+      "warnings": [
+        "Yahoo Finance 資料可能延遲，僅供研究；下單前必須向券商核對價格。"
+      ]
+    },
+    "learning": {
+      "schema_version": "1.0",
+      "review_id": "learning-20260729T015812Z",
+      "reviewed_run_id": "20260729T011318Z",
+      "generated_at": "2026-07-29T01:58:12.277178Z",
+      "evaluation_cutoff": "2026-07-29T01:56:46.331210Z",
+      "evidence_source": "Yahoo Finance via yfinance",
+      "verdict": "too_early",
+      "lessons": [
+        {
+          "title": "3 與 7 個完成交易日滾動視窗樣本仍未達標",
+          "evidence": "根據最新確定性計算證據，distinct_completed_sessions 為 2，而 3 個完成交易日的 completed_windows 數量仍為 0，7 個完成交易日的 completed_windows 數量亦為 0。",
+          "implication": "依據政策規定，必須分別使用 3 與 7 個完成交易日的滾動視窗進行評估，目前樣本視窗數未達標，因此學習驗證判定必須維持 too_early。",
+          "confidence": 100,
+          "affected_assets": [
+            "CASH"
+          ]
+        },
+        {
+          "title": "100% 現金防守規避了科技股與半導體回撤",
+          "evidence": "在 2026-07-28 交易日中，QQQ 下跌 0.97%、SMH 下跌 3.45%、SOXL 重挫 14.52%，而上一輪假設策略維持 100% CASH（報酬率 0%），成功保護資產免受高 Beta 科技資產的劇烈回落影響。",
+          "implication": "在短線樣本未達標且科技板塊承壓時，維持現金水位可有效保護本金，但日後不得將單一政策性現金配置作為長期唯一的絕對風險否決理由。",
+          "confidence": 90,
+          "affected_assets": [
+            "CASH",
+            "SOXL",
+            "SMH",
+            "QQQ"
+          ]
+        },
+        {
+          "title": "嚴格區分 3 與 7 日完成視窗與單日價格雜訊",
+          "evidence": "儘管 2026-07-28 單日 QQQ 與半導體下跌而 SQQQ 上漲，但因為上一輪未配置反向 ETF 且未確認成交，單日價格變動僅能作為市場狀態參考，不得計入策略的完成視窗績效。",
+          "implication": "委員會必須嚴守完成收盤價與完整交易日視窗，不得以外推單日估值點或未確認成交替代多日報酬表現。",
+          "confidence": 95,
+          "affected_assets": [
+            "SQQQ",
+            "QQQ"
+          ]
+        }
+      ],
+      "committee_changes": [
+        "後續委員會審查必須嚴格核對 3 與 7 個完整交易日的完成視窗數是否達標，在未達標前一律標記 too_early。",
+        "落實短期績效政策：樣本不足本身不禁止承擔市場風險，亦不得單獨作為 100% CASH 的強制理由；未來配置現金比例若超過 0.60，必須具備正式的 risk veto 或強制回撤閘門支持。",
+        "當市場結論偏向 bearish 或 strong_bearish 時，必須在報告中明確比較 SQQQ、SOXS、SPXU 與現金的報酬表達、每日重設與失效條件，但不代表必須買進。"
+      ],
+      "member_assessment": "Learning 委員已依據最新的市場收盤價與確定性計算證據完成事後驗證。由於 3 個與 7 個完成交易日的滾動視窗完成數仍為 0，依據政策規範判定本輪驗證為 too_early。同時，依循最新短期績效政策，釐清了樣本不足不得單獨作為 100% CASH 理由的規範，以矯正上一輪的過度防守限制。",
+      "skill_assessment": "系統運作正常，無需額外建立 Codex skill。現有的 JSON 結構化知識庫與自動化驗證流程已能精確執行 3 與 7 日視窗的稽核與教訓歸因。",
+      "warnings": [
+        "本評估基於研究策略模擬假設與收盤價格證據，絕非實際成交部位或未來獲利保證。",
+        "目前 3 個與 7 個完成交易日的滾動視窗樣本數仍未達政策要求的完整樣本門檻。",
+        "歷史現金防守之成效僅代表過去單日表現，不得推論為未來必然獲得正報酬。"
+      ]
+    },
+    "performance": {
+      "schema_version": "1.0",
+      "currency": "USD",
+      "initial_value_usd": "6000.00",
+      "updated_at": "2026-07-29T01:10:51.913502Z",
+      "status": "hypothetical",
+      "methodology": "假設按每輪建議權重持有碎股，並在下一個評價點按最新建議重新平衡；忽略手續費、價差、滑價、稅負與匯率。這是研究策略指數，不是實際帳戶績效。",
+      "points": [
+        {
+          "as_of": "2026-07-23T17:43:21.745224Z",
+          "run_id": "manual-20260724T014200+0800",
+          "price_session": null,
+          "value_usd": "6000.00",
+          "profit_loss_usd": "0.00",
+          "return_percent": "0.0000",
+          "prices": [
+            {
+              "symbol": "AMD",
+              "price_usd": "533.340027"
+            },
+            {
+              "symbol": "PLTR",
+              "price_usd": "122.059898"
+            },
+            {
+              "symbol": "SOXL",
+              "price_usd": "154.375"
+            },
+            {
+              "symbol": "TQQQ",
+              "price_usd": "66.169998"
+            },
+            {
+              "symbol": "NVDA",
+              "price_usd": "209.440002"
+            },
+            {
+              "symbol": "ERX",
+              "price_usd": "95.402496"
+            }
+          ],
+          "note": "第一輪建議的假設起點；尚未執行任何交易。"
+        },
+        {
+          "as_of": "2026-07-23T20:00:00Z",
+          "run_id": "review-20260724T031844Z",
+          "price_session": "2026-07-23",
+          "value_usd": "6043.04",
+          "profit_loss_usd": "43.04",
+          "return_percent": "0.7173",
+          "prices": [
+            {
+              "symbol": "AMD",
+              "price_usd": "539.690002"
+            },
+            {
+              "symbol": "PLTR",
+              "price_usd": "123.370003"
+            },
+            {
+              "symbol": "SOXL",
+              "price_usd": "157.5"
+            },
+            {
+              "symbol": "TQQQ",
+              "price_usd": "66.300003"
+            },
+            {
+              "symbol": "NVDA",
+              "price_usd": "208.759995"
+            },
+            {
+              "symbol": "ERX",
+              "price_usd": "94.489998"
+            }
+          ],
+          "note": "第一輪建議至 2026-07-23 收盤的假設績效；不是 7 月 24 日收盤值。"
+        },
+        {
+          "as_of": "2026-07-24T06:59:39.276777Z",
+          "run_id": "learning-20260724T065940Z",
+          "price_session": "2026-07-23",
+          "value_usd": "6043.04",
+          "profit_loss_usd": "43.04",
+          "return_percent": "0.7173",
+          "prices": [
+            {
+              "symbol": "AMD",
+              "price_usd": "539.690002"
+            },
+            {
+              "symbol": "CL=F",
+              "price_usd": "91.07"
+            },
+            {
+              "symbol": "ERX",
+              "price_usd": "94.489998"
+            },
+            {
+              "symbol": "GLD",
+              "price_usd": "371.519989"
+            },
+            {
+              "symbol": "NVDA",
+              "price_usd": "208.759995"
+            },
+            {
+              "symbol": "PLTR",
+              "price_usd": "123.370003"
+            },
+            {
+              "symbol": "QQQ",
+              "price_usd": "691.960022"
+            },
+            {
+              "symbol": "SMH",
+              "price_usd": "580.169983"
+            },
+            {
+              "symbol": "SOXL",
+              "price_usd": "157.5"
+            },
+            {
+              "symbol": "SPY",
+              "price_usd": "738.179993"
+            },
+            {
+              "symbol": "SQQQ",
+              "price_usd": "43.27"
+            },
+            {
+              "symbol": "TLT",
+              "price_usd": "83.169998"
+            },
+            {
+              "symbol": "TQQQ",
+              "price_usd": "66.300003"
+            },
+            {
+              "symbol": "^TNX",
+              "price_usd": "4.703"
+            },
+            {
+              "symbol": "^VIX",
+              "price_usd": "18.700001"
+            }
+          ],
+          "note": "依上一輪建議權重與最新可得行情計算；假設績效，不代表實際成交。"
+        },
+        {
+          "as_of": "2026-07-25T10:00:20.353794Z",
+          "run_id": "learning-20260725T100032Z",
+          "price_session": "2026-07-24",
+          "value_usd": "6055.77",
+          "profit_loss_usd": "55.77",
+          "return_percent": "0.9295",
+          "prices": [
+            {
+              "symbol": "AMD",
+              "price_usd": "521.950012"
+            },
+            {
+              "symbol": "CL=F",
+              "price_usd": "89.309998"
+            },
+            {
+              "symbol": "ERX",
+              "price_usd": "95.260002"
+            },
+            {
+              "symbol": "GLD",
+              "price_usd": "371.899994"
+            },
+            {
+              "symbol": "NVDA",
+              "price_usd": "206.839996"
+            },
+            {
+              "symbol": "PLTR",
+              "price_usd": "122.919998"
+            },
+            {
+              "symbol": "QQQ",
+              "price_usd": "684.22998"
+            },
+            {
+              "symbol": "SMH",
+              "price_usd": "561.190002"
+            },
+            {
+              "symbol": "SOXL",
+              "price_usd": "136.809998"
+            },
+            {
+              "symbol": "SPY",
+              "price_usd": "738.929993"
+            },
+            {
+              "symbol": "SQQQ",
+              "price_usd": "44.790001"
+            },
+            {
+              "symbol": "TLT",
+              "price_usd": "83.25"
+            },
+            {
+              "symbol": "TQQQ",
+              "price_usd": "64.0"
+            },
+            {
+              "symbol": "^TNX",
+              "price_usd": "4.679"
+            },
+            {
+              "symbol": "^VIX",
+              "price_usd": "18.58"
+            }
+          ],
+          "note": "依上一輪建議權重與最新可得行情計算；假設績效，不代表實際成交。"
+        },
+        {
+          "as_of": "2026-07-29T01:10:51.913502Z",
+          "run_id": "learning-20260729T011215Z",
+          "price_session": "2026-07-28",
+          "value_usd": "6055.77",
+          "profit_loss_usd": "55.77",
+          "return_percent": "0.9295",
+          "prices": [
+            {
+              "symbol": "AMD",
+              "price_usd": "454.619995"
+            },
+            {
+              "symbol": "CL=F",
+              "price_usd": "82.650002"
+            },
+            {
+              "symbol": "ERX",
+              "price_usd": "88.690002"
+            },
+            {
+              "symbol": "GLD",
+              "price_usd": "369.369995"
+            },
+            {
+              "symbol": "NVDA",
+              "price_usd": "197.009995"
+            },
+            {
+              "symbol": "PLTR",
+              "price_usd": "123.529999"
+            },
+            {
+              "symbol": "QQQ",
+              "price_usd": "675.48999"
+            },
+            {
+              "symbol": "SMH",
+              "price_usd": "529.599976"
+            },
+            {
+              "symbol": "SOXL",
+              "price_usd": "109.540001"
+            },
+            {
+              "symbol": "SPY",
+              "price_usd": "740.859985"
+            },
+            {
+              "symbol": "SQQQ",
+              "price_usd": "46.509998"
+            },
+            {
+              "symbol": "TLT",
+              "price_usd": "84.239998"
+            },
+            {
+              "symbol": "TQQQ",
+              "price_usd": "61.560001"
+            },
+            {
+              "symbol": "^TNX",
+              "price_usd": "4.604"
+            },
+            {
+              "symbol": "^VIX",
+              "price_usd": "18.209999"
+            }
+          ],
+          "note": "依上一輪建議權重與最新可得行情計算；假設績效，不代表實際成交。"
+        }
+      ]
+    },
+    "rebalance": {
+      "schema_version": "1.0",
+      "generated_at": "2026-07-29T01:59:13.108828Z",
+      "pricing_cutoff": "2026-07-29T01:56:46.331210Z",
+      "pricing_session": "2026-07-28",
+      "from_run_id": "20260729T011318Z",
+      "to_run_id": "20260729T015913Z",
+      "capital_usd": "6000.00",
+      "status": "research_only",
+      "basis": "以前一輪研究配置為比較基準，差額股數採最近已完成交易日收盤價估算。",
+      "instructions": [
+        {
+          "symbol": "GLD",
+          "action": "add",
+          "reference_close_usd": "369.369995",
+          "previous_target_usd": "0",
+          "new_target_usd": "1500.00",
+          "change_usd": "1500.00",
+          "estimated_share_change": "4.0610"
+        },
+        {
+          "symbol": "TLT",
+          "action": "add",
+          "reference_close_usd": "84.239998",
+          "previous_target_usd": "0",
+          "new_target_usd": "1500.00",
+          "change_usd": "1500.00",
+          "estimated_share_change": "17.8063"
+        },
+        {
+          "symbol": "CASH",
+          "action": "reduce",
+          "reference_close_usd": null,
+          "previous_target_usd": "6000.00",
+          "new_target_usd": "3000.00",
+          "change_usd": "-3000.00",
+          "estimated_share_change": null
+        }
+      ],
+      "warnings": [
+        "這是兩輪研究建議的差額，不代表實際持股、成交或自動下單。",
+        "股數僅以最近一個已完成交易日收盤價估算；實際操作前須核對券商即時價格。"
+      ]
+    }
+  },
+  {
     "archive_id": "manual-20260724T014200+0800",
     "committee": {
       "schema_version": "1.0",
@@ -13586,35 +17629,9 @@
   {
     "archive_id": "review-20260724T031844Z",
     "decision_review": {
-      "assessment": {
-        "verdict": "too_early_to_validate",
-        "summary": "從建議快照到同一交易日收盤，假設組合為正報酬；AMD、PLTR 與 SOXL 是主要正貢獻，NVDA 與 ERX 為負貢獻。評估期間只有約 2 小時 17 分，仍不足以判定原始決策整體正確；依更新後政策，必須在第 2 至第 3 個交易日內完成正式驗證，且每週至少完成兩次決策檢視。",
-        "supported_points": [
-          "財報前高波動科技曝險在評估期間產生正貢獻。",
-          "SOXL 放大半導體反彈的短線表達在評估期間有效。"
-        ],
-        "challenged_points": [
-          "ERX 未延續原油風險溢價帶來的正向貢獻。",
-          "NVDA 的相對強勢論點在評估期間未轉化為正報酬。",
-          "極短評估窗不足以檢驗事件催化或風險界線；最遲須在第 3 個交易日重新決策。"
-        ]
-      },
+      "reviewed_run_id": "manual-20260724T014200+0800",
+      "starting_value_usd": "6000.00",
       "schema_version": "1.0",
-      "methodology": {
-        "pricing_source": "Yahoo Finance via yfinance",
-        "assumptions": [
-          "假設在原建議市場快照價格按目標美元金額建立碎股部位。",
-          "以 yfinance 在 2026-07-24T03:18:44.509208Z 回傳的最新 2026-07-23 收盤價評價。",
-          "未計入手續費、買賣價差、滑價、稅負、匯率或融資成本。",
-          "現金報酬設為零。"
-        ],
-        "warnings": [
-          "這是未成交建議的假設績效，不是實際帳戶報酬。",
-          "2026-07-24 美股正常盤在評估產生時尚未開盤，因此本紀錄不是 7 月 24 日完整交易日績效。",
-          "Yahoo Finance 資料可能延遲；任何人工交易前仍須向券商核對價格。"
-        ]
-      },
-      "status": "hypothetical",
       "positions": [
         {
           "symbol": "AMD",
@@ -13680,9 +17697,36 @@
           "ending_value_usd": "300.00"
         }
       ],
-      "reviewed_run_id": "manual-20260724T014200+0800",
-      "generated_at": "2026-07-24T03:19:58Z",
-      "starting_value_usd": "6000.00",
+      "currency": "USD",
+      "ending_value_usd": "6043.04",
+      "assessment": {
+        "verdict": "too_early_to_validate",
+        "summary": "從建議快照到同一交易日收盤，假設組合為正報酬；AMD、PLTR 與 SOXL 是主要正貢獻，NVDA 與 ERX 為負貢獻。評估期間只有約 2 小時 17 分，仍不足以判定原始決策整體正確；依更新後政策，必須在第 2 至第 3 個交易日內完成正式驗證，且每週至少完成兩次決策檢視。",
+        "supported_points": [
+          "財報前高波動科技曝險在評估期間產生正貢獻。",
+          "SOXL 放大半導體反彈的短線表達在評估期間有效。"
+        ],
+        "challenged_points": [
+          "ERX 未延續原油風險溢價帶來的正向貢獻。",
+          "NVDA 的相對強勢論點在評估期間未轉化為正報酬。",
+          "極短評估窗不足以檢驗事件催化或風險界線；最遲須在第 3 個交易日重新決策。"
+        ]
+      },
+      "methodology": {
+        "pricing_source": "Yahoo Finance via yfinance",
+        "assumptions": [
+          "假設在原建議市場快照價格按目標美元金額建立碎股部位。",
+          "以 yfinance 在 2026-07-24T03:18:44.509208Z 回傳的最新 2026-07-23 收盤價評價。",
+          "未計入手續費、買賣價差、滑價、稅負、匯率或融資成本。",
+          "現金報酬設為零。"
+        ],
+        "warnings": [
+          "這是未成交建議的假設績效，不是實際帳戶報酬。",
+          "2026-07-24 美股正常盤在評估產生時尚未開盤，因此本紀錄不是 7 月 24 日完整交易日績效。",
+          "Yahoo Finance 資料可能延遲；任何人工交易前仍須向券商核對價格。"
+        ]
+      },
+      "return_percent": "0.7173",
       "committee_rerun": {
         "requested_at": "2026-07-24T03:19:15Z",
         "github_actions_run_id": "30063924394",
@@ -13691,11 +17735,10 @@
         "recommendation_changed": false
       },
       "review_id": "review-20260724T031844Z",
+      "generated_at": "2026-07-24T03:19:58Z",
       "evaluation_start": "2026-07-23T17:43:21.745224Z",
+      "status": "hypothetical",
       "profit_loss_usd": "43.04",
-      "return_percent": "0.7173",
-      "currency": "USD",
-      "ending_value_usd": "6043.04",
       "evaluation_end": "2026-07-23T20:00:00Z"
     }
   }

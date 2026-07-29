@@ -1,33 +1,51 @@
 {
   "schema_version": "1.0",
-  "run_id": "20260729T011318Z",
-  "generated_at": "2026-07-29T01:13:18.709253Z",
-  "data_cutoff": "2026-07-29T01:10:51.913502Z",
+  "run_id": "20260729T015913Z",
+  "generated_at": "2026-07-29T01:59:13.108828Z",
+  "data_cutoff": "2026-07-29T01:56:46.331210Z",
   "status": "live",
   "capital_usd": "6000.00",
-  "model_score": 95,
-  "model_score_reason": "方向一致度 95/100；10 位提案委員按信心加權，0 項協商後否決仍未解除，扣除 0 分。",
+  "model_score": 97,
+  "model_score_reason": "方向一致度 97/100；10 位提案委員按信心加權，0 項協商後否決仍未解除，扣除 0 分。",
   "risk_level": "high",
-  "expected_horizon": "3 trading days",
+  "expected_horizon": "3 交易日",
   "allocations": [
     {
       "symbol": "CASH",
       "asset_type": "cash",
-      "target_weight": "1",
-      "target_amount_usd": "6000.00",
-      "action": "hold",
-      "note": "依據風控政策中短視窗績效與滾動樣本未達標之強制規定（fail_closed_symbol），且面對科技半導體回檔與 risk_off 體制，維持 100% 現金以保護初始 6,000 美元本金免受路徑磨損與流動性衝擊。"
+      "target_weight": "0.5",
+      "target_amount_usd": "3000.00",
+      "action": "reduce",
+      "note": "依據政策規範在樣本未達統計成熟且無正式 risk veto 時將現金維持於 0.50，合乎 0.20 至 0.60 區間。"
+    },
+    {
+      "symbol": "TLT",
+      "asset_type": "etf",
+      "target_weight": "0.25",
+      "target_amount_usd": "1500.00",
+      "action": "buy",
+      "note": "配置防禦性長天期美債 ETF，因應 10 年期公債殖利率回落與市場避險需求。"
+    },
+    {
+      "symbol": "GLD",
+      "asset_type": "commodity_etf",
+      "target_weight": "0.25",
+      "target_amount_usd": "1500.00",
+      "action": "buy",
+      "note": "配置黃金商品 ETF，作為地緣政治與通膨黏性之避險組合。"
     }
   ],
   "top_reasons": [
     {
       "id": 1,
-      "title": "大盤與技術結構偏向空頭防守",
-      "summary": "市場快照顯示 SPY 20 日報酬為 -0.018895% 且低於 50 日均線 -0.536669%，整體宏觀與技術體制判定為 risk_off。",
+      "title": "科技與半導體板塊短線籌碼鬆動與顯著回檔",
+      "summary": "市場快照顯示半導體板塊（SMH）單日下跌 3.45%，槓桿半導體（SOXL）大跌 14.52%，AMD 下跌 8.15%，反映高動能科技資產面臨強烈拋壓。",
       "confidence": 85,
       "category": "technical",
       "affected_assets": [
-        "SPY",
+        "SMH",
+        "SOXL",
+        "AMD",
         "QQQ"
       ],
       "source_urls": [
@@ -36,15 +54,14 @@
     },
     {
       "id": 2,
-      "title": "半導體與高 Beta 科技板塊重挫",
-      "summary": "半導體 ETF (SMH) 下跌 3.45%、槓桿半導體 (SOXL) 重挫 14.52%，AMD 與 PLTR 分別下跌 8.15% 與 6.08%，顯示高風險資產面臨強烈回撤壓力。",
-      "confidence": 90,
-      "category": "momentum",
+      "title": "大盤處於 risk_off 狀態且跌破短中期均線",
+      "summary": "SPY 20 日報酬率為 -0.018895% 且低於 50 日均線，^TNX 與 VIX（18.21）呈現正常但波動率擴張的防禦格局。",
+      "confidence": 80,
+      "category": "macro",
       "affected_assets": [
-        "SMH",
-        "SOXL",
-        "AMD",
-        "PLTR"
+        "SPY",
+        "TLT",
+        "GLD"
       ],
       "source_urls": [
         "https://finance.yahoo.com/"
@@ -52,123 +69,133 @@
     },
     {
       "id": 3,
-      "title": "滾動視窗樣本數不足強制執行保險防守",
-      "summary": "政策規定短期績效必須分別使用 3 與 7 個完成交易日的滾動視窗評估，目前樣本完成數未達標，必須強制採用 fail_closed_symbol (CASH)。",
-      "confidence": 100,
-      "category": "policy",
+      "title": "台灣半導體資本支出擴張與基本面分化",
+      "summary": "台積電第二季淨利年增 77.4% 並將 2026 年資本支出上限調高至 640 億美元，顯示 AI 長線需求穩健，但個股短期表現受總體資金撤離壓抑。",
+      "confidence": 75,
+      "category": "valuation",
       "affected_assets": [
-        "CASH"
+        "TSM",
+        "NVDA",
+        "AMD"
       ],
-      "source_urls": []
+      "source_urls": [
+        "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000459/tsm-monthend6kx20260724.htm"
+      ]
     },
     {
       "id": 4,
-      "title": "利率水準維持與評價調整壓力",
-      "summary": "聯準會將聯邦基金利率目標維持在 3.50% 至 3.75%，伴隨潛在升息定價，對高倍數成長與科技資產的評價面形成壓抑。",
-      "confidence": 80,
+      "title": "美國總體經濟成長溫和與就業動能放緩",
+      "summary": "美國 2026 年六月非農就業僅增加 57,000 人，失業率維持低點但就業成長放緩，預期 2026 年實質 GDP 成長率為 2.0%。",
+      "confidence": 70,
       "category": "macro",
+      "affected_assets": [
+        "SPY",
+        "TLT"
+      ],
+      "source_urls": [
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3pw5v1oAWzbjTgaJXQBfrjBnKjPn_pn8KGpfQHkuqtmt-_fYb5WQQG0MsiRjKjSY39S20STt180BsEJImgksfNMk5vyqMH4HrX-5nIqnBZ6lfxgnP3ByFYo-7AxkuOQKpkKGXkP69JmoWLTL9ZuyxxTgCrWXeXelnAPkK5mUMfkjOsqUl-lTxWb0-19fv9fw74uuVafs-kYrMm0DJxOIp6au3Th7XZgkHrJWkXBirgDzByT8iZXz7tMlGQYX09Q59eTqcUZn1gpAWWWuba2A="
+      ]
+    },
+    {
+      "id": 5,
+      "title": "聯準會利率路徑與通膨黏性隱憂",
+      "summary": "油價回升及 AI 供應鏈需求推升通膨壓力，市場預期聯準會七月維持利率不變，九月升息預期正在攀升。",
+      "confidence": 75,
+      "category": "policy",
       "affected_assets": [
         "TLT",
         "SPY",
         "QQQ"
       ],
       "source_urls": [
-        "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
-      ]
-    },
-    {
-      "id": 5,
-      "title": "地緣政治與能源供應尾端風險",
-      "summary": "中東地區持續的地緣政治對抗對荷姆茲海峽的能源運輸與全球通膨構成潛在尾端風險，加劇市場不確定性。",
-      "confidence": 75,
-      "category": "news",
-      "affected_assets": [
-        "XLE",
-        "CL=F"
-      ],
-      "source_urls": [
-        "https://ofac.treasury.gov/recent-actions"
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBn7cWQmJkwMI0F0UbwK0jnGBHTX9mzjY8XAk8zOohUWVap2ryDXe0JZIpaIj0fOfayx1FhXDfbJEnIc67K_fm5wFA8Qr0iJfIOPIlQDU7r2ApZMCx4FygM7yslKbBvlHFdrqf9NXtiQHV9J5X0iThYJ59Na0Jir77lY9jhQ=="
       ]
     },
     {
       "id": 6,
-      "title": "槓桿 ETF 路徑磨損與高波動風險",
-      "summary": "SOXL 20 日年化波動率高達 169.65%，在下行趨勢中每日重設會產生嚴重的複利減損與路徑磨損，不宜在低能見度期間持有。",
-      "confidence": 95,
+      "title": "地緣政治與荷莫茲海峽能源風險",
+      "summary": "美國與伊朗持續對抗可能對國際航運與能源供應構成尾端風險，對原物料與跨國供應鏈形成潛在干擾。",
+      "confidence": 70,
       "category": "risk",
       "affected_assets": [
-        "SOXL",
-        "TQQQ"
+        "GLD",
+        "ERX",
+        "CL=F"
+      ],
+      "source_urls": [
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFEq079z01hQXAwS-0HXCq_YiWN0beuvqaiojPDB9QeUJrmQXBq3YVYMZARmFJ87m1IBEQmlsvl3jrqMpG-_Ayd7N9kC6yGeppQ1ikOLohYRRuPSxHT9uMMm3YFZn8gKsVACV5N_ImZhxD8djzW60XMAaOshMr0OjOTU55ibV1C-KTLQQsTkjadEMUwFfuo--8CT1SAPBeoiFKmUw50A9zoqA=="
+      ]
+    },
+    {
+      "id": 7,
+      "title": "短期績效樣本未達成熟門檻",
+      "summary": "3 與 7 個完成交易日的滾動視窗樣本數仍未達 20 個完整視窗的統計成熟要求，依政策限制維持合規防禦配置。",
+      "confidence": 90,
+      "category": "risk",
+      "affected_assets": [
+        "CASH",
+        "TLT",
+        "GLD"
       ],
       "source_urls": [
         "https://finance.yahoo.com/"
       ]
     },
     {
-      "id": 7,
-      "title": "歷史現金防守有效規避回撤",
-      "summary": "在先前科技重挫期間，維持 100% 現金水位成功保護資產免受單日大跌與流動性摩擦衝擊，具備可重複驗證的防禦價值。",
+      "id": 8,
+      "title": "反向 ETF 每日重設與路徑磨損特性比較",
+      "summary": "當前結論為 bearish，經比較 SQQQ、SOXS、SPXU 與現金發現：反向 ETF 採每日重設機制，僅適合最多 1 個交易日的短線戰術避險，跨日持有將遭受複利耗損與反彈損失，現金則無此摩擦。",
       "confidence": 90,
-      "category": "liquidity",
+      "category": "risk",
       "affected_assets": [
+        "SQQQ",
+        "SOXS",
+        "SPXU",
         "CASH"
       ],
-      "source_urls": []
-    },
-    {
-      "id": 8,
-      "title": "機構持股與申報顯示防守態勢",
-      "summary": "透過 SEC 13F 與最新 filing 事件觀察，機構與內部人正處於調節與防守階段，缺乏即時的強多頭支撐訊號。",
-      "confidence": 80,
-      "category": "valuation",
-      "affected_assets": [
-        "NVDA",
-        "AMD",
-        "TSLA"
-      ],
       "source_urls": [
-        "https://www.sec.gov/search-filings/edgar-application-programming-interfaces"
+        "https://finance.yahoo.com/"
       ]
     },
     {
       "id": 9,
-      "title": "AI 資本支出循環與盈利實現檢驗",
-      "summary": "雖然 2026 年預期大型科技公司 AI 資本支出高達 7250 億美元，但市場正重新定價短期盈利實現與高估值的匹配風險。",
+      "title": "歐洲半導體設備龍頭營運展望熱絡",
+      "summary": "艾司摩爾（ASML）預計 2026 年全年營收達 430 億至 450 億歐元，反映半導體前端擴產需求依舊強勁，可支撐中長線產業基本面。",
       "confidence": 75,
       "category": "valuation",
       "affected_assets": [
-        "NVDA",
-        "MSFT",
-        "META",
-        "AVGO"
+        "SMH",
+        "SOXX",
+        "TSM"
       ],
       "source_urls": [
-        "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000060/nvda-20260628.htm"
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFfaPJ89PjVJcgpD2XAr-osujKivelGMyTMHHOaMHykYPIgYHE4ZCZclr1juQubxRyV5XtqUe8hnMDMbLoMekcEKmq4e7VOCMv5jUP4mRvZNilT7FIr5YV1_26IBI8bdvwVlJCqJmJ4uwFmqU_uSQd0UPHY6haoGckbhkjwrIecoXaoUQ4QBL4RWIRiNfqQw0="
       ]
     },
     {
       "id": 10,
-      "title": "波動率指標反映正常偏高之避險需求",
-      "summary": "VIX 指數處於 18.21，顯示市場隱含波動率保持在正常偏高水位，風險資產回撤壓力尚未解除。",
-      "confidence": 85,
-      "category": "risk",
+      "title": "亞洲半導體出口國經濟成長上修",
+      "summary": "台灣與韓國 2026 年經濟成長預測分別被上修至 10% 以上與 3.0%，突顯亞洲半導體供應鏈在全球 AI 建設中的核心樞紐地位。",
+      "confidence": 75,
+      "category": "macro",
       "affected_assets": [
-        "^VIX"
+        "TSM",
+        "SMH"
       ],
       "source_urls": [
-        "https://www.cboe.com/tradable-products/vix/"
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF6ihdXZ2nAecs4qMTReiUyFrCy2N4RA3gLHQoyisMCg5SJXCYW-JnkrbTzlozEAnqjbsjSH9QM4aDJHi8Cj7nr1dhYM62KSpS1GpRD269x3m3GgvrxIhu6DR2eGR4bf-_PBWg3-8-sDTAdmTB9hJtUEzhV2t-FUJDObIT3O29qupBZZOVEdlvZpbjhMeFaN3ha00pnxJSiO3Dj6kI="
       ]
     }
   ],
   "invalidation_conditions": [
-    "SPY 與 QQQ 帶量突破 50 日均線並站穩，且 20 日報酬率轉為正值。",
-    "完成交易日的滾動視窗樣本數正式達到政策門檻（20個完成視窗），且勝率與淨利邊際符合政策標準。",
-    "VIX 指數顯著回落至 15 以下，市場整體宏觀與技術體制從 risk_off 轉為 risk_on。"
+    "SPY 與 QQQ 帶量收復 20 日與 50 日均線，且 20 日報酬轉為正值。",
+    "VIX 顯著回落至 15 以下，且半導體板塊（SMH）止跌回升並突破關鍵技術反壓。",
+    "總體經濟數據顯示通膨壓力完全消解，聯準會利率政策轉向明確寬鬆。"
   ],
   "major_risks": [
-    "若市場情緒與技術面快速反轉，全面現金配置將面臨機會成本與資產閒置風險。",
-    "地緣政治衝突突然升溫或能源價格暴衝可能引發跨日隔夜跳空風險。",
-    "短天期滾動視窗樣本數不足，無法透過統計顯著性完全排除突發性反彈的錯失風險。"
+    "科技股若出現超跌後的技術性急彈，防守型或反向配置可能面臨機會成本與反彈損失。",
+    "地緣政治衝突或能源價格突發跳空，可能透過成本管道打擊風險資產估值。",
+    "樣本數未達 20 個完整交易日成熟門檻，短期統計優勢尚未確立。"
   ],
   "disclaimer": "研究建議，尚未執行。下單前須由使用者核對券商即時價格、成本與風險；系統不存取券商、不自動下單。"
 }
