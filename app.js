@@ -331,25 +331,6 @@
     return labels[value] || String(value || "未分類");
   };
 
-  const pipelineFailureLabel = (value) => {
-    const labels = {
-      provider_rate_limited: "模型配額／限速",
-      provider_rpm_limit: "每分鐘請求數（RPM）",
-      provider_tpm_limit: "每分鐘 Token 數（TPM）",
-      provider_daily_quota: "當日模型配額",
-      provider_plan_or_billing_quota: "方案／計費配額不可用",
-      provider_model_capacity: "模型容量不足",
-      provider_auth: "模型驗證／權限",
-      provider_invalid_request: "無效模型請求",
-      provider_invalid_response: "模型回應格式無效",
-      provider_unavailable: "模型服務不可用",
-      credential_missing: "憑證未設定",
-      artifact_validation: "產出驗證失敗",
-      committee_error: "委員會執行錯誤",
-    };
-    return labels[value] || String(value || "未知");
-  };
-
   const readinessLabel = (value) => {
     const labels = {
       not_ready_for_event_driven_trading: "每日研究可用 · 即時事件不足",
@@ -604,7 +585,6 @@
     learning,
     performance,
     rebalance,
-    pipelineHealth,
     researchJournal,
     dashboardAnalytics,
     providerTelemetry,
@@ -697,27 +677,6 @@
               .map((symbol) => `<span>${escapeHtml(symbol)}</span>`)
               .join("")}
           </p>
-        </aside>
-
-        <aside class="pipeline-notice ${pipelineHealth.status}" role="status">
-          <div>
-            <strong>${pipelineHealth.status === "healthy" ? "PIPELINE HEALTHY" : "PIPELINE FAILED · 沿用前次決策"}</strong>
-            <p>${escapeHtml(pipelineHealth.message)}</p>
-          </div>
-          <div class="pipeline-facts">
-            <span>最近嘗試 ${escapeHtml(dateTime(pipelineHealth.attempted_at))}</span>
-            <span>最近成功 ${escapeHtml(pipelineHealth.last_successful_run_id)}</span>
-            ${
-              pipelineHealth.status === "failed"
-                ? `<span>原因 ${escapeHtml(pipelineFailureLabel(pipelineHealth.failure_kind))}</span>`
-                : ""
-            }
-            ${
-              safeExternalUrl(pipelineHealth.run_url)
-                ? `<a href="${escapeHtml(pipelineHealth.run_url)}" target="_blank" rel="noopener noreferrer">查看執行紀錄</a>`
-                : ""
-            }
-          </div>
         </aside>
 
         <section class="metrics" aria-label="Portfolio overview">
@@ -1648,7 +1607,6 @@
     fetchJson("learning.json"),
     fetchJson("performance.json"),
     fetchJson("rebalance.json"),
-    fetchJson("pipeline_health.json"),
     fetchJson("research_journal.json"),
     fetchJson("dashboard_analytics.json"),
     fetchJson("provider_telemetry.json"),
@@ -1663,7 +1621,6 @@
         learning,
         performance,
         rebalance,
-        pipelineHealth,
         researchJournal,
         dashboardAnalytics,
         providerTelemetry,
@@ -1677,7 +1634,6 @@
           learning,
           performance,
           rebalance,
-          pipelineHealth,
           researchJournal,
           dashboardAnalytics,
           providerTelemetry,
