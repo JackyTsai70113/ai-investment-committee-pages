@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0",
-  "run_id": "30534531848",
-  "started_at": "2026-07-30T10:25:01.784195Z",
-  "completed_at": "2026-07-30T10:29:47.938697Z",
+  "run_id": "30535227567",
+  "started_at": "2026-07-30T10:35:44.601552Z",
+  "completed_at": "2026-07-30T10:40:40.201840Z",
   "status": "failure",
-  "terminal_failure_category": "invalid_request",
+  "terminal_failure_category": "invalid_response",
   "total_requests": 22,
-  "total_retries": 0,
-  "total_estimated_input_tokens": 193580,
-  "elapsed_seconds": "286.155",
+  "total_retries": 1,
+  "total_estimated_input_tokens": 163369,
+  "elapsed_seconds": "295.6",
   "requests": [
     {
       "request_number": 1,
@@ -18,11 +18,11 @@
       "attempt": 1,
       "estimated_input_tokens": 604,
       "limiter_wait_seconds": "0.0",
-      "duration_ms": 30617,
+      "duration_ms": 12552,
       "outcome": "success",
       "failure_category": "none",
       "retry_delay_seconds": null,
-      "started_at": "2026-07-30T10:25:15.736571Z"
+      "started_at": "2026-07-30T10:35:58.065067Z"
     },
     {
       "request_number": 2,
@@ -30,13 +30,13 @@
       "provider": "gemini",
       "model": "gemini-3.5-flash-lite",
       "attempt": 1,
-      "estimated_input_tokens": 4236,
-      "limiter_wait_seconds": "34.382",
-      "duration_ms": 8740,
+      "estimated_input_tokens": 2712,
+      "limiter_wait_seconds": "52.448",
+      "duration_ms": 17612,
       "outcome": "success",
       "failure_category": "none",
       "retry_delay_seconds": null,
-      "started_at": "2026-07-30T10:26:20.771785Z"
+      "started_at": "2026-07-30T10:37:03.098685Z"
     },
     {
       "request_number": 3,
@@ -44,13 +44,13 @@
       "provider": "openai",
       "model": "gpt-5.4-nano",
       "attempt": 1,
-      "estimated_input_tokens": 9033,
+      "estimated_input_tokens": 9020,
       "limiter_wait_seconds": "0.0",
-      "duration_ms": 12692,
+      "duration_ms": 12046,
       "outcome": "success",
       "failure_category": "none",
       "retry_delay_seconds": null,
-      "started_at": "2026-07-30T10:26:30.065927Z"
+      "started_at": "2026-07-30T10:37:21.208657Z"
     },
     {
       "request_number": 4,
@@ -58,13 +58,13 @@
       "provider": "openai",
       "model": "gpt-5.4-nano",
       "attempt": 1,
-      "estimated_input_tokens": 7137,
+      "estimated_input_tokens": 7313,
       "limiter_wait_seconds": "0.0",
-      "duration_ms": 11822,
+      "duration_ms": 11527,
       "outcome": "success",
       "failure_category": "none",
       "retry_delay_seconds": null,
-      "started_at": "2026-07-30T10:26:42.795765Z"
+      "started_at": "2026-07-30T10:37:33.291290Z"
     },
     {
       "request_number": 5,
@@ -72,13 +72,13 @@
       "provider": "openai",
       "model": "gpt-5.4-nano",
       "attempt": 1,
-      "estimated_input_tokens": 6075,
+      "estimated_input_tokens": 5805,
       "limiter_wait_seconds": "0.0",
-      "duration_ms": 10864,
+      "duration_ms": 13531,
       "outcome": "success",
       "failure_category": "none",
       "retry_delay_seconds": null,
-      "started_at": "2026-07-30T10:26:54.617819Z"
+      "started_at": "2026-07-30T10:37:44.818887Z"
     },
     {
       "request_number": 6,
@@ -86,13 +86,13 @@
       "provider": "openai",
       "model": "gpt-5.4-nano",
       "attempt": 1,
-      "estimated_input_tokens": 8961,
+      "estimated_input_tokens": 8844,
       "limiter_wait_seconds": "0.0",
-      "duration_ms": 11331,
+      "duration_ms": 9766,
       "outcome": "success",
       "failure_category": "none",
       "retry_delay_seconds": null,
-      "started_at": "2026-07-30T10:27:05.481712Z"
+      "started_at": "2026-07-30T10:37:58.349591Z"
     },
     {
       "request_number": 7,
@@ -100,13 +100,13 @@
       "provider": "openai",
       "model": "gpt-5.4-nano",
       "attempt": 1,
-      "estimated_input_tokens": 6605,
+      "estimated_input_tokens": 6437,
       "limiter_wait_seconds": "0.0",
-      "duration_ms": 11744,
+      "duration_ms": 11953,
       "outcome": "success",
       "failure_category": "none",
       "retry_delay_seconds": null,
-      "started_at": "2026-07-30T10:27:16.813177Z"
+      "started_at": "2026-07-30T10:38:08.115697Z"
     },
     {
       "request_number": 8,
@@ -114,13 +114,13 @@
       "provider": "openai",
       "model": "gpt-5.4-nano",
       "attempt": 1,
-      "estimated_input_tokens": 5303,
+      "estimated_input_tokens": 4906,
       "limiter_wait_seconds": "0.0",
-      "duration_ms": 11032,
+      "duration_ms": 8645,
       "outcome": "success",
       "failure_category": "none",
       "retry_delay_seconds": null,
-      "started_at": "2026-07-30T10:27:28.557319Z"
+      "started_at": "2026-07-30T10:38:20.069286Z"
     },
     {
       "request_number": 9,
@@ -128,13 +128,13 @@
       "provider": "openai",
       "model": "gpt-5.4-nano",
       "attempt": 1,
-      "estimated_input_tokens": 6423,
+      "estimated_input_tokens": 6071,
       "limiter_wait_seconds": "0.0",
-      "duration_ms": 10463,
+      "duration_ms": 10829,
       "outcome": "success",
       "failure_category": "none",
       "retry_delay_seconds": null,
-      "started_at": "2026-07-30T10:27:39.589339Z"
+      "started_at": "2026-07-30T10:38:28.714789Z"
     },
     {
       "request_number": 10,
@@ -142,13 +142,13 @@
       "provider": "openai",
       "model": "gpt-5.4-nano",
       "attempt": 1,
-      "estimated_input_tokens": 5680,
+      "estimated_input_tokens": 5478,
       "limiter_wait_seconds": "0.0",
-      "duration_ms": 10105,
+      "duration_ms": 9972,
       "outcome": "success",
       "failure_category": "none",
       "retry_delay_seconds": null,
-      "started_at": "2026-07-30T10:27:50.051975Z"
+      "started_at": "2026-07-30T10:38:39.544408Z"
     },
     {
       "request_number": 11,
@@ -156,13 +156,13 @@
       "provider": "openai",
       "model": "gpt-5.4-nano",
       "attempt": 1,
-      "estimated_input_tokens": 5057,
+      "estimated_input_tokens": 4950,
       "limiter_wait_seconds": "0.0",
-      "duration_ms": 9970,
+      "duration_ms": 9104,
       "outcome": "success",
       "failure_category": "none",
       "retry_delay_seconds": null,
-      "started_at": "2026-07-30T10:28:00.157022Z"
+      "started_at": "2026-07-30T10:38:49.516842Z"
     },
     {
       "request_number": 12,
@@ -170,13 +170,13 @@
       "provider": "openai",
       "model": "gpt-5.4-nano",
       "attempt": 1,
-      "estimated_input_tokens": 8134,
+      "estimated_input_tokens": 8017,
       "limiter_wait_seconds": "0.0",
-      "duration_ms": 16099,
+      "duration_ms": 10120,
       "outcome": "success",
       "failure_category": "none",
       "retry_delay_seconds": null,
-      "started_at": "2026-07-30T10:28:10.127279Z"
+      "started_at": "2026-07-30T10:38:58.621180Z"
     },
     {
       "request_number": 13,
@@ -184,13 +184,13 @@
       "provider": "openai",
       "model": "gpt-5.4-nano",
       "attempt": 1,
-      "estimated_input_tokens": 5957,
+      "estimated_input_tokens": 5506,
       "limiter_wait_seconds": "0.0",
-      "duration_ms": 10805,
+      "duration_ms": 10781,
       "outcome": "success",
       "failure_category": "none",
       "retry_delay_seconds": null,
-      "started_at": "2026-07-30T10:28:26.226813Z"
+      "started_at": "2026-07-30T10:39:08.741134Z"
     },
     {
       "request_number": 14,
@@ -198,13 +198,13 @@
       "provider": "openai",
       "model": "gpt-5.4-nano",
       "attempt": 1,
-      "estimated_input_tokens": 25099,
+      "estimated_input_tokens": 25384,
       "limiter_wait_seconds": "0.0",
-      "duration_ms": 12463,
+      "duration_ms": 11082,
       "outcome": "success",
       "failure_category": "none",
       "retry_delay_seconds": null,
-      "started_at": "2026-07-30T10:28:37.033885Z"
+      "started_at": "2026-07-30T10:39:19.525279Z"
     },
     {
       "request_number": 15,
@@ -212,13 +212,13 @@
       "provider": "openai",
       "model": "gpt-5.4-nano",
       "attempt": 1,
-      "estimated_input_tokens": 25085,
+      "estimated_input_tokens": 25370,
       "limiter_wait_seconds": "0.0",
-      "duration_ms": 10815,
+      "duration_ms": 11814,
       "outcome": "success",
       "failure_category": "none",
       "retry_delay_seconds": null,
-      "started_at": "2026-07-30T10:28:49.497037Z"
+      "started_at": "2026-07-30T10:39:30.607353Z"
     },
     {
       "request_number": 16,
@@ -226,13 +226,13 @@
       "provider": "openai",
       "model": "gpt-5.4-nano",
       "attempt": 1,
-      "estimated_input_tokens": 6642,
+      "estimated_input_tokens": 6615,
       "limiter_wait_seconds": "0.0",
-      "duration_ms": 9960,
+      "duration_ms": 8431,
       "outcome": "success",
       "failure_category": "none",
       "retry_delay_seconds": null,
-      "started_at": "2026-07-30T10:29:00.313357Z"
+      "started_at": "2026-07-30T10:39:42.423300Z"
     },
     {
       "request_number": 17,
@@ -240,41 +240,41 @@
       "provider": "openai",
       "model": "gpt-5.4-nano",
       "attempt": 1,
-      "estimated_input_tokens": 8836,
+      "estimated_input_tokens": 8547,
       "limiter_wait_seconds": "0.0",
-      "duration_ms": 9377,
+      "duration_ms": 8908,
       "outcome": "success",
       "failure_category": "none",
       "retry_delay_seconds": null,
-      "started_at": "2026-07-30T10:29:10.273017Z"
+      "started_at": "2026-07-30T10:39:50.854100Z"
     },
     {
       "request_number": 18,
-      "operation": "cross_examination:devil_advocate:liquidity",
-      "provider": "openai",
-      "model": "gpt-5.4-nano",
-      "attempt": 1,
-      "estimated_input_tokens": 7113,
-      "limiter_wait_seconds": "0.0",
-      "duration_ms": 6523,
-      "outcome": "success",
-      "failure_category": "none",
-      "retry_delay_seconds": null,
-      "started_at": "2026-07-30T10:29:19.650500Z"
-    },
-    {
-      "request_number": 19,
       "operation": "cross_examination:devil_advocate:etf",
       "provider": "openai",
       "model": "gpt-5.4-nano",
       "attempt": 1,
-      "estimated_input_tokens": 6674,
+      "estimated_input_tokens": 6606,
       "limiter_wait_seconds": "0.0",
-      "duration_ms": 8516,
+      "duration_ms": 7231,
       "outcome": "success",
       "failure_category": "none",
       "retry_delay_seconds": null,
-      "started_at": "2026-07-30T10:29:26.174019Z"
+      "started_at": "2026-07-30T10:39:59.762658Z"
+    },
+    {
+      "request_number": 19,
+      "operation": "cross_examination:devil_advocate:portfolio",
+      "provider": "openai",
+      "model": "gpt-5.4-nano",
+      "attempt": 1,
+      "estimated_input_tokens": 8538,
+      "limiter_wait_seconds": "0.0",
+      "duration_ms": 8187,
+      "outcome": "success",
+      "failure_category": "none",
+      "retry_delay_seconds": null,
+      "started_at": "2026-07-30T10:40:06.993396Z"
     },
     {
       "request_number": 20,
@@ -282,13 +282,13 @@
       "provider": "openai",
       "model": "gpt-5.4-nano",
       "attempt": 1,
-      "estimated_input_tokens": 2033,
+      "estimated_input_tokens": 2247,
       "limiter_wait_seconds": "0.0",
-      "duration_ms": 6145,
-      "outcome": "success",
-      "failure_category": "none",
+      "duration_ms": 10038,
+      "outcome": "retry",
+      "failure_category": "invalid_response",
       "retry_delay_seconds": null,
-      "started_at": "2026-07-30T10:29:34.690313Z"
+      "started_at": "2026-07-30T10:40:15.181120Z"
     },
     {
       "request_number": 21,
@@ -296,27 +296,27 @@
       "provider": "openai",
       "model": "gpt-5.4-nano",
       "attempt": 1,
-      "estimated_input_tokens": 2020,
+      "estimated_input_tokens": 2124,
       "limiter_wait_seconds": "0.0",
-      "duration_ms": 6887,
+      "duration_ms": 6669,
       "outcome": "success",
       "failure_category": "none",
       "retry_delay_seconds": null,
-      "started_at": "2026-07-30T10:29:40.835339Z"
+      "started_at": "2026-07-30T10:40:25.219830Z"
     },
     {
       "request_number": 22,
-      "operation": "cio",
+      "operation": "critique_resolution:risk",
       "provider": "openai",
-      "model": "gpt-5.6-luna",
-      "attempt": 1,
-      "estimated_input_tokens": 30873,
+      "model": "gpt-5.4-nano",
+      "attempt": 2,
+      "estimated_input_tokens": 2275,
       "limiter_wait_seconds": "0.0",
-      "duration_ms": 212,
+      "duration_ms": 8312,
       "outcome": "failure",
-      "failure_category": "invalid_request",
+      "failure_category": "invalid_response",
       "retry_delay_seconds": null,
-      "started_at": "2026-07-30T10:29:47.725910Z"
+      "started_at": "2026-07-30T10:40:31.888783Z"
     }
   ]
 }
