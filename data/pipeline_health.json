@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0",
-  "attempted_at": "2026-07-30T09:47:19.669855Z",
+  "attempted_at": "2026-07-30T09:58:01.122917Z",
   "status": "failed",
   "trigger": "workflow_dispatch",
   "committee_outcome": "failure",
-  "failure_kind": "committee_error",
-  "run_url": "https://github.com/JackyTsai70113/ai-investment-committee/actions/runs/30531935659",
+  "failure_kind": "provider_plan_or_billing_quota",
+  "run_url": "https://github.com/JackyTsai70113/ai-investment-committee/actions/runs/30532654601",
   "last_successful_run_id": "20260729T181256Z",
   "last_successful_data_cutoff": "2026-07-29T18:10:26.733146Z",
   "message": "最新委員會未完成；沿用上一份成功建議，不得把本次執行視為新決策。"
