@@ -970,6 +970,20 @@ a {
   line-height: 1.65;
 }
 
+.chat-bubble .chat-opening {
+  color: var(--text);
+  font-size: 0.88rem;
+  font-weight: 650;
+  line-height: 1.55;
+}
+
+.chat-why {
+  display: block;
+  color: var(--faint);
+  font-size: 0.74rem;
+  line-height: 1.5;
+}
+
 .chat-copy p:last-child {
   margin-bottom: 0.75rem;
 }
@@ -1010,6 +1024,37 @@ a {
 
 .reviewer-message .chat-bubble {
   border-color: rgba(255, 152, 100, 0.2);
+}
+
+.question-message {
+  margin-top: -0.2rem;
+}
+
+.question-message .chat-bubble {
+  background: rgba(255, 152, 100, 0.035);
+}
+
+.answer-message {
+  margin-left: clamp(0.5rem, 5vw, 3.5rem);
+}
+
+.answer-message .chat-avatar {
+  color: var(--acid);
+  border-color: rgba(199, 241, 91, 0.3);
+  background: rgba(199, 241, 91, 0.07);
+}
+
+.answer-message .chat-bubble {
+  border-color: rgba(199, 241, 91, 0.18);
+  background: rgba(199, 241, 91, 0.025);
+}
+
+.resolution-message {
+  margin-bottom: 0.55rem;
+}
+
+.resolution-message .chat-bubble {
+  border-style: dashed;
 }
 
 .cio-message .chat-avatar {
@@ -2515,6 +2560,10 @@ td {
   .chat-message {
     grid-template-columns: 1.9rem minmax(0, 1fr);
     gap: 0.45rem;
+  }
+
+  .answer-message {
+    margin-left: 0;
   }
 
   .chat-avatar {

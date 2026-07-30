@@ -11,6 +11,8 @@
       "proposals": [
         {
           "agent": "macro",
+          "opening_statement": null,
+          "tone": null,
           "stance": "bearish",
           "confidence": 75,
           "preferred_assets": [
@@ -38,6 +40,8 @@
         },
         {
           "agent": "technical",
+          "opening_statement": null,
+          "tone": null,
           "stance": "bearish",
           "confidence": 68,
           "preferred_assets": [
@@ -63,6 +67,8 @@
         },
         {
           "agent": "momentum",
+          "opening_statement": null,
+          "tone": null,
           "stance": "bearish",
           "confidence": 70,
           "preferred_assets": [
@@ -89,6 +95,8 @@
         },
         {
           "agent": "news",
+          "opening_statement": null,
+          "tone": null,
           "stance": "bearish",
           "confidence": 60,
           "preferred_assets": [
@@ -114,6 +122,8 @@
         },
         {
           "agent": "etf",
+          "opening_statement": null,
+          "tone": null,
           "stance": "bearish",
           "confidence": 72,
           "preferred_assets": [
@@ -142,6 +152,8 @@
         },
         {
           "agent": "earnings",
+          "opening_statement": null,
+          "tone": null,
           "stance": "neutral",
           "confidence": 55,
           "preferred_assets": [
@@ -167,6 +179,8 @@
         },
         {
           "agent": "portfolio",
+          "opening_statement": null,
+          "tone": null,
           "stance": "neutral",
           "confidence": 65,
           "preferred_assets": [
@@ -192,6 +206,8 @@
         },
         {
           "agent": "liquidity",
+          "opening_statement": null,
+          "tone": null,
           "stance": "neutral",
           "confidence": 75,
           "preferred_assets": [
@@ -220,6 +236,8 @@
         },
         {
           "agent": "learning",
+          "opening_statement": null,
+          "tone": null,
           "stance": "bearish",
           "confidence": 75,
           "preferred_assets": [
@@ -248,6 +266,8 @@
       "critiques": [
         {
           "reviewer": "risk",
+          "opening_statement": null,
+          "tone": null,
           "challenged_agents": [
             "technical",
             "momentum",
@@ -265,10 +285,13 @@
             "剔除成交量過低（如 ERX）之槓桿商品，禁止將流動性不足的衍生性 ETF 納入戰術組合。",
             "對所有槓桿及反向部位設置強制性價格停損點與觸發條件（如 QQQ 突破 700 或 VIX 跌破 16.5 時強制平倉），不得無條件持倉。"
           ],
-          "veto_recommended": true
+          "veto_recommended": true,
+          "direct_questions": []
         },
         {
           "reviewer": "devil_advocate",
+          "opening_statement": null,
+          "tone": null,
           "challenged_agents": [
             "macro",
             "technical",
@@ -291,15 +314,19 @@
             "要求所有看空策略必須設定「確認條件」：須待 VIX 實質突破並站穩 20.0 或美債殖利率突破 4.75% 時方可執行戰術性建立空頭部位，防止在震盪區間底部追空。",
             "增設「強勢均值回歸/軋空情境」防禦演練，評估當 QQQ 單日反彈逾 1.5% 時，包含 SQQQ 的組合回撤程度與停損機制。"
           ],
-          "veto_recommended": true
+          "veto_recommended": true,
+          "direct_questions": []
         }
       ],
+      "cross_examination_responses": [],
       "reconciliation_responses": [],
       "critique_resolutions": [],
       "final_decision_audits": [],
       "decision_origin": "model",
       "policy_override_notes": [],
       "final_decision": {
+        "opening_statement": null,
+        "tone": null,
         "market_stance": "bearish",
         "model_score": 38,
         "model_score_reason": "舊制資料未保存評分理由；此分數不可解讀為獲利機率或配置品質。",
@@ -1155,6 +1182,8 @@
       "proposals": [
         {
           "agent": "macro",
+          "opening_statement": null,
+          "tone": null,
           "stance": "neutral",
           "confidence": 65,
           "preferred_assets": [
@@ -1183,6 +1212,8 @@
         },
         {
           "agent": "technical",
+          "opening_statement": null,
+          "tone": null,
           "stance": "bearish",
           "confidence": 75,
           "preferred_assets": [
@@ -1208,6 +1239,8 @@
         },
         {
           "agent": "momentum",
+          "opening_statement": null,
+          "tone": null,
           "stance": "neutral",
           "confidence": 75,
           "preferred_assets": [
@@ -1236,6 +1269,8 @@
         },
         {
           "agent": "news",
+          "opening_statement": null,
+          "tone": null,
           "stance": "neutral",
           "confidence": 65,
           "preferred_assets": [
@@ -1261,6 +1296,8 @@
         },
         {
           "agent": "etf",
+          "opening_statement": null,
+          "tone": null,
           "stance": "neutral",
           "confidence": 75,
           "preferred_assets": [
@@ -1289,6 +1326,8 @@
         },
         {
           "agent": "earnings",
+          "opening_statement": null,
+          "tone": null,
           "stance": "bullish",
           "confidence": 75,
           "preferred_assets": [
@@ -1316,6 +1355,8 @@
         },
         {
           "agent": "portfolio",
+          "opening_statement": null,
+          "tone": null,
           "stance": "neutral",
           "confidence": 72,
           "preferred_assets": [
@@ -1343,6 +1384,8 @@
         },
         {
           "agent": "liquidity",
+          "opening_statement": null,
+          "tone": null,
           "stance": "neutral",
           "confidence": 75,
           "preferred_assets": [
@@ -1367,6 +1410,8 @@
         },
         {
           "agent": "ownership",
+          "opening_statement": null,
+          "tone": null,
           "stance": "neutral",
           "confidence": 25,
           "preferred_assets": [
@@ -1391,6 +1436,8 @@
         },
         {
           "agent": "learning",
+          "opening_statement": null,
+          "tone": null,
           "stance": "neutral",
           "confidence": 75,
           "preferred_assets": [
@@ -1421,6 +1468,8 @@
       "critiques": [
         {
           "reviewer": "risk",
+          "opening_statement": null,
+          "tone": null,
           "challenged_agents": [
             "earnings",
             "momentum"
@@ -1438,10 +1487,13 @@
             "禁止追高 RSI > 80 之極度超買資產（如 ERX），個股部位（如 NVDA）必須設立明確停損，單筆部位最大潛在損失不得超過總資本之 2%（120 美元）。",
             "鑑於籌碼端數據源（SEC Form 4、13F）未啟用，任何方向性個股押注均應調降信心度，並以高流動性原型大盤 ETF（SPY）作為核心防守底座。"
           ],
-          "veto_recommended": false
+          "veto_recommended": false,
+          "direct_questions": []
         },
         {
           "reviewer": "devil_advocate",
+          "opening_statement": null,
+          "tone": null,
           "challenged_agents": [
             "portfolio",
             "learning",
@@ -1463,15 +1515,19 @@
             "清理 portfolio 提案中同時持有 NVDA 個股多頭與 SQQQ 槓桿空頭的互相對銷結構，降低無謂的摩擦與波動耗損。",
             "要求 Learning 委員延長假設驗證的時間窗口，嚴禁僅憑單日數據作出現金對衝策略「充分驗證」的結論。"
           ],
-          "veto_recommended": false
+          "veto_recommended": false,
+          "direct_questions": []
         }
       ],
+      "cross_examination_responses": [],
       "reconciliation_responses": [],
       "critique_resolutions": [],
       "final_decision_audits": [],
       "decision_origin": "model",
       "policy_override_notes": [],
       "final_decision": {
+        "opening_statement": null,
+        "tone": null,
         "market_stance": "neutral",
         "model_score": 94,
         "model_score_reason": "方向一致度 94/100；10 位提案委員按信心加權，0 項協商後否決仍未解除，扣除 0 分。",
@@ -4964,6 +5020,8 @@
       "proposals": [
         {
           "agent": "earnings",
+          "opening_statement": null,
+          "tone": null,
           "stance": "bearish",
           "confidence": 75,
           "preferred_assets": [
@@ -4986,6 +5044,8 @@
         },
         {
           "agent": "etf",
+          "opening_statement": null,
+          "tone": null,
           "stance": "bearish",
           "confidence": 85,
           "preferred_assets": [
@@ -5009,6 +5069,8 @@
         },
         {
           "agent": "learning",
+          "opening_statement": null,
+          "tone": null,
           "stance": "neutral",
           "confidence": 95,
           "preferred_assets": [
@@ -5031,6 +5093,8 @@
         },
         {
           "agent": "liquidity",
+          "opening_statement": null,
+          "tone": null,
           "stance": "bearish",
           "confidence": 95,
           "preferred_assets": [
@@ -5053,6 +5117,8 @@
         },
         {
           "agent": "macro",
+          "opening_statement": null,
+          "tone": null,
           "stance": "bearish",
           "confidence": 85,
           "preferred_assets": [
@@ -5076,6 +5142,8 @@
         },
         {
           "agent": "momentum",
+          "opening_statement": null,
+          "tone": null,
           "stance": "bearish",
           "confidence": 85,
           "preferred_assets": [
@@ -5098,6 +5166,8 @@
         },
         {
           "agent": "news",
+          "opening_statement": null,
+          "tone": null,
           "stance": "bearish",
           "confidence": 75,
           "preferred_assets": [
@@ -5120,6 +5190,8 @@
         },
         {
           "agent": "ownership",
+          "opening_statement": null,
+          "tone": null,
           "stance": "bearish",
           "confidence": 85,
           "preferred_assets": [
@@ -5144,6 +5216,8 @@
         },
         {
           "agent": "portfolio",
+          "opening_statement": null,
+          "tone": null,
           "stance": "neutral",
           "confidence": 75,
           "preferred_assets": [
@@ -5166,6 +5240,8 @@
         },
         {
           "agent": "technical",
+          "opening_statement": null,
+          "tone": null,
           "stance": "bearish",
           "confidence": 85,
           "preferred_assets": [
@@ -5190,6 +5266,8 @@
       "critiques": [
         {
           "reviewer": "risk",
+          "opening_statement": null,
+          "tone": null,
           "challenged_agents": [
             "earnings",
             "etf",
@@ -5213,10 +5291,13 @@
             "必須嚴格遵守短期績效政策，在 3 與 7 個完成交易日的滾動視窗樣本數達到門檻前，全面維持 fail_closed_symbol（CASH），不得因單日行情反彈而提前解除防守。",
             "在後續報告中必須具體量化維持現金水位所產生的交易摩擦、機會成本與隔夜跳空情境風險，不得僅以空泛的 risk_off 做為全面防守的唯一理由。"
           ],
-          "veto_recommended": false
+          "veto_recommended": false,
+          "direct_questions": []
         },
         {
           "reviewer": "devil_advocate",
+          "opening_statement": null,
+          "tone": null,
           "challenged_agents": [
             "earnings",
             "etf",
@@ -5240,15 +5321,19 @@
             "修正各代理人論述中將單日行情點充當完整視窗評估的邏輯錯誤，嚴格落實 policy 規定的 3 與 7 個完成交易日滾動計算。",
             "重新評估全面 100% CASH 配置帶來的機會成本，並在下次審查中加入若市場反彈的錯失風險量化指標。"
           ],
-          "veto_recommended": false
+          "veto_recommended": false,
+          "direct_questions": []
         }
       ],
+      "cross_examination_responses": [],
       "reconciliation_responses": [],
       "critique_resolutions": [],
       "final_decision_audits": [],
       "decision_origin": "model",
       "policy_override_notes": [],
       "final_decision": {
+        "opening_statement": null,
+        "tone": null,
         "market_stance": "bearish",
         "model_score": 95,
         "model_score_reason": "方向一致度 95/100；10 位提案委員按信心加權，0 項協商後否決仍未解除，扣除 0 分。",
@@ -8904,6 +8989,8 @@
       "proposals": [
         {
           "agent": "earnings",
+          "opening_statement": null,
+          "tone": null,
           "stance": "bearish",
           "confidence": 75,
           "preferred_assets": [
@@ -8928,6 +9015,8 @@
         },
         {
           "agent": "etf",
+          "opening_statement": null,
+          "tone": null,
           "stance": "bearish",
           "confidence": 85,
           "preferred_assets": [
@@ -8955,6 +9044,8 @@
         },
         {
           "agent": "learning",
+          "opening_statement": null,
+          "tone": null,
           "stance": "neutral",
           "confidence": 90,
           "preferred_assets": [
@@ -8980,6 +9071,8 @@
         },
         {
           "agent": "liquidity",
+          "opening_statement": null,
+          "tone": null,
           "stance": "bearish",
           "confidence": 75,
           "preferred_assets": [
@@ -9006,6 +9099,8 @@
         },
         {
           "agent": "macro",
+          "opening_statement": null,
+          "tone": null,
           "stance": "bearish",
           "confidence": 75,
           "preferred_assets": [
@@ -9031,6 +9126,8 @@
         },
         {
           "agent": "momentum",
+          "opening_statement": null,
+          "tone": null,
           "stance": "bearish",
           "confidence": 75,
           "preferred_assets": [
@@ -9054,6 +9151,8 @@
         },
         {
           "agent": "news",
+          "opening_statement": null,
+          "tone": null,
           "stance": "bearish",
           "confidence": 75,
           "preferred_assets": [
@@ -9076,6 +9175,8 @@
         },
         {
           "agent": "ownership",
+          "opening_statement": null,
+          "tone": null,
           "stance": "bearish",
           "confidence": 75,
           "preferred_assets": [
@@ -9102,6 +9203,8 @@
         },
         {
           "agent": "portfolio",
+          "opening_statement": null,
+          "tone": null,
           "stance": "bearish",
           "confidence": 75,
           "preferred_assets": [
@@ -9128,6 +9231,8 @@
         },
         {
           "agent": "technical",
+          "opening_statement": null,
+          "tone": null,
           "stance": "bearish",
           "confidence": 80,
           "preferred_assets": [
@@ -9156,6 +9261,8 @@
       "critiques": [
         {
           "reviewer": "risk",
+          "opening_statement": null,
+          "tone": null,
           "challenged_agents": [
             "earnings",
             "etf",
@@ -9178,10 +9285,13 @@
             "在市場面臨科技股與半導體（如SOXL單日重挫14.52%）極端波動時，必須明確評估隔夜跳空情境對現有防守資產與候選資產的衝擊。",
             "確保所有Agent嚴格遵守反向與槓桿ETF最多持有1個交易日的限制，禁止任何跨日留倉意圖。"
           ],
-          "veto_recommended": false
+          "veto_recommended": false,
+          "direct_questions": []
         },
         {
           "reviewer": "devil_advocate",
+          "opening_statement": null,
+          "tone": null,
           "challenged_agents": [
             "earnings",
             "etf",
@@ -9205,15 +9315,19 @@
             "落實反向 ETF 的條件約束：既然政策明確規定『比較不等於必須買進』且『最多持有 1 個交易日，下一個完成交易日必須重新驗證』，各委員在未提供明確進場點、摩擦成本試算與次日退出機制前，不應流於形式地反覆貼上一模一樣的反向 ETF 比較文字。",
             "嚴格校準現金與風險資產的動態預算：在沒有正式 risk veto 的前提下，現金配置不得盲目鎖死在 0.50 或接近上限的 0.60 區間，應依據盤中與收盤真實變動給予更具彈性的戰術空間。"
           ],
-          "veto_recommended": false
+          "veto_recommended": false,
+          "direct_questions": []
         }
       ],
+      "cross_examination_responses": [],
       "reconciliation_responses": [],
       "critique_resolutions": [],
       "final_decision_audits": [],
       "decision_origin": "model",
       "policy_override_notes": [],
       "final_decision": {
+        "opening_statement": null,
+        "tone": null,
         "market_stance": "bearish",
         "model_score": 97,
         "model_score_reason": "方向一致度 97/100；10 位提案委員按信心加權，0 項協商後否決仍未解除，扣除 0 分。",
@@ -12947,6 +13061,8 @@
       "proposals": [
         {
           "agent": "earnings",
+          "opening_statement": null,
+          "tone": null,
           "stance": "neutral",
           "confidence": 75,
           "preferred_assets": [
@@ -12974,6 +13090,8 @@
         },
         {
           "agent": "etf",
+          "opening_statement": null,
+          "tone": null,
           "stance": "bearish",
           "confidence": 85,
           "preferred_assets": [
@@ -13001,6 +13119,8 @@
         },
         {
           "agent": "learning",
+          "opening_statement": null,
+          "tone": null,
           "stance": "neutral",
           "confidence": 85,
           "preferred_assets": [
@@ -13027,6 +13147,8 @@
         },
         {
           "agent": "liquidity",
+          "opening_statement": null,
+          "tone": null,
           "stance": "bearish",
           "confidence": 85,
           "preferred_assets": [
@@ -13051,6 +13173,8 @@
         },
         {
           "agent": "macro",
+          "opening_statement": null,
+          "tone": null,
           "stance": "neutral",
           "confidence": 75,
           "preferred_assets": [
@@ -13075,6 +13199,8 @@
         },
         {
           "agent": "momentum",
+          "opening_statement": null,
+          "tone": null,
           "stance": "bearish",
           "confidence": 75,
           "preferred_assets": [
@@ -13100,6 +13226,8 @@
         },
         {
           "agent": "news",
+          "opening_statement": null,
+          "tone": null,
           "stance": "bearish",
           "confidence": 75,
           "preferred_assets": [
@@ -13126,6 +13254,8 @@
         },
         {
           "agent": "ownership",
+          "opening_statement": null,
+          "tone": null,
           "stance": "bearish",
           "confidence": 75,
           "preferred_assets": [
@@ -13151,6 +13281,8 @@
         },
         {
           "agent": "portfolio",
+          "opening_statement": null,
+          "tone": null,
           "stance": "bearish",
           "confidence": 75,
           "preferred_assets": [
@@ -13178,6 +13310,8 @@
         },
         {
           "agent": "technical",
+          "opening_statement": null,
+          "tone": null,
           "stance": "bearish",
           "confidence": 85,
           "preferred_assets": [
@@ -13205,6 +13339,8 @@
       "critiques": [
         {
           "reviewer": "risk",
+          "opening_statement": null,
+          "tone": null,
           "challenged_agents": [
             "earnings",
             "etf",
@@ -13227,10 +13363,13 @@
             "若涉及槓桿或反向 ETF（如 SQQQ、SOXS、SPXU），必須明確宣告其持有期限絕對不超過 1 個交易日，並列出每日重設與路徑耗損的失效條件。",
             "必須具體計算每個部位失效後的美元損失（基於 initial_capital_usd 為 6000.00 美元），確保單一交易風險不超過 0.015。"
           ],
-          "veto_recommended": false
+          "veto_recommended": false,
+          "direct_questions": []
         },
         {
           "reviewer": "devil_advocate",
+          "opening_statement": null,
+          "tone": null,
           "challenged_agents": [
             "earnings",
             "etf",
@@ -13254,15 +13393,19 @@
             "嚴格落實『比較不等於必須買進』之原則，當 Agent 評估 SQQQ、SOXS、SPXU 時，若無意在 1 個交易日內進場，不得將反向 ETF 的理論路徑損耗作為支撐 50% 現金配置的唯一正當性理由。",
             "必須針對 TLT 與 GLD 在當前利率環境（^TNX 4.604% 穩定微跌）下的實際多日相關性進行檢驗，防止防禦性資產配置流於形式上的分散化。"
           ],
-          "veto_recommended": false
+          "veto_recommended": false,
+          "direct_questions": []
         }
       ],
+      "cross_examination_responses": [],
       "reconciliation_responses": [],
       "critique_resolutions": [],
       "final_decision_audits": [],
       "decision_origin": "model",
       "policy_override_notes": [],
       "final_decision": {
+        "opening_statement": null,
+        "tone": null,
         "market_stance": "bearish",
         "model_score": 93,
         "model_score_reason": "方向一致度 93/100；10 位提案委員按信心加權，0 項協商後否決仍未解除，扣除 0 分。",
@@ -16993,6 +17136,8 @@
       "proposals": [
         {
           "agent": "macro",
+          "opening_statement": null,
+          "tone": null,
           "stance": "bearish",
           "confidence": 82,
           "preferred_assets": [
@@ -17019,6 +17164,8 @@
         },
         {
           "agent": "technical",
+          "opening_statement": null,
+          "tone": null,
           "stance": "bearish",
           "confidence": 78,
           "preferred_assets": [
@@ -17045,6 +17192,8 @@
         },
         {
           "agent": "momentum",
+          "opening_statement": null,
+          "tone": null,
           "stance": "bullish",
           "confidence": 70,
           "preferred_assets": [
@@ -17073,6 +17222,8 @@
         },
         {
           "agent": "news",
+          "opening_statement": null,
+          "tone": null,
           "stance": "neutral",
           "confidence": 75,
           "preferred_assets": [
@@ -17100,6 +17251,8 @@
         },
         {
           "agent": "earnings",
+          "opening_statement": null,
+          "tone": null,
           "stance": "bullish",
           "confidence": 83,
           "preferred_assets": [
@@ -17128,6 +17281,8 @@
         },
         {
           "agent": "etf",
+          "opening_statement": null,
+          "tone": null,
           "stance": "bullish",
           "confidence": 68,
           "preferred_assets": [
@@ -17156,6 +17311,8 @@
         },
         {
           "agent": "portfolio",
+          "opening_statement": null,
+          "tone": null,
           "stance": "bullish",
           "confidence": 66,
           "preferred_assets": [
@@ -17184,6 +17341,8 @@
         },
         {
           "agent": "liquidity",
+          "opening_statement": null,
+          "tone": null,
           "stance": "neutral",
           "confidence": 80,
           "preferred_assets": [
@@ -17214,6 +17373,8 @@
       "critiques": [
         {
           "reviewer": "risk",
+          "opening_statement": null,
+          "tone": null,
           "challenged_agents": [
             "momentum",
             "earnings",
@@ -17233,10 +17394,13 @@
             "淨值 5,400 美元退出槓桿 ETF，5,280 美元退出全部風險資產。",
             "7 月 29 日、8 月 3 日與 8 月 4 日強制重評。"
           ],
-          "veto_recommended": false
+          "veto_recommended": false,
+          "direct_questions": []
         },
         {
           "reviewer": "devil_advocate",
+          "opening_statement": null,
+          "tone": null,
           "challenged_agents": [
             "momentum",
             "earnings",
@@ -17255,15 +17419,19 @@
             "不得把延遲參考價當成限價指令。",
             "設定 8 個交易日最長持有期與事件後重評。"
           ],
-          "veto_recommended": false
+          "veto_recommended": false,
+          "direct_questions": []
         }
       ],
+      "cross_examination_responses": [],
       "reconciliation_responses": [],
       "critique_resolutions": [],
       "final_decision_audits": [],
       "decision_origin": "model",
       "policy_override_notes": [],
       "final_decision": {
+        "opening_statement": null,
+        "tone": null,
         "market_stance": "neutral",
         "model_score": 66,
         "model_score_reason": "舊制資料未保存評分理由；此分數不可解讀為獲利機率或配置品質。",
@@ -17965,6 +18133,8 @@
       "proposals": [
         {
           "agent": "macro",
+          "opening_statement": null,
+          "tone": null,
           "stance": "neutral",
           "confidence": 65,
           "preferred_assets": [
@@ -17993,6 +18163,8 @@
         },
         {
           "agent": "technical",
+          "opening_statement": null,
+          "tone": null,
           "stance": "bearish",
           "confidence": 75,
           "preferred_assets": [
@@ -18018,6 +18190,8 @@
         },
         {
           "agent": "momentum",
+          "opening_statement": null,
+          "tone": null,
           "stance": "neutral",
           "confidence": 75,
           "preferred_assets": [
@@ -18046,6 +18220,8 @@
         },
         {
           "agent": "news",
+          "opening_statement": null,
+          "tone": null,
           "stance": "neutral",
           "confidence": 65,
           "preferred_assets": [
@@ -18071,6 +18247,8 @@
         },
         {
           "agent": "etf",
+          "opening_statement": null,
+          "tone": null,
           "stance": "neutral",
           "confidence": 75,
           "preferred_assets": [
@@ -18099,6 +18277,8 @@
         },
         {
           "agent": "earnings",
+          "opening_statement": null,
+          "tone": null,
           "stance": "bullish",
           "confidence": 75,
           "preferred_assets": [
@@ -18126,6 +18306,8 @@
         },
         {
           "agent": "portfolio",
+          "opening_statement": null,
+          "tone": null,
           "stance": "neutral",
           "confidence": 72,
           "preferred_assets": [
@@ -18153,6 +18335,8 @@
         },
         {
           "agent": "liquidity",
+          "opening_statement": null,
+          "tone": null,
           "stance": "neutral",
           "confidence": 75,
           "preferred_assets": [
@@ -18177,6 +18361,8 @@
         },
         {
           "agent": "ownership",
+          "opening_statement": null,
+          "tone": null,
           "stance": "neutral",
           "confidence": 25,
           "preferred_assets": [
@@ -18201,6 +18387,8 @@
         },
         {
           "agent": "learning",
+          "opening_statement": null,
+          "tone": null,
           "stance": "neutral",
           "confidence": 75,
           "preferred_assets": [
@@ -18231,6 +18419,8 @@
       "critiques": [
         {
           "reviewer": "risk",
+          "opening_statement": null,
+          "tone": null,
           "challenged_agents": [
             "earnings",
             "momentum"
@@ -18248,10 +18438,13 @@
             "禁止追高 RSI > 80 之極度超買資產（如 ERX），個股部位（如 NVDA）必須設立明確停損，單筆部位最大潛在損失不得超過總資本之 2%（120 美元）。",
             "鑑於籌碼端數據源（SEC Form 4、13F）未啟用，任何方向性個股押注均應調降信心度，並以高流動性原型大盤 ETF（SPY）作為核心防守底座。"
           ],
-          "veto_recommended": false
+          "veto_recommended": false,
+          "direct_questions": []
         },
         {
           "reviewer": "devil_advocate",
+          "opening_statement": null,
+          "tone": null,
           "challenged_agents": [
             "portfolio",
             "learning",
@@ -18273,9 +18466,11 @@
             "清理 portfolio 提案中同時持有 NVDA 個股多頭與 SQQQ 槓桿空頭的互相對銷結構，降低無謂的摩擦與波動耗損。",
             "要求 Learning 委員延長假設驗證的時間窗口，嚴禁僅憑單日數據作出現金對衝策略「充分驗證」的結論。"
           ],
-          "veto_recommended": false
+          "veto_recommended": false,
+          "direct_questions": []
         }
       ],
+      "cross_examination_responses": [],
       "reconciliation_responses": [],
       "critique_resolutions": [],
       "final_decision_audits": [],
@@ -18286,6 +18481,8 @@
         "CASH 在研究指數按零報酬處理；這是停止承擔市場風險，不是正報酬保證。"
       ],
       "final_decision": {
+        "opening_statement": null,
+        "tone": null,
         "market_stance": "neutral",
         "model_score": 94,
         "model_score_reason": "方向一致度 94/100；10 位提案委員按信心加權，0 項協商後否決仍未解除，扣除 0 分。",
@@ -21675,22 +21872,6 @@
   {
     "archive_id": "review-20260724T031844Z",
     "decision_review": {
-      "profit_loss_usd": "43.04",
-      "starting_value_usd": "6000.00",
-      "assessment": {
-        "verdict": "too_early_to_validate",
-        "summary": "從建議快照到同一交易日收盤，假設組合為正報酬；AMD、PLTR 與 SOXL 是主要正貢獻，NVDA 與 ERX 為負貢獻。評估期間只有約 2 小時 17 分，仍不足以判定原始決策整體正確；依更新後政策，必須在第 2 至第 3 個交易日內完成正式驗證，且每週至少完成兩次決策檢視。",
-        "supported_points": [
-          "財報前高波動科技曝險在評估期間產生正貢獻。",
-          "SOXL 放大半導體反彈的短線表達在評估期間有效。"
-        ],
-        "challenged_points": [
-          "ERX 未延續原油風險溢價帶來的正向貢獻。",
-          "NVDA 的相對強勢論點在評估期間未轉化為正報酬。",
-          "極短評估窗不足以檢驗事件催化或風險界線；最遲須在第 3 個交易日重新決策。"
-        ]
-      },
-      "generated_at": "2026-07-24T03:19:58Z",
       "positions": [
         {
           "symbol": "AMD",
@@ -21756,14 +21937,6 @@
           "ending_value_usd": "300.00"
         }
       ],
-      "committee_rerun": {
-        "requested_at": "2026-07-24T03:19:15Z",
-        "github_actions_run_id": "30063924394",
-        "status": "rejected",
-        "reason": "GitHub Actions 未設定 OPENAI_API_KEY；安全閘門在任何模型呼叫或資料寫入前中止。",
-        "recommendation_changed": false
-      },
-      "return_percent": "0.7173",
       "methodology": {
         "pricing_source": "Yahoo Finance via yfinance",
         "assumptions": [
@@ -21778,14 +21951,38 @@
           "Yahoo Finance 資料可能延遲；任何人工交易前仍須向券商核對價格。"
         ]
       },
-      "ending_value_usd": "6043.04",
+      "starting_value_usd": "6000.00",
+      "reviewed_run_id": "manual-20260724T014200+0800",
       "schema_version": "1.0",
+      "return_percent": "0.7173",
+      "generated_at": "2026-07-24T03:19:58Z",
+      "committee_rerun": {
+        "requested_at": "2026-07-24T03:19:15Z",
+        "github_actions_run_id": "30063924394",
+        "status": "rejected",
+        "reason": "GitHub Actions 未設定 OPENAI_API_KEY；安全閘門在任何模型呼叫或資料寫入前中止。",
+        "recommendation_changed": false
+      },
       "review_id": "review-20260724T031844Z",
-      "status": "hypothetical",
+      "ending_value_usd": "6043.04",
+      "assessment": {
+        "verdict": "too_early_to_validate",
+        "summary": "從建議快照到同一交易日收盤，假設組合為正報酬；AMD、PLTR 與 SOXL 是主要正貢獻，NVDA 與 ERX 為負貢獻。評估期間只有約 2 小時 17 分，仍不足以判定原始決策整體正確；依更新後政策，必須在第 2 至第 3 個交易日內完成正式驗證，且每週至少完成兩次決策檢視。",
+        "supported_points": [
+          "財報前高波動科技曝險在評估期間產生正貢獻。",
+          "SOXL 放大半導體反彈的短線表達在評估期間有效。"
+        ],
+        "challenged_points": [
+          "ERX 未延續原油風險溢價帶來的正向貢獻。",
+          "NVDA 的相對強勢論點在評估期間未轉化為正報酬。",
+          "極短評估窗不足以檢驗事件催化或風險界線；最遲須在第 3 個交易日重新決策。"
+        ]
+      },
       "evaluation_end": "2026-07-23T20:00:00Z",
+      "status": "hypothetical",
       "currency": "USD",
       "evaluation_start": "2026-07-23T17:43:21.745224Z",
-      "reviewed_run_id": "manual-20260724T014200+0800"
+      "profit_loss_usd": "43.04"
     }
   }
 ]

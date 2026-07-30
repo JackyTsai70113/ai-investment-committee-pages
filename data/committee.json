@@ -8,6 +8,8 @@
   "proposals": [
     {
       "agent": "earnings",
+      "opening_statement": null,
+      "tone": null,
       "stance": "neutral",
       "confidence": 75,
       "preferred_assets": [
@@ -35,6 +37,8 @@
     },
     {
       "agent": "etf",
+      "opening_statement": null,
+      "tone": null,
       "stance": "bearish",
       "confidence": 85,
       "preferred_assets": [
@@ -62,6 +66,8 @@
     },
     {
       "agent": "learning",
+      "opening_statement": null,
+      "tone": null,
       "stance": "neutral",
       "confidence": 85,
       "preferred_assets": [
@@ -88,6 +94,8 @@
     },
     {
       "agent": "liquidity",
+      "opening_statement": null,
+      "tone": null,
       "stance": "bearish",
       "confidence": 85,
       "preferred_assets": [
@@ -112,6 +120,8 @@
     },
     {
       "agent": "macro",
+      "opening_statement": null,
+      "tone": null,
       "stance": "neutral",
       "confidence": 75,
       "preferred_assets": [
@@ -136,6 +146,8 @@
     },
     {
       "agent": "momentum",
+      "opening_statement": null,
+      "tone": null,
       "stance": "bearish",
       "confidence": 75,
       "preferred_assets": [
@@ -161,6 +173,8 @@
     },
     {
       "agent": "news",
+      "opening_statement": null,
+      "tone": null,
       "stance": "bearish",
       "confidence": 75,
       "preferred_assets": [
@@ -187,6 +201,8 @@
     },
     {
       "agent": "ownership",
+      "opening_statement": null,
+      "tone": null,
       "stance": "bearish",
       "confidence": 75,
       "preferred_assets": [
@@ -212,6 +228,8 @@
     },
     {
       "agent": "portfolio",
+      "opening_statement": null,
+      "tone": null,
       "stance": "bearish",
       "confidence": 75,
       "preferred_assets": [
@@ -239,6 +257,8 @@
     },
     {
       "agent": "technical",
+      "opening_statement": null,
+      "tone": null,
       "stance": "bearish",
       "confidence": 85,
       "preferred_assets": [
@@ -266,6 +286,8 @@
   "critiques": [
     {
       "reviewer": "risk",
+      "opening_statement": null,
+      "tone": null,
       "challenged_agents": [
         "earnings",
         "etf",
@@ -288,10 +310,13 @@
         "若涉及槓桿或反向 ETF（如 SQQQ、SOXS、SPXU），必須明確宣告其持有期限絕對不超過 1 個交易日，並列出每日重設與路徑耗損的失效條件。",
         "必須具體計算每個部位失效後的美元損失（基於 initial_capital_usd 為 6000.00 美元），確保單一交易風險不超過 0.015。"
       ],
-      "veto_recommended": false
+      "veto_recommended": false,
+      "direct_questions": []
     },
     {
       "reviewer": "devil_advocate",
+      "opening_statement": null,
+      "tone": null,
       "challenged_agents": [
         "earnings",
         "etf",
@@ -315,15 +340,19 @@
         "嚴格落實『比較不等於必須買進』之原則，當 Agent 評估 SQQQ、SOXS、SPXU 時，若無意在 1 個交易日內進場，不得將反向 ETF 的理論路徑損耗作為支撐 50% 現金配置的唯一正當性理由。",
         "必須針對 TLT 與 GLD 在當前利率環境（^TNX 4.604% 穩定微跌）下的實際多日相關性進行檢驗，防止防禦性資產配置流於形式上的分散化。"
       ],
-      "veto_recommended": false
+      "veto_recommended": false,
+      "direct_questions": []
     }
   ],
+  "cross_examination_responses": [],
   "reconciliation_responses": [],
   "critique_resolutions": [],
   "final_decision_audits": [],
   "decision_origin": "model",
   "policy_override_notes": [],
   "final_decision": {
+    "opening_statement": null,
+    "tone": null,
     "market_stance": "bearish",
     "model_score": 93,
     "model_score_reason": "方向一致度 93/100；10 位提案委員按信心加權，0 項協商後否決仍未解除，扣除 0 分。",

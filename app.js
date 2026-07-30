@@ -581,13 +581,145 @@
       rising: "上升",
       falling: "下降",
       stable: "穩定",
+      concerned: "擔心",
+      firm: "堅定",
+      cautious: "謹慎",
+      conflicted: "拉扯",
+      convinced: "被說服",
     };
     return labels[value] || String(value || "未分類").replaceAll("_", " ");
   };
 
+  const sourceCatalogCopy = {
+    sec_edgar: {
+      name: "美國證券交易委員會 EDGAR 申報與公司財務資料",
+      cadence: "申報發布時即時更新",
+      latency: "結構化財務資料通常少於一分鐘",
+      use: "查核 10-K、10-Q、8-K 與標準化公司財務數據。",
+      limits: ["公司原始申報可能含錯誤或後續修正。", "不同公司的會計概念與期間不一定能直接比較。"],
+    },
+    sec_form4: {
+      name: "美國證券交易委員會表格 3、4、5",
+      cadence: "事件發生時更新",
+      latency: "多數內部人交易須在兩個工作日內申報",
+      use: "理解內部人持股變化與公開市場買賣背景。",
+      limits: ["必須區分買賣、獎酬、執行、贈與與稅款扣繳。", "申報本身不能證明內部人交易能預測未來報酬。"],
+    },
+    sec_13f: {
+      name: "美國證券交易委員會 13F 資料集",
+      cadence: "每季更新",
+      latency: "季末後最長可延遲 45 天",
+      use: "追蹤機構持股、集中度與季對季變化。",
+      limits: ["不是即時機構資金流訊號。", "無法涵蓋所有資產、空頭部位、避險或季中交易。"],
+    },
+    company_ir: {
+      name: "公司投資人關係公告",
+      cadence: "事件發生時更新",
+      latency: "公司正式發布時",
+      use: "交叉核對財報、財測、簡報與重大公司事件。",
+      limits: ["公司資料可能偏重有利敘事。", "與正式申報不同時，以監管申報為準。"],
+    },
+    fred_alfred: {
+      name: "聖路易聯邦準備銀行 FRED 與 ALFRED",
+      cadence: "依各資料序列而定",
+      latency: "依序列而定，許多數值後續會修正",
+      use: "查核利率、信用利差、就業、通膨、流動性與金融情勢。",
+      limits: ["各原始發布單位的時間表不同。", "回測應使用 ALFRED 歷史版本，避免後見偏誤。"],
+    },
+    us_treasury_rates: {
+      name: "美國財政部每日殖利率曲線",
+      cadence: "每個工作日更新",
+      latency: "交易日結束後公布官方曲線",
+      use: "衡量無風險利率水位、曲線斜率與利率衝擊。",
+      limits: ["票面殖利率為模型推導曲線點，不是可直接成交價格。"],
+    },
+    federal_reserve: {
+      name: "美國聯邦準備理事會政策資料",
+      cadence: "依排程與政策事件更新",
+      latency: "官方發布時",
+      use: "評估政策事件、利率決議、會議紀錄與經濟預測。",
+      limits: ["經濟預測帶有條件且不確定性高。"],
+    },
+    nyse_calendar: {
+      name: "紐約證券交易所交易與休市日曆",
+      cadence: "依交易日曆更新",
+      latency: "交易所公布排程時",
+      use: "判斷正常交易日、休市、提早收盤與日線是否完整。",
+      limits: ["日曆不提供價格，也不能保證資料商日線已定稿。"],
+    },
+    cboe_vix: {
+      name: "芝加哥選擇權交易所 VIX 指數與方法",
+      cadence: "盤中及每日更新",
+      latency: "公開顯示可能延遲",
+      use: "判斷標普 500 選擇權隱含波動與尾端風險環境。",
+      limits: ["VIX 不是投資組合損失的直接預測。", "VIX 相關產品還受均值回歸與期貨期限結構影響。"],
+    },
+    cboe_vix_term_structure: {
+      name: "芝加哥選擇權交易所 VIX 期限結構",
+      cadence: "盤中更新",
+      latency: "公開顯示可能延遲",
+      use: "比較不同天期波動指數，判讀事件壓力與波動曲線環境。",
+      limits: ["指數水位不等於可直接成交的避險成本。", "不同天期資料必須與決策時間對齊。"],
+    },
+    occ_options_open_interest: {
+      name: "美國選擇權結算公司成交量與未平倉量",
+      cadence: "每日更新",
+      latency: "依報告時程而定",
+      use: "分析選擇權活動、擁擠程度、避險需求與事件風險。",
+      limits: ["彙總成交量無法辨認投資人意圖或方向。", "未平倉量必須搭配履約價、到期日與標的判讀。"],
+    },
+    finra_short: {
+      name: "美國金融業監管局空頭資料",
+      cadence: "放空成交量每日更新；空頭餘額每月兩次",
+      latency: "依資料集而定",
+      use: "理解空頭背景與場外放空成交活動。",
+      limits: ["每日放空成交量不等於空頭餘額。", "資料未整合所有交易所，且可能包含當日已平倉部位。"],
+    },
+    cftc_cot: {
+      name: "美國商品期貨交易委員會交易人持倉報告",
+      cadence: "每週更新",
+      latency: "通常週五公布週二持倉",
+      use: "分析股指、利率、能源、金屬與匯率期貨持倉。",
+      limits: ["彙總分類不是個別股票資金流。", "週二至週五的延遲限制短線時點用途。"],
+    },
+    eia: {
+      name: "美國能源資訊署開放資料",
+      cadence: "依序列每日、每週、每月或每年更新",
+      latency: "依資料序列而定",
+      use: "查核油價、庫存、生產、進出口與煉油廠利用率。",
+      limits: ["每週估計可能修正，且不一定與股市決策時間對齊。"],
+    },
+    geopolitical_official: {
+      name: "美國財政部制裁、貿易代表署與聯邦公報",
+      cadence: "事件發生時更新",
+      latency: "官方發布時",
+      use: "追蹤直接影響公司或產業的制裁、關稅與監管措施。",
+      limits: ["官方措施不能涵蓋所有地緣政治發展與市場解讀。", "公司曝險仍須用已查核的地區與供應鏈資料對照。"],
+    },
+    yahoo_market: {
+      name: "Yahoo Finance 市場資料",
+      cadence: "本系統每日更新",
+      latency: "可能延遲",
+      use: "取得價格、成交量與可重現的趨勢或波動特徵。",
+      limits: ["不是交易所官方行情。", "公司行動調整與偶發缺漏需要再次驗證。"],
+    },
+  };
+
+  const localizedSource = (source) =>
+    sourceCatalogCopy[source.source_id] || {
+      name: "未分類外部資料來源",
+      cadence: "更新頻率請參考原始來源",
+      latency: "資料延遲尚未建立繁體中文摘要",
+      use: "此來源的用途尚未建立繁體中文摘要，請查閱原始頁面。",
+      limits: ["來源限制尚未建立繁體中文摘要，不應單獨用於投資判斷。"],
+    };
+
   const renderCommitteeChat = (committee, recommendation) => {
     const proposals = Array.isArray(committee.proposals) ? committee.proposals : [];
     const critiques = Array.isArray(committee.critiques) ? committee.critiques : [];
+    const crossExaminationResponses = Array.isArray(committee.cross_examination_responses)
+      ? committee.cross_examination_responses
+      : [];
     const responses = Array.isArray(committee.reconciliation_responses)
       ? committee.reconciliation_responses
       : [];
@@ -611,13 +743,20 @@
                 <span>立場：${escapeHtml(decisionLabel(proposal.stance))}</span>
                 <span>信心：${escapeHtml(proposal.confidence)}/100</span>
                 <span>現金偏好：${percent(proposal.cash_preference)}</span>
+                ${
+                  proposal.tone
+                    ? `<span>語氣：${escapeHtml(decisionLabel(proposal.tone))}</span>`
+                    : ""
+                }
               </div>
-              <div class="chat-copy">
-                ${(proposal.arguments || []).map((item) => `<p>${escapeHtml(item)}</p>`).join("")}
-              </div>
+              <p class="chat-opening">${escapeHtml(
+                proposal.opening_statement || (proposal.arguments || [])[0] || "本輪沒有可公開摘要。",
+              )}</p>
               <div class="asset-tags">${renderAssetTags(proposal.preferred_assets)}</div>
               <details class="chat-details">
-                <summary>查看風險與失效條件</summary>
+                <summary>查看完整論點、風險與失效條件</summary>
+                <strong>完整論點</strong>
+                <ol>${renderList(proposal.arguments)}</ol>
                 <strong>主要風險</strong>
                 <ul>${renderList(proposal.risks)}</ul>
                 <strong>失效條件</strong>
@@ -628,9 +767,107 @@
       )
       .join("");
 
-    const critiqueMessages = critiques
-      .map(
-        (critique) => `
+    const critiqueThreads = critiques
+      .map((critique) => {
+        const questions = Array.isArray(critique.direct_questions)
+          ? critique.direct_questions
+          : [];
+        const resolution = resolutions.find((item) => item.reviewer === critique.reviewer);
+        const opening = critique.opening_statement || critique.strongest_objection;
+        const questionThreads = questions
+          .map((question) => {
+            const answer = crossExaminationResponses.find(
+              (item) =>
+                item.reviewer === critique.reviewer &&
+                item.responding_agent === question.target_agent &&
+                item.question === question.question,
+            );
+            return `
+              <article class="chat-message reviewer-message question-message">
+                <div class="chat-avatar" aria-hidden="true">問</div>
+                <div class="chat-bubble">
+                  <header>
+                    <strong>${agentLink(critique.reviewer)}</strong>
+                    <span>點名 ${agentLink(question.target_agent)}</span>
+                  </header>
+                  <p class="chat-opening">${escapeHtml(question.question)}</p>
+                  <small class="chat-why">${escapeHtml(question.why_it_matters)}</small>
+                </div>
+              </article>
+              ${
+                answer
+                  ? `
+                    <article class="chat-message answer-message">
+                      <div class="chat-avatar" aria-hidden="true">${escapeHtml(
+                        (
+                          agentProfiles[normalizeAgentName(answer.responding_agent)]?.label ||
+                          answer.responding_agent
+                        ).slice(0, 1),
+                      )}</div>
+                      <div class="chat-bubble">
+                        <header>
+                          <strong>${agentLink(answer.responding_agent)}</strong>
+                          <span>直接回應 ${agentLink(answer.reviewer)}</span>
+                        </header>
+                        <div class="chat-meta">
+                          <span>語氣：${escapeHtml(decisionLabel(answer.tone))}</span>
+                        </div>
+                        <p class="chat-opening">${escapeHtml(answer.direct_answer)}</p>
+                        <details class="chat-details">
+                          <summary>查看證據、承認與修正</summary>
+                          <strong>使用證據</strong>
+                          <ul>${renderList(answer.evidence_used)}</ul>
+                          <strong>承認的盲點</strong>
+                          <ul>${renderList(answer.conceded_points, "沒有承認新的盲點")}</ul>
+                          <strong>提出修正</strong>
+                          <ul>${renderList(answer.proposed_changes)}</ul>
+                          ${
+                            answer.unresolved_disagreement
+                              ? `<strong>仍有分歧</strong><p>${escapeHtml(
+                                  answer.unresolved_disagreement,
+                                )}</p>`
+                              : ""
+                          }
+                        </details>
+                      </div>
+                    </article>`
+                  : ""
+              }`;
+          })
+          .join("");
+        const resolutionMessage = resolution
+          ? `
+            <article class="chat-message reviewer-message resolution-message">
+              <div class="chat-avatar" aria-hidden="true">裁</div>
+              <div class="chat-bubble">
+                <header>
+                  <strong>${agentLink(resolution.reviewer)}</strong>
+                  <span>第二次裁決</span>
+                </header>
+                ${
+                  resolution.tone
+                    ? `<div class="chat-meta"><span>語氣：${escapeHtml(
+                        decisionLabel(resolution.tone),
+                      )}</span></div>`
+                    : ""
+                }
+                <p class="chat-opening">${escapeHtml(resolution.resolution_summary)}</p>
+                <div class="chat-status ${resolution.veto_maintained ? "veto" : ""}">
+                  ${resolution.veto_maintained ? "維持否決" : "接受修正"}
+                </div>
+                <details class="chat-details">
+                  <summary>查看採納、分歧與硬性限制</summary>
+                  <strong>採納修正</strong>
+                  <ul>${renderList(resolution.accepted_changes)}</ul>
+                  <strong>尚未消除的疑慮</strong>
+                  <ul>${renderList(resolution.unresolved_objections, "沒有未解疑慮")}</ul>
+                  <strong>交給 CIO 的硬性限制</strong>
+                  <ul>${renderList(resolution.binding_constraints, "沒有未解除的硬性限制")}</ul>
+                </details>
+              </div>
+            </article>`
+          : "";
+        return `
           <article class="chat-message reviewer-message">
             <div class="chat-avatar" aria-hidden="true">審</div>
             <div class="chat-bubble">
@@ -638,20 +875,31 @@
                 <strong>${agentLink(critique.reviewer)}</strong>
                 <span>交叉質詢</span>
               </header>
-              <p>${escapeHtml(critique.strongest_objection)}</p>
+              ${
+                critique.tone
+                  ? `<div class="chat-meta"><span>語氣：${escapeHtml(
+                      decisionLabel(critique.tone),
+                    )}</span></div>`
+                  : ""
+              }
+              <p class="chat-opening">${escapeHtml(opening)}</p>
               <div class="chat-status ${critique.veto_recommended ? "veto" : ""}">
                 ${critique.veto_recommended ? "建議否決" : "本輪不否決"}
               </div>
               <details class="chat-details">
-                <summary>查看隱含假設與要求修正</summary>
+                <summary>查看最強反對、隱含假設與要求修正</summary>
+                <strong>最強反對意見</strong>
+                <p>${escapeHtml(critique.strongest_objection)}</p>
                 <strong>隱含假設</strong>
                 <ul>${renderList(critique.hidden_assumptions)}</ul>
                 <strong>要求修正</strong>
                 <ul>${renderList(critique.required_changes)}</ul>
               </details>
             </div>
-          </article>`,
-      )
+          </article>
+          ${questionThreads}
+          ${resolutionMessage}`;
+      })
       .join("");
 
     const reconciliationMessages = responses
@@ -697,8 +945,8 @@
         </article>
         <div class="chat-stage-label">第一階段 · 獨立研究</div>
         ${proposalMessages}
-        <div class="chat-stage-label">第二階段 · 交叉質詢</div>
-        ${critiqueMessages}
+        <div class="chat-stage-label">第二階段 · 質詢、回應與裁決</div>
+        ${critiqueThreads}
         ${
           reconciliationMessages
             ? `<div class="chat-stage-label">第三階段 · 協商修正</div>${reconciliationMessages}`
@@ -712,12 +960,23 @@
               <strong>${agentLink("cio")}</strong>
               <span>最終決策</span>
             </header>
-            <p>${escapeHtml(finalDecision.model_score_reason)}</p>
             <div class="chat-meta">
               <span>市場立場：${escapeHtml(decisionLabel(finalDecision.market_stance))}</span>
               <span>風險：${escapeHtml(decisionLabel(finalDecision.risk_level))}</span>
               <span>共識度：${escapeHtml(finalDecision.model_score)}/100</span>
+              ${
+                finalDecision.tone
+                  ? `<span>語氣：${escapeHtml(decisionLabel(finalDecision.tone))}</span>`
+                  : ""
+              }
             </div>
+            <p class="chat-opening">${escapeHtml(
+              finalDecision.opening_statement || finalDecision.model_score_reason,
+            )}</p>
+            <details class="chat-details">
+              <summary>查看共識度計算</summary>
+              <p>${escapeHtml(finalDecision.model_score_reason)}</p>
+            </details>
             <div class="final-allocation-grid">
               ${(finalDecision.allocations || [])
                 .map(
@@ -984,6 +1243,64 @@
                             <section class="committee-block">
                               <h3>要求修正</h3>
                               <ul>${renderList(critique.required_changes)}</ul>
+                            </section>
+                          </div>
+                        </article>`,
+                    )
+                    .join("")}
+                  ${(archivedCommittee.cross_examination_responses || [])
+                    .map(
+                      (response) => `
+                        <article class="archive-agent response">
+                          <header>
+                            ${agentLink(response.responding_agent)}
+                            <span>回應 ${agentLink(response.reviewer)} · ${escapeHtml(
+                              decisionLabel(response.tone),
+                            )}</span>
+                          </header>
+                          <p><strong>問題：</strong>${escapeHtml(response.question)}</p>
+                          <p>${escapeHtml(response.direct_answer)}</p>
+                          <div class="committee-columns">
+                            <section class="committee-block">
+                              <h3>使用證據</h3>
+                              <ul>${renderList(response.evidence_used)}</ul>
+                            </section>
+                            <section class="committee-block">
+                              <h3>承認的盲點</h3>
+                              <ul>${renderList(response.conceded_points, "沒有承認新的盲點")}</ul>
+                            </section>
+                            <section class="committee-block">
+                              <h3>提出修正</h3>
+                              <ul>${renderList(response.proposed_changes)}</ul>
+                            </section>
+                          </div>
+                        </article>`,
+                    )
+                    .join("")}
+                  ${(archivedCommittee.critique_resolutions || [])
+                    .map(
+                      (resolution) => `
+                        <article class="archive-agent critique">
+                          <header>
+                            ${agentLink(resolution.reviewer)}
+                            <span>${resolution.veto_maintained ? "維持否決" : "接受修正"}</span>
+                          </header>
+                          <p>${escapeHtml(resolution.resolution_summary)}</p>
+                          <div class="committee-columns">
+                            <section class="committee-block">
+                              <h3>採納修正</h3>
+                              <ul>${renderList(resolution.accepted_changes)}</ul>
+                            </section>
+                            <section class="committee-block">
+                              <h3>尚未消除的疑慮</h3>
+                              <ul>${renderList(resolution.unresolved_objections, "沒有未解疑慮")}</ul>
+                            </section>
+                            <section class="committee-block">
+                              <h3>硬性限制</h3>
+                              <ul>${renderList(
+                                resolution.binding_constraints,
+                                "沒有未解除的硬性限制",
+                              )}</ul>
                             </section>
                           </div>
                         </article>`,
@@ -1332,8 +1649,11 @@
               </article>
               <article>
                 <span>04</span>
-                <strong>否決協商</strong>
-                <small>${escapeHtml((committee.critique_resolutions || []).length)} 次裁決</small>
+                <strong>點名回應</strong>
+                <small>
+                  ${escapeHtml((committee.cross_examination_responses || []).length)} 則回應 ·
+                  ${escapeHtml((committee.critique_resolutions || []).length)} 次裁決
+                </small>
               </article>
               <article>
                 <span>05</span>
@@ -1707,16 +2027,19 @@
                     <div class="source-grid">
                       ${market.source_catalog
                         .map(
-                          (source) => `
+                          (source) => {
+                            const localized = localizedSource(source);
+                            return `
                             <article class="source-card">
                               <header>
-                                <a href="${escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(source.name)}</a>
+                                <a href="${escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(localized.name)}</a>
                                 <span>${source.active ? "引擎支援" : "候選來源"}</span>
                               </header>
-                              <p>${escapeHtml(source.intended_use)}</p>
-                              <small>${escapeHtml(source.cadence)} · ${escapeHtml(source.typical_latency)}</small>
-                              <ul>${renderList(source.limitations)}</ul>
-                            </article>`,
+                              <p>${escapeHtml(localized.use)}</p>
+                              <small>${escapeHtml(localized.cadence)} · ${escapeHtml(localized.latency)}</small>
+                              <ul>${renderList(localized.limits)}</ul>
+                            </article>`;
+                          },
                         )
                         .join("")}
                     </div>
@@ -1911,7 +2234,7 @@
             </header>
             <div class="privacy-boundary">
               <strong>建議與實際部位比較：私人資料，不在公開網站發布</strong>
-              <p>${escapeHtml(dashboardAnalytics.actual_comparison_message)}</p>
+              <p>公開網站只比較相鄰兩輪研究建議；實際部位與成交紀錄僅能在私人環境中依使用者確認資料計算。</p>
             </div>
             ${
               comparableRecommendations.length >= 2
@@ -1991,7 +2314,7 @@
         </div>
 
         <footer class="footer">
-          <span>${escapeHtml(system.execution_policy)} · broker access ${escapeHtml(system.broker_access)}</span>
+          <span>僅供人工執行 · 券商存取：未啟用</span>
           <span>市場資料 ${escapeHtml(market.source)}</span>
           <span>最後更新 ${escapeHtml(dateTime(system.updated_at))}</span>
           <span>每日收盤後重新驗證與決策</span>
