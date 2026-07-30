@@ -1,30 +1,22 @@
 {
   "schema_version": "1.0",
-  "run_id": "20260729T181256Z",
-  "generated_at": "2026-07-29T18:12:56.085342Z",
-  "data_cutoff": "2026-07-29T18:10:26.733146Z",
+  "run_id": "20260730T105803Z",
+  "generated_at": "2026-07-30T10:58:03.064925Z",
+  "data_cutoff": "2026-07-30T10:56:09.037492Z",
   "status": "live",
   "capital_usd": "6000.00",
-  "model_score": 93,
-  "model_score_reason": "方向一致度 93/100；10 位提案委員按信心加權，0 項協商後否決仍未解除，扣除 0 分。",
-  "risk_level": "moderate",
-  "expected_horizon": "3 到 7 個交易日",
+  "model_score": 83,
+  "model_score_reason": "方向一致度 83/100；10 位提案委員按信心加權，0 項協商後否決仍未解除，扣除 0 分。",
+  "risk_level": "high",
+  "expected_horizon": "研究配置以未來 1 至 3 個完成交易日為檢視頻率；不代表已成交。每週至少檢視 2 次，且下一完成交易日重新核對市場狀態。",
   "allocations": [
     {
       "symbol": "CASH",
       "asset_type": "cash",
-      "target_weight": "0.5",
-      "target_amount_usd": "3000.00",
+      "target_weight": "0.55",
+      "target_amount_usd": "3300.00",
       "action": "reduce",
-      "note": "符合政策規定的現金水位，無正式 risk veto 時不高於 0.60 且不低於 0.20，在 risk_off 期間提供絕對資本保護。"
-    },
-    {
-      "symbol": "TLT",
-      "asset_type": "etf",
-      "target_weight": "0.25",
-      "target_amount_usd": "1500.00",
-      "action": "buy",
-      "note": "長端公債防禦資產，分散股票市場短線波動與系統性下行風險。"
+      "note": "研究階段風險緩衝；符合無正式 risk veto 時 CASH 不高於 0.60 的限制。"
     },
     {
       "symbol": "GLD",
@@ -32,19 +24,29 @@
       "target_weight": "0.25",
       "target_amount_usd": "1500.00",
       "action": "buy",
-      "note": "黃金商品 ETF，作為應對地緣政治與通膨不確定性的多元配置工具。"
+      "note": "作為分散化候選；最新完成日上漲，但單日表現不得視為 3/7 日優勢證據。"
+    },
+    {
+      "symbol": "TLT",
+      "asset_type": "etf",
+      "target_weight": "0.2",
+      "target_amount_usd": "1200.00",
+      "action": "buy",
+      "note": "小比例期限資產分散；最新完成日下跌，利率與期限結構風險仍需重新驗證。"
     }
   ],
   "top_reasons": [
     {
       "id": 1,
-      "title": "標普 500 指數與宏觀趨勢偏向 risk_off",
-      "summary": "市場快照顯示 SPY 20日報酬為 -0.018895% 且低於 50 日均線 -0.536669%，整體總體趨勢與 regime 顯示為 risk_off。",
-      "confidence": 85,
-      "category": "technical",
+      "title": "市場制度分類為 risk_off",
+      "summary": "市場快照明確標示 trend=risk_off、volatility=elevated；SPY 20 日報酬為 -2.317982%，且距 50 日均線為 -2.041618%。這支持降低方向性曝險，但不單獨證明未來報酬方向。",
+      "confidence": 96,
+      "category": "risk",
       "affected_assets": [
         "SPY",
-        "QQQ"
+        "GLD",
+        "TLT",
+        "CASH"
       ],
       "source_urls": [
         "https://finance.yahoo.com/"
@@ -52,14 +54,15 @@
     },
     {
       "id": 2,
-      "title": "半導體與高科技板塊動能顯著轉弱",
-      "summary": "SMH 20日報酬達 -16.199881% 且 SOXL 下跌幅度劇烈，顯示科技與半導體供應鏈短線賣壓沉重，資金避險需求高漲。",
-      "confidence": 90,
-      "category": "momentum",
+      "title": "波動率明顯抬升",
+      "summary": "^VIX 最新水準為 20.66，最近完成日上升 13.454151%，快照將波動狀態列為 elevated。高波動提高跳空、反彈與退出成本的不確定性，因此不配置槓桿或反向 ETF。",
+      "confidence": 93,
+      "category": "risk",
       "affected_assets": [
-        "SMH",
-        "SOXL",
-        "QQQ"
+        "SQQQ",
+        "SOXS",
+        "SPXU",
+        "CASH"
       ],
       "source_urls": [
         "https://finance.yahoo.com/"
@@ -67,12 +70,66 @@
     },
     {
       "id": 3,
-      "title": "防禦性資產分散波動與下檔風險",
-      "summary": "在樣本數未達 20 個完成交易日統計成熟前，配置 TLT 與 GLD 搭配 50% 現金，兼顧資本保護與多元資產分散原則。",
-      "confidence": 80,
+      "title": "成長與半導體同步承壓",
+      "summary": "QQQ 最近完成日下跌 2.037041%、20 日報酬 -10.139875%；SMH 下跌 4.792291%、20 日報酬 -23.124306%。這支持防禦立場，但 RSI 偏低也代表跌深反彈風險。",
+      "confidence": 92,
+      "category": "technical",
+      "affected_assets": [
+        "QQQ",
+        "SMH",
+        "SPY"
+      ],
+      "source_urls": [
+        "https://finance.yahoo.com/"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "下跌伴隨較高成交量比",
+      "summary": "SPY、QQQ、SMH 的 20 日成交量比分別為 1.506711、1.45964、1.438575；下跌與相對活躍成交同時出現，支持風險偏好轉弱的狀態判讀，但不能替代交易成本或多日視窗分析。",
+      "confidence": 85,
+      "category": "momentum",
+      "affected_assets": [
+        "SPY",
+        "QQQ",
+        "SMH"
+      ],
+      "source_urls": [
+        "https://finance.yahoo.com/"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "短期績效視窗尚未形成",
+      "summary": "本輪確定性計算顯示 distinct_completed_sessions=3，但 3 日與 7 日 completed_windows 都是 0，latest_return_percent 為 null。因此不得宣稱任何策略有統計優勢、穩定勝率或正期望。",
+      "confidence": 98,
+      "category": "policy",
+      "affected_assets": [
+        "CASH",
+        "GLD",
+        "TLT",
+        "SQQQ"
+      ],
+      "source_urls": []
+    },
+    {
+      "id": 6,
+      "title": "現金比例遵守硬限制",
+      "summary": "委員質詢後確認本輪採用 CASH=0.55，而非既有部位的 CASH=1.00。無正式 risk veto 時，政策要求 CASH 不得高於 0.60；0.55 同時保留緩衝並避免以樣本不足違規提高現金。",
+      "confidence": 99,
+      "category": "policy",
+      "affected_assets": [
+        "CASH"
+      ],
+      "source_urls": []
+    },
+    {
+      "id": 7,
+      "title": "GLD僅作分散化候選",
+      "summary": "GLD 最近完成日回報為 +0.462948%，20 日波動年化為 21.336714%，距 MA20 為 -0.555007%。這是相對抗跌的單日狀態證據，不是 3/7 日績效優勢，因此配置限制在分散用途。",
+      "confidence": 78,
       "category": "diversification",
       "affected_assets": [
-        "TLT",
         "GLD",
         "CASH"
       ],
@@ -81,75 +138,14 @@
       ]
     },
     {
-      "id": 4,
-      "title": "美國總體經濟溫和增長與 AI 投資動能",
-      "summary": "美國 2026 年預計 GDP 成長率為 2.0%，AI 投資仍為商業投資主要驅動力，為上游半導體提供實質基本面支撐。",
-      "confidence": 75,
-      "category": "macro",
-      "affected_assets": [
-        "NVDA",
-        "AVGO",
-        "TSM"
-      ],
-      "source_urls": [
-        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE54RKt_FIhTs8qOdZI89iB6KyBU7OMU8X8VR8VTOAhVUFdQBViKolqfmELCyLVfjgd5hOC1yaURdvNVWyrg3F9nDXx7zYBkms_wpf-06_F0iuVFp4cNQ97q52tfO5JHfqGRpoOXNFdwUjIlkQkqsrsdmmGX8bIcbrPc-ue0pK3-Ht4DhQJfppY"
-      ]
-    },
-    {
-      "id": 5,
-      "title": "美國勞動力市場放緩與通膨雜訊",
-      "summary": "6 月非農就業人數增加 5.7 萬低於預期，失業率維持 4.2%，CPI 年增率降至 3.5%，但中東地緣政治帶來通膨上行風險。",
-      "confidence": 75,
-      "category": "macro",
-      "affected_assets": [
-        "TLT",
-        "GLD",
-        "SPY"
-      ],
-      "source_urls": [
-        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEVxLpdXp-qiwAHGxcA-QHqgHc9NiuHq_3vF2TCUN_NQw5-kIy9u5uvw2W56OMPa8KXQVXzMmUE9KgPm3E_JJ8kJ46TURigyXxH1XkEGLhkvMDZblym07KIxCeFvU_dHOYsqWv_5z3ILyB7mPR2qiHRLvevwlWgKF_OtF_IKLXYyMs8HC55tnRhTqQjqXSDMkP5g0nNEjZARFotlbRP_3IQvi9IQPAv7VjBDmTkkdPSo3ZIJ1O-rsx_D0="
-      ]
-    },
-    {
-      "id": 6,
-      "title": "亞洲半導體與出口訂單反映強勁需求",
-      "summary": "韓國 7 月前 20 日半導體出口激增 52.3%，台灣 7 月前 10 日出口訂單激增 59.4%，印證 AI 硬體長期需求暢旺。",
-      "confidence": 80,
-      "category": "news",
-      "affected_assets": [
-        "NVDA",
-        "TSM",
-        "SMH"
-      ],
-      "source_urls": [
-        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQETsCmDJIxnoRaFxglE48Vim7ERYN2pKkuGJd4q5hjT2fjisA9nChpacUfnoVHHXGpKKaURirA99apgFtfGjiSEvaBBXjUTMZUiSSyij45QolxpJKsnEfRAAG0="
-      ]
-    },
-    {
-      "id": 7,
-      "title": "反向 ETF 每日重設特性與持有期限限制",
-      "summary": "依據風控政策，SQQQ、SOXS 與 SPXU 等反向工具受每日重設及路徑磨損影響，最多僅能持有 1 個交易日，不適合作為多日波段配置。",
-      "confidence": 95,
-      "category": "risk",
-      "affected_assets": [
-        "SQQQ",
-        "SOXS",
-        "SPXU"
-      ],
-      "source_urls": [
-        "https://finance.yahoo.com/"
-      ]
-    },
-    {
       "id": 8,
-      "title": "短期績效政策與滾動視窗樣本規範",
-      "summary": "3 個與 7 個完成交易日的滾動視窗樣本數仍未達 20 個的統計成熟門檻，目前判定為 too_early，但樣本不足不禁止承擔市場風險。",
-      "confidence": 90,
-      "category": "policy",
+      "title": "TLT防禦效果仍未確認",
+      "summary": "TLT 最近完成日回報為 -1.650047%，20 日波動年化為 9.052702%，且距 MA20 為 -1.581118%。因此只給 0.20 權重，承認其可能分散股票風險，但不把單日下跌轉化為持續性判斷。",
+      "confidence": 82,
+      "category": "macro",
       "affected_assets": [
-        "CASH",
         "TLT",
-        "GLD"
+        "CASH"
       ],
       "source_urls": [
         "https://finance.yahoo.com/"
@@ -157,42 +153,50 @@
     },
     {
       "id": 9,
-      "title": "企業財報與微軟 Anthropic 合作進展",
-      "summary": "AMD 即將公布第二季財報，其資料中心業務已與微軟和 Anthropic 達成新協議，將牽動半導體板塊信心。",
-      "confidence": 75,
-      "category": "valuation",
+      "title": "反向ETF比較後暫不配置",
+      "summary": "在 bearish 情境下，SQQQ、SOXS、SPXU 都是每日重設工具，反彈時可能快速產生耗損；現金沒有方向性反彈損失。SQQQ雖有快照資料，但SOXS與SPXU缺少同格式行情，且3/7視窗與成本資料均不足，因此不買進、不排序。",
+      "confidence": 91,
+      "category": "risk",
       "affected_assets": [
-        "AMD",
-        "MSFT"
+        "SQQQ",
+        "SOXS",
+        "SPXU",
+        "CASH"
       ],
       "source_urls": [
-        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEj-Mg_U4IFimvp2-iChYzHopxZskl9FFf9T5_rG1Vs2DD8KOm3GIxAmUWAgSzX3mxPE3_iHTohoxPkVQMkGausTYGqQfdB-ZwqjOiTnSuDIMEiMWJc5ujw-L06kWhrJClh1wBbSnpRykjFAzryAPsAAy1HpbRqvdU0KLf9klRM3XYY3jAtp9MArjRrYG83I2PkFs6GRFHnio-W"
+        "https://finance.yahoo.com/"
       ]
     },
     {
       "id": 10,
-      "title": "地緣政治與全球供應鏈挑戰",
-      "summary": "中東地緣政治緊張與俄烏戰爭持續，對航運和能源構成風險，並促使資金轉向防禦資產避險。",
-      "confidence": 80,
-      "category": "macro",
+      "title": "資料時效與交易摩擦限制結論",
+      "summary": "行情來源為可能延遲的 Yahoo Finance，所有價格特徵的 price_session 是 2026-07-29，而 as_of 是 2026-07-30；快照沒有 bid-ask、深度、滑價模型，也未提供足以計算成本後 25 bps 淨邊際的資料。",
+      "confidence": 97,
+      "category": "liquidity",
       "affected_assets": [
+        "SPY",
         "GLD",
         "TLT",
-        "ERX"
+        "SQQQ"
       ],
       "source_urls": [
-        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_q7ylWEtf1gx33W2WQdys3hljnKnl8Jeo3uMcev34Mrnmec__M1l2AvWSiFeKo3vjGhf14clijjLJ3EB6RKc1u1fl3ahJWHjwHmZLcitKgtVEJCUPoFCoRSxI06FREatZMGGJcDelqSnHsazlzCURT3Nsnn6QLdERPosGbgnQSWDi6aP_FUmGy7w0qXwbqE3ZYlZDkV_rjVGTIAfxeA=="
+        "https://finance.yahoo.com/"
       ]
     }
   ],
   "invalidation_conditions": [
-    "SPY 與 QQQ 帶量重回 20 日與 50 日移動平均線上方，且 trend 特徵由 risk_off 轉為 risk_on。",
-    "半導體指數（SMH）跌幅顯著收斂，且技術指標 RSI14 回升至 50 以上。",
-    "總體經濟數據與通膨出現重大意外，導致市場流動性或貨幣政策路徑發生系統性轉變。"
+    "若下一個完成交易日 SPY 的 distance_from_ma20_percent 由負轉正或 RSI14≥50，則任何 SQQQ、SOXS、SPXU 的研究性使用權重維持 0；反向 ETF不得跨日沿用。",
+    "若下一個完成交易日 SMH 的 distance_from_ma20_percent≥0 或 RSI14≥45，則反向 ETF 的研究權重降至 0，因為原有下行狀態已出現修復訊號。",
+    "若取得分別可稽核的 3 日與 7 日完成交易日視窗，並在扣除可觀測交易摩擦後達到至少 25 bps 淨邊際及 0.60 正報酬視窗率，才可重新評估方向性曝險；滿 20 個完整視窗前仍不得宣稱統計成熟。",
+    "若後續風險資產組合在回撤警戒下超過政策允許的 0.25 風險資產上限，或單次估計損失超過初始資本 1.5%，應降低曝險；目前缺少 bid-ask、深度與跳空資料，不能預先量化停損成交價格。"
   ],
   "major_risks": [
-    "若總體市場或地緣政治發生突發跳空利空，防禦性資產（如 TLT 與 GLD）短線仍可能受到利率及流動性變現賣壓干擾。",
-    "半導體與高成長科技個股波動率極高，若短線反彈動能不足，恐持續對相關族群估值造成壓抑。"
+    "風險資產可能在超賣後快速反彈；QQQ與SMH的低 RSI及大幅低於均線狀態，可能使 bearish 判斷失效。",
+    "TLT 最新完成日下跌，若利率或期限溢酬重新上行，TLT可能與股票同跌，削弱防禦效果。",
+    "GLD的正單日回報只是單點觀測，不能推論未來多日必然正報酬。",
+    "缺少 bid-ask、深度、滑價與費用資料，無法完成扣除摩擦後的可比績效；高成交量只能作退出性的定性線索。",
+    "若未來配置 SQQQ、SOXS或SPXU，ETF每日重設、反彈損失與路徑耗損可能使單日方向正確仍產生不利結果；本決策目前不配置它們。",
+    "資料截至 2026-07-30T10:56:09Z，最近完成價格日為 2026-07-29；資料延遲或時間對齊錯誤可能污染後續視窗判定。"
   ],
   "disclaimer": "研究建議，尚未執行。下單前須由使用者核對券商即時價格、成本與風險；系統不存取券商、不自動下單。"
 }

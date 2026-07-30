@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0",
   "version": "1.0.0",
-  "updated_at": "2026-07-29T18:28:12.182037Z",
+  "updated_at": "2026-07-30T11:02:41.339155Z",
   "environment": "live",
-  "latest_commit": "8f150b5bbe0082bf05e38736251015b73804fc14",
+  "latest_commit": "b7f3d859bc738f069d1e8656abc74d1d2c57dc87",
   "data_pipeline": "Continuous Research-to-Publication",
   "site_pipeline": "Continuous Research-to-Publication",
-  "committee_strategy_fingerprint": "1112c61ee642d82ad53460ed70daef6baa3c5818586e05b5743a2c7ad29626d1",
+  "committee_strategy_fingerprint": "8c17c9773e14fe6b70c261a79ae23aa47e4e949524ebd1fc14b431c1058f6fb5",
   "execution_policy": "manual only",
   "broker_access": false,
   "automatic_trading": false
