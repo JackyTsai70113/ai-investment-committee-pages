@@ -432,10 +432,114 @@
     return `${sign}${numeric.toFixed(4)} 股`;
   };
 
-  const renderList = (items, emptyMessage = "未提供") => {
+  const parseWindowDays = (value, fallback = 5) => {
+    const match = String(value || "").match(/(\d+)/);
+    const parsed = match ? Number.parseInt(match[1], 10) : Number.NaN;
+    return Number.isFinite(parsed) && parsed > 0 ? parsed : fallback;
+  };
+
+  const deriveWindowPerformance = (points, windowDays = 5) => {
+    const sorted = (Array.isArray(points) ? points : [])
+      .map((point, index) => ({
+        as_of: String(point?.as_of || ""),
+        value_usd: Number(point?.value_usd),
+        session: point?.price_session ? `session:${point.price_session}` : `initial:${index}`,
+      }))
+      .filter((point) => Number.isFinite(point.value_usd) && point.as_of)
+      .sort((left, right) => new Date(left.as_of) - new Date(right.as_of));
+
+    const deduped = [];
+    for (const point of sorted) {
+      if (deduped.length === 0 || deduped[deduped.length - 1].session !== point.session) {
+        deduped.push(point);
+      } else {
+        deduped[deduped.length - 1] = point;
+      }
+    }
+
+    const windows = [];
+    for (let index = windowDays; index < deduped.length; index++) {
+      const start = deduped[index - windowDays];
+      const end = deduped[index];
+      windows.push((end.value_usd / start.value_usd - 1) * 100);
+    }
+
+    return {
+      completed_windows: windows.length,
+      positive_windows: windows.filter((item) => item > 0).length,
+      latest_return_percent: windows.length ? windows[windows.length - 1] : null,
+      completed_sessions: Math.max(0, deduped.length - 1),
+      method: windows.length > 0 ? `採用同一市場交易日最後一筆收盤估值，計算最近 ${windowDays} 個會話視窗。` : `資料不足，尚未有足夠會話視窗。`,
+    };
+  };
+
+  const glossary = {
+    volatility: {
+      id: "volatility",
+      title: "波動率（Volatility）",
+      definition: "價格隨時間變動幅度；波動率越高，短線不確定性與回撤風險通常越高。",
+      patterns: [/波動率/g, /Volatility/g, /Vol/g],
+    },
+    ma20_50: {
+      id: "ma20_50",
+      title: "MA20 / MA50",
+      definition: "MA20 與 MA50 分別是 20 與 50 日移動平均線，常用於判斷短中期趨勢。",
+      patterns: [/MA20/g, /MA50/g, /20日/g, /50日/g, /移動平均/g],
+    },
+    risk_off: {
+      id: "risk_off",
+      title: "risk_off / risk_on",
+      definition: "risk_off 表示偏防守、偏好降低曝險；risk_on 則偏偏好承受風險擴張曝險。",
+      patterns: [/risk_off/g, /risk on/g, /risk_on/g],
+    },
+  };
+
+  const applyGlossaryLinks = (value) => {
+    const glossaryEntries = Object.values(glossary);
+    const safeValue = escapeHtml(String(value || ""));
+    return glossaryEntries.reduce((result, entry) => {
+      return entry.patterns.reduce((memo, pattern) => {
+        return memo.replaceAll(
+          pattern,
+          (match) =>
+            `<a class="glossary-term-link" href="#glossary-${escapeHtml(entry.id)}" data-tab="glossary">${match}</a>`,
+        );
+      }, result);
+    }, safeValue);
+  };
+
+  const glossaryText = (value) => applyGlossaryLinks(value);
+
+  const renderGlossary = () => {
+    const glossaryEntries = Object.values(glossary);
+    return `
+      <section class="panel glossary" data-tab-section="glossary" id="glossary">
+        <header class="panel-header">
+          <div>
+            <span class="section-kicker">術語表</span>
+            <h2>術語與政策解釋</h2>
+          </div>
+          <span class="panel-meta">可點入</span>
+        </header>
+        <div class="glossary-grid">
+          ${glossaryEntries
+            .map(
+              (entry) => `
+                <article class="glossary-card" id="glossary-${escapeHtml(entry.id)}">
+                  <h3>${escapeHtml(entry.title)}</h3>
+                  <p>${escapeHtml(entry.definition)}</p>
+                </article>`,
+            )
+            .join("")}
+        </div>
+      </section>`;
+  };
+
+  const renderList = (items, emptyMessage = "未提供", transform = escapeHtml) => {
     const values = Array.isArray(items) ? items : [];
     if (values.length === 0) return `<li class="empty-item">${escapeHtml(emptyMessage)}</li>`;
-    return values.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+    const renderItem = typeof transform === "function" ? transform : escapeHtml;
+    return values.map((item) => `<li>${renderItem(item)}</li>`).join("");
   };
 
   const renderAssetTags = (items) => {
@@ -547,9 +651,9 @@
       high: "高",
       moderate: "中等",
       low: "低",
-      live: "目前研究",
-      review: "研究複核",
-      research_only: "僅供研究",
+      live: "研究建議",
+      review: "補充驗證",
+      research_only: "補充中",
       structured: "結構化",
       policy_override: "政策覆寫",
       buy: "買入",
@@ -756,11 +860,11 @@
               <details class="chat-details">
                 <summary>查看完整論點、風險與失效條件</summary>
                 <strong>完整論點</strong>
-                <ol>${renderList(proposal.arguments)}</ol>
+                <ol>${renderList(proposal.arguments, "未提供", glossaryText)}</ol>
                 <strong>主要風險</strong>
-                <ul>${renderList(proposal.risks)}</ul>
+                <ul>${renderList(proposal.risks, "未提供", glossaryText)}</ul>
                 <strong>失效條件</strong>
-                <ul>${renderList(proposal.invalidation_conditions)}</ul>
+                <ul>${renderList(proposal.invalidation_conditions, "未提供", glossaryText)}</ul>
               </details>
             </div>
           </article>`,
@@ -816,11 +920,11 @@
                         <details class="chat-details">
                           <summary>查看證據、承認與修正</summary>
                           <strong>使用證據</strong>
-                          <ul>${renderList(answer.evidence_used)}</ul>
+                          <ul>${renderList(answer.evidence_used, "無使用證據", glossaryText)}</ul>
                           <strong>承認的盲點</strong>
-                          <ul>${renderList(answer.conceded_points, "沒有承認新的盲點")}</ul>
+                          <ul>${renderList(answer.conceded_points, "沒有承認新的盲點", glossaryText)}</ul>
                           <strong>提出修正</strong>
-                          <ul>${renderList(answer.proposed_changes)}</ul>
+                          <ul>${renderList(answer.proposed_changes, "未提供", glossaryText)}</ul>
                           ${
                             answer.unresolved_disagreement
                               ? `<strong>仍有分歧</strong><p>${escapeHtml(
@@ -858,11 +962,11 @@
                 <details class="chat-details">
                   <summary>查看採納、分歧與硬性限制</summary>
                   <strong>採納修正</strong>
-                  <ul>${renderList(resolution.accepted_changes)}</ul>
+                  <ul>${renderList(resolution.accepted_changes, "未提供", glossaryText)}</ul>
                   <strong>尚未消除的疑慮</strong>
-                  <ul>${renderList(resolution.unresolved_objections, "沒有未解疑慮")}</ul>
+                  <ul>${renderList(resolution.unresolved_objections, "沒有未解疑慮", glossaryText)}</ul>
                   <strong>交給 CIO 的硬性限制</strong>
-                  <ul>${renderList(resolution.binding_constraints, "沒有未解除的硬性限制")}</ul>
+                  <ul>${renderList(resolution.binding_constraints, "沒有未解除的硬性限制", glossaryText)}</ul>
                 </details>
               </div>
             </article>`
@@ -891,9 +995,9 @@
                 <strong>最強反對意見</strong>
                 <p>${escapeHtml(critique.strongest_objection)}</p>
                 <strong>隱含假設</strong>
-                <ul>${renderList(critique.hidden_assumptions)}</ul>
+                <ul>${renderList(critique.hidden_assumptions, "未提供", glossaryText)}</ul>
                 <strong>要求修正</strong>
-                <ul>${renderList(critique.required_changes)}</ul>
+                <ul>${renderList(critique.required_changes, "未提供", glossaryText)}</ul>
               </details>
             </div>
           </article>
@@ -914,10 +1018,10 @@
                 <span>協商與第二次裁決</span>
               </header>
               <strong>提案者承認與修正</strong>
-              <ul>${renderList(response.conceded_points)}</ul>
-              <ul>${renderList(response.proposed_changes)}</ul>
+              <ul>${renderList(response.conceded_points, "未提供", glossaryText)}</ul>
+              <ul>${renderList(response.proposed_changes, "未提供", glossaryText)}</ul>
               <strong>證據式反駁</strong>
-              <ul>${renderList(response.rebuttals)}</ul>
+              <ul>${renderList(response.rebuttals, "未提供", glossaryText)}</ul>
               <p>${escapeHtml(resolution?.resolution_summary || "尚無第二次裁決")}</p>
             </div>
           </article>`;
@@ -994,19 +1098,21 @@
       </section>`;
   };
 
-  const researchStatusLabel = (value) => {
-    const labels = {
-      untested: "尚未驗證",
-      partially_tested: "部分驗證",
-      supported: "暫時支持",
-      challenged: "受到挑戰",
-      invalidated: "已失效",
-      mixed: "證據混合",
-      too_early: "樣本太早",
-      insufficient: "樣本不足",
-      provisional: "暫定",
-      usable: "可評估",
-    };
+const researchStatusLabel = (value) => {
+  const labels = {
+    untested: "尚未驗證",
+    partially_tested: "部分驗證",
+    supported: "暫時支持",
+    challenged: "受到挑戰",
+    invalidated: "已失效",
+    mixed: "證據混合",
+    too_early: "資料不足",
+    insufficient: "樣本不足",
+    provisional: "暫定",
+    usable: "可評估",
+    review: "補充驗證",
+    research_only: "補充中",
+  };
     return labels[value] || String(value || "未分類");
   };
 
@@ -1125,6 +1231,74 @@
     renderComparison();
   };
 
+  const installTabNavigation = () => {
+    const controls = document.querySelector("[data-tab-controls]");
+    const menuToggle = controls?.querySelector("[data-tab-menu-toggle]");
+    const strip = controls?.querySelector("[data-tab-strip]");
+    const triggers = [...document.querySelectorAll("[data-tab-trigger]")];
+    const sections = [...document.querySelectorAll("[data-tab-section]")];
+    if (!controls || triggers.length === 0 || sections.length === 0) {
+      sections.forEach((section) => {
+        section.hidden = false;
+      });
+      return;
+    }
+
+    const setTab = (target) => {
+      triggers.forEach((trigger) => {
+        const isActive = trigger.dataset.tabTarget === target;
+        trigger.classList.toggle("active", isActive);
+        trigger.setAttribute("aria-selected", String(isActive));
+      });
+      sections.forEach((section) => {
+        section.hidden = section.dataset.tabSection !== target;
+      });
+      if (strip) {
+        strip.classList.remove("is-open");
+      }
+      if (menuToggle) {
+        menuToggle.setAttribute("aria-expanded", "false");
+      }
+    };
+
+    triggers.forEach((trigger) => {
+      trigger.addEventListener("click", () => {
+        const target = trigger.dataset.tabTarget;
+        if (!target) return;
+        setTab(target);
+      });
+    });
+
+    if (menuToggle && strip) {
+      menuToggle.addEventListener("click", () => {
+        const shouldOpen = !strip.classList.contains("is-open");
+        strip.classList.toggle("is-open", shouldOpen);
+        menuToggle.setAttribute("aria-expanded", String(shouldOpen));
+      });
+    }
+
+    document.querySelectorAll("[data-tab]").forEach((link) => {
+      link.addEventListener("click", (event) => {
+        const target = link.getAttribute("data-tab");
+        if (!target) return;
+        event.preventDefault();
+        setTab(target);
+        const glossaryId = link.getAttribute("href")?.split("#")[1];
+        if (glossaryId) {
+          const targetSection = document.getElementById(glossaryId);
+          if (targetSection) {
+            targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
+          } else {
+            location.hash = `#${glossaryId}`;
+          }
+        }
+      });
+    });
+
+    const defaultTarget = document.querySelector("[data-tab-trigger].active")?.dataset.tabTarget || "overview";
+    setTab(defaultTarget);
+  };
+
   const renderHistoricalRecord = (record) => {
     const archivedCommittee = record.committee;
     const archivedRecommendation = record.recommendation;
@@ -1162,15 +1336,15 @@
                   <div class="committee-columns">
                     <section class="committee-block">
                       <h3>支持原決策的證據</h3>
-                      <ul>${renderList(review.assessment?.supported_points)}</ul>
+                      <ul>${renderList(review.assessment?.supported_points, "未提供", glossaryText)}</ul>
                     </section>
                     <section class="committee-block">
                       <h3>挑戰原決策的證據</h3>
-                      <ul>${renderList(review.assessment?.challenged_points)}</ul>
+                      <ul>${renderList(review.assessment?.challenged_points, "未提供", glossaryText)}</ul>
                     </section>
                     <section class="committee-block">
                       <h3>公開方法與限制</h3>
-                      <ul>${renderList(review.methodology?.warnings)}</ul>
+                      <ul>${renderList(review.methodology?.warnings, "未提供", glossaryText)}</ul>
                     </section>
                   </div>
                 </section>`
@@ -1212,15 +1386,15 @@
                           <div class="committee-columns">
                             <section class="committee-block">
                               <h3>論點</h3>
-                              <ol>${renderList(proposal.arguments)}</ol>
+                              <ol>${renderList(proposal.arguments, "未提供", glossaryText)}</ol>
                             </section>
                             <section class="committee-block">
                               <h3>風險</h3>
-                              <ul>${renderList(proposal.risks)}</ul>
+                              <ul>${renderList(proposal.risks, "未提供", glossaryText)}</ul>
                             </section>
                             <section class="committee-block">
                               <h3>失效條件</h3>
-                              <ul>${renderList(proposal.invalidation_conditions)}</ul>
+                              <ul>${renderList(proposal.invalidation_conditions, "未提供", glossaryText)}</ul>
                             </section>
                           </div>
                         </article>`,
@@ -1238,11 +1412,11 @@
                           <div class="committee-columns">
                             <section class="committee-block">
                               <h3>隱含假設</h3>
-                              <ul>${renderList(critique.hidden_assumptions)}</ul>
+                              <ul>${renderList(critique.hidden_assumptions, "未提供", glossaryText)}</ul>
                             </section>
                             <section class="committee-block">
                               <h3>要求修正</h3>
-                              <ul>${renderList(critique.required_changes)}</ul>
+                              <ul>${renderList(critique.required_changes, "未提供", glossaryText)}</ul>
                             </section>
                           </div>
                         </article>`,
@@ -1263,7 +1437,7 @@
                           <div class="committee-columns">
                             <section class="committee-block">
                               <h3>使用證據</h3>
-                              <ul>${renderList(response.evidence_used)}</ul>
+                              <ul>${renderList(response.evidence_used, "未提供", glossaryText)}</ul>
                             </section>
                             <section class="committee-block">
                               <h3>承認的盲點</h3>
@@ -1271,7 +1445,7 @@
                             </section>
                             <section class="committee-block">
                               <h3>提出修正</h3>
-                              <ul>${renderList(response.proposed_changes)}</ul>
+                              <ul>${renderList(response.proposed_changes, "未提供", glossaryText)}</ul>
                             </section>
                           </div>
                         </article>`,
@@ -1289,11 +1463,11 @@
                           <div class="committee-columns">
                             <section class="committee-block">
                               <h3>採納修正</h3>
-                              <ul>${renderList(resolution.accepted_changes)}</ul>
+                              <ul>${renderList(resolution.accepted_changes, "未提供", glossaryText)}</ul>
                             </section>
                             <section class="committee-block">
                               <h3>尚未消除的疑慮</h3>
-                              <ul>${renderList(resolution.unresolved_objections, "沒有未解疑慮")}</ul>
+                              <ul>${renderList(resolution.unresolved_objections, "沒有未解疑慮", glossaryText)}</ul>
                             </section>
                             <section class="committee-block">
                               <h3>硬性限制</h3>
@@ -1324,10 +1498,9 @@
     rebalance,
     researchJournal,
     dashboardAnalytics,
-    providerTelemetry,
   }) => {
     const isLive = recommendation.status === "live";
-    const statusLabel = isLive ? "目前研究" : "研究複核";
+    const statusLabel = "研究建議 · 尚未執行";
     const invested = recommendation.allocations
       .filter((item) => item.symbol !== "CASH")
       .reduce((total, item) => total + Number(item.target_amount_usd), 0);
@@ -1350,13 +1523,21 @@
     const comparableRecommendations = comparisonRecords(history, recommendation);
     const health = dashboardAnalytics.portfolio_health;
     const analyticsPerformance = dashboardAnalytics.performance;
+    const expectedWindowDays = parseWindowDays(recommendation.expected_horizon, 5);
+    const performanceWindow = deriveWindowPerformance(performance.points, expectedWindowDays);
+    const performanceSharpe = performanceWindow.completed_windows >= 20 ? analyticsPerformance.sharpe_ratio : null;
+    const performanceWinRate = performanceWindow.completed_windows >= 20 ? analyticsPerformance.win_rate_percent : null;
+    const showWindowSharpe = performanceWindow.completed_windows >= 20;
+    const performanceSharpeStat = showWindowSharpe
+      ? `<div><span>夏普比率／勝率</span><strong>${statistic(performanceSharpe)} / ${statistic(performanceWinRate, "%")}</strong></div>`
+      : "";
     root.innerHTML = `
       <div class="app-shell">
         <header class="topbar">
           <div class="brand">
-            <span class="brand-mark">AIC</span>
+            <span class="brand-mark">IC</span>
             <span class="brand-copy">
-              <strong>AI 投資委員會</strong>
+              <strong>投資委員會</strong>
               <span>GitOps 組合研究</span>
             </span>
           </div>
@@ -1366,7 +1547,26 @@
           </div>
         </header>
 
-        <section class="hero">
+        <nav class="tab-controls" aria-label="區段切換" data-tab-controls>
+          <button
+            type="button"
+            class="tab-menu-toggle"
+            data-tab-menu-toggle
+            aria-expanded="false"
+            aria-controls="main-tab-strip"
+            aria-label="切換區段"
+          >
+            <span class="menu-icon" aria-hidden="true">☰</span>
+            <span>導覽</span>
+          </button>
+          <div class="tab-strip" id="main-tab-strip" data-tab-strip>
+            <button type="button" class="tab-trigger active" data-tab-trigger data-tab-target="overview" aria-selected="true">總覽</button>
+            <button type="button" class="tab-trigger" data-tab-trigger data-tab-target="committee" aria-selected="false">委員會實際內容</button>
+            <button type="button" class="tab-trigger" data-tab-trigger data-tab-target="glossary" aria-selected="false">術語表</button>
+          </div>
+        </nav>
+
+        <section class="hero" data-tab-section="overview">
           <div class="hero-main">
             <span class="eyebrow">投資摘要 / ${escapeHtml(recommendation.run_id)}</span>
             <h1>6,000 美元，<br /><span>一個可稽核的決策。</span></h1>
@@ -1377,7 +1577,6 @@
             <div class="hero-strip">
               <span class="pill">資料截止 ${escapeHtml(dateTime(recommendation.data_cutoff))}</span>
               <span class="pill">風險 ${escapeHtml(decisionLabel(recommendation.risk_level))}</span>
-              <span class="pill">研究建議 · 尚未執行</span>
             </div>
           </div>
           <aside class="hero-side">
@@ -1398,7 +1597,7 @@
           </aside>
         </section>
 
-        <section class="metrics" aria-label="投資組合總覽">
+        <section class="metrics" aria-label="投資組合總覽" data-tab-section="overview">
           <article class="metric">
             <span class="metric-label">總策略資金</span>
             <strong class="metric-value">${money(recommendation.capital_usd)}</strong>
@@ -1421,7 +1620,7 @@
           </article>
         </section>
 
-        <section class="terminal-grid" aria-label="彭博風格策略分析">
+        <section class="terminal-grid" aria-label="彭博風格策略分析" data-tab-section="overview">
           <article class="terminal-card health-terminal">
             <div class="terminal-card-head">
               <div>
@@ -1460,26 +1659,18 @@
             <div class="terminal-stats">
               <div><span>累積報酬</span><strong>${statistic(analyticsPerformance.total_return_percent, "%")}</strong></div>
               <div><span>最大回撤</span><strong>${statistic(analyticsPerformance.maximum_drawdown_percent, "%")}</strong></div>
-              <div><span>3 日滾動</span><strong>${statistic(analyticsPerformance.latest_3_session_return_percent, "%")}</strong></div>
-              <div><span>7 日滾動</span><strong>${statistic(analyticsPerformance.latest_7_session_return_percent, "%")}</strong></div>
-              <div><span>完成收盤日</span><strong>${escapeHtml(analyticsPerformance.distinct_completed_sessions)}</strong></div>
-              <div><span>3 日正視窗</span><strong>${escapeHtml(analyticsPerformance.positive_3_session_windows)} / ${escapeHtml(analyticsPerformance.completed_3_session_windows)}</strong></div>
-              <div><span>7 日正視窗</span><strong>${escapeHtml(analyticsPerformance.positive_7_session_windows)} / ${escapeHtml(analyticsPerformance.completed_7_session_windows)}</strong></div>
-              <div><span>夏普比率／勝率</span><strong>${statistic(analyticsPerformance.sharpe_ratio)} / ${statistic(analyticsPerformance.win_rate_percent, "%")}</strong></div>
+              <div><span>${expectedWindowDays} 日滾動</span><strong>${statistic(performanceWindow.latest_return_percent, "%")}</strong></div>
+              <div><span>完成收盤日</span><strong>${escapeHtml(performanceWindow.completed_sessions)}</strong></div>
+              <div><span>${expectedWindowDays} 日正視窗</span><strong>${escapeHtml(performanceWindow.positive_windows)} / ${escapeHtml(performanceWindow.completed_windows)}</strong></div>
+              ${performanceSharpeStat}
             </div>
             <p>${escapeHtml(analyticsPerformance.methodology)}</p>
-            <div class="telemetry-strip">
-              <span>最近模型執行 ${escapeHtml(decisionLabel(providerTelemetry.status))}</span>
-              <span>${escapeHtml(providerTelemetry.total_requests)} 次請求</span>
-              <span>${escapeHtml(providerTelemetry.total_retries)} 次重試</span>
-              <span>${escapeHtml(providerTelemetry.total_estimated_input_tokens)} 估算輸入 Token</span>
-              <span>失敗分類 ${escapeHtml(decisionLabel(providerTelemetry.terminal_failure_category))}</span>
-            </div>
+            <p class="methodology-note">${escapeHtml(performanceWindow.method)}</p>
           </article>
         </section>
 
         <div class="dashboard-grid">
-          <section class="panel leaderboard" id="leaderboard">
+          <section class="panel leaderboard" id="leaderboard" data-tab-section="overview">
             <header class="panel-header">
               <div>
                 <span class="section-kicker">研究員表現排行</span>
@@ -1522,13 +1713,13 @@
             </div>
           </section>
 
-          <section class="panel strategy" id="portfolio">
+          <section class="panel strategy" id="portfolio" data-tab-section="overview">
             <header class="panel-header">
               <div>
                 <span class="section-kicker">短期配置</span>
                 <h2>6,000 美元短線建議配置</h2>
               </div>
-              <span class="panel-meta">僅供研究<br />尚未執行</span>
+              <span class="panel-meta">建議版本 ${escapeHtml(recommendation.run_id)}</span>
             </header>
             <div class="strategy-layout">
               <div class="allocation-visual">
@@ -1567,11 +1758,11 @@
                       .map(
                         (item) => `
                           <tr>
-                            <td data-label="標的"><span class="symbol">${escapeHtml(item.symbol)}</span></td>
+                            <td data-label="標的">${symbolLink(item.symbol)}</td>
                             <td data-label="建議金額">${money(item.target_amount_usd)}</td>
                             <td data-label="佔 6,000 比例">${percent(item.target_weight)}</td>
                             <td data-label="類型"><span class="asset-type">${escapeHtml(assetTypeLabel(item.asset_type))}</span></td>
-                            <td data-label="研究／風控備註" class="allocation-note">${escapeHtml(item.note)}</td>
+                            <td data-label="研究／風控備註" class="allocation-note">${glossaryText(item.note)}</td>
                           </tr>`,
                       )
                       .join("")}
@@ -1581,7 +1772,7 @@
             </div>
           </section>
 
-          <section class="panel" id="reasons">
+          <section class="panel" id="reasons" data-tab-section="overview">
             <header class="panel-header">
               <div>
                 <span class="section-kicker">委員會理由</span>
@@ -1596,7 +1787,7 @@
                     <article class="reason-card">
                       <span class="reason-number">${String(reason.id).padStart(2, "0")}</span>
                       <h3>${escapeHtml(reason.title)}</h3>
-                      <p>${escapeHtml(reason.summary)}</p>
+                      <p>${glossaryText(reason.summary)}</p>
                       <div class="reason-meta">
                         <span>${escapeHtml(decisionLabel(reason.category))}</span>
                         <span>信心 ${escapeHtml(reason.confidence)}</span>
@@ -1608,14 +1799,16 @@
             </div>
           </section>
 
-          <section class="panel committee" id="committee">
-            <header class="panel-header">
-              <div>
-                <span class="section-kicker">委員會重播 / 完整紀錄</span>
-                <h2>委員會實際內容</h2>
-              </div>
-              <span class="panel-meta">${escapeHtml(decisionLabel(committee.mode))}<br />${escapeHtml(committee.agent_model)}</span>
-            </header>
+          ${renderGlossary()}
+
+          <section class="panel committee" id="committee" data-tab-section="committee">
+          <header class="panel-header">
+            <div>
+              <span class="section-kicker">委員會重播 / 完整紀錄</span>
+              <h2>委員會實際內容</h2>
+            </div>
+            <span class="panel-meta">${escapeHtml(decisionLabel(committee.mode))}</span>
+          </header>
             <div class="committee-intro">
               <p>
                 每位研究員的觀點、理由、風險與失效條件均完整保留。
@@ -1627,7 +1820,7 @@
                 ? `
                   <div class="policy-override-note">
                     <strong>本輪最終配置已套用使用者硬限制</strong>
-                    <ul>${renderList(committee.policy_override_notes)}</ul>
+                    <ul>${renderList(committee.policy_override_notes, "未提供", glossaryText)}</ul>
                   </div>`
                 : ""
             }
@@ -1683,15 +1876,15 @@
                         <div class="committee-columns">
                           <section class="committee-block">
                             <h3>完整論點</h3>
-                            <ol>${renderList(proposal.arguments)}</ol>
+                            <ol>${renderList(proposal.arguments, "未提供", glossaryText)}</ol>
                           </section>
                           <section class="committee-block">
                             <h3>主要風險</h3>
-                            <ul>${renderList(proposal.risks)}</ul>
+                            <ul>${renderList(proposal.risks, "未提供", glossaryText)}</ul>
                           </section>
                           <section class="committee-block">
                             <h3>失效條件</h3>
-                            <ul>${renderList(proposal.invalidation_conditions)}</ul>
+                            <ul>${renderList(proposal.invalidation_conditions, "未提供", glossaryText)}</ul>
                           </section>
                         </div>
                       </div>
@@ -1723,11 +1916,11 @@
                         </section>
                         <section class="committee-block">
                           <h3>隱含假設</h3>
-                          <ul>${renderList(critique.hidden_assumptions)}</ul>
+                          <ul>${renderList(critique.hidden_assumptions, "未提供", glossaryText)}</ul>
                         </section>
                         <section class="committee-block">
                           <h3>要求修正</h3>
-                          <ul>${renderList(critique.required_changes)}</ul>
+                          <ul>${renderList(critique.required_changes, "未提供", glossaryText)}</ul>
                         </section>
                       </article>`,
                   )
@@ -1765,12 +1958,12 @@
                                 <div class="committee-columns">
                                   <section class="committee-block">
                                     <h3>提案者承認與修正</h3>
-                                    <ul>${renderList(response.conceded_points)}</ul>
-                                    <ul>${renderList(response.proposed_changes)}</ul>
+                                    <ul>${renderList(response.conceded_points, "未提供", glossaryText)}</ul>
+                                    <ul>${renderList(response.proposed_changes, "未提供", glossaryText)}</ul>
                                   </section>
                                   <section class="committee-block">
                                     <h3>證據式反駁</h3>
-                                    <ul>${renderList(response.rebuttals)}</ul>
+                                    <ul>${renderList(response.rebuttals, "未提供", glossaryText)}</ul>
                                   </section>
                                   <section class="committee-block">
                                     <h3>第二次裁決</h3>
@@ -1823,7 +2016,7 @@
                       <article class="final-allocation">
                         ${symbolLink(item.symbol)}
                         <span>${percent(item.target_weight)}</span>
-                        <small>${escapeHtml(item.note)}</small>
+                        <small>${glossaryText(item.note)}</small>
                       </article>`,
                   )
                   .join("")}
@@ -1832,13 +2025,13 @@
             ${renderAgentDirectory()}
           </section>
 
-          <section class="panel rebalance" id="rebalance">
+          <section class="panel rebalance" id="rebalance" data-tab-section="overview">
             <header class="panel-header">
               <div>
                 <span class="section-kicker">研究配置調整摘要</span>
                 <h2>本輪建議如何調整</h2>
               </div>
-              <span class="panel-meta">${escapeHtml(rebalance.pricing_session)} 收盤<br />僅供研究</span>
+              <span class="panel-meta">${escapeHtml(rebalance.pricing_session)} 收盤</span>
             </header>
             <p class="methodology-note">${escapeHtml(rebalance.basis)}</p>
             <div class="table-wrap strategy-table-wrap">
@@ -1848,7 +2041,7 @@
                     <th>標的</th>
                     <th>方向</th>
                     <th>建議金額變化</th>
-                    <th>估算股數變化</th>
+                    <th>股數變化</th>
                     <th>調整後配置</th>
                   </tr>
                 </thead>
@@ -1856,18 +2049,18 @@
                   ${rebalance.instructions
                     .map(
                       (item) => `
-                        <tr>
+                    <tr>
                           <td data-label="標的">${symbolLink(item.symbol)}</td>
                           <td data-label="方向">${escapeHtml(rebalanceActionLabel(item.action))}</td>
                           <td data-label="建議金額變化">${escapeHtml(signedMoney(item.change_usd))}</td>
-                          <td data-label="估算股數變化">
-                            ${escapeHtml(signedShares(item.estimated_share_change))}
-                            ${
-                              item.reference_close_usd
-                                ? `<small class="close-reference">@ ${money(item.reference_close_usd)}</small>`
-                                : ""
-                            }
-                          </td>
+                            <td data-label="股數變化">
+                              ${escapeHtml(signedShares(item.estimated_share_change))}
+                              ${
+                                item.reference_close_usd
+                                  ? `<small class="close-reference">@ ${money(item.reference_close_usd)}</small>`
+                                  : ""
+                              }
+                            </td>
                           <td data-label="調整後配置">${money(item.new_target_usd)}</td>
                         </tr>`,
                     )
@@ -1875,10 +2068,10 @@
                 </tbody>
               </table>
             </div>
-            <ul class="rebalance-warnings">${renderList(rebalance.warnings)}</ul>
+            <ul class="rebalance-warnings">${renderList(rebalance.warnings, "無提醒", glossaryText)}</ul>
           </section>
 
-          <section class="panel performance" id="performance">
+          <section class="panel performance" id="performance" data-tab-section="overview">
             <header class="panel-header">
               <div>
                 <span class="section-kicker">假設策略指數</span>
@@ -1906,14 +2099,9 @@
                 <small>${escapeHtml(researchJournal.performance.last_completed_return_percent)}% · ${escapeHtml(dateTime(researchJournal.performance.last_completed_evaluation_at))}</small>
               </article>
               <article>
-                <span>3 日滾動淨績效</span>
-                <strong>${statistic(analyticsPerformance.latest_3_session_return_percent, "%")}</strong>
-                <small>${escapeHtml(analyticsPerformance.positive_3_session_windows)} / ${escapeHtml(analyticsPerformance.completed_3_session_windows)} 個正視窗</small>
-              </article>
-              <article>
-                <span>7 日滾動淨績效</span>
-                <strong>${statistic(analyticsPerformance.latest_7_session_return_percent, "%")}</strong>
-                <small>${escapeHtml(analyticsPerformance.positive_7_session_windows)} / ${escapeHtml(analyticsPerformance.completed_7_session_windows)} 個正視窗</small>
+                <span>${expectedWindowDays} 日滾動淨績效</span>
+                <strong>${statistic(performanceWindow.latest_return_percent, "%")}</strong>
+                <small>${escapeHtml(performanceWindow.positive_windows)} / ${escapeHtml(performanceWindow.completed_windows)} 個正視窗</small>
               </article>
             </div>
             <p class="methodology-note">
@@ -1921,7 +2109,7 @@
             </p>
           </section>
 
-          <section class="panel evidence" id="evidence">
+          <section class="panel evidence" id="evidence" data-tab-section="overview">
             <header class="panel-header">
               <div>
                 <span class="section-kicker">證據引擎</span>
@@ -1937,7 +2125,7 @@
                     <article><span>波動狀態</span><strong>${escapeHtml(decisionLabel(market.regime.volatility))}</strong></article>
                     <article><span>利率狀態</span><strong>${escapeHtml(decisionLabel(market.regime.rates))}</strong></article>
                   </div>
-                  <ul class="evidence-notes">${renderList(market.regime.evidence)}</ul>`
+                  <ul class="evidence-notes">${renderList(market.regime.evidence, "未提供", glossaryText)}</ul>`
                 : `<p class="methodology-note">這份舊資料尚未包含確定性市場狀態；下一次正式委員會會開始產生。</p>`
             }
             ${
@@ -1960,7 +2148,7 @@
                           .map(
                             (item) => `
                               <tr>
-                                <td>${escapeHtml(item.symbol)}</td>
+                                <td>${symbolLink(item.symbol)}</td>
                                 <td>${escapeHtml(item.return_1d_percent ?? "—")}% / ${escapeHtml(item.return_5d_percent ?? "—")}% / ${escapeHtml(item.return_20d_percent ?? "—")}%</td>
                                 <td>${escapeHtml(item.volatility_20d_annualized_percent ?? "—")}%</td>
                                 <td>${escapeHtml(item.distance_from_ma20_percent ?? "—")}% / ${escapeHtml(item.distance_from_ma50_percent ?? "—")}%</td>
@@ -1983,7 +2171,7 @@
                       .map(
                         (event) => `
                           <a class="filing-card" href="${escapeHtml(event.source_url)}" target="_blank" rel="noopener noreferrer">
-                            <span>${escapeHtml(event.symbol)} · ${escapeHtml(event.form)}</span>
+                            <span>${symbolLink(event.symbol)} · ${escapeHtml(event.form)}</span>
                             <strong>${escapeHtml(event.description)}</strong>
                             <small>${escapeHtml(event.filing_date)}</small>
                           </a>`,
@@ -2005,7 +2193,7 @@
                             .map(
                               (fact) => `
                                 <tr>
-                                  <td>${escapeHtml(fact.symbol)}</td>
+                                  <td>${symbolLink(fact.symbol)}</td>
                                   <td><a href="${escapeHtml(fact.source_url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(fact.metric)}</a></td>
                                   <td>${escapeHtml(fact.value)} ${escapeHtml(fact.unit)}</td>
                                   <td>${escapeHtml(fact.period_end)}</td>
@@ -2037,7 +2225,7 @@
                               </header>
                               <p>${escapeHtml(localized.use)}</p>
                               <small>${escapeHtml(localized.cadence)} · ${escapeHtml(localized.latency)}</small>
-                              <ul>${renderList(localized.limits)}</ul>
+                              <ul>${renderList(localized.limits, "未提供", glossaryText)}</ul>
                             </article>`;
                           },
                         )
@@ -2046,10 +2234,10 @@
                   </details>`
                 : ""
             }
-            <ul class="rebalance-warnings">${renderList(market.warnings)}</ul>
+            <ul class="rebalance-warnings">${renderList(market.warnings, "無警示", glossaryText)}</ul>
           </section>
 
-          <section class="panel learning" id="market-survey">
+          <section class="panel learning" id="market-survey" data-tab-section="overview">
             <header class="panel-header">
               <div>
                 <span class="section-kicker">有來源市場調查</span>
@@ -2073,7 +2261,7 @@
                           <article class="learning-card">
                             <h3>${escapeHtml(item.title)}</h3>
                             <p>${escapeHtml(item.summary)}</p>
-                            <p><strong>3–7 日關聯</strong>${escapeHtml(item.market_relevance)}</p>
+                            <p><strong>市場關聯</strong>${escapeHtml(item.market_relevance)}</p>
                             <div class="reason-meta">
                               <span>${escapeHtml(item.category)} · ${escapeHtml(item.region)}</span>
                               <a href="${escapeHtml(item.source_url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.source_title)}</a>
@@ -2090,7 +2278,7 @@
             }
           </section>
 
-          <section class="panel learning" id="learning">
+          <section class="panel learning" id="learning" data-tab-section="overview">
             <header class="panel-header">
               <div>
                 <span class="section-kicker">學習循環</span>
@@ -2117,7 +2305,7 @@
             <div class="committee-columns learning-decisions">
               <section class="committee-block">
                 <h3>委員會修正</h3>
-                <ul>${renderList(learning.committee_changes)}</ul>
+                <ul>${renderList(learning.committee_changes, "未提供", glossaryText)}</ul>
               </section>
               <section class="committee-block">
                 <h3>是否新增委員</h3>
@@ -2130,11 +2318,11 @@
             </div>
           </section>
 
-          <section class="panel research-journal" id="research-journal">
+          <section class="panel research-journal" id="research-journal" data-tab-section="overview">
             <header class="panel-header">
               <div>
-                <span class="section-kicker">每日 AI 日誌</span>
-                <h2>每日 AI 投資日誌：假設、驗證與學習</h2>
+                <span class="section-kicker">每日研究日誌</span>
+                <h2>每日研究：假設、驗證與學習</h2>
               </div>
               <span class="panel-meta">${escapeHtml(readinessLabel(researchJournal.readiness))}<br />${escapeHtml(dateTime(researchJournal.data_cutoff))}</span>
             </header>
@@ -2221,10 +2409,10 @@
                 </div>
               </section>
             </div>
-            <ul class="rebalance-warnings">${renderList(researchJournal.warnings)}</ul>
+            <ul class="rebalance-warnings">${renderList(researchJournal.warnings, "無提醒", glossaryText)}</ul>
           </section>
 
-          <section class="panel decision-compare" id="decision-compare">
+          <section class="panel decision-compare" id="decision-compare" data-tab-section="overview">
             <header class="panel-header">
               <div>
                 <span class="section-kicker">決策差異終端</span>
@@ -2269,7 +2457,7 @@
             }
           </section>
 
-          <section class="panel archive" id="archive">
+          <section class="panel archive" id="archive" data-tab-section="overview">
             <header class="panel-header">
               <div>
                 <span class="section-kicker">公開決策封存</span>
@@ -2292,7 +2480,7 @@
             </div>
           </section>
 
-          <section class="panel" id="risk">
+          <section class="panel" id="risk" data-tab-section="overview">
             <header class="panel-header">
               <div>
                 <span class="section-kicker">風險關卡</span>
@@ -2311,16 +2499,17 @@
               </div>
             </div>
           </section>
-        </div>
+    </div>
 
-        <footer class="footer">
-          <span>僅供人工執行 · 券商存取：未啟用</span>
-          <span>市場資料 ${escapeHtml(market.source)}</span>
-          <span>最後更新 ${escapeHtml(dateTime(system.updated_at))}</span>
-          <span>每日收盤後重新驗證與決策</span>
-        </footer>
-      </div>
+    <footer class="footer">
+      <span>僅供人工執行 · 券商存取：未啟用</span>
+      <span>市場資料 ${escapeHtml(market.source)}</span>
+      <span>最後更新 ${escapeHtml(dateTime(system.updated_at))}</span>
+      <span>每日收盤後重新驗證與決策</span>
+    </footer>
+  </div>
     `;
+    installTabNavigation();
     installPerformanceChart(performance.points);
     installDecisionComparison(comparableRecommendations);
   };
@@ -2336,7 +2525,6 @@
     fetchJson("rebalance.json"),
     fetchJson("research_journal.json"),
     fetchJson("dashboard_analytics.json"),
-    fetchJson("provider_telemetry.json"),
   ])
     .then(
       ([
@@ -2350,7 +2538,6 @@
         rebalance,
         researchJournal,
         dashboardAnalytics,
-        providerTelemetry,
       ]) =>
         render({
           recommendation,
@@ -2363,7 +2550,6 @@
           rebalance,
           researchJournal,
           dashboardAnalytics,
-          providerTelemetry,
         }),
     )
     .catch((error) => {

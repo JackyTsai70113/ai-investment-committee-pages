@@ -142,6 +142,94 @@ a {
   gap: 0.55rem;
 }
 
+.tab-controls {
+  position: sticky;
+  top: 5.4rem;
+  z-index: 18;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.4rem 0.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.tab-menu-toggle {
+  display: none;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(7, 17, 15, 0.8);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.menu-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.tab-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.tab-trigger {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.4rem 0.75rem;
+  color: var(--faint);
+  background: var(--panel);
+}
+
+.tab-trigger:hover {
+  border-color: rgba(199, 241, 91, 0.35);
+}
+
+.tab-trigger.active {
+  color: var(--acid);
+  border-color: rgba(199, 241, 91, 0.45);
+  background: rgba(199, 241, 91, 0.08);
+}
+
+.glossary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.glossary-card {
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.018);
+}
+
+.glossary-card h3 {
+  margin-top: 0;
+}
+
+.glossary-card p {
+  margin: 0.45rem 0 0;
+  color: var(--muted);
+  line-height: 1.55;
+  font-size: 0.8rem;
+}
+
+.glossary-term-link {
+  text-decoration: underline;
+  text-underline-offset: 0.16rem;
+  color: var(--blue);
+}
+
+.glossary-term-link:hover,
+.glossary-term-link:focus-visible {
+  color: var(--acid);
+}
+
 .pill {
   display: inline-flex;
   align-items: center;
@@ -2268,14 +2356,14 @@ td {
 .symbol-link {
   color: inherit;
   font-weight: 800;
-  text-decoration-color: var(--accent);
+  text-decoration-color: var(--acid);
   text-decoration-thickness: 2px;
   text-underline-offset: 0.2em;
 }
 
 .symbol-link:hover,
 .symbol-link:focus-visible {
-  color: var(--accent);
+  color: var(--acid);
 }
 
 .close-reference {
@@ -2442,6 +2530,10 @@ td {
   .final-allocation-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+
+  .glossary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 640px) {
@@ -2483,6 +2575,36 @@ td {
 
   .hero-side {
     display: block;
+  }
+
+  .tab-controls {
+    position: static;
+    display: grid;
+    gap: 0.55rem;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .tab-menu-toggle {
+    display: inline-flex;
+    justify-self: end;
+  }
+
+  .tab-strip {
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .tab-strip.is-open {
+    display: flex;
+  }
+
+  .tab-trigger {
+    justify-content: center;
+  }
+
+  .glossary-grid {
+    grid-template-columns: 1fr;
   }
 
   .score-orbit {
