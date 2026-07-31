@@ -152,388 +152,6 @@
     "cio",
   ];
 
-  const agentGlobalLens = {
-    macro: ["us_politics", "rates", "global_economy", "geopolitics", "social_demand", "culture", "climate"],
-    technical: ["market", "volatility", "positioning", "global_economy", "geopolitics", "climate"],
-    momentum: ["industry", "global_economy", "geopolitics", "social_demand", "culture", "climate", "us_economy", "rates"],
-    news: ["us_politics", "global_economy", "geopolitics", "social_demand", "culture", "climate", "rates", "company"],
-    earnings: ["global_economy", "geopolitics", "company", "industry", "earnings", "costs", "culture", "climate", "social_demand", "us_politics", "rates"],
-    etf: ["global_economy", "market", "rates", "geopolitics", "energy", "culture", "climate", "us_politics"],
-    ownership: ["company", "global_economy", "social_demand", "culture", "geopolitics"],
-    liquidity: ["rates", "global_economy", "geopolitics", "social_demand", "culture", "climate", "market", "volatility"],
-    learning: ["macro", "market", "global_economy", "social_demand", "geopolitics", "culture", "climate", "rates", "us_politics"],
-    portfolio: ["global_economy", "industry", "rates", "geopolitics", "social_demand", "culture", "climate", "us_politics"],
-    risk: ["macro", "volatility", "rates", "geopolitics", "social_demand", "culture", "climate", "market"],
-    devil_advocate: ["macro", "geopolitics", "social_demand", "culture", "climate", "risk", "policy", "news"],
-    cio: ["global_economy", "us_politics", "geopolitics", "rates", "social_demand", "culture", "climate", "market"],
-  };
-
-  const policyEvidenceCategories = ["us_politics", "rates", "global_economy", "geopolitics", "social_demand"];
-
-  const toNumber = (value) => {
-    const parsed = Number(value);
-    return Number.isFinite(parsed) ? parsed : null;
-  };
-
-  const asList = (value) => (Array.isArray(value) ? value : []);
-
-  const findQuote = (market, symbol) =>
-    (market.quotes || []).find((item) => item.symbol === symbol);
-
-  const findFeature = (market, symbol) =>
-    (market.features || []).find((item) => item.symbol === symbol);
-
-  const classifyQuoteTrend = (changePercent) => {
-    if (changePercent === null || changePercent === undefined) return "觀察中";
-    const value = toNumber(changePercent);
-    if (value === null) return "觀察中";
-    if (value > 0.8) return "偏多";
-    if (value < -0.8) return "偏空";
-    return "盤整";
-  };
-
-  const regimeCopy = (value) =>
-    value === "risk_on"
-      ? "偏風險偏好"
-      : value === "risk_off"
-        ? "風險收斂"
-        : value === "stressed"
-          ? "壓力上升"
-      : value || "未足夠";
-
-  const formatRegionLabel = (value) => String(value || "Global").trim();
-
-  const isInternational = (evidence) =>
-    String(evidence.region || "").toLowerCase() !== "us";
-
-  const evidenceToRegionalItem = (item) => `${formatRegionLabel(item.region)}｜${item.title}`;
-
-  const latestResearchForCategory = (market, categories, limit = 3) =>
-    (market.research_evidence || [])
-      .filter((item) => categories.includes(item.category))
-      .slice(0, limit);
-
-  const sortByAbsChange = (items) =>
-    [...items].sort((left, right) => {
-      const leftChange = Math.abs(toNumber(left.change_percent) || 0);
-      const rightChange = Math.abs(toNumber(right.change_percent) || 0);
-      return rightChange - leftChange;
-    });
-
-  const topActiveQuotes = (market, symbols, limit = 3) =>
-    sortByAbsChange(
-      (market.quotes || []).filter((item) => symbols.includes(item.symbol)),
-    ).slice(0, limit);
-
-  const portfolioMix = (recommendation) => {
-    const invested = recommendation.allocations
-      .filter((item) => item.symbol !== "CASH")
-      .reduce((total, item) => total + Number(item.target_weight), 0);
-    const cash = recommendation.allocations.find((item) => item.symbol === "CASH");
-    return {
-      investedWeight: invested,
-      cashWeight: Number(cash?.target_weight || 0),
-      cashAmount: Number(cash?.target_amount_usd || 0),
-    };
-  };
-
-  const buildMarketInsight = (role, market, recommendation, learning) => {
-    const safeMarket = market || {};
-    const safeQuotes = asList(safeMarket.quotes);
-    const safeSourceCatalog = asList(safeMarket.source_catalog);
-    const safeWarnings = asList(safeMarket.warnings);
-    const safeResearch = asList(safeMarket.research_evidence);
-    const majorRisks = asList(recommendation.major_risks);
-    const invalidationConditions = asList(recommendation.invalidation_conditions);
-    const topReasons = asList(recommendation.top_reasons);
-    const regime = safeMarket.regime || {};
-    const regimeTrend = regime.trend || "insufficient_data";
-    const regimeVol = regime.volatility || "insufficient_data";
-    const regimeRates = regime.rates || "insufficient_data";
-    const regimeEvidence = asList(regime.evidence);
-    const mix = portfolioMix(recommendation);
-    const regionSensitiveEvidence = safeResearch.filter(
-      (item) => item.region && item.region !== "US",
-    );
-    const globalCategories = agentGlobalLens[role] || ["global_economy", "geopolitics", "social_demand", "culture", "climate"];
-    const globalSignals = latestResearchForCategory(safeMarket, globalCategories, 8)
-      .filter(isInternational)
-      .map(evidenceToRegionalItem)
-      .slice(0, 5);
-
-    const regimeSignals = [
-      `市場節奏：${regimeCopy(regimeTrend)}、波動為${regimeCopy(regimeVol)}、利率為${regimeCopy(regimeRates)}。`,
-      ...regimeEvidence.slice(0, 2),
-    ].filter(Boolean);
-
-    const symbolsFocus = safeQuotes.map((item) => item.symbol);
-    const macroContext = {
-      keySymbols: ["SPY", "QQQ", "TLT", "GLD", "^VIX", "^TNX", "CL=F", "ERX"],
-    };
-    const q = (symbol) => findQuote(safeMarket, symbol);
-    const f = (symbol) => findFeature(safeMarket, symbol);
-
-    const evidenceByCategory = (categoryList) =>
-      latestResearchForCategory(safeMarket, categoryList, 3).map((item) => item.title);
-
-    const evidenceByKeyword = (keywords, limit = 3) =>
-      safeResearch
-        .filter((item) => {
-          const sourceText = `${item.title || ""} ${item.summary || ""} ${item.market_relevance || ""}`.toLowerCase();
-          return keywords.some((keyword) => sourceText.includes(keyword));
-        })
-        .slice(0, limit)
-        .map((item) => `${item.title}（${item.region}）`);
-
-    const crossRegionSignals = regionSensitiveEvidence
-      .slice(0, 4)
-      .map((item) => `${item.region}｜${item.title}`);
-
-    const macroSignals = [
-      q("^VIX")
-        ? `VIX ${q("^VIX").price ?? "—"}（1D ${q("^VIX").change_percent ?? "—"}%）`
-        : null,
-      q("^TNX")
-        ? `10Y 期收益率 ${q("^TNX").price ?? "—"}（1D ${q("^TNX").change_percent ?? "—"}%）`
-        : null,
-      q("CL=F")
-        ? `布蘭特油價 ${q("CL=F").price ?? "—"}（1D ${q("CL=F").change_percent ?? "—"}%）`
-        : null,
-    ].filter(Boolean);
-
-    const sourceCount = {
-      filings: safeSourceCatalog.filter((source) =>
-        ["filings", "company", "ownership"].includes(source.category),
-      ).length,
-      macro: safeSourceCatalog.filter((source) =>
-        ["macro", "rates", "volatility", "market", "energy", "geopolitics"].includes(
-          source.category,
-        ),
-      ).length,
-      international: safeSourceCatalog.filter((source) =>
-        ["macro", "market", "rates", "volatility", "energy", "geopolitics"].includes(
-          source.category,
-        ),
-      ).length,
-    };
-
-    const topMovers = topActiveQuotes(
-      safeMarket,
-      ["SPY", "QQQ", "SMH", "NVDA", "AMD", "PLTR", "TLT", "GLD"],
-      3,
-    );
-    const technicalTrendSignals = topMovers.map((item) => {
-      const change = toNumber(item.change_percent);
-      return `${item.symbol} ${change ?? "—"}%，距 50 日 ${(f(item.symbol) ? (toNumber(f(item.symbol).distance_from_ma50_percent) || 0) : "—")}%`;
-    });
-
-  const policyEvidence = latestResearchForCategory(
-      safeMarket,
-      policyEvidenceCategories,
-      3,
-    );
-    const cultureSignals = evidenceByCategory(["social_demand"]);
-    const climateSignals = evidenceByKeyword([
-      "climate",
-      "能源",
-      "油價",
-      "氣候",
-      "風險",
-      "供應",
-      "energy",
-      "flood",
-      "drought",
-      "storm",
-    ]);
-    const globalSignalsByCategory = {
-      politics: latestResearchForCategory(safeMarket, ["us_politics", "geopolitics"], 4)
-        .filter(isInternational)
-        .map(evidenceToRegionalItem),
-      culture: latestResearchForCategory(safeMarket, ["social_demand"], 4).map(evidenceToRegionalItem),
-      climate: climateSignals.slice(0, 4),
-    };
-    const climateGlobalSignals = climateSignals.slice(0, 4);
-
-  const byRole = {
-      macro: {
-        stance: regimeCopy(regimeTrend),
-        summary: "先看資金成本、政策、地緣與區域風險，不先假設哪個故事比較順。",
-        signals: [
-          ...regimeSignals,
-          ...macroSignals,
-          ...evidenceByCategory(["us_politics", "rates", "global_economy", "geopolitics"]).map(
-            (item) => `政策與地緣：${item}`,
-          ),
-          ...cultureSignals.map((item) => `文化與社會：${item}`),
-          ...climateSignals.slice(0, 2).map((item) => `氣候／供應鏈：${item}`),
-          `跨區視角：${crossRegionSignals.length ? crossRegionSignals.join("；") : "目前未見明顯新衝擊"}`,
-        ].slice(0, 6),
-        globalPulse: globalSignalsByCategory.politics,
-        focus: `可用來源：${sourceCount.macro} 項（其中國際來源 ${sourceCount.international}）`,
-      },
-      technical: {
-        stance: classifyQuoteTrend(topMovers[0]?.change_percent),
-        summary: "用 1D/5D、MA20/MA50、RSI 與量能判斷近期彈性，不靠敘事帶節奏。",
-        signals: [
-          ...technicalTrendSignals.slice(0, 3),
-          ...evidenceByCategory(["us_economy", "industry"]).map((item) => `市場驗證：${item}`),
-          `回補交易量：${macroContext.keySymbols.length} 個核心標的中目前偏高者較多。`,
-          `跨區觀察：${crossRegionSignals.length ? crossRegionSignals[0] : "無明顯區域信號"}`,
-        ].slice(0, 6),
-        globalPulse: globalSignalsByCategory.politics,
-        focus: "若失速同時出現高波動與多空鈍化，需放慢倉位擴張。",
-      },
-      momentum: {
-        stance: topMovers.length ? `${topMovers[0].symbol} 表現領先` : "觀察中",
-        summary: "以輪動與相對動能為主，挑出可持續與潛在衰退資產。",
-        signals: topMovers.map((item) => {
-          const distance = f(item.symbol)?.distance_from_ma20_percent;
-          const rsi = f(item.symbol)?.rsi14;
-          return `${item.symbol}：1D ${item.change_percent}%｜MA20 ${distance !== undefined ? `${distance}` : "—"}｜RSI ${rsi ?? "—"}`;
-        }),
-        focus: "同時追蹤多頭延續與失速反轉，不只看單日脈衝。",
-      },
-      news: {
-        stance: learning?.verdict === "too_early" ? "訊息分散" : "訊息可分群",
-        summary: "先把可驗證事件按類別組成交易邏輯，再放到政策、國際、文化、氣候脈絡裡。",
-        signals: [
-          ...policyEvidence.map((item) => `${item.category}/${item.region}：${item.title}`),
-          `最新資料更新：${regimeSignals[0]}`,
-          ...globalSignalsByCategory.politics.map((item) => `國際脈絡：${item}`),
-          ...cultureSignals.map((item) => `文化脈絡：${item}`),
-          ...climateSignals.map((item) => `氣候／地緣通道：${item}`),
-        ].filter(Boolean),
-        focus: "未來一週要追蹤同類事件是否重複出現並延續。",
-        globalPulse: [
-          ...globalSignalsByCategory.politics,
-          ...globalSignalsByCategory.culture,
-          ...climateGlobalSignals,
-        ].slice(0, 6),
-      },
-      earnings: {
-        stance: evidenceByCategory(["earnings", "costs"]).length ? "基本面可讀" : "基本面待補",
-        summary: "關心企業是否有實質成長、現金流與成本節奏，把政治與能源成本先換成可量化影響。",
-        signals: [
-          ...latestResearchForCategory(
-            safeMarket,
-            ["earnings", "company", "costs"],
-            4,
-          ).map((item) => `${item.title}（${item.region}）`),
-          `該角色可直接對應個股：${symbolsFocus.slice(0, 5).join("、") || "無"}`,
-        ].filter(Boolean),
-        globalPulse: [...globalSignalsByCategory.politics, ...globalSignalsByCategory.culture].slice(0, 6),
-        focus: "若財報指標與市場方向不一致，優先確認是否只是估值修正週期。",
-      },
-      etf: {
-        stance: regimeVol === "stressed" ? "偏保守" : "可選工具",
-        summary: "把暴露方向轉成可驗證工具，重視每日重設與回撤。",
-        signals: [
-          `${classifyQuoteTrend(toNumber(q("TQQQ")?.change_percent))} 的槓桿風險（TQQQ）`,
-          `${classifyQuoteTrend(toNumber(q("SQQQ")?.change_percent))} 的避險對應（SQQQ）`,
-          `SPX/大盤工具：${classifyQuoteTrend(toNumber(q("SPY")?.change_percent))} / ${classifyQuoteTrend(toNumber(q("QQQ")?.change_percent))}`,
-          `可用指標：VIX ${toNumber(q("^VIX")?.change_percent) ?? "—"}、布蘭特 ${toNumber(q("CL=F")?.change_percent) ?? "—"}%（兼顧能源風險）。`,
-        ],
-        globalPulse: globalSignalsByCategory.climate,
-        focus: "若波動擴大，反向與槓桿都必須縮短持有期。",
-      },
-      ownership: {
-        stance: sourceCount.filings > 0 ? "可監測" : "來源不足",
-        summary: "核對 13F 與法說持股信號，辨識一致性而非情緒擴大。",
-        signals: [
-          `持股/申報來源共 ${sourceCount.filings} 類`,
-          ...evidenceByCategory(["company"]).map((item) => `持股提示：${item}`),
-        ].slice(0, 6),
-        globalPulse: globalSignalsByCategory.politics,
-        focus: "持股證據多為低時效，不能直接推導短線點位。",
-      },
-      liquidity: {
-        stance: symbolsFocus.length > 10 ? "交易可行" : "流動性觀察",
-        summary: "以量能、價差與事件日跳空風險評估能否順利落實建議。",
-        signals: [
-          ...topActiveQuotes(safeMarket, ["SPY", "QQQ", "SMH", "AMD", "TLT", "GLD"], 3).map(
-            (item) => `${item.symbol} 成交量 ${item.volume || "—"}（1D ${item.change_percent || "—"}%）`,
-          ),
-          ...safeWarnings.slice(0, 2),
-        ].filter(Boolean),
-        globalPulse: globalSignalsByCategory.culture,
-        focus: "高波動時先保留現金和降低調整次數。",
-      },
-      learning: {
-        stance: learning?.verdict || "監測中",
-        summary: "根據最近驗證結果調整流程與假設，防止固定循環偏誤。",
-        signals: [
-          ...(learning?.lessons || []).map((lesson) => `${lesson.title}：${lesson.implication}`),
-          `歷程評估：${learning?.member_assessment || "等待更新"}`,
-        ].filter(Boolean),
-        globalPulse: globalSignals,
-        focus: "下一輪只保留可驗證且可被反例否決的知識。",
-      },
-      portfolio: {
-        stance: mix.cashWeight > 0.35 ? "保守偏重" : "風險可承受",
-        summary: "將研究結果轉為策略上可落地的配置比例，兼顧政策上限與分散。",
-        signals: [
-          `風險資產占比 ${(mix.investedWeight * 100).toFixed(0)}%，現金 ${(mix.cashWeight * 100).toFixed(0)}%`,
-          `本輪建議：${recommendation.status}｜總資金 ${money(recommendation.capital_usd)}`,
-          ...(topReasons || [])
-            .slice(0, 2)
-            .map((item) => `${item.category}：${item.title}`),
-        ],
-        globalPulse: globalSignals,
-        focus: "任何權重變化都需映射到實際可交易尺寸與失效條件。",
-      },
-      risk: {
-        stance: recommendation.risk_level || "中性",
-        summary: "把可量化風險先擋掉，把不可量化事件列為失效條件。",
-        signals: [
-          ...majorRisks.slice(0, 2),
-          ...invalidationConditions.slice(0, 2),
-          ...crossRegionSignals.slice(0, 2).map((item) => `跨區外溢：${item}`),
-          `當前提醒：${safeWarnings.length ? safeWarnings[0] : "無明確新風險警示"}`,
-        ].filter(Boolean),
-        focus: "如果失效條件成立，優先降低槓桿與高 Beta 部位。",
-      },
-      devil_advocate: {
-        stance: "反例集中",
-        summary: "把系統共識的斷裂點變成可驗證的補測問題。",
-        signals: [
-          `市場一致性：${recommendation.model_score >= 70 ? "高" : recommendation.model_score >= 50 ? "中" : "低"}`,
-          `風險語意：${regimeVol}`,
-          `研究訊號：${evidenceByCategory(["social_demand", "geopolitics"]).join("；") || "未足夠"}`
-            .slice(0, 140),
-          `現金比例 ${(mix.cashWeight * 100).toFixed(0)}%，是否隱含過度保守需對照報酬期望。`,
-          ...climateSignals.slice(0, 1).map((item) => `氣候風險測試：${item}`),
-        ].filter(Boolean),
-        globalPulse: globalSignals,
-        focus: "至少提一個反對假設與其可觀測失效點。",
-      },
-      cio: {
-        stance: mix.cashWeight > 0.4 ? "政策第一" : "策略平衡",
-        summary: "在可驗證市場證據下輸出可落地且可審計的最終配置。",
-        signals: [
-          `政策條件：${recommendation.status}｜風險 ${recommendation.risk_level}`,
-          `預估風險/報酬：${recommendation.model_score} 分`,
-          ...topReasons.slice(0, 3).map((item) => `${item.id}. ${item.title}`),
-          `下一步觸發：${invalidationConditions.slice(0, 2).join("；") || "無"}`,
-          `跨區追蹤：${crossRegionSignals.slice(0, 2).join("；") || "目前未看到跨區風險集中爆發"}`,
-        ].filter(Boolean),
-        globalPulse: [
-          ...globalSignalsByCategory.politics,
-          ...globalSignalsByCategory.climate,
-          ...globalSignalsByCategory.culture,
-        ].slice(0, 6),
-        focus: "輸出結果仍需與委員會學習循環對齊，不能硬化為真理。",
-      },
-    };
-
-    return byRole[role] || {
-      stance: "觀察中",
-      summary: "目前資料不足，先以歷史規範與政策保守。",
-      signals: ["目前快照可讀欄位不足，等待下輪完整刷新。"],
-      globalPulse: ["目前缺乏可驗證的跨區脈絡。"],
-      focus: "維持固定風控界線。",
-    };
-  };
-
   const escapeHtml = (value) =>
     String(value ?? "")
       .replaceAll("&", "&amp;")
@@ -992,21 +610,20 @@
       >${escapeHtml(profile.label)}</a>`;
   };
 
-  const renderAgentDirectory = (market, recommendation, learning) => `
+  const renderAgentDirectory = () => `
     <section class="agent-directory" id="agent-directory" aria-labelledby="agent-directory-title">
-        <header class="agent-directory-header">
-          <div>
-            <span class="section-kicker">角色目錄</span>
-            <h3 id="agent-directory-title">認識投資委員會</h3>
-          </div>
-          <p>點擊委員會紀錄中的研究員名稱，可直接跳到角色說明；每位角色都提供白話定位與當前國際脈絡對位。</p>
-        </header>
+      <header class="agent-directory-header">
+        <div>
+          <span class="section-kicker">角色目錄</span>
+          <h3 id="agent-directory-title">認識投資委員會</h3>
+        </div>
+        <p>點擊委員會紀錄中的研究員名稱，可直接跳到它的角色說明。</p>
+      </header>
       <div class="agent-profile-grid">
         ${agentProfileOrder
           .map(
             (key) => {
               const profile = agentProfiles[key];
-              const insight = buildMarketInsight(key, market, recommendation, learning);
               return `
               <article class="agent-profile-card" id="agent-profile-${escapeHtml(key)}">
                 <header>
@@ -1014,15 +631,10 @@
                   <h4>${escapeHtml(profile.label)}</h4>
                   <p>${escapeHtml(profile.summary)}</p>
                 </header>
-                <p class="agent-profile-intro">白話版定位：${escapeHtml(insight.summary)}</p>
                 <dl>
                   <div>
                     <dt>負責內容</dt>
                     <dd>${escapeHtml(profile.responsibility)}</dd>
-                  </div>
-                  <div>
-                    <dt>目前國際對位</dt>
-                    <dd>${escapeHtml((insight.globalPulse || []).slice(0, 4).join("；") || "尚未產生可用跨區脈絡")}</dd>
                   </div>
                   <div>
                     <dt>使用資訊</dt>
@@ -1048,69 +660,6 @@
           .join("")}
       </div>
     </section>`;
-
-  const renderAgentIntelligencePanel = (market, recommendation, learning) => {
-    const cards = agentProfileOrder
-      .map((role) => {
-        const profile = agentProfiles[role];
-        if (!profile) return "";
-        const insight = buildMarketInsight(role, market, recommendation, learning);
-        const signals = Array.isArray(insight.signals) ? insight.signals : [];
-        const globalPulse = Array.isArray(insight.globalPulse) ? insight.globalPulse : [];
-        const evidence = signals.slice(0, 5);
-        return `
-          <article class="agent-intel-card">
-            <header class="agent-intel-header">
-              <div>
-                <span class="agent-intel-role">${escapeHtml(profile.label)}</span>
-                <strong>${escapeHtml(profile.title)}</strong>
-              </div>
-              <span class="agent-intel-stance">${escapeHtml(insight.stance)}</span>
-            </header>
-            <p class="agent-intel-summary">${escapeHtml(insight.summary)}</p>
-            <div class="agent-intel-signal">
-              <h4>本輪快照解讀</h4>
-              <ul>
-                ${evidence
-                  .map((item) => `<li>${escapeHtml(item)}</li>`)
-                  .join("")}
-              </ul>
-            </div>
-            <div class="agent-intel-global">
-              <h4>國際情勢對位</h4>
-              <ul>
-                ${globalPulse
-                  .map((item) => `<li>${escapeHtml(item)}</li>`)
-                  .join("") || "<li>目前尚未看到明確全球對位。</li>"}
-              </ul>
-            </div>
-            <p class="agent-intel-focus">
-              <strong>對應重點：</strong>${escapeHtml(insight.focus)}
-            </p>
-            <div class="agent-intel-link">
-              ${agentLink(role)}
-            </div>
-          </article>`;
-      })
-      .join("");
-
-    return `
-      <section class="panel agent-intel" data-tab-section="agent-intel" id="agent-intel">
-        <header class="panel-header">
-          <div>
-            <span class="section-kicker">交易角色觀點</span>
-            <h2>交易/研究角色市場情境導覽</h2>
-          </div>
-          <span class="panel-meta">${escapeHtml(dateTime(market.research_generated_at || market.generated_at))}<br />以目前快照為主</span>
-        </header>
-        <div class="panel-intro">
-          <p>每位角色先有白話自介，再依「近期市況＋政策＋國際情勢」做責任邊界內的切片解讀。資料不補述歷史假設，僅以可追溯欄位判斷。</p>
-        </div>
-        <div class="agent-intel-grid">
-          ${cards}
-        </div>
-      </section>`;
-  };
 
   const decisionLabel = (value) => {
     const labels = {
@@ -2036,7 +1585,6 @@ const researchStatusLabel = (value) => {
           <div class="tab-strip" id="main-tab-strip" data-tab-strip>
             <button type="button" class="tab-trigger active" data-tab-trigger data-tab-target="overview" aria-selected="true">總覽</button>
             <button type="button" class="tab-trigger" data-tab-trigger data-tab-target="committee" aria-selected="false">委員會實際內容</button>
-            <button type="button" class="tab-trigger" data-tab-trigger data-tab-target="agent-intel" aria-selected="false">角色觀點</button>
             <button type="button" class="tab-trigger" data-tab-trigger data-tab-target="glossary" aria-selected="false">術語表</button>
           </div>
         </nav>
@@ -2275,7 +1823,6 @@ const researchStatusLabel = (value) => {
           </section>
 
           ${renderGlossary()}
-          ${renderAgentIntelligencePanel(market, recommendation, learning)}
 
           <section class="panel committee" id="committee" data-tab-section="committee">
           <header class="panel-header">
@@ -2498,7 +2045,7 @@ const researchStatusLabel = (value) => {
                   .join("")}
               </div>
             </div>
-            ${renderAgentDirectory(market, recommendation, learning)}
+            ${renderAgentDirectory()}
           </section>
 
           <section class="panel rebalance" id="rebalance" data-tab-section="overview">
