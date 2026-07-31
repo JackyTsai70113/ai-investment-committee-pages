@@ -1036,7 +1036,7 @@
             <span class="live-dot" aria-hidden="true"></span>
             <strong>投資委員會群組</strong>
           </div>
-          <span>執行編號 ${escapeHtml(committee.run_id)}</span>
+          <span>研究編號 ${escapeHtml(committee.run_id)}</span>
         </header>
         <article class="chat-message system-message">
           <div class="chat-bubble">
@@ -1500,7 +1500,7 @@ const researchStatusLabel = (value) => {
     dashboardAnalytics,
   }) => {
     const isLive = recommendation.status === "live";
-    const statusLabel = "研究建議 · 尚未執行";
+    const statusLabel = "研究建議 · 研究用途";
     const invested = recommendation.allocations
       .filter((item) => item.symbol !== "CASH")
       .reduce((total, item) => total + Number(item.target_amount_usd), 0);
@@ -2418,7 +2418,7 @@ const researchStatusLabel = (value) => {
                 <span class="section-kicker">決策差異終端</span>
                 <h2>比較任兩輪配置與十大理由</h2>
               </div>
-              <span class="panel-meta">${escapeHtml(comparableRecommendations.length)} 次執行<br />公開研究</span>
+              <span class="panel-meta">${escapeHtml(comparableRecommendations.length)} 次建議<br />公開研究</span>
             </header>
             <div class="privacy-boundary">
               <strong>建議與實際部位比較：私人資料，不在公開網站發布</strong>
@@ -2502,7 +2502,7 @@ const researchStatusLabel = (value) => {
     </div>
 
     <footer class="footer">
-      <span>僅供人工執行 · 券商存取：未啟用</span>
+      <span>僅供研究參考 · 不含實際帳戶或下單流程</span>
       <span>市場資料 ${escapeHtml(market.source)}</span>
       <span>最後更新 ${escapeHtml(dateTime(system.updated_at))}</span>
       <span>每日收盤後重新驗證與決策</span>
