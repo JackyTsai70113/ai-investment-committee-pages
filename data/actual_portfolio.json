@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "as_of": "2026-07-23T21:00:00+08:00",
+  "currency": "USD",
+  "initial_capital_usd": "6000.00",
+  "total_value_usd": "6000.00",
+  "source": "user_confirmed",
+  "positions": [
+    {
+      "symbol": "CASH",
+      "asset_type": "cash",
+      "shares": "0",
+      "average_cost_usd": null,
+      "market_value_usd": "6000.00",
+      "weight": "1.00"
+    }
+  ],
+  "note": "使用者已確認初始資金為 6,000 美元；尚未提供任何已成交持股。"
+}
