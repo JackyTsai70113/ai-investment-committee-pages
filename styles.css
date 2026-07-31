@@ -2118,6 +2118,13 @@ td {
   margin: 0;
 }
 
+.agent-profile-intro {
+  margin: 0.4rem 0 0.5rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
 .agent-profile-back {
   width: fit-content;
   color: var(--faint);
@@ -2126,6 +2133,136 @@ td {
 
 .agent-profile-back:hover {
   color: var(--acid);
+}
+
+.agent-intel {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.panel-intro p {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.agent-intel-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.agent-intel-card {
+  display: grid;
+  gap: 0.6rem;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(12, 25, 21, 0.42);
+}
+
+.agent-intel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.8rem;
+}
+
+.agent-intel-role {
+  color: var(--faint);
+  font: 700 0.74rem/1.35 ui-monospace, SFMono-Regular, Menlo, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.agent-intel-header strong {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--acid-2);
+}
+
+.agent-intel-stance {
+  display: inline-flex;
+  padding: 0.33rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid rgba(126, 203, 131, 0.22);
+  color: var(--acid-2);
+  font: 650 0.7rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+  white-space: nowrap;
+}
+
+.agent-intel-summary {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.79rem;
+  line-height: 1.6;
+}
+
+.agent-intel-signal {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.agent-intel-signal h4 {
+  margin: 0.1rem 0;
+  font: 700 0.74rem/1.3 ui-monospace, SFMono-Regular, Menlo, monospace;
+  color: var(--orange);
+}
+
+.agent-intel-signal ul {
+  margin: 0;
+  padding-left: 1.08rem;
+  color: var(--muted);
+  font-size: 0.76rem;
+  line-height: 1.55;
+}
+
+.agent-intel-global {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.agent-intel-global h4 {
+  margin: 0.1rem 0;
+  font: 700 0.74rem/1.3 ui-monospace, SFMono-Regular, Menlo, monospace;
+  color: var(--acid);
+}
+
+.agent-intel-global ul {
+  margin: 0;
+  padding-left: 1.08rem;
+  color: var(--muted);
+  font-size: 0.76rem;
+  line-height: 1.55;
+}
+
+.agent-intel-global li {
+  margin: 0.12rem 0;
+}
+
+.agent-intel-signal li {
+  margin: 0.12rem 0;
+}
+
+.agent-intel-focus {
+  margin: 0;
+  color: var(--faint);
+  font-size: 0.73rem;
+  line-height: 1.45;
+}
+
+.agent-intel-focus strong {
+  color: var(--text);
+}
+
+.agent-intel-link {
+  display: flex;
+}
+
+.agent-intel-link a {
+  text-transform: uppercase;
+  font-size: 0.74rem;
 }
 
 .committee-columns {
@@ -2534,6 +2671,19 @@ td {
   .glossary-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .agent-intel-grid,
+  .agent-profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .agent-intel-card {
+    padding: 0.9rem;
+  }
+
+  .agent-profile-card {
+    padding: 0.85rem;
+  }
 }
 
 @media (max-width: 640px) {
@@ -2605,6 +2755,24 @@ td {
 
   .glossary-grid {
     grid-template-columns: 1fr;
+  }
+
+  .agent-intel-grid,
+  .agent-intel,
+  .agent-profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .agent-intel-header {
+    flex-direction: column;
+  }
+
+  .agent-intel-stance {
+    align-self: flex-start;
+  }
+
+  .agent-profile-card {
+    padding: 0.8rem;
   }
 
   .score-orbit {
