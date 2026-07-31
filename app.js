@@ -432,10 +432,30 @@
     return `${sign}${numeric.toFixed(4)} 股`;
   };
 
-  const parseWindowDays = (value, fallback = 5) => {
-    const match = String(value || "").match(/(\d+)/);
-    const parsed = match ? Number.parseInt(match[1], 10) : Number.NaN;
-    return Number.isFinite(parsed) && parsed > 0 ? parsed : fallback;
+  const REVIEW_WINDOW_DAYS = 5;
+
+  const getPerformanceWindowDays = () => REVIEW_WINDOW_DAYS;
+
+  const formatDateLabel = (value) => {
+    const parsed = new Date(value);
+    if (Number.isNaN(parsed.getTime())) {
+      return "未提供";
+    }
+    return new Intl.DateTimeFormat("zh-TW", {
+      dateStyle: "medium",
+      timeZone: "Asia/Taipei",
+    }).format(parsed);
+  };
+
+  const performanceSeriesSummary = (points) => {
+    const sorted = (Array.isArray(points) ? points : [])
+      .filter((point) => Number.isFinite(Number(point?.value_usd)) && point?.as_of)
+      .sort((left, right) => new Date(left.as_of) - new Date(right.as_of));
+    return {
+      first: sorted[0]?.as_of || "",
+      last: sorted.at(-1)?.as_of || "",
+      total: sorted.length,
+    };
   };
 
   const deriveWindowPerformance = (points, windowDays = 5) => {
@@ -469,7 +489,9 @@
       positive_windows: windows.filter((item) => item > 0).length,
       latest_return_percent: windows.length ? windows[windows.length - 1] : null,
       completed_sessions: Math.max(0, deduped.length - 1),
-      method: windows.length > 0 ? `採用同一市場交易日最後一筆收盤估值，計算最近 ${windowDays} 個會話視窗。` : `資料不足，尚未有足夠會話視窗。`,
+      method: windows.length > 0
+        ? "採用每個收盤日最後一筆估值，固定以每週（5 個交易日）滾動計算。"
+        : "目前評估資料未滿 5 個交易日；將在下一個可用收盤日遞延完成首輪完整回測。",
     };
   };
 
@@ -1523,8 +1545,9 @@ const researchStatusLabel = (value) => {
     const comparableRecommendations = comparisonRecords(history, recommendation);
     const health = dashboardAnalytics.portfolio_health;
     const analyticsPerformance = dashboardAnalytics.performance;
-    const expectedWindowDays = parseWindowDays(recommendation.expected_horizon, 5);
-    const performanceWindow = deriveWindowPerformance(performance.points, expectedWindowDays);
+    const performanceWindowDays = getPerformanceWindowDays();
+    const performanceWindow = deriveWindowPerformance(performance.points, performanceWindowDays);
+    const seriesSummary = performanceSeriesSummary(performance.points);
     const performanceSharpe = performanceWindow.completed_windows >= 20 ? analyticsPerformance.sharpe_ratio : null;
     const performanceWinRate = performanceWindow.completed_windows >= 20 ? analyticsPerformance.win_rate_percent : null;
     const showWindowSharpe = performanceWindow.completed_windows >= 20;
@@ -1593,7 +1616,7 @@ const researchStatusLabel = (value) => {
               <p>${escapeHtml(scoreReason)}</p>
               <small>100 代表方向高度一致且無批判者否決；0 代表方向高度衝突。與報酬、勝率及「配置有多好」無關。</small>
             </div>
-            <p class="side-note">建議重新驗證期：${escapeHtml(recommendation.expected_horizon)}</p>
+            <p class="side-note">固定週度驗證：每 5 個交易日（週一至週五）更新一次</p>
           </aside>
         </section>
 
@@ -1659,9 +1682,9 @@ const researchStatusLabel = (value) => {
             <div class="terminal-stats">
               <div><span>累積報酬</span><strong>${statistic(analyticsPerformance.total_return_percent, "%")}</strong></div>
               <div><span>最大回撤</span><strong>${statistic(analyticsPerformance.maximum_drawdown_percent, "%")}</strong></div>
-              <div><span>${expectedWindowDays} 日滾動</span><strong>${statistic(performanceWindow.latest_return_percent, "%")}</strong></div>
+              <div><span>每週（5 交易日）滾動</span><strong>${statistic(performanceWindow.latest_return_percent, "%")}</strong></div>
               <div><span>完成收盤日</span><strong>${escapeHtml(performanceWindow.completed_sessions)}</strong></div>
-              <div><span>${expectedWindowDays} 日正視窗</span><strong>${escapeHtml(performanceWindow.positive_windows)} / ${escapeHtml(performanceWindow.completed_windows)}</strong></div>
+              <div><span>每週正向視窗</span><strong>${escapeHtml(performanceWindow.positive_windows)} / ${escapeHtml(performanceWindow.completed_windows)}</strong></div>
               ${performanceSharpeStat}
             </div>
             <p>${escapeHtml(analyticsPerformance.methodology)}</p>
@@ -2003,7 +2026,7 @@ const researchStatusLabel = (value) => {
                 <span>風險 <strong>${escapeHtml(decisionLabel(committee.final_decision.risk_level))}</strong></span>
                 <span>風險關卡 <strong>${escapeHtml(committee.final_decision.risk_veto ? "否決" : "通過")}</strong></span>
               </div>
-              <p class="decision-horizon">${escapeHtml(committee.final_decision.expected_horizon)}</p>
+              <p class="decision-horizon">固定每週檢驗（5 個交易日）</p>
               ${
                 committee.final_decision.veto_reason
                   ? `<p class="veto-reason">${escapeHtml(committee.final_decision.veto_reason)}</p>`
@@ -2099,9 +2122,19 @@ const researchStatusLabel = (value) => {
                 <small>${escapeHtml(researchJournal.performance.last_completed_return_percent)}% · ${escapeHtml(dateTime(researchJournal.performance.last_completed_evaluation_at))}</small>
               </article>
               <article>
-                <span>${expectedWindowDays} 日滾動淨績效</span>
+                <span>每週（5 交易日）滾動淨績效</span>
                 <strong>${statistic(performanceWindow.latest_return_percent, "%")}</strong>
-                <small>${escapeHtml(performanceWindow.positive_windows)} / ${escapeHtml(performanceWindow.completed_windows)} 個正視窗</small>
+                <small>${escapeHtml(performanceWindow.positive_windows)} / ${escapeHtml(performanceWindow.completed_windows)} 個 5 交易日窗口</small>
+              </article>
+              <article>
+                <span>績效評估資料區間</span>
+                <strong>${escapeHtml(formatDateLabel(seriesSummary.first))}</strong>
+                <small>起訖：${escapeHtml(formatDateLabel(seriesSummary.last))}</small>
+              </article>
+              <article>
+                <span>可回測收盤點</span>
+                <strong>${escapeHtml(seriesSummary.total)}</strong>
+                <small>不足 5 點前先維持樣本累積，不提前下結論。</small>
               </article>
             </div>
             <p class="methodology-note">
