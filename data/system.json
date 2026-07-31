@@ -6,6 +6,7 @@
   "latest_commit": "manual-20260724T014200+0800",
   "data_pipeline": "Layer 1 · Investment Committee",
   "site_pipeline": "Layer 2 · Static Dashboard",
+  "committee_strategy_fingerprint": null,
   "execution_policy": "manual only",
   "broker_access": false,
   "automatic_trading": false

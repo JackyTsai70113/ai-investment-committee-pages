@@ -6,6 +6,7 @@
   "status": "live",
   "capital_usd": "6000.00",
   "model_score": 66,
+  "model_score_reason": "舊制資料未保存評分理由；此分數不可解讀為獲利機率或配置品質。",
   "risk_level": "very_high",
   "expected_horizon": "數天至 8 個交易日；2026-07-29 FOMC 後，以及 2026-08-03 PLTR 與 2026-08-04 AMD 財報前後強制重新評估",
   "allocations": [

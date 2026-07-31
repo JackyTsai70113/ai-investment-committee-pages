@@ -8,6 +8,8 @@
   "proposals": [
     {
       "agent": "macro",
+      "opening_statement": null,
+      "tone": null,
       "stance": "bearish",
       "confidence": 82,
       "preferred_assets": [
@@ -34,6 +36,8 @@
     },
     {
       "agent": "technical",
+      "opening_statement": null,
+      "tone": null,
       "stance": "bearish",
       "confidence": 78,
       "preferred_assets": [
@@ -60,6 +64,8 @@
     },
     {
       "agent": "momentum",
+      "opening_statement": null,
+      "tone": null,
       "stance": "bullish",
       "confidence": 70,
       "preferred_assets": [
@@ -88,6 +94,8 @@
     },
     {
       "agent": "news",
+      "opening_statement": null,
+      "tone": null,
       "stance": "neutral",
       "confidence": 75,
       "preferred_assets": [
@@ -115,6 +123,8 @@
     },
     {
       "agent": "earnings",
+      "opening_statement": null,
+      "tone": null,
       "stance": "bullish",
       "confidence": 83,
       "preferred_assets": [
@@ -143,6 +153,8 @@
     },
     {
       "agent": "etf",
+      "opening_statement": null,
+      "tone": null,
       "stance": "bullish",
       "confidence": 68,
       "preferred_assets": [
@@ -171,6 +183,8 @@
     },
     {
       "agent": "portfolio",
+      "opening_statement": null,
+      "tone": null,
       "stance": "bullish",
       "confidence": 66,
       "preferred_assets": [
@@ -199,6 +213,8 @@
     },
     {
       "agent": "liquidity",
+      "opening_statement": null,
+      "tone": null,
       "stance": "neutral",
       "confidence": 80,
       "preferred_assets": [
@@ -229,6 +245,8 @@
   "critiques": [
     {
       "reviewer": "risk",
+      "opening_statement": null,
+      "tone": null,
       "challenged_agents": [
         "momentum",
         "earnings",
@@ -248,10 +266,13 @@
         "淨值 5,400 美元退出槓桿 ETF，5,280 美元退出全部風險資產。",
         "7 月 29 日、8 月 3 日與 8 月 4 日強制重評。"
       ],
-      "veto_recommended": false
+      "veto_recommended": false,
+      "direct_questions": []
     },
     {
       "reviewer": "devil_advocate",
+      "opening_statement": null,
+      "tone": null,
       "challenged_agents": [
         "momentum",
         "earnings",
@@ -270,12 +291,22 @@
         "不得把延遲參考價當成限價指令。",
         "設定 8 個交易日最長持有期與事件後重評。"
       ],
-      "veto_recommended": false
+      "veto_recommended": false,
+      "direct_questions": []
     }
   ],
+  "cross_examination_responses": [],
+  "reconciliation_responses": [],
+  "critique_resolutions": [],
+  "final_decision_audits": [],
+  "decision_origin": "model",
+  "policy_override_notes": [],
   "final_decision": {
+    "opening_statement": null,
+    "tone": null,
     "market_stance": "neutral",
     "model_score": 66,
+    "model_score_reason": "舊制資料未保存評分理由；此分數不可解讀為獲利機率或配置品質。",
     "risk_level": "very_high",
     "expected_horizon": "數天至 8 個交易日；2026-07-29 FOMC 後，以及 2026-08-03 PLTR 與 2026-08-04 AMD 財報前後強制重新評估",
     "allocations": [
