@@ -103,7 +103,7 @@
       </div>`;
   };
 
-  const render = ({ recommendation, committee, activity, market, system }) => {
+  const render = ({ recommendation, committee, market, system }) => {
     const isLive = recommendation.status === "live";
     const statusLabel = isLive ? "CURRENT RESEARCH" : "RESEARCH REVIEW";
     const invested = recommendation.allocations
@@ -113,7 +113,6 @@
     const modelScore = Math.max(0, Math.min(100, Number(recommendation.model_score) || 0));
     const scoreAngle = `${modelScore * 3.6}deg`;
     const donut = buildDonut(recommendation.allocations);
-    const latestEvent = activity.at(-1);
     const committeeSize = committee.proposals.length + committee.critiques.length + 1;
 
     root.innerHTML = `
@@ -291,6 +290,87 @@
                 以下是結構化研究摘要，不包含隱藏推理過程。
               </p>
             </div>
+            <div class="committee-chat" aria-label="委員會公開討論紀錄">
+              <article class="chat-message system-message">
+                <strong>系統</strong>
+                <span>公開結構化紀錄</span>
+                <p>以下依序呈現獨立提案、批判、直接問題、研究員回應、第二次裁決與 CIO 結論。</p>
+              </article>
+              ${committee.proposals
+                .map(
+                  (proposal) => `
+                    <article class="chat-message proposal-message">
+                      <strong>${escapeHtml(proposal.agent)}</strong>
+                      <span>獨立提案 · ${escapeHtml(proposal.tone || proposal.stance)}</span>
+                      <p>${escapeHtml(proposal.opening_statement || (proposal.arguments || [])[0])}</p>
+                    </article>`,
+                )
+                .join("")}
+              ${(committee.critiques || [])
+                .map((critique) => {
+                  const exchanges = (critique.direct_questions || [])
+                    .map((question) => {
+                      const response = (committee.cross_examination_responses || []).find(
+                        (item) =>
+                          item.reviewer === critique.reviewer &&
+                          item.responding_agent === question.target_agent &&
+                          item.question === question.question,
+                      );
+                      const responseMarkup = response
+                        ? `
+                          <article class="chat-message response-message">
+                            <strong>${escapeHtml(response.responding_agent)}</strong>
+                            <span>直接回應 ${escapeHtml(response.reviewer)}</span>
+                            <p>${escapeHtml(response.direct_answer)}</p>
+                            <ul>${renderList(response.proposed_changes, "未提出修正")}</ul>
+                          </article>`
+                        : `
+                          <article class="chat-message system-message unavailable-message" data-record-status="unavailable">
+                            <strong>系統</strong>
+                            <span>回應紀錄不可用 · 非 Agent 發言</span>
+                            <p>此問題沒有 schema-valid 的 cross_examination_responses 紀錄；系統未生成或推定研究員回應。</p>
+                          </article>`;
+                      return `
+                        <article class="chat-message question-message">
+                          <strong>${escapeHtml(critique.reviewer)}</strong>
+                          <span>直接問題 → ${escapeHtml(question.target_agent)}</span>
+                          <p>${escapeHtml(question.question)}</p>
+                        </article>
+                        ${responseMarkup}`;
+                    })
+                    .join("");
+                  const resolution = (committee.critique_resolutions || []).find(
+                    (item) => item.reviewer === critique.reviewer,
+                  );
+                  const resolutionMarkup = resolution
+                    ? `
+                      <article class="chat-message resolution-message">
+                        <strong>${escapeHtml(resolution.reviewer)}</strong>
+                        <span>第二次裁決 · ${escapeHtml(resolution.tone)}</span>
+                        <p>${escapeHtml(resolution.resolution_summary)}</p>
+                      </article>`
+                    : `
+                      <article class="chat-message system-message unavailable-message" data-record-status="unavailable">
+                        <strong>系統</strong>
+                        <span>裁決紀錄不可用 · 非 Agent 發言</span>
+                        <p>此批判沒有 schema-valid 的 critique_resolutions 紀錄；系統未生成或推定 Reviewer 裁決。</p>
+                      </article>`;
+                  return `
+                    <article class="chat-message critique-message">
+                      <strong>${escapeHtml(critique.reviewer)}</strong>
+                      <span>批判 · ${escapeHtml(critique.tone || "review")}</span>
+                      <p>${escapeHtml(critique.opening_statement || critique.strongest_objection)}</p>
+                    </article>
+                    ${exchanges}
+                    ${resolutionMarkup}`;
+                })
+                .join("")}
+              <article class="chat-message cio-message">
+                <strong>CIO</strong>
+                <span>最終結論</span>
+                <p>${escapeHtml(committee.final_decision.opening_statement)}</p>
+              </article>
+            </div>
             <div class="committee-list proposal-list">
               ${committee.proposals
                 .map(
@@ -401,30 +481,6 @@
             </div>
           </section>
 
-          <section class="panel activity" id="activity">
-            <header class="panel-header">
-              <div>
-                <span class="section-kicker">Append-only Audit</span>
-                <h2>操作紀錄</h2>
-              </div>
-              <span class="panel-meta">${escapeHtml(activity.length)}<br />EVENTS</span>
-            </header>
-            <div class="timeline">
-              ${activity
-                .slice()
-                .reverse()
-                .map(
-                  (event) => `
-                    <article class="timeline-item">
-                      <strong>${escapeHtml(event.event_type.replaceAll("_", " "))}</strong>
-                      <p>${escapeHtml(event.summary)}</p>
-                      <time datetime="${escapeHtml(event.occurred_at)}">${escapeHtml(dateTime(event.occurred_at))}</time>
-                    </article>`,
-                )
-                .join("")}
-            </div>
-          </section>
-
           <section class="panel" id="risk">
             <header class="panel-header">
               <div>
@@ -447,25 +503,22 @@
         </div>
 
         <footer class="footer">
-          <span>${escapeHtml(system.execution_policy)} · broker access ${escapeHtml(system.broker_access)}</span>
+          <span>研究建議需由使用者人工確認 · 系統不連接券商</span>
           <span>市場資料 ${escapeHtml(market.source)}</span>
           <span>最後更新 ${escapeHtml(dateTime(system.updated_at))}</span>
-          <span>${escapeHtml(latestEvent?.summary || "")}</span>
         </footer>
       </div>
     `;
   };
 
   Promise.all([
-    fetchJson("actual_portfolio.json"),
     fetchJson("recommendation.json"),
     fetchJson("committee.json"),
-    fetchJson("activity.json"),
     fetchJson("market_snapshot.json"),
     fetchJson("system.json"),
   ])
-    .then(([, recommendation, committee, activity, market, system]) =>
-      render({ recommendation, committee, activity, market, system }),
+    .then(([recommendation, committee, market, system]) =>
+      render({ recommendation, committee, market, system }),
     )
     .catch((error) => {
       root.innerHTML = `

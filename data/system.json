@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0",
   "version": "0.3.0",
-  "updated_at": "2026-08-01T17:28:49.418492Z",
+  "updated_at": "2026-08-01T19:11:12.965671Z",
   "environment": "live",
-  "latest_commit": "b1f5086a4b169f29f3514a21243f45361d322ed0",
+  "latest_commit": "059af01cac4e28c9e6fc54e3eaf965f739042737",
   "data_pipeline": "Layer 1 · Investment Committee",
   "site_pipeline": "Layer 2 · Static Dashboard",
-  "committee_strategy_fingerprint": "a6790f8a13d0fd15461eabeae74cecdfd3a383d83f518e8f6cedebdebab97f50",
+  "committee_strategy_fingerprint": "87b3f8738b3f9367ab1a60ad744931629848f11647a38e6ab49114fa06920404",
   "execution_policy": "manual only",
   "broker_access": false,
   "automatic_trading": false
