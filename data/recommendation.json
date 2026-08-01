@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0",
-  "run_id": "20260801T114056Z",
-  "generated_at": "2026-08-01T11:40:56.194228Z",
-  "data_cutoff": "2026-08-01T11:34:36.075263Z",
+  "run_id": "20260801T121907Z",
+  "generated_at": "2026-08-01T12:19:07.458860Z",
+  "data_cutoff": "2026-08-01T12:12:33.037887Z",
   "status": "live",
   "capital_usd": "6000.00",
   "model_score": 100,
   "model_score_reason": "方向一致度 100/100；10 位提案委員按信心加權，0 項協商後否決仍未解除，扣除 0 分。",
   "risk_level": "high",
-  "expected_horizon": "研究性維持至四類官方事件資料完成未來168小時覆蓋、通過blackout檢查，並補齊5個完成交易日的挑戰組相對淨報酬與摩擦敏感度；不代表已成交或保證結果。",
+  "expected_horizon": "研究觀察至FOMC、BLS、NYSE及公司財報四類官方point-in-time事件均補齊、覆蓋未來168小時並完成blackout檢查；槓桿或反向ETF不建議持有。",
   "allocations": [
     {
       "symbol": "CASH",
@@ -23,8 +23,8 @@
     {
       "id": 1,
       "title": "四類官方事件輸入全部缺失",
-      "summary": "event_calendar明確顯示FOMC、BLS、NYSE及公司財報四類point-in-time輸入均為missing，且未形成可驗證快照，因此不能新增或提高逐標的風險。",
-      "confidence": 99,
+      "summary": "event_calendar顯示fomc、bls、nyse、earnings均為missing，且input_mode為missing_fail_closed；資料未形成可驗證的point-in-time事件快照。",
+      "confidence": 100,
       "category": "policy",
       "affected_assets": [
         "CASH",
@@ -41,59 +41,96 @@
     },
     {
       "id": 2,
-      "title": "未完成未來168小時覆蓋",
-      "summary": "事件日曆的coverage_start與coverage_end均為null，無法驗證未來168小時事件風險，也無法確認blackout狀態；因此本輪維持風險否決。",
-      "confidence": 99,
-      "category": "policy",
+      "title": "事件閘門禁止新增風險",
+      "summary": "市場快照警告明確指出，官方事件輸入不完整時不得新增任何建議風險曝險；因此本輪不提高既有風險權重，也不新增風險標的。",
+      "confidence": 100,
+      "category": "risk",
       "affected_assets": [
-        "CASH",
         "SPY",
         "QQQ",
         "SMH",
         "TQQQ",
-        "SOXL"
+        "SOXL",
+        "GLD",
+        "TLT"
       ],
-      "source_urls": [
-        "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-        "https://www.bls.gov/schedule/",
-        "https://www.nyse.com/trade/hours-calendars",
-        "https://www.sec.gov/edgar/searchedgar/companysearch"
-      ]
+      "source_urls": []
     },
     {
       "id": 3,
-      "title": "5日相對比較尚不完整",
-      "summary": "假設驗證顯示5個完成交易日已有1個完成視窗且為正，但缺少SPY、QQQ、IWM、DIA、VTI同規則的挑戰組淨報酬比較，不能宣稱相對優勢。",
-      "confidence": 96,
+      "title": "五日視窗僅有單一樣本",
+      "summary": "假設驗證顯示5個完成交易日視窗available_completed_sessions為6，形成completed_windows=1、positive_windows=1；單一視窗不足以支持可重複績效結論。",
+      "confidence": 100,
       "category": "policy",
       "affected_assets": [
-        "SPY",
-        "QQQ",
-        "IWM",
-        "DIA",
-        "VTI"
+        "CASH"
       ],
       "source_urls": []
     },
     {
       "id": 4,
-      "title": "交易摩擦尚未扣除",
-      "summary": "現有5日視窗研究方法忽略手續費、價差、滑價、稅負及匯率；即使單一視窗為正，也不足以支持達標、勝率或提高風險預算。",
-      "confidence": 98,
+      "title": "挑戰組同步比較缺失",
+      "summary": "現有驗證未提供策略與SPY、QQQ、IWM、DIA、VTI在同一5個完成交易日視窗下的同步淨報酬，因此不能判定是否超越挑戰組最高者。",
+      "confidence": 100,
       "category": "risk",
       "affected_assets": [
         "SPY",
         "QQQ",
         "IWM",
         "DIA",
-        "VTI"
+        "VTI",
+        "CASH"
       ],
       "source_urls": []
     },
     {
       "id": 5,
-      "title": "資料特徵陣列為空",
-      "summary": "市場快照features為空，沒有可核對的20日趨勢、均線、VIX相對均線或SMH量能確認，因此不能使用進攻風險上限。",
+      "title": "交易摩擦尚未扣除",
+      "summary": "假設驗證明確指出方法忽略手續費、價差、滑價、稅負與匯率；即使單一五日視窗為正，也不能宣稱可實現淨報酬或達標。",
+      "confidence": 100,
+      "category": "liquidity",
+      "affected_assets": [
+        "CASH",
+        "SPY",
+        "QQQ",
+        "IWM",
+        "DIA",
+        "VTI"
+      ],
+      "source_urls": []
+    },
+    {
+      "id": 6,
+      "title": "單日股市表現偏正但不可外推",
+      "summary": "快照顯示SPY上漲0.72%、QQQ上漲0.65%、DIA上漲0.54%、VTI上漲0.53%；這只是單一截點，不能替代5個完成交易日的績效證據。",
+      "confidence": 98,
+      "category": "technical",
+      "affected_assets": [
+        "SPY",
+        "QQQ",
+        "DIA",
+        "VTI"
+      ],
+      "source_urls": []
+    },
+    {
+      "id": 7,
+      "title": "市場內部存在分化",
+      "summary": "IWM下跌0.48%，SMH僅上漲0.30%，與大型指數及部分成分股不同；單點資料未形成可驗證的廣度或趨勢確認。",
+      "confidence": 96,
+      "category": "momentum",
+      "affected_assets": [
+        "IWM",
+        "SMH",
+        "SPY",
+        "QQQ"
+      ],
+      "source_urls": []
+    },
+    {
+      "id": 8,
+      "title": "波動當日下降但長期位置未知",
+      "summary": "VIX為15.99，較前收17.09下降6.44%；但features為空，未提供VIX五日下降且低於20日均線的完成交易日證據，不能據此提高風險。",
       "confidence": 98,
       "category": "technical",
       "affected_assets": [
@@ -104,96 +141,50 @@
       "source_urls": []
     },
     {
-      "id": 6,
-      "title": "快照屬單一盤中觀察",
-      "summary": "快照中的SPY上漲0.72%、QQQ上漲0.65%及IWM下跌0.48%只反映單一截點，不能替代5個完成交易日滾動視窗或推導趨勢延續。",
-      "confidence": 97,
-      "category": "momentum",
-      "affected_assets": [
-        "SPY",
-        "QQQ",
-        "IWM"
-      ],
-      "source_urls": [
-        "https://finance.yahoo.com/"
-      ]
-    },
-    {
-      "id": 7,
-      "title": "波動下降仍不足以放行",
-      "summary": "VIX由17.09降至15.99，單日下降6.44%，但缺少VIX五日下降且低於20日均線的完成交易日證據，因此不能據此提高風險。",
-      "confidence": 96,
-      "category": "technical",
-      "affected_assets": [
-        "SPY",
-        "QQQ",
-        "TQQQ",
-        "SOXL"
-      ],
-      "source_urls": [
-        "https://www.cboe.com/tradable-products/vix/"
-      ]
-    },
-    {
-      "id": 8,
-      "title": "利率背景增加估值不確定性",
-      "summary": "快照顯示10年期殖利率指標TNX上升1.76%，同時TLT下跌0.66%；這是單一截點訊號，支持降低對長久期成長曝險的信心，但不構成方向性交易依據。",
-      "confidence": 82,
-      "category": "macro",
-      "affected_assets": [
-        "QQQ",
-        "SMH",
-        "TLT"
-      ],
-      "source_urls": [
-        "https://finance.yahoo.com/"
-      ]
-    },
-    {
       "id": 9,
-      "title": "宏觀訊號彼此分歧",
-      "summary": "研究證據指出第二季GDP年率成長1.5%、個人消費成長3.2%，核心PCE年增3.3%；成長放緩與通膨偏高並存，政策路徑仍不確定。",
-      "confidence": 84,
+      "title": "利率與通膨仍有不確定性",
+      "summary": "快照證據指出FOMC維持聯邦基金利率目標區間3.50%至3.75%，而6月CPI年增3.5%、核心CPI年增2.6%；後續政策仍取決於數據。",
+      "confidence": 90,
       "category": "macro",
       "affected_assets": [
         "SPY",
         "QQQ",
-        "SMH",
-        "TLT"
+        "TLT",
+        "GLD"
       ],
       "source_urls": [
-        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1cHu09QJ_uR_pfHsAEVU0lj0vxbxciEAEuQiGmjwsLHsz43GrTexhT95NehgHuD233DLur1w1FOQ4vDtwA9kHvtmqYlopu3EVvf4vMwzPymVf85M9XZkig5GbfyRfq-21Ikq3RF4S_9M3w1rClBo07nWsbT3qq94JmBVJC4145tpontpXMIaw6gwtAwLwp9ZAkR9hZvcnYN5DEGkqoqf15V_0mG8ESANDHLv7GBnjmI6uGS4uWOBhMd4k4ZLzDD33uS8I2vTXvkz_1ORdhxqFiXnzdDOld1UMNhoVdeVCe2-0bnuoP21C8rHHDunBb5rX-C2jNlHUXuJaSyL8shPP-FN8N7panX9SX2lzYbA7DGDrmBjvC7OMB_R-CxaPkcA_OEWc4hwk1vOVg6_iUZTCqZYWB1HUPffthSIIyrzjpQ=="
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6YFZUqdrAKiFq-gvBpv9HHNrFrAbWYyUvL6_1G96CuHu-Sk5X-QdftC5gFCQh7rkP9MzQtWYVcpZIMXT9tkqaig2DdKOi9X7692JEfoneVj0KH2IeE6w7Mpl95UdOldeF70QEPWbIzV0yQgHRGH4ZOTyiQhgB7cGxIjA2LQj88gm3CpMAWvOi4qLvLPdYwWSiRTYMUr6o94fCPG3Wbes8JQCKpckAcnAisvXJqcb0c03UzmZc",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1qBlbbxOsiDARpoOMZ8L2JgmLJCKG87kYy_YQOMJ0qnC5Pz1I7oD06HJ4xtQaTMA59YTB7C6gUb4l9YILPfj-AxbC49ulU5AxAv0pTfaHAb-URRuUM5HkfqHD9WrnDqJQgCKbh7xYzDA7P-np4VtusPY8vphD137CwLCqfolClnTri9k="
       ]
     },
     {
       "id": 10,
-      "title": "相對大盤優勢尚不可評價",
-      "summary": "相對固定挑戰組的預期優勢目前只能來自保留現金、避免事件跳空及槓桿路徑損耗；但因缺少同步淨報酬與摩擦資料，該優勢尚不可宣稱，且若市場持續上漲可能落後。",
-      "confidence": 94,
-      "category": "diversification",
+      "title": "槓桿與反向ETF不可宣稱有效",
+      "summary": "快照含TQQQ、SOXL與SQQQ，但本輪非bearish結論，且缺乏同步五日摩擦後比較；因此不對SQQQ、SOXS、SPXU或其他槓桿ETF作相對有效性宣稱。它們每日重設，若未來使用，最多持有一個交易日並於下一完成交易日重驗證。",
+      "confidence": 100,
+      "category": "risk",
       "affected_assets": [
-        "CASH",
-        "SPY",
-        "QQQ",
-        "IWM",
-        "DIA",
-        "VTI"
+        "TQQQ",
+        "SOXL",
+        "SQQQ",
+        "SOXS",
+        "SPXU",
+        "CASH"
       ],
       "source_urls": []
     }
   ],
   "invalidation_conditions": [
-    "四類官方FOMC、BLS、NYSE及公司財報point-in-time事件輸入均補齊，完整覆蓋未來168小時並通過blackout檢查。",
-    "提供策略與SPY、QQQ、IWM、DIA、VTI在同一規則下的5個完成交易日滾動視窗淨報酬、完成視窗勝負及已知交易摩擦扣除或敏感度分析。",
-    "補齊完成交易日的SPY與QQQ 20日趨勢及均線、VIX五日下降且低於20日均線，以及SMH正向20日趨勢、站上20日均線與量能門檻。",
-    "若後續資料證明事件閘門已有效放行且研究比較結果支持風險配置，才重新評估現金與寬基ETF權重；任何槓桿ETF仍須遵守最多持有1個交易日及下一完成交易日重新驗證。"
+    "四類官方事件輸入均補齊，涵蓋未來168小時，且完成blackout檢查後，重新評估事件風險否決與配置。",
+    "提供策略及SPY、QQQ、IWM、DIA、VTI在同一5個完成交易日視窗的同步淨報酬，並扣除已知交易摩擦或提供可審計的摩擦敏感度。",
+    "features補齊並在完成交易日上同時驗證SPY及QQQ的20日趨勢與均線、VIX五日下降且低於20日均線，以及SMH正向20日趨勢、站上20日均線與量能門檻。",
+    "若未來市場結論轉為bearish，須先完成SQQQ、SOXS、SPXU與現金的報酬表達、每日重設、反彈損失及失效條件比較；在此之前不得以反向ETF替代現金。"
   ],
   "major_risks": [
-    "100%現金可能在資料恢復前錯失股票市場上行，並可能落後固定挑戰組中表現最高者；此為遵守風險否決的機會成本。",
-    "Yahoo Finance資料可能延遲，快照為盤中研究資料，adjusted_close為null，不能視為可執行價格或完整收盤序列。",
-    "單一5日正向完成視窗可能是樣本噪音；缺少挑戰組同步比較與摩擦扣除，不能推論未來必然正報酬或超越基準。",
-    "核心PCE偏高、TNX上升及中國PMI跌破榮枯線等背景可能造成股票、債券與商品相關性快速變化；本輪未配置TLT、GLD或其他風險資產以避免以不完整資料作對沖假設。",
-    "本輪風險否決依賴事件輸入缺失的正式政策解讀；若後續治理口徑不承認fail-closed為正式否決，則需重新檢視現金上限與配置合規性。"
+    "官方事件資料缺失使未來168小時的FOMC、BLS、NYSE及公司財報風險無法按point-in-time精確對齊。",
+    "Yahoo Finance快照可能延遲，且本輪as_of為2026-08-01T12:12:33.037887Z；不得以此補推未完成交易日或事後事件。",
+    "五日視窗只有單一完成樣本，且策略與挑戰組比較及交易摩擦扣除均缺失，短期目標目前不可評價。",
+    "維持現金可避免已量化不足的市場風險，但相對固定大盤比較組的預期優勢僅限於事件與路徑風險控制，並不代表報酬優勢或保證達標。"
   ],
   "disclaimer": "研究建議，尚未執行。下單前須由使用者核對券商即時價格、成本與風險；系統不存取券商、不自動下單。"
 }

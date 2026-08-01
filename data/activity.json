@@ -79,5 +79,14 @@
     "run_id": "20260801T114056Z",
     "summary": "多 Agent 委員會完成新建議；尚未執行任何交易。",
     "execution_confirmed": false
+  },
+  {
+    "event_id": "20260801T121907Z-recommendation",
+    "occurred_at": "2026-08-01T12:19:07.458860Z",
+    "event_type": "recommendation_created",
+    "actor": "committee",
+    "run_id": "20260801T121907Z",
+    "summary": "多 Agent 委員會完成新建議；尚未執行任何交易。",
+    "execution_confirmed": false
   }
 ]
