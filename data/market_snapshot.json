@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-31T21:15:38.188307Z",
+  "generated_at": "2026-08-01T08:37:45.225166Z",
   "mode": "live",
   "source": "Yahoo Finance via yfinance",
   "quotes": [
@@ -11,7 +11,7 @@
       "previous_close": "748.150024",
       "change_percent": "-0.179112",
       "volume": 1335055,
-      "as_of": "2026-07-31T21:15:38.188307Z",
+      "as_of": "2026-08-01T08:37:45.225166Z",
       "price_session": null,
       "source": "Yahoo Finance via yfinance"
     },
@@ -22,7 +22,7 @@
       "previous_close": "689.27002",
       "change_percent": "-0.182804",
       "volume": 685554,
-      "as_of": "2026-07-31T21:15:38.188307Z",
+      "as_of": "2026-08-01T08:37:45.225166Z",
       "price_session": null,
       "source": "Yahoo Finance via yfinance"
     },
@@ -33,7 +33,7 @@
       "previous_close": "291.079987",
       "change_percent": "0.024051",
       "volume": 599403,
-      "as_of": "2026-07-31T21:15:38.188307Z",
+      "as_of": "2026-08-01T08:37:45.225166Z",
       "price_session": null,
       "source": "Yahoo Finance via yfinance"
     },
@@ -44,7 +44,7 @@
       "previous_close": "525.030029",
       "change_percent": "-0.148569",
       "volume": 109472,
-      "as_of": "2026-07-31T21:15:38.188307Z",
+      "as_of": "2026-08-01T08:37:45.225166Z",
       "price_session": null,
       "source": "Yahoo Finance via yfinance"
     },
@@ -55,7 +55,7 @@
       "previous_close": "368.929993",
       "change_percent": "-0.17347",
       "volume": 34859,
-      "as_of": "2026-07-31T21:15:38.188307Z",
+      "as_of": "2026-08-01T08:37:45.225166Z",
       "price_session": null,
       "source": "Yahoo Finance via yfinance"
     },
@@ -66,7 +66,7 @@
       "previous_close": "541.540222",
       "change_percent": "-0.184704",
       "volume": 320105,
-      "as_of": "2026-07-31T21:15:38.188307Z",
+      "as_of": "2026-08-01T08:37:45.225166Z",
       "price_session": null,
       "source": "Yahoo Finance via yfinance"
     },
@@ -77,7 +77,7 @@
       "previous_close": "115.025002",
       "change_percent": "-0.360792",
       "volume": 1737807,
-      "as_of": "2026-07-31T21:15:38.188307Z",
+      "as_of": "2026-08-01T08:37:45.225166Z",
       "price_session": null,
       "source": "Yahoo Finance via yfinance"
     },
@@ -88,7 +88,7 @@
       "previous_close": "64.949997",
       "change_percent": "-0.631249",
       "volume": 1966677,
-      "as_of": "2026-07-31T21:15:38.188307Z",
+      "as_of": "2026-08-01T08:37:45.225166Z",
       "price_session": null,
       "source": "Yahoo Finance via yfinance"
     },
@@ -99,7 +99,7 @@
       "previous_close": "201.779999",
       "change_percent": "-0.480722",
       "volume": 3666834,
-      "as_of": "2026-07-31T21:15:38.188307Z",
+      "as_of": "2026-08-01T08:37:45.225166Z",
       "price_session": null,
       "source": "Yahoo Finance via yfinance"
     },
@@ -110,7 +110,7 @@
       "previous_close": "477.709991",
       "change_percent": "-0.328646",
       "volume": 923075,
-      "as_of": "2026-07-31T21:15:38.188307Z",
+      "as_of": "2026-08-01T08:37:45.225166Z",
       "price_session": null,
       "source": "Yahoo Finance via yfinance"
     },
@@ -121,7 +121,7 @@
       "previous_close": "123.245003",
       "change_percent": "-0.150112",
       "volume": 483928,
-      "as_of": "2026-07-31T21:15:38.188307Z",
+      "as_of": "2026-08-01T08:37:45.225166Z",
       "price_session": null,
       "source": "Yahoo Finance via yfinance"
     },
@@ -132,7 +132,7 @@
       "previous_close": "94.714996",
       "change_percent": "0.036957",
       "volume": 12141,
-      "as_of": "2026-07-31T21:15:38.188307Z",
+      "as_of": "2026-08-01T08:37:45.225166Z",
       "price_session": null,
       "source": "Yahoo Finance via yfinance"
     },
@@ -143,7 +143,7 @@
       "previous_close": "371.660004",
       "change_percent": "-0.03498",
       "volume": 427379,
-      "as_of": "2026-07-31T21:15:38.188307Z",
+      "as_of": "2026-08-01T08:37:45.225166Z",
       "price_session": null,
       "source": "Yahoo Finance via yfinance"
     },
@@ -154,7 +154,7 @@
       "previous_close": "82.175003",
       "change_percent": "0.073012",
       "volume": 2192234,
-      "as_of": "2026-07-31T21:15:38.188307Z",
+      "as_of": "2026-08-01T08:37:45.225166Z",
       "price_session": null,
       "source": "Yahoo Finance via yfinance"
     },
@@ -165,18 +165,18 @@
       "previous_close": "43.473701",
       "change_percent": "0.704558",
       "volume": 679777,
-      "as_of": "2026-07-31T21:15:38.188307Z",
+      "as_of": "2026-08-01T08:37:45.225166Z",
       "price_session": null,
       "source": "Yahoo Finance via yfinance"
     },
     {
       "symbol": "CL=F",
-      "price": "86.800003",
+      "price": "84.669998",
       "adjusted_close": null,
       "previous_close": "86.300003",
-      "change_percent": "0.579374",
-      "volume": 0,
-      "as_of": "2026-07-31T21:15:38.188307Z",
+      "change_percent": "-1.888766",
+      "volume": 698,
+      "as_of": "2026-08-01T08:37:45.225166Z",
       "price_session": null,
       "source": "Yahoo Finance via yfinance"
     },
@@ -187,7 +187,7 @@
       "previous_close": "16.01",
       "change_percent": "-0.124925",
       "volume": 0,
-      "as_of": "2026-07-31T21:15:38.188307Z",
+      "as_of": "2026-08-01T08:37:45.225166Z",
       "price_session": null,
       "source": "Yahoo Finance via yfinance"
     },
@@ -198,7 +198,7 @@
       "previous_close": "4.745",
       "change_percent": "0.0",
       "volume": 0,
-      "as_of": "2026-07-31T21:15:38.188307Z",
+      "as_of": "2026-08-01T08:37:45.225166Z",
       "price_session": null,
       "source": "Yahoo Finance via yfinance"
     }
@@ -671,14 +671,6 @@
       "source_url": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526144028/d87999d8k.htm"
     },
     {
-      "symbol": "AVGO",
-      "form": "8-K",
-      "filing_date": "2026-04-02",
-      "report_date": "2026-03-30",
-      "description": "8-K",
-      "source_url": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526140574/d109450d8k.htm"
-    },
-    {
       "symbol": "GOOGL",
       "form": "10-Q",
       "filing_date": "2026-07-23",
@@ -765,14 +757,6 @@
       "report_date": "2026-04-07",
       "description": "8-K",
       "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000034/goog-20260407.htm"
-    },
-    {
-      "symbol": "GOOGL",
-      "form": "8-K",
-      "filing_date": "2026-04-02",
-      "report_date": "2026-03-30",
-      "description": "8-K",
-      "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000031/goog-20260330.htm"
     },
     {
       "symbol": "META",
@@ -997,14 +981,6 @@
       "report_date": "2026-04-22",
       "description": "8-K",
       "source_url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026026551/tsla-20260422.htm"
-    },
-    {
-      "symbol": "TSLA",
-      "form": "8-K",
-      "filing_date": "2026-04-02",
-      "report_date": "2026-04-02",
-      "description": "8-K",
-      "source_url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026022956/tsla-20260402.htm"
     },
     {
       "symbol": "TSM",
@@ -3277,7 +3253,7 @@
   ],
   "event_calendar": {
     "schema_version": "1.0",
-    "generated_at": "2026-07-31T21:15:38.188307Z",
+    "generated_at": "2026-08-01T08:37:45.225166Z",
     "input_mode": "missing_fail_closed",
     "required_categories": [
       "fomc",
@@ -3289,8 +3265,8 @@
       {
         "category": "fomc",
         "status": "missing",
-        "queried_at": "2026-07-31T21:15:38.188307Z",
-        "data_cutoff": "2026-07-31T21:15:38.188307Z",
+        "queried_at": "2026-08-01T08:37:45.225166Z",
+        "data_cutoff": "2026-08-01T08:37:45.225166Z",
         "coverage_start": null,
         "coverage_end": null,
         "timezone": "America/New_York",
@@ -3304,8 +3280,8 @@
       {
         "category": "bls",
         "status": "missing",
-        "queried_at": "2026-07-31T21:15:38.188307Z",
-        "data_cutoff": "2026-07-31T21:15:38.188307Z",
+        "queried_at": "2026-08-01T08:37:45.225166Z",
+        "data_cutoff": "2026-08-01T08:37:45.225166Z",
         "coverage_start": null,
         "coverage_end": null,
         "timezone": "America/New_York",
@@ -3319,8 +3295,8 @@
       {
         "category": "nyse",
         "status": "missing",
-        "queried_at": "2026-07-31T21:15:38.188307Z",
-        "data_cutoff": "2026-07-31T21:15:38.188307Z",
+        "queried_at": "2026-08-01T08:37:45.225166Z",
+        "data_cutoff": "2026-08-01T08:37:45.225166Z",
         "coverage_start": null,
         "coverage_end": null,
         "timezone": "America/New_York",
@@ -3334,8 +3310,8 @@
       {
         "category": "earnings",
         "status": "missing",
-        "queried_at": "2026-07-31T21:15:38.188307Z",
-        "data_cutoff": "2026-07-31T21:15:38.188307Z",
+        "queried_at": "2026-08-01T08:37:45.225166Z",
+        "data_cutoff": "2026-08-01T08:37:45.225166Z",
         "coverage_start": null,
         "coverage_end": null,
         "timezone": "America/New_York",
@@ -3365,182 +3341,158 @@
   },
   "research_evidence": [
     {
-      "evidence_id": "ev_01",
+      "evidence_id": "EV001",
       "category": "us_economy",
       "region": "US",
-      "title": "美國第二季GDP成長放緩但內需仍具韌性",
-      "summary": "2026年第二季經通膨調整後的國內生產毛額(GDP)季增年率為1.5%，低於第一季的2.1%和市場預期。國內私人最終銷售成長3.9%，消費支出成長3.2%，企業非住宅固定投資成長8.4%。",
-      "market_relevance": "GDP增速低於預期可能引發市場對經濟放緩的擔憂，但強勁的消費和企業投資（尤其是AI領域）有望為市場提供支撐。",
-      "source_title": "美國經濟與景氣",
-      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6swKW5reR5cO5KijqKZcygfswKfkt-o_AmEoVHp1fjCQVTokxud7YmxgbWOAURQXgoJvYMVbxatdrE9HJqv0GGqaXrFjBuHESjqsTKSRkbWgUgZRfpQCFnyQ-W_BNY4iLguOqo5J4dnaKBuB9b2F4t7BoSYuNpwiDzSILA-U=",
-      "published_at": null,
-      "affected_symbols": []
+      "title": "美國第二季GDP成長放緩但內需強勁",
+      "summary": "美國商務部經濟分析局初步估計，2026年第二季度實質GDP按年率成長1.5%，低於第一季度的2.1%及市場預期的2%。然而，排除進出口和庫存等波動因素後，由消費支出和企業固定投資組成的「私人國內最終購買」數據大幅增長3.9%，顯示美國經濟的基本動能依然穩健。其中，家庭消費支出增長3.2%，企業非住宅類投資大增8.4%，智能產品投資也成長8.8%。",
+      "market_relevance": "GDP總體數據低於預期可能引發對經濟放緩的擔憂，但強勁的國內需求（特別是消費和AI相關的企業投資）提供了支撐。這可能導致市場對經濟前景出現分歧解讀，影響未來幾日對企業獲利和聯準會政策路徑的預期。",
+      "source_title": "US Bureau of Economic Analysis / GDP Report",
+      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-PLESJL7lfgdo7pH-Js0ge7eIWpDyyRNe_npjsmf9ESazGd6jQxQezyO8W_SWk1hmqC5SMlm9CI9VfrMSYymngnvPBRUE7hZzydWmXHgSp7FZJrIBj-OKg1YIqabW5OGzi_uZMU7r",
+      "published_at": "2026-07-30T00:00:00Z",
+      "affected_symbols": [
+        "SPY",
+        "QQQ"
+      ]
     },
     {
-      "evidence_id": "ev_02",
+      "evidence_id": "EV002",
       "category": "rates",
       "region": "US",
-      "title": "聯準會維持利率不變但內部出現鷹派異議",
-      "summary": "美國聯準會於7月29日FOMC會議決議維持聯邦資金利率目標區間在3.50%至3.75%不變，三位理事反對並主張升息一碼。",
-      "market_relevance": "內部鷹派異議增多使市場對未來貨幣政策預期更趨不確定。",
-      "source_title": "利率、通膨、美元與美債",
-      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQECxmdzRTEBSReySowutd8zDrrqZm7WeglId-HuxVojliPJPcWxEqJuRdq3kaFi7WIOWfhNYsEqvnH7wA1A0GXAqzDied-0tuQLOI_oAtw3AHVALEV7yhMesaXw81MvagMHCH9JoZnNovXMCNQj9I0f0eLf76Nem2n7NU1gcfSPf5d-ioCw8hHDdzV2kfgiMpnCrfbEwcY-ICnlOD3Nqw==",
-      "published_at": null,
-      "affected_symbols": []
+      "title": "聯準會7月FOMC會議維持利率不變但鷹派異議增多",
+      "summary": "美國聯準會（Fed）於7月29日召開的FOMC會議決議，以9比3的表決結果維持聯邦資金利率目標區間在3.50%至3.75%不變，為連續第五次按兵不動。然而，三位理事罕見同聲主張升息一碼（25個基點），為新任主席華許（Kevin Warsh）上任以來首見的鷹派異議陣容。聲明指出經濟活動穩健擴張，但通膨相對於2%目標仍偏高。",
+      "market_relevance": "儘管利率維持不變，但鷹派異議的增加暗示聯準會內部對通膨的耐心正在耗盡，可能在未來會議上採取更為緊縮的政策。這將增加市場對未來利率路徑的不確定性，可能導致債券殖利率波動，並對成長型股票帶來壓力。",
+      "source_title": "Federal Reserve FOMC Statement",
+      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-jAlA7wKTRuEJbqdh8kk8J3K7HvVAN0D-U8fVBMk3SpWNZJWGL2lbimnHJ6dQV5JBf1dfDQYPrcPyhZwH_siDx88VJhVSKsI1OWYU6W03k7B9gusaFZXm-Uh1XwCGlbwc25g4qQupEr7oj6QadywWWJ3feb-4fHc=",
+      "published_at": "2026-07-29T00:00:00Z",
+      "affected_symbols": [
+        "TLT",
+        "IEF"
+      ]
     },
     {
-      "evidence_id": "ev_03",
+      "evidence_id": "EV003",
       "category": "rates",
       "region": "US",
-      "title": "通膨壓力持續高企且能源價格再升",
-      "summary": "PCE物價指數6月年增3.7%，核心PCE年增3.3%。美伊敵對行動導致油價上漲，歐元區能源通脹率加速至10.0%。",
-      "market_relevance": "高於目標的通膨數據與能源價格攀升加劇通膨持續性擔憂，對股市估值構成壓力。",
-      "source_title": "利率、通膨、美元與美債",
-      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMngsAkms07s3WOdiqhFHySCEEZ6G4Ru55YV9Rw3xt1zqYsbcWS_G2ckXBc0176l9dfUFZqddi73PFIvfIZQYuBdbnGSDtOhcVxukzFmpfMWuEZxYQsieweX7dZACSLi0zFWFHkPAqhSuaJJSXuxvAeo_m2cH3I9o-0UVqNREiedo4iQ_w2p4EMevD",
-      "published_at": null,
-      "affected_symbols": []
+      "title": "美國6月CPI顯著降溫但核心通膨仍高於目標",
+      "summary": "美國勞工統計局報告指出，2026年6月消費者物價指數（CPI-U）經季節調整後月減0.4%，年增率降至3.5%（5月為4.2%）。核心CPI（不含食品和能源）月度持平，年增率從5月的2.9%降至2.6%。能源指數月減5.7%，主要受汽油價格月跌9.7%影響。然而，個人消費支出物價指數（PCE）年增率為3.7%，核心PCE年增率為3.3%，仍高於聯準會2%的目標。",
+      "market_relevance": "總體通膨降溫有望緩解聯準會近期升息壓力，但核心通膨數據仍顯頑固，意味著物價壓力並未完全消退。市場將密切關注未來幾週即將公布的7月通膨數據，以判斷通膨趨勢是否持續，這將影響投資人對聯準會9月政策決議的預期。",
+      "source_title": "US Bureau of Labor Statistics CPI Report",
+      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQECP15Nmy5XOaDaW-yWGoZdGNA7hF03YQ094z2Wh3l48u7102b3LLN9xg-IYvpw2m5fjSuuCGCfIHo6B7HjQl40oJ4njILsqLIYscQlDdvz10Cm8k77Q8vrtvEcl8HW8ad9mUQ6qF11-V_dU0Cp2GsTRy4FkUXaprUGip3Ofwd7LWlEiyjuTlAkJe6vWiu16s3w1XCQSf1j",
+      "published_at": "2026-07-14T00:00:00Z",
+      "affected_symbols": [
+        "SPY",
+        "TLT"
+      ]
     },
     {
-      "evidence_id": "ev_04",
-      "category": "rates",
+      "evidence_id": "EV004",
+      "category": "industry",
       "region": "US",
-      "title": "美國公債殖利率上行",
-      "summary": "30年期公債殖利率於7月30日升至5.24%創2007年以來新高，10年期公債殖利率達4.67%。",
-      "market_relevance": "公債殖利率上行增加企業融資成本，挑戰成長型股票估值。",
-      "source_title": "利率、通膨、美元與美債",
-      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQENFQEAFXySfFBDMNwTRNhwc2ifnEQOk0qeQy34G4moyn096Oxr6lBo-vffApKP0oVpVEM5RRid3O8Pf-v2n4p4rzCohvhYHHkGd4E8mAPaKWDKT4lOml1YlnA-FFc4GpUtg8bTbwsbkCE3KM9bbb-7NgHDnV240lAiuZM_SDg4kAFR_v_F2fdYisPKlI3xOJgnAO4LkzHkWw8GCQKknzJOYWR0vC7tJYpj5L8aCHf6ohXN",
-      "published_at": null,
-      "affected_symbols": []
+      "title": "美國7月製造業PMI略有放緩但服務業PMI上升",
+      "summary": "標普全球（S&P Global）公布的美國7月製造業採購經理人指數（PMI）初值為53.8，略低於6月的53.9及市場預期的54.3，但仍接近四年來的最高水平。生產成長顯著放緩至三月以來最低，新訂單擴張速度為四個月以來最弱。服務業PMI初值則上升至53.6，高於市場預期的51.5。製造業的供應商交貨時間延長，主要與中東地區供應中斷有關。",
+      "market_relevance": "製造業活動的輕微放緩可能反映全球需求減弱或供應鏈問題，但強勁的服務業表現表明國內需求仍有韌性。中東地區的供應中斷作為潛在尾端風險，可能在未來幾日持續影響全球供應鏈及特定產業的生產成本。",
+      "source_title": "S&P Global PMI Release",
+      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEN3UhzKdeQ7VlvLBIHNFMRS_1crGMcPo6jd-eKpnQCGRTR0i9Kwr9IjtCoCBbSbIx9zxVJ_anonPWQ5U7wguQOxNuFzhQ4yUvVS5Yg91f4xfjr4kHoAkNiqghdFBeHPeGIg9aZpSaezmoYaxVW9GUVlB04jWH0y8fxoA==",
+      "published_at": "2026-07-24T00:00:00Z",
+      "affected_symbols": [
+        "XLI",
+        "XLC"
+      ]
     },
     {
-      "evidence_id": "ev_05",
+      "evidence_id": "EV005",
       "category": "labor",
       "region": "US",
-      "title": "就業市場依然強勁",
-      "summary": "新申請失業給付人數增加9,000人至19萬7,000人，6月非農就業增長5.7萬人，失業率降至4.2%。",
-      "market_relevance": "強勁勞動力市場支撐消費，但也可能導致工資上漲並加劇通膨壓力。",
-      "source_title": "人力市場",
-      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERBmZ83NnrO7LdGZIGdEQpP1Zfak0jLhZJdEEA361mBhOp5-l4tfjKy5eEvHoWSgYWCOVc00dhWVu0saZuCc6R2zANjxmvtPSck2OTEVtQlBS0p0nA_GBSaAF_6zxnHpEYfzFr_cUd-yoncZ6-sP3FqgZzskFl2UBrCv0DhfSyuavBuJeqWDGwV16xxqU=",
-      "published_at": null,
-      "affected_symbols": []
+      "title": "美國6月非農就業增長放緩失業率微降，初領失業金人數創新低",
+      "summary": "美國勞工統計局報告，2026年6月非農就業人數增加57,000人，失業率從5月的4.3%微降至4.2%。勞動力參與率下降0.3個百分點至61.5%。儘管就業增長放緩，但2026年7月中旬初領失業救濟金人數降至19萬以下，創下1969年9月以來最低水平，且連續請領失業救濟金人數自2025年9月以來呈現下降趨勢。",
+      "market_relevance": "非農就業數據顯示勞動市場增長趨緩，可能緩解工資通膨壓力，但失業率仍保持低位且初領失業金人數創新低，表明勞動力市場整體健康。這種矛盾的信號可能使市場對聯準會未來政策路徑的判斷更加複雜，並可能在未來五個交易日引發對經濟軟著陸前景的重新評估。",
+      "source_title": "US BLS Employment Situation Summary",
+      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEO4OcfQUBrVDXHTKftIpYSKEt1OWAXldITa_FcCsVcqqI0BfqnUp0AegBXgeF_bqFmmYUcfHyR4IooccZao26UEvqj_ZXH2K6nw_52yH-efizLzOKCy8hxJXLPLPvvZ5VwmqZIq3oR-0OmmrrdhLB6fc7QqQxNvnEzx8d_XnDxiohR8vgwVE1tasjwrT0cZj1t6knUC5BDFO8pT3jeYrngNPMumuyDKul7qgU4ibE=",
+      "published_at": "2026-07-31T00:00:00Z",
+      "affected_symbols": [
+        "SPY",
+        "QQQ"
+      ]
     },
     {
-      "evidence_id": "ev_06",
+      "evidence_id": "EV006",
       "category": "social_demand",
       "region": "US",
-      "title": "消費者信心下滑但對未來仍樂觀",
-      "summary": "7月消費者信心指數降至90.8，密西根大學7月消費者信心指數終值為55.2。消費者對當前條件評估下降但對未來收入與就業預期樂觀。",
-      "market_relevance": "信心下滑預示消費支出面臨阻力，但對未來收入樂觀可提供一定支撐。",
-      "source_title": "消費與社會需求",
-      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERxkFYqikT2nRLOJP26VYqPaSp5KKRbhYPzCQvnCP7PLNIbI9EXdLkmlBPXr0Y6YpA3qSqEu1oTdgQ2WDXDupFw6vztI_toQCzQH0kQycNiweVpLAL890mCoshtwbGfgsab4cgiFbYOtIT-c_aDp0kPsfYF92vy2xD5D4Bhih7C5fB3V1Jf_WByXIO",
-      "published_at": null,
-      "affected_symbols": []
+      "title": "美國消費者信心分歧與零售銷售表現",
+      "summary": "截至2026年7月25日當週，紅皮書商業零售銷售年增率達8.1%，較前一週的7.8%有所提升。然而，7月密西根大學消費者信心調查顯示消費者情緒回升至近五個月新高，而另一報告則顯示美國消費者對企業前景及勞動市場的看法轉趨悲觀，導致7月份消費者信心指數意外下滑。6月個人儲蓄率降至2.7%，創四年新低。",
+      "market_relevance": "零售銷售數據的強勁表現支持消費支出依然是美國經濟的重要支柱。然而，消費者信心數據的分歧及個人儲蓄率的下降，可能預示著未來消費動能的可持續性存在風險。這種不確定性可能在接下來的交易日影響消費類股的表現。",
+      "source_title": "Redbook & Consumer Confidence Reports",
+      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESKrfzwEc7OvTflKbaFXIZn4u5Gr8ct5LCJu6solOPtxDZ8Jxmp9KOKzMB-QaVDM3c_wRJjyW6ecd3ACGvx2opHbtjZII2CM7xyCLMqlbCBpjW7zcE6xw4FaU6HuBCNf4bOGxHE9n72TwxIxqtZ7vNkA5EERcHvwVebfflB0kxaQUND0kYUg==",
+      "published_at": "2026-07-29T00:00:00Z",
+      "affected_symbols": [
+        "XLY",
+        "XLP"
+      ]
     },
     {
-      "evidence_id": "ev_07",
+      "evidence_id": "EV007",
       "category": "industry",
-      "region": "Global",
-      "title": "AI晶片需求激增驅動半導體產業發展",
-      "summary": "AI相關需求強勁，帶動算力與先進製程晶片旺盛需求，代理式AI提升CPU在數據中心的重要性。",
-      "market_relevance": "AI晶片需求成為半導體行業及供應鏈的主要增長動力。",
-      "source_title": "關注產業的產品與供需 (半導體/AI)",
-      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVNVev1b6xkIxc5u5glBkThQzXu7gge_DIIokErb2-7MIFBX3JoPU4LpF5ORuAJVGP0Et0a_s8QALEk6Zj7eYh0TvgD4z4QXc-5_23hfxM0_OhCbysOruzy3QGkphy8UUI50MBMi2U6J-KuYOb9Q==",
-      "published_at": null,
+      "region": "US",
+      "title": "AI投資驅動企業資本支出與進口激增",
+      "summary": "2026年美國經濟受新興AI產業帶動，民間投資熱潮大規模擴張。企業在AI相關高科技設備與軟體投資的四季增速已接近20%，支撐製造業產出的動能。非國防資本財新訂單進入高速成長期。然而，大量支持AI建設的晶片與相關產品進口激增11.5%，直接削減了美國第二季度GDP增幅1.5個百分點。",
+      "market_relevance": "AI領域的強勁投資對科技股及其供應鏈構成長期利多，預計將持續驅動相關企業的資本支出。然而，由於大量AI相關產品依賴進口，這可能導致貿易逆差擴大，並在數據層面拖累美國GDP成長數字，可能引發市場對「AI熱潮」是否真正轉化為國內經濟效益的討論。",
+      "source_title": "US Bureau of Economic Analysis - Investment and Imports Report",
+      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUncHZp8EeZidaUsNCjTZ4v4S1T4_6_9_q-6qh7n6w2j7QrvgRIO-HVIe5hs52C93Xyu407wPXjyJ8lnzCzYcafhA6OlSk8IZnj9rA0yibYkvNHACIvCoVnpnJcIaKugkpUZ8mkt8SUqXTqwyPhg==",
+      "published_at": "2026-07-31T00:00:00Z",
       "affected_symbols": [
-        "TSMC",
         "NVDA",
-        "AMD"
+        "MSFT",
+        "META"
       ]
     },
     {
-      "evidence_id": "ev_08",
-      "category": "company",
-      "region": "Global",
-      "title": "半導體巨頭大幅上調資本支出",
-      "summary": "台積電將2026年美元營收成長預期調升至逾40%，全年資本支出上調至600-640億美元。全球主要晶圓廠資本支出預計達1,500億美元新高。",
-      "market_relevance": "巨額資本支出計畫預示行業強勁增長，有利於設備商、材料供應商和相關技術服務公司。",
-      "source_title": "科技發展與資本支出",
-      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQElMCqNQx1mQp7ZLtmWFmfGUA7uUN03JvhuqZA9cbqIvWAJ98Cg-93Tu31YBEC2C6FcVYJspoASXGpde92BEt66QrEKUOe9rnabziAc0vQ5Fzc0FsOiPjLQNjmnZpIT60c7L5VtDetoxBebVQ==",
-      "published_at": null,
-      "affected_symbols": [
-        "TSMC"
-      ]
-    },
-    {
-      "evidence_id": "ev_09",
+      "evidence_id": "EV008",
       "category": "geopolitics",
       "region": "Global",
-      "title": "中東衝突對能源市場的影響",
-      "summary": "美伊敵對行動恢復導致國際油價上漲，布蘭特原油重回每桶92美元，推高歐元區能源通脹。",
-      "market_relevance": "地緣政治引發的能源波動是全球通膨的重要驅動因素。",
-      "source_title": "全球地緣政治",
-      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpbqZGkYWJVx-R_JEDVWS9vHvh5EDhcSQeDERpR1IfMF9x6O0nYSS1k1NH6Q7oKMA33_b6Y7RzbSHnY09vg7ljndpXFYCm_adq3F7yajHTw0kZyukPbQgSBYDxbUWfPf41XwaiH2XrP8KWZMvDKg==",
-      "published_at": null,
-      "affected_symbols": []
+      "title": "全球地緣政治：中東衝突持續影響能源市場與經濟不確定性",
+      "summary": "中東衝突被聯準會聲明列為推升經濟不確定性及能源等部門物價上漲的背景因素。7月份製造業PMI報告中，供應商交貨時間延長主要與中東地區供應中斷有關。美國民眾對「伊朗戰爭」的態度趨於負面，高達72%的受訪者認為防止國內油氣價格上漲「極為重要」。",
+      "market_relevance": "中東地區的持續衝突對全球能源價格和供應鏈穩定性構成顯著的尾端風險。油價波動可能影響通膨預期和消費者支出能力，並在全球市場情緒中扮演關鍵角色。未來五個交易日，任何關於中東局勢的進展都可能迅速引發市場反應。",
+      "source_title": "Geopolitical Risk & Energy Market Report",
+      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZSRBOpY_DisB2aO77FYec0AcI_5JOVVhEkEerrr2n1hxA7wPJ9fzcnYIM6ejOVcNJnZNYK9QUSKF3zVLvnWtV1-hKHimpRl9ktqsDHDHd_psrZKvkITZJLmJOBY27n4vuk4gK5XYkHl104866syAe6_WAY5BP",
+      "published_at": "2026-07-23T00:00:00Z",
+      "affected_symbols": [
+        "XLE",
+        "CL=F"
+      ]
     },
     {
-      "evidence_id": "ev_10",
+      "evidence_id": "EV009",
       "category": "global_economy",
-      "region": "China",
-      "title": "中國經濟下行壓力加大",
-      "summary": "7月官方製造業PMI為49.2，非製造業為49.0，綜合PMI產出指數為49.3，均跌破榮枯線。第二季GDP增速4.3%創三年新低。",
-      "market_relevance": "中國經濟活動放緩可能對全球供應鏈和國際貿易產生負面影響。",
-      "source_title": "中國、台灣、日本、韓國與歐洲的經濟發展",
-      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9nQWxtao1Pgdw1FMKbcLbnu4g2auMrIkVh1Fj8cAotjDGnv2ZrATgGK1QnZJjFL2iEKKG7sE1_-Nt7GZVEVQP7y3eeutXakHttIeiRQ1PiZpT-JxFwdlJSt8wR-VKipw8_5fy71A=",
-      "published_at": null,
-      "affected_symbols": []
+      "region": "Global",
+      "title": "歐元區Q2經濟成長超預期，中國製造業PMI收縮",
+      "summary": "歐元區2026年第二季經濟數據較前一季成長0.4%（高於預期的0.2%），年增率達到1%（優於預估的0.5%）。人工智能投資增加、政府支出充裕及消費信心改善等因素抵銷了能源成本上升和中東戰事帶來的衝擊。然而，多數機構預測歐元區全年經濟成長率可能低於1%。中國7月製造業PMI再次陷入收縮區間，降至49.2。",
+      "market_relevance": "歐元區經濟的超預期表現可能為全球經濟增長帶來一定的積極信號，但全年展望受能源價格拖累仍存不確定性，這可能影響歐元區資產的吸引力。中國製造業PMI的收縮則加劇了對全球需求放緩的擔憂，可能對全球貿易、大宗商品市場以及與中國供應鏈高度相關的亞洲經濟體造成壓力。",
+      "source_title": "Eurostat & China NBS PMI Report",
+      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_PGGONqApuyJQCoaE6NjVuqZhItd_MiKFYNUF3zW4kjsvZ-T8zMezar2by8MV8b5fnTWVevAZCGWsX0ew3wrFcWGMT7VFZKqFM0JpFnURpbxstAKhaVA3BXsjI5cLpT1jnVoeDxLh3s7vXHqthXw_FFXY-627OFWdivCx2DE=",
+      "published_at": "2026-07-31T00:00:00Z",
+      "affected_symbols": [
+        "EZU",
+        "FXI"
+      ]
     },
     {
-      "evidence_id": "ev_11",
-      "category": "global_economy",
-      "region": "Korea",
-      "title": "韓國經濟受AI推動上修成長預期",
-      "summary": "韓國政府上調2026年經濟增長率預測至3.0%，受AI需求強勁、半導體出口表現優於預期帶動，7月出口額預估年增59%。",
-      "market_relevance": "韓國經濟上修反映全球AI晶片需求旺盛，對全球科技供應鏈是積極信號。",
-      "source_title": "中國、台灣、日本、韓國與歐洲的經濟發展",
-      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFDMs3yVs1v64_C1FprqkNnFOOX_2_IyNBpiAxidFnUurHvktMwgnHogetBq3qTvs8cxFlpVVdHwjB7u463qmIwdUSKfe9ODW8OxRxpwEL0tRxM6Qh5vJzu6GoGLxrMdq-UR2hjboZd4efwInZdpD5zasaYkLavJjMLdGnizlLmC-tPE6M4Nlx0SI76y3kb0f1gSM-zagKka2CzBCbxNJUYt4xi2sNUKrxAkSbOzilkEO73tKf2TQIa5kU6zR9h-yMRmw==",
-      "published_at": null,
-      "affected_symbols": []
-    },
-    {
-      "evidence_id": "ev_12",
-      "category": "rates",
-      "region": "Japan",
-      "title": "日本央行維持利率但持續緊縮立場",
-      "summary": "日本央行維持無抵押隔夜拆款利率在1.0%左右不變，但表示將根據經濟、物價和金融形勢繼續提高政策利率。",
-      "market_relevance": "維持緊縮立場預示未來有升息空間，可能影響日圓匯率和全球資金流向。",
-      "source_title": "中國、台灣、日本、韓國與歐洲的經濟發展",
-      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFY-83AcbDbiW-T-oeqI3qmwGTXSN4qqLWADwPBqzozR28rdC3S4OGGSYjg5X8X9KhGCqNuZAlLkiGEg6F154o5BcBzcjEifSQOl5N_LzitZIFgc0QrVsJoMkriDzIQMsHlenGzyZ8xu7Pt2-T_1zVZ85Dv5P8Hr6sE39Fw",
-      "published_at": null,
-      "affected_symbols": []
-    },
-    {
-      "evidence_id": "ev_13",
-      "category": "global_economy",
-      "region": "Europe",
-      "title": "歐元區通膨持續加速",
-      "summary": "2026年7月歐元區年通脹率加速至2.9%，能源價格飆升為主因。歐洲央行於7月23日維持利率不變。",
-      "market_relevance": "通膨持續上行可能使得歐洲央行未來面臨更大緊縮壓力。",
-      "source_title": "中國、台灣、日本、韓國與歐洲的經濟發展",
-      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgGLQRvySRKGYBpvkYbVv38tSil_IW3Tk68TmlBTk7AXuL1k4idcoawIEiBvu9jVKxV2ryl_RXT_wZ7xU05DTOdYhAHwSk6OCw9x1KZAhcGr7_ypswDjC1LWdRlg==",
-      "published_at": null,
-      "affected_symbols": []
-    },
-    {
-      "evidence_id": "ev_14",
-      "category": "us_economy",
+      "evidence_id": "EV010",
+      "category": "us_politics",
       "region": "US",
-      "title": "未來七日已知催化事件與尾端風險",
-      "summary": "聯準會9月會議前仍有兩份通膨數據將公布，中東衝突升級可能導致油價進一步飆升並加劇全球通膨壓力。",
-      "market_relevance": "即將公布的通膨報告與中東地緣政治風險將直接影響市場對貨幣政策的預期，可能導致市場大幅波動。",
-      "source_title": "未來七日已知催化事件與尾端風險",
-      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFjLpKOW_XRj31HKR2hK_z881WpceMglmC9KylGq7rIsTZVim_srr3067Wj3MGhciCBr8HqAo94S5emh6rsKX3tcggroEm3T8gAhY0rOlFnHzYj6BrKzjP9uyuAF5mKzEILtKOAojIxSus=",
-      "published_at": null,
-      "affected_symbols": []
+      "title": "埃隆·馬斯克介入2026美國中期選舉加劇政治不確定性",
+      "summary": "據報導，科技億萬富翁埃隆·馬斯克正大舉介入2026年美國中期選舉，計劃重啟「美國政治行動委員會」(America PAC)並投入巨額資金，旨在通過提升共和黨選民投票率來幫助共和黨。該組織曾在2024年美國總統大選期間投入超過2.6億美元支持特朗普。",
+      "market_relevance": "儘管中期選舉尚有一段時間，但像馬斯克這樣的重量級人物大筆資金的介入，將顯著影響選舉的格局和結果。這可能導致市場對未來美國政治和監管環境產生更多不確定性，尤其是在科技、能源等馬斯克關注的領域，進而影響相關企業的股價。",
+      "source_title": "US Midterm Election Campaign Report",
+      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtHldAfYv-5l2x18Uwj02qgs99QnrecDZ2uOmcjJ4LZ9NeLAAUjuyTgi3gCwtjHYPHxvk5oYARaES3_bcGfV9eAjl4ywVXJ9o0-L_u3nNv8_ADQqNG0T8iCZlT-dtgN7J9y6XVMFpyZzZQJQBIFAQObT08FDp4YWi72V8m9YM=",
+      "published_at": "2026-07-30T00:00:00Z",
+      "affected_symbols": [
+        "TSLA"
+      ]
     }
   ],
   "research_mode": "non_trading_day_survey",
-  "research_generated_at": "2026-07-31T21:15:55.918902Z",
+  "research_generated_at": "2026-08-01T08:38:01.143703Z",
   "warnings": [
     "Yahoo Finance 資料可能延遲，僅供研究；下單前必須向券商核對價格。",
     "已啟用當下盤中/即時快照（MARKET_DATA_REALTIME=true）。"
