@@ -135,7 +135,7 @@
         <section class="hero">
           <div class="hero-main">
             <span class="eyebrow">Investment brief / ${escapeHtml(recommendation.run_id)}</span>
-            <h1>6,000 美元，<br /><span>一個可稽核的決策。</span></h1>
+            <h1>策略資金，<br /><span>一個可稽核的決策。</span></h1>
             <p class="hero-lede">
               八個專業研究角色、兩位批判者與一位 CIO，把市場觀點壓縮成一份
               可驗證、不可自動執行的目標配置。
@@ -195,7 +195,7 @@
             <header class="panel-header">
               <div>
                 <span class="section-kicker">Short-term Allocation</span>
-                <h2>6,000 美元短線建議配置</h2>
+                <h2>研究短線建議配置</h2>
               </div>
               <span class="panel-meta">RESEARCH ONLY<br />NOT EXECUTED</span>
             </header>
@@ -226,7 +226,7 @@
                     <tr>
                       <th>標的</th>
                       <th>建議金額</th>
-                      <th>佔 6,000 比例</th>
+                      <th>佔策略資金比例</th>
                       <th>類型</th>
                       <th>研究／風控備註</th>
                     </tr>
@@ -238,7 +238,7 @@
                           <tr>
                             <td data-label="標的"><span class="symbol">${escapeHtml(item.symbol)}</span></td>
                             <td data-label="建議金額">${money(item.target_amount_usd)}</td>
-                            <td data-label="佔 6,000 比例">${percent(item.target_weight)}</td>
+                            <td data-label="佔策略資金比例">${percent(item.target_weight)}</td>
                             <td data-label="類型"><span class="asset-type">${escapeHtml(assetTypeLabel(item.asset_type))}</span></td>
                             <td data-label="研究／風控備註" class="allocation-note">${escapeHtml(item.note)}</td>
                           </tr>`,
