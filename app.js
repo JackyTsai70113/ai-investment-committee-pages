@@ -114,6 +114,10 @@
     const scoreAngle = `${modelScore * 3.6}deg`;
     const donut = buildDonut(recommendation.allocations);
     const committeeSize = committee.proposals.length + committee.critiques.length + 1;
+    const executionPolicyLabel =
+      system.execution_policy === "manual only"
+        ? "僅限人工執行"
+        : String(system.execution_policy || "未提供");
 
     root.innerHTML = `
       <div class="app-shell">
@@ -503,7 +507,7 @@
         </div>
 
         <footer class="footer">
-          <span>研究建議需由使用者人工確認 · 系統不連接券商</span>
+          <span>${escapeHtml(executionPolicyLabel)} · 券商連線 ${system.broker_access ? "已啟用" : "未啟用"}</span>
           <span>市場資料 ${escapeHtml(market.source)}</span>
           <span>最後更新 ${escapeHtml(dateTime(system.updated_at))}</span>
         </footer>
