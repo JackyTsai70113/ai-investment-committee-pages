@@ -1,54 +1,98 @@
 {
   "schema_version": "1.0",
-  "run_id": "20260804T155659Z",
-  "generated_at": "2026-08-04T15:56:59.500083Z",
-  "data_cutoff": "2026-08-04T15:38:19.715163Z",
+  "run_id": "20260805T122207Z",
+  "generated_at": "2026-08-05T12:22:07.233751Z",
+  "data_cutoff": "2026-08-05T12:20:27.256629Z",
   "status": "live",
   "capital_usd": "6000.00",
-  "model_score": 98,
-  "model_score_reason": "方向一致度 98/100；12 位提案委員按信心加權，0 項協商後否決仍未解除，扣除 0 分。",
+  "model_score": 97,
+  "model_score_reason": "方向一致度 97/100；10 位提案委員按信心加權，0 項協商後否決仍未解除，扣除 0 分。",
   "risk_level": "high",
-  "expected_horizon": "僅維持至下一個可驗證完成交易日；下一輪須重新檢查事件閘門、收盤時間切點、5日同步視窗與摩擦扣除結果。槓桿或反向 ETF 本輪不配置。",
+  "expected_horizon": "研究建議持有 1 至 3 個完成交易日；AMD、PLTR 與其他風險資產須於下一個完成交易日重新檢視。未配置槓桿或反向 ETF；若未來使用，最多僅 1 個交易日且每日重新驗證。",
   "allocations": [
+    {
+      "symbol": "SPY",
+      "asset_type": "etf",
+      "target_weight": "0.1538",
+      "target_amount_usd": "922.80",
+      "action": "buy",
+      "note": "以大盤取代集中押注；SPY 趨勢偏正，但僅作狀態證據，未經 3/7 日策略視窗驗證。；統計樣本尚未成熟，依政策按比例縮減風險資產。"
+    },
+    {
+      "symbol": "GLD",
+      "asset_type": "commodity_etf",
+      "target_weight": "0.0769",
+      "target_amount_usd": "461.40",
+      "action": "buy",
+      "note": "作為與股票不同的分散來源；快照顯示短期表現溫和，不能宣稱已驗證的防禦優勢。；統計樣本尚未成熟，依政策按比例縮減風險資產。"
+    },
+    {
+      "symbol": "TLT",
+      "asset_type": "etf",
+      "target_weight": "0.1154",
+      "target_amount_usd": "692.40",
+      "action": "buy",
+      "note": "利率回落日具一定分散價值，但 20 日報酬為負且 RSI 偏弱，權重保持有限。；統計樣本尚未成熟，依政策按比例縮減風險資產。"
+    },
+    {
+      "symbol": "AMD",
+      "asset_type": "stock",
+      "target_weight": "0.0231",
+      "target_amount_usd": "138.60",
+      "action": "buy",
+      "note": "10-Q 財務結果支持中長期基本面觀察，但 7 日視窗缺席，不作短期方向性加碼。；統計樣本尚未成熟，依政策按比例縮減風險資產。"
+    },
+    {
+      "symbol": "PLTR",
+      "asset_type": "stock",
+      "target_weight": "0.0154",
+      "target_amount_usd": "92.40",
+      "action": "buy",
+      "note": "財務數據偏正面但股價單日與 5 日漲幅極大、距均線明顯偏高，僅保留極小觀察權重。；統計樣本尚未成熟，依政策按比例縮減風險資產。"
+    },
+    {
+      "symbol": "SMH",
+      "asset_type": "etf",
+      "target_weight": "0.1154",
+      "target_amount_usd": "692.40",
+      "action": "buy",
+      "note": "半導體短線動能強，但 20 日報酬仍為負、年化波動約 52%，以有限權重表達而非追價。；統計樣本尚未成熟，依政策按比例縮減風險資產。"
+    },
     {
       "symbol": "CASH",
       "asset_type": "cash",
-      "target_weight": "1",
-      "target_amount_usd": "6000.00",
-      "action": "hold",
-      "note": "協商與風險閘門未通過，本次不產生風險資產配置。"
+      "target_weight": "0.50",
+      "target_amount_usd": "3000.00",
+      "action": "reduce",
+      "note": "統計樣本尚未成熟，保留現金但不將市場風險歸零。"
     }
   ],
   "top_reasons": [
     {
       "id": 1,
-      "title": "官方事件閘門全部缺失",
-      "summary": "event_calendar 顯示 FOMC、BLS、NYSE 與 earnings 均為 missing，coverage_start、coverage_end 及 events 皆為空，且模式為 missing_fail_closed；因此不能用價格或研究敘事解除新增風險限制。",
-      "confidence": 99,
+      "title": "樣本不足只限制風險，不強制空手",
+      "summary": "3／7 日共同完整視窗只有 0 個，未達 20 個統計成熟門檻；deterministic gate 將風險資產合計限制為 50.00%，但不將風險歸零。",
+      "confidence": 100,
       "category": "policy",
       "affected_assets": [
         "SPY",
-        "QQQ",
+        "GLD",
+        "TLT",
+        "AMD",
+        "PLTR",
         "SMH",
         "CASH"
       ],
-      "source_urls": [
-        "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-        "https://www.bls.gov/schedule/",
-        "https://www.nyse.com/trade/hours-calendars",
-        "https://www.sec.gov/edgar/searchedgar/companysearch"
-      ]
+      "source_urls": []
     },
     {
       "id": 2,
-      "title": "缺少完成日收盤審計",
-      "summary": "多數 quotes 的 price_session 為 null，快照未提供可驗證的 regular close 或完成交易日欄位；因此單日 price 與 change_percent 不能直接作為政策級技術證據。",
-      "confidence": 96,
-      "category": "policy",
+      "title": "市場狀態偏向風險承擔但非已驗證優勢",
+      "summary": "快照將 regime 標示為 risk_on、volatility 為 normal；SPY 20 日報酬為 3.158978%，且高於 50 日均線約 3.410609%。這支持保留部分風險資產，但不能取代 3 日與 7 日滾動視窗驗證。",
+      "confidence": 78,
+      "category": "macro",
       "affected_assets": [
         "SPY",
-        "QQQ",
-        "SMH",
         "CASH"
       ],
       "source_urls": [
@@ -57,29 +101,25 @@
     },
     {
       "id": 3,
-      "title": "技術特徵完全缺失",
-      "summary": "市場快照的 features 陣列為空，無法驗證 SPY、QQQ 的20日趨勢與均線、VIX低於20日均線，或 SMH 的20日趨勢、均線與量能確認。",
-      "confidence": 98,
+      "title": "SPY 動能較健康且波動相對可控",
+      "summary": "SPY 最近完成交易日上漲 1.8029%，5 日報酬為 4.112792%，20 日年化波動為 14.538064%，RSI14 為 59.72，量比為 1.388153。其相對適合作為核心風險曝險，而非集中個股。",
+      "confidence": 75,
       "category": "technical",
       "affected_assets": [
-        "SPY",
-        "QQQ",
-        "SMH",
-        "CASH"
+        "SPY"
       ],
-      "source_urls": []
+      "source_urls": [
+        "https://finance.yahoo.com/"
+      ]
     },
     {
       "id": 4,
-      "title": "單日市場表現偏多但不可外推",
-      "summary": "SPY 上漲1.28%、QQQ上漲2.55%、IWM上漲1.28%、DIA上漲1.42%，顯示當日風險資產反彈；但僅有單日資料，不能替代5個完成交易日視窗或相對基準檢核。",
-      "confidence": 94,
+      "title": "半導體短線強勢但中期尚未修復",
+      "summary": "SMH 最近完成交易日上漲 5.545778%、5 日上漲 8.70658%，但 20 日報酬仍為 -0.987186%，20 日回撤為 -5.780405%，年化波動達 52.365019%。因此僅給有限權重。",
+      "confidence": 82,
       "category": "momentum",
       "affected_assets": [
-        "SPY",
-        "QQQ",
-        "IWM",
-        "DIA"
+        "SMH"
       ],
       "source_urls": [
         "https://finance.yahoo.com/"
@@ -87,111 +127,102 @@
     },
     {
       "id": 5,
-      "title": "半導體領漲伴隨波動上升",
-      "summary": "SMH單日上漲4.78%，但VIX同步上升2.27%至16.22；這只支持科技動能的描述性觀察，不能證明低波動或可持續的進攻環境。",
-      "confidence": 91,
-      "category": "momentum",
+      "title": "AMD 財報支持基本面觀察而非短線訊號",
+      "summary": "AMD 2026 Q2 累計營收為 217.89 億美元、淨利 36.80 億美元、營業利益 34.66 億美元、稀釋 EPS 2.22；但該資料沒有下一期正式指引，且短期 7 日視窗為零。",
+      "confidence": 72,
+      "category": "valuation",
       "affected_assets": [
-        "SMH",
-        "SPY",
-        "QQQ"
+        "AMD"
+      ],
+      "source_urls": [
+        "https://www.sec.gov/Archives/edgar/data/2488/000000248826000123/amd-20260627.htm"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "PLTR 價格已顯著偏離短期均線",
+      "summary": "PLTR 最近完成交易日上漲 29.454836%、5 日上漲 31.67652%，20 日上漲 21.053814%，距 MA20 約 25.005286%，RSI14 為 69.16，量比為 4.13613。即使財報偏正面，也不宜追高集中。",
+      "confidence": 88,
+      "category": "risk",
+      "affected_assets": [
+        "PLTR"
       ],
       "source_urls": [
         "https://finance.yahoo.com/"
       ]
     },
     {
-      "id": 6,
-      "title": "利率與通膨政策不確定",
-      "summary": "研究證據指出7月FOMC維持利率在3.50%至3.75%，但有3位理事主張升息；ISM製造業PMI為55.6且物價疑慮仍在，利率再定價風險尚未消除。",
-      "confidence": 87,
-      "category": "macro",
+      "id": 7,
+      "title": "TLT 提供分散但利率敏感度仍高",
+      "summary": "TLT 最近完成交易日上漲 0.766513%，但 5 日報酬為 -1.685658%、20 日報酬為 -2.04613%，RSI14 為 36.95，距 MA20 為 -0.971513%。因此配置有限，不能宣稱其防禦效果已被多日驗證。",
+      "confidence": 78,
+      "category": "diversification",
       "affected_assets": [
-        "SPY",
-        "QQQ",
-        "SMH",
         "TLT"
       ],
       "source_urls": [
-        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6uYYNvZ9TDyJFRtbenfofVP6r4b-4qbggvlWb_4jPMqfv4VAp1ilAgkyxPYNJft6N9IpOXs4A9TfQRRKQfrB2a29f8dQd9j6pO60yGKwvBTwSg6FWErzVUUz7vQm8xJKkHJTxK2mlOeNVK-5jKv9X39feZ3Z2959VZ-NaMC1RKm4CE9Woq2QBVtEIURuAXRtTCqXZVuZY3VBEbMTwVcIbqU8djnM9EQMoRmRwwF5jTxvP4AkuEDiiakf-l9MvQDC-Fk_ZtTqsnCm2w9XMg0LWeOzeqyVdMpeTj8R3ujZ86LSN0R9tzQ7Cuo4Iij15FAG7u9s2kca4J9KuSE051G5WXxw-izLjyn87pYECSa-Dgj66igEcdKtzRyzIlODpwNiBvqMan9lzoqLAT8i-5CrN2BHOfs426-D-EaWwMTsaacHwlexKClRR_eRiU0QjcLe6R18d_dfUGA6gv_4ohbeHoB5OmMW0KXL0RmB35GNlq8MQ68QdNg0Zm0hQ6n2XLTXhxJgAkwVuRCREuyJuA21DPbkk2qbswXLSaMQ8rrCPQzb7lQ7jfRMgTjDt6jzeQZ-B_m5uoMwvaLuM",
-        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4A8G4HcqA4MbyMflmSuhxaHUHeVUvMl4vru3muRf2sMMQfZP66zD1JUfy8W2fFIl_DWkux2FL5rRWgI16kth8jGEOlnuvQzxKfrM0eToX89OI9TG_X9-0Ay2FdKheNJZGOHBxZfriuB2sbU3b_8Rkru7wR4nkYXM9Yg=="
+        "https://finance.yahoo.com/"
       ]
     },
     {
-      "id": 7,
-      "title": "短期績效硬檢核未完成",
-      "summary": "本輪只有CASH的5日研究視窗，未提供策略與SPY、QQQ、IWM、DIA、VTI在相同完成交易日視窗的同步淨報酬，因此尚不能判定策略超越挑戰組最高者。",
-      "confidence": 96,
+      "id": 8,
+      "title": "GLD 可分散但近期方向不明確",
+      "summary": "GLD 最近完成交易日上漲 0.659119%，但 20 日報酬為 -0.882139%、20 日回撤為 -1.308291%，距 MA50 為 -2.438769%。因此將其視為分散工具，而非已確認的趨勢部位。",
+      "confidence": 73,
+      "category": "diversification",
+      "affected_assets": [
+        "GLD"
+      ],
+      "source_urls": [
+        "https://finance.yahoo.com/"
+      ]
+    },
+    {
+      "id": 9,
+      "title": "短期績效政策仍限制方向性調整",
+      "summary": "本輪 3 日完成視窗為 2 個、正報酬視窗 1 個；7 日完成視窗為 0 個。樣本不足以支持勝率、優勢或多日防禦結論，且不能以單日價格變動替代完整視窗。",
+      "confidence": 93,
       "category": "policy",
       "affected_assets": [
         "CASH",
         "SPY",
-        "QQQ",
-        "IWM",
-        "DIA",
-        "VTI"
-      ],
-      "source_urls": []
-    },
-    {
-      "id": 8,
-      "title": "交易摩擦尚未扣除",
-      "summary": "現有5日短窗結果未扣除手續費、價差、滑價、稅負與匯率；即使CASH短窗顯示正報酬，也只能視為研究觀察，不能宣稱達標或相對優勢。",
-      "confidence": 93,
-      "category": "liquidity",
-      "affected_assets": [
-        "CASH",
-        "SPY",
-        "QQQ",
-        "IWM",
-        "DIA",
-        "VTI"
-      ],
-      "source_urls": []
-    },
-    {
-      "id": 9,
-      "title": "AI與半導體敘事仍具催化力",
-      "summary": "研究證據預期2026年AI基礎設施資本支出大幅增加，且半導體需求受AI運算與電動車驅動；但此屬外部研究敘事，未補足本輪趨勢、事件與視窗級驗證。",
-      "confidence": 76,
-      "category": "news",
-      "affected_assets": [
         "SMH",
-        "NVDA",
-        "AMD",
-        "TSM"
+        "GLD",
+        "TLT"
       ],
-      "source_urls": [
-        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFzo6lPW-KNy31_4ssof2kSmP_9j-zDf_LtaE1JQZKFshRKAdrVB984td_j27Ldl3goZ4OhQv3tZpsXG2wyxgWDj672OkNDJlllPilx9Vyo2ybfkAgvON525J6wmpmXQPst",
-        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2p6j3dJAWkrkcJmtk9RBh8gyYD4qqQWmIupFtjyVSrXD-mfmR-79Uu_B8e0v_YwzOz80xiSZNovyAbCLyPrk8b9lzT5ApPIZf98ONLA6tVUyAV52AyGofgtfv8TySI3op6Bisd-ad9uv0LwioaHJnzY8thM="
-      ]
+      "source_urls": []
     },
     {
       "id": 10,
-      "title": "PLTR盈利改善但估值與集中風險高",
-      "summary": "PLTR 2026年第二季營收193.5億美元、淨利10.6億美元，且股價單日上漲26.20%；基本面與動能均強，但單日跳升不能取代估值、持續性與5日相對檢核。",
-      "confidence": 82,
-      "category": "valuation",
+      "title": "交易摩擦與資料延遲降低可執行信心",
+      "summary": "研究計算未包含手續費、價差、滑價、稅負與匯率影響；Yahoo Finance 亦可能延遲。行情特徵只使用最近完成交易日 2026-08-04，不能把 2026-08-05 截止時間視為已完成日線。",
+      "confidence": 95,
+      "category": "liquidity",
       "affected_assets": [
-        "PLTR"
+        "SPY",
+        "SMH",
+        "AMD",
+        "PLTR",
+        "CASH"
       ],
       "source_urls": [
-        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
         "https://finance.yahoo.com/"
       ]
     }
   ],
   "invalidation_conditions": [
-    "官方 event_calendar 補齊FOMC、BLS、NYSE與earnings的point-in-time輸入，涵蓋未來168小時並完成blackout檢查。",
-    "提供可確認為完成交易日收盤的同步價格序列，並完成策略與SPY、QQQ、IWM、DIA、VTI的5日滾動視窗比較。",
-    "提供扣除手續費、價差、滑價等可得摩擦後的視窗級淨報酬，且策略在完整同步期間超越挑戰組最高者。",
-    "補齊SPY/QQQ/SMH與VIX的政策指定20日趨勢、均線及量能特徵，並通過流動性壓力檢查。"
+    "若 SPY 距 MA20 與 MA50 同時轉為負值，且 RSI14 明顯走弱、VIX 從 normal 轉為壓力狀態，應重新評估 SPY、SMH 與個股權重並提高現金。",
+    "若下一輪取得 7 日完成交易視窗，且在扣除可知交易摩擦後 3 日與 7 日結果出現一致且可重複的相對表現，才可重新評估目前偏保守的風險資產上限。",
+    "若 AMD 或 PLTR 後續正式申報顯示需求、毛利率或費用控制明顯下修，或當期獲利受一次性項目影響，應撤回其基本面觀察配置。",
+    "若半導體 ETF 的 20 日報酬持續為負並伴隨波動率進一步升高，應降低 SMH，而不是以 SOXL、SOXS 或其他每日重設工具替代。"
   ],
   "major_risks": [
-    "事件時間與blackout狀態未知，可能存在未被快照捕捉的FOMC、BLS、NYSE或公司財報跳空風險。",
-    "Yahoo Finance資料可能延遲，且price_session為null；若把盤中或非完成日資料誤當收盤，會造成趨勢與績效判定錯誤。",
-    "利率與通膨訊號分化，強勁製造業與FOMC鷹派異議可能使高估值科技股面臨折現率上升壓力。",
-    "現金配置可能錯失市場反彈，且無法在本輪宣稱達成每月1.8100%或超越挑戰組，因同步視窗與交易成本資料不足。"
+    "資料只涵蓋最近完成交易日，7 日完整視窗為零，無法支持短期勝率或多日淨報酬宣稱。",
+    "風險資產合計為 50%，達到統計成熟前政策上限；若市場急跌，SPY、SMH、AMD 與 PLTR 可能同時承壓。",
+    "PLTR 價格遠高於 MA20 且單日漲幅極大，均值回歸或跳空風險高。",
+    "TLT 受利率路徑影響，GLD 亦可能與股票同跌；兩者都不是保本工具。",
+    "交易摩擦、滑價、稅負、匯率與供應商延遲未納入研究計算，實際結果可能偏離快照。",
+    "若使用 SQQQ、SOXS 或 SPXU，必須面對每日重設、路徑耗損與市場反彈造成的快速損失；本輪資料不足以支持持有任何一項。"
   ],
   "disclaimer": "研究建議，尚未執行。下單前須由使用者核對券商即時價格、成本與風險；系統不存取券商、不自動下單。"
 }

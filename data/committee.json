@@ -1,48 +1,174 @@
 {
   "schema_version": "1.1",
-  "run_id": "20260804T155659Z",
-  "generated_at": "2026-08-04T15:56:59.500083Z",
+  "run_id": "20260805T122207Z",
+  "generated_at": "2026-08-05T12:22:07.233751Z",
   "mode": "live",
   "agent_model": "gpt-5.4-nano",
   "cio_model": "gpt-5.6-luna",
   "proposals": [
     {
       "agent": "earnings",
-      "opening_statement": "我對本輪的財報研究結論採取偏謹慎立場：目前可驗證的盈利品質證據主要集中在 PLTR，且短期政策所需的「視窗級、扣摩擦後、相對挑戰組」與「官方事件閘門」資料仍不完整，因此只能把它當作研究觀察而非政策級偏多/偏空。",
+      "opening_statement": "我對本輪的結論是偏正面：從已驗證的法說/監管申報到的「營收與淨利」來看，AMD 與 PLTR 的獲利能力在最新期間明顯優於營收規模，但由於缺少完整財測與未完成的多日績效驗證（尤其 7 日視窗為 0），我不把這當成可立即擴大風險的確定訊號。",
       "tone": "cautious",
-      "stance": "neutral",
-      "confidence": 44,
+      "stance": "bullish",
+      "confidence": 66,
       "preferred_assets": [
-        "PLTR",
-        "NVDA",
         "AMD",
-        "MSFT",
-        "AAPL"
+        "PLTR",
+        "NVDA"
       ],
-      "cash_preference": "0.5",
+      "cash_preference": "0.45",
       "arguments": [
-        "財報可驗證的盈利品質以 PLTR 最完整：2026Q2 營收 3.568B、淨利 1.932B、營業利益 1.666B；對應稀釋 EPS 0.75（同期間 0.41），顯示該季度至少在損益層面具備較高獲利能力（來源：fundamental_facts 與其 companyfacts URL https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json）。",
-        "現金流支持度對 PLTR 亦偏正面：2026H1 產生的營運現金流 2.115B（2026Q2 單季亦有較高現金流對應的條目：operating_cash_flow=849.514M for 2025H1 以及 2115.332B for 2026H1；本輪至少可確認其營運現金流為正且水準不低），因此盈利不是純會計數字（來源：fundamental_facts 同一 companyfacts URL）。",
-        "資產負債狀況未見明顯財務惡化的單點訊號：PLTR 2026/06 資產 11.678B、負債 1.794B、現金 2.030B（同一 companyfacts URL），整體槓桿觀感偏低，對「盈利品質」敘事有支撐。",
-        "其餘標的雖有 filing_events 可驗證其近期申報存在（例如 NVDA/AMD 近期 8-K、AAPL/AMZN/META/M SFT 的 10-Q/10-K、TSLA/GOOGL/TSM 的 10-Q/6-K/8-K 等），但本輪快照並未提供它們的損益/現金流的對應 fundamental_facts 指標；在缺少同級可比財測與成本結構資訊下，我不會把研究推論外溢到未驗證的公司。",
-        "短期政策層面：本輪已知「官方 point-in-time 事件閘門」仍為 missing_fail_closed，且政策要求的完成交易日『5 日滾動視窗』之『策略 vs 挑戰組（含 SPY 作主要基準）同步、扣摩擦後』證據在本輪缺失；因此即使有些標的可能在單一財報季度呈現好看，仍不足以升級為政策級方向結論（來源：event_calendar 的 missing_fail_closed 警示與 warnings）。"
+        "(已驗證財務結果) AMD：在 2026 Q2（報告期間 2025-12-28 至 2026-06-27）法規資料顯示營收 217.89 億美元、淨利 36.80 億美元、diluted EPS 2.22；同期營運利潤 34.66 億美元。以此可估算淨利率約 16.9%、營業利潤率約 15.9%，顯示成本效率/獲利轉換並非僅靠營收成長。（來源：AMD filing_events 與 fundamental_facts，10-Q https://www.sec.gov/Archives/edgar/data/2488/000000248826000123/amd-20260627.htm 及 XBRL facts https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json）",
+        "(已驗證財務結果) PLTR：2026 Q2（2026-01-01 至 2026-06-30）營收 35.68047 億美元、淨利 19.32417 億美元、diluted EPS 0.75；營運利潤 16.66002 億美元。由此估算淨利率約 54.1%、營業利潤率約 46.7%，獲利能力在已披露期間非常突出。（來源：PLTR filing_events 與 fundamental_facts，10-Q https://www.sec.gov/Archives/edgar/data/1321655/000132165526000041/pltr-20260630.htm 及 facts https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json）",
+        "(財測/展望受限) 本輪快照未提供任何可直接引用的正式「未來財測數字」（例如下一季/全年指引、毛利率/費用率更新），因此我只能對「當期已發生」的獲利與營運效率給出偏正面評估；對於續航性（是否可維持）、以及管理層對成本/需求的後續假設，信心必須下調。",
+        "(營運與成本效率的可觀察面) 即便僅以營運利潤/淨利推算，AMD 與 PLTR 在已披露期間都呈現正向的獲利轉換；但我仍需在後續審閱 10-Q 內對成本組成（例如研發/銷售費用、毛利率、股基費用等）與現金流細項的文字說明後，再把「效率改善」提升為更高信心層級。",
+        "(短期層面的約束) 短期績效政策要求 3 日/7 日完成交易日滾動視窗分別驗證；但本輪提供的檢核顯示 7 日 completed_windows=0，故不能把近期行情或單日特徵外推為已驗證的多日優勢。結論因此維持在「收益能力偏正面、但不擴大風險曝險的確定性」。"
       ],
       "risks": [
-        "證據覆蓋偏窄：快照中真正提供可量化盈利品質（營收/淨利/營業利益/稀釋 EPS/營運現金流/現金與負債）的，主要是 PLTR；對 NVDA、AMD、MSFT、AAPL 本輪缺乏等級一致的 earnings 數據，會拉低跨公司比較的可靠度。",
-        "短期績效評估不可宣稱：本輪 5 個完成交易日的研究型結果曾對 CASH 顯示正向短窗觀察，但政策明確要求『扣除可得交易摩擦』與『策略相對挑戰組的同步視窗級比較』；目前缺少這兩項可驗證材料，因此方向性只能保守。",
-        "事件閘門缺失的風控限制：fomc/bls/nyse/earnings 的官方 point-in-time 輸入仍 missing_fail_closed，依政策在閘門未補齊並通過 blackout 檢查前，不應把任何技術/價格訊號當作風控前提解除。",
-        "盈利品質仍需成本結構與可持續性佐證：本輪只有損益與現金流的部分聚合指標，未提供如毛利率/營業費用率/股權激勵攤銷/一次性項目/營收品質分拆等；若後續披露顯示獲利高度依賴一次性或一次性遞延，研究敘事可能需要修正。"
+        "(資料面缺口) 缺少可直接引用的財測/指引（快照中未出現管理層正式下一期目標），使得我無法判定獲利是否可延續，降低對方向性持續的信心。",
+        "(比較口徑與期別) fundamental_facts 的期間口徑在快照中呈現為跨期累計（例如 AMD 的區間標示到 2026-06-27），若在後續 10-Q 中發現分段口徑不同（一次性項目、重分類、會計準則影響），則用估算利潤率得到的成本效率解讀可能偏誤。",
+        "(短期市場噪音) 市場快照的 regime 為 risk_on、波動 normal，且個股近期漲跌（如 PLTR、AMD）可能包含估值/預期因素；在缺少已完成 7 日視窗統計驗證前，任何將價格動能等同於基本面續航的做法都會違反本輪的政策約束。",
+        "(即將到來的費用/現金流風險) 儘管本輪已看到 AMD 的 operating_cash_flow 有正值且 PLTR 亦有正的營運現金流數字，但快照未提供更細的營運現金流驅動（應收/存貨/合約負債變動、資本支出節奏等），因此現金流品質仍需延後核驗。"
       ],
       "invalidation_conditions": [
-        "若下一輪提供 PLTR 更完整的成本結構或一次性項目拆分，顯示先前高淨利/高營運現金流主要來自非經常性或可反轉因素，則本輪對盈利品質的支撐將被削弱。",
-        "若補齊並扣除摩擦後的『5 個完成交易日視窗級』同步相對檢核顯示：策略（含風險資產版本）無法在完成交易日視窗上超越挑戰組最高者（以 SPY 作主要基準），則本輪的中性/保守立場需向更保守傾斜。",
-        "若官方 point-in-time 事件閘門仍持續缺失或 blackout 檢查未通過，則任何提高風險曝險的政策級結論都應被否決或暫緩。",
-        "若提供的可驗證財報期間範圍或口徑（例如營運現金流定義、稀釋 EPS 口徑）與先前不一致，導致可比性失效，則本輪基於 companyfacts 的盈利品質判讀需重算並降低可信度。"
+        "若後續審閱 AMD/PLTR 的 10-Q（依 filing_events 指向的文件）發現：淨利/營業利潤率的計算受到一次性損益或會計重分類影響，且管理層在正文中明確指出該獲利並非可持續，則本輪「成本效率偏正面」的推論需撤回或降級。",
+        "若 10-Q/8-K 內容透露對下一期的需求、毛利率或費用控制出現明顯下修（屬於正式指引或具體量化展望），則本輪僅基於當期數據的偏正面結論應改為中性或轉負面。",
+        "若下一輪短期績效政策驗證中，3 日與/或首次出現可用的 7 日 completed_windows 結果對應資產呈現顯著負向（在扣除已知摩擦前提下），則本輪「不擴大風險曝險」可能需要進一步提高保守程度。"
       ]
     },
     {
       "agent": "etf",
-      "opening_statement": "我對『大盤/產業/商品/槓桿/反向 ETF 的表達效率與風險（每日重設、路徑風險）』目前只能做偏研究性的中性結論：因為本輪快照缺少可驗證的趨勢特徵與官方事件輸入，任何進攻式判斷都會過度外推。",
+      "opening_statement": "我採取偏謹慎的中立立場：目前市場顯示 risk_on，但由於本輪 7 日完成交易日視窗缺席，任何 3/7 日短線策略優勢都無法被研究證實，因此我傾向把決策重心放在分散與風險控制、避免把槓桿/反向當成可驗證的多日方向解決方案。",
+      "tone": "cautious",
+      "stance": "neutral",
+      "confidence": 58,
+      "preferred_assets": [
+        "CASH",
+        "SPY",
+        "GLD",
+        "TLT",
+        "SMH"
+      ],
+      "cash_preference": "0.55",
+      "arguments": [
+        "市場狀態與可用證據：快照 regime=trend=risk_on、volatility=normal，且 SPY 20 日報酬為 3.158978% 並高於 50 日均線距離約 +3.410609%（RSI14=59.72）；但「研究政策驗證」指出 7 日 completed_windows=0、3 日僅 completed_windows=2，導致本輪無法對 3/7 日滾動視窗的勝率/優勢做受支持的結論更新，最多只能維持保守學習判斷。",
+        "市場表達效率（大盤 vs 產業）：以快照可見的「最新完成交易日」表現，SMH（+5.5458%）顯著跑贏 SPY（+1.8029%），顯示半導體/電子相關因子當日更有方向性動能；同時 SMH 的風險表徵更高（volatility_20d 年化 52.365% 且 drawdown_20d=-5.780%），代表其在路徑風險與波動放大下，短期表現可能更不穩。",
+        "商品/利率型避險的相對角色（在缺乏 7 日驗證下的定位）：GLD 當日 +0.6591%（volatility_20d 年化 20.792%），TLT 本輪沒有在快照 quotes/features中提供最新數據（而且研究紀律已提示僅單日部位歸因不能替代 3/7 日視窗驗證），因此我把 GLD/TLT 當作「分散與風險緩衝」而非可宣稱的短線優勢來源。",
+        "槓桿/反向 ETF 的每日重設與路徑風險：雖然快照提供 SOXL、TQQQ 等槓桿 ETF 的當日報酬很大（例如 SOXL +19.8698%、TQQQ +10.0942%），但它們同時呈現顯著的波動/回撤特徵（如 SOXL volatility_20d 年化 185.103%、drawdown_20d=-27.305%），這與「每日重設+波動路徑」相符：在市場未被研究證實為穩定單邊趨勢前，槓桿 ETF 的短期高報酬不等於多日的可重複勝率。",
+        "反向工具（SQQQ/SOXS/SPXU）目前不作方向性強化：本輪 regime 為 risk_on，且沒有完成足夠的 3/7 日滾動視窗來驗證反向工具在此情境下的報酬表達；因此我不把 SQQQ、SOXS、SPXU 視為本輪「必須配置」。同時我會把它們視為需要重新驗證的戰術選項：一旦下一輪 7 日 completed_windows 出現，且 3 日/7 日顯示反向工具在報酬表達上相對現金/大盤具有一致性，再進一步討論才符合政策紀律。"
+      ],
+      "risks": [
+        "7 日視窗缺席導致的研究上限：因 7 日 completed_windows=0，本輪任何關於「短線防禦/方向性」的統計成熟主張都可能過度外推；因此配置偏向分散而非押注策略優勢。",
+        "槓桿路徑風險與波動放大：即使單日或極短期動能強（如 SOXL、TQQQ），在波動正常但方向非持續時仍可能快速侵蝕；本輪因此不把槓桿ETF當成可驗證的多日解決方案。",
+        "產業集中與估值/供需驅動不確定：SMH 的風險表徵高於 SPY，且研究中的外部摘要顯示半導體/AI需求與供應鏈仍存在不確定性（來源摘要見 vertexaisearch grounding URL），若該驅動在接下來數日反轉，產業ETF的路徑損失可能放大。",
+        "反向工具失效條件（概念風險）：若市場維持 risk_on 且反轉不足夠持續，反向 ETF 可能在每日重設下出現反彈損失；但由於本輪缺乏足夠反向工具的 3/7 日 completed_windows，無法用研究證據校準失效邊界。"
+      ],
+      "invalidation_conditions": [
+        "若下一輪取得足夠樣本使 7 日 completed_windows>0，且在同樣的市場狀態下，SQQQ/SOXS/SPXU 相對現金在 3 日與 7 日滾動視窗呈現一致的優於現金/大盤的報酬表達（正報酬窗比例達研究門檻），則本輪對反向工具的「不強化」立場需被更新。",
+        "若市場狀態從 risk_on 明確轉為 risk_off（以快照 regime/波動/動能特徵顯著變化佐證），且後續 3 日完成視窗顯示反向或防禦資產在 3 日尺度呈現可重複的相對改善（在 7 日未到之前仍僅允許較保守的調整範圍）。",
+        "若下一輪快照提供了 TLT 的最新 quotes/features，且在 3 日完成交易日視窗中 TLT 相對現金/GLD 的報酬表達不再呈現「不可驗證」狀態（即 completed_windows 成熟且結果一致），則防禦資產的權重定位可重新排序。",
+        "若槓桿 ETF（如 SOXL/TQQQ）在新的 3 日完成視窗出現研究政策要求下的統計可重複性（至少在 7 日到位後），我才會考慮提高其在組合中的方向性角色；否則仍將其限制在非主導或觀察層級。"
+      ]
+    },
+    {
+      "agent": "learning",
+      "opening_statement": "我採取謹慎的評估立場：本輪在短期績效政策要求下仍屬 too_early，能做的只有保留防禦性觀察、不能把單日/兩點差或市場情緒變化升級成可重複的多日優勢結論。",
+      "tone": "cautious",
+      "stance": "neutral",
+      "confidence": 86,
+      "preferred_assets": [
+        "CASH",
+        "TLT",
+        "GLD"
+      ],
+      "cash_preference": "0.5",
+      "arguments": [
+        "短期績效驗證門檻尚未通過：本輪的 7 日完成交易日滾動視窗 completed_windows=0（positive_windows=0、latest_return_percent=null），依政策不能對 3/7 日方向性、勝率或優勢做任何 supported/challenged 的 verdict 更新；因此結論必須維持 too_early。",
+        "3 日視窗樣本也不足以形成統計性說服：本輪雖有 3 日 completed_windows=2 且 positive_windows=1（latest_return_percent=0.0996 或等價層級資料顯示為局部偏正），但同時伴隨 7 日=0，仍不足以在下一輪改變方向性曝險或宣稱穩定勝率。",
+        "只能把可觀測的單日部位差視為歸因素材而非策略績效：確定性計算證據顯示（忽略交易摩擦）GLD/ TLT 的加權貢獻屬於單次評價點層級；例如本輪學習驗證指出 GLD 的貢獻曾出現負向（以及 TLT 略正的情況在不同回顧點被觀察到），但這些均不能取代完成交易日 3/7 日滾動視窗的政策驗證。",
+        "市場 regime 的變化只能列為待驗證外生條件：快照顯示 regime=trend risk_on、volatility=normal（並給出 SPY 20 日報酬與 ^TNX、VIX 等狀態證據），但由於 7 日視窗樣本缺席，仍不足以證明該 regime 變化已在策略多日尺度上轉化為可重褻的淨優勢或劣勢。",
+        "基於風控硬限制與研究目的，本輪配置應偏向“等待驗證的分散”，避免誤用樣本不足：在未獲得 3/7 日視窗統計成熟前，應維持現金不高於 0.60 的上限（本輪給出 0.50 的保守現金偏好），並將 TLT/GLD 保留為候選防禦資產而非方向性押注。"
+      ],
+      "risks": [
+        "一旦 7 日視窗長期仍為 0 或樣本持續不足，任何對防禦資產（TLT/GLD）“有效性/無效性”的結論都可能被噪音誤導；因此研究輸出可能長期停留在等待驗證階段。",
+        "本輪確定性計算證據明確“忽略交易摩擦”（手續費、價差、滑價、稅與匯率等），即使完成視窗後，實際可得報酬可能與研究回顧存在系統性偏移，導致政策判讀信心需折減。",
+        "市場 regime（risk_on）與利率/波動狀態可能快速反轉；若後續多日視窗呈現相反方向，則目前把 TLT/GLD 視為“僅保留觀察”仍可能導致相對基準表現不佳。"
+      ],
+      "invalidation_conditions": [
+        "若下一輪取得至少 1 個（更好是多個）7 日 completed_windows，且在完成交易日尺度上同時出現一致的正向（或一致的負向）勝率/淨報酬結果，則本輪“維持 too_early / 不升級結論”的約束可被部分解除。",
+        "若在 3 日與 7 日兩個視窗中，出現與本輪假定方向相反且重複的正/負報酬統計（完成視窗比例顯著翻轉），則需立即調整候選資產的權重與研究重點。",
+        "若發現之前因資料截止或完成交易日界定造成的 completed_windows 計數錯誤（例如把未完成 daily bar 進入視窗），則本輪判定的“驗證不足”可能被推翻，需重新計算並更新 verdict。"
+      ]
+    },
+    {
+      "agent": "liquidity",
+      "opening_statement": "我會維持偏保守的流動性導向配置：在目前缺乏可驗證的 7 日短期績效樣本前，不追求方向性/槓桿反向；以 SPY 為主要流動性核心、並保留 TLT/GLD 的防禦屬性與足夠現金緩衝來確保進出節奏可控。",
+      "tone": "cautious",
+      "stance": "neutral",
+      "confidence": 56,
+      "preferred_assets": [
+        "SPY",
+        "TLT",
+        "GLD",
+        "CASH"
+      ],
+      "cash_preference": "0.55",
+      "arguments": [
+        "依快照，SPY 在最近一個完成交易日（2026-08-04）成交量約 69.06M、且日報酬 +1.8029%，流動性深度相對更容易支撐日內/隔日調倉；同時快照特徵顯示其距離 MA20/MA50 約 +3%~+3.41%，屬於相對不極端的風險狀態（但仍不等同策略優勢）。",
+        "現階段沒有任何 filing_events（快照空陣列）可用來評估特定公司事件風險或跳空；因此流動性風險評估主要依賴市場波動狀態。快照 regime 顯示 volatility=normal、且 VIX 屬於 normal 的描述（source_catalog 亦僅提供方法/限制）；在此條件下，SPY/TLT/GLD 的進出摩擦通常比高波動槓桿品種更可控。",
+        "防禦資產方面：TLT/GLD 本輪缺乏政策要求的 7 日完成交易日績效驗證（委員會已指出 7 日 completed_windows=0），因此我不把它們視為方向性賺錢工具；但從流動性角度，它們可作為降低組合尾部波動的緩衝，且比單日倍數槓桿/反向 ETF 更符合「可重複進出節奏」的需求。",
+        "現金配置不宜過低：由於當前研究狀態被評為 too_early（尤其 7 日視窗樣本缺席），我需要保留足夠機動性以等待下一輪取得可用的 [3,7] 完成交易日滾動視窗證據後再調整；同時在風控政策下，因市場並非 bearish，我避免把 CASH 推到 0.60 以上。",
+        "我也刻意不把 SQQQ/SOXS/SPXU/TQQQ/SOXL 等槓桿反向/槓桿多頭納入 preferred_assets：快照雖顯示 SOXL/TQQQ 波動與極端報酬特徵明顯（例如 SOXL 日報酬 +19.8698%、volatility 20d annualized 185.1% 等），但在缺乏已驗證的多日績效與樣本門檻前，這類商品的價差/滑價與每日重置導致的失效風險更難被流動性研究支撐。"
+      ],
+      "risks": [
+        "短期證據不足會放大流動性以外的不確定性：即便 SPY/TLT/GLD 流動性通常較佳，本輪仍缺乏完成交易日視窗的統計成熟支持（特別是 7 日樣本為 0）；因此此建議只能是「進出可行的保守研究框架」，不能轉成方向性勝率或統計優勢宣稱。",
+        "交易摩擦仍可能在實作中顯著：快照與本輪計算提醒未扣除手續費、價差、滑價、稅與匯率影響；若在波動快速變化日進出，實際淨績效可能偏離研究假設，降低對策略邊際的信心。",
+        "市場波動雖標示 normal，但快照同時顯示科技/半導體鏈仍偏熱（例如 SMH/SOXL 的特徵波動顯著升高）；若風險突然從 risk_on 轉為 risk_off，防禦資產的相對表現與組合回撤路徑可能與預期不同。"
+      ],
+      "invalidation_conditions": [
+        "下一輪若取得可用的 7 日 completed_windows（至少出現 1 個）且同時在扣除交易摩擦後顯示防禦資產（TLT/GLD）或核心資產（SPY）在政策定義的 [3,7] 完成交易日滾動視窗出現可重複的淨正向表現，則可重新提高（或降低）對各資產的配置權重，而非維持此保守流動性框架。",
+        "若出現與本組合相關、且能代表未來跳空/重大波動的 filing_events（本輪快照為空，但一旦不再為空），且事件時間點落在需要調倉的前後窗口，則必須重做事件風險與可執行性評估（可能改變資產選擇與現金比例）。",
+        "若市場波動狀態從快照標示的 normal 明顯惡化（例如 VIX/波動曲線顯著進入壓力狀態，且與本輪 cutoff 後的可觀測更新一致），則此流動性“摩擦通常可控”的假設需要下修，可能要求提高現金或降低較易受價差/滑價影響的部位。"
+      ]
+    },
+    {
+      "agent": "macro",
+      "opening_statement": "我偏向「中性偏保守」：短線風險資產呈現 risk_on 與流動性壓力未明顯升溫，但由於本輪多日績效視窗（尤其 7 日）缺乏樣本驗證，我不會把宏觀順風直接轉成方向性加碼結論。",
+      "tone": "cautious",
+      "stance": "neutral",
+      "confidence": 42,
+      "preferred_assets": [
+        "CASH",
+        "SPY",
+        "TLT",
+        "GLD"
+      ],
+      "cash_preference": "0.45",
+      "arguments": [
+        "Fed/利率與通膨路徑：研究摘要提到 4 月 CPI 年增率升至 3.8%、核心 PCE（12–3 月）為 4.3，且市場預期 Fed「維持不變並降息兩次」（來源為共享摘要 URL，非即時官宣）。在此背景下，利率下行的上限仍可能受通膨黏性約束，因此我更傾向讓防禦（TLT/GLD）維持，而非追逐單邊風險資產擴張。",
+        "美元/利率市場狀態（以快照可得代理變數）：^TNX 在 2026-08-04 的 1 日報酬約 -1.26%（features），顯示殖利率壓力短線未惡化；^VIX 在 16.5 且標示為 volatility=normal（快照 regime 與 quotes）。這與「風險偏好可持續但不必然」的判讀一致，支持維持 SPY 作為核心風險暴露，而不過度降低現金。",
+        "油價與通膨壓力：CL=F 在 2026-08-04 的 1 日報酬約 -5.69%（且 20 日報酬仍為正但近期下跌幅度大），可被理解為短期通膨壓力緩和的可能訊號；但由於油價波動率（快照 volatility_20d 年化約 69.73%）偏高，我不把它當作穩定降息/估值擴張的確定依據。",
+        "地緣政治與全球風險（研究摘要層級）：共享摘要提到 2026 年 11 月中期選舉與關稅政策可能增加不確定性、提升全球波動性（僅為摘要，不代表已發生或已反映）。因此在缺乏多日統計驗證前，我更願意把結論落在「風險上限控管」而非方向性押注。",
+        "本輪研究可驗證的限制（必須納入判斷）：依你提供的「研究假設驗證」內容，7 日完成交易日滾動視窗仍為 completed_windows=0（negative/positive 皆為 0），因此不允許我以多日尺度宣稱防禦資產或風險資產的可重複優勢；3 日視窗僅 completed_windows=2（仍樣本不足）也只能視為暫時觀察，而非用來推導策略勝率/優勢。",
+        "因此我的配置傾向是：在宏觀「短線不算壞到需要全面退場」的前提下，保留一定現金（不超過政策上限），並讓 TLT/GLD 承擔通膨/利率路徑不確定下的估值風險緩衝，同時用 SPY 維持參與但不把它視為已被多日視窗證實的優勢。"
+      ],
+      "risks": [
+        "政策門檻風險（最重要）：由於 7 日完成交易日滾動視窗缺樣本，本輪對「多日防禦有效性/多日風險曝險方向性」的結論不能被強化；若後續 3/7 日統計結果轉差，我目前的中性偏保守可能相對不足。",
+        "宏觀訊號可能反轉：研究摘要所述降息預期若因通膨再度走高或地緣/關稅不確定性加大而被推遲，則 TLT/GLD 的相對表現可能不如預期、SPY 估值亦可能承壓（但本輪快照僅顯示短線狀態，無法保證路徑）。",
+        "油價高波動帶來的估值噪音：CL=F 的波動率偏高且近期大幅下跌，油價可能快速反向，進而使通膨預期與長端利率重新變動，造成配置收益的不穩定。",
+        "風險資產的短線上行可能是波動性修復而非基本面持續：快照顯示 SMH 在 1 日報酬約 +5.55%但波動/回撤指標曾較高（20 日回撤約 -5.78%），若科技/半導體風險溢酬再擴大，短期 risk_on 可能轉為再度波動上升。"
+      ],
+      "invalidation_conditions": [
+        "若後續取得並通過短期績效政策要求的統計驗證（至少在 3 日與 7 日 completed_windows 形成後，且樣本不足狀況明顯改善），顯示現金/防禦資產並未提供更好的多日風險調整結果，則需要重新評估現金與 TLT/GLD 的權重。",
+        "若利率端（可由 ^TNX 或等效殖利率指標）在短期內持續上行、且 VIX 從 normal 明確轉為壓力狀態，則我對「短線不必大幅退場」的中性判斷將不成立。",
+        "若油價（CL=F）反向走強並伴隨波動率上升，重新推高通膨路徑不確定性，使通膨敏感部位的估值承壓，則防禦配置邏輯需更新。",
+        "若宏觀風險事件（地緣政治/關稅或選舉相關不確定性）在可得資料中呈現為已明顯反映到市場定價（例如波動與風險溢酬同步惡化），則我對風險上限控管而非方向性押注的策略層級也需調整。"
+      ]
+    },
+    {
+      "agent": "momentum",
+      "opening_statement": "我採取偏謹慎的動能觀點：目前市場呈 risk_on 但多日績效驗證仍不足，因此我不把這波上漲當成可重複的趨勢延續，配置會更偏向分散與短線動能觀察而非加碼風險資產。",
       "tone": "cautious",
       "stance": "neutral",
       "confidence": 45,
@@ -50,432 +176,229 @@
         "SPY",
         "SMH",
         "GLD",
-        "SOXL",
-        "SQQQ"
-      ],
-      "cash_preference": "0.5",
-      "arguments": [
-        "（表達效率—可觀察到的部分）以本輪 quotes 看，當天大盤 SPY 上漲約 +1.28%，半導體產業 ETF SMH 上漲約 +4.78%，而槓桿型 SOXL 上漲約 +17.91%、反向型 SQQQ 下跌約 -7.60%；這顯示槓桿/反向品種在同一日市場方向上具備『放大表達』，但這只能說明單日關聯，不能推導多日路徑後的報酬形態。",
-        "（每日重設與路徑風險—本輪證據限制）快照中的 features 為空（沒有提供可用的 deterministic features），也沒有 filing_events、fundamental_facts；因此我無法在政策要求的『5 個完成交易日滾動視窗』或更長期間上，把槓桿/反向的每日重設效應量化成可比較的統計輸出，只能將其作為機制層面的研究重點：槓桿/反向的預期報酬與波動路徑高度相關，單日方向性不等於多日累積。",
-        "（產業 vs 大盤 vs 商品—研究設計建議）用 SPY 作主要基準（政策也指定 SPY 為主要基準），用 SMH 代表產業集中度/成長因子暴露，用 GLD 代表商品端（非股市 beta），再用 SOXL（槓桿產業）與 SQQQ（反向方向）去對照：同樣的『市場方向』下，產業與商品的敏感度通常不同；而槓桿/反向的偏差會進一步被波動率與回撤路徑放大，因而需要視窗級（至少 5 個完成交易日）比較來判斷哪一類在報酬表達上更穩定。",
-        "（每日重設/失效條件—需要用視窗檢核）政策明確要求槓桿與反向 ETF 最多持有 1 個交易日、下一個完成交易日需重新驗證；因此研究上應把『每日重設造成的偏離』當成可被反覆檢驗的假說：例如在震盪/反轉情境下，槓桿（SOXL）可能因波動路徑而偏離線性放大，反向（SQQQ）也可能因方向不連續而累積損失。這些必須建立在完成交易日滾動視窗的視窗級報酬序列之上。",
-        "（風控與事件閘門—目前無法解除）event_calendar 顯示 fomc/bls/nyse/earnings 均為 missing_fail_closed，且有最大 snapshot age 24 小時等黑窗/缺失提高風險曝險的規則；在官方 point-in-time 輸入未補齊前，我不會把本輪的價格變動當作足以支撐進攻型結論的證據來源，僅能把其當作『當日方向觀察』，而研究結論維持保守。"
-      ],
-      "risks": [
-        "（資料與特徵缺失風險）features 為空使得我無法執行你們政策所需的『SPY/QQQ 20 日趨勢與均線、VIX 下行且低於 20 日均線、SMH 正向 20 日趨勢且站上 20 日均線與量能門檻』等確認流程；因此目前對每日重設/路徑風險的方向性敘事只能停留在機制層面。",
-        "（短期快照偏誤）本輪只提供單日 quotes（as_of 為 2026-08-04T15:38:19Z），不包含完成交易日滾動視窗級的序列報酬；在缺少多日視窗與扣摩擦後的結果前，槓桿與反向 ETF 的表現放大可能是『暫時性路徑』而非可重複特徵。",
-        "（事件與波動 regime 風險）官方事件輸入缺失會提高模型的不確定性：即便今天 SPY/SMH/槓桿品種同向上行，若接下來遇到利率/通膨/就業或財報等事件，波動率 regime 改變可能導致槓桿/反向的路徑偏差急劇擴大。",
-        "（扣摩擦與可宣稱性）本輪未提供扣除可得交易摩擦後的策略 vs 挑戰組、視窗級比較材料；若只看未扣摩擦的研究性變動，可能造成對表達效率的誤判（尤其是槓桿與反向）。"
-      ],
-      "invalidation_conditions": [
-        "（事件閘門補齊）若在下一輪 event_calendar 形成可驗證的 point-in-time 輸入（fomc、bls、nyse、earnings 至少部分完成、且通過 blackout 檢查），我才可把事件風險納入更明確的 regime 判斷；否則本輪保守結論仍需維持。",
-        "（特徵與路徑驗證資料到位）若 features 被補齊（至少能支持政策要求的趨勢/均線/波動確認），且提供完成交易日的 5 日滾動視窗級報酬序列（策略與挑戰組同步、同規則），我才會重新評估哪一類 ETF 在表達效率上更具可重複性。",
-        "（視窗級相對優勢成立且扣摩擦可審計）若在完全同步的期間內，策略（槓桿/反向如適用）在 5 個完成交易日滾動視窗級表現能扣除可得交易成本後仍能超越挑戰組最高者（含 SPY 作主要基準），則本研究結論可從中性升格；反之則維持保守。",
-        "（確認訊號不成立）若即便有價格變動，但 SPY/QQQ 的 20 日趨勢與均線、VIX 相對條件、SMH 量能/站上條件任一未能由完成交易日資料驗證，則不應放寬對槓桿/反向『進攻式』表達效率的假設。"
-      ]
-    },
-    {
-      "agent": "execution_governance",
-      "opening_statement": "我目前傾向維持保守並以現金為主，因為在資料截止時間內缺少完成交易日視窗級的策略相對勝出證據，同時官方事件閘門（FOMC/BLS/NYSE/earnings）仍為 missing_fail_closed，導致任何進攻型曝險的成交可行性與風控前提都尚未解除。",
-      "tone": "cautious",
-      "stance": "neutral",
-      "confidence": 62,
-      "preferred_assets": [
-        "CASH",
-        "SPY",
-        "QQQ",
-        "SMH",
-        "GLD"
+        "TQQQ"
       ],
       "cash_preference": "0.55",
       "arguments": [
-        "成交可行性（流動性/滑價的可觀察代理）：快照顯示 SPY 與 QQQ 具有極高交易量（SPY 約 19.4M、QQQ 約 22.3M），在缺乏 bid-ask 與成交檔細節時，可把它們視為最低滑價風險候選；SMH（約 3.82M）相對較小但仍具研究層面的可交易流動性；GLD 交易量約 2.43M，屬於可執行但需更注意價差擴大。",
-        "交易成本/價格改善（研究可驗證性限制）：本輪僅提供 Yahoo Finance 的 last/previous close 與單日 change_percent，未提供手續費、價差、流動性分層、或成交檔位，因此我只能把“高日成交量”當作價格改善機率較高的間接訊號，不能替代對成本扣除後報酬的政策級驗證；因此即便方向看起來合理，也不應把成交成本風險視為已被吸收。",
-        "成交速度/成交機率：在不具備 broker routing、也未提供 open/close auction 資訊與深度的情況下，若要提升成交機率，我會把優先級放在券種較集中交易的主流 ETF（SPY/QQQ）並避免把槓桿反向 ETF 當作本輪主要研究落地標的；快照中槓桿反向（如 SQQQ、SOXL）單日波動更大且研究顯示短期政策有額外限制（每日重設與需重新驗證）。",
-        "風控政策與事件閘門約束：event_calendar 顯示 required_categories 的 fomc/bls/nyse/earnings 皆 missing 且屬 input_mode=missing_fail_closed，並警示 blackout/168 小時覆蓋未完成。依你的風控規則，這會直接限制“提高既有風險權重/新增逐標的進攻曝險”的可執行性，因此我建議把本輪研究落地方向降為“維持或降低曝險”，以 CASH 作為最可控的執行替代。",
-        "反向/槓桿 ETF 的額外路由與失效風險：快照顯示 SQQQ 與 SOXL 等價格在單日有顯著跳動（SQQQ -7.60%、SOXL +17.91%），在缺少 bid-ask 與滑價模型時，成交成本與成交時點偏離風險會更大；且政策要求槓桿/反向 ETF 最多持有 1 個交易日並在下一個完成交易日重新驗證，這讓“成交可行性”高度依賴精確時點與重新驗證資料，而目前仍被事件閘門限制。"
+        "動能/相對強度：從價格特徵看，SPY 與 QQQ（雖未建議、用於背景）在最近完成日均為正向（SPY 1d +1.80%、5d +4.11%；QQQ 1d +3.40%、5d +7.16%），且 SPY 的相對均線距離為正（distance_from_ma20 +3.23%、ma50 +3.41%），符合“短線動能仍在”的狀態。",
+        "產業輪動：SMH 近期強於大盤（SMH 1d +5.55%、5d +8.71%），顯示半導體/科技子產業仍有資金追逐的跡象；但同時可見其 20d return 為負（SMH 20d -0.99%）且 drawdown_20d 為負（-5.78%），代表更像“波段反覆中的動能跳升”，未必等同於可延續的長趨勢。",
+        "過熱與失效風險（避免把反彈當趨勢）：SOXL 1d +19.87%、5d +27.72%，但 feature 顯示其相對於均線的距離為大幅負值（distance_from_ma20 -3.90%、distance_from_ma50 -28.41%）且 drawdown_20d -27.31%、20d return -15.36%；這組“單日暴衝 + 更大尺度仍弱”的組合，容易在動能交易中觸發反轉/回吐，因此我不把它當作本輪的主要首選。",
+        "多日績效政策門檻未過：本輪研究檢核已指出 7 日完成交易日滾動視窗 completed_windows=0，且 3 日視窗雖有部分結果（completed_windows=2、positive_windows=1），但仍不足以形成統計性優勢；因此我只能維持“等待/觀察”的結論，避免宣稱方向性優勢或穩定勝率。",
+        "防禦分散：在缺乏可驗證的 3/7 日動能延續優勢前，我傾向保留部分 GLD 作為波動較分散的對沖角色；同時提高現金以符合“驗證成熟前風險資產合計上限 0.50”的精神約束（目前風險曝險仍需被短期市場行為反證）。",
+        "TQQQ 僅作極短線動能觀察：TQQQ（1d +10.09%、5d +21.54%）確實呈現更強的上行動能，但它是槓桿 ETF；依政策我只把它視為“最多 1 個交易日”的觀察性工具，且需要在下一個完成交易日重新驗證。"
       ],
       "risks": [
-        "短期績效政策硬檢核未完成，導致“研究-成交落地”斷裂風險：委員會既有驗證指出缺少策略 vs 挑戰組（SPY/QQQ/IWM/DIA/VTI）在同一“5 個完成交易日”滾動視窗下的同步視窗級對照，且研究結果未扣除可得交易摩擦。因此我只能評估執行可行性，不能把任何正向觀察當作可升級的進攻理由。",
-        "市場資料新鮮度與缺口風險：快照的 features 為空，且 warning 指出 Yahoo Finance 可能延遲；在缺少 bid-ask/深度與成交檔細節下，任何以單日 change_percent 估計滑價或價格改善都會不穩定，容易在接下來完成交易日出現“估值點偏離”。",
-        "事件閘門缺失導致的風控降權：fomc/bls/nyse/earnings 均 missing_fail_closed，依規則可能觸發“缺失即提高風險阻擋/僅允許維持或降低”。這會限制你能否把研究動能轉成可執行的風險預算，並可能迫使更高比例維持現金。",
-        "若改用波動較大的子市場標的，路由與成交機率風險上升：例如 SMH、以及任何成分股較集中/期權流動性不同的標的，在極端行情或盤中流動性抽乾時，成交速度與價格改善可能下降；沒有成交檔深度與限價/市價成本假設時，這類風險無法被量化。"
+        "多日延續未驗證：7 日完成交易日視窗仍為 0（too_early），若市場回到震盪/回撤，動能型資產可能快速失效；本輪立場因此偏中性、資金不會過度押注。",
+        "半導體波動放大：SMH 的 volatility_20d_annualized 達到 52.37%，在動能策略中意味著同等“正向延續”的路徑也伴隨更高的回撤幅度。",
+        "槓桿/回撤風險（TQQQ）：在未經過多日驗證且每日重設效應存在時，TQQQ 的短線獲利更可能同時伴隨“回撤損失累積”的不利路徑，因此只能做極短線觀察。",
+        "反向特徵錯配風險：SOXL 類資產顯示“單日強但更大尺度仍弱”的特徵組合；若這類型態延續，追高動能會更容易落入假突破/回吐。"
       ],
       "invalidation_conditions": [
-        "若在下一輪快照中，official event_calendar 補齊並通過 blackout 檢查（fomc/bls/nyse/earnings 任一仍 missing_fail_closed 均不允許升級曝險），則我可在風控允許下提高研究落地的曝險層級；若仍缺失則維持保守。",
-        "若能提供（同一“5 個完成交易日”規則、視窗級）策略 vs 挑戰組（SPY/QQQ/IWM/DIA/VTI）completed_windows/positive_windows 與視窗級淨報酬，且至少提供“扣摩擦後”或可審計摩擦敏感度，則我可重新評估成交可行性是否支持進攻型部位（含槓桿/反向的時點與頻率約束）。",
-        "若流動性檢查（依你的 execution_stress_gate：volume、volume ratio、以及缺 volume 的壓力處理）在目標標的上不達門檻（例如成交量不足或低於 min_absolute_volume/volume ratio 門檻），則我會下調該標的研究落地優先級，必要時延後或暫停。",
-        "若市場呈現你政策定義的“市場資料停滯/regime 缺失/volatility stressed”任一觸發條件（目前 regime 與 features 缺失使我只能保守推定），則我會進一步提高 CASH 比例並降低風險資產可用上限。",
-        "若需要使用槓桿或反向 ETF，且無法在下一個完成交易日重新驗證（或驗證資料缺口）以符合“最多持有 1 個交易日、每日重設後必須重驗證”的政策，則任何以反向/槓桿為研究落地核心的方案應暫停。"
+        "出現可驗證的多日勝率/優勢：下一輪若 7 日完成交易日視窗取得至少 1 個 completed_windows，且 3/7 日方向一致（例如 3 日與 7 日均呈現明顯比例的正報酬視窗），則可重新提高動能資產權重並降低現金。",
+        "市場轉為 risk_off/波動惡化：若 regime 明確轉為 risk_off 或波動狀態顯著升溫（例如與 VIX/波動特徵一起出現），則動能延續假設需要被撤回，偏向提高防禦與現金。",
+        "半導體相對強度反轉：若 SMH 的相對表現轉弱（例如 1d/5d 動能同向下行，或 distance_from_ma20/ma50 持續惡化），則不再把 SMH 當作動能輪動受益者。",
+        "槓桿工具觸發短線失效：若 TQQQ 在下一個完成交易日的短窗回報不再延續（需用完成交易日滾動視窗重新驗證），則必須停止其作為觀察性動能曝險的角色。"
       ]
     },
     {
-      "agent": "learning",
-      "opening_statement": "我維持本輪結論為 too_early：目前只能把可用的短期觀察降級為訊號，無法通過政策所需的同步視窗相對檢核、扣摩擦後績效驗證與官方事件閘門前提。",
+      "agent": "news",
+      "opening_statement": "我在本輪更偏向保守的中性立場：就算短線看起來風險偏好偏強，我也只能把多日績效效果視為「尚未驗證（too_early）」而不提高方向性曝險。",
       "tone": "cautious",
       "stance": "neutral",
-      "confidence": 78,
+      "confidence": 58,
       "preferred_assets": [
         "CASH",
         "SPY",
-        "QQQ",
-        "SMH",
-        "SOXL"
-      ],
-      "cash_preference": "0.5",
-      "arguments": [
-        "（政策硬檢核不足）短期績效必須在「5 個完成交易日」滾動視窗下，同步比較策略與挑戰組 ['SPY','QQQ','IWM','DIA','VTI'] 的 completed_windows/positive_windows 與視窗級淨報酬；本輪可驗證證據僅覆蓋 CASH，未提供策略（含任何風險資產版本）與挑戰組在同一規則下的同步視窗級序列，因此無法完成“超越挑戰組最高者”的相對勝出檢核。",
-        "（未扣交易摩擦）短窗正向結果屬研究指數且明確未扣除手續費、價差、滑價、稅負與匯率；而政策要求“扣除可得交易成本後才可宣稱達標/相對超越”，因此即使看到正向完成視窗，也只能降低信心或作觀察，不能升格 supported/mixed/challenged。",
-        "（官方事件閘門未解除）event_calendar 的 input_mode=missing_fail_closed，且 required_categories 的 fomc、bls、nyse、earnings 均為 missing；同時警告指出找不到 point-in-time 輸入檔並要求 blackout 檢查。依風控政策，在四類官方 point-in-time 輸入缺失且未通過 blackout 檢查前，只允許維持或降低風險敘事，不能升級進攻型結論。",
-        "（市場快照僅能作背景降級觀察）快照顯示 SPY、QQQ 當日上漲（SPY previous_close 757.669983→price 767.359985；QQQ 700.070007→717.929993），SMH/半導體相關品類當日波動明顯（SMH +4.78%、SOXL +17.91%，且 NVDA、AMD、PLTR 亦有顯著日漲幅）。但這些是單日/快照層級，不足以取代政策要求的“完成交易日視窗級、扣摩擦、相對挑戰組”硬檢核。",
-        "（風險敘事仍可用外部研究作定性約束）研究證據指出：7 月 FOMC 內部鷹派異議與通膨/地緣政治風險可能提升利率路徑不確定性（FOMC minutes： https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6uYYNvZ9TDyJFRtbenfofVP6r4b-4qbggvlWb_4jPMqfv4VAp1ilAgkyxPYNJft6N9IpOXs4A9TfQRRKQfrB2a29f8dQd9j6pO60yGKwvBTwSg6FWErzVUUz7vQm8xJKkHJTxK2mlOeNVK-5jKv9X39feZ3Z2959VZ-NaMC1RKm4CE9Wo2qQBVtEIURuAXRtTCqXZVuZY3VBEbMTwVcIbqU8djnM9EQMoRmRwwF5jTxvP4AkuEDiiakf-l9MvQDC-Fk_ZtTqsnCm2w9XMg0LWeOzeqyVdMpeTj8R3ujZ86LSN0R9tzQ7Cuo4Iij15FAG7u9s2kca4J9KuSE051G5WXxw-izLjyn87pYECSa-Dgj66igEcdKtzRyzIlODpwNiBvqMan9lzoqLAT8i-5CrN2BHOfs426-D-EaWwMTsaacHwlexKClRR_eRiU0QjcLe6R18d_dfUGA6gv_4ohbeHoB5OmMW0KXL0RmB35GNlq8MQ68QdNg0Zm0hQ6n2XLTXhxJgAkwVuRCREuyJuA21DPbkk2qbswXLSaMQ8rrCPQzb7lQ7jfRMgTjDt6jzeQZ-B_m5uoMwvaLuM ）；同時半導體仍受 AI 資本支出與需求預期支撐（半導體產業預測： https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2p6j3dJAWkrkcJmtk9RBh8gyYD4qqQWmIupFtjyVSrXD-mfmR-79Uu_B8e0v_YwzOz80xiSZNovyAbCLyPrk8b9lzT5ApPIZf98ONLA6tVUyAV52AyGofgtfv8TySI3op6Bisd-ad9uvL0WwioaHJnzY8thM ）。這些可用來“解釋為何不宜忽視風險”，但仍不足以推翻 too_early 的政策級缺口。"
-      ],
-      "risks": [
-        "（資料層）Yahoo Finance 的資料可能延遲；且快照中 features 為空，無法用程式計算 deterministic features 進一步做視窗級驗證（僅有 quotes 的價格/變動）。",
-        "（政策層）若下一輪仍缺策略 vs 挑戰組的同步完成視窗級比較，或仍未提供扣摩擦後/摩擦敏感度，則即便觀察到正向完成視窗，也無法升級結論。",
-        "（事件層）四類官方 point-in-time（fomc/bls/nyse/earnings/bls）若持續 missing_fail_closed，風控閘門可能持續限制風險上調與結論外推。",
-        "（市場層）日內風險偏好可能快速反轉：快照顯示 VIX 約 16.22 且上日（previous 15.86→16.219999），但 VIX 的單點變化不能當作 20 日均線/趨勢確認，因此進攻上限與進攻性風險配置仍需等待符合你們政策的趨勢/廣度驗證。"
-      ],
-      "invalidation_conditions": [
-        "若下一輪補齊「5 個完成交易日」規則下的策略（至少能映射到研究可驗證的風險版本或清楚聲明為純現金）與挑戰組（SPY/QQQ/IWM/DIA/VTI）同步視窗級序列，且策略在視窗級完成後可依政策完成“超越挑戰組最高者”的相對檢核。",
-        "若能提供扣除可得交易摩擦後的視窗級淨報酬（或至少摩擦敏感度區間足以支撐政策級比較結論）。",
-        "若官方事件閘門不再缺失（fomc/bls/nyse/earnings 完成 point-in-time 可驗證輸入，且 blackout 檢查通過），則“事件閘門限制”可不再作為維持 too_early 的必要理由。",
-        "若在同一政策要求下完成 SPY/QQQ 的 20 日趨勢與均線確認、VIX 短期下行且低於 20 日均線，以及 SMH 正向 20 日趨勢且站上 20 日均線且量能達門檻，則可重評風險上限與進攻性敘事（但仍需滿足視窗級績效與扣摩擦檢核）。"
-      ]
-    },
-    {
-      "agent": "liquidity",
-      "opening_statement": "我會把本輪結論定在偏謹慎（仍以現金為主），因為目前快照能驗證的流動性/交易摩擦訊號不足以支撐提高風險曝險或用槓桿/反向標的承擔更高跳空與退出成本。",
-      "tone": "cautious",
-      "stance": "neutral",
-      "confidence": 55,
-      "preferred_assets": [
-        "CASH",
-        "SPY",
-        "QQQ",
-        "SMH",
+        "GLD",
         "TLT"
       ],
-      "cash_preference": "0.6",
+      "cash_preference": "0.45",
       "arguments": [
-        "現階段持倉為 100% CASH（CASH=6,000 美元），且市場快照的 quotes 可驗證到 SPY/QQQ/SMH/TLT 均具明顯成交量（例如 SPY 約 19,434,966、QQQ 約 22,290,734、SMH 約 3,819,996、TLT 約 13,877,189），因此若需調整，最直接的退出/進入路徑仍是以主流 ETF 為核心，槓桿標的並非必要條件。",
-        "事件/跳空風險評估受限：快照中 filing_events 與 fundamental_facts 為空、event_calendar 中 required_categories（fomc、bls、nyse、earnings）均為 missing_fail_closed，且 warnings 顯示官方 point-in-time 輸入缺失；在無法確認接近事件窗口的情況下，提高槓桿/反向曝險會放大「事件驅動跳空 + 價差/滑價 + 再驗證」帶來的退出困難。",
-        "交易摩擦角度：快照顯示槓桿/反向標的當日波動極大（例如 SOXL 由前收約 116.71 到約 137.61，change_percent 約 +17.91%；SQQQ change_percent 約 -7.60%），此類狀況通常意味著短期波動率與 bid-ask 風險上升；在沒有可用的視窗級、扣摩擦後績效證據下，我不建議為追求目標報酬而切換到更易受摩擦/跳空影響的標的。",
-        "退出能力/再平衡可行性：若僅以主流 ETF（SPY/QQQ）作為風險敞口載體，通常比槓桿/反向更利於在單一完成交易日或下一個完成交易日重新驗證並調整；但本輪快照雖可見價格與成交量，仍缺少足夠的完成交易日序列與視窗級材料，因此我將其視為「可用但不足以放大風險」的訊號。",
-        "波動與保護性訊號有限：^VIX 在快照中約 16.22，較前一日略升（change_percent 約 +2.27%），但目前 features 為空且缺少政策要求的 VIX/SMH 20 日趨勢與均線驗證資料；因此我不能把波動環境當作解除風險限制的充分條件，只能作為「短期不必急進攻」的輔助理由。"
+        "以快照可見的短線狀態，市場偏 risk_on：regime 顯示 trend=risk_on、volatility=normal，且 SPY（快照證據摘要）20 日報酬為正、^TNX 五日相對變化也為小幅正向；但在「短期績效政策」要求下，這只能當作外生狀態線索，不能替代 3/7 日完成交易日視窗的統計驗證。",
+        "多日視窗的核心約束未被滿足：本輪既有檢核指出 7 日完成交易日滾動視窗 completed_windows=0、正報酬窗為 0，因此依政策目前不得對防禦資產（如 TLT/GLD）的多日效果做方向性 supported/challenged 更新；同時 3 日視窗僅部分可用（completed_windows=2、positive_windows=1），樣本不足以宣稱統計優勢。",
+        "單日部位歸因只能作輔助素材、不可升級為策略結論：已知單次貢獻（忽略交易摩擦）顯示 GLD 單次由正轉負、TLT 幾乎持平、CASH 為 0；這些可提醒防禦資產在非常短尺度可能不占優，但不能推導多日尺度勝率或優勢。",
+        "快照的個股「過熱風險」提示需要分散而非追高：PLTR 在 features 中顯示距離均線（20/50 日）約 +25% 且 rsi14=69.16、volume_ratio 亦很高（4.136），意味短線波動上行的尾端風險偏大；在缺少 3/7 日視窗驗證前，我不把這解讀為可持續的正期望。",
+        "研究性宏觀背景（僅作風險敘事，不作必然因果）仍存在波動可能：例如來源摘要談到通膨與 Fed 降息預期、以及地緣政治/政策不確定性（引用：通膨/降息摘要 https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEq32knTkn0h_wiiO-dEQEI-W59EXY61Ta-TwvG6hTv_cORXdhAUfuuhvPMPlpV0-Ethnq59nS-roOpp6zYaspOyCBR41xO1KLj2E1QM88fNovgxkoZGDi2_TT6gOe52Fk4HMd67n3zLht6tVhHs9EgsN98SkEqhshyYo-c59vMxjgqUZXNeWPQY-6RIYuSfSz9kXQtbpMI 與政治不確定性摘要 https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcuMCnAnFF4UgEL5J5hJ7sLtArD3NFqd89cwDx-ocHdyfHdzZ4XELpl4_g3zqnz5ydSrV2YyZMa5igMlsXjxKAthazVbZFO-oLPAmqAwe1pSSdXnpQrXZhX31fJ5Lp4NF6iE_QUwRaje_GNS9ZJ4IcWClaitXCCBnZttsqKOPNU-ocpGuLzEJSKWKan0B_od69QWAmZvyEyoLw1DWLhfqKKTF1gVHjTwWw1_o ）——這更支持「留有彈性」而非加碼方向。",
+        "本輪證據的市場價格來源以 Yahoo Finance via yfinance 為主，且有延遲/需核對之限制；因此我把價格/特徵僅當作研究輸入，評估仍應受視窗政策約束（價格/成交特徵引用自快照來源 https://finance.yahoo.com/ ）。"
       ],
       "risks": [
-        "資料與特徵可驗證性不足：features 為空，且 event_calendar/官方事件閘門缺失（missing_fail_closed），使得對跳空/事件風險的量化判斷偏保守；若後續補齊官方 point-in-time 輸入，風險敘事可能需要改寫。",
-        "快照時間點與資料延遲警告：warnings 指出 Yahoo Finance 可能延遲、需下單前向券商核對價格；在研究以外的風控/退出評估中，若價格更新或成交量資料不同步，可能低估真實摩擦與流動性狀況。",
-        "槓桿/反向標的的再進出風險：當日對 SOXL/TQQQ 等價格跳動幅度很大，若後續需要臨時調整，槓桿/反向品種的滑價與日內再驗證成本可能高於主流 ETF；若同時遭遇事件跳空，退出能力會更依賴實際市場深度而非快照估計。",
-        "退出/再平衡規則合規性受限：政策要求對槓桿/反向最長持有 1 個交易日並需下個完成交易日重新驗證；但本輪快照沒有提供可直接對齊政策所需的完成交易日序列（僅見單點 quotes），因此任何提高非現金曝險都會增加「再驗證資料缺口」的風控壓力。"
+        "3/7 日視窗樣本不足會導致方向性推論偏弱：本輪 7 日視窗為 0，若後續短時間內市場波動改變，當前中性結論可能需要快速降權/更新。",
+        "快照特徵屬於確定性計算結果但並非因果：例如高 RSI 與距離均線可能反映動能，也可能在接下來幾天出現均值回歸；缺少 3/7 日完成交易日的統計驗證，無法判斷哪種會佔優。",
+        "未扣除交易摩擦的不確定性：既有歸因與風險評估可能忽略手續費、價差、滑價、稅與匯率等，可能使實際可得淨報酬低於研究計算。",
+        "風險偏好（risk_on）狀態本身可能短期反轉：regime 來源於快照摘要，屬於狀態描述而非策略已被驗證的可重複成果。"
       ],
       "invalidation_conditions": [
-        "若後續版本補齊符合政策的官方 point-in-time 輸入（fomc、bls、nyse、earnings）並完成 blackout 檢查，且同時可在 5 個完成交易日的滾動視窗下提供扣摩擦後或摩擦敏感度可審計的結果，我對提高風險敞口的保守程度可下修。",
-        "若能在同規則下提供策略 vs 挑戰組（含 SPY 作主要基準）的同步、視窗級完成交易日相對表現，且顯示在波動上升/槓桿品種跳動場景下仍具可控的下行與退出表現，我對「不使用槓桿/反向」的必要性評估可改變。",
-        "若補充資料顯示在相同時間框架內，^VIX 及 SMH 等關鍵條件（如政策要求的 20 日趨勢/均線與量能門檻）同時被確認，且沒有接近 blackout window 的事件壓力，我對短期流動性與再平衡風險的評估可以更偏向可用而非偏謹慎。",
-        "若後續快照/資料源提供更完整的成交量深度、bid-ask 或可審計的交易摩擦代理（而非僅有 quotes 單點），可直接用來校準退出成本；在退出成本被證實不顯著時，本輪的「以現金為主」理由將被削弱。"
+        "取得下一輪資料後，若 7 日完成交易日視窗出現至少 1 個 completed_windows 且正報酬窗顯著（或在 3 日/7 日呈現一致性），則我可把「中性/保守」更新為更明確的方向性配置研究。",
+        "若在後續研究中確認 3 日完成交易日視窗的正報酬窗比例不足以維持目前的風險承擔程度（例如 3 日連續惡化），則需進一步提高現金/防禦的研究比重（在政策 cash 上限範圍內）。",
+        "若出現與快照 regime 相反且可觀測的市場壓力訊號（例如波動型態顯著惡化、風險資產回吐在多日視窗中占優），而同時反向工具在 3/7 日視窗展現不利於當前中性判斷的結果，則中性結論需重置。",
+        "若驗證發現先前歸因使用的單日/兩點差被證明不具可比性（例如由於公司行動/資料缺失導致特徵失真），則目前基於快照特徵的風險敘事需降信並重新評估。"
       ]
     },
     {
-      "agent": "macro",
-      "opening_statement": "我目前偏向「謹慎中性」：在 Fed／利率／通膨與美元／美債線索尚未完成官方事件閘門驗證前，我只能把這輪判斷降到研究層級，並傾向以現金與防守性資產為主，避免把單日股價波動誤當作可宣稱的短期優勢。",
+      "agent": "ownership",
+      "opening_statement": "我目前只能維持偏謹慎的研究立場：在缺乏真正的持股一致性證據且 7 日完成交易日視窗仍無法驗證前，我不把短期訊號當成可複製優勢。",
+      "tone": "cautious",
+      "stance": "neutral",
+      "confidence": 44,
+      "preferred_assets": [
+        "CASH",
+        "SPY",
+        "GLD",
+        "TLT"
+      ],
+      "cash_preference": "0.55",
+      "arguments": [
+        "(持股一致性/所有權證據不足) 本輪提供的 filing_events 主要是公司 10-Q/8-K/10-K/6-K 等一般申報，並未附上任何可直接解讀為 13F、Form 4 或 FINRA/持股變動的 ownership 交易證據；在沒有這類「誰在何時加減碼、且方向是否一致」的資料下，我無法標記任何真正的持股一致性信號。",
+        "(短期績效政策：7 日視窗未形成) 依本輪假設驗證段落，7 日完成交易日滾動視窗 completed_windows=0、positive_windows=0，因此根據短期績效政策，我不能對 3/7 日尺度的方向性或勝率/優勢做任何 supported update；只能維持 learning/too_early 的上限。",
+        "(3 日視窗樣本不足) 同一段落指出 3 日 completed_windows=2、positive_windows=1（仍未達統計成熟門檻），因此就算局部呈現正向，也只能視為候選觀察而非策略優勢證據，避免用單點/少樣本外推。",
+        "(市場 regime 與特徵僅能當外生狀態) 快照的 regime 為 trend=risk_on、volatility=normal，且 NVDA/AMD 的 deterministic features 顯示近端報酬與波動/均線距離等狀態指標；但由於本輪 7 日視窗無樣本，這些只能作為「狀態變化需等待驗證」，不能用來推翻 too_early。",
+        "(反向槓桿比較條款不啟用) 由於我本輪並未判定為 bearish/strong_bearish，因此不觸發 SQQQ、SOXS、SPXU 與現金在 3/7 日視窗的反向比較要求；同時也避免在缺乏 7 日樣本時做方向性押注式推論。"
+      ],
+      "risks": [
+        "(證據時效與缺資料風險) Yahoo Finance 快照被明示可能延遲，且本輪 research grounding 未提供可驗證的所有權（13F/Form4/FINRA）持倉一致性內容；缺乏關鍵資料會降低對方向性的研究信心。",
+        "(短視窗偏誤) 3 日視窗尚未達統計成熟門檻，若將其當作可複製績效或勝率根據，容易造成樣本偏誤與過度反應。",
+        "(成本/摩擦未納入的偏差) 本輪假設驗證警示需將未扣除手續費/價差/滑價/稅與匯率視為信心折減項；即便有單日部位歸因，仍可能與實際可得報酬差距。",
+        "(市場狀態可能快速切換) 快照 regime 為 risk_on，但在缺乏 7 日完成交易日視窗驗證前，若行情在多日尺度反轉，現有的狀態解讀可能迅速失效。"
+      ],
+      "invalidation_conditions": [
+        "(所有權一致性證據補齊) 若後續提供明確的 13F/Form 4/FINRA 持股交易證據，且在同一方向/主題上出現可追蹤的加減碼一致性（而非單一個案噪音），可推翻目前因缺資料導致的中性/謹慎結論。",
+        "(7 日完成交易日視窗出現可用樣本) 若下一輪取得至少 1 個 7 日 completed_windows，且能在 7 日尺度上形成可重複的淨報酬/正向窗比例，再允許更新對防禦或方向性曝險的研究傾向。",
+        "(3 日樣本也同時惡化或失效) 若在 3 日尺度觀測到結果持續轉負（且完成交易日視窗已累積到政策允許的範圍），則需降低風險資產偏好並重新評估。",
+        "(快照/外生狀態發生明顯反轉且得到短窗驗證) 若 regime 由 risk_on 轉為更高波動或风险回避狀態，且同時在完成交易日視窗上反映為可驗證的負向績效，則本輪中性立場需轉向更防禦。"
+      ]
+    },
+    {
+      "agent": "portfolio",
+      "opening_statement": "我目前採取謹慎的中性配置：因為多日（7 個完成交易日）績效視窗仍為 0 無法驗證優勢，所以我傾向先維持以現金為主、並保留小比例防禦性曝險（GLD/TLT），等 3/7 日完成視窗再決定是否提高風險資產比重。",
       "tone": "cautious",
       "stance": "neutral",
       "confidence": 52,
       "preferred_assets": [
         "CASH",
-        "SPY",
-        "TLT",
         "GLD",
-        "SMH"
+        "TLT"
       ],
-      "cash_preference": "0.5",
+      "cash_preference": "0.55",
       "arguments": [
-        "Fed 與利率路徑的不確定性仍偏高：研究證據提到 7 月 FOMC 決議利率未變、但出現鷹派異議（對後續升息/利率維持高度敏感），在通膨疑慮背景下會提高市場對利率再定價的波動。（來源：FOMC Meeting Minutes 摘要 https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6uYYNvZ9TDyJFRtbenfofVP6r4b-4qbggvlWb_4jPMqfv4VAp1ilAgkyxPYNJft6N9IpOXs4A9TfQRRKQfrB2a29f8dQd9j6pO60yGKwvBTwSg6FWErzVUUz7vQm8xJKkHJTxK2mlOeNVK-5jKv9X39feZ3Z2959VZ-NaMC1RKm4CE9Wo2qQBVtEIURuAXRtTCqXZVuZY3VBEbMTwVcIbqU8djnM9EQMoRmRwwF5jTxvP4AkuEDiiakf-l9MvQDC-Fk_ZtTqsnCm2w9XMg0LWeOzeqyVdMpeTj8R3ujZ86LSN0R9tzQ7Cuo4Iij15FAG7u9s2kca4J9KuSE051G5WXxw-izLjyn87pYECSa-Dgj66igEcdKtzRyzIlODpwNiBvqMan9lzoqLATm8i-5CrN2BHOfs426-D-EaWwMTsaacHwlexKClRR_eRiU0QjcLe6R18d_dfUGA6gv_4ohbeHoB5OmMW0KXL0RmB35GNlq8MQ68QdNg0Zm0hQ6n2XLTXhxJgAkwVuRCREuyJuA21DPbkk2qbswXLSaMQ8rrCPQzb7lQ7jfRMgTjDt6jzeQZ-B_m5uoMwvaLuM ）",
-        "就業與成長訊號偏「韌性但分化」，降低單一方向的可宣稱性：研究摘要指出 6 月非農新增放緩、失業率下降且薪資年增維持（勞動市場分化），同時製造業景氣偏強（ISM 擴張創高），可能同時支撐風險資產、也拉高通膨與利率再定價的尾部風險。（來源：ISM https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4A8G4HcqA4MbyMflmSuhxaHUHeVUvMl4vru3muRf2sMMQfZP66zD1JUfy8W2fFIl_DWkux2FL5rRWgI16kth8jGEOlnuvQzxKfrM0eToX89OI9TG_X9-0Ay2FdKheNJZGOHBxZfriuB2sbU3b_8Rkru7wR4nkYXM9Yg==；BLS 就業摘要 https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgO7UhhU_YgdSuHzE9n63wW0FtsO7zYjmRGMz5XfUVO2QF2-Tn3O9da-k5lfNgULFgAeEJEiPEvRBLWApQp4NOjBDJX4oxZzUIEKzTpQC9ab2fdzKj3YpTAvDU3IWJ7ZzDt-4zmmHfvOtpSh5DZtZ31SL2Ga9WmgnqdirP1RU30FZfE2wZMSsP2VvK4Eboz8KaYh0j5TwXkFSK9V2rar7B9BkIv9vWkToLQUqhbhXQ7OVMHp6ez-f-q7TRpRpEccbbxjz7RW9bQqdIk6u5hz9HnMyu1T-bN-DmhwE_SoFw4WaCWtVo-r7iN9L9emfPI9PGfhd9Nw== ）",
-        "美元/美債/利率的可用訊號在本輪不足：雖然快照有 TLT（0.590% 日漲）與 SPY（1.279% 日漲）這類單點價格資訊，但本輪沒有提供『利率層』對應的可驗證 features 或美債實際殖利率/期限利差序列；且事件資料（FOMC、BLS、NYSE、earnings）仍是 missing_fail_closed，表示進攻性風險敘事缺少依流程所需的 point-in-time 證據。",
-        "短期績效政策在本輪也尚未完成可宣稱條件：本輪驗證結果顯示需『策略 vs 挑戰組』的同步視窗級相對比較與『扣除交易摩擦後』的視窗淨報酬，但目前僅有研究型短窗正向觀察（且未扣摩擦、且未完成相對挑戰組硬檢核），因此本輪我不把任何偏股部位作為達標依據。"
+        "短期研究驗證門檻尚未達成：本輪 short_window_evidence 顯示 7 日完成交易日滾動視窗 completed_windows=0（latest_return_percent 為 null），依政策因此不能把任何方向性或優勢結論（含防禦有效性）提升為可驗證結論；這使我只能做風險控管型配置，而非加碼押注。",
+        "市場狀態快照呈現 risk_on 且波動正常：截至最後完成交易日（快照中 data_session=2026-08-04），SPY 20 日報酬為 +3.158978% 且高於 50 日均線（距離 +3.410609%），VIX 被標示為 normal 且水準約 16.5；因此我不會做成過度防禦（例如接近 100% 現金）來對抗已觀測到的風險偏好訊號。",
+        "但風險偏好無法直接轉成權重上調：在 3/7 日完成視窗仍缺乏可重複統計證據時，將 regime 轉換為『提高風險資產曝險』屬於把單一狀態外推為策略勝率；我因此選擇將風險資產總權重控制在政策上限 0.50 之內，並以現金作緩衝。",
+        "用單次部位歸因作為“候選”而非“證據”：本輪確定性部位貢獻（未扣除摩擦）只顯示 GLD 為正、TLT 略負、CASH=0；這些更像單次狀態觀測素材，不能替代完成交易日滾動視窗的績效驗證，所以我只分配較小比例給防禦端。",
+        "因此我採取的組合是：CASH 55%、GLD 25%、TLT 20%（非現金曝險合計 45%），符合“風險資產合計上限 0.50”且在 7 日視窗缺席時避免方向性過度集中。"
       ],
       "risks": [
-        "官方事件閘門 missing_fail_closed 使得 Fed/BLS/NYSE/earnings 的風險敘事只能保守：即便研究證據提供宏觀摘要，仍缺少與政策窗同步的可驗證點對點輸入；在該狀態下提高風險權重會讓研究結論可用性下降。",
-        "本輪快照的可引用行情是單日且可能延遲：快照指標（如 SMH +4.78%、SPY +1.28%）可作情緒/相對強弱參考，但在缺少至少 5 個完成交易日的同規則、同摩擦、同基準比較材料前，不足以支撐短期優勢。",
-        "全球風險（如中東地緣）可能透過油價與供應鏈影響通膨預期：研究摘要指出航運與油價風險可能抬升不確定性；但快照未提供 VIX/美元/油價期貨即時聯動 features，尾部風險評估仍不完整。（來源：地緣摘要 https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5bmUJe-x1qBm2zBtLHMO7R4pAgY53dtry06ZgXql9gMjNan9Yo9HxV_2dYTEwZYw7avcGeZsS0lQPnCRg0n8EZYfxrSThzWCF1mWcigryljMeC_G-_iXVS2-nhaekU8tBN0EQybs= ）"
+        "7 日完成交易日視窗仍缺席：短期研究門檻未滿足，可能導致我低估或高估了未來多日尺度上防禦/風險資產的相對表現；此為制度性不確定性而非市場單一方向風險。",
+        "未扣除交易摩擦與稅負：本輪對部位貢獻的確定性計算聲明為忽略手續費、價差、滑價、稅與匯率影響；即使方向上“看起來”合理，扣除成本後的多日淨效果仍可能變形。",
+        "若市場繼續 risk_on 且科技/成長延續上行，GLD/TLT 可能相對滯後並拉低整體相對表現；雖然我未做成強烈押注，但防禦端仍可能造成機會成本。",
+        "若波動型態突然逆轉（例如 VIX 明顯上行、風險資產回撤），我目前的現金偏高比例雖能降低淨值下行，但 GLD/TLT 在尚未被 3/7 日視窗驗證前仍可能出現相對表現不符合預期的情況。"
       ],
       "invalidation_conditions": [
-        "若下一輪補齊官方事件閘門（fomc/bls/nyse/earnings 不再 missing_fail_closed），且 blackout 檢查通過，原本的保守降信可部分解除。",
-        "若在相同『5 個完成交易日』政策窗規則下，能提供策略 vs 挑戰組（SPY/QQQ/IWM/DIA/VTI）的同步視窗級 completed_windows/positive_windows，並且在扣除可得交易摩擦後仍能相對勝出至少一個可完整檢核的同步視窗集。",
-        "若能補強『利率/美元/美債』的可驗證序列 features（例如期限利差、殖利率變動或與 VIX 風險狀態一致的資料），使我能把利率與風險偏好連結到可重複的短窗訊號，而非只依賴單日價格觀察。"
-      ]
-    },
-    {
-      "agent": "momentum",
-      "opening_statement": "我偏向「科技與半導體動能仍在，但不足以把風險資產拉到進攻水位」，因此我會以中等偏保守的動能配置為主、保留較高現金緩衝。",
-      "tone": "cautious",
-      "stance": "bullish",
-      "confidence": 46,
-      "preferred_assets": [
-        "QQQ",
-        "SMH",
-        "SOXL",
-        "SPY"
-      ],
-      "cash_preference": "0.45",
-      "arguments": [
-        "相對強度（以快照當日價格變動作觀察）：QQQ +2.55%、SPY +1.28%，IWM +1.28%、DIA +1.42；同時SMH +4.78% 明顯跑贏大盤，顯示資金更偏向科技/半導體動能而非全面輪動。",
-        "產業催化與動能一致性（研究摘要層級）：外部研究指出AI資本支出規模與半導體成長預期仍強，對半導體鏈的中期敘事有支撐（如 NVDA/AMD 等與 SMH、SOXL 的相關性）；但本輪仍僅能作「催化方向」而非可立即交易的 point-in-time 驗證（來源見：https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFzo6lPW-KNy31_4ssof2kSmP_9j-zDf_LtaE1JQZKFshRKAdrVB984td_j27Ldl3goZ4OhQv3tZpsXG2wyxgWDj672OkNDJlllPilx9Vyo2ybfkAgvON525J6wmpmXQPst 、https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2p6j3dJAWkrkcJmtk9RBh8gyYD4qqQWmIupFtjyVSrXD-mfmR-79Uu_B8e0v_YwzOz80xiSZNovyAbCLyPrk8b9lzT5ApPIZf98ONLA6tVUyAV52AyGofgtfv8TySI3op6Bisd-ad9uvL0WwioaHJnzY8thM=",
-        "動能延續的「輪動樣式」但需保留：快照中半導體/高beta 個股波動很大（例如 AMD +7.15%、PLTR +26.20%），這通常利於動能策略，但也意味著一旦市場情緒反轉，回撤可能更快更深；因此我不把這解讀成低風險的長動能確認。",
-        "反向風險訊號有限但不忽略：^VIX 現在約 16.22 且較前收 +2.27%，表示波動在上升；在動能剛走強時，VIX回升常意味短期更容易出現「衝高回落」或震盪加劇。",
-        "資料/風控前提限制（影響我能否升級結論）：本輪快照的官方 point-in-time 事件（fomc/bls/nyse/earnings）仍為 missing_fail_closed，且沒有可驗證的 5 個完成交易日同步相對挑戰組檢核材料；因此我只能維持「偏多、但不進攻」的研究立場，而非政策級確立。"
-      ],
-      "risks": [
-        "短期動能假突破風險：快照顯示當日強勢集中在科技/半導體（SMH、SOXL表現相對更強），但缺乏符合政策門檻的多日趨勢與廣度確認（目前未提供 SPY/QQQ 20 日趨勢、均線與 VIX 20 日均線比較、SMH 量能門檻等）。",
-        "波動上行與連動風險：^VIX 上行（+2.27%）即使水位仍不高，也可能提高加速回吐的機率；槓桿/倍數 ETF（SOXL）對這類回撤更敏感。",
-        "事件閘門與缺資料導致的不確定性：官方事件輸入缺失會觸發保守要求；若臨近重要事件但未被納入可驗證窗口，短期價格行為的可預期性會下降。",
-        "過度集中風險（即便是研究建議）：科技/半導體雖相對強，但若風格快速切換到防禦或金融/能源，這種集中可能拉大相對落後風險。"
-      ],
-      "invalidation_conditions": [
-        "如果後續完成交易日顯示大盤動能轉弱（如 SPY/QQQ 相對優勢消失、SMH 不再跑贏大盤），則「偏多動能」假設被削弱。",
-        "如果 ^VIX 的上行延續且出現明顯的波動 regime 變化（例如進一步走高並形成趨勢惡化的證據），則即使股市仍漲，也會提高回撤風險，迫使我降槓桿或提高現金。",
-        "若政策要求的同步 5 個完成交易日視窗之相對挑戰組比較仍無法補齊（策略 vs ['SPY','QQQ','IWM','DIA','VTI'] 的 completed_windows/positive_windows 與視窗級淨報酬），則不能把「偏多」升級為更進攻的風控敘事。",
-        "若半導體/科技領漲廣度在短窗內明顯縮水（例如 SMH 走弱或其成分/相關上游鏈動能同步消退），則動能延續假設失效。"
-      ]
-    },
-    {
-      "agent": "news",
-      "opening_statement": "我目前偏向維持謹慎：在缺少策略相對挑戰組的同步 5 個完成交易日視窗比較、且官方事件閘門（FOMC/BLS/NYSE/earnings）仍為 missing_fail_closed 的前提下，我不把任何短期績效宣稱升級為可執行結論。",
-      "tone": "cautious",
-      "stance": "neutral",
-      "confidence": 78,
-      "preferred_assets": [
-        "SPY",
-        "QQQ",
-        "SMH",
-        "CASH"
-      ],
-      "cash_preference": "0.5",
-      "arguments": [
-        "短期績效政策的硬檢核在本輪無法完成：確定性計算僅覆蓋 CASH，缺少同規則下策略（含風險資產版本或明確聲明）與挑戰組 ['SPY','QQQ','IWM','DIA','VTI'] 的 completed_windows/positive_windows 與視窗級淨報酬序列，因此無法判定“超越挑戰組最高者”。",
-        "本輪正向短窗（CASH：positive_windows=2，latest_return_percent=0.5322%）屬未扣除可得交易摩擦的研究型結果；短期政策要求“扣除已知交易成本後”才能宣稱達標/相對優勢，故只能視為觀察訊號而非政策級證據。",
-        "官方 point-in-time 事件閘門仍為 missing_fail_closed：event_calendar 對 fomc、bls、nyse、earnings 均 missing，且提示找不到 point-in-time 輸入檔；在 blackout 檢查前不應放寬風險曝險或改變到可形成進攻型政策檢核。",
-        "從本輪可用的已驗證材料看，研究上較有支撐的是“基本面/產業敘事”而非“短期勝率”：例如已有公司層級的 SEC filing_events（如 PLTR 10-Q/8-K；AAPL、AMZN、META、MSFT、TSLA、TSM、NVDA、AMD 等的 10-Q/10-K/8-K/6-K），可作為後續核對財務與指引變化的抓手。",
-        "宏觀事件與財報官方行事曆目前仍缺失於可驗證快照（只能引用其來源用途 URL，但快照未提供時間點值），因此短期催化劑（calendar-driven）無法被政策級納入，只能降低對“短期方向性”假設的信心。"
-      ],
-      "risks": [
-        "樣本與檢核不足會造成“看似為正”的偏誤：即使 CASH 的 5 日視窗為正，也可能在扣摩擦後或在同規則相對比較後失去優勢；本輪尚未提供摩擦扣除或摩擦敏感度。",
-        "資料時間切點與市場噪音：市場快照來源為 Yahoo Finance via yfinance，且可能延遲；僅有當日 quotes（NVDA/AMD/PLTR 的 change_percent）不足以替代 5 個完成交易日視窗級驗證。",
-        "事件閘門未解除導致風險控制前提未滿足：在 FOMC/BLS/NYSE/earnings 的 point-in-time 輸入仍 missing_fail_closed 時，任何放大風險曝險的研究推論都可能違反流程約束。"
-      ],
-      "invalidation_conditions": [
-        "若下一輪補齊同規則下“策略 vs 挑戰組（SPY/QQQ/IWM/DIA/VTI）”的同步 completed_windows/positive_windows 與視窗級淨報酬，且在扣除可得交易摩擦後仍能在至少一個完整可比較同步窗口內超越挑戰組最高者。",
-        "若同時提供可審計的摩擦扣除假設（手續費/價差/滑價/稅負與匯率的保守或敏感度區間），使得結論不依賴未扣摩擦的研究指數結果。",
-        "若 event_calendar 中 fomc/bls/nyse/earnings 的 missing_fail_closed 狀態解除，並完成 blackout 檢查（仍以快照可驗證窗口為準），則可恢復對事件風險敘事的政策級討論。",
-        "若下一輪研究證明：在維持“5 個完成交易日”短窗規則不變的前提下，CASH 的正向結果在擴增視窗集後不再保持 positive_windows 連續性（或相對挑戰組明顯轉弱），則需下調對短期優勢的信心。"
-      ]
-    },
-    {
-      "agent": "ownership",
-      "opening_statement": "我傾向維持謹慎的結論：在目前快照條件下，僅靠已提供的 13F/Form 4/FINRA（此輪未含）與可驗證研究指標不足以升級為任何進攻型配置建議，我的立場是維持較高現金比例並要求補齊策略vs挑戰組的同步視窗檢核。",
-      "tone": "cautious",
-      "stance": "neutral",
-      "confidence": 72,
-      "preferred_assets": [
-        "SPY",
-        "QQQ",
-        "IWM",
-        "DIA",
-        "CASH"
-      ],
-      "cash_preference": "0.5",
-      "arguments": [
-        "本輪短期績效政策的硬檢核未完成：研究只提供 CASH 的 5 個完成交易日短窗統計（completed_windows=2、positive_windows=2、latest_return_percent=0.5322%），但缺少策略（含風險資產版本或明確的研究指數口徑）與挑戰組〔SPY/QQQ/IWM/DIA/VTI〕在同一規則下的同步、視窗級相對比較（completed_windows/positive_windows/視窗級淨報酬序列皆未提供），因此無法宣稱「超越挑戰組最高者」。",
-        "短窗正向結果仍不足以達標宣稱：本輪確定性計算明確指出未扣除可得交易摩擦（手續費、價差、滑價、稅負與匯率），而短期績效政策要求「扣除可得交易成本後」才能作達標或相對優勢的政策級判定；因此我只能把現有正向短窗當作觀察訊號而非升級證據。",
-        "風控政策事件閘門仍未解除：event_calendar 顯示 required_categories 中的 fomc、bls、nyse、earnings 均為 missing_fail_closed（events 為空，coverage_start/coverage_end 為 null 且提示找不到 point-in-time 輸入檔）。在此前提下，研究敘事需維持保守調整/觀察，不能因價格或技術研究素材而放寬到進攻型政策檢核。",
-        "就已提供的可驗證「filing_events」而言，本輪可引用的是公司例行/重大事件的存在（例如 PLTR 10-Q與8-K、AAPL 10-Q與8-K、AMZN 10-Q與8-K、META 10-Q與8-K、MSFT 10-K、TSM 6-K、NVDA 8-K等，且附有 SEC URL），但快照未提供其 point-in-time 對應的事件視窗與不確定性處理；因此不能用這些 filing_events 直接替代官方事件日程閘門來支持短期進攻。",
-        "快照的 quotes 只能作為「當下研究背景」：例如 NVDA（209.94、+1.60%）、AMD（519.30、+7.15%）、PLTR（158.57、+26.20%）屬於目前價格快照，但快照的 features 為空，且未提供 regime/趨勢特徵；價格走勢不足以完成短期政策所要求的「完成交易日滾動視窗」與「扣摩擦後」的可檢核證據。"
-      ],
-      "risks": [
-        "資料時效與口徑風險：Yahoo Finance quotes 可能延遲且僅供研究；若未經交易/行情核對，任何與短窗績效相關的口徑可能被放大誤差。（快照自身也警示資料可能延遲）",
-        "事件輸入缺失帶來的風險：官方 event_calendar 的四類 required_categories 仍 missing_fail_closed；在未補齊 point-in-time 輸入前，任何對短期風險上/下行的敘事都可能缺少政策層級的可驗證約束。",
-        "短期績效驗證不完整：缺少策略 vs 挑戰組的同步、視窗級相對比較，以及未扣除交易摩擦；因此即便 CASH 的 5 日正向觀察成立，也可能無法轉化為政策級的穩定優勢結論。",
-        "單一資產/單口徑偏誤：本輪 positions 相關資訊顯示僅包含 CASH（weighted_contribution_percent=0 的內容；且 withheld as IRrelevant），導致無法評估風險資產策略在同規則下的表現穩定性。"
-      ],
-      "invalidation_conditions": [
-        "若下一輪補齊同規則下的同步「5 個完成交易日」視窗級資料，且策略在扣除可得交易成本後能夠在完全同步期間超越挑戰組最高者，則本輪保守立場可被推翻並考慮升級政策級結論。",
-        "若官方 event_calendar（fomc、bls、nyse、earnings）完成 point-in-time 輸入並通過 blackout 檢查，則事件閘門風險約束解除；可重新評估風險敘事與風險資產曝險方向。",
-        "若提供「扣摩擦後」的視窗級淨報酬（或至少可審計摩擦敏感度區間）並顯示正向結論在保守摩擦下仍維持，則僅以未扣摩擦正向觀察支持的限制可被削弱。",
-        "若補齊 SPY/QQQ/IWM/DIA/VTI 在同一完成交易日滾動視窗下的 completed_windows/positive_windows 與視窗級淨報酬序列，並能顯示策略未來/觀察結果存在可重複的相對優勢，則本輪「無法升級」的主要理由可被否定。"
-      ]
-    },
-    {
-      "agent": "portfolio",
-      "opening_statement": "我主張在本輪維持以現金（CASH）為主的保守配置，因為短期可宣稱的政策級證據與事件風險閘門都尚未完成驗證，我不願在資料截止後用價格快照外推成進攻型曝險。",
-      "tone": "cautious",
-      "stance": "neutral",
-      "confidence": 72,
-      "preferred_assets": [
-        "CASH"
-      ],
-      "cash_preference": "1.0",
-      "arguments": [
-        "本輪短期績效政策的硬檢核尚未完成：現有確定性證據只涵蓋 CASH，且缺少策略（含風險資產版本）vs 挑戰組〔SPY/QQQ/IWM/DIA/VTI〕在同一「5 個完成交易日」完成交易日滾動視窗下的 completed_windows/positive_windows 與視窗級淨報酬序列，因此無法完成“超越挑戰組最高者”的政策級相對判定。",
-        "研究型短窗結果未扣除可得交易摩擦：現有正向視窗（CASH 的短窗淨報酬為正）屬未扣手續費、價差、滑價、稅負與匯率的研究指數結果，依政策只能降低信心/視為觀察，不可用於達標或相對優勢的宣稱。",
-        "官方事件輸入仍為 missing_fail_closed，風控前提未解除：event_calendar 顯示 fomc、bls、nyse 與 earnings 四類 point-in-time 輸入均缺失，並且存在找不到 point-in-time 輸入檔的警告；在未補齊並通過 blackout 檢查前，需維持保守風險敘事，避免因價格/技術狀態而放大曝險。",
-        "市場快照雖顯示風險資產與科技/半導體（如 SMH、SOXL、TQQQ）單日上漲與 ^VIX 同步上升，但此屬未經完成交易日視窗級、且未完成摩擦扣除與相對勝出檢核前的“背景觀察”，不足以取代政策要求的可驗證檢核。",
-        "因此，在角色任務要求“只把已完成的專家觀點轉成可執行且符合風控的配置”且不重新吞入額外財報/事件假設下，本輪最符合風控邏輯的動作是維持現金為核心曝險。"
-      ],
-      "risks": [
-        "若後續補齊策略 vs 挑戰組的同步視窗級、並提供扣摩擦後的可審計淨報酬後，現金可能錯失進攻型機會（本輪無法就此進攻上限進行政策級驗證）。",
-        "現金占比過高會降低對市場反彈/風險偏好改善的參與度，短期可能出現相對基準落後，但在政策級證據未就緒前屬可接受的風控取捨。",
-        "事件風險閘門缺失本身會造成整體判斷不確定性；若補齊後呈現對風險資產不利，仍需進一步調整（本輪不做猜測，只先降低決策錯誤成本）。"
-      ],
-      "invalidation_conditions": [
-        "若下一輪能提供：在同一「5 個完成交易日」完成交易日滾動視窗下，策略（含風險資產版本或明確說明僅現金研究索引）與挑戰組〔SPY/QQQ/IWM/DIA/VTI〕各自的 completed_windows、positive_windows 與視窗級淨報酬（且至少一個完整同步可比較視窗集），可重新評估曝險方向與權重。",
-        "若下一輪能提供扣除可得交易摩擦後的視窗級淨報酬或摩擦敏感度區間，且在政策要求的相對檢核下仍維持優勢，才允許從純現金升級為有風險資產曝險。",
-        "若官方事件 point-in-time 輸入（fomc/bls/nyse/earnings）補齊並通過 blackout 檢查，且風險閘門約束不再是 missing_fail_closed，才可考慮提升風險資產預算。",
-        "若市場層面出現不利的風險訊號，導致委員會判定需降低風險曝險（例如在政策定義下的風險確認條件未滿足或波動/流動性壓力提升），則任何既有進攻型曝險都需收斂；本輪因為已以現金為主，影響較小。",
-        "若在下一輪的可驗證資料中發現前述視窗級計算因資料窗口/完成交易日定義不一致而失真（例如完成交易日滾動視窗不符合政策週一到週五規則或視窗不完整），則本輪風控取向需依新校正結果重新評價。"
+        "一旦取得新的研究用 short_window_evidence 且 7 日完成交易日滾動視窗出現樣本（completed_windows>0），若 GLD 或 TLT 在 7 日視窗的正報酬窗比例與多日淨報酬明顯優於（或顯著劣於）現金替代，則我應重新調整其權重方向與幅度。",
+        "若 7 日視窗仍為 0 或持續樣本不足，則任何由 regime（risk_on/normal）推導出的“提高風險資產”權重上調都應被禁止，我將維持現金偏高並僅做上限內的再平衡。",
+        "若快照級別的波動/風險訊號從 normal 明顯惡化（例如 VIX 顯著上行且與風險偏好反轉同時出現），而同時 3 日視窗顯示防禦端相對失靈，則需降低 GLD/TLT 比例並提高現金。"
       ]
     },
     {
       "agent": "technical",
-      "opening_statement": "我目前偏向維持較高現金比重，因為雖然快照顯示大盤與半導體板塊當日走強，但我缺少完成交易日的均線/波動/相對強弱廣度證據，且官方事件閘門未解除，因此無法在政策層級給出進攻型結論。",
+      "opening_statement": "我偏向保守、先不做方向性加碼：目前市場呈 risk_on 的短線上行形態，但多日視窗績效尚未驗證，對防禦或反向倉的可信度不足，因此我傾向維持偏現金與分散等待下一輪。",
       "tone": "cautious",
       "stance": "neutral",
-      "confidence": 45,
-      "preferred_assets": [
-        "CASH",
-        "SPY",
-        "QQQ",
-        "SMH"
-      ],
-      "cash_preference": "0.6",
-      "arguments": [
-        "價格面：快照顯示 SPY 767.36（較前收 +1.28%）、QQQ 717.93（+2.55%）、IWM +1.28%、DIA +1.42%，屬於偏廣泛的風險資產當日反彈（不是單一指數獨強）。",
-        "波動/情緒面（僅限快照）：^VIX 為 16.22，較前收 +2.27%，代表短線波動上升但仍處低位區間；在缺少 20 日均線下行判定前，不能把它解讀成「波動下降確認」。",
-        "產業相對強弱線索：SMH 571.54（+4.78%）明顯強於 SPY/QQQ 的當日漲幅，且成交量不算小（3.82M），提供「科技/半導體領漲」的方向性線索，但仍未能完成政策所需的 20 日趨勢與站上均線/量能門檻驗證。",
-        "成交量觀察：多數主要指數在快照日呈現活躍成交（例如 QQQ 成交量 22.29M、SMH 3.82M），可視為當日流動性支撐；但政策的短窗評估需要完成交易日滾動視窗與相對挑戰組對照，本輪快照無法提供均線與相對強弱的完整可驗證序列。",
-        "研究/風控前提缺口：本輪 event_calendar 顯示 fomc/bls/nyse/earnings 均為 missing（input_mode=missing_fail_closed），代表官方 point-in-time 事件閘門未解除；依規則這會要求在風險敘事上更保守，不能用單日價格走勢替代完成檢核。"
-      ],
-      "risks": [
-        "技術確認不足：快照 features 為空，缺少 SPY/QQQ 20 日趨勢與均線狀態、VIX 的 20 日均線相對位置、以及 SMH 20 日趨勢/站上均線/量能門檻等；因此任何「可進攻」判斷都可能是過度外推。",
-        "短線動能可能反覆：雖然今日上漲明顯（含 SMH +4.78%），但 ^VIX 同步上升（+2.27%）提示市場對不確定性的定價並未完全鬆動；若回到過去波動型態，短線反彈可能快速失真。",
-        "政策硬檢核缺失：短期績效政策要求在 5 個完成交易日完成交易日滾動視窗下，策略需與固定挑戰組（以 SPY 為主要基準）完成同步對照並扣摩擦後評估；本輪未提供同步視窗級相對比較材料，因此無法把當日強勢升格為統計優勢。"
-      ],
-      "invalidation_conditions": [
-        "若下一輪在相同政策的「5 個完成交易日」完成交易日滾動視窗內，能提供策略/挑戰組（至少包含 SPY/QQQ/IWM/DIA/VTI）同步的 completed_windows 與視窗級淨報酬（且說明扣摩擦後的情況），則可調整我對風險資產的偏好。",
-        "若能補上並驗證：SPY/QQQ 的完成交易日 20 日趨勢與均線同向、VIX 20 日均線下行且 VIX 低於其 20 日均線、以及 SMH 的 20 日正向趨勢/站上 20 日均線且量能達門檻，同時事件閘門狀態不再缺失，則我才會提高進攻型立場。",
-        "若官方事件閘門恢復可用（fomc/bls/nyse/earnings 具備可驗證的 point-in-time 輸入，且 blackout 檢查通過），我會降低事件不確定性帶來的保守折價。",
-        "若發現快照日屬於明顯的資料延遲或成交量/價格存在可疑缺漏（例如供應鏈延遲導致的錯配），則需回到可驗證的完成交易日資料再重估技術訊號。"
-      ]
-    },
-    {
-      "agent": "trading_stress",
-      "opening_statement": "我傾向採取保守、以研究觀察為主的壓力門檻策略：在官方事件閘門仍缺失且可驗證的5日同步相對檢核未完成前，不把任何進攻型風險曝險視為已被證明有效。",
-      "tone": "cautious",
-      "stance": "neutral",
-      "confidence": 36,
+      "confidence": 56,
       "preferred_assets": [
         "SPY",
-        "QQQ",
-        "SMH",
+        "GLD",
         "TLT",
         "CASH"
       ],
-      "cash_preference": "0.45",
+      "cash_preference": "0.55",
       "arguments": [
-        "(事件閘門與可驗證性) 本輪 event_calendar 的 required_categories（fomc、bls、nyse、earnings）均為 missing，且有 missing point-in-time 輸入檔警告；依風控政策的 event_risk_gate，缺失應觸發保守處置（可允許維持/降低風險敘事，但不升級進攻型政策檢核）。因此我只能把目前上漲的價格快照視為「背景觀察」，不能當作放大曝險的依據。",
-        "(波動/厚尾的風險訊號尚不足) 快照可用的只有 ^VIX 價位（16.219999，較前日+2.269859%），但 features 為空、沒有提供政策要求的 VIX 20日趨勢/均線下行且低於20日均線的可驗證條件；同時也缺 SMH 正向20日趨勢、站上20日均線且量能門檻的完整資料。因此不開啟「進攻上限0.80」的條件，風險預算維持保守上限（以0.50為主，除非後續補齊上述可驗證條件）。",
-        "(流動性枯竭與再平衡窗口：用可驗證的門檻而非猜測) quotes 提供了即時量能可用性，但政策要求的流動性檢查含 20日量能比（min_volume_ratio_20d=0.70）與 abs volume 門檻（min_absolute_volume=300000）需要具備歷史完成交易日資料；在缺少20日量能比可驗證輸入前，我建議把任何風險資產權重上調都延後到「可驗證的5日完成交易日窗口」同時滿足：abs volume ≥300000 且（補齊後）volume_ratio_20d ≥0.70，否則只能維持或降權。",
-        "(厚尾/快速反轉：設定「暫停新增風險」與「恢復」規則) 由於目前官方事件輸入缺失，且無法判定距離FOMC/BLS/NYSE/財報點是否落在 blackout window，故我將採用保守執行門檻：若後續補齊事件排程但發現任一類別仍在 blackout window（例如 fomc blackout：before 24h / after 2h ），則禁止新增任何標的風險；只有當 blackout 結束且完成至少1個新的5日完成交易日窗口後，才允許恢復到原風險預算。",
-        "(短期績效政策仍未可宣稱) 先前委員會的研究驗證也已指出：缺策略 vs 挑戰組（SPY/QQQ/IWM/DIA/VTI）的同步5日完成交易日級相對比較，且研究結果未扣除可得交易成本；因此我把本輪目標定位為：只定義風控與再平衡門檻，避免把任何「正向短窗」升級為可宣稱的勝率或達標依據。",
-        "(槓桿/反向ETF約束：目前不需要用） 快照顯示 SOXL、TQQQ 上漲幅度顯著，但政策同時限制反向/槓桿ETF最多持有1個交易日且需下一個完成交易日重新驗證；在事件閘門 missing 與同步相對檢核缺失前，我建議不把 ERX/SOXL/SOXS/TQQQ/SQQQ/SPXU/UPRO 當成主要壓力場配置，避免在快速反轉風險下形成難以驗證的槓桿路徑。"
+        "短線趨勢偏多：SPY 2026-08-04 報酬 +3.158978% 且距離 MA20/MA50 皆為正（+3.230082%、+3.410609%），RSI14=59.722238，配合 regime= risk_on，顯示大盤動能仍在。",
+        "成交量與風險相對未失控：SPY volume_ratio_20d=1.388153（量能偏強），波動（volatility_20d_annualized=14.538064）屬 normal 區間；這降低「立刻轉空」的技術衝動。",
+        "科技/槓桿化商品波動顯著、但不等於趨勢反轉：SOXL 波動極高（volatility_20d_annualized=185.102976），且距離 MA20/MA50 為負（-3.896357%、-28.405477%）、RSI14=42.565646，反映其仍在均線下方的弱勢修復/反彈結構；因此若僅用單日強漲容易誤判節奏。",
+        "防禦資產不能用單日歸因替代多日驗證：本輪政策紀律指出 7 日完成交易日滾動視窗 completed_windows=0（因此不得對多日績效/勝率下結論），而 3 日視窗樣本僅部分可用（completed_windows=2），使得我無法把 TLT/GLD 當作已驗證的戰術優勢。",
+        "因此配置傾向「等待」而非「押方向」：在缺乏可重複的 3/7 日視窗統計支撐前，我更傾向用現金提高機動性，同時保留少量 GLD/TLT 作為技術上較偏防禦的備選，而主體仍用 SPY 反映當前 risk_on 的主趨勢。"
       ],
       "risks": [
-        "(資料截止與可驗證缺口) 目前 features 為空，且事件輸入缺失；因此我無法驗證政策要求的 VIX/SMH 20日趨勢與均線條件，風險結構可能與真正的波動/厚尾狀態不一致（信心因此偏低）。",
-        "(流動性與滑價風險可能被低估) 快照只是一刻價格與當日量能，未提供 20日量能比與成交摩擦參數；若市場出現流動性枯竭或價差擴大，使用研究級訊號可能低估損失分布尾端風險。",
-        "(快速反轉/厚尾事件風險未被事件閘門排除) 因為 fomc/bls/nyse/earnings 的 point-in-time 輸入未形成可驗證快照，仍可能存在高機率觸發的波動來源；即使價格當下走強，也可能在事件前後出現均值回歸或反轉。",
-        "(再平衡窗口的政策成熟度不足) 本輪對「5個完成交易日滾動視窗」的同步相對檢核仍缺資料，導致我只能設置降/停新增的風控門檻，而不能把策略優勢視為已被證明。"
+        "若 risk_on 延續，偏現金可能降低相對報酬：SPY 的 MA20/MA50 仍上方且量能偏強，可能導致市場繼續推升而你的現金比重拖累表現。",
+        "若短線回撤且高波動資產先跌後反覆，技術訊號可能被噪音主導：例如 SOXL 波動極端，均線與 RSI 的修復型走勢容易在短期震盪中反覆失真。",
+        "多日績效缺口本身是主要不確定性：因 7 日視窗尚無樣本（completed_windows=0），任何關於防禦/反向工具有效性的判斷都缺乏完成交易日尺度的可重複驗證。"
       ],
       "invalidation_conditions": [
-        "若補齊 event_risk_gate 所需的官方 point-in-time 輸入（fomc/bls/nyse/earnings 任一類別不再為 missing_fail_closed），且同步完成 blackout 檢查後，先前的保守敘事限制可重新評估（但仍需同規則的5日同步相對比較）。",
-        "若在「5個完成交易日」完成交易日滾動視窗中補齊：策略（或可比研究指數版本）與挑戰組 ['SPY','QQQ','IWM','DIA','VTI'] 的 completed_windows、positive_windows 與視窗級淨報酬，且策略（以SPY為主要基準）在可比較的至少1個完整同步視窗內可扣摩擦後仍超越挑戰組最高者，則本建議可升級風險敘事與風險預算上限。",
-        "若補齊並可驗證的流動性條件失效：對任一擬提高權重的風險資產（在完成交易日計算下）abs volume ≥300000 或 volume_ratio_20d ≥0.70 任一持續不達標，則任何增風險/增集中度的行為應視為無效並改為降權或停留。",
-        "若後續可驗證的市場條件顯示政策進攻上限所需同時成立條件（SPY/QQQ 20日趨勢+均線/VIX 20日趨勢與均線/VIX低於20日均線且SMH站上20日均線+量能門檻）明確不成立，則即使價格短期上行，也不允許把風險預算上修至0.80。",
-        "若在下一個完成交易日重新驗證後，任何槓桿/反向ETF被納入後不符合「最多1個交易日持有且需下一日重新驗證」的政策可驗證條件，則該類型配置應被視為被否決（不延續）。"
+        "未來一輪取得足夠完成交易日視窗：若 7 日完成交易日滾動視窗開始出現且顯示 GLD/TLT 相對現金具一致的技術期望（以完成視窗淨報酬/正向窗比例為準），則我會降低現金並提高防禦資產比重。",
+        "SPY 的趨勢技術面明顯轉弱：例如 SPY 的距離 MA20/MA50 同時轉負且 RSI14 明顯下穿（以快照計算的相對指標為準），將觸發我從中性轉向更防禦/更高現金的再評估。",
+        "槓桿/反向在反覆反彈中訊號失真：若出現「大幅上漲但均線/RSI未能維持」的型態（距離 MA 的正負與 RSI 回落不支持延續），則我會停止任何以短線強弱延伸為理由的方向性假設，維持或提高等待/現金比重。"
       ]
     }
   ],
   "critiques": [
     {
       "reviewer": "risk",
-      "opening_statement": "我不放心的是：本輪多位研究員仍在用單日快照/機制敘事，去支撐與政策硬檢核（5日完成交易日、扣摩擦、相對挑戰組同步視窗、事件閘門）之間的落差；若不補齊可稽核輸入，容易讓風險預算被「看起來合理」誤導。",
+      "opening_statement": "我對這份共識內容不太放心：短期績效政策要求的 3/7 日完成視窗（尤其 7 日）目前仍未達成，但部分研究輸出看起來已在方向性上「超出可驗證範圍」。同時，我也需要確認反向/槓桿ETF與現金的比較是否被制度化，而不是口頭帶過。",
       "tone": "concerned",
       "challenged_agents": [
-        "etf",
-        "liquidity"
+        "earnings",
+        "etf"
       ],
-      "strongest_objection": "至少在 etf 與 liquidity 的論述中，仍把「單日價格變動/當日相關」當作接近政策級結論的支撐；但本輪快照資料缺少完成交易日滾動視窗（5日）、缺少扣摩擦後策略相對挑戰組的同規則可審計輸出，且 event_calendar 仍為 missing_fail_closed，因此任何用單日敘事推進曝險方向都缺乏政策級證據鏈。",
+      "strongest_objection": "共識沒有把「短期績效政策」的硬門檻貫徹到底：7 日 completed_windows=0 時，任何以完成交易日數據不足為由仍要維持/強化方向性偏多（尤其針對個股的 bullish）都缺乏可被政策支持的統計基礎；此外，若後續被要求比較反向ETF（SQQQ/SOXS/SPXU）與現金的報酬/反彈損失/失效條件，現有摘要尚未看到被完整、制度化地落地。",
       "hidden_assumptions": [
-        "etf 的單日「放大表達」觀察可用來外推多日績效型態（但政策要求視窗級、扣摩擦、且相對挑戰組最高者比較）。",
-        "liquidity 對「可交易流動性/退出成本較低」的判斷可由當日成交量與單點 quotes 代理，且不需要完成交易日序列來完成 execution_stress_gate 的量能比門檻校準。",
-        "liquidity 對現金配置（提到持倉為 100% CASH 且給出美元數）不需要由輸入證據（positions/portfolio weights/last rebalancing snapshot）支持；但在本輪提供的 materials 中，未看到可驗證的持倉明細。",
-        "對事件風險的處理把「事件分類 missing」等同為“只能保守”即可，但未明確量化/界定在 blackout 未驗證時允許的最大風險權重/新增標的範圍（依政策應更嚴格）。"
+        "假設「已驗證財務結果」能在缺少 3/7 日完成視窗統計證據時，等價替代方向性短期驗證（但政策明確限制這種推論）。",
+        "假設 earnings 模組的方向性結論不會被市場微結構/事件風險（例如 10-Q/8-K 週期附近波動、跳空）顯著破壞；然而目前缺乏完成交易日尺度的統計約束與事件時間對齊檢查。",
+        "假設 etf 的市場 regime（risk_on/normal）可以在 7 日視窗為 0 時，仍容許維持偏風險而不需要先完成反向ETF vs 現金的政策比較框架；但這會與「必須比較」的條款衝突。",
+        "假設 data 截止時間與「最近完成交易日」的使用一致；但快照顯示生成時間晚於證據截止時間，若各 Agent 的計算是否一致需再確認。",
+        "假設交易摩擦已被一致地扣除或在政策上被納入信心折減；然而多處摘要仍未看到統一的摩擦扣除方式或折減幅度。"
       ],
       "required_changes": [
-        "etf 必須明確承認：任何關於 SOXL/SQQQ 的「表達效率/路徑耗損」只能作機制研究，不能進入政策級曝險或風險預算上調，除非補齊 5 個完成交易日滾動視窗且策略vs挑戰組同步、扣摩擦後的可稽核淨報酬。",
-        "liquidity 需要用可驗證輸入支持其“目前 100% CASH/具體美元金額”的前提，否則其結論應降級為“研究建議：傾向提高現金比例”，並避免把持倉狀態當作證據。",
-        "兩者都需把“event_calendar missing_fail_closed + 24h/12h blackout 未通過”轉換為可操作的 binding constraint：在未補齊官方 point-in-time 時，禁止任何新增進攻式曝險或槓桿/反向策略權重上修的研究推論。",
-        "補充（或至少列出缺口）扣摩擦所需的摩擦代理：手續費假設、價差/滑價保守區間、以及如何在 5日視窗中扣除；沒有就只能標示尚不可評價，不能用單日 change_percent 做替代。"
+        "修正 earnings：把 bullish 的方向性結論明確降級為「長期/基本面假說」或至少改寫為「不允許基於短期政策未通過的統計門檻去強化方向性」；同時要求在摘要中標註：短期績效驗證仍為 too_early（3/7 視窗限制）。",
+        "補齊反向/槓桿ETF比較框架（由 etf 負責在報告層級落地）：當提案語氣包含 bearish/strong_bearish 或需要比較時，必須逐一給出 SQQQ、SOXS、SPXU 與現金在 3 日與 7 日完成視窗上的報酬表達（以 completed_windows 為主）、並明確寫出每日重設/路徑耗損與失效條件如何被納入判讀。",
+        "檢查並統一時間與樣本口徑：明確聲明所有績效與技術特徵只用「最近完成交易日」計算，且任何跨日視窗只能在 completed_windows>0 時呈現；不得用單日/兩點差取代窗。",
+        "對 filings 風險做最小化事件時間對齊：對 earnings 的 AMD/PLTR，要求列出最近一輪（截至截止時間）是否有接近報告期/重大8-K的事件落點，並說明是否可能導致短期跳空情境使假設失效。"
       ],
       "veto_recommended": false,
       "direct_questions": [
         {
-          "target_agent": "etf",
-          "question": "你在 etf 方案中多次以單日相關（如 SOXL +17.91%、SQQQ -7.60%）來談“表達效率/路徑風險”。同意/不同意：在本輪 event_calendar 仍 missing_fail_closed、且缺少 5 個完成交易日滾動視窗的策略vs挑戰組同步、以及缺少扣摩擦後淨報酬輸出之前，你不應把這些單日觀察升格為任何可操作的曝險優先級（只能機制研究、不可影響權重）。如不同意，請給出你依政策可稽核的對應輸入（窗口級、扣摩擦、相",
-          "why_it_matters": "這直接決定 etf 的研究結論能否影響風險預算；若允許用單日快照外推，等同繞過政策硬檢核，可能在事件未驗證與槓桿路徑風險下放大損失機率。"
+          "target_agent": "earnings",
+          "question": "你目前以 AMD/PLTR 當期財報（10-Q）給出 bullish 並提高方向性信心；在本輪短期績效政策下（7 日 completed_windows=0、3 日樣本未達統計成熟），請你明確同意/不同意：本輪只允許把結論定位為「基本面假說/中長期觀察」，不得把方向性上調建立在短期政策尚未通過的前提上？若不同意，請給出可落地的替代證據（例如已通過的 3 日/7 日 completed_windows 統計或政策允許的等價證據）與精確修改",
+          "why_it_matters": "這會決定提案是否遵守硬性研究門檻；若 earnings 沒有做降級，風險在於把“財務當期好”誤當成可驗證的短期可複製優勢，與委員會對 3/7 日完成視窗的規範直接衝突。"
         },
         {
-          "target_agent": "liquidity",
-          "question": "你在 liquidity 內寫到“目前持倉為 100% CASH（CASH=6,000 美元）”。我要求你同意/不同意：在本輪提供的輸入材料中並未看到可稽核的 positions/weights/持倉快照支持這個數字，因此你的論述不應把具體持倉與金額當作證據。若你不同意，請指出本輪哪個字段/輸入可驗證該持倉金額與權重，並說明為何在缺少完成交易日序列與交易摩擦扣除的狀態下仍可用它來支持“提高現金/避免槓桿”的政策級結論。",
-          "why_it_matters": "若持倉前提不可驗證，會導致風險結論建立在假設之上；此外你的流動性/退出成本論證需要對齊 execution_stress_gate（量能比、abs volume、事件閘門），否則可能低估槓桿/跳空下的尾端風險。"
+          "target_agent": "etf",
+          "question": "你目前 stance=neutral 且 cash_preference=0.55，但摘要未看到你對反向/槓桿ETF（SQQQ/SOXS/SPXU）與現金在政策要求下的比較落地（尤其是 3 日/7 日 completed_windows 的報酬表達、反彈損失、失效條件，以及每日重設/路徑耗損如何被納入）。請你明確同意/不同意：在需要做反向工具比較的情境下，你必須先等到 completed_windows>0（至少 3 日）再輸出可被政策",
+          "why_it_matters": "若 etf 不能把“每日重設與路徑耗損 + 3/7 日完成視窗比較”制度化，反向ETF的排除或允許就可能建立在不足的樣本或單日觀察，導致政策失真與不必要的風險曝險。"
         }
       ]
     },
     {
       "reviewer": "devil_advocate",
-      "opening_statement": "我不完全認同目前多數共識把「看起來合理的單日走勢/機制敘事」當成足以支撐保守結論的做法；在你們的硬政策（完成交易日5日滾動、扣摩擦、相對挑戰組、以及官方事件閘門）面前，仍有幾個我很不放心的可驗證缺口。",
+      "opening_statement": "我不太放心這份提案把「當期財務亮點」當成能延續到多日勝率的替代證據；同時我也不認同部分人對短期績效政策的執行口徑。若你們能用截止時間與完成交易日視窗把漏洞補上，我願意被證據說服。",
       "tone": "concerned",
       "challenged_agents": [
-        "etf",
-        "portfolio"
+        "earnings",
+        "learning"
       ],
-      "strongest_objection": "etf 與 portfolio 都偏向用「缺資料所以先保守」來收束，但在本輪快照層級其實已暴露：事件閘門缺失之外，你們是否也嚴格檢查了時間切點/資料定義（例如 quotes 是否真為完成交易日 close、是否錯把盤中當收盤）以及扣摩擦與視窗級相對檢核的可審計性。若這些前提沒有被形式化檢查，“保守”可能只是敘事上的保守，而不是政策條件下可審計的研究保守。",
+      "strongest_objection": "短期績效政策要求必須以「3 日與 7 日完成交易日滾動視窗、扣除已知交易摩擦」作為方向性/勝率宣稱的依據；但 earnings 的 bullish論證主要是當期財務數字與未明示的指引缺口，learning 雖然有 too_early 的紀律提醒，整體提案仍存在把「未驗證的多日統計優勢」用非同口徑證據（單一財報期、單日/兩點差或未完成視窗）間接承接的風險。這會導致政策驗證鏈斷裂：沒有通過 7 日 completed_windows 時，就不該把方向性信心提高到可交易層級。",
       "hidden_assumptions": [
-        "把 Yahoo Finance 的 quotes 當作等同於政策所需的“完成交易日（completed trading day）”收盤資料，且沒有發生盤中/延遲導致的切點錯配；但快照 as_of 為 2026-08-04T15:38Z，且 warnings 明示資料可能延遲、需要券商核對。",
-        "把“缺少策略 vs 挑戰組的同步 5日視窗”視為唯一必要缺口，忽略了政策同時要求“扣除已知交易摩擦後才可宣稱達標/相對勝出”，以及“無視窗/資料不足只能標示尚不可評價”，因此可能出現『用保守口徑卻仍暗示機率或方向』的語意漏洞。",
-        "以單日價格/機制（每日重設、路徑風險）替代或弱化了必須要有的“完成交易日滾動視窗級序列”證據；共識多半沒有明確定義：哪些結論屬機制層級、哪些結論又意外變成政策級可用證據。",
-        "portfolio 以 CASH 作為結論核心時，暗含“風控缺口”=“策略應永遠不做任何風險權重調整”；但政策規範提到即使缺資料也只需調整信心、不得自動否決或 100% CASH（除非有正式 veto 條件）。本輪是否真的觸發到可允許 0.50/0.80 上限以外的強制退場，仍不夠可驗證。",
-        "對非 SPY 標的（如 SMH/槓桿/反向 ETF）的單日變動被當成支持/反證依據時，假設它能在政策的“完全同步期間、同規則、扣摩擦後、相對挑戰組”框架下成立；但共識未證明。"
+        "假設公司財務結果的可持續性，能在缺乏 3/7 日完成交易日視窗驗證下，等同於短期動能/報酬的可重複優勢（但政策明確禁止這種外推）。",
+        "假設「確定性計算證據」與「研究摘要」的時間戳對齊且沒有用到未完成的 daily bar 或盤中資料；但現有依據主要是單一截止點快照，若存在時間錯配，滾動視窗統計會被扭曲。",
+        "假設缺少明確財測/指引不會改變未來數日的預期路徑；然而 earnings 自己也標示指引/可延續性不足，這會直接削弱 bullish 的方向性可置信度。",
+        "假設已知交易摩擦的扣除口徑在各 Agent 間一致；但目前摘要只零散提到「忽略摩擦/僅供研究」，難以確保政策要求的成本扣除落在同一計算標準。"
       ],
       "required_changes": [
-        "etf 需明確把“機制層級結論”與“政策級可用結論”分離，並列出：在目前資料狀態下哪些敘述只能標示為機制假說、哪些絕對不能被讀者推導成進攻/防守方向依據。",
-        "portfolio 若維持 CASH=1.0，必須逐條對照政策：在事件閘門 missing_fail_closed 下是否存在任何可執行的“允許維持/降低風險”範圍（例如仍允許最多到 0.50 的風險資產）而非直接升格到 100% 現金；若仍選 1.0，需提供“正式不可避免”的風控觸發證據（而非僅為保守）。",
-        "兩者都要補上時間切點與資料定義的審計步驟：如何確認 quotes 的“previous_close/price”對應的是完成交易日收盤而非盤中/延遲；若無法確認，需把相關結論降級到不可評價，並停止用單日 change_percent 去支持任何方向性假說。",
-        "etf 需提出下一輪最小可審計輸出清單：完成交易日 5日滾動視窗的策略 vs 挑戰組（含扣摩擦後）若仍缺資料，則只允許“尚不可評價”的呈現，不得讓機制敘事以語意形式接近政策級結論。",
-        "portfolio 需檢查並避免“事後把不可評價當成已評價”的措辭：例如聲稱“缺策略比較所以不能升級”是對的，但若同時暗示“因此必然最優為 100% CASH”，就超出本輪證據範圍，需改成“在政策下最保守但仍屬假設”。"
+        "earnings 必須明確區分：財務結果是「基本面候選品質」而非「短期績效政策的統計證據」；在未滿足 3/7 日 completed_windows 的情況下，信心上調需改為中性/較低，並指出允許的最大風險承擔範圍。",
+        "learning 必須把政策檢核落到可審計層級：對 3 日 completed_windows=2/positive_windows=1 與 7 日 completed_windows=0 的差異，明確規定哪些敘述被禁止（例如：提升方向性權重、宣稱統計優勢、或用單日兩點差替代）。",
+        "補上時間與資料一致性檢查：引用的「2026-08-04 為最近完成交易日」需與任何視窗起訖（3/7 個完成交易日）嚴格對齊，避免把 08-05 盤中/未完成 bar 誤當完成資料。",
+        "若提案涉及任何反向/槓桿 ETF 的比較敘述，必須符合政策：在 bearish/strong_bearish 時才需比較 SQQQ/SOXS/SPXU 與現金，且比較以完成交易日視窗為單位而非單日變動。即便本輪不做買進，也要避免不合規的暗示。"
       ],
       "veto_recommended": false,
       "direct_questions": [
         {
-          "target_agent": "etf",
-          "question": "你同意/不同意：在本輪資料狀態（event_calendar=missing_fail_closed、features 空、快照 as_of 可能非完成交易日 close、且未提供5日完成交易日滾動視窗扣摩擦後序列）下，你先前對槓桿/反向“每日重設與路徑風險”的敘述只能算機制假說，不能被任何語意方式推導成政策級進攻/防守依據？請明確列出你認為“可用/不可用”的邊界與證據類型。",
-          "why_it_matters": "因為政策允許的不是“保守敘事”，而是“可審計、完成交易日視窗級、扣摩擦後、相對挑戰組”才能升級。若 etf 的機制敘事在語意上被讀成可用證據，會讓整體決策違反你的硬檢核框架。"
+          "target_agent": "earnings",
+          "question": "你目前的 bullish（並給出較低現金偏好/較高方向信心）主要依據是 AMD/PLTR 的當期財務結果與 EPS/淨利數字；請你明確同意或不同意：在 7 日 completed_windows=0 且 3 日樣本不足的狀況下，你不會把「財報亮點」當成短期績效政策下的方向性/勝率證據。若你不同意，請指出你採用的具體完成交易日視窗（3 與 7 各自 completed_windows/positive_windows）與扣除摩擦後的比較證",
+          "why_it_matters": "這直接關係到政策是否被遵守：在缺乏 7 日完成視窗時，提高方向性信心屬於高風險的外推。你需要把「基本面論點」與「短期統計驗證」的邊界講清楚。"
         },
         {
-          "target_agent": "portfolio",
-          "question": "你同意/不同意：在本輪你採用 CASH=1.0 的決策，並非只是“缺資料所以保守”，而是確實觸發了政策允許的強制降風險上限之外的不可避免條件？若不是，你需要把 CASH 從 1.0 降回政策允許的保守範圍（例如最多對應未確認條件下的風險資產上限 0.50），並說清楚理由；同時請回答你如何確認 Yahoo quotes 對應的是完成交易日收盤而非盤中/延遲。",
-          "why_it_matters": "本輪政策明確禁止把缺資料當成自動否決或 100% CASH 的理由。若 portfolio 未能提供“正式觸發”的證據或未做時間切點審計，CASH=1.0 可能是超出證據範圍的選擇，而非政策推導結果。"
+          "target_agent": "learning",
+          "question": "你已判定 verdict=too_early，並要求 7 日 completed_windows=0 時不得更新多日方向性結論；請你同意或不同意：本輪其他 Agent（特別是 earnings）即使使用的是財務/指引等非統計證據，也不能造成「可交易層級的方向性信心上調」。若你同意，請你列出：哪些文字屬於被允許/被禁止的更新類型（最多列 3 類），並說明你如何確保沒有用到單日/兩點差（例如 GLD/TLT 的貢獻）替代完成交易日視窗。",
+          "why_it_matters": "learning 的紀律若只約束自己的 agent，而其他 agent 仍可在報告中用非同口徑證據推動風險資產曝險，就會形成政策落差。你需要給出可審計的「文字/結論邊界」規則來避免回看偏誤與口徑漂移。"
         }
       ]
     }
@@ -483,85 +406,84 @@
   "cross_examination_responses": [
     {
       "reviewer": "risk",
-      "responding_agent": "etf",
-      "question": "你在 etf 方案中多次以單日相關（如 SOXL +17.91%、SQQQ -7.60%）來談“表達效率/路徑風險”。同意/不同意：在本輪 event_calendar 仍 missing_fail_closed、且缺少 5 個完成交易日滾動視窗的策略vs挑戰組同步、以及缺少扣摩擦後淨報酬輸出之前，你不應把這些單日觀察升格為任何可操作的曝險優先級（只能機制研究、不可影響權重）。如不同意，請給出你依政策可稽核的對應輸入（窗口級、扣摩擦、相",
-      "tone": "concerned",
-      "direct_answer": "結論：我同意你這個質疑方向；在本輪的事件閘門仍為 missing_fail_closed、且缺少政策要求的「5 個完成交易日視窗級、同規則的策略 vs 挑戰組、並扣摩擦後淨報酬」之前，我不應讓任何單日（或單日相關）敘事被升格成可用來調整風險預算/曝險優先級的依據。我會把這些單日數字嚴格降級為「僅機制示例/描述性觀察」，並在下一輪改以完成交易日視窗級的可審計輸出來驅動任何政策級判定。",
+      "responding_agent": "earnings",
+      "question": "你目前以 AMD/PLTR 當期財報（10-Q）給出 bullish 並提高方向性信心；在本輪短期績效政策下（7 日 completed_windows=0、3 日樣本未達統計成熟），請你明確同意/不同意：本輪只允許把結論定位為「基本面假說/中長期觀察」，不得把方向性上調建立在短期政策尚未通過的前提上？若不同意，請給出可落地的替代證據（例如已通過的 3 日/7 日 completed_windows 統計或政策允許的等價證據）與精確修改",
+      "tone": "firm",
+      "direct_answer": "我同意：在本輪 7 日 completed_windows=0（且 3 日樣本數仍未統計成熟）時，我不應把任何“方向性曝險上調/信心強化”建立在短期政策尚未通過的前提上。因此我會把本輪對 AMD/PLTR 的定位改成「基本面良好/可持續性待驗證的中長期觀察」，而不是用來上調短期方向性。",
       "conceded_points": [
-        "我先前在敘事上把 SOXL（+17.91%）/SQQQ（-7.60%）這類單日幅度，放進了“表達效率/路徑風險”的論證段落；即使我在文字裡自稱是研究性，但仍容易被讀成會影響風險預算的政策級證據，這在你指出的政策硬檢核尚未完成時是不恰當的。",
-        "本輪确實缺少同規則、同時間同步的「5 個完成交易日滾動視窗」策略 vs 挑戰組（SPY/QQQ/IWM/DIA/VTI）的相對比較，且缺少扣除可得交易摩擦後的視窗級淨報酬，因此不能用單日觀察去推導路徑風險或升格優先級。"
+        "我承認我上一輪的表述偏向“偏正面/偏 bullish 且維持方向性”，在委員會的短期績效政策框架下是不夠嚴格：政策明確要求 3/7 日完成視窗才能支撐方向性或可重複優勢的更新；而本輪 7 日已為 0。",
+        "我也承認我對“確定性計算證據”與“政策門檻”之間的界線呈現不足：我雖寫了不外推價格動能，但語氣與結論分類仍可能被解讀為在策略層級強化了風險曝險。"
       ],
       "evidence_used": [
-        "event_calendar 為 input_mode=missing_fail_closed，且 required_categories 的 fomc/bls/nyse/earnings 均為 missing，並有找不到 point-in-time 輸入檔與 blackout 相關警告；依風控政策規定此時不應允許風險上調或用非點時證據替代風控前提。",
-        "本輪資料提供的僅是 yfinance 的單日 quotes（例如 SOXL +17.907636%、SQQQ -7.60319%、SMH +4.781266% 等），features 為空且未提供完成交易日滾動視窗的視窗級報酬序列；因此無法滿足「5 個完成交易日」政策級檢核。",
-        "本輪短窗驗證/委員會知識也已明確指出：僅有 CASH 的短窗正報酬但缺少策略 vs 挑戰組同步對比與扣摩擦後視窗級淨報酬，屬 too_early，故單日敘事不能作升級依據。"
+        "短期績效政策驗證（提供的委員會學習報告）：7 日視窗 completed_windows=0、positive_windows=0，因此不得對方向性/勝率做 supported 或 challenged 更新（verdict：too_early）",
+        "同一份學習報告：3 日視窗 completed_windows=2、positive_windows=1，但仍未達統計成熟門檻；因此僅能列為候選觀察，不能作為方向性上調的證據",
+        "本輪 earnings 已驗證但屬於“當期基本面”：AMD 與 PLTR 的營收、淨利、營運利潤皆可由其 10-Q/XBRL facts 對應到計算（例如 AMD operating_income、net_income；PLTR operating_income、net_income），但這不足以取代短期績效視窗政策"
       ],
       "proposed_changes": [
-        "把本輪所有槓桿/反向的“表達效率/路徑風險”論述改成純機制層（只討論每日重設與路徑風險的方向性風險來源），並明確標註：任何單日 change_percent 只能作示例，**不得**用於風險預算/曝險優先級或政策判定。",
-        "下一輪輸出我會補齊你要求的政策硬鏈：在同一「5 個完成交易日」完成交易日滾動視窗下，至少提供策略（若為研究指數需有可比的風險資產版本或清楚標註為純現金假設）與挑戰組（SPY/QQQ/IWM/DIA/VTI）各自的 completed_windows/positive_windows 與視窗級淨報酬；同時提供保守的摩擦扣除假設（手續費/價差/滑價），用“扣摩擦後視窗級淨報酬”進行政策級可稽核比較。"
+        "把本輪 AMD/PLTR 的 verdict 從“偏正面 bullish（且提高方向性信心）”修正為“基本面假說/中長期觀察（不做短期方向性上調）”；同時把 confidence 下調並明確標註：短期層級無法被 7 日視窗驗證支持。",
+        "在下一輪報告的結構中加入政策對齊段落：分欄呈現 3 日（completed_windows=2/positive_windows=1）只能作候選、7 日（completed_windows=0）維持 too_early；並撤回任何把財務當期好直接等同於短期可重複優勢的措辭。"
       ],
       "unresolved_disagreement": null
     },
     {
       "reviewer": "risk",
-      "responding_agent": "liquidity",
-      "question": "你在 liquidity 內寫到“目前持倉為 100% CASH（CASH=6,000 美元）”。我要求你同意/不同意：在本輪提供的輸入材料中並未看到可稽核的 positions/weights/持倉快照支持這個數字，因此你的論述不應把具體持倉與金額當作證據。若你不同意，請指出本輪哪個字段/輸入可驗證該持倉金額與權重，並說明為何在缺少完成交易日序列與交易摩擦扣除的狀態下仍可用它來支持“提高現金/避免槓桿”的政策級結論。",
-      "tone": "cautious",
-      "direct_answer": "我同意：本輪輸入材料（到資料截止時間 2026-08-04T15:38:19Z）沒有提供可稽核的 positions/weights 或持倉快照欄位來支撐「CASH=6,000 美元」這個具體數字，因此我不應把它當作證據。就算去掉該金額，我仍維持“偏謹慎、以現金為主、避免在事件閘門缺失下放大槓桿/反向曝險”的政策級方向，但理由必須改為基於：事件閘門缺失（event_calendar input_mode=missing_fail_closed）與策略/扣摩擦視窗級硬檢核材料不足，而非任何單一未稽核的持倉金額敘述。",
-      "conceded_points": [
-        "本輪資料未包含可驗證 positions/weights/持倉金額欄位，因此「CASH=6,000 美元」應刪除或降級為非證據的背景陳述（甚至直接移除）。",
-        "我原先把“目前持倉 100% CASH”與“避免槓桿”的政策結論間接綁在未稽核的金額上，這在可公開稽核標準下不合格；需要改用事件閘門與研究硬檢核缺失作為主要依據。"
-      ],
-      "evidence_used": [
-        "快照的 features=[]、filing_events=[]、fundamental_facts=[]，且本輪委員會驗證中也明確指出“positions 僅包含 CASH（CASH weighted_contribution_percent=0）”，沒有提供可稽核的 positions/weights/金額來源來驗證 6,000 美元。（資料中未看到任何可對應該金額的欄位）",
-        "event_calendar 為 input_mode=missing_fail_closed，且 required_categories=['fomc','bls','nyse','earnings'] 全部 status=missing，coverage_start/coverage_end=null；同時 warnings 指出找不到 point-in-time 輸入檔，並要求缺失時保持保守/不可放寬風險曝險。",
-        "committee_changes 與 member_assessment 均指出本輪仍維持 too_early：缺策略 vs 挑戰組同步視窗級相對比較、研究指數未扣除交易摩擦、且事件閘門未解除。"
-      ],
-      "proposed_changes": [
-        "在下一輪報告中刪除（或明確標註為非證據的既有狀態）「CASH=6,000 美元」與任何未稽核的持倉金額/權重敘述；改用“在事件閘門缺失期間維持偏保守的風險曝險約束（例如不提高到需要政策級升級的槓桿/反向權重）”作為主要論證主軸。",
-        "把“偏謹慎/避免槓桿”改成引用政策硬閘門：以 event_calendar missing_fail_closed 作為 block 依據，並在 proposed output 明確要求補齊 5 個完成交易日、同規則、扣摩擦與策略 vs 挑戰組的視窗級可審計材料；否則仍只能維持 too_early/觀察層級。"
-      ],
-      "unresolved_disagreement": null
-    },
-    {
-      "reviewer": "devil_advocate",
       "responding_agent": "etf",
-      "question": "你同意/不同意：在本輪資料狀態（event_calendar=missing_fail_closed、features 空、快照 as_of 可能非完成交易日 close、且未提供5日完成交易日滾動視窗扣摩擦後序列）下，你先前對槓桿/反向“每日重設與路徑風險”的敘述只能算機制假說，不能被任何語意方式推導成政策級進攻/防守依據？請明確列出你認為“可用/不可用”的邊界與證據類型。",
+      "question": "你目前 stance=neutral 且 cash_preference=0.55，但摘要未看到你對反向/槓桿ETF（SQQQ/SOXS/SPXU）與現金在政策要求下的比較落地（尤其是 3 日/7 日 completed_windows 的報酬表達、反彈損失、失效條件，以及每日重設/路徑耗損如何被納入）。請你明確同意/不同意：在需要做反向工具比較的情境下，你必須先等到 completed_windows>0（至少 3 日）再輸出可被政策",
       "tone": "cautious",
-      "direct_answer": "我同意：在這份快照的資料狀態下，我先前對「每日重設與路徑風險」的表述應被界定為*機制假說與研究重點*，而不是可審計的*政策級進攻/防守依據*。可用的只有（1）單日同向/反向的觀察性證據與（2）在缺資料時的風險限制敘事；不可用的包括任何基於「完成交易日視窗級、扣摩擦後、相對挑戰組」的政策升級宣稱。",
+      "direct_answer": "結論：我同意「不得用不完整的 3/7 日完成視窗結果去做可被政策接受的相對勝率/報酬結論」，但我不同意「需要做反向比較時就一律要等到 completed_windows>0 才能輸出任何內容」。我的修正會是：在 completed_windows=0 的情況下，仍輸出政策規定的比較框架（含每日重設/路徑耗損與反彈損失/失效條件的判讀邏輯），但所有“相對報酬表達/勝率”必須標示為 N/A 並維持 too_early，不得推導可宣稱結論。",
       "conceded_points": [
-        "你指出的盲點我承認：我在措辭上若讓人讀成“今日放大→可推進攻/防守”，那是不符合政策硬檢核的；必須明確加註：本輪只夠支持機制與限制，不能支持政策級升級。",
-        "本輪的另一個關鍵前提我也同意仍未被完整形式化驗證：目前可見的是 yfinance 快照的 as_of 與 previous_close，但資料並未提供“這個價格確定是完成交易日 close”的審計欄位，因此我不能把它當作完成交易日視窗級計算的可驗證輸入來源。"
+        "我先前版本把“待 7 日視窗出現再討論反向工具”寫得太像跳過比較流程，沒有把“至少在政策上需要的比較欄位”制度化呈現；在風控稽核觀點上這是不足。",
+        "我同意：當 7 日 completed_windows=0 時，任何關於 SQQQ/SOXS/SPXU vs 現金在 3 日/7 日視窗的相對勝率/優勢敘述都必須被禁止（too_early/NA）。"
       ],
       "evidence_used": [
-        "本輪 event_calendar 為 input_mode=missing_fail_closed，且 required_categories 的 fomc/bls/nyse/earnings 皆為 missing；政策風控閘門允許在缺失情況下維持保守，但禁止把缺資料當成風控前提解除後的升級依據。",
-        "本輪 features 為空，且未提供任何完成交易日的 5 日滾動視窗報酬序列，更未提供“策略 vs 挑戰組（含 SPY 作主要基準）”的同步視窗級相對檢核，以及“扣摩擦後”的可審計淨報酬或摩擦敏感度。",
-        "可見的僅是單日 change_percent（如 SPY、SMH、SOXL、SQQQ 的同日放大/反向幅度）且帶有 as_of timestamp 與調用來源註記（Yahoo Finance via yfinance，且有“可能延遲、下單前需向券商核對”的警告），因此只能作觀察，不可直接轉成政策級短期績效結論。"
+        "研究用價格資料僅提供最近完成交易日：未直接提供 SQQQ/SOXS/SPXU 的 3 日/7 日完成交易日滾動結果；且研究政策驗證指出 7 日 completed_windows=0（positive_windows=0）。",
+        "短期績效政策要求：反向/槓桿 ETF 的相對比較需使用 [3,7] 個完成交易日滾動視窗，單日不得替代完整視窗；同時槓桿/反向 ETF 最大持有 1 個交易日需重新驗證。"
       ],
       "proposed_changes": [
-        "在本輪/後續報告中加入一段“證據可用/不可用”明文化章節：明確規定單日價格變動（未驗證 close）僅能用於“觀察性描述”，任何“每日重設效應、路徑風險對短期報酬的方向性、或相對優勢”只能在提供完成交易日 5 日滾動視窗級、扣摩擦後、且與挑戰組同步比較時才可升級。",
-        "新增一個可由 CIO 抽查的資料定義檢核清單：逐項核對（a）yfinance quotes 的時間切點是否對應完成交易日 close（或是否存在盤中誤用風險標記）、（b）完成交易日視窗用的是同一交易所日曆與同步規則、（c）扣摩擦模型的假設參數（手續費/價差/滑價/稅費匯率）及敏感度區間。若任一項無法審計，則該結論自動降級為“未可評價/機制假說”。"
+        "在下一輪報告中新增一個“反向工具政策比較表”欄位：SQQQ/SOXS/SPXU vs CASH 在 3 日與 7 日的 completed_windows、positive_windows、淨報酬勝率/平均邊際一律用“視窗資料；若 7 日=0則填 NA 並維持 verdict=too_early”。",
+        "明確把“每日重設/路徑耗損與反彈損失/失效條件”寫成研究可檢核的判讀規則（例如：若市場保持 risk_on 且反轉不足則標記反向 ETF 失效風險升高），但不把未驗證的單日高報酬當成多日優勢；因此在 completed_windows=0 時仍可輸出框架而不輸出勝率結論。"
       ],
       "unresolved_disagreement": null
     },
     {
       "reviewer": "devil_advocate",
-      "responding_agent": "portfolio",
-      "question": "你同意/不同意：在本輪你採用 CASH=1.0 的決策，並非只是“缺資料所以保守”，而是確實觸發了政策允許的強制降風險上限之外的不可避免條件？若不是，你需要把 CASH 從 1.0 降回政策允許的保守範圍（例如最多對應未確認條件下的風險資產上限 0.50），並說清楚理由；同時請回答你如何確認 Yahoo quotes 對應的是完成交易日收盤而非盤中/延遲。",
+      "responding_agent": "earnings",
+      "question": "你目前的 bullish（並給出較低現金偏好/較高方向信心）主要依據是 AMD/PLTR 的當期財務結果與 EPS/淨利數字；請你明確同意或不同意：在 7 日 completed_windows=0 且 3 日樣本不足的狀況下，你不會把「財報亮點」當成短期績效政策下的方向性/勝率證據。若你不同意，請指出你採用的具體完成交易日視窗（3 與 7 各自 completed_windows/positive_windows）與扣除摩擦後的比較證",
       "tone": "cautious",
-      "direct_answer": "我不同意本輪把 CASH=1.0 當作“政策強制”結果的做法；以你指出的風控政策文字，我們至少應把 CASH 從 1.0 下修到不超過「未啟用 formal risk veto/保證式風險閘門前，CASH 不得高於 0.50」的範圍。我們目前確實有合規的風控理由（官方事件閘門 missing_fail_closed 未解除，且風控要求 block risk increase），但這並不足以把 CASH 推到 1.0；因此 CASH=1.0 屬於我方在“證據與規則落地”上的過度保守。至於 Yahoo quotes 是否為完成交易日收盤：我無法在本次提供的資料中完成可審計確認，因為報表未提供可直接驗證“close/regular-trd",
+      "direct_answer": "我同意：在你指出的「7 日 completed_windows=0、且 3 日仍未達統計成熟」條件下，我不應把 AMD/PLTR 的財報亮點直接升級為短期績效政策所要求的方向性/勝率證據；我也承認我上一輪在語句呈現上，容易讓人誤解我把基本面“外推”成短期可交易優勢。結論應修正為：對短期視窗/勝率層級只能維持 too_early，基本面只能定位在“中長期獲利品質候選觀察”，不用來更新 3/7 日政策框架下的現金/方向性曝險。",
       "conceded_points": [
-        "同意：我們未能在本次資料中提供“Yahoo quotes 為完成交易日收盤”的可審計驗證；且 quotes 有 price_session=null、並明確包含資料可能延遲的警告，因此不能把單日快照當作政策級完成日收盤證據。",
-        "承認：在風控政策“未有 formal risk veto/保證式風險閘門前，CASH 不得高於 0.50”的文字下，CASH=1.0 至少是落地過度保守；本輪風控閘門缺失支撐的是“阻止新增/提高風險”，而不足以自動導出 CASH=1.0。"
+        "我在上一輪報告的表述，沒有把“earnings 基本面正向”與“短期績效政策（3/7日 completed_windows）”的邊界講得足夠硬，導致可能被解讀為用基本面間接承接多日統計優勢。這點我接受需要修正。",
+        "在目前提供的短期確定性計算證據中，7 日視窗 completed_windows=0，因此任何把 bullish 提升為可交易/勝率層級的做法都不符合政策，應改為 too_early。"
       ],
       "evidence_used": [
-        "event_calendar input_mode=missing_fail_closed，且 required_categories 的 fomc/bls/nyse/earnings 均為 missing、找不到 point-in-time 輸入檔；同時風控設定 event_risk_gate enabled 且 block_risk_increase_on_missing=true。",
-        "風控政策原文：未有正式 risk veto/保證式目標或強制回撤閘門時，CASH 不得高於 0.50；因此 CASH=1.0 並非政策必要推論。",
-        "Yahoo Finance via yfinance 的 quotes：多數 symbol 的 price_session=null，並附帶警告“Yahoo Finance 資料可能延遲，下單前必須向券商核對價格”；缺少可直接驗證“完成交易日 close”之字段/審計證據。"
+        "短期績效政策/委員會已驗證的學習紀錄顯示：7 日視窗 completed_windows=0、positive_windows=0（latest_return_percent=null），因此不得進行 supported/challenged 的方向性或勝率更新（截點 2026-08-05T12:20:27Z）。",
+        "同一份紀錄顯示：3 日視窗雖有 completed_windows=2、positive_windows=1（但樣本不足以達統計成熟門檻），因此只能作候選觀察，不能用來提高方向性或調整到較高曝險信心層級。",
+        "短期績效政策明確要求：單日或重複行情點不得充當完整視窗；且至少 20 個完整視窗才用於統計優勢/勝率宣稱。這與我上一輪“較高方向信心”的呈現不一致。"
       ],
       "proposed_changes": [
-        "把本輪目標配置從 CASH=1.0 下修為 CASH=0.50（保留最保守上限約束），風險資產總權重 ≤0.50；由於 SPY/QQQ 的攻擊性確認條件未達成，新增風險資產僅允許小額、以符合“禁止新增逐標的風險/提高曝險”的限制（並在每輪以 blackout/事件閘門狀態再評估）。",
-        "在後續研究輸出中新增“時間切點審計”：對任何用於政策級判定的價格/技術訊號，必須提供來自完成交易日 close 的可驗證欄位或交叉驗證規則（例如同時提供 previous_close 對齊、或用另一來源/交易所收盤確認）；若無法完成，則只能把快照降階為背景觀察，不得用於完成日視窗驗證。"
+        "調整報告架構：把本輪的“AMD/PLTR 獲利能力偏正面（earnings/效率）”改列為中長期品質評估（不轉換為 3/7 日短期勝率），並在摘要中明確註記“short-term verdict=too_early（因 7 日 completed_windows=0）”。",
+        "調整風控/配置表述：把原先較低現金偏好（cash_preference=0.45）的語氣與結論改為“不因短期政策可驗證性而降低現金”，在 7 日仍缺席期間維持偏保守的風險上限/分散原則（至少避免把 earnings bullish 直接帶到 direction/胜率/曝險信心）。"
+      ],
+      "unresolved_disagreement": null
+    },
+    {
+      "reviewer": "devil_advocate",
+      "responding_agent": "learning",
+      "question": "你已判定 verdict=too_early，並要求 7 日 completed_windows=0 時不得更新多日方向性結論；請你同意或不同意：本輪其他 Agent（特別是 earnings）即使使用的是財務/指引等非統計證據，也不能造成「可交易層級的方向性信心上調」。若你同意，請你列出：哪些文字屬於被允許/被禁止的更新類型（最多列 3 類），並說明你如何確保沒有用到單日/兩點差（例如 GLD/TLT 的貢獻）替代完成交易日視窗。",
+      "tone": "firm",
+      "direct_answer": "我同意：只要本輪短期績效政策的 7 日 completed_windows=0，任何其他 Agent（含 earnings）都不得在報告/結論文字上把方向性信心上調到「可交易層級」。我會把口徑邊界明確規定為：可允許的是“等待驗證前的狀態/觀察敘述”，被禁止的是“可交易層級的方向性/勝率暗示或由單日歸因所導出的策略強化”。",
+      "conceded_points": [
+        "我承認：若 earnings 在報告中用財務/指引語言自然地“推升曝險強度”，會形成政策落差；因此需要一條跨 Agent 可審計的文字邊界規則，而不只靠 learning 自己的紀律。",
+        "我也承認：本輪雖然在 learning 內部有禁止邏輯，但若報告呈現未分欄“視窗績效 verdict”與“單次部位歸因”，仍可能被讀者誤解為策略強化；因此必須加入版面/標籤層級的硬約束。"
+      ],
+      "evidence_used": [
+        "短期績效政策硬限制：必須分別使用 3 日與 7 日“完成交易日滾動視窗”且扣除已知摩擦；本輪 short_window_evidence 顯示 7 日 completed_windows=0（positive_windows=0，latest_return_percent=null），因此不得做方向性/勝率的 supported 或 challenged 更新。",
+        "本輪確定性單次部位貢獻：GLD weighted_contribution_percent=-0.1989%、TLT=+0.0060%、CASH=0（且方法聲明忽略交易摩擦），僅能作“單次歸因素材”，不得替代完成視窗績效驗證。",
+        "本輪委員會既有流程變更已寫明：禁止把最新截點單日/兩點差上升為多日視窗績效證據；只有完成 completed_windows>0 才允許更新 verdict。"
+      ],
+      "proposed_changes": [
+        "（1）跨 Agent 文字邊界規則（CIO 可檢查）：當 7 日 completed_windows=0 時，任何 Agent 的文字不得出現“supported/validated/has edge/勝率為正/可交易結論/提高曝險/降低現金是因為有效防禦”等語句；允許的僅限於“理由為待檢驗、需要 3/7 日完成視窗驗證”的觀察性表述（例如：風險偏好可能轉強、基本面偏正但尚未驗證）。",
+        "（2）版面強制分欄（CIO 可檢查）：在報告固定三塊：A. 3 日/7 日 completed_windows 與 positive_windows 的政策驗證結果；B. 單日/兩點差部位貢獻僅作歸因（明確標註“非政策驗證、不可用於 verdict 更新”）；C. 其他 Agent 的財務/指引僅能落在“可能性/假說”段落，不得和 A 區塊同句/同段落連接以免形成視覺口徑漂移。"
       ],
       "unresolved_disagreement": null
     }
@@ -574,86 +496,120 @@
       "consensus_reached": true,
       "veto_maintained": false,
       "accepted_changes": [
-        "etf：明確同意把 SOXL/SQQQ 等單日相關敘事降級為「僅機制示例/描述性觀察」，在本輪 event_calendar 仍 missing_fail_closed、且尚缺 5 個完成交易日滾動視窗（策略 vs 挑戰組同步、扣摩擦後淨報酬）前，不得升格為任何可調整風險預算/曝險優先級的依據。",
-        "liquidity：明確同意本輪缺少可稽核的 positions/weights/持倉金額快照支撐「CASH=6,000 美元」，因此應刪除或降級為非證據背景陳述，並把政策方向（偏保守、避免在事件閘門缺失時放大槓桿/反向曝險）的依據改成事件閘門缺失與視窗級硬檢核缺失，而非未稽核的持倉金額。"
+        "earnings：明確同意在本輪 7日 completed_windows=0（且 3日樣本未成熟）時，禁止把 AMD/PLTR 的結論做成「短期方向性曝險上調/信心強化」，改為「基本面良好/可持續性待驗證的中長期觀察」，並下調 confidence 與撤回可被解讀為策略性強化的措辭。",
+        "etf：明確同意在 completed_windows=0 時，不得輸出任何可被政策接受的相對勝率/報酬結論；改為仍給出政策要求的比較框架，但將所有 3日/7日「相對報酬表達」標示為 N/A 且保持 verdict=too_early，同時制度化加入每日重設/路徑耗損與反彈損失/失效條件的判讀規則（不把單日高報酬外推為多日優勢）。",
+        "跨欄位口徑：強化以「最近完成交易日」計算、且跨日視窗僅在 completed_windows>0 才允許統計性宣稱；在短樣本階段以 too_early/NA 呈現。"
       ],
       "unresolved_objections": [
-        "扣摩擦的代理/假設（手續費、價差/滑價區間、以及如何在 5 日完成交易日滾動視窗中扣除）在兩位回應中仍未見到具體可稽核承諾；目前仍屬缺口，因此任何未來若要做「政策級」淨報酬比較仍會信心偏低。",
-        "即便 etf/liquidity 都同意降級，etf 端仍需確保後續報告不再以「單日/短窗」替代「完成交易日滾動視窗」；本輪回應承諾有，但仍未提供你要求的下一版輸出規格（至少欄位清單與產出格式）—目前只能判定方向一致，無法驗證可稽核鏈條是否會落地。",
-        "事件閘門 blackout 與 maximum_snapshot_age_hours（24h）/block_risk_increase_on_missing=true 的可操作限制，兩位回應雖承認要更保守，但尚未轉成你要求的「可操作 binding constraint（例如禁止哪些權重/哪些新增曝險類型）」的具體清單；因此我仍保留把它視為未完全形式化的風控缺口。"
+        "etf 的回應提出「新增反向工具政策比較表」與判讀規則，但在本輪回應中尚未提供該表的實際欄位/文字定義（例如如何把每日重設、路徑耗損、反彈損失與失效條件在表內對應到可稽核指標）。若下一版未把這些字段具體落到報告輸出格式，仍可能被視為制度化不足。",
+        "earnings 雖同意降級，但回應未顯示其原先報告中所有可能被解讀為方向性強化的表述是否已逐句改寫；需要確認下一版不會保留「偏正面/可驗證短優勢」的語義殘留。"
       ],
       "binding_constraints": [],
-      "resolution_summary": "我被兩位研究員明確的讓步證據說服：etf 同意把單日 SOXL/SQQQ 相關敘事永久降級為機制示例，並在缺 5 日完成交易日視窗與扣摩擦後淨報酬前不影響任何風險預算；liquidity 也同意刪除/降級未稽核的「CASH=6,000 美元」並把理由改回事件閘門缺失與硬檢核不足。-但我仍不完全放心：扣摩擦代理與可操作的事件閘門權重禁止清單在回應中尚未形式化，因此目前只能算一致降級，尚不足以把風險鏈條補齊到可完全稽核的政策級水平。"
+      "resolution_summary": "我被兩個直接修正說服：earnings 已明確承諾在 7日 completed_windows=0 時把 AMD/PLTR 從「短期 bullish/信心上調」降為中長期基本面觀察，避免用短期政策未通過的統計門檻來強化方向性；etf 也同意在 completed_windows=0 時不輸出任何可宣稱的相對勝率/報酬結論，只保留政策要求的比較框架並標示 N/A，同時把每日重設與路徑耗損/失效條件的判讀邏輯制度化。雖然我沒有要維持否決，但我仍保留一點緊張：etf 下一版的比較表欄位與「失效條件/路徑耗損」的可稽核落點目前仍像是提案而非已落地，同時需要確認 earnings 的語義是否已全面去除可能被誤讀為短期方向性強化的殘留措辭。"
     },
     {
       "reviewer": "devil_advocate",
-      "tone": "concerned",
+      "tone": "cautious",
       "consensus_reached": true,
       "veto_maintained": false,
       "accepted_changes": [
-        "etf 已同意：在目前資料狀態（event_calendar=missing_fail_closed、快照資料不可審計為完成日 close、缺少完成交易日5日滾動視窗扣摩擦後序列）下，「每日重設/路徑風險」只能界定為機制假說與研究重點，不能以語意方式升級成政策級進攻/防守依據，並提出加入「可用/不可用」明文化章節與審計檢核清單。",
-        "etf 亦承認先前措辭可能造成語意誤讀，並承諾以“未可評價/不可用”降階包含任何依賴完成交易日視窗級、扣摩擦後、相對挑戰組比較的內容。",
-        "portfolio 明確撤回先前“CASH=1.0 當作政策強制推導”的做法，並同意依政策文字至少應下修至不高於 0.50 的保守風險資產上限；同時指出本次資料中無法完成“Yahoo quotes 對應完成交易日 close”的可審計驗證，因此不能把快照單日欄位當成政策級完成日證據。",
-        "portfolio 提出後續必須補上“時間切點審計”（完成交易日 close 對齊或交叉驗證），並把任何無法完成之政策級判定降階為背景觀察/不可評價。"
+        "earnings 明確承認：在 7 日 completed_windows=0 且 3 日尚未統計成熟時，不把 AMD/PLTR 財報亮點外推為短期績效政策所要求的方向性/勝率證據，並將 short-term verdict 調整為 too_early、架構改為中長期品質候選觀察",
+        "earnings 對風控語氣做修正：避免因短期政策可驗證性缺失而降低現金/提升可交易曝險信心",
+        "learning 同意跨 Agent 邊界：在 7 日 completed_windows=0 時，不得在結論文字上把方向性信心上調到可交易層級；並將允許/禁止類型具體化（允許觀察、禁止勝率/策略強化暗示）",
+        "learning 提出可審計的版面強制分欄：A 區塊放政策驗證（3/7 日 completed_windows 與 positive_windows），B 區塊把單日/兩點差部位貢獻僅作歸因且標註“不可用於 verdict 更新”，C 段落避免把財務/指引與 A 區塊同句/同段連接造成視覺口徑漂移"
       ],
       "unresolved_objections": [
-        "etf 雖已表態不升級結論，但仍需要更可檢查的“語意邊界”規則：例如禁止使用哪些動詞/暗示（如『因此可推進攻/防守』『短期必然』等）來確保讀者不會把“機制假說”誤讀成政策級可執行訊號；本輪回應未提供到可抽查的具體觸發字詞或段落模板。",
-        "portfolio 下修至 CASH=0.50 是對“過度保守”的修正，但本輪仍未補足：在 event_risk_gate enabled、block_risk_increase_on_missing=true 的條件下，CASH=0.50 的選擇是否還受 execution_stress_gate（max_risk_weight_when_market_data_stale/regime_missing 等）對應的具體分支約束；由於缺少 volatility/liquidity/stale 量化輸入（資料截止也未見可審計欄位），我對“0.50 是否一定落在所有啟用分支的上限之內”仍偏低信心。",
-        "兩位研究員皆承認缺乏“完成交易日 5日滾動視窗、扣摩擦後、同步相對挑戰組”的可審計序列；但目前沒有展示最小輸出清單如何在下一輪避免再次以單日 change_percent 片段滑入“視窗級宣稱”。我仍需要看到明確的輸出限制條款（例如：若 only single-day data available，報告只能包含哪些段落、不能包含哪些統計主張）。"
+        "仍缺少對“時間與資料一致性檢查”的明確落地：earnings/learning 都沒有承諾逐條核對先前引用的『2026-08-04 為最近完成交易日』與 3/7 個完成交易日視窗起訖是否完全對齊，仍可能存在時間戳錯配導致視窗判讀偏誤",
+        "仍缺少對“扣除已知交易摩擦且跨 Agent 一致”的可審計細節：learning 提到 GLD/TLT/CASH 的單次部位貢獻可作歸因，但沒有補上摩擦扣除口徑一致性（至少要指出摩擦扣除在該段是否被忽略/如何被一致處理），我仍擔心報告讀者會把“忽略摩擦/僅供研究”誤當成可比對的政策驗證前提",
+        "bearish/strong_bearish 下的反向/槓桿 ETF 比較政策：本輪討論未見到對應的“若觸發 bearish/strong_bearish 才比較 SQQQ/SOXS/SPXU，且以完成交易日視窗為單位”的合規承諾或檢核文本；雖然你們未必需要比較，但原批判要求避免不合規暗示，仍需在報告輸出規範中明確留痕"
       ],
       "binding_constraints": [],
-      "resolution_summary": "我被兩點證據說服到“本輪不應維持原批判”的程度：etf 已明確同意把每日重設/路徑風險降級為機制假說、且承認快照不足以支撐完成交易日視窗級政策宣稱；portfolio 也撤回 CASH=1.0，改認為未補齊可審計 close/視窗證據前，至少不該超過政策允許的 0.50 上限。然而我仍擔心：兩邊雖然口頭承諾語意降階，但缺少可抽查的“禁止觸發模板/字詞”；另外 portfolio 對 execution_stress_gate 分支是否真的允許 0.50，仍缺少可驗證的量化輸入，所以我對這部分信心仍偏低。"
+      "resolution_summary": "我被兩位研究員對“7 日 completed_windows=0 時不得把財務/基本面外推成可交易層級方向性/勝率”的明確同意與版面/文字邊界規則說服，這確實回應了原本強項反對意見的政策口徑斷裂風險。然而我仍保留疑慮：你們沒有把時間戳對齊（3/7 完成交易日視窗起訖）與交易摩擦扣除口徑的一致性做成可審計承諾；此外 bearish 情境下的反向/槓桿 ETF 比較合規規範也尚未在本輪回覆中被落地。"
     }
   ],
   "final_decision_audits": [],
-  "decision_origin": "model",
-  "policy_override_notes": [],
+  "decision_origin": "policy_override",
+  "policy_override_notes": [
+    "3／7 日共同完整視窗只有 0 個，未達 20 個統計成熟門檻；deterministic gate 將風險資產合計限制為 50.00%，但不將風險歸零。"
+  ],
   "final_decision": {
-    "opening_statement": "質詢後我撤回以單日強勢支持風險配置的想法；因官方事件閘門缺失且價格收盤狀態未可審計，我以現金為主並啟動本輪風險否決，等待可驗證資料。",
+    "opening_statement": "我在質詢後撤回以 AMD、PLTR 財報支持短期加碼的想法，改採中性分散配置：保留 50% 風險資產上限、35% 現金，並暫不使用槓桿或反向 ETF。",
     "tone": "cautious",
     "market_stance": "neutral",
-    "model_score": 98,
-    "model_score_reason": "方向一致度 98/100；12 位提案委員按信心加權，0 項協商後否決仍未解除，扣除 0 分。",
+    "model_score": 97,
+    "model_score_reason": "方向一致度 97/100；10 位提案委員按信心加權，0 項協商後否決仍未解除，扣除 0 分。",
     "risk_level": "high",
-    "expected_horizon": "僅維持至下一個可驗證完成交易日；下一輪須重新檢查事件閘門、收盤時間切點、5日同步視窗與摩擦扣除結果。槓桿或反向 ETF 本輪不配置。",
+    "expected_horizon": "研究建議持有 1 至 3 個完成交易日；AMD、PLTR 與其他風險資產須於下一個完成交易日重新檢視。未配置槓桿或反向 ETF；若未來使用，最多僅 1 個交易日且每日重新驗證。",
     "allocations": [
+      {
+        "symbol": "SPY",
+        "asset_type": "etf",
+        "target_weight": "0.1538",
+        "note": "以大盤取代集中押注；SPY 趨勢偏正，但僅作狀態證據，未經 3/7 日策略視窗驗證。；統計樣本尚未成熟，依政策按比例縮減風險資產。"
+      },
+      {
+        "symbol": "GLD",
+        "asset_type": "commodity_etf",
+        "target_weight": "0.0769",
+        "note": "作為與股票不同的分散來源；快照顯示短期表現溫和，不能宣稱已驗證的防禦優勢。；統計樣本尚未成熟，依政策按比例縮減風險資產。"
+      },
+      {
+        "symbol": "TLT",
+        "asset_type": "etf",
+        "target_weight": "0.1154",
+        "note": "利率回落日具一定分散價值，但 20 日報酬為負且 RSI 偏弱，權重保持有限。；統計樣本尚未成熟，依政策按比例縮減風險資產。"
+      },
+      {
+        "symbol": "AMD",
+        "asset_type": "stock",
+        "target_weight": "0.0231",
+        "note": "10-Q 財務結果支持中長期基本面觀察，但 7 日視窗缺席，不作短期方向性加碼。；統計樣本尚未成熟，依政策按比例縮減風險資產。"
+      },
+      {
+        "symbol": "PLTR",
+        "asset_type": "stock",
+        "target_weight": "0.0154",
+        "note": "財務數據偏正面但股價單日與 5 日漲幅極大、距均線明顯偏高，僅保留極小觀察權重。；統計樣本尚未成熟，依政策按比例縮減風險資產。"
+      },
+      {
+        "symbol": "SMH",
+        "asset_type": "etf",
+        "target_weight": "0.1154",
+        "note": "半導體短線動能強，但 20 日報酬仍為負、年化波動約 52%，以有限權重表達而非追價。；統計樣本尚未成熟，依政策按比例縮減風險資產。"
+      },
       {
         "symbol": "CASH",
         "asset_type": "cash",
-        "target_weight": "1",
-        "note": "協商與風險閘門未通過，本次不產生風險資產配置。"
+        "target_weight": "0.50",
+        "note": "統計樣本尚未成熟，保留現金但不將市場風險歸零。"
       }
     ],
     "top_reasons": [
       {
         "id": 1,
-        "title": "官方事件閘門全部缺失",
-        "summary": "event_calendar 顯示 FOMC、BLS、NYSE 與 earnings 均為 missing，coverage_start、coverage_end 及 events 皆為空，且模式為 missing_fail_closed；因此不能用價格或研究敘事解除新增風險限制。",
-        "confidence": 99,
+        "title": "樣本不足只限制風險，不強制空手",
+        "summary": "3／7 日共同完整視窗只有 0 個，未達 20 個統計成熟門檻；deterministic gate 將風險資產合計限制為 50.00%，但不將風險歸零。",
+        "confidence": 100,
         "category": "policy",
         "affected_assets": [
           "SPY",
-          "QQQ",
+          "GLD",
+          "TLT",
+          "AMD",
+          "PLTR",
           "SMH",
           "CASH"
         ],
-        "source_urls": [
-          "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-          "https://www.bls.gov/schedule/",
-          "https://www.nyse.com/trade/hours-calendars",
-          "https://www.sec.gov/edgar/searchedgar/companysearch"
-        ]
+        "source_urls": []
       },
       {
         "id": 2,
-        "title": "缺少完成日收盤審計",
-        "summary": "多數 quotes 的 price_session 為 null，快照未提供可驗證的 regular close 或完成交易日欄位；因此單日 price 與 change_percent 不能直接作為政策級技術證據。",
-        "confidence": 96,
-        "category": "policy",
+        "title": "市場狀態偏向風險承擔但非已驗證優勢",
+        "summary": "快照將 regime 標示為 risk_on、volatility 為 normal；SPY 20 日報酬為 3.158978%，且高於 50 日均線約 3.410609%。這支持保留部分風險資產，但不能取代 3 日與 7 日滾動視窗驗證。",
+        "confidence": 78,
+        "category": "macro",
         "affected_assets": [
           "SPY",
-          "QQQ",
-          "SMH",
           "CASH"
         ],
         "source_urls": [
@@ -662,29 +618,25 @@
       },
       {
         "id": 3,
-        "title": "技術特徵完全缺失",
-        "summary": "市場快照的 features 陣列為空，無法驗證 SPY、QQQ 的20日趨勢與均線、VIX低於20日均線，或 SMH 的20日趨勢、均線與量能確認。",
-        "confidence": 98,
+        "title": "SPY 動能較健康且波動相對可控",
+        "summary": "SPY 最近完成交易日上漲 1.8029%，5 日報酬為 4.112792%，20 日年化波動為 14.538064%，RSI14 為 59.72，量比為 1.388153。其相對適合作為核心風險曝險，而非集中個股。",
+        "confidence": 75,
         "category": "technical",
         "affected_assets": [
-          "SPY",
-          "QQQ",
-          "SMH",
-          "CASH"
+          "SPY"
         ],
-        "source_urls": []
+        "source_urls": [
+          "https://finance.yahoo.com/"
+        ]
       },
       {
         "id": 4,
-        "title": "單日市場表現偏多但不可外推",
-        "summary": "SPY 上漲1.28%、QQQ上漲2.55%、IWM上漲1.28%、DIA上漲1.42%，顯示當日風險資產反彈；但僅有單日資料，不能替代5個完成交易日視窗或相對基準檢核。",
-        "confidence": 94,
+        "title": "半導體短線強勢但中期尚未修復",
+        "summary": "SMH 最近完成交易日上漲 5.545778%、5 日上漲 8.70658%，但 20 日報酬仍為 -0.987186%，20 日回撤為 -5.780405%，年化波動達 52.365019%。因此僅給有限權重。",
+        "confidence": 82,
         "category": "momentum",
         "affected_assets": [
-          "SPY",
-          "QQQ",
-          "IWM",
-          "DIA"
+          "SMH"
         ],
         "source_urls": [
           "https://finance.yahoo.com/"
@@ -692,113 +644,104 @@
       },
       {
         "id": 5,
-        "title": "半導體領漲伴隨波動上升",
-        "summary": "SMH單日上漲4.78%，但VIX同步上升2.27%至16.22；這只支持科技動能的描述性觀察，不能證明低波動或可持續的進攻環境。",
-        "confidence": 91,
-        "category": "momentum",
+        "title": "AMD 財報支持基本面觀察而非短線訊號",
+        "summary": "AMD 2026 Q2 累計營收為 217.89 億美元、淨利 36.80 億美元、營業利益 34.66 億美元、稀釋 EPS 2.22；但該資料沒有下一期正式指引，且短期 7 日視窗為零。",
+        "confidence": 72,
+        "category": "valuation",
         "affected_assets": [
-          "SMH",
-          "SPY",
-          "QQQ"
+          "AMD"
+        ],
+        "source_urls": [
+          "https://www.sec.gov/Archives/edgar/data/2488/000000248826000123/amd-20260627.htm"
+        ]
+      },
+      {
+        "id": 6,
+        "title": "PLTR 價格已顯著偏離短期均線",
+        "summary": "PLTR 最近完成交易日上漲 29.454836%、5 日上漲 31.67652%，20 日上漲 21.053814%，距 MA20 約 25.005286%，RSI14 為 69.16，量比為 4.13613。即使財報偏正面，也不宜追高集中。",
+        "confidence": 88,
+        "category": "risk",
+        "affected_assets": [
+          "PLTR"
         ],
         "source_urls": [
           "https://finance.yahoo.com/"
         ]
       },
       {
-        "id": 6,
-        "title": "利率與通膨政策不確定",
-        "summary": "研究證據指出7月FOMC維持利率在3.50%至3.75%，但有3位理事主張升息；ISM製造業PMI為55.6且物價疑慮仍在，利率再定價風險尚未消除。",
-        "confidence": 87,
-        "category": "macro",
+        "id": 7,
+        "title": "TLT 提供分散但利率敏感度仍高",
+        "summary": "TLT 最近完成交易日上漲 0.766513%，但 5 日報酬為 -1.685658%、20 日報酬為 -2.04613%，RSI14 為 36.95，距 MA20 為 -0.971513%。因此配置有限，不能宣稱其防禦效果已被多日驗證。",
+        "confidence": 78,
+        "category": "diversification",
         "affected_assets": [
-          "SPY",
-          "QQQ",
-          "SMH",
           "TLT"
         ],
         "source_urls": [
-          "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6uYYNvZ9TDyJFRtbenfofVP6r4b-4qbggvlWb_4jPMqfv4VAp1ilAgkyxPYNJft6N9IpOXs4A9TfQRRKQfrB2a29f8dQd9j6pO60yGKwvBTwSg6FWErzVUUz7vQm8xJKkHJTxK2mlOeNVK-5jKv9X39feZ3Z2959VZ-NaMC1RKm4CE9Woq2QBVtEIURuAXRtTCqXZVuZY3VBEbMTwVcIbqU8djnM9EQMoRmRwwF5jTxvP4AkuEDiiakf-l9MvQDC-Fk_ZtTqsnCm2w9XMg0LWeOzeqyVdMpeTj8R3ujZ86LSN0R9tzQ7Cuo4Iij15FAG7u9s2kca4J9KuSE051G5WXxw-izLjyn87pYECSa-Dgj66igEcdKtzRyzIlODpwNiBvqMan9lzoqLAT8i-5CrN2BHOfs426-D-EaWwMTsaacHwlexKClRR_eRiU0QjcLe6R18d_dfUGA6gv_4ohbeHoB5OmMW0KXL0RmB35GNlq8MQ68QdNg0Zm0hQ6n2XLTXhxJgAkwVuRCREuyJuA21DPbkk2qbswXLSaMQ8rrCPQzb7lQ7jfRMgTjDt6jzeQZ-B_m5uoMwvaLuM",
-          "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4A8G4HcqA4MbyMflmSuhxaHUHeVUvMl4vru3muRf2sMMQfZP66zD1JUfy8W2fFIl_DWkux2FL5rRWgI16kth8jGEOlnuvQzxKfrM0eToX89OI9TG_X9-0Ay2FdKheNJZGOHBxZfriuB2sbU3b_8Rkru7wR4nkYXM9Yg=="
+          "https://finance.yahoo.com/"
         ]
       },
       {
-        "id": 7,
-        "title": "短期績效硬檢核未完成",
-        "summary": "本輪只有CASH的5日研究視窗，未提供策略與SPY、QQQ、IWM、DIA、VTI在相同完成交易日視窗的同步淨報酬，因此尚不能判定策略超越挑戰組最高者。",
-        "confidence": 96,
+        "id": 8,
+        "title": "GLD 可分散但近期方向不明確",
+        "summary": "GLD 最近完成交易日上漲 0.659119%，但 20 日報酬為 -0.882139%、20 日回撤為 -1.308291%，距 MA50 為 -2.438769%。因此將其視為分散工具，而非已確認的趨勢部位。",
+        "confidence": 73,
+        "category": "diversification",
+        "affected_assets": [
+          "GLD"
+        ],
+        "source_urls": [
+          "https://finance.yahoo.com/"
+        ]
+      },
+      {
+        "id": 9,
+        "title": "短期績效政策仍限制方向性調整",
+        "summary": "本輪 3 日完成視窗為 2 個、正報酬視窗 1 個；7 日完成視窗為 0 個。樣本不足以支持勝率、優勢或多日防禦結論，且不能以單日價格變動替代完整視窗。",
+        "confidence": 93,
         "category": "policy",
         "affected_assets": [
           "CASH",
           "SPY",
-          "QQQ",
-          "IWM",
-          "DIA",
-          "VTI"
-        ],
-        "source_urls": []
-      },
-      {
-        "id": 8,
-        "title": "交易摩擦尚未扣除",
-        "summary": "現有5日短窗結果未扣除手續費、價差、滑價、稅負與匯率；即使CASH短窗顯示正報酬，也只能視為研究觀察，不能宣稱達標或相對優勢。",
-        "confidence": 93,
-        "category": "liquidity",
-        "affected_assets": [
-          "CASH",
-          "SPY",
-          "QQQ",
-          "IWM",
-          "DIA",
-          "VTI"
-        ],
-        "source_urls": []
-      },
-      {
-        "id": 9,
-        "title": "AI與半導體敘事仍具催化力",
-        "summary": "研究證據預期2026年AI基礎設施資本支出大幅增加，且半導體需求受AI運算與電動車驅動；但此屬外部研究敘事，未補足本輪趨勢、事件與視窗級驗證。",
-        "confidence": 76,
-        "category": "news",
-        "affected_assets": [
           "SMH",
-          "NVDA",
-          "AMD",
-          "TSM"
+          "GLD",
+          "TLT"
         ],
-        "source_urls": [
-          "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFzo6lPW-KNy31_4ssof2kSmP_9j-zDf_LtaE1JQZKFshRKAdrVB984td_j27Ldl3goZ4OhQv3tZpsXG2wyxgWDj672OkNDJlllPilx9Vyo2ybfkAgvON525J6wmpmXQPst",
-          "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2p6j3dJAWkrkcJmtk9RBh8gyYD4qqQWmIupFtjyVSrXD-mfmR-79Uu_B8e0v_YwzOz80xiSZNovyAbCLyPrk8b9lzT5ApPIZf98ONLA6tVUyAV52AyGofgtfv8TySI3op6Bisd-ad9uv0LwioaHJnzY8thM="
-        ]
+        "source_urls": []
       },
       {
         "id": 10,
-        "title": "PLTR盈利改善但估值與集中風險高",
-        "summary": "PLTR 2026年第二季營收193.5億美元、淨利10.6億美元，且股價單日上漲26.20%；基本面與動能均強，但單日跳升不能取代估值、持續性與5日相對檢核。",
-        "confidence": 82,
-        "category": "valuation",
+        "title": "交易摩擦與資料延遲降低可執行信心",
+        "summary": "研究計算未包含手續費、價差、滑價、稅負與匯率影響；Yahoo Finance 亦可能延遲。行情特徵只使用最近完成交易日 2026-08-04，不能把 2026-08-05 截止時間視為已完成日線。",
+        "confidence": 95,
+        "category": "liquidity",
         "affected_assets": [
-          "PLTR"
+          "SPY",
+          "SMH",
+          "AMD",
+          "PLTR",
+          "CASH"
         ],
         "source_urls": [
-          "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
           "https://finance.yahoo.com/"
         ]
       }
     ],
     "invalidation_conditions": [
-      "官方 event_calendar 補齊FOMC、BLS、NYSE與earnings的point-in-time輸入，涵蓋未來168小時並完成blackout檢查。",
-      "提供可確認為完成交易日收盤的同步價格序列，並完成策略與SPY、QQQ、IWM、DIA、VTI的5日滾動視窗比較。",
-      "提供扣除手續費、價差、滑價等可得摩擦後的視窗級淨報酬，且策略在完整同步期間超越挑戰組最高者。",
-      "補齊SPY/QQQ/SMH與VIX的政策指定20日趨勢、均線及量能特徵，並通過流動性壓力檢查。"
+      "若 SPY 距 MA20 與 MA50 同時轉為負值，且 RSI14 明顯走弱、VIX 從 normal 轉為壓力狀態，應重新評估 SPY、SMH 與個股權重並提高現金。",
+      "若下一輪取得 7 日完成交易視窗，且在扣除可知交易摩擦後 3 日與 7 日結果出現一致且可重複的相對表現，才可重新評估目前偏保守的風險資產上限。",
+      "若 AMD 或 PLTR 後續正式申報顯示需求、毛利率或費用控制明顯下修，或當期獲利受一次性項目影響，應撤回其基本面觀察配置。",
+      "若半導體 ETF 的 20 日報酬持續為負並伴隨波動率進一步升高，應降低 SMH，而不是以 SOXL、SOXS 或其他每日重設工具替代。"
     ],
     "major_risks": [
-      "事件時間與blackout狀態未知，可能存在未被快照捕捉的FOMC、BLS、NYSE或公司財報跳空風險。",
-      "Yahoo Finance資料可能延遲，且price_session為null；若把盤中或非完成日資料誤當收盤，會造成趨勢與績效判定錯誤。",
-      "利率與通膨訊號分化，強勁製造業與FOMC鷹派異議可能使高估值科技股面臨折現率上升壓力。",
-      "現金配置可能錯失市場反彈，且無法在本輪宣稱達成每月1.8100%或超越挑戰組，因同步視窗與交易成本資料不足。"
+      "資料只涵蓋最近完成交易日，7 日完整視窗為零，無法支持短期勝率或多日淨報酬宣稱。",
+      "風險資產合計為 50%，達到統計成熟前政策上限；若市場急跌，SPY、SMH、AMD 與 PLTR 可能同時承壓。",
+      "PLTR 價格遠高於 MA20 且單日漲幅極大，均值回歸或跳空風險高。",
+      "TLT 受利率路徑影響，GLD 亦可能與股票同跌；兩者都不是保本工具。",
+      "交易摩擦、滑價、稅負、匯率與供應商延遲未納入研究計算，實際結果可能偏離快照。",
+      "若使用 SQQQ、SOXS 或 SPXU，必須面對每日重設、路徑耗損與市場反彈造成的快速損失；本輪資料不足以支持持有任何一項。"
     ],
-    "risk_veto": true,
-    "veto_reason": "本輪啟動正式風險否決：FOMC、BLS、NYSE與earnings均為missing_fail_closed，event_risk_gate設定block_risk_increase_on_missing=true；同時缺少可審計的完成交易日收盤、策略與挑戰組同步5日視窗及扣摩擦淨報酬。由於實際部位已為現金，任何風險資產配置都會構成新增逐標的風險；否決僅限制本輪新增風險，不代表預測市場必然下跌。"
+    "risk_veto": false,
+    "veto_reason": null
   }
 }

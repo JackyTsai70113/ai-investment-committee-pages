@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0",
+  "attempted_at": "2026-08-05T12:25:39.454558Z",
+  "status": "healthy",
+  "trigger": "schedule",
+  "committee_outcome": "success",
+  "failure_kind": "none",
+  "run_url": "https://github.com/JackyTsai70113/ai-investment-committee/actions/runs/31005139464",
+  "last_successful_run_id": "20260805T122207Z",
+  "last_successful_data_cutoff": "2026-08-05T12:20:27.256629Z",
+  "message": "最新委員會已成功完成並通過資料驗證。"
+}
