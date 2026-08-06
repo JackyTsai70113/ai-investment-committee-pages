@@ -1,42 +1,13 @@
 {
   "schema_version": "1.0",
-  "run_id": "31015903878",
-  "started_at": "2026-08-05T17:24:43.444824Z",
-  "completed_at": "2026-08-05T17:26:21.828805Z",
+  "run_id": "31079430919",
+  "started_at": "2026-08-06T07:03:35.426153Z",
+  "completed_at": "2026-08-06T07:03:48.593110Z",
   "status": "failure",
-  "terminal_failure_category": "invalid_response",
-  "total_requests": 2,
-  "total_retries": 1,
-  "total_estimated_input_tokens": 1200,
-  "elapsed_seconds": "98.384",
-  "requests": [
-    {
-      "request_number": 1,
-      "operation": "market_research_search",
-      "provider": "gemini",
-      "model": "gemini-2.5-flash-lite",
-      "attempt": 1,
-      "estimated_input_tokens": 600,
-      "limiter_wait_seconds": "0.0",
-      "duration_ms": 8937,
-      "outcome": "retry",
-      "failure_category": "invalid_response",
-      "retry_delay_seconds": "61.486",
-      "started_at": "2026-08-05T17:25:01.645652Z"
-    },
-    {
-      "request_number": 2,
-      "operation": "market_research_search",
-      "provider": "gemini",
-      "model": "gemini-2.5-flash-lite",
-      "attempt": 2,
-      "estimated_input_tokens": 600,
-      "limiter_wait_seconds": "61.486",
-      "duration_ms": 9732,
-      "outcome": "failure",
-      "failure_category": "invalid_response",
-      "retry_delay_seconds": null,
-      "started_at": "2026-08-05T17:26:12.096434Z"
-    }
-  ]
+  "terminal_failure_category": "invalid_request",
+  "total_requests": 0,
+  "total_retries": 0,
+  "total_estimated_input_tokens": 0,
+  "elapsed_seconds": "13.167",
+  "requests": []
 }

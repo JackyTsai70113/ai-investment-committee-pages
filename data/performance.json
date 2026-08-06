@@ -501,6 +501,89 @@
         }
       ],
       "note": "依上一輪建議權重與最新可得行情計算；假設績效，不代表實際成交。"
+    },
+    {
+      "as_of": "2026-08-04T15:38:19.715163Z",
+      "run_id": "learning-20260804T155627Z",
+      "price_session": null,
+      "value_usd": "6088.00",
+      "profit_loss_usd": "88.00",
+      "return_percent": "1.4667",
+      "prices": [
+        {
+          "symbol": "AMD",
+          "price_usd": "519.299988"
+        },
+        {
+          "symbol": "CL=F",
+          "price_usd": "76.529999"
+        },
+        {
+          "symbol": "DIA",
+          "price_usd": "538.75"
+        },
+        {
+          "symbol": "ERX",
+          "price_usd": "91.105003"
+        },
+        {
+          "symbol": "GLD",
+          "price_usd": "374.140015"
+        },
+        {
+          "symbol": "IWM",
+          "price_usd": "300.019989"
+        },
+        {
+          "symbol": "NVDA",
+          "price_usd": "209.940002"
+        },
+        {
+          "symbol": "PLTR",
+          "price_usd": "158.569504"
+        },
+        {
+          "symbol": "QQQ",
+          "price_usd": "717.929993"
+        },
+        {
+          "symbol": "SMH",
+          "price_usd": "571.539917"
+        },
+        {
+          "symbol": "SOXL",
+          "price_usd": "137.610001"
+        },
+        {
+          "symbol": "SPY",
+          "price_usd": "767.359985"
+        },
+        {
+          "symbol": "SQQQ",
+          "price_usd": "38.279999"
+        },
+        {
+          "symbol": "TLT",
+          "price_usd": "82.675003"
+        },
+        {
+          "symbol": "TQQQ",
+          "price_usd": "73.165001"
+        },
+        {
+          "symbol": "VTI",
+          "price_usd": "378.790009"
+        },
+        {
+          "symbol": "^TNX",
+          "price_usd": "4.641"
+        },
+        {
+          "symbol": "^VIX",
+          "price_usd": "16.219999"
+        }
+      ],
+      "note": "依上一輪建議權重與最新可得行情計算；假設績效，不代表實際成交。"
     }
   ]
 }

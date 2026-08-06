@@ -148,7 +148,8 @@
         "PLTR"
       ],
       "source_urls": [
-        "https://finance.yahoo.com/"
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6uYYNvZ9TDyJFRtbenfofVP6r4b-4qbggvlWb_4jPMqfv4VAp1ilAgkyxPYNJft6N9IpOXs4A9TfQRRKQfrB2a29f8dQd9j6pO60yGKwvBTwSg6FWErzVUUz7vQm8xJKkHJTxK2mlOeNVK-5jKv9X39feZ3Z2959VZ-NaMC1RKm4CE9Woq2QBVtEIURuAXRtTCqXZVuZY3VBEbMTwVcIbqU8djnM9EQMoRmRwwF5jTxvP4AkuEDiiakf-l9MvQDC-Fk_ZtTqsnCm2w9XMg0LWeOzeqyVdMpeTj8R3ujZ86LSN0R9tzQ7Cuo4Iij15FAG7u9s2kca4J9KuSE051G5WXxw-izLjyn87pYECSa-Dgj66igEcdKtzRyzIlODpwNiBvqMan9lzoqLAT8i-5CrN2BHOfs426-D-EaWwMTsaacHwlexKClRR_eRiU0QjcLe6R18d_dfUGA6gv_4ohbeHoB5OmMW0KXL0RmB35GNlq8MQ68QdNg0Zm0hQ6n2XLTXhxJgAkwVuRCREuyJuA21DPbkk2qbswXLSaMQ8rrCPQzb7lQ7jfRMgTjDt6jzeQZ-B_m5uoMwvaLuM",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4A8G4HcqA4MbyMflmSuhxaHUHeVUvMl4vru3muRf2sMMQfZP66zD1JUfy8W2fFIl_DWkux2FL5rRWgI16kth8jGEOlnuvQzxKfrM0eToX89OI9TG_X9-0Ay2FdKheNJZGOHBxZfriuB2sbU3b_8Rkru7wR4nkYXM9Yg=="
       ]
     },
     {
@@ -160,9 +161,7 @@
       "affected_assets": [
         "TLT"
       ],
-      "source_urls": [
-        "https://finance.yahoo.com/"
-      ]
+      "source_urls": []
     },
     {
       "id": 8,
