@@ -1,23 +1,23 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-07T20:53:54.080826Z",
-  "data_cutoff": "2026-08-05T12:20:27.256629Z",
+  "generated_at": "2026-08-07T21:07:43.270516Z",
+  "data_cutoff": "2026-08-07T21:03:25.447227Z",
   "portfolio_health": {
-    "score": 77,
+    "score": 76,
     "grade": "stable",
-    "summary": "現金與低槓桿使組合本身具防護；最新模型管線失敗，目前沿用上一份決策，委員共識高，但績效樣本仍不足。健康分數不能解讀為獲利機率。",
+    "summary": "現金與低槓桿使組合本身具防護；最新模型管線成功完成，委員共識高，但績效樣本仍不足。健康分數不能解讀為獲利機率。",
     "components": [
       {
         "component": "分散度",
-        "score": 20,
+        "score": 4,
         "maximum": 20,
-        "explanation": "目前有 6 個非現金標的；最大風險部位 15.3800%。"
+        "explanation": "目前有 0 個非現金標的；最大風險部位 0.0000%。"
       },
       {
         "component": "流動性",
         "score": 20,
         "maximum": 20,
-        "explanation": "現金比重 50.0000%。"
+        "explanation": "現金比重 100.0000%。"
       },
       {
         "component": "槓桿控制",
@@ -27,24 +27,24 @@
       },
       {
         "component": "管線可靠性",
-        "score": 5,
+        "score": 20,
         "maximum": 20,
-        "explanation": "最新正式委員會失敗，目前沿用上一份決策。"
+        "explanation": "最新正式委員會成功完成。"
       },
       {
         "component": "證據與共識",
         "score": 12,
         "maximum": 20,
-        "explanation": "委員共識度 97/100；研究準備度 not_ready。"
+        "explanation": "委員共識度 94/100；研究準備度 not_ready。"
       }
     ]
   },
   "performance": {
-    "completed_points": 7,
-    "completed_intervals": 6,
-    "distinct_completed_sessions": 6,
-    "ending_value_usd": "6050.11",
-    "total_return_percent": "0.8352",
+    "completed_points": 8,
+    "completed_intervals": 7,
+    "distinct_completed_sessions": 7,
+    "ending_value_usd": "6138.30",
+    "total_return_percent": "2.3050",
     "maximum_drawdown_percent": "-0.2967",
     "sharpe_ratio": null,
     "win_rate_percent": null,
