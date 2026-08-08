@@ -1,77 +1,63 @@
 {
   "schema_version": "1.0",
-  "review_id": "learning-20260807T210411Z",
-  "reviewed_run_id": "20260805T122207Z",
-  "generated_at": "2026-08-07T21:04:11.508650Z",
-  "evaluation_cutoff": "2026-08-07T21:03:25.447227Z",
+  "review_id": "learning-20260808T105530Z",
+  "reviewed_run_id": "20260807T210423Z",
+  "generated_at": "2026-08-08T10:55:30.145140Z",
+  "evaluation_cutoff": "2026-08-08T10:54:50.614589Z",
   "evidence_source": "Yahoo Finance via yfinance",
   "verdict": "too_early",
   "lessons": [
     {
-      "title": "7 日完成交易日滾動視窗仍為 0，無法驗證防禦/方向性多日效果",
-      "evidence": "確定性計算證據的 short_window_evidence 顯示：7 日 completed_windows=0、positive_windows=0，且 latest_return_percent 為 null；依短期績效政策，沒有 7 日完成視窗就不得更新 supported/mixed/challenged 或宣稱任何 7 日尺度優劣。",
-      "implication": "下一輪委員會仍需維持 verdict=too_early；對 TLT/GLD/SMH 這類被用作分散或防禦的部位，只能保留為待驗證候選，不可因單日或局部正負就調高/調低權重至形成方向性結論。",
-      "confidence": 96,
+      "title": "7日完成交易日視窗仍為0，無法驗證多日淨報酬",
+      "evidence": "確定性計算證據中的 short_window_evidence 顯示 7 日 completed_windows=0、positive_windows=0，latest_return_percent=null；因此依短期績效政策，多日(7日完成交易日滾動)勝率/優劣仍不可驗證，不能把任何單日或局部資訊升級為策略結論。",
+      "implication": "下一輪委員會必須先等待並重算 7 日 completed_windows>0 後，才能更新 verdict 為 supported/mixed/challenged；在 7 日仍缺席前，只能將既有結果標為等待驗證。",
+      "confidence": 95,
       "affected_assets": [
-        "TLT",
-        "GLD",
-        "SMH",
         "CASH"
       ]
     },
     {
-      "title": "3 日視窗雖已有樣本，但仍不足以形成可重複的統計性判斷",
-      "evidence": "short_window_evidence 顯示 3 日 completed_windows=3、positive_windows=1（樣本只有少數），且 latest_return_percent=-0.0935；同時整體仍缺少 7 日視窗，因此無法跨尺度互相驗證與達到政策要求的統計成熟門檻。",
-      "implication": "下一輪可以把「3 日有正報酬但不穩定（正窗僅 1/3）」記錄為暫時性觀察；但不得把 3 日局部結果升級為調整風險資產曝險上/下的依據，直到 7 日視窗出現並且至少在可用樣本中呈現一致性。",
-      "confidence": 74,
+      "title": "3日視窗有樣本但不足以在缺7日時形成可結論的方向",
+      "evidence": "short_window_evidence 顯示 3 日 completed_windows=4、positive_windows=2、latest_return_percent=1.6645；但同一證據同時指出 7 日 completed_windows=0，因此無法進行跨尺度(3日/7日)一致性驗證，也無法符合政策對多日績效結論所需的完整視窗。",
+      "implication": "下一輪若 7 日仍為0，3日只能作為『觀察到的區間波動表徵』而非策略優劣或調權依據；委員會需在報告中明確拆分 3日與7日，禁止以3日局部正報酬外推。",
+      "confidence": 72,
       "affected_assets": [
-        "SPY",
-        "GLD",
-        "TLT",
-        "AMD",
-        "PLTR",
-        "SMH"
-      ]
-    },
-    {
-      "title": "單日/兩點差部位貢獻（如 GLD 正、AMD 負）僅能當歸因，不能替代 3/7 日滾動驗證",
-      "evidence": "在確定性計算證據中：GLD 由 374.1400→398.4700（return_percent=+6.5029，對應加權貢獻+0.5001%）；AMD 519.3000→483.3600（return_percent=-6.9209，加權貢獻-0.1599%）；TLT 與 SPY/SMH/PLTR 亦有單日級變動。但 3/7 日完成視窗的 verdict 仍受政策門檻約束，且 7 日仍為 0。",
-      "implication": "委員會後續報告應分欄呈現：①單日部位貢獻用於解釋「為何這段期間波動較大/較小」；②3 日與 7 日滾動視窗的正報酬窗比例用於判定 supported/mixed/challenged。禁止把單日貢獻直接映射為多日勝率或優勢結論。",
-      "confidence": 93,
-      "affected_assets": [
-        "GLD",
-        "AMD",
-        "TLT",
-        "SPY",
-        "SMH",
-        "PLTR"
-      ]
-    },
-    {
-      "title": "風險資產部位近期同向上漲（SPY/SMH/PLTR）但與「完成視窗驗證不足」並存",
-      "evidence": "最新確定性計算顯示：SPY return_percent=+0.7689、SMH return_percent=+1.9526、PLTR return_percent=+8.4761，同期間 AMD return_percent=-6.9209；但在 short_window_evidence 中，7 日 completed_windows=0 使得無法確認這種同向/分化是否能在多日尺度形成可重複的淨報酬模式。",
-      "implication": "下一輪若仍缺乏 7 日視窗，委員會應避免以「市場短線風險偏好改善」推導出對風險資產的方向性加碼；只能沿用既有的風險上限與分散邏輯，將多日功效留待可用視窗後再驗證。",
-      "confidence": 68,
-      "affected_assets": [
-        "SPY",
-        "SMH",
-        "PLTR",
-        "AMD",
         "CASH"
+      ]
+    },
+    {
+      "title": "本輪為研究策略100% CASH，單日/兩點差無法代表扣摩擦後的可交易優勢",
+      "evidence": "提供的 positions 顯示本輪只有 CASH，return_percent=0，weighted_contribution_percent=0；且 methodology 明確忽略手續費、價差、滑價、稅負與匯率，因此即使未來形成視窗，也仍需把『未扣除交易摩擦』的不確定性納入信心折減。",
+      "implication": "下一輪委員會在可用視窗形成後，可做『觀察性』的報酬分佈檢查，但若要支持任何調整到非現金曝險的合規性或期望報酬敘述，仍必須先補齊扣摩擦的評估流程或至少列為主要不確定性。",
+      "confidence": 80,
+      "affected_assets": [
+        "CASH"
+      ]
+    },
+    {
+      "title": "既有合規前提(正報酬保證)未被證明可移除，因此非現金曝險仍缺乏合規依據",
+      "evidence": "本輪投資配置仍維持 100% CASH，理由延續政策：要求正報酬保證時，市場風險資產無法提供可驗證保證，故不合規；在提供的事後驗證證據中也未出現可用的 7 日完成視窗來支撐『非現金曝險且仍可驗證正報酬』的合規轉換。",
+      "implication": "下一輪若要重新考慮非現金曝險，必須同時滿足：政策前提被明確改寫/移除或給出可驗證的非保證式風控目標，並且取得 3日與7日完成交易日視窗的多日統計證據；否則保持 CASH 為研究性安全上限更一致。",
+      "confidence": 78,
+      "affected_assets": [
+        "CASH",
+        "SPY",
+        "GLD",
+        "TLT"
       ]
     }
   ],
   "committee_changes": [
-    "在下一輪事後驗證中，必須同時報告並拆分：3 日（completed_windows=3、positive_windows=1、最新滾動結果=-0.0935）與 7 日（completed_windows=0）兩個完成視窗的獨立狀態；只要 7 日 completed_windows=0，verdict 固定不得升級。",
-    "嚴格禁止以單日級 return_percent 或加權貢獻推導 3/7 日滾動績效；將 GLD 正、AMD 負等僅保留為「歸因材料」。",
-    "下一輪若 7 日視窗仍未累積（持續 completed_windows=0），委員會應降低任何方向性權重調整頻率：僅允許維持分散與既有風險曝險上限，不允許把方向性敘事轉為決策。",
-    "一旦 7 日 completed_windows>0，才允許討論防禦/風險資產的 supported/mixed/challenged；且需同時觀測 3 日與 7 日在正報酬窗比例上的一致性，而非只看單次 latest_return_percent。"
+    "在下一輪驗證報告中，必須分開呈現 3日與7日完成交易日的淨報酬/正報酬窗比例；且只要 7日 completed_windows=0，verdict 固定維持 too_early。",
+    "禁止用 latest_return_percent 或單日/兩點差結果來代替多日(3日/7日完成交易日)淨報酬驗證；所有 supported/mixed/challenged 只能在兩個視窗條件均成立時才可討論。",
+    "要求更新信心評分時必須額外扣分『扣摩擦未實作』的不確定性，直到研究流程能納入手續費、價差、滑價等。",
+    "若委員會考慮任何非現金曝險，必須先提交：政策前提(正報酬保證)是否仍有效的可核對依據，並以同口徑取得 3日/7日視窗證據；否則維持 100% CASH 或嚴守合規約束。"
   ],
-  "member_assessment": "本輪仍受短期績效政策約束：雖然 3 日完成交易日滾動視窗已出現樣本（completed_windows=3、positive_windows=1），但 7 日完成交易日滾動視窗仍為 0（latest_return_percent 為 null）。依規範，在 7 日視窗未形成前不得更新任何 supported/mixed/challenged 結論，因此本輪必須判定為 too_early。單日層級上 GLD、SPY、SMH、PLTR 的正向變動與 AMD 的負向變動，只能作部位歸因材料，不能替代完成視窗的多日淨報酬驗證。",
-  "skill_assessment": "系統能正確完成兩項必要檢查：1）依確定性計算證據產出各資產單日/兩點差的 return_percent 與加權貢獻；2）依 short_window_evidence 嚴格檢查 3 日與 7 日 completed_windows 是否可用。問題不在計算能力，而在政策門檻仍未達成（7 日視窗為 0），因此技能層級無需新增，需強化報告層級的驗證門檻紀律。",
+  "member_assessment": "本輪事後驗證只能基於提供的確定性計算證據與短期績效政策門檻。雖然 3 日 completed_windows=4 且 positive_windows=2，但 7 日 completed_windows=0、positive_windows=0（latest_return_percent=null），依規範無法驗證 7 日完成交易日的多日淨報酬表現。因此本輪 verdict 只能判定為 too_early；此外本輪配置為 100% CASH 且研究方法忽略摩擦，單日/兩點差也不足以支持任何可交易的優勢或保證式敘述。",
+  "skill_assessment": "計算與稽核技能層級在本輪已能完成兩項必要工作：(1) 由 positions 確認本輪僅有 CASH，單日貢獻為 0；(2) 依 short_window_evidence 嚴格檢查 3日/7日 completed_windows 是否達政策門檻。問題不在於計算能力，而在於 7日視窗樣本仍未形成，故需在報告層級維持 too_early 與門檻紀律。",
   "warnings": [
-    "本評估僅基於提供的研究用價格快照與確定性計算證據，不代表實際下單成交或實際帳戶績效；方法聲明亦忽略手續費、價差、滑價、稅負與匯率。",
-    "7 日完成交易日滾動視窗目前不可得（completed_windows=0），因此任何關於防禦有效性或多日勝率的敘述都必須被禁止或降級為等待驗證。",
-    "3 日視窗雖有少量樣本，但仍屬樣本不足；禁止以短期局部結果外推到策略優勢或調整方向性曝險。"
+    "本評估僅使用提供的研究用價格快照與確定性計算證據，不代表實際成交或實際帳戶績效。",
+    "方法聲明忽略手續費、價差、滑價、稅負與匯率；即便未來形成視窗，仍需降低對『可交易淨邊際』的信心。",
+    "截至資料截止時間下，7日 completed_windows=0 使得多日績效/勝率無法驗證；任何宣稱 supported/mixed/challenged 的結論都違反短期績效政策。"
   ]
 }

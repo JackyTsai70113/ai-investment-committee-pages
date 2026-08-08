@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0",
-  "run_id": "20260807T210423Z",
-  "generated_at": "2026-08-07T21:04:23.371329Z",
-  "data_cutoff": "2026-08-07T21:03:25.447227Z",
+  "run_id": "20260808T105541Z",
+  "generated_at": "2026-08-08T10:55:41.588206Z",
+  "data_cutoff": "2026-08-08T10:54:50.614589Z",
   "status": "live",
   "capital_usd": "6000.00",
-  "model_score": 94,
-  "model_score_reason": "方向一致度 94/100；10 位提案委員按信心加權，0 項協商後否決仍未解除，扣除 0 分。",
+  "model_score": 85,
+  "model_score_reason": "方向一致度 100/100；10 位提案委員按信心加權，1 項協商後否決仍未解除，扣除 15 分。",
   "risk_level": "high",
-  "expected_horizon": "維持研究性現金配置，直到事件日曆、交易摩擦與3日/7日完成交易日視窗資料補齊；至少每3個交易日重新檢視一次。此為研究建議，不代表交易已成交。",
+  "expected_horizon": "研究性持有至政策前提或資料品質改變；至少每週正式檢視 2 次，且最長每 3 個完成交易日重新檢視。",
   "allocations": [
     {
       "symbol": "CASH",
@@ -22,79 +22,59 @@
   "top_reasons": [
     {
       "id": 1,
-      "title": "正報酬保證政策觸發風險否決",
-      "summary": "政策明定目前要求正報酬保證；市場風險資產無法提供此保證，因此任何非現金曝險均不合規，最終只能配置100% CASH。",
-      "confidence": 100,
+      "title": "正報酬保證硬限制",
+      "summary": "目前政策要求正報酬保證；市場風險資產無法提供可驗證保證，因此本輪任何非現金曝險均不合規。此為本次 100% CASH 的首要規則依據。",
+      "confidence": 99,
       "category": "policy",
       "affected_assets": [
         "CASH",
         "SPY",
         "GLD",
-        "TLT",
-        "SQQQ",
-        "SOXS",
-        "SPXU"
+        "TLT"
       ],
       "source_urls": []
     },
     {
       "id": 2,
-      "title": "7日完成視窗仍不可用",
-      "summary": "本輪假設驗證顯示7日 completed_windows=0、positive_windows=0，latest_return_percent為null，無法驗證任何7日多日效果或方向性優勢。",
-      "confidence": 96,
+      "title": "7 日視窗仍無法驗證",
+      "summary": "本輪驗證顯示 7 日完成交易日視窗 completed_windows=0、positive_windows=0，latest_return_percent=null，不能把多日績效、勝率或策略優勢推導為已驗證結論。",
+      "confidence": 95,
       "category": "policy",
       "affected_assets": [
-        "CASH",
-        "SPY",
-        "GLD",
-        "TLT",
-        "SMH"
+        "CASH"
       ],
       "source_urls": []
     },
     {
       "id": 3,
-      "title": "3日視窗樣本仍極少且不穩定",
-      "summary": "3日視窗僅有3個完成視窗，其中1個正報酬，最新滾動結果為-0.0935；樣本不足且與7日視窗無法交叉驗證。",
-      "confidence": 90,
+      "title": "3 日樣本不足以跨尺度確認",
+      "summary": "3 日視窗雖有 4 個完成視窗、其中 2 個正報酬，但在 7 日視窗為零的情況下，無法完成 3 日與 7 日的一致性驗證，也不能單獨據此調整曝險。",
+      "confidence": 92,
       "category": "risk",
       "affected_assets": [
-        "CASH",
-        "SPY",
-        "GLD",
-        "TLT",
-        "AMD",
-        "PLTR"
+        "CASH"
       ],
       "source_urls": []
     },
     {
       "id": 4,
-      "title": "官方事件日曆全部缺失",
-      "summary": "FOMC、BLS、NYSE與財報事件類別均標示missing，且缺少可驗證的point-in-time輸入檔；事件跳空與交易日完整性因此無法可靠評估。",
-      "confidence": 98,
-      "category": "news",
+      "title": "市場狀態偏 risk-on 但非交易證據",
+      "summary": "快照標示 trend=risk_on、volatility=normal；SPY 20 日報酬為 2.425326%，且價格高於 50 日均線 3.489212%。這支持中性觀察，不足以推翻硬性風控限制。",
+      "confidence": 90,
+      "category": "macro",
       "affected_assets": [
         "SPY",
-        "SMH",
-        "GLD",
-        "TLT",
-        "SQQQ",
-        "SOXS",
-        "SPXU"
+        "CASH"
       ],
       "source_urls": [
-        "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-        "https://www.bls.gov/schedule/",
-        "https://www.nyse.com/trade/hours-calendars",
-        "https://www.sec.gov/edgar/searchedgar/companysearch"
+        "https://finance.yahoo.com/"
       ]
     },
     {
       "id": 5,
-      "title": "大盤偏強但短線已接近過熱",
-      "summary": "SPY一日上漲0.6115%、5日上漲3.5112%，高於20日與50日均線3.0776%及3.4892%，RSI14為69.55；這支持風險偏好存在，但不構成未來報酬保證。",
-      "confidence": 82,
+      "title": "SPY 短線偏熱",
+      "summary": "SPY RSI14 為 69.55211，距離 MA20 為 3.077627%，且 1 日上漲 0.611535%；這表示短線動能存在，但也提高追價與反轉風險，不能替代完整視窗驗證。",
+      "confidence": 88,
       "category": "technical",
       "affected_assets": [
         "SPY"
@@ -105,26 +85,12 @@
     },
     {
       "id": 6,
-      "title": "市場波動目前正常但資料不能外推",
-      "summary": "VIX為14.9、較前收下降1.6502%，快照將波動狀態標示為normal；這降低當下恐慌證據，但不能取代3日與7日完成視窗驗證。",
-      "confidence": 84,
-      "category": "macro",
+      "title": "科技資產波動較高",
+      "summary": "QQQ 的 20 日年化波動率為 26.232518%，SMH 為 51.590418%；兩者雖有正向 5 日報酬，但波動與短期路徑風險仍高，無法提供正報酬保證。",
+      "confidence": 90,
+      "category": "risk",
       "affected_assets": [
-        "SPY",
-        "CASH"
-      ],
-      "source_urls": [
-        "https://finance.yahoo.com/",
-        "https://www.cboe.com/tradable-products/vix/"
-      ]
-    },
-    {
-      "id": 7,
-      "title": "半導體短中期訊號分歧",
-      "summary": "SMH一日上漲1.9633%、5日上漲7.8016%，但20日仍下跌4.6364%，且低於50日均線2.0574%；短線反彈尚不足以支持持續性結論。",
-      "confidence": 88,
-      "category": "momentum",
-      "affected_assets": [
+        "QQQ",
         "SMH"
       ],
       "source_urls": [
@@ -132,9 +98,9 @@
       ]
     },
     {
-      "id": 8,
-      "title": "槓桿工具的路徑風險過高",
-      "summary": "SOXL一日上漲5.9850%、5日上漲22.2542%，但20日下跌27.0519%、20日年化波動率182.0173%且回撤20.6102%；TQQQ亦呈5日上漲15.2430%但20日下跌3.3234%，顯示每日重設下路徑差異顯著。",
+      "id": 7,
+      "title": "槓桿工具路徑風險明顯",
+      "summary": "SOXL 20 日年化波動率為 182.017327%、20 日報酬為 -27.051907%；TQQQ 20 日年化波動率為 77.972312%、20 日報酬為 -3.323377%。單日反彈不能消除每日重設與路徑損耗風險。",
       "confidence": 95,
       "category": "risk",
       "affected_assets": [
@@ -146,46 +112,66 @@
       ]
     },
     {
-      "id": 9,
-      "title": "黃金強勢伴隨高RSI風險",
-      "summary": "GLD一日上漲2.2583%、5日上漲7.2482%、20日上漲5.6922%，RSI14為72.76且高於20日均線6.2958%；即使具分散用途，也存在短線回吐風險。",
-      "confidence": 86,
-      "category": "diversification",
+      "id": 8,
+      "title": "個股訊號分化",
+      "summary": "NVDA 1 日報酬為 2.269511%、20 日報酬為 6.162305%，但 AMD 1 日報酬為 -1.209944%、20 日報酬為 -13.359269%；市場內部分化使單一方向結論的信心受限。",
+      "confidence": 91,
+      "category": "momentum",
       "affected_assets": [
-        "GLD"
+        "NVDA",
+        "AMD"
       ],
       "source_urls": [
         "https://finance.yahoo.com/"
       ]
     },
     {
-      "id": 10,
-      "title": "反向ETF與現金的比較不足以支持買進",
-      "summary": "SQQQ一日下跌3.3592%、5日下跌14.4752%、20日下跌1.0058%，且20日年化波動率78.6182%；SOXS與SPXU在本輪快照沒有可驗證報價，無法完成一致口徑的績效比較。反向ETF均為每日重設工具，反彈或震盪可能造成累積損失；現金按零報酬建模但亦不保證正報酬。",
-      "confidence": 93,
-      "category": "risk",
+      "id": 9,
+      "title": "事件日曆缺失",
+      "summary": "事件日曆中 FOMC、BLS、NYSE 與 earnings 均為 missing，且 events 為空；因此無法可靠辨識未來事件、交易日或財報跳空風險，應降低曝險。",
+      "confidence": 98,
+      "category": "liquidity",
       "affected_assets": [
-        "SQQQ",
-        "SOXS",
-        "SPXU",
+        "SPY",
+        "SMH",
+        "NVDA",
+        "AMD",
+        "PLTR",
         "CASH"
       ],
       "source_urls": [
-        "https://finance.yahoo.com/"
+        "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "https://www.bls.gov/schedule/",
+        "https://www.nyse.com/trade/hours-calendars",
+        "https://www.sec.gov/edgar/searchedgar/companysearch"
       ]
+    },
+    {
+      "id": 10,
+      "title": "交易摩擦尚未納入",
+      "summary": "本輪驗證明示忽略手續費、價差、滑價、稅負與匯率；因此即使部分 3 日結果為正，也不能解讀為扣摩擦後的可交易優勢或保證。",
+      "confidence": 97,
+      "category": "liquidity",
+      "affected_assets": [
+        "CASH",
+        "SPY",
+        "GLD",
+        "TLT"
+      ],
+      "source_urls": []
     }
   ],
   "invalidation_conditions": [
-    "正報酬保證政策被正式移除或改寫為可驗證、非保證式風控目標，且研究資料支持非現金曝險。",
-    "事件日曆補齊FOMC、BLS、NYSE與財報的point-in-time資料，並確認交易日與收盤資料完整。",
-    "3日與7日完成交易日滾動視窗均可重算，扣除已知交易摩擦後形成足夠且一致的多日證據；至少不得再以7日completed_windows=0作為現況。",
-    "若市場結論轉為bearish或strong_bearish，且取得SOXS與SPXU的同口徑價格與視窗資料，才重新比較反向ETF與現金的報酬表達、每日重設、反彈損失及失效條件。"
+    "正報酬保證政策被具權限的正式文件明確撤銷或改寫，並建立可稽核的非保證式風控目標。",
+    "完成交易日判定、bar finality、缺值處理與時區對齊被補齊，且 7 日 completed_windows 大於零。",
+    "3 日與 7 日視窗均以扣除已知交易摩擦後重算，並產生足以支持重新評估的可稽核結果。",
+    "FOMC、BLS、NYSE 與 earnings 官方事件日曆恢復完整且具 point-in-time 可驗證性。"
   ],
   "major_risks": [
-    "100%現金的主要風險是機會成本；若風險資產持續上行，組合可能落後，但不能以單日或局部行情推論未來必然上漲。",
-    "CASH按研究政策以零報酬建模，不代表每天或每個3日、7日視窗必然為正報酬。",
-    "Yahoo Finance為可能延遲的次級資料來源，且本輪未提供可核對的手續費、價差、滑價、稅負與匯率成本。",
-    "事件日曆缺失可能使FOMC、就業、財報或交易日跳空風險無法事前納入研究決策。"
+    "維持現金可能錯過 risk-on 市場的上行機會，但此為機會成本，不代表現金必然產生正報酬。",
+    "Yahoo Finance 為次級資料來源且可能延遲；快照時間為 2026-08-08，但價格交易 session 為 2026-08-07，資料時效與 bar 完整性仍有限。",
+    "若未來市場結論轉為 bearish 或 strong_bearish，需重新比較 SQQQ、SOXS、SPXU 與現金的報酬表達、每日重設、反彈損失及失效條件；本輪市場判定為 neutral，未觸發該比較條款。",
+    "本輪無法量化扣摩擦後淨報酬，任何非現金曝險均可能承受未估計的交易成本與滑價。"
   ],
   "disclaimer": "研究建議，尚未執行。下單前須由使用者核對券商即時價格、成本與風險；系統不存取券商、不自動下單。"
 }
