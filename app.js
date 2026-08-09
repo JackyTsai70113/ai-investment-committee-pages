@@ -1579,7 +1579,7 @@ const researchStatusLabel = (value) => {
     challenged: "受到挑戰",
     invalidated: "已失效",
     mixed: "證據混合",
-    too_early: "資料不足",
+    too_early: "追蹤期未完成",
     insufficient: "樣本不足",
     provisional: "暫定",
     usable: "可評估",

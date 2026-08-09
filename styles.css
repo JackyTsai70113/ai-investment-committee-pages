@@ -626,6 +626,11 @@ a {
   grid-column: span 12;
 }
 
+.panel.committee :where(p, li, dd, a, span, strong, small) {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
 .panel.activity {
   grid-column: span 12;
 }
@@ -1193,12 +1198,22 @@ a {
   font-size: 0.76rem;
 }
 
-.chat-details ul {
+.chat-details ul,
+.chat-details ol {
+  min-width: 0;
+  max-width: 100%;
   margin: 0.45rem 0 0;
   padding-left: 1rem;
   color: var(--muted);
   font-size: 0.75rem;
   line-height: 1.55;
+}
+
+.chat-details li {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .privacy-boundary {
