@@ -1,69 +1,72 @@
 {
   "schema_version": "1.0",
-  "run_id": "20260808T105541Z",
-  "generated_at": "2026-08-08T10:55:41.588206Z",
-  "data_cutoff": "2026-08-08T10:54:50.614589Z",
+  "run_id": "20260810T153333Z",
+  "generated_at": "2026-08-10T15:33:33.197810Z",
+  "data_cutoff": "2026-08-10T15:31:46.213057Z",
   "status": "live",
   "capital_usd": "6000.00",
-  "model_score": 85,
-  "model_score_reason": "方向一致度 100/100；10 位提案委員按信心加權，1 項協商後否決仍未解除，扣除 15 分。",
+  "model_score": 100,
+  "model_score_reason": "方向一致度 100/100；10 位提案委員按信心加權，0 項協商後否決仍未解除，扣除 0 分。",
   "risk_level": "high",
-  "expected_horizon": "研究性持有至政策前提或資料品質改變；至少每週正式檢視 2 次，且最長每 3 個完成交易日重新檢視。",
+  "expected_horizon": "研究觀察期為下一至三個完成交易日；下一個完成交易日必須重新檢視，且不得將本配置視為已成交。目標是尋找扣除交易摩擦後expected short-term return > 0的機會，但本輪證據不足，信心偏低。",
   "allocations": [
     {
       "symbol": "CASH",
       "asset_type": "cash",
-      "target_weight": "1",
-      "target_amount_usd": "6000.00",
-      "action": "hold",
-      "note": "協商與風險閘門未通過，本次不產生風險資產配置。"
+      "target_weight": "0.6",
+      "target_amount_usd": "3600.00",
+      "action": "reduce",
+      "note": "政策允許的無正式risk veto最高現金權重；用於降低資料過舊、事件日曆缺失及視窗不足的不確定性。"
+    },
+    {
+      "symbol": "SPY",
+      "asset_type": "etf",
+      "target_weight": "0.2",
+      "target_amount_usd": "1200.00",
+      "action": "buy",
+      "note": "僅作小幅廣泛市場研究曝險；SPY的risk_on背景不得被解讀為已驗證的3日或7日優勢。"
+    },
+    {
+      "symbol": "TLT",
+      "asset_type": "etf",
+      "target_weight": "0.1",
+      "target_amount_usd": "600.00",
+      "action": "buy",
+      "note": "作為利率與股市風險的分散候選；其20日報酬為負，故不宣稱防禦效果已獲多日視窗驗證。"
+    },
+    {
+      "symbol": "GLD",
+      "asset_type": "commodity_etf",
+      "target_weight": "0.1",
+      "target_amount_usd": "600.00",
+      "action": "buy",
+      "note": "作為資產分散候選；近期動能較強且RSI偏高，權重受限，不能以近期報酬外推未來表現。"
     }
   ],
   "top_reasons": [
     {
       "id": 1,
-      "title": "正報酬保證硬限制",
-      "summary": "目前政策要求正報酬保證；市場風險資產無法提供可驗證保證，因此本輪任何非現金曝險均不合規。此為本次 100% CASH 的首要規則依據。",
-      "confidence": 99,
+      "title": "官方事件快照不足，改為保守決策",
+      "summary": "官方事件快照完整性不足：官方事件快照未形成可驗證輸入，請先追查官方日曆資料是否有完整回傳。。本輪不以缺漏作為硬性拒絕，而是先依現有可驗證資料完成配置，並保留資料缺漏追查責任，不把缺漏直接轉成風險否決。",
+      "confidence": 95,
       "category": "policy",
       "affected_assets": [
-        "CASH",
         "SPY",
-        "GLD",
-        "TLT"
+        "TLT",
+        "GLD"
       ],
       "source_urls": []
     },
     {
       "id": 2,
-      "title": "7 日視窗仍無法驗證",
-      "summary": "本輪驗證顯示 7 日完成交易日視窗 completed_windows=0、positive_windows=0，latest_return_percent=null，不能把多日績效、勝率或策略優勢推導為已驗證結論。",
-      "confidence": 95,
+      "title": "7日視窗完全缺失",
+      "summary": "短期績效證據顯示7日completed_windows=0、positive_windows=0且latest_return_percent=null；依政策不得以此形成多日方向、勝率或優勢結論。",
+      "confidence": 96,
       "category": "policy",
       "affected_assets": [
-        "CASH"
-      ],
-      "source_urls": []
-    },
-    {
-      "id": 3,
-      "title": "3 日樣本不足以跨尺度確認",
-      "summary": "3 日視窗雖有 4 個完成視窗、其中 2 個正報酬，但在 7 日視窗為零的情況下，無法完成 3 日與 7 日的一致性驗證，也不能單獨據此調整曝險。",
-      "confidence": 92,
-      "category": "risk",
-      "affected_assets": [
-        "CASH"
-      ],
-      "source_urls": []
-    },
-    {
-      "id": 4,
-      "title": "市場狀態偏 risk-on 但非交易證據",
-      "summary": "快照標示 trend=risk_on、volatility=normal；SPY 20 日報酬為 2.425326%，且價格高於 50 日均線 3.489212%。這支持中性觀察，不足以推翻硬性風控限制。",
-      "confidence": 90,
-      "category": "macro",
-      "affected_assets": [
         "SPY",
+        "TLT",
+        "GLD",
         "CASH"
       ],
       "source_urls": [
@@ -71,10 +74,73 @@
       ]
     },
     {
+      "id": 3,
+      "title": "3日樣本仍不足",
+      "summary": "3日視窗有4個completed_windows、2個positive_windows，latest_return_percent為1.6645，但尚未達20個完整視窗，也無法與缺失的7日尺度交叉驗證。",
+      "confidence": 90,
+      "category": "policy",
+      "affected_assets": [
+        "SPY",
+        "TLT",
+        "GLD",
+        "CASH"
+      ],
+      "source_urls": [
+        "https://finance.yahoo.com/"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "資料截止於最近完成交易日",
+      "summary": "研究模式明確標示為non_trading_day_survey，行情與技術指標只使用2026-08-07最近完成交易日；2026-08-10的決策不能假設當日行情已完成或可執行。",
+      "confidence": 98,
+      "category": "liquidity",
+      "affected_assets": [
+        "SPY",
+        "TLT",
+        "GLD"
+      ],
+      "source_urls": [
+        "https://finance.yahoo.com/"
+      ]
+    },
+    {
       "id": 5,
-      "title": "SPY 短線偏熱",
-      "summary": "SPY RSI14 為 69.55211，距離 MA20 為 3.077627%，且 1 日上漲 0.611535%；這表示短線動能存在，但也提高追價與反轉風險，不能替代完整視窗驗證。",
-      "confidence": 88,
+      "title": "官方事件日曆失效關閉",
+      "summary": "FOMC、BLS、NYSE與earnings均為missing_fail_closed，且找不到point-in-time官方事件快照；未來數日跳空與事件風險無法可靠對齊，因此降低配置信心。",
+      "confidence": 94,
+      "category": "news",
+      "affected_assets": [
+        "SPY",
+        "TLT",
+        "GLD",
+        "CASH"
+      ],
+      "source_urls": [
+        "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "https://www.bls.gov/schedule/",
+        "https://www.nyse.com/trade/hours-calendars",
+        "https://www.sec.gov/edgar/searchedgar/companysearch"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "風險偏好背景仍偏正向",
+      "summary": "市場regime標示trend=risk_on、volatility=normal；SPY 20日報酬為2.425326%，且高於50日均線3.489212%。這只支持保留小幅市場觀察曝險，不足以升級方向性結論。",
+      "confidence": 68,
+      "category": "macro",
+      "affected_assets": [
+        "SPY"
+      ],
+      "source_urls": [
+        "https://finance.yahoo.com/"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "SPY短線位置偏熱",
+      "summary": "SPY RSI14為69.55211，距離MA20與MA50分別為3.077627%及3.489212%；價格動能與過熱風險並存，故不採取高股票權重。",
+      "confidence": 78,
       "category": "technical",
       "affected_assets": [
         "SPY"
@@ -84,23 +150,23 @@
       ]
     },
     {
-      "id": 6,
-      "title": "科技資產波動較高",
-      "summary": "QQQ 的 20 日年化波動率為 26.232518%，SMH 為 51.590418%；兩者雖有正向 5 日報酬，但波動與短期路徑風險仍高，無法提供正報酬保證。",
-      "confidence": 90,
-      "category": "risk",
+      "id": 8,
+      "title": "科技板塊中期分歧",
+      "summary": "QQQ 20日報酬為-0.341826%，SMH 20日報酬為-4.636436%，雖然兩者5日報酬分別為5.093103%與7.801599%，顯示反彈尚不足以確認中期趨勢反轉。",
+      "confidence": 82,
+      "category": "momentum",
       "affected_assets": [
-        "QQQ",
-        "SMH"
+        "SMH",
+        "SPY"
       ],
       "source_urls": [
         "https://finance.yahoo.com/"
       ]
     },
     {
-      "id": 7,
-      "title": "槓桿工具路徑風險明顯",
-      "summary": "SOXL 20 日年化波動率為 182.017327%、20 日報酬為 -27.051907%；TQQQ 20 日年化波動率為 77.972312%、20 日報酬為 -3.323377%。單日反彈不能消除每日重設與路徑損耗風險。",
+      "id": 9,
+      "title": "個股與槓桿波動過高",
+      "summary": "SOXL 20日報酬為-27.051907%，20日年化波動為182.017327%；本輪不配置槓桿ETF，避免把單日重設工具的近期反彈誤當成可持續多日倍數報酬。",
       "confidence": 95,
       "category": "risk",
       "affected_assets": [
@@ -112,66 +178,31 @@
       ]
     },
     {
-      "id": 8,
-      "title": "個股訊號分化",
-      "summary": "NVDA 1 日報酬為 2.269511%、20 日報酬為 6.162305%，但 AMD 1 日報酬為 -1.209944%、20 日報酬為 -13.359269%；市場內部分化使單一方向結論的信心受限。",
-      "confidence": 91,
-      "category": "momentum",
+      "id": 10,
+      "title": "GLD動能與估值風險並存",
+      "summary": "GLD 20日報酬為5.692154%、5日報酬為7.248208%，但RSI14達72.755409且距MA20為6.2958%；因此僅保留10%分散權重，不將近期上漲外推為未來正報酬。",
+      "confidence": 86,
+      "category": "diversification",
       "affected_assets": [
-        "NVDA",
-        "AMD"
+        "GLD"
       ],
       "source_urls": [
         "https://finance.yahoo.com/"
       ]
-    },
-    {
-      "id": 9,
-      "title": "事件日曆缺失",
-      "summary": "事件日曆中 FOMC、BLS、NYSE 與 earnings 均為 missing，且 events 為空；因此無法可靠辨識未來事件、交易日或財報跳空風險，應降低曝險。",
-      "confidence": 98,
-      "category": "liquidity",
-      "affected_assets": [
-        "SPY",
-        "SMH",
-        "NVDA",
-        "AMD",
-        "PLTR",
-        "CASH"
-      ],
-      "source_urls": [
-        "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-        "https://www.bls.gov/schedule/",
-        "https://www.nyse.com/trade/hours-calendars",
-        "https://www.sec.gov/edgar/searchedgar/companysearch"
-      ]
-    },
-    {
-      "id": 10,
-      "title": "交易摩擦尚未納入",
-      "summary": "本輪驗證明示忽略手續費、價差、滑價、稅負與匯率；因此即使部分 3 日結果為正，也不能解讀為扣摩擦後的可交易優勢或保證。",
-      "confidence": 97,
-      "category": "liquidity",
-      "affected_assets": [
-        "CASH",
-        "SPY",
-        "GLD",
-        "TLT"
-      ],
-      "source_urls": []
     }
   ],
   "invalidation_conditions": [
-    "正報酬保證政策被具權限的正式文件明確撤銷或改寫，並建立可稽核的非保證式風控目標。",
-    "完成交易日判定、bar finality、缺值處理與時區對齊被補齊，且 7 日 completed_windows 大於零。",
-    "3 日與 7 日視窗均以扣除已知交易摩擦後重算，並產生足以支持重新評估的可稽核結果。",
-    "FOMC、BLS、NYSE 與 earnings 官方事件日曆恢復完整且具 point-in-time 可驗證性。"
+    "若下一輪仍為7日completed_windows=0，配置不得因單日、5日、20日報酬、RSI或均線距離而提高方向性曝險；僅在政策允許範圍內維持或降低風險。",
+    "若取得7日completed_windows>0，且3日與7日扣除已知摩擦後方向一致、正報酬窗比例具可支持性，才重新評估SPY、TLT與GLD權重。",
+    "若SPY跌破20日均線且VIX由14.9顯著上升，或利率明顯上行造成股債同步承壓，應重新檢視SPY與TLT的配置假設。",
+    "若官方FOMC、BLS、NYSE及財報事件日曆仍無法形成可驗證快照，則維持較低信心，不得以事件風險推測具體方向。"
   ],
   "major_risks": [
-    "維持現金可能錯過 risk-on 市場的上行機會，但此為機會成本，不代表現金必然產生正報酬。",
-    "Yahoo Finance 為次級資料來源且可能延遲；快照時間為 2026-08-08，但價格交易 session 為 2026-08-07，資料時效與 bar 完整性仍有限。",
-    "若未來市場結論轉為 bearish 或 strong_bearish，需重新比較 SQQQ、SOXS、SPXU 與現金的報酬表達、每日重設、反彈損失及失效條件；本輪市場判定為 neutral，未觸發該比較條款。",
-    "本輪無法量化扣摩擦後淨報酬，任何非現金曝險均可能承受未估計的交易成本與滑價。"
+    "Yahoo Finance資料可能延遲，且本輪為非交易日研究；價格、成交量與指標不代表可執行報價。",
+    "7日績效視窗缺失、3日樣本僅4個且研究方法未扣除手續費、價差、滑價、稅負與匯率，可能高估任何表面上的短期優勢。",
+    "GLD近期RSI偏高，SPY RSI接近70；若動能回吐，少量非現金部位仍可能承受短線損失。",
+    "事件日曆缺失使財報、就業、通膨與政策事件的跳空風險無法與持有期對齊。",
+    "TLT受殖利率變化影響，GLD與SPY也可能在風險事件中出現相關性改變，分散效果並非保證。"
   ],
   "disclaimer": "研究建議，尚未執行。下單前須由使用者核對券商即時價格、成本與風險；系統不存取券商、不自動下單。"
 }

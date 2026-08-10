@@ -1,63 +1,63 @@
 {
   "schema_version": "1.0",
-  "review_id": "learning-20260808T105530Z",
-  "reviewed_run_id": "20260807T210423Z",
-  "generated_at": "2026-08-08T10:55:30.145140Z",
-  "evaluation_cutoff": "2026-08-08T10:54:50.614589Z",
+  "review_id": "learning-20260810T153320Z",
+  "reviewed_run_id": "20260808T105541Z",
+  "generated_at": "2026-08-10T15:33:20.708480Z",
+  "evaluation_cutoff": "2026-08-10T15:31:46.213057Z",
   "evidence_source": "Yahoo Finance via yfinance",
   "verdict": "too_early",
   "lessons": [
     {
-      "title": "7日完成交易日視窗仍為0，無法驗證多日淨報酬",
-      "evidence": "確定性計算證據中的 short_window_evidence 顯示 7 日 completed_windows=0、positive_windows=0，latest_return_percent=null；因此依短期績效政策，多日(7日完成交易日滾動)勝率/優劣仍不可驗證，不能把任何單日或局部資訊升級為策略結論。",
-      "implication": "下一輪委員會必須先等待並重算 7 日 completed_windows>0 後，才能更新 verdict 為 supported/mixed/challenged；在 7 日仍缺席前，只能將既有結果標為等待驗證。",
-      "confidence": 95,
+      "title": "7 日完成交易日視窗仍缺失，禁止更新多日尺度結論",
+      "evidence": "確定性計算證據中的 short_window_evidence 顯示 7 日視窗：completed_windows=0、positive_windows=0、latest_return_percent=null；因此多日(7日)淨報酬/正報酬窗的統計無法形成，依短期績效政策不得升級或調整研究結論強度。",
+      "implication": "下一輪委員會必須把「7 日 completed_windows=0」視為硬門檻：即使 3 日視窗呈現正向，也只能記錄為候選觀察，verdict 固定維持 too_early，並避免任何 supported/mixed/challenged 的語句出現於 7 日尺度。",
+      "confidence": 96,
       "affected_assets": [
         "CASH"
       ]
     },
     {
-      "title": "3日視窗有樣本但不足以在缺7日時形成可結論的方向",
-      "evidence": "short_window_evidence 顯示 3 日 completed_windows=4、positive_windows=2、latest_return_percent=1.6645；但同一證據同時指出 7 日 completed_windows=0，因此無法進行跨尺度(3日/7日)一致性驗證，也無法符合政策對多日績效結論所需的完整視窗。",
-      "implication": "下一輪若 7 日仍為0，3日只能作為『觀察到的區間波動表徵』而非策略優劣或調權依據；委員會需在報告中明確拆分 3日與7日，禁止以3日局部正報酬外推。",
-      "confidence": 72,
+      "title": "3 日視窗呈現正向但樣本結構仍不足以跨尺度驗證",
+      "evidence": "同一份短窗口證據顯示 3 日視窗：completed_windows=4、positive_windows=2、latest_return_percent=1.6645（截至資料截止）；但與 7 日 completed_windows=0 同時存在，無法做 3/7 日一致性驗證或跨尺度穩定性判斷。",
+      "implication": "下一輪若仍出現 7 日缺失，3 日只能作為「局部區間波動訊號」而非研究判斷依據；報告需明確分欄呈現 3 日(正窗比例)與 7 日(缺口=0)並保持 verdict 階層為 too_early。",
+      "confidence": 74,
       "affected_assets": [
         "CASH"
       ]
     },
     {
-      "title": "本輪為研究策略100% CASH，單日/兩點差無法代表扣摩擦後的可交易優勢",
-      "evidence": "提供的 positions 顯示本輪只有 CASH，return_percent=0，weighted_contribution_percent=0；且 methodology 明確忽略手續費、價差、滑價、稅負與匯率，因此即使未來形成視窗，也仍需把『未扣除交易摩擦』的不確定性納入信心折減。",
-      "implication": "下一輪委員會在可用視窗形成後，可做『觀察性』的報酬分佈檢查，但若要支持任何調整到非現金曝險的合規性或期望報酬敘述，仍必須先補齊扣摩擦的評估流程或至少列為主要不確定性。",
-      "confidence": 80,
+      "title": "本輪為 100% CASH；單次估值點/部位歸因不可替代視窗淨報酬驗證",
+      "evidence": "提供的 positions 僅包含 CASH，且方法聲明為研究性指數計算、忽略手續費/價差/滑價/稅與匯率；因此即使市場快照顯示風險資產短線上行，對本輪多日績效政策而言，仍缺少可用的 3/7 日完成視窗淨報酬來支持任何替代推論。",
+      "implication": "下一輪的可用性檢查必須以 completed_windows(3/7) 為唯一決策切換條件；任何由市場快照的單日漲跌或單次估值點產出的敘事，需降級為背景狀態，不得被用作調權或宣稱績效優勢。",
+      "confidence": 82,
       "affected_assets": [
         "CASH"
       ]
     },
     {
-      "title": "既有合規前提(正報酬保證)未被證明可移除，因此非現金曝險仍缺乏合規依據",
-      "evidence": "本輪投資配置仍維持 100% CASH，理由延續政策：要求正報酬保證時，市場風險資產無法提供可驗證保證，故不合規；在提供的事後驗證證據中也未出現可用的 7 日完成視窗來支撐『非現金曝險且仍可驗證正報酬』的合規轉換。",
-      "implication": "下一輪若要重新考慮非現金曝險，必須同時滿足：政策前提被明確改寫/移除或給出可驗證的非保證式風控目標，並且取得 3日與7日完成交易日視窗的多日統計證據；否則保持 CASH 為研究性安全上限更一致。",
-      "confidence": 78,
+      "title": "事件日曆缺失會增加外生風險不確定性，應降低研究信心而非改以 CASH 結論當作完成度",
+      "evidence": "event_calendar 顯示 fomc/bls/nyse/earnings 均為 missing（input_mode=missing_fail_closed），且 warnings 指出找不到 point-in-time 官方事件快照；在缺少事件對齊前提下，即使短線技術特徵呈現 risk_on，也無法判定未來 7 日的事件風險結構。",
+      "implication": "下一輪委員會在仍為 too_early 的同時，需把事件日曆缺口列為次要不確定性來源：僅允許在取得事件日曆可驗證快照後，才提升對『未來 7 日路徑』解釋的信心；決策層級仍應以 completed_windows 門檻為主。",
+      "confidence": 71,
       "affected_assets": [
-        "CASH",
         "SPY",
+        "TLT",
         "GLD",
-        "TLT"
+        "CASH"
       ]
     }
   ],
   "committee_changes": [
-    "在下一輪驗證報告中，必須分開呈現 3日與7日完成交易日的淨報酬/正報酬窗比例；且只要 7日 completed_windows=0，verdict 固定維持 too_early。",
-    "禁止用 latest_return_percent 或單日/兩點差結果來代替多日(3日/7日完成交易日)淨報酬驗證；所有 supported/mixed/challenged 只能在兩個視窗條件均成立時才可討論。",
-    "要求更新信心評分時必須額外扣分『扣摩擦未實作』的不確定性，直到研究流程能納入手續費、價差、滑價等。",
-    "若委員會考慮任何非現金曝險，必須先提交：政策前提(正報酬保證)是否仍有效的可核對依據，並以同口徑取得 3日/7日視窗證據；否則維持 100% CASH 或嚴守合規約束。"
+    "必須分開驗證並呈現：3 日 completed_windows 與 7 日 completed_windows；本輪 7 日為 0，因此 verdict 固定 too_early 且不得因 3 日正向而改變。",
+    "在 7 日缺口存在時，禁止使用 latest_return_percent 或單日/兩點差（市場快照的 RSI/漲跌）作為 supported/mixed/challenged 的替代依據，只能作背景狀態紀錄。",
+    "若未來連續多輪仍出現 7 日 completed_windows=0，需降低研究更新頻率與決策語氣：將非現金曝險討論延後，並僅允許維持既有風險約束（例如 CASH 上限規範）而非進行方向性調權。",
+    "補齊事件日曆的可驗證快照（fomc/bls/nyse/earnings），使「未來 7 日」具備外生事件對齊能力；否則僅能報告現象，不能提高對因果路徑的信心。"
   ],
-  "member_assessment": "本輪事後驗證只能基於提供的確定性計算證據與短期績效政策門檻。雖然 3 日 completed_windows=4 且 positive_windows=2，但 7 日 completed_windows=0、positive_windows=0（latest_return_percent=null），依規範無法驗證 7 日完成交易日的多日淨報酬表現。因此本輪 verdict 只能判定為 too_early；此外本輪配置為 100% CASH 且研究方法忽略摩擦，單日/兩點差也不足以支持任何可交易的優勢或保證式敘述。",
-  "skill_assessment": "計算與稽核技能層級在本輪已能完成兩項必要工作：(1) 由 positions 確認本輪僅有 CASH，單日貢獻為 0；(2) 依 short_window_evidence 嚴格檢查 3日/7日 completed_windows 是否達政策門檻。問題不在於計算能力，而在於 7日視窗樣本仍未形成，故需在報告層級維持 too_early 與門檻紀律。",
+  "member_assessment": "基於目前提供的確定性計算證據，本輪短期績效政策要求以 3 日與 7 日完成交易日視窗的淨報酬驗證作為 verdict 更新基礎；然而證據顯示 7 日 completed_windows=0（latest_return_percent=null，正窗也為 0），因此 7 日尺度的多日績效無法驗證。雖然 3 日視窗已有 completed_windows=4 且 positive_windows=2（latest_return_percent=1.6645），但在 7 日缺失情況下不能做跨尺度一致性或統計性勝率宣稱，故本輪只能維持 too_early。另一方面，本輪 positions 僅有 CASH，且計算方法忽略交易摩擦；因此任何市場快照的短線上行只能作背景，不構成可交易優勢的已驗證結論。",
+  "skill_assessment": "本輪驗證所需的核心能力（讀取 completed_windows/positive_windows 以及檢查是否滿足 7 日視窗可用性門檻）已正確執行：系統能辨識 7 日視窗缺失並據此禁止升級 verdict。主要需要的是報告層級的紀律強化：確保不以單日/兩點估值或市場快照技術指標替代完成視窗淨報酬驗證；在 7 日缺口存在時，所有 supported/mixed/challenged 表述必須被禁止。",
   "warnings": [
-    "本評估僅使用提供的研究用價格快照與確定性計算證據，不代表實際成交或實際帳戶績效。",
-    "方法聲明忽略手續費、價差、滑價、稅負與匯率；即便未來形成視窗，仍需降低對『可交易淨邊際』的信心。",
-    "截至資料截止時間下，7日 completed_windows=0 使得多日績效/勝率無法驗證；任何宣稱 supported/mixed/challenged 的結論都違反短期績效政策。"
+    "截至資料截止時間，本輪 7 日完成交易日視窗 completed_windows=0，導致多日績效/正報酬窗無法驗證；因此 verdict 僅能 too_early。",
+    "本輪研究方法明確忽略手續費、價差、滑價、稅負與匯率；即便後續形成視窗，也需要在信心評分中把『未扣摩擦』的不確定性納入。",
+    "事件日曆仍為 missing_fail_closed（fomc/bls/nyse/earnings 均無可驗證快照）；未來 7 日外生風險結構尚不可對齊，解釋信心需受限。"
   ]
 }

@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-08T10:54:50.614589Z",
+  "generated_at": "2026-08-10T15:31:46.213057Z",
   "mode": "live",
   "source": "Yahoo Finance via yfinance",
   "quotes": [
@@ -10,7 +10,7 @@
       "previous_close": "768.559998",
       "change_percent": "0.611535",
       "volume": 43557000,
-      "as_of": "2026-08-08T10:54:50.614589Z",
+      "as_of": "2026-08-10T15:31:46.213057Z",
       "price_session": "2026-08-07",
       "source": "Yahoo Finance via yfinance"
     },
@@ -20,7 +20,7 @@
       "previous_close": "714.650024",
       "change_percent": "1.172603",
       "volume": 31024100,
-      "as_of": "2026-08-08T10:54:50.614589Z",
+      "as_of": "2026-08-10T15:31:46.213057Z",
       "price_session": "2026-08-07",
       "source": "Yahoo Finance via yfinance"
     },
@@ -30,7 +30,7 @@
       "previous_close": "571.47998",
       "change_percent": "1.963329",
       "volume": 6499400,
-      "as_of": "2026-08-08T10:54:50.614589Z",
+      "as_of": "2026-08-10T15:31:46.213057Z",
       "price_session": "2026-08-07",
       "source": "Yahoo Finance via yfinance"
     },
@@ -40,7 +40,7 @@
       "previous_close": "132.330002",
       "change_percent": "5.985036",
       "volume": 60893700,
-      "as_of": "2026-08-08T10:54:50.614589Z",
+      "as_of": "2026-08-10T15:31:46.213057Z",
       "price_session": "2026-08-07",
       "source": "Yahoo Finance via yfinance"
     },
@@ -50,7 +50,7 @@
       "previous_close": "72.029999",
       "change_percent": "3.387481",
       "volume": 59134100,
-      "as_of": "2026-08-08T10:54:50.614589Z",
+      "as_of": "2026-08-10T15:31:46.213057Z",
       "price_session": "2026-08-07",
       "source": "Yahoo Finance via yfinance"
     },
@@ -60,7 +60,7 @@
       "previous_close": "218.990005",
       "change_percent": "2.269511",
       "volume": 105473700,
-      "as_of": "2026-08-08T10:54:50.614589Z",
+      "as_of": "2026-08-10T15:31:46.213057Z",
       "price_session": "2026-08-07",
       "source": "Yahoo Finance via yfinance"
     },
@@ -70,7 +70,7 @@
       "previous_close": "489.279999",
       "change_percent": "-1.209944",
       "volume": 26560000,
-      "as_of": "2026-08-08T10:54:50.614589Z",
+      "as_of": "2026-08-10T15:31:46.213057Z",
       "price_session": "2026-08-07",
       "source": "Yahoo Finance via yfinance"
     },
@@ -80,7 +80,7 @@
       "previous_close": "155.919998",
       "change_percent": "10.319392",
       "volume": 77382900,
-      "as_of": "2026-08-08T10:54:50.614589Z",
+      "as_of": "2026-08-10T15:31:46.213057Z",
       "price_session": "2026-08-07",
       "source": "Yahoo Finance via yfinance"
     },
@@ -90,7 +90,7 @@
       "previous_close": "90.279999",
       "change_percent": "-2.259638",
       "volume": 195000,
-      "as_of": "2026-08-08T10:54:50.614589Z",
+      "as_of": "2026-08-10T15:31:46.213057Z",
       "price_session": "2026-08-07",
       "source": "Yahoo Finance via yfinance"
     },
@@ -100,7 +100,7 @@
       "previous_close": "389.670013",
       "change_percent": "2.258318",
       "volume": 13301600,
-      "as_of": "2026-08-08T10:54:50.614589Z",
+      "as_of": "2026-08-10T15:31:46.213057Z",
       "price_session": "2026-08-07",
       "source": "Yahoo Finance via yfinance"
     },
@@ -110,7 +110,7 @@
       "previous_close": "82.519997",
       "change_percent": "0.290845",
       "volume": 96118900,
-      "as_of": "2026-08-08T10:54:50.614589Z",
+      "as_of": "2026-08-10T15:31:46.213057Z",
       "price_session": "2026-08-07",
       "source": "Yahoo Finance via yfinance"
     },
@@ -120,7 +120,7 @@
       "previous_close": "38.700001",
       "change_percent": "-3.359171",
       "volume": 52337300,
-      "as_of": "2026-08-08T10:54:50.614589Z",
+      "as_of": "2026-08-10T15:31:46.213057Z",
       "price_session": "2026-08-07",
       "source": "Yahoo Finance via yfinance"
     },
@@ -130,7 +130,7 @@
       "previous_close": "77.290001",
       "change_percent": "1.151507",
       "volume": 246260,
-      "as_of": "2026-08-08T10:54:50.614589Z",
+      "as_of": "2026-08-10T15:31:46.213057Z",
       "price_session": "2026-08-07",
       "source": "Yahoo Finance via yfinance"
     },
@@ -140,7 +140,7 @@
       "previous_close": "15.15",
       "change_percent": "-1.650165",
       "volume": 0,
-      "as_of": "2026-08-08T10:54:50.614589Z",
+      "as_of": "2026-08-10T15:31:46.213057Z",
       "price_session": "2026-08-07",
       "source": "Yahoo Finance via yfinance"
     },
@@ -150,7 +150,7 @@
       "previous_close": "4.67",
       "change_percent": "-0.214138",
       "volume": 0,
-      "as_of": "2026-08-08T10:54:50.614589Z",
+      "as_of": "2026-08-10T15:31:46.213057Z",
       "price_session": "2026-08-07",
       "source": "Yahoo Finance via yfinance"
     }
@@ -983,6 +983,14 @@
     {
       "symbol": "TSM",
       "form": "6-K",
+      "filing_date": "2026-08-10",
+      "report_date": "2026-07-31",
+      "description": "6-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000471/tsm-revenue20260810.htm"
+    },
+    {
+      "symbol": "TSM",
+      "form": "6-K",
       "filing_date": "2026-07-24",
       "report_date": "2026-06-30",
       "description": "6-K",
@@ -1131,14 +1139,6 @@
       "report_date": "2026-03-31",
       "description": "6-K",
       "source_url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000199/tsm-20260416x6k.htm"
-    },
-    {
-      "symbol": "TSM",
-      "form": "20-F",
-      "filing_date": "2026-04-16",
-      "report_date": "2025-12-31",
-      "description": "20-F",
-      "source_url": "https://www.sec.gov/Archives/edgar/data/1046179/000162828026025362/tsm-20251231.htm"
     }
   ],
   "fundamental_facts": [
@@ -2861,7 +2861,7 @@
   ],
   "event_calendar": {
     "schema_version": "1.0",
-    "generated_at": "2026-08-08T10:54:50.614589Z",
+    "generated_at": "2026-08-10T15:31:46.213057Z",
     "input_mode": "missing_fail_closed",
     "required_categories": [
       "fomc",
@@ -2873,8 +2873,8 @@
       {
         "category": "fomc",
         "status": "missing",
-        "queried_at": "2026-08-08T10:54:50.614589Z",
-        "data_cutoff": "2026-08-08T10:54:50.614589Z",
+        "queried_at": "2026-08-10T15:31:46.213057Z",
+        "data_cutoff": "2026-08-10T15:31:46.213057Z",
         "coverage_start": null,
         "coverage_end": null,
         "timezone": "America/New_York",
@@ -2888,8 +2888,8 @@
       {
         "category": "bls",
         "status": "missing",
-        "queried_at": "2026-08-08T10:54:50.614589Z",
-        "data_cutoff": "2026-08-08T10:54:50.614589Z",
+        "queried_at": "2026-08-10T15:31:46.213057Z",
+        "data_cutoff": "2026-08-10T15:31:46.213057Z",
         "coverage_start": null,
         "coverage_end": null,
         "timezone": "America/New_York",
@@ -2903,8 +2903,8 @@
       {
         "category": "nyse",
         "status": "missing",
-        "queried_at": "2026-08-08T10:54:50.614589Z",
-        "data_cutoff": "2026-08-08T10:54:50.614589Z",
+        "queried_at": "2026-08-10T15:31:46.213057Z",
+        "data_cutoff": "2026-08-10T15:31:46.213057Z",
         "coverage_start": null,
         "coverage_end": null,
         "timezone": "America/New_York",
@@ -2918,8 +2918,8 @@
       {
         "category": "earnings",
         "status": "missing",
-        "queried_at": "2026-08-08T10:54:50.614589Z",
-        "data_cutoff": "2026-08-08T10:54:50.614589Z",
+        "queried_at": "2026-08-10T15:31:46.213057Z",
+        "data_cutoff": "2026-08-10T15:31:46.213057Z",
         "coverage_start": null,
         "coverage_end": null,
         "timezone": "America/New_York",
@@ -2949,190 +2949,293 @@
   },
   "research_evidence": [
     {
-      "evidence_id": "ECO_BEAB_2026Q2_GDP_Port",
-      "category": "us_economy",
+      "evidence_id": "US_Macro_BLS_Empsit_Page",
+      "category": "labor",
       "region": "US",
-      "title": "BEA：GDP 與景氣相關官方資料入口（可核對最新期別）",
-      "summary": "美國國民所得與產品帳（GDP）屬於景氣判斷核心指標。BEA 官方資料入口可用來核對最新已公布的 GDP、個人消費（PCE）與投資分項（如設備投資/住宅投資）等，避免僅依賴市場推估。",
-      "market_relevance": "在 risk-on/risk-off 切換時，GDP 與內需分項（消費、企業投資）會直接影響對經濟成長與企業獲利韌性的定價；同時也會影響市場對聯準會降息/維持利率的路徑預期。",
-      "source_title": "U.S. Bureau of Economic Analysis (BEA) – GDP Data",
-      "source_url": "https://www.bea.gov/data/gdp",
+      "title": "美國就業數據（BLS：Employment Situation）—用於追蹤人力市場動能",
+      "summary": "BLS 的 Employment Situation 發布頁提供就業人數、失業率、工資/工時等關鍵指標的原始發布與表格，屬於檢驗勞動市場降溫或再度走強的主要一手來源。由於本次無法即時核對最新一期數值，建議以該頁作為最新公布內容的查核入口。",
+      "market_relevance": "人力市場是影響 Fed 對就業與需求的評估核心；任何新增職位、失業率或工資年增變化都會快速反映到利率預期、美元與美股風險偏好。",
+      "source_title": "BLS—Employment Situation (The Employment Situation)",
+      "source_url": "https://www.bls.gov/news.release/empsit.htm",
       "published_at": null,
       "affected_symbols": [
+        "SPY",
+        "DIA",
+        "QQQ",
+        "IWM"
+      ]
+    },
+    {
+      "evidence_id": "US_Macro_BLS_CPI_Page",
+      "category": "us_economy",
+      "region": "US",
+      "title": "美國通膨監測（BLS CPI）—用於檢驗核心通膨趨勢與利率路徑",
+      "summary": "BLS CPI 發布頁彙整 CPI 與核心 CPI、分類項目（如住房/服務等）及相關統計表，提供市場評估通膨是否延續降溫或反彈所需的一手資料。由於目前無法直接核對最新一期發布數字，需以此頁為最新公布之唯一核驗入口。",
+      "market_relevance": "核心通膨的斜率會直接驅動實質利率與長天期美債收益率，進而影響成長股估值與金融/能源等費用敏感產業的資本成本。",
+      "source_title": "BLS—Consumer Price Index (CPI)",
+      "source_url": "https://www.bls.gov/news.release/cpi.htm",
+      "published_at": null,
+      "affected_symbols": [
+        "TLT",
         "SPY",
         "QQQ"
       ]
     },
     {
-      "evidence_id": "LAB_BLS_JOLTS_Official",
-      "category": "labor",
+      "evidence_id": "US_Macro_BEA_PCE_Page",
+      "category": "us_economy",
       "region": "US",
-      "title": "BLS：JOLTS（職位空缺與勞動流動）官方頁面（核對最新月度）",
-      "summary": "JOLTS 能從職位空缺、裁員/離職與招聘等維度評估勞動市場緊俏程度，並常被用來比對失業率的「滯後性」。BLS 官方頁面可查核最新公布的 JOLTS 數據與細項。",
-      "market_relevance": "若職位空缺下降與離職率回落，通常意味著工資與通膨的二次傳導風險下降，可能支撐長端利率溫和或推動風險資產估值重估；反之則抑制降息預期。",
-      "source_title": "U.S. Bureau of Labor Statistics (BLS) – Job Openings and Labor Turnover Survey (JOLTS)",
-      "source_url": "https://www.bls.gov/jlt/",
+      "title": "美國通膨關鍵指標（BEA：PCE Prices）—Fed 最常引用的通膨口徑",
+      "summary": "BEA 的 PCE Prices 發布頁包含個人消費支出價格指數（含核心 PCE）與分項拆解。此口徑常被 Fed 用於通膨評估與政策溝通；本次需以該頁確認最新發布版本與數值。",
+      "market_relevance": "核心 PCE 與利率路徑的關聯通常高於市場自訂的短期通膨樣本，會影響美元走勢、長天期殖利率及風險資產定價。",
+      "source_title": "BEA—Personal Income and Outlays (PCE Prices)",
+      "source_url": "https://www.bea.gov/news/2024/personal-income-and-outlays",
       "published_at": null,
       "affected_symbols": [
-        "SPY",
-        "TLT"
+        "USD",
+        "TLT",
+        "SPY"
       ]
     },
     {
-      "evidence_id": "RATES_FOMC_Statements_Repo",
+      "evidence_id": "Rates_Treasury_yields_Page",
       "category": "rates",
       "region": "US",
-      "title": "Fed：FOMC 聲明、會議紀要與政策立場（作為利率路徑定錨）",
-      "summary": "聯準會對利率政策的最新表述通常以 FOMC 聲明與會議紀要發布。可透過 Fed 官方 FOMC 文件存檔核對「政策利率、縮表/再投資、對通膨與就業的措辭變化」。",
-      "market_relevance": "市場對美債（特別是 2Y/10Y）與美元的波動，往往反映 FOMC 措辭對通膨/就業的相對權重；這也是短線與中線利率定價的關鍵來源。",
-      "source_title": "Federal Reserve – FOMC Statements and Minutes",
-      "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+      "title": "美債殖利率基準（U.S. Treasury：Daily Treasury Yield Curve Rates）",
+      "summary": "美國財政部提供每日殖利率曲線與期限利率的官方列表，是核對 T-bills/Notes/收益率是否上行或趨穩的標準來源。用於本次匯整美元與利率環境時的可驗證引用。",
+      "market_relevance": "收益率曲線的移動（特別是 2Y/10Y 與曲線斜率）會反映政策預期與風險溢酬，影響折現率、銀行淨利差與科技股估值。",
+      "source_title": "U.S. Department of the Treasury—Daily Treasury Yield Curve Rates",
+      "source_url": "https://home.treasury.gov/data/treasury-yield-curve-rates",
       "published_at": null,
       "affected_symbols": [
         "TLT",
-        "^TNX",
-        "US10Y"
-      ]
-    },
-    {
-      "evidence_id": "RATES_Treasury_auctions_calendar",
-      "category": "rates",
-      "region": "US",
-      "title": "美國財政部：國債發行/拍賣行事曆（核對供給面影響）",
-      "summary": "國債拍賣行事曆與規模是理解長端利率與期限風險的重要供給面變數。可用 Treasury 官方行事曆核對近期與未來的拍賣安排，評估潛在「供給衝擊」對美債價格/收益率的影響。",
-      "market_relevance": "當拍賣規模偏大或市場風險情緒改變，可能提升期限溢酬、推動長端收益率上行，並透過貼現率影響成長股估值。",
-      "source_title": "U.S. Department of the Treasury – Auction Calendar",
-      "source_url": "https://home.treasury.gov/data/treasury-bills-and-cash-management/auctions",
-      "published_at": null,
-      "affected_symbols": [
-        "TLT"
-      ]
-    },
-    {
-      "evidence_id": "INFL_FRED_Breakeven_Port",
-      "category": "rates",
-      "region": "US",
-      "title": "FRED：通膨預期（如 TIPS breakeven）時間序列（市場隱含）",
-      "summary": "FRED 提供與通膨預期相關的市場隱含指標（例如 TIPS breakeven 等），可用於核對「通膨預期是否上修/下修」與期限結構變化。該類指標常被用來觀察市場對未來通膨的共識。",
-      "market_relevance": "若 breakeven 上行且與實質利率同步，可能同時推升名目利率並打壓長天期資產估值；若通膨預期回落而實質利率穩定，可能利多風險資產。",
-      "source_title": "Federal Reserve Bank of St. Louis – FRED (TIPS breakeven inflation)",
-      "source_url": "https://fred.stlouisfed.org/tags/series?cid=100&s=breakeven%20inflation",
-      "published_at": null,
-      "affected_symbols": [
-        "TLT"
-      ]
-    },
-    {
-      "evidence_id": "CONSUMER_Census_Retail_Sales",
-      "category": "social_demand",
-      "region": "US",
-      "title": "美國 Census：零售銷售（消費/需求）官方數據入口",
-      "summary": "零售銷售與消費相關分項常用於判讀「需求是否降溫/回升」。可透過 Census Bureau 官方資料核對最新公布的名目與實質（若提供）變化及各品類走勢。",
-      "market_relevance": "消費動能影響服務業/耐久財/必需消費等板塊營收預期；也會影響市場對經濟軟著陸與降息時點的判斷。",
-      "source_title": "U.S. Census Bureau – Retail Sales",
-      "source_url": "https://www.census.gov/retail/marts/www/data.html",
-      "published_at": null,
-      "affected_symbols": [
         "SPY",
         "XLF"
       ]
     },
     {
-      "evidence_id": "POL_SEC_Reg_Filings",
+      "evidence_id": "FX_Dollar_Index_DigitSource",
+      "category": "rates",
+      "region": "Global",
+      "title": "美元指數（DXY）與外匯市場參考—用於交叉驗證美元趨勢",
+      "summary": "若要衡量美元環境（對外需、資本流向與以美元計價商品的影響），常用參考是美元指數（DXY）。本項提供外匯基準的查核入口；由於本次無法即時抓取最新 DXY 數值，需以該來源最新頁面為準。",
+      "market_relevance": "美元走強通常會壓抑新興市場風險偏好並造成美股部分獲利轉換與商品需求端的折算影響。",
+      "source_title": "ICE—U.S. Dollar Index (DXY) Futures (reference page)",
+      "source_url": "https://www.theice.com/marketdata/reports/",
+      "published_at": null,
+      "affected_symbols": [
+        "SPY"
+      ]
+    },
+    {
+      "evidence_id": "US_Politics_SEC_Reg_FilingPortal",
       "category": "us_politics",
       "region": "US",
-      "title": "SEC EDGAR：監管/政策變動與公司申報文件可追溯入口",
-      "summary": "在美國政治與監管方面，SEC 的 EDGAR 能用來追溯最新公司申報（如 10-Q、8-K、S-3、Form 4 等）及監管相關文件。此入口可作為核對政策/訴訟/風險揭露與資金動向的一手來源。",
-      "market_relevance": "市場常在 8-K、風險因素或訴訟更新時重定價公司信用與獲利彈性；同時監管訴訟/執法也可能改變特定產業（金融、科技平台等）的估值。",
-      "source_title": "U.S. Securities and Exchange Commission (SEC) – EDGAR",
-      "source_url": "https://www.sec.gov/edgar",
+      "title": "SEC 官方申報與公告入口—追蹤監管動作/風險偏好",
+      "summary": "SEC 的 EDGAR 與新聞公告頁提供公司申報、執法與規則相關動態的一手來源。可用於本次調查模式下快速確認：特定產業是否出現新風險（例如披露、資安、交易規則或執法）。",
+      "market_relevance": "監管與訴訟風險會迅速影響估值折價（尤其是金融、科技平台與半導體供應鏈），並改變市場對盈利可持續性的判斷。",
+      "source_title": "SEC—Newsroom / Press Releases & EDGAR links",
+      "source_url": "https://www.sec.gov/news",
+      "published_at": null,
+      "affected_symbols": [
+        "XLF",
+        "XLK",
+        "SMH"
+      ]
+    },
+    {
+      "evidence_id": "US_Politics_Fed_FOMC_Calendar",
+      "category": "us_politics",
+      "region": "US",
+      "title": "Fed 會議/事件日曆（FOMC）—用於政策路徑與利率尾端風險評估",
+      "summary": "FOMC 會議與相關日曆由聯準會官方提供，可用於本次「未來七日」及「尾端風險」的政策事件對照（例如是否有例會、講話、經濟數據集中發布）。本次需以日曆頁面核對實際日期與議程。",
+      "market_relevance": "政策事件的臨近通常提升波動或重估期限利率；對短期風險資產表現與成長股估值尤具影響。",
+      "source_title": "Federal Reserve—FOMC Calendars",
+      "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
       "published_at": null,
       "affected_symbols": [
         "SPY",
-        "XLK",
+        "TLT",
+        "QQQ"
+      ]
+    },
+    {
+      "evidence_id": "Labor_JobOpenings_BLS_JOLTS",
+      "category": "labor",
+      "region": "US",
+      "title": "職缺與人力需求（BLS JOLTS）—觀察勞動市場供需再平衡",
+      "summary": "BLS JOLTS 提供 Job Openings、Hire、Quits 等指標，是判斷勞動市場「供需是否再平衡」的重要前瞻資料。可用於確認薪資壓力是否因職缺回落而緩和。",
+      "market_relevance": "JOLTS 若顯示職缺下降但裁員未惡化，市場通常解讀為「軟著陸」；反之若 quits/工資壓力再起，利率預期可能上修。",
+      "source_title": "BLS—Job Openings and Labor Turnover Summary (JOLTS)",
+      "source_url": "https://www.bls.gov/news.release/jolts.htm",
+      "published_at": null,
+      "affected_symbols": [
+        "SPY",
         "XLF"
       ]
     },
     {
-      "evidence_id": "IND_EIA_Crude_Inventories",
+      "evidence_id": "US_Consumption_Census_RetailSales",
+      "category": "social_demand",
+      "region": "US",
+      "title": "零售銷售（U.S. Census：Retail Sales）—追蹤消費韌性",
+      "summary": "U.S. Census Bureau 的 Retail Sales 發布頁提供零售銷售總量與分項（如汽車/非耐久等）的一手數據。可用於確認消費是否在高利率環境下仍具韌性。",
+      "market_relevance": "消費動能影響服務業就業與企業營收預估；若零售走弱，週期股與信貸敏感板塊可能先承壓。",
+      "source_title": "U.S. Census—Monthly Retail Trade",
+      "source_url": "https://www.census.gov/retail/index.html",
+      "published_at": null,
+      "affected_symbols": [
+        "SPY",
+        "IWM",
+        "XLE",
+        "XLV"
+      ]
+    },
+    {
+      "evidence_id": "Energy_Supply_EIA_NatGas_Petroleum",
       "category": "industry",
       "region": "US",
-      "title": "EIA：原油庫存與供需（能源供給/成本傳導）",
-      "summary": "EIA 提供原油庫存、產量與進口/出口等能源供需資料，用於理解能源成本與通膨的傳導路徑。能源供需也會影響運輸、化工與部分企業毛利結構。",
-      "market_relevance": "能源價格波動會透過運輸/原料成本影響企業成本與利潤率，進而影響市場對通膨與降息的路徑預期。",
-      "source_title": "U.S. Energy Information Administration (EIA) – Petroleum & Other Liquids Data",
+      "title": "能源供需與庫存監測（EIA：Petroleum & Natural Gas）—供需與毛利壓力的重要輸入",
+      "summary": "EIA 的 Petroleum 與 Natural Gas 相關頁面提供庫存、產量與價格關聯資訊，能用於評估能源供需與成本端壓力。由於本次無法核對最新庫存數字，建議以 EIA 最新報表為準。",
+      "market_relevance": "能源價格/庫存變化會透過運輸成本、化工原料與電力成本影響多數產業毛利，進而牽動通膨預期與利率。",
+      "source_title": "EIA—Petroleum & Natural Gas Data (index)",
       "source_url": "https://www.eia.gov/petroleum/",
       "published_at": null,
       "affected_symbols": [
         "XLE",
-        "SPY"
+        "ERX",
+        "SMH"
       ]
     },
     {
-      "evidence_id": "TECH_FCC_News_5G_Broadband",
-      "category": "culture",
+      "evidence_id": "Tech_Capex_Guidance_IR_Disclosure",
+      "category": "industry",
       "region": "US",
-      "title": "FCC：通訊政策/頻譜與寬頻監理公告（科技與基建的政策驅動）",
-      "summary": "科技發展與資本支出不僅是企業決策，也受到監理與頻譜/通訊政策影響。FCC 官方公告可作為核對最新政策動向（頻譜、寬頻計畫、監理進展）的來源。",
-      "market_relevance": "若政策促進頻譜/網路建設或合規成本改變，可能影響電信/半導體供需與下游資本支出預期。",
-      "source_title": "Federal Communications Commission (FCC) – News/Announcements",
-      "source_url": "https://www.fcc.gov/news-events",
+      "title": "科技/半導體資本支出與產能供需—依公司 IR 指引與申報核對",
+      "summary": "半導體與雲端/AI 相關需求與供給（產能擴張、HBM/先進封裝、設備交期）需以公司 IR（投資人關係）與財報電話會議逐項核對資本支出與產能規劃。由於本次無即時存取公司最新財報內容能力，需以各公司 IR 最新頁面做核驗。",
+      "market_relevance": "Capex 指引變化常在短期反映為供應鏈估值重估（設備/材料/先進製程），同時影響成本分攤與後續毛利。",
+      "source_title": "NVIDIA Investor Relations (IR)",
+      "source_url": "https://investor.nvidia.com/",
       "published_at": null,
       "affected_symbols": [
+        "NVDA",
+        "SMH",
+        "SOXX",
+        "XLK"
+      ]
+    },
+    {
+      "evidence_id": "Company_Earnings_10Q_10K_EDGAR",
+      "category": "earnings",
+      "region": "US",
+      "title": "公司財報（SEC EDGAR：10-Q/10-K）—核對營收、淨利、成本與指引的可驗證來源",
+      "summary": "EDGAR 的 10-Q/10-K 是核對營收、毛利/營業費用、研發與成本結構的唯一可驗證一手入口。由於本次無法即時抓取特定公司的最新財報數字，需以 EDGAR 搜尋對應期間與申報版本為準。",
+      "market_relevance": "成本結構與指引（尤其是毛利率與費用成長）決定市場對「需求是否真實轉強」與「成本是否可控」的判斷，影響估值折價。",
+      "source_title": "SEC—EDGAR Company Filings Search",
+      "source_url": "https://www.sec.gov/edgar/search/",
+      "published_at": null,
+      "affected_symbols": [
+        "SPY",
         "XLK",
         "SMH"
       ]
     },
     {
-      "evidence_id": "GEO_UN_SecurityCouncil",
+      "evidence_id": "Global_Geopolitics_US_Defense_Statements",
       "category": "geopolitics",
       "region": "Global",
-      "title": "UN 安全理事會與秘書長相關更新（地緣政治風險的一手彙整）",
-      "summary": "地緣政治常透過航運、能源與供應鏈風險影響市場波動。可用聯合國安理會會議紀錄/新聞與秘書長更新作為地緣事件的相對一手來源。",
-      "market_relevance": "若地緣風險升溫，通常先反映在能源、保險成本與供應鏈溢價，並提升風險貼現率；也可能強化避險需求。",
-      "source_title": "United Nations – Security Council and related updates",
-      "source_url": "https://www.un.org/securitycouncil/",
+      "title": "地緣政治風險的官方追蹤入口（US DoD/State/UN）—用於核對制裁/衝突升溫訊號",
+      "summary": "地緣政治對供應鏈（能源、半導體材料、航運與保險成本）具有非線性影響。建議以美國國防部與國務院官方聲明或聯合國公告作為風險事件核驗來源；本次無法直接抓取「最新一則」內容，故提供官方入口做後續查核。",
+      "market_relevance": "制裁或衝突升溫會提高供應不確定性，擴大風險溢酬並影響期貨曲線與企業成本。",
+      "source_title": "U.S. Department of State—News/Statements",
+      "source_url": "https://www.state.gov/news/",
       "published_at": null,
       "affected_symbols": [
         "XLE",
-        "GLD",
+        "SMH",
         "SPY"
       ]
     },
     {
-      "evidence_id": "WORLD_IMF_WEO_Port",
+      "evidence_id": "China_Macro_NBS_Page",
       "category": "global_economy",
-      "region": "Global",
-      "title": "IMF：World Economic Outlook（宏觀成長假設與風險情境）",
-      "summary": "IMF 的 WEO 對主要國家（含歐洲、亞洲）提供成長與通膨假設，以及風險情境描述。可作為比較區域景氣位置與外需拉力的重要宏觀參考。",
-      "market_relevance": "外需與資本流動受全球景氣假設影響；不同區域成長差異也會改變美元利率敏感度與商品/科技需求預期。",
-      "source_title": "International Monetary Fund (IMF) – World Economic Outlook",
-      "source_url": "https://www.imf.org/en/Publications/WEO",
+      "region": "China",
+      "title": "中國宏觀指標一手來源（NBS：國民經濟核算/統計發布入口）",
+      "summary": "中國國家統計局（NBS）提供月度/季度宏觀數據發布入口，可用於追蹤工業生產、投資、社會零售與通膨等方向性變化。由於本次無法即時確認最新發布數字，需以 NBS 最新頁面核對。",
+      "market_relevance": "中國需求斜率與政策對全球商品與週期股影響顯著，亦會透過供應鏈訂單影響半導體與設備。",
+      "source_title": "National Bureau of Statistics of China—Data/News (official)",
+      "source_url": "https://www.stats.gov.cn/english/",
       "published_at": null,
       "affected_symbols": [
-        "SPY",
+        "SMH",
+        "XLE",
+        "IWM"
+      ]
+    },
+    {
+      "evidence_id": "Taiwan_Macro_DGBAS_Page",
+      "category": "global_economy",
+      "region": "Taiwan",
+      "title": "台灣景氣與產業供需的官方入口（DGBAS）",
+      "summary": "DGBAS（台灣主計總處）提供景氣、國民所得與統計發布，作為核對台灣需求端與產業景氣的官方來源。由於本次無法即時抓取最新一期，需以 DGBAS 最新發布頁面核驗。",
+      "market_relevance": "台灣是半導體供應鏈樞紐；景氣/投資與外需變化會提前反映台積電與供應商的訂單能見度。",
+      "source_title": "DGBAS—Directorate-General of Budget, Accounting and Statistics",
+      "source_url": "https://www.dgbas.gov.tw/mp.aspx?mp=1",
+      "published_at": null,
+      "affected_symbols": [
+        "TSM",
         "SMH"
       ]
     },
     {
-      "evidence_id": "CHN_PBOC_MonetaryPolicy_Repo",
-      "category": "industry",
-      "region": "China",
-      "title": "PBOC：貨幣政策與政策工具公告（可核對中國最新立場）",
-      "summary": "中國政策取向會透過信用投放、匯率與資本市場風險溢酬影響全球風險資產。可透過 PBOC 官方公告核對最新貨幣政策/操作口徑。",
-      "market_relevance": "若中國政策偏寬鬆且對需求/就業形成支撐，可能提升出口與大宗需求預期；反之將拉低部分亞洲供應鏈與科技硬體需求的市場假設。",
-      "source_title": "People's Bank of China (PBOC) – Policy and Notifications",
-      "source_url": "https://www.pbc.gov.cn/english/",
+      "evidence_id": "Japan_Macro_CabinetOffice_Page",
+      "category": "global_economy",
+      "region": "Japan",
+      "title": "日本官方景氣與物價參考（Cabinet Office / Statistics）",
+      "summary": "日本內閣府與統計機構的官方頁面用於追蹤景氣、物價與需求變化。由於本次缺乏即時抓取能力，僅能提供官方入口以便核對最新發布內容。",
+      "market_relevance": "日本的通膨與政策導向會影響日圓與全球金融條件，並透過設備/汽車/工業需求影響半導體製造與零組件鏈。",
+      "source_title": "Cabinet Office—Japan (official)",
+      "source_url": "https://www.cao.go.jp/index-e.html",
+      "published_at": null,
+      "affected_symbols": [
+        "SPY"
+      ]
+    },
+    {
+      "evidence_id": "Korea_Macro_BOK_BoS_Page",
+      "category": "global_economy",
+      "region": "Korea",
+      "title": "韓國宏觀與金融條件（BOK/Bank of Korea）官方入口",
+      "summary": "韓國央行（BOK）提供貨幣政策、經濟展望與金融統計等，適合作為核對韓國需求與金融條件的官方來源。由於本次無法即時確認最新公告內容，僅提供入口。",
+      "market_relevance": "韓國需求（尤其半導體材料/設備與出口）與美元/美債利率共同影響全球供應鏈與風險偏好。",
+      "source_title": "Bank of Korea—Monetary Policy / Economic Data (official)",
+      "source_url": "https://www.bok.or.kr/eng/main/main.do",
       "published_at": null,
       "affected_symbols": [
         "SMH",
-        "SOXX"
+        "IWM"
+      ]
+    },
+    {
+      "evidence_id": "Europe_ECB_Economic_Bulletin_Page",
+      "category": "global_economy",
+      "region": "Europe",
+      "title": "歐洲央行（ECB：Economic Bulletin）—追蹤歐洲成長與通膨傳導",
+      "summary": "ECB Economic Bulletin 彙整歐元區經濟、通膨與金融條件分析，適合作為判斷歐洲景氣與通膨是否偏離預期的官方參考。由於本次無法直接核對最新一期內容，需以 ECB 最新公告為準。",
+      "market_relevance": "歐洲通膨與利率路徑影響全球資金成本與匯率，並反向影響美股以出口為主的週期板塊估值。",
+      "source_title": "ECB—Economic Bulletin",
+      "source_url": "https://www.ecb.europa.eu/pub/eb/html/index.en.html",
+      "published_at": null,
+      "affected_symbols": [
+        "SPY",
+        "XLF"
       ]
     }
   ],
   "research_mode": "non_trading_day_survey",
-  "research_generated_at": "2026-08-08T10:55:01.774475Z",
+  "research_generated_at": "2026-08-10T15:31:57.977087Z",
   "warnings": [
-    "Yahoo Finance 資料可能延遲，僅供研究；下單前必須向券商核對價格。"
+    "Yahoo Finance 資料可能延遲，僅供研究；下單前必須向券商核對價格。",
+    "已排除尚未完成的美股當日 daily bar；行情、技術指標與績效只使用最近完成交易日。"
   ]
 }

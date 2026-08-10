@@ -1,21 +1,48 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-08T10:55:41.588206Z",
-  "pricing_cutoff": "2026-08-08T10:54:50.614589Z",
-  "pricing_session": "2026-08-08",
-  "from_run_id": "20260807T210423Z",
-  "to_run_id": "20260808T105541Z",
+  "generated_at": "2026-08-10T15:33:33.197810Z",
+  "pricing_cutoff": "2026-08-10T15:31:46.213057Z",
+  "pricing_session": "2026-08-07",
+  "from_run_id": "20260808T105541Z",
+  "to_run_id": "20260810T153333Z",
   "capital_usd": "6000.00",
   "status": "research_only",
   "basis": "以前一輪研究配置為比較基準，差額股數採最近已完成交易日收盤價估算。",
   "instructions": [
     {
+      "symbol": "GLD",
+      "action": "add",
+      "reference_close_usd": "398.470001",
+      "previous_target_usd": "0",
+      "new_target_usd": "600.00",
+      "change_usd": "600.00",
+      "estimated_share_change": "1.5058"
+    },
+    {
+      "symbol": "SPY",
+      "action": "add",
+      "reference_close_usd": "773.26001",
+      "previous_target_usd": "0",
+      "new_target_usd": "1200.00",
+      "change_usd": "1200.00",
+      "estimated_share_change": "1.5519"
+    },
+    {
+      "symbol": "TLT",
+      "action": "add",
+      "reference_close_usd": "82.760002",
+      "previous_target_usd": "0",
+      "new_target_usd": "600.00",
+      "change_usd": "600.00",
+      "estimated_share_change": "7.2499"
+    },
+    {
       "symbol": "CASH",
-      "action": "hold",
+      "action": "reduce",
       "reference_close_usd": null,
       "previous_target_usd": "6000.00",
-      "new_target_usd": "6000.00",
-      "change_usd": "0.00",
+      "new_target_usd": "3600.00",
+      "change_usd": "-2400.00",
       "estimated_share_change": null
     }
   ],
