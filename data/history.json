@@ -699,6 +699,8 @@
           "volume": 55370700,
           "as_of": "2026-07-24T06:59:39.276777Z",
           "price_session": "2026-07-23",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -709,6 +711,8 @@
           "volume": 43695900,
           "as_of": "2026-07-24T06:59:39.276777Z",
           "price_session": "2026-07-23",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -719,6 +723,8 @@
           "volume": 7907500,
           "as_of": "2026-07-24T06:59:39.276777Z",
           "price_session": "2026-07-23",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -729,6 +735,8 @@
           "volume": 57229200,
           "as_of": "2026-07-24T06:59:39.276777Z",
           "price_session": "2026-07-23",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -739,6 +747,8 @@
           "volume": 79600600,
           "as_of": "2026-07-24T06:59:39.276777Z",
           "price_session": "2026-07-23",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -749,6 +759,8 @@
           "volume": 110250900,
           "as_of": "2026-07-24T06:59:39.276777Z",
           "price_session": "2026-07-23",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -759,6 +771,8 @@
           "volume": 27050700,
           "as_of": "2026-07-24T06:59:39.276777Z",
           "price_session": "2026-07-23",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -769,6 +783,8 @@
           "volume": 29658700,
           "as_of": "2026-07-24T06:59:39.276777Z",
           "price_session": "2026-07-23",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -779,6 +795,8 @@
           "volume": 242300,
           "as_of": "2026-07-24T06:59:39.276777Z",
           "price_session": "2026-07-23",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -789,6 +807,8 @@
           "volume": 9408700,
           "as_of": "2026-07-24T06:59:39.276777Z",
           "price_session": "2026-07-23",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -799,6 +819,8 @@
           "volume": 29141800,
           "as_of": "2026-07-24T06:59:39.276777Z",
           "price_session": "2026-07-23",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -809,6 +831,8 @@
           "volume": 52614000,
           "as_of": "2026-07-24T06:59:39.276777Z",
           "price_session": "2026-07-23",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -819,6 +843,8 @@
           "volume": 31699,
           "as_of": "2026-07-24T06:59:39.276777Z",
           "price_session": "2026-07-24",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -829,6 +855,8 @@
           "volume": 0,
           "as_of": "2026-07-24T06:59:39.276777Z",
           "price_session": "2026-07-23",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -839,6 +867,8 @@
           "volume": 0,
           "as_of": "2026-07-24T06:59:39.276777Z",
           "price_session": "2026-07-23",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         }
       ],
@@ -1871,6 +1901,8 @@
           "volume": 44725600,
           "as_of": "2026-07-25T10:00:20.353794Z",
           "price_session": "2026-07-24",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -1881,6 +1913,8 @@
           "volume": 42783600,
           "as_of": "2026-07-25T10:00:20.353794Z",
           "price_session": "2026-07-24",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -1891,6 +1925,8 @@
           "volume": 19143000,
           "as_of": "2026-07-25T10:00:20.353794Z",
           "price_session": "2026-07-24",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -1901,6 +1937,8 @@
           "volume": 71289100,
           "as_of": "2026-07-25T10:00:20.353794Z",
           "price_session": "2026-07-24",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -1911,6 +1949,8 @@
           "volume": 68929900,
           "as_of": "2026-07-25T10:00:20.353794Z",
           "price_session": "2026-07-24",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -1921,6 +1961,8 @@
           "volume": 114672100,
           "as_of": "2026-07-25T10:00:20.353794Z",
           "price_session": "2026-07-24",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -1931,6 +1973,8 @@
           "volume": 27136700,
           "as_of": "2026-07-25T10:00:20.353794Z",
           "price_session": "2026-07-24",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -1941,6 +1985,8 @@
           "volume": 21090100,
           "as_of": "2026-07-25T10:00:20.353794Z",
           "price_session": "2026-07-24",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -1951,6 +1997,8 @@
           "volume": 268800,
           "as_of": "2026-07-25T10:00:20.353794Z",
           "price_session": "2026-07-24",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -1961,6 +2009,8 @@
           "volume": 3839800,
           "as_of": "2026-07-25T10:00:20.353794Z",
           "price_session": "2026-07-24",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -1971,6 +2021,8 @@
           "volume": 15056100,
           "as_of": "2026-07-25T10:00:20.353794Z",
           "price_session": "2026-07-24",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -1981,6 +2033,8 @@
           "volume": 56421100,
           "as_of": "2026-07-25T10:00:20.353794Z",
           "price_session": "2026-07-24",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -1991,6 +2045,8 @@
           "volume": 401934,
           "as_of": "2026-07-25T10:00:20.353794Z",
           "price_session": "2026-07-24",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -2001,6 +2057,8 @@
           "volume": 0,
           "as_of": "2026-07-25T10:00:20.353794Z",
           "price_session": "2026-07-24",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -2011,6 +2069,8 @@
           "volume": 0,
           "as_of": "2026-07-25T10:00:20.353794Z",
           "price_session": "2026-07-24",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         }
       ],
@@ -5692,6 +5752,8 @@
           "volume": 40901869,
           "as_of": "2026-07-29T01:10:51.913502Z",
           "price_session": "2026-07-28",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -5702,6 +5764,8 @@
           "volume": 49675490,
           "as_of": "2026-07-29T01:10:51.913502Z",
           "price_session": "2026-07-28",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -5712,6 +5776,8 @@
           "volume": 17209240,
           "as_of": "2026-07-29T01:10:51.913502Z",
           "price_session": "2026-07-28",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -5722,6 +5788,8 @@
           "volume": 119982290,
           "as_of": "2026-07-29T01:10:51.913502Z",
           "price_session": "2026-07-28",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -5732,6 +5800,8 @@
           "volume": 70761137,
           "as_of": "2026-07-29T01:10:51.913502Z",
           "price_session": "2026-07-28",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -5742,6 +5812,8 @@
           "volume": 125138253,
           "as_of": "2026-07-29T01:10:51.913502Z",
           "price_session": "2026-07-28",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -5752,6 +5824,8 @@
           "volume": 35827897,
           "as_of": "2026-07-29T01:10:51.913502Z",
           "price_session": "2026-07-28",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -5762,6 +5836,8 @@
           "volume": 42804212,
           "as_of": "2026-07-29T01:10:51.913502Z",
           "price_session": "2026-07-28",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -5772,6 +5848,8 @@
           "volume": 222437,
           "as_of": "2026-07-29T01:10:51.913502Z",
           "price_session": "2026-07-28",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -5782,6 +5860,8 @@
           "volume": 4399564,
           "as_of": "2026-07-29T01:10:51.913502Z",
           "price_session": "2026-07-28",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -5792,6 +5872,8 @@
           "volume": 25134648,
           "as_of": "2026-07-29T01:10:51.913502Z",
           "price_session": "2026-07-28",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -5802,6 +5884,8 @@
           "volume": 56056315,
           "as_of": "2026-07-29T01:10:51.913502Z",
           "price_session": "2026-07-28",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -5812,6 +5896,8 @@
           "volume": 35413,
           "as_of": "2026-07-29T01:10:51.913502Z",
           "price_session": "2026-07-28",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -5822,6 +5908,8 @@
           "volume": 0,
           "as_of": "2026-07-29T01:10:51.913502Z",
           "price_session": "2026-07-28",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -5832,6 +5920,8 @@
           "volume": 0,
           "as_of": "2026-07-29T01:10:51.913502Z",
           "price_session": "2026-07-28",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         }
       ],
@@ -9737,6 +9827,8 @@
           "volume": 40901869,
           "as_of": "2026-07-29T01:56:46.331210Z",
           "price_session": "2026-07-28",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -9747,6 +9839,8 @@
           "volume": 49675490,
           "as_of": "2026-07-29T01:56:46.331210Z",
           "price_session": "2026-07-28",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -9757,6 +9851,8 @@
           "volume": 17209240,
           "as_of": "2026-07-29T01:56:46.331210Z",
           "price_session": "2026-07-28",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -9767,6 +9863,8 @@
           "volume": 119982290,
           "as_of": "2026-07-29T01:56:46.331210Z",
           "price_session": "2026-07-28",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -9777,6 +9875,8 @@
           "volume": 70761137,
           "as_of": "2026-07-29T01:56:46.331210Z",
           "price_session": "2026-07-28",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -9787,6 +9887,8 @@
           "volume": 125138253,
           "as_of": "2026-07-29T01:56:46.331210Z",
           "price_session": "2026-07-28",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -9797,6 +9899,8 @@
           "volume": 35827897,
           "as_of": "2026-07-29T01:56:46.331210Z",
           "price_session": "2026-07-28",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -9807,6 +9911,8 @@
           "volume": 42804212,
           "as_of": "2026-07-29T01:56:46.331210Z",
           "price_session": "2026-07-28",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -9817,6 +9923,8 @@
           "volume": 222437,
           "as_of": "2026-07-29T01:56:46.331210Z",
           "price_session": "2026-07-28",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -9827,6 +9935,8 @@
           "volume": 4399564,
           "as_of": "2026-07-29T01:56:46.331210Z",
           "price_session": "2026-07-28",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -9837,6 +9947,8 @@
           "volume": 25134648,
           "as_of": "2026-07-29T01:56:46.331210Z",
           "price_session": "2026-07-28",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -9847,6 +9959,8 @@
           "volume": 56056315,
           "as_of": "2026-07-29T01:56:46.331210Z",
           "price_session": "2026-07-28",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -9857,6 +9971,8 @@
           "volume": 40575,
           "as_of": "2026-07-29T01:56:46.331210Z",
           "price_session": "2026-07-28",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -9867,6 +9983,8 @@
           "volume": 0,
           "as_of": "2026-07-29T01:56:46.331210Z",
           "price_session": "2026-07-28",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -9877,6 +9995,8 @@
           "volume": 0,
           "as_of": "2026-07-29T01:56:46.331210Z",
           "price_session": "2026-07-28",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         }
       ],
@@ -13810,6 +13930,8 @@
           "volume": 46934000,
           "as_of": "2026-07-29T18:10:26.733146Z",
           "price_session": "2026-07-28",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -13820,6 +13942,8 @@
           "volume": 50707300,
           "as_of": "2026-07-29T18:10:26.733146Z",
           "price_session": "2026-07-28",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -13830,6 +13954,8 @@
           "volume": 18324200,
           "as_of": "2026-07-29T18:10:26.733146Z",
           "price_session": "2026-07-28",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -13840,6 +13966,8 @@
           "volume": 120895100,
           "as_of": "2026-07-29T18:10:26.733146Z",
           "price_session": "2026-07-28",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -13850,6 +13978,8 @@
           "volume": 71183700,
           "as_of": "2026-07-29T18:10:26.733146Z",
           "price_session": "2026-07-28",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -13860,6 +13990,8 @@
           "volume": 133207800,
           "as_of": "2026-07-29T18:10:26.733146Z",
           "price_session": "2026-07-28",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -13870,6 +14002,8 @@
           "volume": 36005700,
           "as_of": "2026-07-29T18:10:26.733146Z",
           "price_session": "2026-07-28",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -13880,6 +14014,8 @@
           "volume": 43456400,
           "as_of": "2026-07-29T18:10:26.733146Z",
           "price_session": "2026-07-28",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -13890,6 +14026,8 @@
           "volume": 222600,
           "as_of": "2026-07-29T18:10:26.733146Z",
           "price_session": "2026-07-28",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -13900,6 +14038,8 @@
           "volume": 4803700,
           "as_of": "2026-07-29T18:10:26.733146Z",
           "price_session": "2026-07-28",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -13910,6 +14050,8 @@
           "volume": 25329500,
           "as_of": "2026-07-29T18:10:26.733146Z",
           "price_session": "2026-07-28",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -13920,6 +14062,8 @@
           "volume": 56364100,
           "as_of": "2026-07-29T18:10:26.733146Z",
           "price_session": "2026-07-28",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -13930,6 +14074,8 @@
           "volume": 352813,
           "as_of": "2026-07-29T18:10:26.733146Z",
           "price_session": "2026-07-28",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -13940,6 +14086,8 @@
           "volume": 0,
           "as_of": "2026-07-29T18:10:26.733146Z",
           "price_session": "2026-07-27",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -13950,6 +14098,8 @@
           "volume": 0,
           "as_of": "2026-07-29T18:10:26.733146Z",
           "price_session": "2026-07-28",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         }
       ],
@@ -18077,6 +18227,8 @@
           "volume": 70473800,
           "as_of": "2026-07-30T10:56:09.037492Z",
           "price_session": "2026-07-29",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -18087,6 +18239,8 @@
           "volume": 56713400,
           "as_of": "2026-07-30T10:56:09.037492Z",
           "price_session": "2026-07-29",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -18097,6 +18251,8 @@
           "volume": 19350800,
           "as_of": "2026-07-30T10:56:09.037492Z",
           "price_session": "2026-07-29",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -18107,6 +18263,8 @@
           "volume": 146833400,
           "as_of": "2026-07-30T10:56:09.037492Z",
           "price_session": "2026-07-29",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -18117,6 +18275,8 @@
           "volume": 101772300,
           "as_of": "2026-07-30T10:56:09.037492Z",
           "price_session": "2026-07-29",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -18127,6 +18287,8 @@
           "volume": 146961600,
           "as_of": "2026-07-30T10:56:09.037492Z",
           "price_session": "2026-07-29",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -18137,6 +18299,8 @@
           "volume": 32171500,
           "as_of": "2026-07-30T10:56:09.037492Z",
           "price_session": "2026-07-29",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -18147,6 +18311,8 @@
           "volume": 27036600,
           "as_of": "2026-07-30T10:56:09.037492Z",
           "price_session": "2026-07-29",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -18157,6 +18323,8 @@
           "volume": 281300,
           "as_of": "2026-07-30T10:56:09.037492Z",
           "price_session": "2026-07-29",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -18167,6 +18335,8 @@
           "volume": 11807100,
           "as_of": "2026-07-30T10:56:09.037492Z",
           "price_session": "2026-07-29",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -18177,6 +18347,8 @@
           "volume": 41320600,
           "as_of": "2026-07-30T10:56:09.037492Z",
           "price_session": "2026-07-29",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -18187,6 +18359,8 @@
           "volume": 66217600,
           "as_of": "2026-07-30T10:56:09.037492Z",
           "price_session": "2026-07-29",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -18197,6 +18371,8 @@
           "volume": 368026,
           "as_of": "2026-07-30T10:56:09.037492Z",
           "price_session": "2026-07-29",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -18207,6 +18383,8 @@
           "volume": 0,
           "as_of": "2026-07-30T10:56:09.037492Z",
           "price_session": "2026-07-29",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -18217,6 +18395,8 @@
           "volume": 0,
           "as_of": "2026-07-30T10:56:09.037492Z",
           "price_session": "2026-07-29",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         }
       ],
@@ -22406,6 +22586,8 @@
           "volume": 66725600,
           "as_of": "2026-07-31T06:39:51.365300Z",
           "price_session": "2026-07-30",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -22416,6 +22598,8 @@
           "volume": 66408600,
           "as_of": "2026-07-31T06:39:51.365300Z",
           "price_session": "2026-07-30",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -22426,6 +22610,8 @@
           "volume": 14105700,
           "as_of": "2026-07-31T06:39:51.365300Z",
           "price_session": "2026-07-30",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -22436,6 +22622,8 @@
           "volume": 107538600,
           "as_of": "2026-07-31T06:39:51.365300Z",
           "price_session": "2026-07-30",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -22446,6 +22634,8 @@
           "volume": 74486500,
           "as_of": "2026-07-31T06:39:51.365300Z",
           "price_session": "2026-07-30",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -22456,6 +22646,8 @@
           "volume": 128444400,
           "as_of": "2026-07-31T06:39:51.365300Z",
           "price_session": "2026-07-30",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -22466,6 +22658,8 @@
           "volume": 36765900,
           "as_of": "2026-07-31T06:39:51.365300Z",
           "price_session": "2026-07-30",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -22476,6 +22670,8 @@
           "volume": 27681100,
           "as_of": "2026-07-31T06:39:51.365300Z",
           "price_session": "2026-07-30",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -22486,6 +22682,8 @@
           "volume": 180100,
           "as_of": "2026-07-31T06:39:51.365300Z",
           "price_session": "2026-07-30",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -22496,6 +22694,8 @@
           "volume": 5952700,
           "as_of": "2026-07-31T06:39:51.365300Z",
           "price_session": "2026-07-30",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -22506,6 +22706,8 @@
           "volume": 40375000,
           "as_of": "2026-07-31T06:39:51.365300Z",
           "price_session": "2026-07-30",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -22516,6 +22718,8 @@
           "volume": 64525300,
           "as_of": "2026-07-31T06:39:51.365300Z",
           "price_session": "2026-07-30",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -22526,6 +22730,8 @@
           "volume": 327417,
           "as_of": "2026-07-31T06:39:51.365300Z",
           "price_session": "2026-07-30",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -22536,6 +22742,8 @@
           "volume": 0,
           "as_of": "2026-07-31T06:39:51.365300Z",
           "price_session": "2026-07-30",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -22546,6 +22754,8 @@
           "volume": 0,
           "as_of": "2026-07-31T06:39:51.365300Z",
           "price_session": "2026-07-30",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         }
       ],
@@ -26961,6 +27171,8 @@
           "volume": 19434966,
           "as_of": "2026-08-04T15:38:19.715163Z",
           "price_session": null,
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -26971,6 +27183,8 @@
           "volume": 22290734,
           "as_of": "2026-08-04T15:38:19.715163Z",
           "price_session": null,
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -26981,6 +27195,8 @@
           "volume": 7791748,
           "as_of": "2026-08-04T15:38:19.715163Z",
           "price_session": null,
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -26991,6 +27207,8 @@
           "volume": 3384708,
           "as_of": "2026-08-04T15:38:19.715163Z",
           "price_session": null,
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -27001,6 +27219,8 @@
           "volume": 1431039,
           "as_of": "2026-08-04T15:38:19.715163Z",
           "price_session": null,
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -27011,6 +27231,8 @@
           "volume": 3819996,
           "as_of": "2026-08-04T15:38:19.715163Z",
           "price_session": null,
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -27021,6 +27243,8 @@
           "volume": 42016726,
           "as_of": "2026-08-04T15:38:19.715163Z",
           "price_session": null,
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -27031,6 +27255,8 @@
           "volume": 35699937,
           "as_of": "2026-08-04T15:38:19.715163Z",
           "price_session": null,
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -27041,6 +27267,8 @@
           "volume": 46266203,
           "as_of": "2026-08-04T15:38:19.715163Z",
           "price_session": null,
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -27051,6 +27279,8 @@
           "volume": 14895945,
           "as_of": "2026-08-04T15:38:19.715163Z",
           "price_session": null,
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -27061,6 +27291,8 @@
           "volume": 88967810,
           "as_of": "2026-08-04T15:38:19.715163Z",
           "price_session": null,
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -27071,6 +27303,8 @@
           "volume": 140465,
           "as_of": "2026-08-04T15:38:19.715163Z",
           "price_session": null,
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -27081,6 +27315,8 @@
           "volume": 2428528,
           "as_of": "2026-08-04T15:38:19.715163Z",
           "price_session": null,
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -27091,6 +27327,8 @@
           "volume": 13877189,
           "as_of": "2026-08-04T15:38:19.715163Z",
           "price_session": null,
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -27101,6 +27339,8 @@
           "volume": 41596166,
           "as_of": "2026-08-04T15:38:19.715163Z",
           "price_session": null,
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -27111,6 +27351,8 @@
           "volume": 226402,
           "as_of": "2026-08-04T15:38:19.715163Z",
           "price_session": null,
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -27121,6 +27363,8 @@
           "volume": 0,
           "as_of": "2026-08-04T15:38:19.715163Z",
           "price_session": null,
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -27131,6 +27375,8 @@
           "volume": 0,
           "as_of": "2026-08-04T15:38:19.715163Z",
           "price_session": null,
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         }
       ],
@@ -33122,6 +33368,8 @@
           "volume": 69059900,
           "as_of": "2026-08-05T12:20:27.256629Z",
           "price_session": "2026-08-04",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -33132,6 +33380,8 @@
           "volume": 59441100,
           "as_of": "2026-08-05T12:20:27.256629Z",
           "price_session": "2026-08-04",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -33142,6 +33392,8 @@
           "volume": 9382200,
           "as_of": "2026-08-05T12:20:27.256629Z",
           "price_session": "2026-08-04",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -33152,6 +33404,8 @@
           "volume": 77161700,
           "as_of": "2026-08-05T12:20:27.256629Z",
           "price_session": "2026-08-04",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -33162,6 +33416,8 @@
           "volume": 72847200,
           "as_of": "2026-08-05T12:20:27.256629Z",
           "price_session": "2026-08-04",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -33172,6 +33428,8 @@
           "volume": 133610200,
           "as_of": "2026-08-05T12:20:27.256629Z",
           "price_session": "2026-08-04",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -33182,6 +33440,8 @@
           "volume": 47385900,
           "as_of": "2026-08-05T12:20:27.256629Z",
           "price_session": "2026-08-04",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -33192,6 +33452,8 @@
           "volume": 174326200,
           "as_of": "2026-08-05T12:20:27.256629Z",
           "price_session": "2026-08-04",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -33202,6 +33464,8 @@
           "volume": 282100,
           "as_of": "2026-08-05T12:20:27.256629Z",
           "price_session": "2026-08-04",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -33212,6 +33476,8 @@
           "volume": 5627900,
           "as_of": "2026-08-05T12:20:27.256629Z",
           "price_session": "2026-08-04",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -33222,6 +33488,8 @@
           "volume": 38365000,
           "as_of": "2026-08-05T12:20:27.256629Z",
           "price_session": "2026-08-04",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -33232,6 +33500,8 @@
           "volume": 78312600,
           "as_of": "2026-08-05T12:20:27.256629Z",
           "price_session": "2026-08-04",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -33242,6 +33512,8 @@
           "volume": 294823,
           "as_of": "2026-08-05T12:20:27.256629Z",
           "price_session": "2026-08-04",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -33252,6 +33524,8 @@
           "volume": 0,
           "as_of": "2026-08-05T12:20:27.256629Z",
           "price_session": "2026-08-04",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -33262,6 +33536,8 @@
           "volume": 0,
           "as_of": "2026-08-05T12:20:27.256629Z",
           "price_session": "2026-08-04",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         }
       ],
@@ -37547,6 +37823,8 @@
           "volume": 31405995,
           "as_of": "2026-07-23T17:43:21.745224Z",
           "price_session": null,
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -37557,6 +37835,8 @@
           "volume": 27446960,
           "as_of": "2026-07-23T17:43:21.745224Z",
           "price_session": null,
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -37567,6 +37847,8 @@
           "volume": 3789565,
           "as_of": "2026-07-23T17:43:21.745224Z",
           "price_session": null,
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -37577,6 +37859,8 @@
           "volume": 38671977,
           "as_of": "2026-07-23T17:43:21.745224Z",
           "price_session": null,
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -37587,6 +37871,8 @@
           "volume": 61491214,
           "as_of": "2026-07-23T17:43:21.745224Z",
           "price_session": null,
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -37597,6 +37883,8 @@
           "volume": 61973208,
           "as_of": "2026-07-23T17:43:21.745224Z",
           "price_session": null,
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -37607,6 +37895,8 @@
           "volume": 16686808,
           "as_of": "2026-07-23T17:43:21.745224Z",
           "price_session": null,
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -37617,6 +37907,8 @@
           "volume": 17155205,
           "as_of": "2026-07-23T17:43:21.745224Z",
           "price_session": null,
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -37627,6 +37919,8 @@
           "volume": 179166,
           "as_of": "2026-07-23T17:43:21.745224Z",
           "price_session": null,
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -37637,6 +37931,8 @@
           "volume": 6505227,
           "as_of": "2026-07-23T17:43:21.745224Z",
           "price_session": null,
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -37647,6 +37943,8 @@
           "volume": 20781703,
           "as_of": "2026-07-23T17:43:21.745224Z",
           "price_session": null,
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -37657,6 +37955,8 @@
           "volume": 40907372,
           "as_of": "2026-07-23T17:43:21.745224Z",
           "price_session": null,
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -37667,6 +37967,8 @@
           "volume": 303386,
           "as_of": "2026-07-23T17:43:21.745224Z",
           "price_session": null,
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -37677,6 +37979,8 @@
           "volume": 0,
           "as_of": "2026-07-23T17:43:21.745224Z",
           "price_session": null,
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -37687,6 +37991,8 @@
           "volume": 0,
           "as_of": "2026-07-23T17:43:21.745224Z",
           "price_session": null,
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         }
       ],
@@ -38441,6 +38747,8 @@
           "volume": 44725600,
           "as_of": "2026-07-25T10:00:20.353794Z",
           "price_session": "2026-07-24",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -38451,6 +38759,8 @@
           "volume": 42783600,
           "as_of": "2026-07-25T10:00:20.353794Z",
           "price_session": "2026-07-24",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -38461,6 +38771,8 @@
           "volume": 19143000,
           "as_of": "2026-07-25T10:00:20.353794Z",
           "price_session": "2026-07-24",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -38471,6 +38783,8 @@
           "volume": 71289100,
           "as_of": "2026-07-25T10:00:20.353794Z",
           "price_session": "2026-07-24",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -38481,6 +38795,8 @@
           "volume": 68929900,
           "as_of": "2026-07-25T10:00:20.353794Z",
           "price_session": "2026-07-24",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -38491,6 +38807,8 @@
           "volume": 114672100,
           "as_of": "2026-07-25T10:00:20.353794Z",
           "price_session": "2026-07-24",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -38501,6 +38819,8 @@
           "volume": 27136700,
           "as_of": "2026-07-25T10:00:20.353794Z",
           "price_session": "2026-07-24",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -38511,6 +38831,8 @@
           "volume": 21090100,
           "as_of": "2026-07-25T10:00:20.353794Z",
           "price_session": "2026-07-24",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -38521,6 +38843,8 @@
           "volume": 268800,
           "as_of": "2026-07-25T10:00:20.353794Z",
           "price_session": "2026-07-24",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -38531,6 +38855,8 @@
           "volume": 3839800,
           "as_of": "2026-07-25T10:00:20.353794Z",
           "price_session": "2026-07-24",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -38541,6 +38867,8 @@
           "volume": 15056100,
           "as_of": "2026-07-25T10:00:20.353794Z",
           "price_session": "2026-07-24",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -38551,6 +38879,8 @@
           "volume": 56421100,
           "as_of": "2026-07-25T10:00:20.353794Z",
           "price_session": "2026-07-24",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -38561,6 +38891,8 @@
           "volume": 401934,
           "as_of": "2026-07-25T10:00:20.353794Z",
           "price_session": "2026-07-24",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -38571,6 +38903,8 @@
           "volume": 0,
           "as_of": "2026-07-25T10:00:20.353794Z",
           "price_session": "2026-07-24",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         },
         {
@@ -38581,6 +38915,8 @@
           "volume": 0,
           "as_of": "2026-07-25T10:00:20.353794Z",
           "price_session": "2026-07-24",
+          "price_timestamp": null,
+          "price_mode": null,
           "source": "Yahoo Finance via yfinance"
         }
       ],
@@ -41519,6 +41855,7 @@
   {
     "archive_id": "review-20260724T031844Z",
     "decision_review": {
+      "reviewed_run_id": "manual-20260724T014200+0800",
       "methodology": {
         "pricing_source": "Yahoo Finance via yfinance",
         "assumptions": [
@@ -41533,11 +41870,18 @@
           "Yahoo Finance 資料可能延遲；任何人工交易前仍須向券商核對價格。"
         ]
       },
-      "status": "hypothetical",
-      "generated_at": "2026-07-24T03:19:58Z",
-      "currency": "USD",
-      "ending_value_usd": "6043.04",
       "return_percent": "0.7173",
+      "committee_rerun": {
+        "requested_at": "2026-07-24T03:19:15Z",
+        "github_actions_run_id": "30063924394",
+        "status": "rejected",
+        "reason": "GitHub Actions 未設定 OPENAI_API_KEY；安全閘門在任何模型呼叫或資料寫入前中止。",
+        "recommendation_changed": false
+      },
+      "schema_version": "1.0",
+      "profit_loss_usd": "43.04",
+      "ending_value_usd": "6043.04",
+      "evaluation_end": "2026-07-23T20:00:00Z",
       "assessment": {
         "verdict": "too_early_to_validate",
         "summary": "從建議快照到同一交易日收盤，假設組合為正報酬；AMD、PLTR 與 SOXL 是主要正貢獻，NVDA 與 ERX 為負貢獻。評估期間只有約 2 小時 17 分，仍不足以判定原始決策整體正確；依更新後政策，必須在第 2 至第 3 個交易日內完成正式驗證，且每週至少完成兩次決策檢視。",
@@ -41551,16 +41895,11 @@
           "極短評估窗不足以檢驗事件催化或風險界線；最遲須在第 3 個交易日重新決策。"
         ]
       },
-      "schema_version": "1.0",
-      "reviewed_run_id": "manual-20260724T014200+0800",
-      "committee_rerun": {
-        "requested_at": "2026-07-24T03:19:15Z",
-        "github_actions_run_id": "30063924394",
-        "status": "rejected",
-        "reason": "GitHub Actions 未設定 OPENAI_API_KEY；安全閘門在任何模型呼叫或資料寫入前中止。",
-        "recommendation_changed": false
-      },
+      "review_id": "review-20260724T031844Z",
+      "currency": "USD",
       "starting_value_usd": "6000.00",
+      "generated_at": "2026-07-24T03:19:58Z",
+      "status": "hypothetical",
       "positions": [
         {
           "symbol": "AMD",
@@ -41626,9 +41965,6 @@
           "ending_value_usd": "300.00"
         }
       ],
-      "evaluation_end": "2026-07-23T20:00:00Z",
-      "review_id": "review-20260724T031844Z",
-      "profit_loss_usd": "43.04",
       "evaluation_start": "2026-07-23T17:43:21.745224Z"
     }
   }
