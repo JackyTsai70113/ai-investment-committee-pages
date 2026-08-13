@@ -1,17 +1,17 @@
 {
   "schema_version": "1.0",
-  "review_id": "learning-20260812T135049Z",
-  "reviewed_run_id": "20260811T115902Z",
-  "generated_at": "2026-08-12T13:50:49.929480Z",
-  "evaluation_cutoff": "2026-08-12T13:49:59.783882Z",
+  "review_id": "learning-20260813T111416Z",
+  "reviewed_run_id": "20260812T135115Z",
+  "generated_at": "2026-08-13T11:14:16.186908Z",
+  "evaluation_cutoff": "2026-08-13T11:13:38.278780Z",
   "evidence_source": "Yahoo Finance via yfinance",
   "verdict": "mixed",
   "lessons": [
     {
-      "title": "7日尺度已由缺口恢復到可計算，但樣本極少",
-      "evidence": "短期績效證據顯示 short_window_evidence：3日 completed_windows=5、positive_windows=3、latest_return_percent=0.9068；7日 completed_windows=1、positive_windows=1、latest_return_percent=1.2201。相較前一輪 7日=0，本輪至少出現 1 個可用的 7日完成視窗，但樣本量仍過小，難以支撐可重複的統計性結論。",
-      "implication": "委員會可從「不可驗證」升級為「仍待強化驗證」，但不得把 7日 latest_return_percent 或 1/1 正窗直接等同於策略優勢；後續調整應要求更多完成視窗累積後再評估是否 supported/challenged。",
-      "confidence": 78,
+      "title": "7日完成交易日視窗已恢復可計算，但樣本量仍過小",
+      "evidence": "短期績效證據顯示 7 日完成交易日：completed_windows=2、positive_windows=2、latest_return_percent=1.2167；相較前一輪曾出現 7 日缺口（0），本輪已可進行 7 日尺度的基本方向性觀察，但僅 2 個樣本仍不足以支撐可重複的統計性結論。",
+      "implication": "委員會可由「硬門檻缺口」狀態轉為「仍待驗證」；但在 7 日完成視窗尚未累積到足夠數量前，禁止把 7 日 latest_return_percent 或 2/2 正窗直接等同為策略優勢或可交易淨邊際。",
+      "confidence": 86,
       "affected_assets": [
         "SPY",
         "GLD",
@@ -20,10 +20,10 @@
       ]
     },
     {
-      "title": "3日尺度呈正向但不構成跨尺度穩定性",
-      "evidence": "短期績效證據中 3日 completed_windows=5、positive_windows=3，且 latest_return_percent=0.9068 為正；但同一證據下 7日僅 completed_windows=1，無法完成 3日/7日的穩定性與一致性驗證（僅靠單一最新 7日結果不足）。",
-      "implication": "委員會後續應把「3日正向」定位為訊號而非決策依據：在 7日樣本繼續擴充前，避免以方向性敘事來調高股票/黃金/長債的風險曝險。",
-      "confidence": 74,
+      "title": "3日呈正但不得用以取代7日尺度的一致性驗證",
+      "evidence": "短期績效證據顯示 3 日完成交易日：completed_windows=6、positive_windows=4、latest_return_percent=1.3114；雖然方向為正且樣本多於 7 日，但短期績效政策要求以 [3,7] 完成視窗作為 verdict 依據，仍需避免用 3 日結果外推未來 7 日表現。",
+      "implication": "後續調整風險曝險或敘事強度時，必須以 7 日視窗擴充後的整體表現為主；3 日僅作為補充訊號，並在報告中與 7 日分欄呈現，避免「只看較短尺度」導致的過度樂觀。",
+      "confidence": 80,
       "affected_assets": [
         "SPY",
         "GLD",
@@ -31,9 +31,9 @@
       ]
     },
     {
-      "title": "事件日曆仍缺失，限制路徑解釋與風險對齊",
-      "evidence": "最新輸入中 event_calendar input_mode=missing_fail_closed，fomc/bls/nyse/earnings 均為 missing，且顯示找不到 point-in-time 官方事件快照。這會使觀察到的短期回報難以可靠對齊重大官方事件，降低因果敘事的可信度。",
-      "implication": "委員會即使看到短窗正報酬，也應把它視為未對齊事件背景的結果；在官方事件快照補齊前，避免把回報歸因為特定政策/數據而提高信心。",
+      "title": "事件日曆仍 missing_fail_closed，限制因果解釋與風險對齊的信心",
+      "evidence": "最新輸入的 event_calendar 仍為 input_mode=missing_fail_closed，fomc/bls/nyse/earnings 均顯示 missing，且明確指出未取得 point-in-time 官方事件快照；因此難以把觀察到的短期回報可靠對齊到特定官方事件窗口。",
+      "implication": "委員會在撰寫後續學習時，應把「事件對齊能力缺口」列為主要不確定性來源；即使回報在 3/7 日呈正，也不得將其歸因於特定政策/數據以提高信心。",
       "confidence": 92,
       "affected_assets": [
         "SPY",
@@ -43,29 +43,29 @@
       ]
     },
     {
-      "title": "確定性計算證據顯示本輪部位點差波動，但不得替代完成視窗驗證",
-      "evidence": "確定性計算證據 positions 顯示：SPY return_percent=+0.06597、GLD return_percent=+0.88811、TLT return_percent=+0.32903（以給定研究用更新點計）。然而這些是點差歸因，且方法聲明忽略手續費、價差、滑價、稅負與匯率；依政策規範，不可用單日/點差取代完成交易日視窗的淨報酬驗證。",
-      "implication": "委員會報告需維持分欄：用 positions 只做「背景波動解釋」，用 completed_windows（3/7日）做 verdict 支撐。即便點差多為正，也不應據此宣稱策略可交易淨邊際。",
-      "confidence": 81,
+      "title": "確定性計算的單次點差/估值變動不可替代完成視窗的淨報酬驗證",
+      "evidence": "確定性計算證據顯示截至當前評價點的部位單次點差/估值變動：SPY 為 -0.1357%、GLD -0.2942%、TLT -0.2672%、NVDA +0.4527%；且方法聲明為研究策略指數、忽略手續費/價差/滑價/稅負/匯率，並非完成視窗的多日淨報酬。",
+      "implication": "委員會需在報告中嚴格分離：以 short_window_evidence 的 [3,7] 完成視窗結果作為 verdict 載體；positions 的單次點差只能用於背景歸因，不可用來提升 supported/challenged 的結論強度。",
+      "confidence": 84,
       "affected_assets": [
         "SPY",
         "GLD",
-        "TLT"
+        "TLT",
+        "NVDA"
       ]
     }
   ],
   "committee_changes": [
-    "下一輪必須同時呈現 3日與 7日的 completed_windows、positive_windows 與 latest_return_percent；僅在 7日樣本持續擴充後，才允許把 verdict 由 mixed 推向 supported（不得只看單一 7日窗）。",
-    "禁止把 positions 的 return_percent 或單日市場上行（如快照漲跌、RSI/距離均線）升級為 supported/mixed/challenged 的證據；僅允許當作背景歸因材料。",
-    "將事件日曆缺失（fomc/bls/nyse/earnings missing_fail_closed）列為主要不確定性來源，並在報告中維持其信心折減權重；直到補齊 point-in-time 快照才考慮提高因果解釋。",
-    "若委員會要調整權重方向性（例如降低 CASH 或提高風險資產），必須先等待至少數個更多的 7日完成視窗累積，且不得以未達統計成熟門檻的資料做「預期為正」的強敘事。"
+    "下一輪驗證報告需同時列出 3 日與 7 日：completed_windows、positive_windows 航跡與 latest_return_percent（或缺失原因），並在 7 日樣本仍偏少時維持 verdict= mixed 的保守表述標準。",
+    "維持政策分離：禁止使用 positions 單次 return_percent / 當日估值變動 / RSI 或單日漲跌來取代完成視窗淨報酬證據；這些僅允許作背景歸因或風險敘事補充。",
+    "將事件日曆缺口（fomc/bls/nyse/earnings missing_fail_closed）列為主要信心折減因子，直到恢復可驗證 point-in-time 官方快照；之後若 7 日樣本擴充，再逐步提高因果敘事品質。",
+    "若後續再次出現 7 日 completed_windows 仍極低或回到缺口（例如 0），需直接降級回 too_early，不得因 3 日正向而升級。"
   ],
-  "member_assessment": "本輪相較上一輪的核心變化是：7日完成交易日視窗已從 0 恢復為可用樣本（completed_windows=1、positive_windows=1、latest_return_percent=1.2201），因此不再符合「too_early（7日缺口）」的硬門檻。但由於 7日樣本量仍極少，且事件日曆仍 missing_fail_closed，限制事件對齊與因果解釋；同時 3日雖正向（completed_windows=5、positive_windows=3、latest_return_percent=0.9068），也尚不足以在跨尺度上證明可重複性。綜合上述，維持 verdict=mixed：承認7日開始出現可觀察訊號，但仍需更多完成視窗與事件資料補齊才能提高信心。",
-  "skill_assessment": "本輪驗證流程可重複且方向正確：系統已正確讀取短期績效政策所需的 3日/7日 completed_windows 與 positive_windows，並在 7日從 0 變為 1 時更新到非 too_early 的狀態。同時亦能遵守政策分離要求：不把 positions 的點差 return_percent 直接當作完成視窗淨報酬證據；主要需要改進的是報告層級的敘事紀律——即便 7日出現正向，也必須以樣本不足為信心折減，不得過早升級為 supported。",
+  "member_assessment": "本輪的關鍵變化是 7 日完成交易日視窗已恢復可計算（completed_windows=2、positive_windows=2、latest_return_percent=1.2167），因此相較前幾輪「7 日缺口」已可超越 too_early 的硬門檻。但由於 7 日樣本量仍偏少，且事件日曆依然 missing_fail_closed 限制事件對齊與因果解釋信心；此外 positions 的單次點差/估值變動不能替代完成視窗的淨報酬驗證。綜合以上，維持 verdict=mixed（仍待樣本擴充與事件資料補齊後再升級）。",
+  "skill_assessment": "本輪驗證可重複且符合規範：已正確以 short_window_evidence 的 [3,7] completed_windows/positive_windows 判讀多日尺度可用性，並把 7 日從缺口狀態更新為可計算狀態；同時也遵守了「不得用單日/點差替代完成視窗」的分離要求。後續主要需要在報告紀律上加強：在 7 日樣本仍少時不過早升級結論強度，並持續明確揭露事件日曆缺口對信心的限制。",
   "warnings": [
-    "本評估僅根據提供之研究用價格快照與 short_window_evidence/確定性計算證據；不代表實際下單成交、也未扣除手續費、價差、滑價、稅負與匯率。",
-    "雖已出現 7日完成視窗，但僅 1 個樣本，尚不足以支持穩定勝率或可重複的統計性結論。",
-    "事件日曆仍為 missing_fail_closed（fomc/bls/nyse/earnings 缺 point-in-time 輸入），限制回報的事件對齊與因果敘事可信度。",
-    "任何以單日/點差指標或當日市場快照（如技術指標/漲跌）推導多日優勢的做法皆不符合政策要求。"
+    "截至資料截止時間，本次 only 有 7 日完成交易日 completed_windows=2；樣本不足以支持統計性勝率/可重複優勢的強敘述，因此 verdict 只能維持保守（mixed）。",
+    "事件日曆仍缺失（fomc/bls/nyse/earnings missing_fail_closed），限制回報與外生事件窗口對齊的可信度；任何因果化解釋都應降低信心。",
+    "確定性計算方法忽略手續費、價差、滑價、稅負與匯率；即使多日視窗呈正，亦不代表未來可交易的扣摩擦淨報酬必然為正。"
   ]
 }
