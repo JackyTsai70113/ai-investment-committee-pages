@@ -1,38 +1,38 @@
 {
   "schema_version": "1.0",
-  "run_id": "20260813T111426Z",
-  "generated_at": "2026-08-13T11:14:26.444981Z",
-  "data_cutoff": "2026-08-13T11:13:38.278780Z",
+  "run_id": "20260814T111207Z",
+  "generated_at": "2026-08-14T11:12:07.511917Z",
+  "data_cutoff": "2026-08-14T11:11:22.482523Z",
   "status": "live",
   "capital_usd": "6000.00",
-  "model_score": 95,
-  "model_score_reason": "方向一致度 95/100；10 位提案委員按信心加權，0 項協商後否決仍未解除，扣除 0 分。",
-  "risk_level": "high",
-  "expected_horizon": "研究觀察期為下一個至最多 3 個完成交易日；本配置不是成交指示。下一個完成交易日須重新驗證，尤其檢查 3/7 日視窗、事件日曆與資料完整性。",
+  "model_score": 98,
+  "model_score_reason": "方向一致度 98/100；10 位提案委員按信心加權，0 項協商後否決仍未解除，扣除 0 分。",
+  "risk_level": "moderate",
+  "expected_horizon": "研究建議持有 1 至 3 個完成交易日；下一個完成交易日重新核對價格、趨勢、波動與失效條件。這不是成交指示，也不代表保證報酬。",
   "allocations": [
     {
       "symbol": "CASH",
       "asset_type": "cash",
-      "target_weight": "0.6",
-      "target_amount_usd": "3600.00",
+      "target_weight": "0.4",
+      "target_amount_usd": "2400.00",
       "action": "reduce",
-      "note": "保留政策允許的最高現金比重；事件日曆 missing_fail_closed、利率資料不足且交易摩擦未知。"
+      "note": "資料缺口、事件時間未驗證且完成視窗統計缺失，保留最大部位以控制回撤與交易摩擦風險。"
     },
     {
       "symbol": "SPY",
       "asset_type": "etf",
-      "target_weight": "0.2",
-      "target_amount_usd": "1200.00",
+      "target_weight": "0.25",
+      "target_amount_usd": "1500.00",
       "action": "buy",
-      "note": "作為廣泛市場的有限風險曝險；不以 RSI、單日漲幅或短樣本視窗宣稱優勢。"
+      "note": "僅有限度表達 risk-on 背景；SPY 趨勢向上但 RSI 偏高，故不追求滿倉曝險。"
     },
     {
-      "symbol": "NVDA",
-      "asset_type": "stock",
-      "target_weight": "0.1",
-      "target_amount_usd": "600.00",
+      "symbol": "TLT",
+      "asset_type": "etf",
+      "target_weight": "0.15",
+      "target_amount_usd": "900.00",
       "action": "buy",
-      "note": "僅作小幅相對動能研究曝險；單一股票權重控制在政策上限內，且不把財務資料直接轉化為短期報酬承諾。"
+      "note": "作為與股票風險不同的利率敏感分散部位；目前長債趨勢偏弱，權重因此受限。"
     },
     {
       "symbol": "GLD",
@@ -40,33 +40,40 @@
       "target_weight": "0.1",
       "target_amount_usd": "600.00",
       "action": "buy",
-      "note": "作為與股票不同的分散部位；其 RSI 偏高，故限制權重並等待後續視窗驗證。"
+      "note": "提供股票與利率風險以外的分散效果；近期仍在 20 日上升，但最新日下跌且 RSI 偏高，採小部位。"
+    },
+    {
+      "symbol": "NVDA",
+      "asset_type": "stock",
+      "target_weight": "0.1",
+      "target_amount_usd": "600.00",
+      "action": "buy",
+      "note": "近期 5 日與 20 日報酬為正、仍高於均線，但個股集中與估值風險未充分驗證，限制在小部位。"
     }
   ],
   "top_reasons": [
     {
       "id": 1,
-      "title": "官方事件快照不足，改為保守決策",
-      "summary": "官方事件快照完整性不足：官方事件快照未形成可驗證輸入，請先追查官方日曆資料是否有完整回傳。。本輪不以缺漏作為硬性拒絕，而是先依現有可驗證資料完成配置，並保留資料缺漏追查責任，不把缺漏直接轉成風險否決。",
-      "confidence": 95,
-      "category": "policy",
-      "affected_assets": [
-        "SPY",
-        "NVDA",
-        "GLD"
-      ],
-      "source_urls": []
-    },
-    {
-      "id": 2,
-      "title": "市場狀態仍標示為 risk_on",
-      "summary": "市場快照的 regime.trend 為 risk_on，VIX 最新值為 14.55，且 volatility 狀態為 normal；這支持保留有限風險資產曝險，但不足以支持高信心加碼。",
-      "confidence": 72,
+      "title": "市場背景仍為 risk-on",
+      "summary": "快照將市場狀態列為 trend=risk_on、volatility=normal、rates=stable；SPY 20 日報酬為 3.617865%，且高於 50 日均線 3.92735%。這支持保留有限股票曝險，但不足以支持高信心加碼。",
+      "confidence": 70,
       "category": "macro",
       "affected_assets": [
         "SPY",
-        "NVDA",
-        "GLD"
+        "CASH"
+      ],
+      "source_urls": [
+        "https://finance.yahoo.com/"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "SPY 短中期趨勢向上",
+      "summary": "SPY 最新完成日上漲 0.697746%，5 日與 20 日報酬分別為 1.212658% 與 3.617865%，價格高於 MA20 3.092729% 及 MA50 3.92735%；因此配置有限 SPY，而非完全退出風險資產。",
+      "confidence": 68,
+      "category": "momentum",
+      "affected_assets": [
+        "SPY"
       ],
       "source_urls": [
         "https://finance.yahoo.com/"
@@ -74,27 +81,26 @@
     },
     {
       "id": 3,
-      "title": "SPY 中短期方向仍為正",
-      "summary": "SPY 的 5 日報酬為 0.350747%，20 日報酬為 2.34231%，且距 MA20 與 MA50 分別為 2.562978% 與 3.257745%；這是保留小幅 SPY 配置的直接快照證據。",
-      "confidence": 68,
-      "category": "momentum",
+      "title": "SPY 技術過熱限制部位",
+      "summary": "SPY RSI14 為 76.791863，且價格明顯高於 MA20 與 MA50。這是回吐與盤整的風險警示，不是已驗證的反向交易訊號，因此以 25% 權重表達而不使用 SQQQ。",
+      "confidence": 78,
+      "category": "technical",
       "affected_assets": [
-        "SPY"
+        "SPY",
+        "SQQQ"
       ],
       "source_urls": [
-        "https://finance.yahoo.com/quote/SPY/"
+        "https://finance.yahoo.com/"
       ]
     },
     {
       "id": 4,
-      "title": "3 日視窗最新結果為正但樣本不足",
-      "summary": "本輪假設驗證顯示 3 日完成視窗為 6 個、正向 4 個，最新報酬為 1.3114%；方向偏正，但樣本仍不足，不能外推成穩定優勢。",
+      "title": "NVDA 動能優於部分半導體個股",
+      "summary": "NVDA 1 日、5 日與 20 日報酬分別為 0.539965%、2.881409% 與 8.63067%，且高於 MA20 7.656105% 與 MA50 9.203856%；但個股波動年化 39.305605%，故只配置 10%。",
       "confidence": 64,
-      "category": "technical",
+      "category": "momentum",
       "affected_assets": [
-        "SPY",
-        "GLD",
-        "CASH"
+        "NVDA"
       ],
       "source_urls": [
         "https://finance.yahoo.com/"
@@ -102,13 +108,66 @@
     },
     {
       "id": 5,
-      "title": "7 日視窗恢復可計算但只有兩個樣本",
-      "summary": "7 日完成視窗為 2 個、正向 2 個，最新報酬為 1.2167%；這比完全缺失更可用，但遠低於 20 個完整視窗的統計成熟門檻，因此只支持保守觀察。",
-      "confidence": 64,
+      "title": "NVDA 財務方向提供基本面底線",
+      "summary": "可追溯申報資料顯示 NVDA 2026Q1 營業利益 535.36 億美元、淨利 583.21 億美元、營運現金流 503.44 億美元；這支持保留觀察性小部位，但未提供完整估值與成本效率分析。",
+      "confidence": 55,
+      "category": "valuation",
+      "affected_assets": [
+        "NVDA"
+      ],
+      "source_urls": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "TLT 提供非股票分散",
+      "summary": "TLT 20 日報酬為 -1.923765%，波動年化 9.489055%，最新日上漲 0.584576%；其走勢不同於 SPY，但目前低於 MA20 與 MA50，因此僅作 15% 的分散配置。",
+      "confidence": 60,
+      "category": "diversification",
+      "affected_assets": [
+        "TLT",
+        "SPY"
+      ],
+      "source_urls": [
+        "https://finance.yahoo.com/"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "利率短期壓力未明顯擴大",
+      "summary": "^TNX 最新日下跌 0.875702%，5 日變化為 -0.620991%，快照亦將 rates 判定為 stable；這降低立即削減 TLT 的必要性，但不代表長債趨勢已轉強。",
+      "confidence": 58,
+      "category": "macro",
+      "affected_assets": [
+        "TLT"
+      ],
+      "source_urls": [
+        "https://finance.yahoo.com/"
+      ]
+    },
+    {
+      "id": 8,
+      "title": "GLD 保留跨資產分散效果",
+      "summary": "GLD 20 日報酬為 9.31609%、5 日報酬為 2.384063%，且高於 MA20 4.601757%；但最新日下跌 1.471901%、RSI14 為 71.173679，因此只配置 10% 以降低追高風險。",
+      "confidence": 62,
+      "category": "diversification",
+      "affected_assets": [
+        "GLD"
+      ],
+      "source_urls": [
+        "https://finance.yahoo.com/"
+      ]
+    },
+    {
+      "id": 9,
+      "title": "不配置槓桿 ETF 以控制路徑風險",
+      "summary": "SOXL 20 日年化波動為 168.627208%，TQQQ 為 73.036637%；兩者亦顯示較大均線偏離或回撤。缺少 3 日與 7 日完成視窗驗證時，槓桿工具的每日重設與震盪損耗不適合作為本輪核心曝險。",
+      "confidence": 86,
       "category": "risk",
       "affected_assets": [
-        "SPY",
-        "GLD",
+        "SOXL",
+        "TQQQ",
         "CASH"
       ],
       "source_urls": [
@@ -116,71 +175,43 @@
       ]
     },
     {
-      "id": 6,
-      "title": "NVDA 的價格趨勢相對強",
-      "summary": "NVDA 的 1 日、5 日與 20 日報酬分別為 3.029883%、2.22151% 與 5.454116%，且距 MA20、MA50 分別為 7.53782% 與 8.64348%；因此只配置小幅研究部位。",
-      "confidence": 67,
-      "category": "momentum",
-      "affected_assets": [
-        "NVDA"
-      ],
-      "source_urls": [
-        "https://finance.yahoo.com/quote/NVDA/"
-      ]
-    },
-    {
-      "id": 7,
-      "title": "NVDA 有近期申報資料但短期連結有限",
-      "summary": "快照列示 NVDA 於 2026-05-20 提交的 10-Q，並提供同期淨利 583.21 億美元與營業利益 535.36 億美元；這可作基本面背景，但不能替代 3/7 日淨報酬證據。",
-      "confidence": 55,
-      "category": "news",
-      "affected_assets": [
-        "NVDA"
-      ],
-      "source_urls": [
-        "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000052/nvda-20260426.htm"
-      ]
-    },
-    {
-      "id": 8,
-      "title": "SPY 與 GLD 均有過熱風險",
-      "summary": "SPY RSI14 為 75.209408，GLD RSI14 為 78.635104；兩者均處偏高區，故不追求高曝險，並保留現金應對回吐。",
-      "confidence": 78,
-      "category": "technical",
-      "affected_assets": [
-        "SPY",
-        "GLD"
-      ],
-      "source_urls": [
-        "https://finance.yahoo.com/quote/SPY/",
-        "https://finance.yahoo.com/quote/GLD/"
-      ]
-    },
-    {
-      "id": 9,
-      "title": "市場廣度並非完全同步",
-      "summary": "SMH 20 日報酬為 -1.005468%，距 MA50 為 -1.436311%，儘管其 1 日與 5 日報酬分別為 2.077047% 與 2.655785%；半導體趨勢分歧限制追高與槓桿配置。",
-      "confidence": 70,
-      "category": "diversification",
-      "affected_assets": [
-        "SPY",
-        "NVDA"
-      ],
-      "source_urls": [
-        "https://finance.yahoo.com/quote/SMH/"
-      ]
-    },
-    {
       "id": 10,
-      "title": "事件日曆仍為 fail-closed",
-      "summary": "FOMC、BLS、NYSE 與 earnings 的 event_calendar 狀態均為 missing，且沒有可驗證的 point-in-time 官方事件快照；因此無法可靠對齊未來事件風險，必須降低曝險與信心。",
-      "confidence": 90,
-      "category": "policy",
+      "title": "AMD 暫不納入以避免趨勢與基本面衝突",
+      "summary": "AMD 雖有 2026Q2 營收 115.36 億美元、淨利 22.97 億美元與正營運現金流，但其 5 日與 20 日報酬分別為 -1.281473% 與 -3.579269%，且低於 MA20 2.087241%；因此不在本輪配置。",
+      "confidence": 60,
+      "category": "risk",
       "affected_assets": [
-        "SPY",
-        "NVDA",
-        "GLD",
-        "CASH"
+        "AMD"
+      ],
+      "source_urls": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
+        "https://finance.yahoo.com/"
+      ]
+    }
+  ],
+  "diagnostics": [
+    {
+      "kind": "evidence_gap",
+      "severity": "high",
+      "summary": "本輪未提供 3 日與 7 日 completed_windows、positive_windows 或 latest_return_percent。",
+      "effect": "單日漲跌、RSI 與部位點差只能作背景，不能支持可重複的方向性優勢或提高槓桿曝險。",
+      "affected_claims": [
+        "短期預期報酬",
+        "策略可重複性",
+        "反向或槓桿 ETF 有效性"
+      ],
+      "source_urls": [
+        "https://finance.yahoo.com/"
+      ]
+    },
+    {
+      "kind": "data_quality",
+      "severity": "high",
+      "summary": "官方事件日曆對 FOMC、BLS、NYSE 與財報均為 missing_fail_closed。",
+      "effect": "無法可靠對齊未來交易日的重大事件時間；本輪不作事件因果敘事，也不因缺失本身改變市場方向。",
+      "affected_claims": [
+        "事件風險",
+        "短期因果解釋"
       ],
       "source_urls": [
         "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
@@ -188,21 +219,99 @@
         "https://www.nyse.com/trade/hours-calendars",
         "https://www.sec.gov/edgar/searchedgar/companysearch"
       ]
+    },
+    {
+      "kind": "data_quality",
+      "severity": "medium",
+      "summary": "可用價格是 2026-08-13 完成 regular close，資料生成於 2026-08-14；來源為可能延遲的 Yahoo Finance。",
+      "effect": "不能把資料解讀為 2026-08-14 盤中可執行報價，任何研究建議均須於人工執行前重新核對。",
+      "affected_claims": [
+        "最新價格",
+        "成交可行性"
+      ],
+      "source_urls": [
+        "https://finance.yahoo.com/"
+      ]
+    },
+    {
+      "kind": "data_quality",
+      "severity": "medium",
+      "summary": "快照未提供 bid-ask、交易深度、手續費、滑價、稅負或匯率資訊。",
+      "effect": "無法估算可交易淨報酬與實際風險；配置採較高現金比例，且不得宣稱已成交。",
+      "affected_claims": [
+        "流動性",
+        "預期淨報酬"
+      ],
+      "source_urls": [
+        "https://finance.yahoo.com/"
+      ]
+    },
+    {
+      "kind": "evidence_gap",
+      "severity": "medium",
+      "summary": "部分個股財務資料缺少毛利率、費用率與完整估值欄位。",
+      "effect": "只能確認部分營收、淨利與營運現金流方向，不能據此推導成本效率、營運槓桿或估值便宜。",
+      "affected_claims": [
+        "NVDA基本面",
+        "AMD基本面",
+        "個股估值"
+      ],
+      "source_urls": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json"
+      ]
+    },
+    {
+      "kind": "policy_constraint",
+      "severity": "medium",
+      "summary": "槓桿與反向 ETF 是每日重設工具，政策最長建議持有 1 個交易日。",
+      "effect": "本輪不配置 SQQQ、SOXL 或 TQQQ；若未來研究考慮此類工具，必須於下一個完成交易日重新驗證，不能外推多日固定倍數。",
+      "affected_claims": [
+        "槓桿 ETF配置",
+        "反向對沖"
+      ],
+      "source_urls": [
+        "https://finance.yahoo.com/"
+      ]
+    },
+    {
+      "kind": "statistical_maturity",
+      "severity": "high",
+      "summary": "近期驗證紀錄顯示 7 日視窗曾有少量樣本，但本輪輸入未附可稽核的當期 3/7 日統計。",
+      "effect": "本輪模型分數與配置只能反映有限共識與風險管理，不能把過往少量正窗當成本輪預期報酬證據。",
+      "affected_claims": [
+        "模型分數",
+        "多日績效結論"
+      ],
+      "source_urls": [
+        "https://finance.yahoo.com/"
+      ]
+    },
+    {
+      "kind": "evidence_gap",
+      "severity": "medium",
+      "summary": "官方事件快照完整性不足：官方事件快照未形成可驗證輸入，請先追查官方日曆資料是否有完整回傳。。",
+      "effect": "僅限制事件時間與事件因果推論；不改變市場方向、配置權重、風險資產上限或風險否決。",
+      "affected_claims": [
+        "event_timing",
+        "event_causality"
+      ],
+      "source_urls": []
     }
   ],
   "invalidation_conditions": [
-    "若下一個完成交易日後 7 日視窗再次回到 completed_windows=0，或 7 日最新報酬轉為負，立即將方向性研究曝險降至最低並維持等待驗證。",
-    "若 SPY 跌破 MA20 且 1 日、5 日動能同步轉弱，或 VIX 脫離 normal 並持續上升，應下調 SPY 與 NVDA 的研究權重。",
-    "若官方事件日曆仍缺失且同時出現市場波動上升，應維持或提高現金，不得以單日上漲補足事件資料缺口。",
-    "若後續申報資料顯示 NVDA 營業利益相對營收的方向轉弱，則撤回其基本面背景支持；基本面不佳不會被單日股價上漲抵銷。"
+    "若下一個完成交易日 SPY 同時跌破 MA20 與 MA50，且波動狀態由 normal 明顯惡化，應重新評估 SPY 權重並提高現金。",
+    "若補齊的 3 日與 7 日 completed_windows 顯示本輪風險資產假設缺乏一致性，應降低 SPY、NVDA 與 GLD 的研究權重。",
+    "若已驗證的重大事件實際進入政策定義的事件限制期間，應暫停新增相關風險曝險並重新審查持有期。",
+    "若 TLT 持續低於 MA20 與 MA50，且 ^TNX 明顯上行，應降低 TLT 的分散配置。",
+    "若 NVDA 跌破 MA20 且 20 日報酬轉負，應撤回其動能配置論據。"
   ],
   "major_risks": [
-    "7 日僅 2 個完整視窗、3 日僅 6 個完整視窗，未達 20 個視窗，不能宣稱統計優勢、穩定勝率或可重複淨報酬。",
-    "event_calendar 的 FOMC、BLS、NYSE 與 earnings 均缺失，未來事件風險無法完成 point-in-time 對齊。",
-    "快照由 Yahoo Finance via yfinance 提供，可能延遲；本輪不是完整交易日執行環境，且交易成本、價差、滑價、稅負與匯率影響未知。",
-    "SPY 與 GLD RSI 偏高，SMH 20 日與 50 日趨勢分歧，可能出現均值回歸或輪動失敗。",
-    "NVDA 為單一股票，且 20 日年化波動率為 40.57536%；即使基本面資料較新，也可能承受較大短期價格波動。",
-    "槓桿與反向 ETF 每日重設；震盪、反彈或持有超過一個交易日可能造成路徑耗損，故本輪不配置。"
+    "SPY RSI14 偏高，短線可能出現回吐；這是風控警示，不是已驗證的反向交易優勢。",
+    "股票、半導體與個股可能在利率或未驗證事件衝擊下相關性上升，分散效果可能低於預期。",
+    "資料缺少 bid-ask、滑價與完成視窗統計，研究報酬不可直接視為可交易淨報酬。",
+    "GLD 與 TLT 的配置可能同時受利率、美元或商品價格變動影響，不能保證與股票反向。",
+    "若使用槓桿或反向 ETF，震盪、跳空與每日重設可能造成方向正確仍出現損失。"
   ],
   "disclaimer": "研究建議，尚未執行。下單前須由使用者核對券商即時價格、成本與風險；系統不存取券商、不自動下單。"
 }

@@ -1,45 +1,45 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-13T11:14:26.444981Z",
-  "pricing_cutoff": "2026-08-13T11:13:38.278780Z",
-  "pricing_session": "2026-08-12",
-  "from_run_id": "20260812T135115Z",
-  "to_run_id": "20260813T111426Z",
+  "generated_at": "2026-08-14T11:12:07.511917Z",
+  "pricing_cutoff": "2026-08-14T11:11:22.482523Z",
+  "pricing_session": "2026-08-13",
+  "from_run_id": "20260813T111426Z",
+  "to_run_id": "20260814T111207Z",
   "capital_usd": "6000.00",
   "status": "research_only",
   "basis": "以前一輪研究配置為比較基準，差額股數採最近已完成交易日收盤價估算。",
   "instructions": [
     {
-      "symbol": "SPY",
-      "action": "hold",
-      "reference_close_usd": "772.48999",
-      "previous_target_usd": "1200.00",
-      "new_target_usd": "1200.00",
-      "change_usd": "0.00",
-      "estimated_share_change": "0.0000"
-    },
-    {
       "symbol": "TLT",
-      "action": "exit",
-      "reference_close_usd": "82.110001",
-      "previous_target_usd": "600.00",
-      "new_target_usd": "0",
-      "change_usd": "-600.00",
-      "estimated_share_change": "-7.3073"
+      "action": "add",
+      "reference_close_usd": "82.589996",
+      "previous_target_usd": "0",
+      "new_target_usd": "900.00",
+      "change_usd": "900.00",
+      "estimated_share_change": "10.8972"
     },
     {
-      "symbol": "NVDA",
+      "symbol": "SPY",
       "action": "add",
-      "reference_close_usd": "224.089996",
-      "previous_target_usd": "300.00",
-      "new_target_usd": "600.00",
+      "reference_close_usd": "777.880005",
+      "previous_target_usd": "1200.00",
+      "new_target_usd": "1500.00",
       "change_usd": "300.00",
-      "estimated_share_change": "1.3387"
+      "estimated_share_change": "0.3857"
     },
     {
       "symbol": "GLD",
       "action": "hold",
-      "reference_close_usd": "404.920013",
+      "reference_close_usd": "398.959991",
+      "previous_target_usd": "600.00",
+      "new_target_usd": "600.00",
+      "change_usd": "0.00",
+      "estimated_share_change": "0.0000"
+    },
+    {
+      "symbol": "NVDA",
+      "action": "hold",
+      "reference_close_usd": "225.300003",
       "previous_target_usd": "600.00",
       "new_target_usd": "600.00",
       "change_usd": "0.00",
@@ -47,11 +47,11 @@
     },
     {
       "symbol": "CASH",
-      "action": "add",
+      "action": "reduce",
       "reference_close_usd": null,
-      "previous_target_usd": "3300.00",
-      "new_target_usd": "3600.00",
-      "change_usd": "300.00",
+      "previous_target_usd": "3600.00",
+      "new_target_usd": "2400.00",
+      "change_usd": "-1200.00",
       "estimated_share_change": null
     }
   ],

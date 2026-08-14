@@ -477,6 +477,102 @@ export function bootstrapDashboard(root, payload) {
       </div>`;
   };
 
+  const diagnosticKindLabel = (value) => {
+    const labels = {
+      data_quality: "資料品質",
+      evidence_gap: "證據缺口",
+      statistical_maturity: "統計成熟度",
+      policy_constraint: "政策限制",
+    };
+    return labels[value] || String(value || "未分類");
+  };
+
+  const diagnosticSeverityLabel = (value) => {
+    const labels = {
+      low: "低",
+      medium: "中",
+      high: "高",
+    };
+    return labels[value] || String(value || "未分類");
+  };
+
+  const renderDiagnostics = (recommendation) => {
+    const diagnostics = asList(
+      recommendation?.diagnostics,
+    );
+
+    return `
+      <section
+        class="panel"
+        id="diagnostics"
+        data-tab-section="overview"
+      >
+        <header class="panel-header">
+          <div>
+            <span class="section-kicker">
+              資料品質與限制
+            </span>
+            <h2>資料與決策限制</h2>
+          </div>
+          <span class="panel-meta">
+            ${escapeHtml(diagnostics.length)}
+            項
+          </span>
+        </header>
+
+        ${
+          diagnostics.length
+            ? `
+              <div class="reasons-grid">
+                ${diagnostics
+                  .map(
+                    (item) => `
+                      <article class="reason-card">
+                        <h3>
+                          ${escapeHtml(item.summary)}
+                        </h3>
+
+                        <p>
+                          ${escapeHtml(item.effect)}
+                        </p>
+
+                        <div class="reason-meta">
+                          <span>
+                            ${escapeHtml(
+                              diagnosticKindLabel(
+                                item.kind,
+                              ),
+                            )}
+                          </span>
+                          <span>
+                            嚴重度
+                            ${escapeHtml(
+                              diagnosticSeverityLabel(
+                                item.severity,
+                              ),
+                            )}
+                          </span>
+                        </div>
+
+                        ${renderSourceLinks(
+                          item.source_urls,
+                        )}
+                      </article>
+                    `,
+                  )
+                  .join("")}
+              </div>
+            `
+            : `
+              <p class="methodology-note">
+                本輪沒有需要另外揭露的重大資料品質或決策限制。
+              </p>
+            `
+        }
+      </section>
+    `;
+  };
+
   const normalizeAgentName = (value) =>
     String(value || "")
       .trim()
@@ -1781,6 +1877,7 @@ const researchStatusLabel = (value) => {
             </div>
           </section>
 
+          ${renderDiagnostics(recommendation)}
           ${renderGlossary()}
           ${renderAgentIntelligencePanel(market, recommendation, learning)}
 

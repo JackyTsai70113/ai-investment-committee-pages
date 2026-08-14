@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "currency": "USD",
   "initial_value_usd": "6000.00",
-  "updated_at": "2026-08-12T13:49:59.783882Z",
+  "updated_at": "2026-08-14T11:11:22.482523Z",
   "status": "hypothetical",
   "methodology": "假設按每輪建議權重持有碎股，並在下一個評價點按最新建議重新平衡；忽略手續費、價差、滑價、稅負與匯率。這是研究策略指數，不是實際帳戶績效。",
   "points": [
@@ -794,6 +794,77 @@
         {
           "symbol": "^VIX",
           "price_usd": "15.28"
+        }
+      ],
+      "note": "依上一輪建議權重與最新可得行情計算；假設績效，不代表實際成交。"
+    },
+    {
+      "as_of": "2026-08-14T11:11:22.482523Z",
+      "run_id": "learning-20260814T111154Z",
+      "price_session": "2026-08-13",
+      "value_usd": "6131.63",
+      "profit_loss_usd": "131.63",
+      "return_percent": "2.1938",
+      "prices": [
+        {
+          "symbol": "AMD",
+          "price_usd": "483.01001"
+        },
+        {
+          "symbol": "CL=F",
+          "price_usd": "81.25"
+        },
+        {
+          "symbol": "ERX",
+          "price_usd": "99.190002"
+        },
+        {
+          "symbol": "GLD",
+          "price_usd": "398.959991"
+        },
+        {
+          "symbol": "NVDA",
+          "price_usd": "225.300003"
+        },
+        {
+          "symbol": "PLTR",
+          "price_usd": "179.009995"
+        },
+        {
+          "symbol": "QQQ",
+          "price_usd": "732.070007"
+        },
+        {
+          "symbol": "SMH",
+          "price_usd": "589.119995"
+        },
+        {
+          "symbol": "SOXL",
+          "price_usd": "145.360001"
+        },
+        {
+          "symbol": "SPY",
+          "price_usd": "777.880005"
+        },
+        {
+          "symbol": "SQQQ",
+          "price_usd": "36.040001"
+        },
+        {
+          "symbol": "TLT",
+          "price_usd": "82.589996"
+        },
+        {
+          "symbol": "TQQQ",
+          "price_usd": "77.150002"
+        },
+        {
+          "symbol": "^TNX",
+          "price_usd": "4.641"
+        },
+        {
+          "symbol": "^VIX",
+          "price_usd": "14.63"
         }
       ],
       "note": "依上一輪建議權重與最新可得行情計算；假設績效，不代表實際成交。"

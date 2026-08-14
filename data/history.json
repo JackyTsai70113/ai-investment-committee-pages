@@ -487,6 +487,7 @@
             "source_urls": []
           }
         ],
+        "diagnostics": [],
         "invalidation_conditions": [
           "10年期美債殖利率（^TNX）快速跌破 4.55% 且 VIX 降至 15.00 以下，顯示市場恐慌全面消退。",
           "QQQ 強勢反彈突破 705 美元並帶動大盤整體回補前一交易日跌幅。"
@@ -675,6 +676,7 @@
           "source_urls": []
         }
       ],
+      "diagnostics": [],
       "invalidation_conditions": [
         "10年期美債殖利率（^TNX）快速跌破 4.55% 且 VIX 降至 15.00 以下，顯示市場恐慌全面消退。",
         "QQQ 強勢反彈突破 705 美元並帶動大盤整體回補前一交易日跌幅。"
@@ -1705,6 +1707,7 @@
             "source_urls": []
           }
         ],
+        "diagnostics": [],
         "invalidation_conditions": [
           "^TNX 10 年期美債殖利率突破並站穩 4.85% 以上，或 ^VIX 飆升突破 22，顯示市場恐慌與利率壓力全面惡化。",
           "SPY 跌破 50 日均線且 20 日報酬轉負，顯示跨板塊輪動抗跌性失效，大盤轉入全面單邊下行。"
@@ -1877,6 +1880,7 @@
           "source_urls": []
         }
       ],
+      "diagnostics": [],
       "invalidation_conditions": [
         "^TNX 10 年期美債殖利率突破並站穩 4.85% 以上，或 ^VIX 飆升突破 22，顯示市場恐慌與利率壓力全面惡化。",
         "SPY 跌破 50 日均線且 20 日報酬轉負，顯示跨板塊輪動抗跌性失效，大盤轉入全面單邊下行。"
@@ -5550,6 +5554,7 @@
             ]
           }
         ],
+        "diagnostics": [],
         "invalidation_conditions": [
           "SPY 與 QQQ 帶量突破 50 日均線並站穩，且 20 日報酬率轉為正值。",
           "完成交易日的滾動視窗樣本數正式達到政策門檻（20個完成視窗），且勝率與淨利邊際符合政策標準。",
@@ -5726,6 +5731,7 @@
           ]
         }
       ],
+      "diagnostics": [],
       "invalidation_conditions": [
         "SPY 與 QQQ 帶量突破 50 日均線並站穩，且 20 日報酬率轉為正值。",
         "完成交易日的滾動視窗樣本數正式達到政策門檻（20個完成視窗），且勝率與淨利邊際符合政策標準。",
@@ -9598,6 +9604,7 @@
             ]
           }
         ],
+        "diagnostics": [],
         "invalidation_conditions": [
           "SPY 與 QQQ 帶量收復 20 日與 50 日均線，且 20 日報酬轉為正值。",
           "VIX 顯著回落至 15 以下，且半導體板塊（SMH）止跌回升並突破關鍵技術反壓。",
@@ -9801,6 +9808,7 @@
           ]
         }
       ],
+      "diagnostics": [],
       "invalidation_conditions": [
         "SPY 與 QQQ 帶量收復 20 日與 50 日均線，且 20 日報酬轉為正值。",
         "VIX 顯著回落至 15 以下，且半導體板塊（SMH）止跌回升並突破關鍵技術反壓。",
@@ -13705,6 +13713,7 @@
             ]
           }
         ],
+        "diagnostics": [],
         "invalidation_conditions": [
           "SPY 與 QQQ 帶量重回 20 日與 50 日移動平均線上方，且 trend 特徵由 risk_off 轉為 risk_on。",
           "半導體指數（SMH）跌幅顯著收斂，且技術指標 RSI14 回升至 50 以上。",
@@ -13905,6 +13914,7 @@
           ]
         }
       ],
+      "diagnostics": [],
       "invalidation_conditions": [
         "SPY 與 QQQ 帶量重回 20 日與 50 日移動平均線上方，且 trend 特徵由 risk_off 轉為 risk_on。",
         "半導體指數（SMH）跌幅顯著收斂，且技術指標 RSI14 回升至 50 以上。",
@@ -17993,6 +18003,7 @@
             ]
           }
         ],
+        "diagnostics": [],
         "invalidation_conditions": [
           "若下一個完成交易日 SPY 的 distance_from_ma20_percent 由負轉正或 RSI14≥50，則任何 SQQQ、SOXS、SPXU 的研究性使用權重維持 0；反向 ETF不得跨日沿用。",
           "若下一個完成交易日 SMH 的 distance_from_ma20_percent≥0 或 RSI14≥45，則反向 ETF 的研究權重降至 0，因為原有下行狀態已出現修復訊號。",
@@ -18197,6 +18208,7 @@
           ]
         }
       ],
+      "diagnostics": [],
       "invalidation_conditions": [
         "若下一個完成交易日 SPY 的 distance_from_ma20_percent 由負轉正或 RSI14≥50，則任何 SQQQ、SOXS、SPXU 的研究性使用權重維持 0；反向 ETF不得跨日沿用。",
         "若下一個完成交易日 SMH 的 distance_from_ma20_percent≥0 或 RSI14≥45，則反向 ETF 的研究權重降至 0，因為原有下行狀態已出現修復訊號。",
@@ -22360,6 +22372,7 @@
             ]
           }
         ],
+        "diagnostics": [],
         "invalidation_conditions": [
           "若後續完整交易日資料顯示SPY與主要風險資產連續站回20日及50日均線，且市場regime由risk_off轉為risk_on，應重新評估現金與風險資產比例。",
           "若同一切點補足3日與7日完成交易日視窗，並在扣除已知交易摩擦後呈現一致且可重複的相對優勢，才可考慮調整方向性曝險。",
@@ -22557,6 +22570,7 @@
           ]
         }
       ],
+      "diagnostics": [],
       "invalidation_conditions": [
         "若後續完整交易日資料顯示SPY與主要風險資產連續站回20日及50日均線，且市場regime由risk_off轉為risk_on，應重新評估現金與風險資產比例。",
         "若同一切點補足3日與7日完成交易日視窗，並在扣除已知交易摩擦後呈現一致且可重複的相對優勢，才可考慮調整方向性曝險。",
@@ -26944,6 +26958,7 @@
             ]
           }
         ],
+        "diagnostics": [],
         "invalidation_conditions": [
           "官方 event_calendar 補齊FOMC、BLS、NYSE與earnings的point-in-time輸入，涵蓋未來168小時並完成blackout檢查。",
           "提供可確認為完成交易日收盤的同步價格序列，並完成策略與SPY、QQQ、IWM、DIA、VTI的5日滾動視窗比較。",
@@ -27143,6 +27158,7 @@
           ]
         }
       ],
+      "diagnostics": [],
       "invalidation_conditions": [
         "官方 event_calendar 補齊FOMC、BLS、NYSE與earnings的point-in-time輸入，涵蓋未來168小時並完成blackout檢查。",
         "提供可確認為完成交易日收盤的同步價格序列，並完成策略與SPY、QQQ、IWM、DIA、VTI的5日滾動視窗比較。",
@@ -33108,6 +33124,7 @@
             ]
           }
         ],
+        "diagnostics": [],
         "invalidation_conditions": [
           "若 SPY 距 MA20 與 MA50 同時轉為負值，且 RSI14 明顯走弱、VIX 從 normal 轉為壓力狀態，應重新評估 SPY、SMH 與個股權重並提高現金。",
           "若下一輪取得 7 日完成交易視窗，且在扣除可知交易摩擦後 3 日與 7 日結果出現一致且可重複的相對表現，才可重新評估目前偏保守的風險資產上限。",
@@ -33338,6 +33355,7 @@
           ]
         }
       ],
+      "diagnostics": [],
       "invalidation_conditions": [
         "若 SPY 距 MA20 與 MA50 同時轉為負值，且 RSI14 明顯走弱、VIX 從 normal 轉為壓力狀態，應重新評估 SPY、SMH 與個股權重並提高現金。",
         "若下一輪取得 7 日完成交易視窗，且在扣除可知交易摩擦後 3 日與 7 日結果出現一致且可重複的相對表現，才可重新評估目前偏保守的風險資產上限。",
@@ -37554,6 +37572,7 @@
             ]
           }
         ],
+        "diagnostics": [],
         "invalidation_conditions": [
           "組合淨值降至 5,400 美元或以下時，退出全部槓桿 ETF 並重新評估。",
           "組合淨值降至 5,280 美元或以下時，退出全部風險資產；實際執行仍須由使用者確認。",
@@ -37793,6 +37812,7 @@
           ]
         }
       ],
+      "diagnostics": [],
       "invalidation_conditions": [
         "組合淨值降至 5,400 美元或以下時，退出全部槓桿 ETF 並重新評估。",
         "組合淨值降至 5,280 美元或以下時，退出全部風險資產；實際執行仍須由使用者確認。",
@@ -38569,6 +38589,7 @@
             "source_urls": []
           }
         ],
+        "diagnostics": [],
         "invalidation_conditions": [
           "使用者明確取消正報酬保證，改採可量化但不保證的風險預算。",
           "至少累積政策要求的完整 3／7 日視窗，納入交易成本、基準與事件風險後，再由委員會重新驗證。"
@@ -38723,6 +38744,7 @@
           "source_urls": []
         }
       ],
+      "diagnostics": [],
       "invalidation_conditions": [
         "使用者明確取消正報酬保證，改採可量化但不保證的風險預算。",
         "至少累積政策要求的完整 3／7 日視窗，納入交易成本、基準與事件風險後，再由委員會重新驗證。"
@@ -41855,9 +41877,12 @@
   {
     "archive_id": "review-20260724T031844Z",
     "decision_review": {
-      "status": "hypothetical",
-      "currency": "USD",
-      "return_percent": "0.7173",
+      "evaluation_start": "2026-07-23T17:43:21.745224Z",
+      "reviewed_run_id": "manual-20260724T014200+0800",
+      "schema_version": "1.0",
+      "starting_value_usd": "6000.00",
+      "evaluation_end": "2026-07-23T20:00:00Z",
+      "generated_at": "2026-07-24T03:19:58Z",
       "assessment": {
         "verdict": "too_early_to_validate",
         "summary": "從建議快照到同一交易日收盤，假設組合為正報酬；AMD、PLTR 與 SOXL 是主要正貢獻，NVDA 與 ERX 為負貢獻。評估期間只有約 2 小時 17 分，仍不足以判定原始決策整體正確；依更新後政策，必須在第 2 至第 3 個交易日內完成正式驗證，且每週至少完成兩次決策檢視。",
@@ -41871,6 +41896,31 @@
           "極短評估窗不足以檢驗事件催化或風險界線；最遲須在第 3 個交易日重新決策。"
         ]
       },
+      "review_id": "review-20260724T031844Z",
+      "return_percent": "0.7173",
+      "committee_rerun": {
+        "requested_at": "2026-07-24T03:19:15Z",
+        "github_actions_run_id": "30063924394",
+        "status": "rejected",
+        "reason": "GitHub Actions 未設定 OPENAI_API_KEY；安全閘門在任何模型呼叫或資料寫入前中止。",
+        "recommendation_changed": false
+      },
+      "ending_value_usd": "6043.04",
+      "methodology": {
+        "pricing_source": "Yahoo Finance via yfinance",
+        "assumptions": [
+          "假設在原建議市場快照價格按目標美元金額建立碎股部位。",
+          "以 yfinance 在 2026-07-24T03:18:44.509208Z 回傳的最新 2026-07-23 收盤價評價。",
+          "未計入手續費、買賣價差、滑價、稅負、匯率或融資成本。",
+          "現金報酬設為零。"
+        ],
+        "warnings": [
+          "這是未成交建議的假設績效，不是實際帳戶報酬。",
+          "2026-07-24 美股正常盤在評估產生時尚未開盤，因此本紀錄不是 7 月 24 日完整交易日績效。",
+          "Yahoo Finance 資料可能延遲；任何人工交易前仍須向券商核對價格。"
+        ]
+      },
+      "profit_loss_usd": "43.04",
       "positions": [
         {
           "symbol": "AMD",
@@ -41936,36 +41986,8 @@
           "ending_value_usd": "300.00"
         }
       ],
-      "reviewed_run_id": "manual-20260724T014200+0800",
-      "schema_version": "1.0",
-      "evaluation_end": "2026-07-23T20:00:00Z",
-      "profit_loss_usd": "43.04",
-      "methodology": {
-        "pricing_source": "Yahoo Finance via yfinance",
-        "assumptions": [
-          "假設在原建議市場快照價格按目標美元金額建立碎股部位。",
-          "以 yfinance 在 2026-07-24T03:18:44.509208Z 回傳的最新 2026-07-23 收盤價評價。",
-          "未計入手續費、買賣價差、滑價、稅負、匯率或融資成本。",
-          "現金報酬設為零。"
-        ],
-        "warnings": [
-          "這是未成交建議的假設績效，不是實際帳戶報酬。",
-          "2026-07-24 美股正常盤在評估產生時尚未開盤，因此本紀錄不是 7 月 24 日完整交易日績效。",
-          "Yahoo Finance 資料可能延遲；任何人工交易前仍須向券商核對價格。"
-        ]
-      },
-      "review_id": "review-20260724T031844Z",
-      "evaluation_start": "2026-07-23T17:43:21.745224Z",
-      "starting_value_usd": "6000.00",
-      "generated_at": "2026-07-24T03:19:58Z",
-      "committee_rerun": {
-        "requested_at": "2026-07-24T03:19:15Z",
-        "github_actions_run_id": "30063924394",
-        "status": "rejected",
-        "reason": "GitHub Actions 未設定 OPENAI_API_KEY；安全閘門在任何模型呼叫或資料寫入前中止。",
-        "recommendation_changed": false
-      },
-      "ending_value_usd": "6043.04"
+      "status": "hypothetical",
+      "currency": "USD"
     }
   }
 ]
