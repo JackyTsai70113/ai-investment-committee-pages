@@ -1,0 +1,976 @@
+[
+  {
+    "archive_id": "20260724T070019Z",
+    "generated_at": "2026-07-24T07:00:19.088457Z",
+    "status": null,
+    "allocation_summary": [
+      {
+        "symbol": "CASH",
+        "target_weight": "0.5"
+      },
+      {
+        "symbol": "SPY",
+        "target_weight": "0.25"
+      },
+      {
+        "symbol": "QQQ",
+        "target_weight": "0.1"
+      },
+      {
+        "symbol": "TLT",
+        "target_weight": "0.1"
+      },
+      {
+        "symbol": "SQQQ",
+        "target_weight": "0.05"
+      }
+    ],
+    "reason_title_digest": "美債殖利率升至 4.703% 壓制高估值資產",
+    "comparison": {
+      "run_id": "20260724T070019Z",
+      "generated_at": "2026-07-24T07:00:19.088457Z",
+      "allocations": [
+        {
+          "symbol": "CASH",
+          "target_amount_usd": "3000.00",
+          "target_weight": "0.5"
+        },
+        {
+          "symbol": "SPY",
+          "target_amount_usd": "1500.00",
+          "target_weight": "0.25"
+        },
+        {
+          "symbol": "QQQ",
+          "target_amount_usd": "600.00",
+          "target_weight": "0.1"
+        },
+        {
+          "symbol": "TLT",
+          "target_amount_usd": "600.00",
+          "target_weight": "0.1"
+        },
+        {
+          "symbol": "SQQQ",
+          "target_amount_usd": "300.00",
+          "target_weight": "0.05"
+        }
+      ],
+      "top_reasons": [
+        {
+          "id": 1,
+          "title": "美債殖利率升至 4.703% 壓制高估值資產"
+        },
+        {
+          "id": 2,
+          "title": "VIX 恐慌指數急升至 18.70 顯示波動加劇"
+        },
+        {
+          "id": 3,
+          "title": "風控審查否決過度追空與低流動性標的"
+        },
+        {
+          "id": 4,
+          "title": "維持 50% 高現金儲備防範隔夜跳空風險"
+        },
+        {
+          "id": 5,
+          "title": "科技龍頭短線技術面承壓但未失控"
+        },
+        {
+          "id": 6,
+          "title": "以原型大盤 SPY 為核心持倉提供下檔支撐"
+        },
+        {
+          "id": 7,
+          "title": "戰術性微幅配置 5% SQQQ 進行下行對衝"
+        },
+        {
+          "id": 8,
+          "title": "TLT 長天期美債逢低觀察殖利率頂部壓力"
+        },
+        {
+          "id": 9,
+          "title": "保留 10% QQQ 核心科技流動性與優質資產"
+        },
+        {
+          "id": 10,
+          "title": "落實歷史學習教訓與 3 交易日持倉上限"
+        }
+      ]
+    }
+  },
+  {
+    "archive_id": "20260725T100049Z",
+    "generated_at": "2026-07-25T10:00:49.664439Z",
+    "status": null,
+    "allocation_summary": [
+      {
+        "symbol": "CASH",
+        "target_weight": "0.6"
+      },
+      {
+        "symbol": "SPY",
+        "target_weight": "0.25"
+      },
+      {
+        "symbol": "TLT",
+        "target_weight": "0.1"
+      },
+      {
+        "symbol": "NVDA",
+        "target_weight": "0.05"
+      }
+    ],
+    "reason_title_digest": "10年期美債殖利率高位震盪壓抑風險資產估值",
+    "comparison": {
+      "run_id": "20260725T100049Z",
+      "generated_at": "2026-07-25T10:00:49.664439Z",
+      "allocations": [
+        {
+          "symbol": "CASH",
+          "target_amount_usd": "3600.00",
+          "target_weight": "0.6"
+        },
+        {
+          "symbol": "SPY",
+          "target_amount_usd": "1500.00",
+          "target_weight": "0.25"
+        },
+        {
+          "symbol": "TLT",
+          "target_amount_usd": "600.00",
+          "target_weight": "0.1"
+        },
+        {
+          "symbol": "NVDA",
+          "target_amount_usd": "300.00",
+          "target_weight": "0.05"
+        }
+      ],
+      "top_reasons": [
+        {
+          "id": 1,
+          "title": "10年期美債殖利率高位震盪壓抑風險資產估值"
+        },
+        {
+          "id": 2,
+          "title": "原油價格高位拉回但20日漲幅仍顯著"
+        },
+        {
+          "id": 3,
+          "title": "半導體板塊短線重挫且成交量比率放大"
+        },
+        {
+          "id": 4,
+          "title": "大盤原型 ETF（SPY）展現相對抗跌韌性"
+        },
+        {
+          "id": 5,
+          "title": "核心科技龍頭最新 10-Q 展現強勁獲利品質"
+        },
+        {
+          "id": 6,
+          "title": "市場恐慌指數 VIX 維持於 18 上方高位震盪"
+        },
+        {
+          "id": 7,
+          "title": "美債 ETF（TLT）短線極度超賣提供戰術配置價值"
+        },
+        {
+          "id": 8,
+          "title": "高現金部位提供市場波動下的戰術調度彈性"
+        },
+        {
+          "id": 9,
+          "title": "嚴格遵守槓桿與反向產品風控限制與持有期限"
+        },
+        {
+          "id": 10,
+          "title": "籌碼端數據源未啟用需依據數據不確定性降低部位"
+        }
+      ]
+    }
+  },
+  {
+    "archive_id": "20260729T011318Z",
+    "generated_at": "2026-07-29T01:13:18.709253Z",
+    "status": null,
+    "allocation_summary": [
+      {
+        "symbol": "CASH",
+        "target_weight": "1"
+      }
+    ],
+    "reason_title_digest": "大盤與技術結構偏向空頭防守",
+    "comparison": {
+      "run_id": "20260729T011318Z",
+      "generated_at": "2026-07-29T01:13:18.709253Z",
+      "allocations": [
+        {
+          "symbol": "CASH",
+          "target_amount_usd": "6000.00",
+          "target_weight": "1"
+        }
+      ],
+      "top_reasons": [
+        {
+          "id": 1,
+          "title": "大盤與技術結構偏向空頭防守"
+        },
+        {
+          "id": 2,
+          "title": "半導體與高 Beta 科技板塊重挫"
+        },
+        {
+          "id": 3,
+          "title": "滾動視窗樣本數不足強制執行保險防守"
+        },
+        {
+          "id": 4,
+          "title": "利率水準維持與評價調整壓力"
+        },
+        {
+          "id": 5,
+          "title": "地緣政治與能源供應尾端風險"
+        },
+        {
+          "id": 6,
+          "title": "槓桿 ETF 路徑磨損與高波動風險"
+        },
+        {
+          "id": 7,
+          "title": "歷史現金防守有效規避回撤"
+        },
+        {
+          "id": 8,
+          "title": "機構持股與申報顯示防守態勢"
+        },
+        {
+          "id": 9,
+          "title": "AI 資本支出循環與盈利實現檢驗"
+        },
+        {
+          "id": 10,
+          "title": "波動率指標反映正常偏高之避險需求"
+        }
+      ]
+    }
+  },
+  {
+    "archive_id": "20260729T015913Z",
+    "generated_at": "2026-07-29T01:59:13.108828Z",
+    "status": null,
+    "allocation_summary": [
+      {
+        "symbol": "CASH",
+        "target_weight": "0.5"
+      },
+      {
+        "symbol": "TLT",
+        "target_weight": "0.25"
+      },
+      {
+        "symbol": "GLD",
+        "target_weight": "0.25"
+      }
+    ],
+    "reason_title_digest": "科技與半導體板塊短線籌碼鬆動與顯著回檔",
+    "comparison": {
+      "run_id": "20260729T015913Z",
+      "generated_at": "2026-07-29T01:59:13.108828Z",
+      "allocations": [
+        {
+          "symbol": "CASH",
+          "target_amount_usd": "3000.00",
+          "target_weight": "0.5"
+        },
+        {
+          "symbol": "TLT",
+          "target_amount_usd": "1500.00",
+          "target_weight": "0.25"
+        },
+        {
+          "symbol": "GLD",
+          "target_amount_usd": "1500.00",
+          "target_weight": "0.25"
+        }
+      ],
+      "top_reasons": [
+        {
+          "id": 1,
+          "title": "科技與半導體板塊短線籌碼鬆動與顯著回檔"
+        },
+        {
+          "id": 2,
+          "title": "大盤處於 risk_off 狀態且跌破短中期均線"
+        },
+        {
+          "id": 3,
+          "title": "台灣半導體資本支出擴張與基本面分化"
+        },
+        {
+          "id": 4,
+          "title": "美國總體經濟成長溫和與就業動能放緩"
+        },
+        {
+          "id": 5,
+          "title": "聯準會利率路徑與通膨黏性隱憂"
+        },
+        {
+          "id": 6,
+          "title": "地緣政治與荷莫茲海峽能源風險"
+        },
+        {
+          "id": 7,
+          "title": "短期績效樣本未達成熟門檻"
+        },
+        {
+          "id": 8,
+          "title": "反向 ETF 每日重設與路徑磨損特性比較"
+        },
+        {
+          "id": 9,
+          "title": "歐洲半導體設備龍頭營運展望熱絡"
+        },
+        {
+          "id": 10,
+          "title": "亞洲半導體出口國經濟成長上修"
+        }
+      ]
+    }
+  },
+  {
+    "archive_id": "20260729T181256Z",
+    "generated_at": "2026-07-29T18:12:56.085342Z",
+    "status": null,
+    "allocation_summary": [
+      {
+        "symbol": "CASH",
+        "target_weight": "0.5"
+      },
+      {
+        "symbol": "TLT",
+        "target_weight": "0.25"
+      },
+      {
+        "symbol": "GLD",
+        "target_weight": "0.25"
+      }
+    ],
+    "reason_title_digest": "標普 500 指數與宏觀趨勢偏向 risk_off",
+    "comparison": {
+      "run_id": "20260729T181256Z",
+      "generated_at": "2026-07-29T18:12:56.085342Z",
+      "allocations": [
+        {
+          "symbol": "CASH",
+          "target_amount_usd": "3000.00",
+          "target_weight": "0.5"
+        },
+        {
+          "symbol": "TLT",
+          "target_amount_usd": "1500.00",
+          "target_weight": "0.25"
+        },
+        {
+          "symbol": "GLD",
+          "target_amount_usd": "1500.00",
+          "target_weight": "0.25"
+        }
+      ],
+      "top_reasons": [
+        {
+          "id": 1,
+          "title": "標普 500 指數與宏觀趨勢偏向 risk_off"
+        },
+        {
+          "id": 2,
+          "title": "半導體與高科技板塊動能顯著轉弱"
+        },
+        {
+          "id": 3,
+          "title": "防禦性資產分散波動與下檔風險"
+        },
+        {
+          "id": 4,
+          "title": "美國總體經濟溫和增長與 AI 投資動能"
+        },
+        {
+          "id": 5,
+          "title": "美國勞動力市場放緩與通膨雜訊"
+        },
+        {
+          "id": 6,
+          "title": "亞洲半導體與出口訂單反映強勁需求"
+        },
+        {
+          "id": 7,
+          "title": "反向 ETF 每日重設特性與持有期限限制"
+        },
+        {
+          "id": 8,
+          "title": "短期績效政策與滾動視窗樣本規範"
+        },
+        {
+          "id": 9,
+          "title": "企業財報與微軟 Anthropic 合作進展"
+        },
+        {
+          "id": 10,
+          "title": "地緣政治與全球供應鏈挑戰"
+        }
+      ]
+    }
+  },
+  {
+    "archive_id": "20260730T105803Z",
+    "generated_at": "2026-07-30T10:58:03.064925Z",
+    "status": null,
+    "allocation_summary": [
+      {
+        "symbol": "CASH",
+        "target_weight": "0.55"
+      },
+      {
+        "symbol": "GLD",
+        "target_weight": "0.25"
+      },
+      {
+        "symbol": "TLT",
+        "target_weight": "0.2"
+      }
+    ],
+    "reason_title_digest": "市場制度分類為 risk_off",
+    "comparison": {
+      "run_id": "20260730T105803Z",
+      "generated_at": "2026-07-30T10:58:03.064925Z",
+      "allocations": [
+        {
+          "symbol": "CASH",
+          "target_amount_usd": "3300.00",
+          "target_weight": "0.55"
+        },
+        {
+          "symbol": "GLD",
+          "target_amount_usd": "1500.00",
+          "target_weight": "0.25"
+        },
+        {
+          "symbol": "TLT",
+          "target_amount_usd": "1200.00",
+          "target_weight": "0.2"
+        }
+      ],
+      "top_reasons": [
+        {
+          "id": 1,
+          "title": "市場制度分類為 risk_off"
+        },
+        {
+          "id": 2,
+          "title": "波動率明顯抬升"
+        },
+        {
+          "id": 3,
+          "title": "成長與半導體同步承壓"
+        },
+        {
+          "id": 4,
+          "title": "下跌伴隨較高成交量比"
+        },
+        {
+          "id": 5,
+          "title": "短期績效視窗尚未形成"
+        },
+        {
+          "id": 6,
+          "title": "現金比例遵守硬限制"
+        },
+        {
+          "id": 7,
+          "title": "GLD僅作分散化候選"
+        },
+        {
+          "id": 8,
+          "title": "TLT防禦效果仍未確認"
+        },
+        {
+          "id": 9,
+          "title": "反向ETF比較後暫不配置"
+        },
+        {
+          "id": 10,
+          "title": "資料時效與交易摩擦限制結論"
+        }
+      ]
+    }
+  },
+  {
+    "archive_id": "20260731T064238Z",
+    "generated_at": "2026-07-31T06:42:38.305597Z",
+    "status": null,
+    "allocation_summary": [
+      {
+        "symbol": "CASH",
+        "target_weight": "0.5"
+      },
+      {
+        "symbol": "GLD",
+        "target_weight": "0.25"
+      },
+      {
+        "symbol": "TLT",
+        "target_weight": "0.25"
+      }
+    ],
+    "reason_title_digest": "市場狀態仍標示為 risk_off",
+    "comparison": {
+      "run_id": "20260731T064238Z",
+      "generated_at": "2026-07-31T06:42:38.305597Z",
+      "allocations": [
+        {
+          "symbol": "CASH",
+          "target_amount_usd": "3000.00",
+          "target_weight": "0.5"
+        },
+        {
+          "symbol": "GLD",
+          "target_amount_usd": "1500.00",
+          "target_weight": "0.25"
+        },
+        {
+          "symbol": "TLT",
+          "target_amount_usd": "1500.00",
+          "target_weight": "0.25"
+        }
+      ],
+      "top_reasons": [
+        {
+          "id": 1,
+          "title": "市場狀態仍標示為 risk_off"
+        },
+        {
+          "id": 2,
+          "title": "SPY中期報酬仍偏弱"
+        },
+        {
+          "id": 3,
+          "title": "科技風險資產中期壓力較大"
+        },
+        {
+          "id": 4,
+          "title": "單日反彈尚不足以確認趨勢"
+        },
+        {
+          "id": 5,
+          "title": "槓桿工具波動過高"
+        },
+        {
+          "id": 6,
+          "title": "VIX回落但不代表風險消失"
+        },
+        {
+          "id": 7,
+          "title": "黃金具近期相對穩定性"
+        },
+        {
+          "id": 8,
+          "title": "TLT防禦效果並不明確"
+        },
+        {
+          "id": 9,
+          "title": "利率上行增加久期風險"
+        },
+        {
+          "id": 10,
+          "title": "資料與成本限制要求降低信心"
+        }
+      ]
+    }
+  },
+  {
+    "archive_id": "20260804T155659Z",
+    "generated_at": "2026-08-04T15:56:59.500083Z",
+    "status": null,
+    "allocation_summary": [
+      {
+        "symbol": "CASH",
+        "target_weight": "1"
+      }
+    ],
+    "reason_title_digest": "官方事件閘門全部缺失",
+    "comparison": {
+      "run_id": "20260804T155659Z",
+      "generated_at": "2026-08-04T15:56:59.500083Z",
+      "allocations": [
+        {
+          "symbol": "CASH",
+          "target_amount_usd": "6000.00",
+          "target_weight": "1"
+        }
+      ],
+      "top_reasons": [
+        {
+          "id": 1,
+          "title": "官方事件閘門全部缺失"
+        },
+        {
+          "id": 2,
+          "title": "缺少完成日收盤審計"
+        },
+        {
+          "id": 3,
+          "title": "技術特徵完全缺失"
+        },
+        {
+          "id": 4,
+          "title": "單日市場表現偏多但不可外推"
+        },
+        {
+          "id": 5,
+          "title": "半導體領漲伴隨波動上升"
+        },
+        {
+          "id": 6,
+          "title": "利率與通膨政策不確定"
+        },
+        {
+          "id": 7,
+          "title": "短期績效硬檢核未完成"
+        },
+        {
+          "id": 8,
+          "title": "交易摩擦尚未扣除"
+        },
+        {
+          "id": 9,
+          "title": "AI與半導體敘事仍具催化力"
+        },
+        {
+          "id": 10,
+          "title": "PLTR盈利改善但估值與集中風險高"
+        }
+      ]
+    }
+  },
+  {
+    "archive_id": "20260805T122207Z",
+    "generated_at": "2026-08-05T12:22:07.233751Z",
+    "status": null,
+    "allocation_summary": [
+      {
+        "symbol": "SPY",
+        "target_weight": "0.1538"
+      },
+      {
+        "symbol": "GLD",
+        "target_weight": "0.0769"
+      },
+      {
+        "symbol": "TLT",
+        "target_weight": "0.1154"
+      },
+      {
+        "symbol": "AMD",
+        "target_weight": "0.0231"
+      },
+      {
+        "symbol": "PLTR",
+        "target_weight": "0.0154"
+      },
+      {
+        "symbol": "SMH",
+        "target_weight": "0.1154"
+      },
+      {
+        "symbol": "CASH",
+        "target_weight": "0.50"
+      }
+    ],
+    "reason_title_digest": "樣本不足只限制風險，不強制空手",
+    "comparison": {
+      "run_id": "20260805T122207Z",
+      "generated_at": "2026-08-05T12:22:07.233751Z",
+      "allocations": [
+        {
+          "symbol": "SPY",
+          "target_amount_usd": "922.80",
+          "target_weight": "0.1538"
+        },
+        {
+          "symbol": "GLD",
+          "target_amount_usd": "461.40",
+          "target_weight": "0.0769"
+        },
+        {
+          "symbol": "TLT",
+          "target_amount_usd": "692.40",
+          "target_weight": "0.1154"
+        },
+        {
+          "symbol": "AMD",
+          "target_amount_usd": "138.60",
+          "target_weight": "0.0231"
+        },
+        {
+          "symbol": "PLTR",
+          "target_amount_usd": "92.40",
+          "target_weight": "0.0154"
+        },
+        {
+          "symbol": "SMH",
+          "target_amount_usd": "692.40",
+          "target_weight": "0.1154"
+        },
+        {
+          "symbol": "CASH",
+          "target_amount_usd": "3000.00",
+          "target_weight": "0.50"
+        }
+      ],
+      "top_reasons": [
+        {
+          "id": 1,
+          "title": "樣本不足只限制風險，不強制空手"
+        },
+        {
+          "id": 2,
+          "title": "市場狀態偏向風險承擔但非已驗證優勢"
+        },
+        {
+          "id": 3,
+          "title": "SPY 動能較健康且波動相對可控"
+        },
+        {
+          "id": 4,
+          "title": "半導體短線強勢但中期尚未修復"
+        },
+        {
+          "id": 5,
+          "title": "AMD 財報支持基本面觀察而非短線訊號"
+        },
+        {
+          "id": 6,
+          "title": "PLTR 價格已顯著偏離短期均線"
+        },
+        {
+          "id": 7,
+          "title": "TLT 提供分散但利率敏感度仍高"
+        },
+        {
+          "id": 8,
+          "title": "GLD 可分散但近期方向不明確"
+        },
+        {
+          "id": 9,
+          "title": "短期績效政策仍限制方向性調整"
+        },
+        {
+          "id": 10,
+          "title": "交易摩擦與資料延遲降低可執行信心"
+        }
+      ]
+    }
+  },
+  {
+    "archive_id": "manual-20260724T014200+0800",
+    "generated_at": "2026-07-24T01:46:00+08:00",
+    "status": null,
+    "allocation_summary": [
+      {
+        "symbol": "AMD",
+        "target_weight": "0.25"
+      },
+      {
+        "symbol": "PLTR",
+        "target_weight": "0.20"
+      },
+      {
+        "symbol": "SOXL",
+        "target_weight": "0.15"
+      },
+      {
+        "symbol": "TQQQ",
+        "target_weight": "0.15"
+      },
+      {
+        "symbol": "NVDA",
+        "target_weight": "0.10"
+      },
+      {
+        "symbol": "ERX",
+        "target_weight": "0.10"
+      },
+      {
+        "symbol": "CASH",
+        "target_weight": "0.05"
+      }
+    ],
+    "reason_title_digest": "AMD 財報前具高彈性催化",
+    "comparison": {
+      "run_id": "manual-20260724T014200+0800",
+      "generated_at": "2026-07-24T01:46:00+08:00",
+      "allocations": [
+        {
+          "symbol": "AMD",
+          "target_amount_usd": "1500.00",
+          "target_weight": "0.25"
+        },
+        {
+          "symbol": "PLTR",
+          "target_amount_usd": "1200.00",
+          "target_weight": "0.20"
+        },
+        {
+          "symbol": "SOXL",
+          "target_amount_usd": "900.00",
+          "target_weight": "0.15"
+        },
+        {
+          "symbol": "TQQQ",
+          "target_amount_usd": "900.00",
+          "target_weight": "0.15"
+        },
+        {
+          "symbol": "NVDA",
+          "target_amount_usd": "600.00",
+          "target_weight": "0.10"
+        },
+        {
+          "symbol": "ERX",
+          "target_amount_usd": "600.00",
+          "target_weight": "0.10"
+        },
+        {
+          "symbol": "CASH",
+          "target_amount_usd": "300.00",
+          "target_weight": "0.05"
+        }
+      ],
+      "top_reasons": [
+        {
+          "id": 1,
+          "title": "AMD 財報前具高彈性催化"
+        },
+        {
+          "id": 2,
+          "title": "PLTR 成長與財報事件並存"
+        },
+        {
+          "id": 3,
+          "title": "NVDA 基本面仍是 AI 核心"
+        },
+        {
+          "id": 4,
+          "title": "SOXL 放大半導體反彈"
+        },
+        {
+          "id": 5,
+          "title": "TQQQ 提供高 Beta 科技曝險"
+        },
+        {
+          "id": 6,
+          "title": "能源部位對應油價急升"
+        },
+        {
+          "id": 7,
+          "title": "近期催化事件集中"
+        },
+        {
+          "id": 8,
+          "title": "利率與通膨限制總曝險"
+        },
+        {
+          "id": 9,
+          "title": "風險訊號要求能源分流"
+        },
+        {
+          "id": 10,
+          "title": "極高風險必須配合硬性重評"
+        }
+      ]
+    }
+  },
+  {
+    "archive_id": "manual-intraday-20260728T143206Z",
+    "generated_at": null,
+    "status": null,
+    "allocation_summary": [],
+    "reason_title_digest": null,
+    "comparison": null
+  },
+  {
+    "archive_id": "policy-20260726T072038Z",
+    "generated_at": "2026-07-26T07:20:38.640083Z",
+    "status": null,
+    "allocation_summary": [
+      {
+        "symbol": "CASH",
+        "target_weight": "1"
+      }
+    ],
+    "reason_title_digest": "無法誠實保證 3／7 日正報酬",
+    "comparison": {
+      "run_id": "policy-20260726T072038Z",
+      "generated_at": "2026-07-26T07:20:38.640083Z",
+      "allocations": [
+        {
+          "symbol": "CASH",
+          "target_amount_usd": "6000.00",
+          "target_weight": "1"
+        }
+      ],
+      "top_reasons": [
+        {
+          "id": 1,
+          "title": "無法誠實保證 3／7 日正報酬"
+        },
+        {
+          "id": 2,
+          "title": "100% 現金是目前唯一的 fail-closed 配置"
+        },
+        {
+          "id": 3,
+          "title": "有效收盤樣本仍不足"
+        },
+        {
+          "id": 4,
+          "title": "3 日滾動績效尚不能驗證"
+        },
+        {
+          "id": 5,
+          "title": "7 日滾動績效尚不能驗證"
+        },
+        {
+          "id": 6,
+          "title": "交易摩擦尚未納入淨績效"
+        },
+        {
+          "id": 7,
+          "title": "槓桿或反向 ETF 不能提供多日保證"
+        },
+        {
+          "id": 8,
+          "title": "官方事件日曆仍未進入確定性風控"
+        },
+        {
+          "id": 9,
+          "title": "波動期限結構資料仍不完整"
+        },
+        {
+          "id": 10,
+          "title": "硬排除清單與資金隔離維持不變"
+        }
+      ]
+    }
+  },
+  {
+    "archive_id": "review-20260724T031844Z",
+    "generated_at": "2026-07-24T03:19:58Z",
+    "status": "hypothetical",
+    "allocation_summary": [],
+    "reason_title_digest": null,
+    "comparison": null
+  }
+]

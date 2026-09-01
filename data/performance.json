@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "currency": "USD",
   "initial_value_usd": "6000.00",
-  "updated_at": "2026-08-14T11:11:22.482523Z",
+  "updated_at": "2026-09-01T14:58:12.645585Z",
   "status": "hypothetical",
   "methodology": "假設按每輪建議權重持有碎股，並在下一個評價點按最新建議重新平衡；忽略手續費、價差、滑價、稅負與匯率。這是研究策略指數，不是實際帳戶績效。",
   "points": [
@@ -39,7 +39,19 @@
           "price_usd": "95.402496"
         }
       ],
-      "note": "第一輪建議的假設起點；尚未執行任何交易。"
+      "note": "第一輪建議的假設起點；尚未執行任何交易。",
+      "net_value_usd": null,
+      "turnover": null,
+      "estimated_spread_usd": null,
+      "estimated_slippage_usd": null,
+      "estimated_fees_usd": null,
+      "cost_model_version": null,
+      "cost_model_source": null,
+      "tax_treatment": "excluded",
+      "fx_treatment": "not_applicable",
+      "benchmarks": [],
+      "data_provenance": null,
+      "target_weights": {}
     },
     {
       "as_of": "2026-07-23T20:00:00Z",
@@ -74,7 +86,19 @@
           "price_usd": "94.489998"
         }
       ],
-      "note": "第一輪建議至 2026-07-23 收盤的假設績效；不是 7 月 24 日收盤值。"
+      "note": "第一輪建議至 2026-07-23 收盤的假設績效；不是 7 月 24 日收盤值。",
+      "net_value_usd": null,
+      "turnover": null,
+      "estimated_spread_usd": null,
+      "estimated_slippage_usd": null,
+      "estimated_fees_usd": null,
+      "cost_model_version": null,
+      "cost_model_source": null,
+      "tax_treatment": "excluded",
+      "fx_treatment": "not_applicable",
+      "benchmarks": [],
+      "data_provenance": null,
+      "target_weights": {}
     },
     {
       "as_of": "2026-07-24T06:59:39.276777Z",
@@ -145,7 +169,19 @@
           "price_usd": "18.700001"
         }
       ],
-      "note": "依上一輪建議權重與最新可得行情計算；假設績效，不代表實際成交。"
+      "note": "依上一輪建議權重與最新可得行情計算；假設績效，不代表實際成交。",
+      "net_value_usd": null,
+      "turnover": null,
+      "estimated_spread_usd": null,
+      "estimated_slippage_usd": null,
+      "estimated_fees_usd": null,
+      "cost_model_version": null,
+      "cost_model_source": null,
+      "tax_treatment": "excluded",
+      "fx_treatment": "not_applicable",
+      "benchmarks": [],
+      "data_provenance": null,
+      "target_weights": {}
     },
     {
       "as_of": "2026-07-25T10:00:20.353794Z",
@@ -216,7 +252,19 @@
           "price_usd": "18.58"
         }
       ],
-      "note": "依上一輪建議權重與最新可得行情計算；假設績效，不代表實際成交。"
+      "note": "依上一輪建議權重與最新可得行情計算；假設績效，不代表實際成交。",
+      "net_value_usd": null,
+      "turnover": null,
+      "estimated_spread_usd": null,
+      "estimated_slippage_usd": null,
+      "estimated_fees_usd": null,
+      "cost_model_version": null,
+      "cost_model_source": null,
+      "tax_treatment": "excluded",
+      "fx_treatment": "not_applicable",
+      "benchmarks": [],
+      "data_provenance": null,
+      "target_weights": {}
     },
     {
       "as_of": "2026-07-29T01:10:51.913502Z",
@@ -287,7 +335,19 @@
           "price_usd": "18.209999"
         }
       ],
-      "note": "依上一輪建議權重與最新可得行情計算；假設績效，不代表實際成交。"
+      "note": "依上一輪建議權重與最新可得行情計算；假設績效，不代表實際成交。",
+      "net_value_usd": null,
+      "turnover": null,
+      "estimated_spread_usd": null,
+      "estimated_slippage_usd": null,
+      "estimated_fees_usd": null,
+      "cost_model_version": null,
+      "cost_model_source": null,
+      "tax_treatment": "excluded",
+      "fx_treatment": "not_applicable",
+      "benchmarks": [],
+      "data_provenance": null,
+      "target_weights": {}
     },
     {
       "as_of": "2026-07-30T10:56:09.037492Z",
@@ -358,7 +418,19 @@
           "price_usd": "20.66"
         }
       ],
-      "note": "依上一輪建議權重與最新可得行情計算；假設績效，不代表實際成交。"
+      "note": "依上一輪建議權重與最新可得行情計算；假設績效，不代表實際成交。",
+      "net_value_usd": null,
+      "turnover": null,
+      "estimated_spread_usd": null,
+      "estimated_slippage_usd": null,
+      "estimated_fees_usd": null,
+      "cost_model_version": null,
+      "cost_model_source": null,
+      "tax_treatment": "excluded",
+      "fx_treatment": "not_applicable",
+      "benchmarks": [],
+      "data_provenance": null,
+      "target_weights": {}
     },
     {
       "as_of": "2026-07-31T06:39:51.365300Z",
@@ -429,7 +501,19 @@
           "price_usd": "17.09"
         }
       ],
-      "note": "依上一輪建議權重與最新可得行情計算；假設績效，不代表實際成交。"
+      "note": "依上一輪建議權重與最新可得行情計算；假設績效，不代表實際成交。",
+      "net_value_usd": null,
+      "turnover": null,
+      "estimated_spread_usd": null,
+      "estimated_slippage_usd": null,
+      "estimated_fees_usd": null,
+      "cost_model_version": null,
+      "cost_model_source": null,
+      "tax_treatment": "excluded",
+      "fx_treatment": "not_applicable",
+      "benchmarks": [],
+      "data_provenance": null,
+      "target_weights": {}
     },
     {
       "as_of": "2026-08-05T12:20:27.256629Z",
@@ -500,7 +584,19 @@
           "price_usd": "16.5"
         }
       ],
-      "note": "依上一輪建議權重與最新可得行情計算；假設績效，不代表實際成交。"
+      "note": "依上一輪建議權重與最新可得行情計算；假設績效，不代表實際成交。",
+      "net_value_usd": null,
+      "turnover": null,
+      "estimated_spread_usd": null,
+      "estimated_slippage_usd": null,
+      "estimated_fees_usd": null,
+      "cost_model_version": null,
+      "cost_model_source": null,
+      "tax_treatment": "excluded",
+      "fx_treatment": "not_applicable",
+      "benchmarks": [],
+      "data_provenance": null,
+      "target_weights": {}
     },
     {
       "as_of": "2026-08-04T15:38:19.715163Z",
@@ -583,7 +679,19 @@
           "price_usd": "16.219999"
         }
       ],
-      "note": "依上一輪建議權重與最新可得行情計算；假設績效，不代表實際成交。"
+      "note": "依上一輪建議權重與最新可得行情計算；假設績效，不代表實際成交。",
+      "net_value_usd": null,
+      "turnover": null,
+      "estimated_spread_usd": null,
+      "estimated_slippage_usd": null,
+      "estimated_fees_usd": null,
+      "cost_model_version": null,
+      "cost_model_source": null,
+      "tax_treatment": "excluded",
+      "fx_treatment": "not_applicable",
+      "benchmarks": [],
+      "data_provenance": null,
+      "target_weights": {}
     },
     {
       "as_of": "2026-08-07T21:03:25.447227Z",
@@ -654,7 +762,19 @@
           "price_usd": "14.9"
         }
       ],
-      "note": "依上一輪建議權重與最新可得行情計算；假設績效，不代表實際成交。"
+      "note": "依上一輪建議權重與最新可得行情計算；假設績效，不代表實際成交。",
+      "net_value_usd": null,
+      "turnover": null,
+      "estimated_spread_usd": null,
+      "estimated_slippage_usd": null,
+      "estimated_fees_usd": null,
+      "cost_model_version": null,
+      "cost_model_source": null,
+      "tax_treatment": "excluded",
+      "fx_treatment": "not_applicable",
+      "benchmarks": [],
+      "data_provenance": null,
+      "target_weights": {}
     },
     {
       "as_of": "2026-08-11T11:58:12.805272Z",
@@ -725,7 +845,19 @@
           "price_usd": "15.46"
         }
       ],
-      "note": "依上一輪建議權重與最新可得行情計算；假設績效，不代表實際成交。"
+      "note": "依上一輪建議權重與最新可得行情計算；假設績效，不代表實際成交。",
+      "net_value_usd": null,
+      "turnover": null,
+      "estimated_spread_usd": null,
+      "estimated_slippage_usd": null,
+      "estimated_fees_usd": null,
+      "cost_model_version": null,
+      "cost_model_source": null,
+      "tax_treatment": "excluded",
+      "fx_treatment": "not_applicable",
+      "benchmarks": [],
+      "data_provenance": null,
+      "target_weights": {}
     },
     {
       "as_of": "2026-08-12T13:49:59.783882Z",
@@ -796,7 +928,19 @@
           "price_usd": "15.28"
         }
       ],
-      "note": "依上一輪建議權重與最新可得行情計算；假設績效，不代表實際成交。"
+      "note": "依上一輪建議權重與最新可得行情計算；假設績效，不代表實際成交。",
+      "net_value_usd": null,
+      "turnover": null,
+      "estimated_spread_usd": null,
+      "estimated_slippage_usd": null,
+      "estimated_fees_usd": null,
+      "cost_model_version": null,
+      "cost_model_source": null,
+      "tax_treatment": "excluded",
+      "fx_treatment": "not_applicable",
+      "benchmarks": [],
+      "data_provenance": null,
+      "target_weights": {}
     },
     {
       "as_of": "2026-08-14T11:11:22.482523Z",
@@ -867,7 +1011,151 @@
           "price_usd": "14.63"
         }
       ],
-      "note": "依上一輪建議權重與最新可得行情計算；假設績效，不代表實際成交。"
+      "note": "依上一輪建議權重與最新可得行情計算；假設績效，不代表實際成交。",
+      "net_value_usd": null,
+      "turnover": null,
+      "estimated_spread_usd": null,
+      "estimated_slippage_usd": null,
+      "estimated_fees_usd": null,
+      "cost_model_version": null,
+      "cost_model_source": null,
+      "tax_treatment": "excluded",
+      "fx_treatment": "not_applicable",
+      "benchmarks": [],
+      "data_provenance": null,
+      "target_weights": {}
+    },
+    {
+      "as_of": "2026-09-01T14:58:12.645585Z",
+      "run_id": "learning-20260901T145900Z",
+      "price_session": "2026-09-01",
+      "value_usd": "6078.76",
+      "profit_loss_usd": "78.76",
+      "return_percent": "1.3127",
+      "prices": [
+        {
+          "symbol": "AMD",
+          "price_usd": "456.700012"
+        },
+        {
+          "symbol": "CL=F",
+          "price_usd": "85.760002"
+        },
+        {
+          "symbol": "DIA",
+          "price_usd": "529.799988"
+        },
+        {
+          "symbol": "ERX",
+          "price_usd": "110.019997"
+        },
+        {
+          "symbol": "GLD",
+          "price_usd": "399.73999"
+        },
+        {
+          "symbol": "IWM",
+          "price_usd": "292.144989"
+        },
+        {
+          "symbol": "NVDA",
+          "price_usd": "217.779999"
+        },
+        {
+          "symbol": "PLTR",
+          "price_usd": "184.470001"
+        },
+        {
+          "symbol": "QQQ",
+          "price_usd": "709.85498"
+        },
+        {
+          "symbol": "SMH",
+          "price_usd": "545.320007"
+        },
+        {
+          "symbol": "SOXL",
+          "price_usd": "105.391701"
+        },
+        {
+          "symbol": "SPY",
+          "price_usd": "763.48999"
+        },
+        {
+          "symbol": "SQQQ",
+          "price_usd": "39.625"
+        },
+        {
+          "symbol": "TLT",
+          "price_usd": "82.118599"
+        },
+        {
+          "symbol": "TQQQ",
+          "price_usd": "69.82"
+        },
+        {
+          "symbol": "VTI",
+          "price_usd": "376.234985"
+        },
+        {
+          "symbol": "^TNX",
+          "price_usd": "4.758"
+        },
+        {
+          "symbol": "^VIX",
+          "price_usd": "14.92"
+        }
+      ],
+      "note": "依上一輪建議權重與最新可得行情計算；假設績效，不代表實際成交。",
+      "net_value_usd": "6078.76",
+      "turnover": "0",
+      "estimated_spread_usd": "0",
+      "estimated_slippage_usd": "0",
+      "estimated_fees_usd": "0",
+      "cost_model_version": null,
+      "cost_model_source": null,
+      "tax_treatment": "excluded",
+      "fx_treatment": "not_applicable",
+      "benchmarks": [
+        {
+          "symbol": "DIA",
+          "price_usd": "529.799988",
+          "price_session": "2026-09-01",
+          "source": "Yahoo Finance via yfinance"
+        },
+        {
+          "symbol": "IWM",
+          "price_usd": "292.144989",
+          "price_session": "2026-09-01",
+          "source": "Yahoo Finance via yfinance"
+        },
+        {
+          "symbol": "QQQ",
+          "price_usd": "709.85498",
+          "price_session": "2026-09-01",
+          "source": "Yahoo Finance via yfinance"
+        },
+        {
+          "symbol": "SPY",
+          "price_usd": "763.48999",
+          "price_session": "2026-09-01",
+          "source": "Yahoo Finance via yfinance"
+        },
+        {
+          "symbol": "VTI",
+          "price_usd": "376.234985",
+          "price_session": "2026-09-01",
+          "source": "Yahoo Finance via yfinance"
+        }
+      ],
+      "data_provenance": "Benchmark closes were captured from this market snapshot; no later data is used.",
+      "target_weights": {
+        "CASH": "0.4",
+        "SPY": "0.25",
+        "TLT": "0.15",
+        "GLD": "0.1",
+        "NVDA": "0.1"
+      }
     }
   ]
 }

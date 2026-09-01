@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-14T11:15:17.452603Z",
+  "generated_at": "2026-08-14T18:14:04.520576Z",
   "data_cutoff": "2026-08-14T11:11:22.482523Z",
   "portfolio_health": {
     "score": 92,
@@ -45,12 +45,48 @@
     "distinct_completed_sessions": 10,
     "ending_value_usd": "6131.63",
     "total_return_percent": "2.1938",
+    "net_ending_value_usd": null,
+    "net_total_return_percent": null,
+    "net_maximum_drawdown_percent": null,
+    "cumulative_turnover": null,
+    "benchmark_status": "missing",
     "maximum_drawdown_percent": "-0.3507",
     "sharpe_ratio": null,
     "win_rate_percent": null,
-    "benchmark_status": "missing",
     "sample_status": "too_early",
     "methodology": "同一市場交易日只保留最後一個明確標記的收盤評價，且連續完全相同的估值點不重複計算。少於 20 個有效區間時不顯示 Sharpe 與勝率。目前尚未保存同步基準、滑價、價差、費用與稅負。"
+  },
+  "short_horizon_evidence": {
+    "session_count": 10,
+    "horizons": [
+      {
+        "horizon_sessions": 3,
+        "completed_windows": 7,
+        "positive_windows": 4,
+        "positive_rate_percent": "57.1429",
+        "latest_gross_return_percent": "-0.1087",
+        "worst_gross_return_percent": "-0.1087",
+        "latest_net_return_percent": null,
+        "worst_net_return_percent": null,
+        "net_status": "missing",
+        "sample_status": "too_early",
+        "methodology": "依 price_session 排序；同一交易日只保留最後一個 evaluation point，以收盤到收盤的重疊滾動視窗計算 gross return。少於 20 個完整視窗時不作推論；未保存成本時 net return 為 missing。"
+      },
+      {
+        "horizon_sessions": 7,
+        "completed_windows": 3,
+        "positive_windows": 3,
+        "positive_rate_percent": "100.0000",
+        "latest_gross_return_percent": "1.2527",
+        "worst_gross_return_percent": "1.2167",
+        "latest_net_return_percent": null,
+        "worst_net_return_percent": null,
+        "net_status": "missing",
+        "sample_status": "too_early",
+        "methodology": "依 price_session 排序；同一交易日只保留最後一個 evaluation point，以收盤到收盤的重疊滾動視窗計算 gross return。少於 20 個完整視窗時不作推論；未保存成本時 net return 為 missing。"
+      }
+    ],
+    "methodology": "3／7 交易日視窗均為重疊的 completed-session close-to-close gross return；positive rate 不是獨立樣本勝率。"
   },
   "return_objective": {
     "annualized_target_percent": "24.0000",
