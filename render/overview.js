@@ -685,6 +685,19 @@ const researchStatusLabel = (value) => {
   };
 
 
+  const renderExtensionSummary = ({ thesisBook, earningsReviews, marketIntelligence, extensionStatus }) => {
+    const market = marketIntelligence || {};
+    const status = (extensionStatus?.extensions || []).map((item) => item.name + ": " + item.status).join(" · ") || "尚未啟用 extensions";
+    return "<section class=\"panel research-extensions\" id=\"research-extensions\" data-tab-section=\"overview\">" +
+      "<header class=\"panel-header\"><div><span class=\"section-kicker\">正規化研究 extensions</span><h2>研究增量與資料缺口</h2></div><span class=\"panel-meta\">" +
+      escapeHtml(status) + "</span></header><div class=\"research-extension-grid\">" +
+      "<article><span class=\"section-kicker\">Thesis changes</span><strong>" + escapeHtml((thesisBook?.recent_deltas || []).length) + "</strong><p>" + escapeHtml(thesisBook?.recent_deltas?.[0]?.rationale || "沒有新的 thesis delta") + "</p></article>" +
+      "<article><span class=\"section-kicker\">Latest earnings impact</span><strong>" + escapeHtml((earningsReviews?.reviews || []).length) + "</strong><p>" + escapeHtml(earningsReviews?.reviews?.[0]?.symbol || "沒有新的 earnings event") + "</p></article>" +
+      "<article><span class=\"section-kicker\">Competitive / valuation / concentration</span><strong>" + escapeHtml((market.competitive || []).length + (market.valuation || []).length + (market.factor_exposures || []).length) + "</strong><p>" + escapeHtml(market.diagnostics?.[0] || "沒有新增市場 intelligence") + "</p></article>" +
+      "<article><span class=\"section-kicker\">Upcoming catalysts</span><strong>" + escapeHtml((market.catalysts || []).length) + "</strong><p>" + escapeHtml(market.catalysts?.[0]?.event_id || "沒有新增催化") + "</p></article></div>" +
+      "<p class=\"extension-gap-note\"><span class=\"section-kicker\">Data sources & gaps</span> " + escapeHtml((extensionStatus?.gaps || []).join(" · ") || "沒有未解的 extension gap") + "</p></section>";
+  };
+
   const render = ({
     recommendation,
     committee,
@@ -696,6 +709,10 @@ const researchStatusLabel = (value) => {
     rebalance,
     researchJournal,
     dashboardAnalytics,
+    thesisBook,
+    earningsReviews,
+    marketIntelligence,
+    extensionStatus,
   }) => {
     const overview = createOverviewModel({ dashboardAnalytics, committee, recommendation });
     const { isLive, invested, cash, modelScore, scoreBand, scoreReason, scoreAngle, donut, committeeSize, health, analyticsPerformance, returnObjective, shortHorizonEvidence } = overview;
@@ -781,6 +798,8 @@ const researchStatusLabel = (value) => {
             <p class="side-note">固定週度驗證：每 5 個交易日（週一至週五）更新一次</p>
           </aside>
         </section>
+
+        ${renderExtensionSummary({ thesisBook, earningsReviews, marketIntelligence, extensionStatus })}
 
         <section class="metrics" aria-label="投資組合總覽" data-tab-section="overview">
           <article class="metric">

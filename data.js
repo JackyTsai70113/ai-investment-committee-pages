@@ -17,6 +17,15 @@ export function createDataLoader(base) {
     return request;
   };
 
+  const fetchOptionalJson = async (name) => {
+    try {
+      return await fetchJson(name);
+    } catch (error) {
+      if (String(error?.message || "").includes("HTTP 404")) return null;
+      throw error;
+    }
+  };
+
   const loadOverviewPayload = async () => {
 
   const [
@@ -30,6 +39,10 @@ export function createDataLoader(base) {
     rebalance,
     researchJournal,
     dashboardAnalytics,
+    thesisBook,
+    earningsReviews,
+    marketIntelligence,
+    extensionStatus,
   ] = await Promise.all([
     fetchJson("recommendation.json"),
     fetchJson("committee_summary.json"),
@@ -41,9 +54,13 @@ export function createDataLoader(base) {
     fetchJson("rebalance.json"),
     fetchJson("research_journal.json"),
     fetchJson("dashboard_analytics.json"),
+    fetchOptionalJson("thesis_book.json"),
+    fetchOptionalJson("extension_earnings_reviews.json"),
+    fetchOptionalJson("market_intelligence.json"),
+    fetchOptionalJson("research_extension_status.json"),
   ]);
 
-    return { recommendation, committee, market, system, history, learning, performance, rebalance, researchJournal, dashboardAnalytics, agentProfiles: {} };
+    return { recommendation, committee, market, system, history, learning, performance, rebalance, researchJournal, dashboardAnalytics, thesisBook, earningsReviews, marketIntelligence, extensionStatus, agentProfiles: {} };
   };
 
   const loadCommitteePayload = () => fetchJson("committee.json");

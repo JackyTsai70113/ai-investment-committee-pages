@@ -1578,6 +1578,39 @@ a {
   text-align: right;
 }
 
+.research-extension-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.research-extension-grid article {
+  min-width: 0;
+  padding: 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 0.8rem;
+  background: rgba(199, 241, 91, 0.035);
+}
+
+.research-extension-grid strong {
+  display: block;
+  margin: 0.35rem 0;
+  color: var(--acid);
+  font-size: 1.55rem;
+}
+
+.research-extension-grid p,
+.extension-gap-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  overflow-wrap: anywhere;
+}
+
+.extension-gap-note {
+  margin-top: 1rem;
+}
+
 .strategy-layout {
   display: grid;
   grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1.75fr);
@@ -2961,6 +2994,10 @@ td {
 
   .agent-directory-header,
   .agent-profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .research-extension-grid {
     grid-template-columns: 1fr;
   }
 
