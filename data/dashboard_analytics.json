@@ -1,23 +1,23 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-14T18:14:04.520576Z",
-  "data_cutoff": "2026-08-14T11:11:22.482523Z",
+  "generated_at": "2026-09-03T08:38:49.745530Z",
+  "data_cutoff": "2026-09-02T16:53:12.540434Z",
   "portfolio_health": {
-    "score": 92,
-    "grade": "strong",
-    "summary": "現金與低槓桿使組合本身具防護；最新模型管線成功完成，委員共識高，但績效樣本仍不足。健康分數不能解讀為獲利機率。",
+    "score": 59,
+    "grade": "caution",
+    "summary": "現金與低槓桿使組合本身具防護；最新模型管線失敗，目前沿用上一份決策，委員共識高，但績效樣本仍不足。健康分數不能解讀為獲利機率。",
     "components": [
       {
-        "component": "分散度",
-        "score": 20,
+        "component": "曝險分散度",
+        "score": 2,
         "maximum": 20,
-        "explanation": "目前有 4 個非現金標的；最大風險部位 25.0000%。"
+        "explanation": "Look-through coverage 為 unavailable；資料缺口不能視為分散。"
       },
       {
         "component": "流動性",
         "score": 20,
         "maximum": 20,
-        "explanation": "現金比重 40.0000%。"
+        "explanation": "現金比重 100.0000%。"
       },
       {
         "component": "槓桿控制",
@@ -27,66 +27,34 @@
       },
       {
         "component": "管線可靠性",
-        "score": 20,
+        "score": 5,
         "maximum": 20,
-        "explanation": "最新正式委員會成功完成。"
+        "explanation": "最新正式委員會失敗，目前沿用上一份決策。"
       },
       {
         "component": "證據與共識",
         "score": 12,
         "maximum": 20,
-        "explanation": "委員共識度 98/100；研究準備度 not_ready。"
+        "explanation": "委員共識度 93/100；研究準備度 not_ready。"
       }
     ]
   },
   "performance": {
-    "completed_points": 11,
-    "completed_intervals": 10,
-    "distinct_completed_sessions": 10,
-    "ending_value_usd": "6131.63",
-    "total_return_percent": "2.1938",
-    "net_ending_value_usd": null,
-    "net_total_return_percent": null,
-    "net_maximum_drawdown_percent": null,
-    "cumulative_turnover": null,
-    "benchmark_status": "missing",
-    "maximum_drawdown_percent": "-0.3507",
-    "sharpe_ratio": null,
-    "win_rate_percent": null,
-    "sample_status": "too_early",
-    "methodology": "同一市場交易日只保留最後一個明確標記的收盤評價，且連續完全相同的估值點不重複計算。少於 20 個有效區間時不顯示 Sharpe 與勝率。目前尚未保存同步基準、滑價、價差、費用與稅負。"
-  },
-  "short_horizon_evidence": {
-    "session_count": 10,
-    "horizons": [
-      {
-        "horizon_sessions": 3,
-        "completed_windows": 7,
-        "positive_windows": 4,
-        "positive_rate_percent": "57.1429",
-        "latest_gross_return_percent": "-0.1087",
-        "worst_gross_return_percent": "-0.1087",
-        "latest_net_return_percent": null,
-        "worst_net_return_percent": null,
-        "net_status": "missing",
-        "sample_status": "too_early",
-        "methodology": "依 price_session 排序；同一交易日只保留最後一個 evaluation point，以收盤到收盤的重疊滾動視窗計算 gross return。少於 20 個完整視窗時不作推論；未保存成本時 net return 為 missing。"
-      },
-      {
-        "horizon_sessions": 7,
-        "completed_windows": 3,
-        "positive_windows": 3,
-        "positive_rate_percent": "100.0000",
-        "latest_gross_return_percent": "1.2527",
-        "worst_gross_return_percent": "1.2167",
-        "latest_net_return_percent": null,
-        "worst_net_return_percent": null,
-        "net_status": "missing",
-        "sample_status": "too_early",
-        "methodology": "依 price_session 排序；同一交易日只保留最後一個 evaluation point，以收盤到收盤的重疊滾動視窗計算 gross return。少於 20 個完整視窗時不作推論；未保存成本時 net return 為 missing。"
-      }
-    ],
-    "methodology": "3／7 交易日視窗均為重疊的 completed-session close-to-close gross return；positive rate 不是獨立樣本勝率。"
+    "completed_points": 13,
+    "completed_intervals": 12,
+    "distinct_completed_sessions": 12,
+    "ending_value_usd": "6080.58",
+    "total_return_percent": "1.3430",
+    "net_ending_value_usd": "6079.94",
+    "net_total_return_percent": "1.3323",
+    "net_maximum_drawdown_percent": "-0.9700",
+    "cumulative_turnover": "0.3000",
+    "benchmark_status": "ready",
+    "maximum_drawdown_percent": "-0.9700",
+    "sharpe_ratio": "3.2130",
+    "win_rate_percent": "58.3333",
+    "sample_status": "provisional",
+    "methodology": "同一市場交易日只保留最後一個明確標記的收盤評價，且連續完全相同的估值點不重複計算。Sharpe 與勝率以目前已有的完成交易日區間計算，樣本較短時僅代表目前觀察期，會隨資料累積而穩定。成本未建模時 net 暫以 gross 作為 proxy；tax／FX 依每個 point 的狀態揭露。"
   },
   "return_objective": {
     "annualized_target_percent": "24.0000",
@@ -103,24 +71,24 @@
       "DIA",
       "VTI"
     ],
-    "benchmark_status": "missing",
-    "synchronized_completed_sessions": 0,
-    "comparison_start_session": null,
-    "comparison_end_session": null,
-    "strategy_comparison_return_percent": null,
-    "primary_benchmark_return_percent": null,
-    "strongest_benchmark_symbol": null,
-    "strongest_benchmark_return_percent": null,
-    "excess_return_vs_strongest_benchmark_percent": null,
-    "latest_monthly_strategy_return_percent": null,
-    "latest_monthly_strongest_benchmark_return_percent": null,
-    "latest_monthly_excess_return_percent": null,
-    "monthly_pace_status": "too_early",
-    "latest_annual_strategy_return_percent": null,
-    "latest_annual_strongest_benchmark_return_percent": null,
-    "latest_annual_excess_return_percent": null,
-    "annual_pace_status": "too_early",
-    "methodology": "24% 年化與 1.81% 月報酬是非保證研究目標；同步調整收盤資料不足時不評價。未扣除交易摩擦前只能顯示 gross preliminary，不得宣稱達成淨目標。"
+    "benchmark_status": "ready",
+    "synchronized_completed_sessions": 12,
+    "comparison_start_session": "2026-07-23",
+    "comparison_end_session": "2026-09-02",
+    "strategy_comparison_return_percent": "0.6106",
+    "primary_benchmark_return_percent": "3.6255",
+    "strongest_benchmark_symbol": "SPY",
+    "strongest_benchmark_return_percent": "3.6255",
+    "excess_return_vs_strongest_benchmark_percent": "-3.0149",
+    "latest_monthly_strategy_return_percent": "1.1689",
+    "latest_monthly_strongest_benchmark_return_percent": "7.0353",
+    "latest_monthly_excess_return_percent": "-5.8664",
+    "monthly_pace_status": "gross_below_both_hurdles",
+    "latest_annual_strategy_return_percent": "14.9650",
+    "latest_annual_strongest_benchmark_return_percent": "126.1136",
+    "latest_annual_excess_return_percent": "-111.1486",
+    "annual_pace_status": "gross_below_both_hurdles",
+    "methodology": "Primary benchmark 固定為 SPY；challenge set 為 SPY、QQQ、IWM、DIA、VTI。僅使用 performance point 同步封存的收盤資料；缺資料維持 partial，禁止 forward-fill。以目前已封存的完成交易日計算；目前只有 11 個交易日區間，年化 pace 僅作短期觀察，會隨資料累積而更穩定。"
   },
   "agent_leaderboard": [
     {
@@ -255,6 +223,6 @@
   "warnings": [
     "Portfolio Health Score 是資料、風控與流程完整度，不是獲利機率。",
     "Agent 命中率樣本極少，不得據此調整投票權重。",
-    "Sharpe、勝率與基準在樣本或資料不足時顯示 N/A，不以零冒充。"
+    "績效數值以目前已有的完成交易日計算；短期樣本較少，會隨時間累積而更穩定。"
   ]
 }

@@ -40,8 +40,7 @@ function createOverviewModel({ dashboardAnalytics, committee, recommendation }) 
     cash,
     committeeSize:
       (committee.summary_counts?.proposals ?? committee.proposals.length) +
-      (committee.summary_counts?.critiques ?? committee.critiques.length) +
-      1,
+      (committee.summary_counts?.critiques ?? committee.critiques.length),
     donut: `conic-gradient(${segments.join(",")})`,
     health: dashboardAnalytics.portfolio_health,
     invested,
@@ -53,7 +52,6 @@ function createOverviewModel({ dashboardAnalytics, committee, recommendation }) 
     scoreReason:
       recommendation.model_score_reason ||
       "舊制資料沒有保存評分理由；不可用這個數字判斷配置好壞。",
-    shortHorizonEvidence: dashboardAnalytics.short_horizon_evidence,
   };
 }
 
@@ -558,7 +556,7 @@ const researchStatusLabel = (value) => {
     challenged: "受到挑戰",
     invalidated: "已失效",
     mixed: "證據混合",
-    too_early: "追蹤期未完成",
+    too_early: "尚未開始",
     insufficient: "樣本不足",
     provisional: "暫定",
     usable: "可評估",
@@ -589,7 +587,7 @@ const researchStatusLabel = (value) => {
 
   const statistic = (value, suffix = "") =>
     value === null || value === undefined
-      ? "N/A"
+      ? "—"
       : `${Number(value).toFixed(2)}${suffix}`;
 
   const comparisonRecords = (history, recommendation) => {
@@ -685,19 +683,6 @@ const researchStatusLabel = (value) => {
   };
 
 
-  const renderExtensionSummary = ({ thesisBook, earningsReviews, marketIntelligence, extensionStatus }) => {
-    const market = marketIntelligence || {};
-    const status = (extensionStatus?.extensions || []).map((item) => item.name + ": " + item.status).join(" · ") || "尚未啟用 extensions";
-    return "<section class=\"panel research-extensions\" id=\"research-extensions\" data-tab-section=\"overview\">" +
-      "<header class=\"panel-header\"><div><span class=\"section-kicker\">正規化研究 extensions</span><h2>研究增量與資料缺口</h2></div><span class=\"panel-meta\">" +
-      escapeHtml(status) + "</span></header><div class=\"research-extension-grid\">" +
-      "<article><span class=\"section-kicker\">Thesis changes</span><strong>" + escapeHtml((thesisBook?.recent_deltas || []).length) + "</strong><p>" + escapeHtml(thesisBook?.recent_deltas?.[0]?.rationale || "沒有新的 thesis delta") + "</p></article>" +
-      "<article><span class=\"section-kicker\">Latest earnings impact</span><strong>" + escapeHtml((earningsReviews?.reviews || []).length) + "</strong><p>" + escapeHtml(earningsReviews?.reviews?.[0]?.symbol || "沒有新的 earnings event") + "</p></article>" +
-      "<article><span class=\"section-kicker\">Competitive / valuation / concentration</span><strong>" + escapeHtml((market.competitive || []).length + (market.valuation || []).length + (market.factor_exposures || []).length) + "</strong><p>" + escapeHtml(market.diagnostics?.[0] || "沒有新增市場 intelligence") + "</p></article>" +
-      "<article><span class=\"section-kicker\">Upcoming catalysts</span><strong>" + escapeHtml((market.catalysts || []).length) + "</strong><p>" + escapeHtml(market.catalysts?.[0]?.event_id || "沒有新增催化") + "</p></article></div>" +
-      "<p class=\"extension-gap-note\"><span class=\"section-kicker\">Data sources & gaps</span> " + escapeHtml((extensionStatus?.gaps || []).join(" · ") || "沒有未解的 extension gap") + "</p></section>";
-  };
-
   const render = ({
     recommendation,
     committee,
@@ -715,19 +700,9 @@ const researchStatusLabel = (value) => {
     extensionStatus,
   }) => {
     const overview = createOverviewModel({ dashboardAnalytics, committee, recommendation });
-    const { isLive, invested, cash, modelScore, scoreBand, scoreReason, scoreAngle, donut, committeeSize, health, analyticsPerformance, returnObjective, shortHorizonEvidence } = overview;
+    const { isLive, invested, cash, modelScore, scoreBand, scoreReason, scoreAngle, donut, committeeSize, health, analyticsPerformance, returnObjective } = overview;
     const statusLabel = "研究建議 · 研究用途";
     const comparableRecommendations = comparisonRecords(history, recommendation);
-    const shortHorizonCards = (Array.isArray(shortHorizonEvidence?.horizons)
-      ? shortHorizonEvidence.horizons
-      : [])
-      .map((item) => `
-        <div>
-          <span>${item.horizon_sessions === 3 ? "3 交易日滾動" : "7 交易日滾動"}</span>
-          <strong>${statistic(item.latest_gross_return_percent, "%")}</strong>
-          <small>${escapeHtml(researchStatusLabel(item.sample_status))} · ${escapeHtml(item.positive_windows)} / ${escapeHtml(item.completed_windows)} 正向 · 最差 ${escapeHtml(statistic(item.worst_gross_return_percent, "%"))}</small>
-        </div>`)
-      .join("");
     const seriesSummary = performanceSeriesSummary(performance.points);
     root.innerHTML = `
       <div class="app-shell">
@@ -737,7 +712,7 @@ const researchStatusLabel = (value) => {
             <span class="brand-mark">IC</span>
             <span class="brand-copy">
               <strong>投資委員會</strong>
-              <span>GitOps 組合研究</span>
+                <span>組合研究與短線追蹤</span>
             </span>
           </div>
           <div class="topbar-meta">
@@ -773,7 +748,7 @@ const researchStatusLabel = (value) => {
             <span class="eyebrow">投資摘要 / ${escapeHtml(recommendation.run_id)}</span>
             <h1>6,000 美元，<br /><span>一個可稽核的決策。</span></h1>
             <p class="hero-lede">
-              十個專業研究角色、兩位批判者與一位 ${agentLink("cio")}，把市場觀點壓縮成一份
+              十個專業研究角色與兩位批判者，把市場觀點壓縮成一份
               可驗證、不可自動執行的目標配置。
             </p>
             <div class="hero-strip">
@@ -799,8 +774,6 @@ const researchStatusLabel = (value) => {
           </aside>
         </section>
 
-        ${renderExtensionSummary({ thesisBook, earningsReviews, marketIntelligence, extensionStatus })}
-
         <section class="metrics" aria-label="投資組合總覽" data-tab-section="overview">
           <article class="metric">
             <span class="metric-label">總策略資金</span>
@@ -820,7 +793,7 @@ const researchStatusLabel = (value) => {
           <article class="metric">
             <span class="metric-label">委員會</span>
             <strong class="metric-value">${escapeHtml(committeeSize)}</strong>
-            <span class="metric-foot">${escapeHtml(committee.summary_counts?.proposals ?? committee.proposals.length)} 位研究員 · ${escapeHtml(committee.summary_counts?.critiques ?? committee.critiques.length)} 份批判 · 1 位${agentLink("cio")}</span>
+            <span class="metric-foot">${escapeHtml(committee.summary_counts?.proposals ?? committee.proposals.length)} 位研究員 · ${escapeHtml(committee.summary_counts?.critiques ?? committee.critiques.length)} 份批判</span>
           </article>
         </section>
 
@@ -862,18 +835,17 @@ const researchStatusLabel = (value) => {
             </div>
             <div class="terminal-stats">
               <div><span>淨累積報酬（估計成本後）</span><strong>${statistic(analyticsPerformance.net_total_return_percent, "%")}</strong></div>
-              <div><span>Gross 累積報酬</span><strong>${statistic(analyticsPerformance.total_return_percent, "%")}</strong></div>
+              <div><span>累積報酬（未扣成本）</span><strong>${statistic(analyticsPerformance.total_return_percent, "%")}</strong></div>
               <div><span>淨最大回撤</span><strong>${statistic(analyticsPerformance.net_maximum_drawdown_percent, "%")}</strong></div>
               <div><span>同步 SPY／最強基準</span><strong>${statistic(returnObjective.primary_benchmark_return_percent, "%")} / ${statistic(returnObjective.strongest_benchmark_return_percent, "%")}</strong></div>
-              <div><span>Net 超額報酬</span><strong>${statistic(returnObjective.excess_return_vs_strongest_benchmark_percent, "%")}</strong></div>
-              <div><span>基準資料狀態</span><strong>${escapeHtml(returnObjective.benchmark_status === "ready" ? "可比較" : returnObjective.benchmark_status === "partial" ? "部分資料" : "N/A")}</strong></div>
-              <div><span>完成收盤日</span><strong>${escapeHtml(shortHorizonEvidence?.session_count ?? "—")}</strong></div>
+              <div><span>超越最強基準</span><strong>${statistic(returnObjective.excess_return_vs_strongest_benchmark_percent, "%")}</strong></div>
+              <div><span>年化報酬／24%目標</span><strong>${statistic(returnObjective.latest_annual_strategy_return_percent, "%")} / ${statistic(returnObjective.annualized_target_percent, "%")}</strong></div>
+              <div><span>基準資料狀態</span><strong>${escapeHtml(returnObjective.benchmark_status === "ready" ? "可比較" : "部分資料")}</strong></div>
+              <div><span>完成收盤日</span><strong>${escapeHtml(analyticsPerformance.distinct_completed_sessions)}</strong></div>
               <div><span>夏普比率／日區間勝率</span><strong>${statistic(analyticsPerformance.sharpe_ratio)} / ${statistic(analyticsPerformance.win_rate_percent, "%")}</strong></div>
-              ${shortHorizonCards}
             </div>
             <p>${escapeHtml(analyticsPerformance.methodology)}</p>
             <p class="methodology-note">${escapeHtml(returnObjective.methodology)} 成本為假設；tax／FX 未建模時明確列為 excluded／not_applicable。</p>
-            <p class="methodology-note">${escapeHtml(shortHorizonEvidence?.methodology || "舊版歷史資料未保存 3／7 交易日證據；顯示 unavailable，不在瀏覽器重新推算。")}</p>
           </article>
         </section>
 
@@ -1086,7 +1058,7 @@ const researchStatusLabel = (value) => {
               </article>
               <article>
                 <span>05</span>
-                <strong>${agentLink("cio")} 決策</strong>
+                <strong>最終決策</strong>
                 <small>${escapeHtml(decisionLabel(committee.final_decision.market_stance))}</small>
               </article>
             </div>
@@ -1311,7 +1283,7 @@ const researchStatusLabel = (value) => {
             <header class="panel-header">
               <div>
                 <span class="section-kicker">假設策略指數</span>
-                <h2>USD 6,000 假設策略走勢</h2>
+                <h2>${money(performance.initial_value_usd)} 假設策略走勢</h2>
               </div>
               <span class="panel-meta">${escapeHtml(performance.points.length)}<br />評價點</span>
             </header>
@@ -1334,16 +1306,6 @@ const researchStatusLabel = (value) => {
                 <strong>${preciseMoney(researchJournal.performance.last_completed_value_usd)}</strong>
                 <small>${escapeHtml(researchJournal.performance.last_completed_return_percent)}% · ${escapeHtml(dateTime(researchJournal.performance.last_completed_evaluation_at))}</small>
               </article>
-              ${(Array.isArray(shortHorizonEvidence?.horizons) ? shortHorizonEvidence.horizons : [])
-                .map(
-                  (item) => `
-                    <article>
-                      <span>${item.horizon_sessions === 3 ? "3 交易日滾動" : "7 交易日滾動"}</span>
-                      <strong>${statistic(item.latest_gross_return_percent, "%")}</strong>
-                      <small>${escapeHtml(researchStatusLabel(item.sample_status))} · ${escapeHtml(item.positive_windows)} / ${escapeHtml(item.completed_windows)} 個正向視窗</small>
-                    </article>`,
-                )
-                .join("")}
               <article>
                 <span>績效評估資料區間</span>
                 <strong>${escapeHtml(formatDateLabel(seriesSummary.first))}</strong>

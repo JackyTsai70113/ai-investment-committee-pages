@@ -1,17 +1,17 @@
 {
   "schema_version": "1.0",
-  "review_id": "learning-20260903T090914Z",
-  "reviewed_run_id": "20260902T165332Z",
-  "generated_at": "2026-09-03T09:09:14.269768Z",
-  "evaluation_cutoff": "2026-09-03T09:08:28.254334Z",
+  "review_id": "learning-20260903T143858Z",
+  "reviewed_run_id": "20260903T090846Z",
+  "generated_at": "2026-09-03T14:38:58.947937Z",
+  "evaluation_cutoff": "2026-09-03T14:38:15.013831Z",
   "evidence_source": "Yahoo Finance via yfinance",
   "verdict": "too_early",
   "lessons": [
     {
-      "title": "現有最新資料顯示風險資產當日反彈，但不足以驗證完成交易日尺度的可重複性",
-      "evidence": "最新市場快照（資料截止 2026-09-03 09:08）顯示 SPY/QQQ/IWM/DIA 在上一日/當日呈現上漲（例如 SPY：+0.44369%，IWM：+1.183881%）。然而，本輪事後驗證材料未提供委員會政策所需的 short_window_evidence：被檢驗標的至少 SPY、TLT、GLD 的 3 日與 7 日 completed_windows/positive_windows 與 latest_return_percent（或明確缺失原因）。因此無法判定先前「不增加方向性曝險」是否基於可重複的多日統計支撐，而僅能視為背景觀察。",
-      "implication": "下一輪若要支持/挑戰或調整上一輪的配置語氣，必須用完成交易日尺度（3/7 日）統計來更新 verdict；不得用單日/盤中反彈、RSI、或「今日上漲」替代 3/7 日 completed_windows 的驗證。",
-      "confidence": 86,
+      "title": "最新盤中反彈只能作背景，無法取代完成交易日 3/7 視窗驗證",
+      "evidence": "本輪提供了 2026-09-03 當日盤中/即時價格特徵（如 SPY +0.423%、IWM -0.064%、RSI14 在上一完成交易日偏弱），但事後驗證必需的 short_window_evidence（至少 SPY、TLT、GLD 或實際檢驗標的的 3 日與 7 日 completed_windows/positive_windows 及 latest_return_percent）在提供資料中仍完全缺失，因此不能判定上一輪關於「不新增方向性曝險/可重複性」是否成立。",
+      "implication": "下一輪委員會若要升級或改寫上一輪的 verdict，只能以完成交易日尺度的 3/7 視窗統計作為依據；任何盤中上漲、RSI、距均線距離、或單日正負回報只能歸類為風控/觀察敘事，禁止用於 supported/mixed/challenged 的多日有效性推論。",
+      "confidence": 90,
       "affected_assets": [
         "SPY",
         "QQQ",
@@ -22,10 +22,10 @@
       ]
     },
     {
-      "title": "事件日曆與資料管道仍存在缺口，限制因果解釋的信心上限",
-      "evidence": "事件日曆輸入顯示 FOMC 覆蓋為 partial，而 BLS 與 earnings 來源為 error（缺少可用的 point-in-time 官方事件快照），NYSE 僅 partial。這使得即使市場型態（例如波動 normal、VIX 觀測值）存在，也難以可靠對齊到「未來幾天的已知事件窗口」，因此任何將回報歸因於特定政策/數據催化的敘事都應持續降級信心。",
-      "implication": "下一輪學習報告中應將「事件對齊能力缺口」維持為主要不確定性來源；除非修復 point-in-time 官方快照輸入，否則只能做風控與觀察性描述，避免把完成視窗結果過度因果化。",
-      "confidence": 90,
+      "title": "事件日曆與研究管道缺口仍限制因果化解釋的上限",
+      "evidence": "event_calendar 顯示 FOMC 為 partial、BLS 為 error（HTTPError）、earnings 為 error（ValueError）、NYSE 為 partial，導致無法可靠對齊「未來幾個交易日」的可驗證 point-in-time 官方催化事件。即使本輪 VIX 終端觀測顯示屬 normal 且期限結構可用，也不足以替代被缺失/錯誤的事件對齊能力。",
+      "implication": "下一輪研究修正應把事件對齊能力缺口持續列為主要信心折減來源：除非補齊可驗證的 point-in-time 事件快照（fomc/bls/earnings/nyse），否則即使短窗統計偏正，也應避免把回報歸因於特定政策/數據窗口，並維持更保守的因果措辭。",
+      "confidence": 88,
       "affected_assets": [
         "SPY",
         "TLT",
@@ -34,29 +34,41 @@
       ]
     },
     {
-      "title": "確定性計算的單點估值/貢獻不可當作完成交易日績效證據使用",
-      "evidence": "上一輪系統提供的確定性計算證據屬於研究用策略指數更新點（並明確忽略手續費、價差、滑價、稅負與匯率），且其定義為在下一個評價點按最新建議重新平衡的單次估值變動。依既有委員會驗證政策，單點 return_percent/weighted_contribution_percent 不能替代 3/7 日 completed_windows/positive_windows 的完成交易日淨報酬驗證。最新市場快照雖可提供背景方向，但仍不能用來推導 supported/mixed/challenged 結論。",
-      "implication": "下一輪需在報告格式上強制分欄：①單點確定性計算僅作背景歸因（不得提高 verdict 強度）；②verdict 的提升/下調必須完全由完成交易日 short_window_evidence 驗證來驅動。",
-      "confidence": 88,
+      "title": "確定性計算的單點加權貢獻不可當作完成交易日淨報酬驗證",
+      "evidence": "確定性計算證據屬研究策略指數的更新點衡量，且方法聲明忽略手續費、價差、滑價、稅負與匯率；在本輪 positions 中仍只有 CASH 的單點歸因（return_percent=0、weighted_contribution_percent=0）。依既有委員會驗證框架，單點 return/貢獻不等價於完成交易日尺度的 completed_windows 正負統計，因此不能用來更新策略有效性結論。",
+      "implication": "下一輪報告需維持分欄：①單點確定性計算僅作背景/波動解釋；②verdict 強度只能由完成交易日短窗 completed_windows/positive_windows 及 latest_return_percent 來決定。若短窗缺失，verdict 一律不得升級。",
+      "confidence": 92,
       "affected_assets": [
         "CASH",
         "SPY",
         "TLT",
         "GLD"
       ]
+    },
+    {
+      "title": "VIX 曲線“新鮮且可用”改善了波動背景，但仍不構成多日績效可重複證據",
+      "evidence": "本輪 volatility_curve 顯示 VIX9D、VIX、VIX3M 均為 complete 且最大觀測年齡在約 30 分鐘內，並觀測到 contango_like 形態與正常 level_bucket；但這是波動環境背景信息，無法替代完成交易日尺度的 3/7 視窗回報驗證，更不能單獨推出策略在短窗的可重複優勢。",
+      "implication": "下一輪可把 VIX 終端作為“風控條件/失效風險”參考（例如反向/槓桿工具的失效監控），但仍需等短窗 completed_windows 統計到位後才允許調整風險曝險或改寫 supported/mixed/challenged 的結論。",
+      "confidence": 70,
+      "affected_assets": [
+        "SPY",
+        "SMH",
+        "SQQQ",
+        "CASH"
+      ]
     }
   ],
   "committee_changes": [
-    "要求下一輪補齊：至少 SPY、TLT、GLD 的 3 日與 7 日 completed_windows、positive_windows、latest_return_percent（或提供缺失原因與替代等價驗證方式）；缺失則維持 verdict=too_early。",
-    "維持時間頻率分離：任何盤中/單日價格變化（含當日反彈、RSI、距均線）只能用於風控與背景敘事，不得與完成交易日統計混用以更新策略有效性結論。",
-    "將事件對齊能力缺口（BLS/earnings error、FOMC/NYSE partial）列為主要信心折減因子，除非恢復可驗證的 point-in-time 官方事件快照輸入，否則不得提高因果敘事權重。",
-    "在敘事上維持「不要用單點確定性計算替代完成交易日」的硬規則：將單點估值/貢獻明確標註為背景歸因，不作為 supported/mixed/challenged 的判斷載體。"
+    "維持硬門檻：下一輪必須補齊被檢驗標的的 short_window_evidence（至少 3 日與 7 日 completed_windows/positive_windows、latest_return_percent；缺失需明確原因）。在缺失前，verdict 不得升級，僅允許 too_early 或保持既有判斷框架。",
+    "修復/強化事件對齊輸入：優先修通 BLS 與 earnings 的 point-in-time 快照取得（避免 error/missing_fail_closed），否則因果敘事一律降級為背景風控。",
+    "強制輸出欄位分離：單點確定性計算（positions/weighted_contribution）僅能進背景歸因欄，不得被引用為完成交易日淨報酬驗證的替代證據。",
+    "把 VIX 終端作為“條件參數”而非“策略有效性證據”：保留其在風險管理文字中的權重，但不允許用其替代 3/7 視窗 completed_windows 的統計驗證。"
   ],
-  "member_assessment": "本輪的最新市場快照確實顯示風險資產在時間點上出現反彈跡象，但委員會驗證門檻要求的短窗完成交易日統計（3/7 日 completed_windows、positive_windows、latest_return_percent）在本次提供資料中仍未出現；同時事件日曆輸入仍有 BLS/earnings error 與 FOMC/NYSE partial 的對齊缺口，限制因果解釋信心。由於無法以完成交易日尺度驗證上一輪「不新增方向性曝險」是否具可重複的統計支撐，本輪只能維持 verdict=too_early。",
-  "skill_assessment": "本輪事後驗證遵循了可重複性的核心紀律：1）辨識最新快照可作為背景觀察，但不等同於完成交易日短窗統計；2）嚴格將確定性計算的單點更新點降級為背景歸因，不用於提升 verdict；3）納入事件日曆缺口作為因果敘事的信心上限。主要可改進處在於研究交付鏈：下一輪必須確保 short_window_evidence（3/7 日）與可驗證的事件快照同時可用，否則不得嘗試升級結論強度。",
+  "member_assessment": "就本次提供的資料可驗證性而言，雖然 VIX 終端觀測與部分市場技術特徵在 2026-09-03 具備可用性，但完成交易日尺度所需的 3/7 視窗短窗統計（completed_windows/positive_windows/latest_return_percent）仍未提供；同時 event_calendar 仍存在 BLS/earnings 的 error 與 FOMC/NYSE 的 partial，限制事件對齊與因果推論。依既有委員會驗證門檻，本輪只能維持 verdict=too_early，且任何方向性敘事需降級為背景觀察。",
+  "skill_assessment": "本輪驗證做得較好的重點在於：1）持續辨識並遵守“完成交易日 3/7 視窗短窗統計”作為 verdict 載體的硬規則；2）把單點確定性計算明確維持在背景歸因層級，避免時間頻率混用；3）將事件日曆缺口作為因果化解釋的主要信心上限來源。下一輪最需要提升的是研究交付鏈：補齊 short_window_evidence 與可驗證 point-in-time 事件輸入，否則不得改寫結論強度。",
   "warnings": [
-    "本評估受限於缺少完成交易日短窗統計（3/7 日 completed_windows/positive_windows/latest_return_percent），因此無法對上一輪研究假設的可重複性做 supported/mixed/challenged 判定。",
-    "事件日曆輸入仍存在 BLS/earnings error 及 FOMC/NYSE partial，導致短期因果對齊信心受限。",
-    "確定性計算證據為研究用單點更新點且忽略交易摩擦（手續費、價差、滑價、稅負、匯率），不代表可交易淨報酬或未來可重複優勢。"
+    "目前資料仍缺少被檢驗標的的 3 日與 7 日 completed_windows/positive_windows/latest_return_percent，因此無法在政策門檻下評估多日尺度可重複性，verdict 必須停留在 too_early。",
+    "事件日曆仍存在 BLS/earnings 的 error 與 FOMC/NYSE 的 partial；在未修復 point-in-time 快照前，不應把回報歸因於特定政策/數據催化。",
+    "確定性計算證據為研究用單點更新點，且忽略交易摩擦；即使單點方向為正或為負，也不能等同完成交易日可交易淨報酬或策略勝率。"
   ]
 }

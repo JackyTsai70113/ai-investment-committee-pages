@@ -102,6 +102,14 @@ a {
   width: min(1480px, 100%);
   margin: 0 auto;
   padding: 1rem;
+  overflow-x: clip;
+}
+
+.tab-panel,
+.hero,
+.terminal-grid,
+.dashboard-grid {
+  min-width: 0;
 }
 
 .topbar {
@@ -2845,7 +2853,7 @@ td {
 
   .tab-menu-toggle {
     display: inline-flex;
-    justify-self: end;
+    justify-self: start;
   }
 
   .tab-strip {

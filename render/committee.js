@@ -158,7 +158,7 @@ export function createCommitteeRenderer({
                   <ul>${renderList(resolution.accepted_changes, "未提供", glossaryText)}</ul>
                   <strong>尚未消除的疑慮</strong>
                   <ul>${renderList(resolution.unresolved_objections, "沒有未解疑慮", glossaryText)}</ul>
-                  <strong>交給 CIO 的硬性限制</strong>
+                <strong>交給最終決策的硬性限制</strong>
                   <ul>${renderList(resolution.binding_constraints, "沒有未解除的硬性限制", glossaryText)}</ul>
                 </details>
               </div>

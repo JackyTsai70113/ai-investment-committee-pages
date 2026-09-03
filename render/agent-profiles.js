@@ -14,6 +14,24 @@ export function createAgentProfileRenderers({
   const evidenceToRegionalItem = (item) => `${formatRegionLabel(item.region)}｜${item.title}`;
 
   const profileOrder = Object.keys(profiles);
+  const roleLabels = {
+    macro: "總體經濟",
+    technical: "技術分析",
+    momentum: "動能",
+    news: "新聞事件",
+    etf: "ETF 分析",
+    earnings: "財報分析",
+    portfolio: "組合配置",
+    liquidity: "流動性",
+    ownership: "持有人結構",
+    learning: "績效學習",
+    risk: "風險審查",
+    devil_advocate: "反方審查",
+    cio: "最終決策",
+    execution_governance: "執行治理",
+    trading_stress: "交易壓力",
+  };
+  const roleLabel = (value) => roleLabels[normalizeAgentName(value)] || String(value || "角色");
 
   const buildMarketInsight = (market) => {
     const evidence = asList(market?.research_evidence);
@@ -41,7 +59,7 @@ export function createAgentProfileRenderers({
         title="查看 ${escapeHtml(profile.title)} 的角色說明"
         aria-label="查看 ${escapeHtml(profile.title)} 的角色說明"
         onclick="event.stopPropagation()"
-      >${escapeHtml(profile.title)}</a>`;
+      >ⓘ ${escapeHtml(roleLabel(key))}</a>`;
   };
 
   const renderAgentDirectory = (market) => `
@@ -61,8 +79,8 @@ export function createAgentProfileRenderers({
             return `
               <article class="agent-profile-card" id="agent-profile-${escapeHtml(key)}">
                 <header>
-                  <span>${escapeHtml(profile.title)}</span>
-                  <h4>${escapeHtml(profile.title)}</h4>
+                  <span>ⓘ ${escapeHtml(roleLabel(key))}</span>
+                  <h4>${escapeHtml(roleLabel(key))}</h4>
                   <p>${escapeHtml(profile.summary)}</p>
                 </header>
                 <p class="agent-profile-intro">白話版定位：${escapeHtml(insight.summary)}</p>
@@ -93,8 +111,8 @@ export function createAgentProfileRenderers({
           <article class="agent-intel-card">
             <header class="agent-intel-header">
               <div>
-                <span class="agent-intel-role">${escapeHtml(profile.title)}</span>
-                <strong>${escapeHtml(profile.title)}</strong>
+                <span class="agent-intel-role">${escapeHtml(roleLabel(role))}</span>
+                <strong>${escapeHtml(roleLabel(role))}</strong>
               </div>
               <span class="agent-intel-stance">${escapeHtml(insight.stance)}</span>
             </header>
