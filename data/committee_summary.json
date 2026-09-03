@@ -1,10 +1,8 @@
 {
-  "run_id": "20260903T143830Z",
+  "run_id": "20260903T170826Z",
   "mode": "live",
-  "decision_origin": "policy_override",
-  "policy_override_notes": [
-    "官方事件限制期間啟動：FOMC 官方事件時間狀態為 partial；BLS 官方事件時間狀態為 error；NYSE 官方事件時間狀態為 partial；公司財報 官方事件時間狀態為 error。本輪逐標的風險權重不得高於上一份研究建議，上一份風險資產合計為 0%；目前提案未增加風險，因此配置權重維持不變。"
-  ],
+  "decision_origin": "model",
+  "policy_override_notes": [],
   "proposals": [],
   "critiques": [],
   "cross_examination_responses": [],
@@ -12,19 +10,19 @@
   "critique_resolutions": [],
   "final_decision_audits": [],
   "final_decision": {
-    "opening_statement": "我在質詢後撤回所有新增方向性與槓桿曝險，先維持100%現金；只有在完成交易日短窗證據補齊並通過風控檢視後，才重新評估配置。",
+    "opening_statement": "質詢後我撤回任何新增方向性曝險主張，維持全額現金；目前證據只能支持保留選擇權，不能支持可重複的短期優勢。",
     "tone": "cautious",
     "market_stance": "neutral",
-    "model_score": 92,
-    "model_score_reason": "方向一致度 92/100；10 位提案委員按信心加權，0 項協商後否決仍未解除，扣除 0 分。",
+    "model_score": 94,
+    "model_score_reason": "方向一致度 94/100；10 位提案委員按信心加權，0 項協商後否決仍未解除，扣除 0 分。",
     "risk_level": "low",
-    "expected_horizon": "現金配置維持至下一個完成交易日檢視；任何非現金曝險須在補齊3/7日完成交易日證據後重新審核。",
+    "expected_horizon": "短期至下一次取得可追溯且完成交易日對齊的新資料時重新評估",
     "allocations": [
       {
         "symbol": "CASH",
         "asset_type": "cash",
         "target_weight": "1",
-        "note": "研究建議維持全部資金為現金，不代表交易已執行；在短窗統計、事件對齊與跳空檢查未完成前，不新增方向性曝險。",
+        "note": "目前無已成交持股；保留全部資金，避免在完成交易日3日/7日短窗統計缺失、趨勢混合及利率上行環境下新增方向性曝險。",
         "invalidation_type": "cash",
         "invalidation_price": null
       }
@@ -32,26 +30,25 @@
     "top_reasons": [
       {
         "id": 1,
-        "title": "官方事件限制期間阻止新增風險",
-        "summary": "官方事件限制期間啟動：FOMC 官方事件時間狀態為 partial；BLS 官方事件時間狀態為 error；NYSE 官方事件時間狀態為 partial；公司財報 官方事件時間狀態為 error。本輪逐標的風險權重不得高於上一份研究建議，上一份風險資產合計為 0%；目前提案未增加風險，因此配置權重維持不變。",
-        "confidence": 100,
-        "category": "policy",
+        "title": "大盤多日趨勢仍偏弱",
+        "summary": "SPY截至2026-09-02的5日與20日回報分別為-0.12%與-0.60%，且距離MA20為-0.50%；這不支持立即增加大盤方向性部位。",
+        "confidence": 86,
+        "category": "momentum",
         "affected_assets": [
-          "CASH"
+          "SPY"
         ],
-        "source_urls": []
+        "source_urls": [
+          "https://finance.yahoo.com/"
+        ]
       },
       {
         "id": 2,
-        "title": "市場趨勢仍為混合",
-        "summary": "regime 的 trend 為 mixed；SPY 距MA50仍為正但距MA20為負，顯示中期位置與短期動能不一致，不足以支持明確偏多或偏空配置。",
-        "confidence": 88,
+        "title": "市場趨勢訊號不一致",
+        "summary": "SPY位於MA50上方但低於MA20，快照將整體趨勢判定為mixed；訊號不一致降低短期方向交易的風險報酬吸引力。",
+        "confidence": 84,
         "category": "technical",
         "affected_assets": [
-          "SPY",
-          "IWM",
-          "DIA",
-          "SMH"
+          "SPY"
         ],
         "source_urls": [
           "https://finance.yahoo.com/"
@@ -59,14 +56,12 @@
       },
       {
         "id": 3,
-        "title": "主要指數短中期回報偏弱",
-        "summary": "截至上一完成交易日，SPY、IWM、DIA與VTI的5日及20日回報多為負值，廣度尚未形成一致修復，故現金部位可降低方向判斷錯誤的下行暴露。",
-        "confidence": 86,
+        "title": "小型股相對弱勢",
+        "summary": "IWM的5日與20日回報為-1.65%與-1.92%，且距MA20、MA50均為負，顯示較高貝他部位尚未形成明確轉強確認。",
+        "confidence": 84,
         "category": "momentum",
         "affected_assets": [
-          "SPY",
-          "IWM",
-          "DIA"
+          "IWM"
         ],
         "source_urls": [
           "https://finance.yahoo.com/"
@@ -74,12 +69,11 @@
       },
       {
         "id": 4,
-        "title": "盤中反彈尚未完成驗證",
-        "summary": "2026-09-03盤中SPY上漲0.423%、QQQ上漲0.398%，但這是未完成交易日的即時變化，不能取代3日與7日完成交易日統計，故不據此增加風險資產權重。",
-        "confidence": 93,
+        "title": "半導體ETF回撤較深",
+        "summary": "SMH的20日回報為-3.37%，20日回撤為-7.34%，並低於MA20與MA50；半導體曝險的下行波動仍高於大盤。",
+        "confidence": 88,
         "category": "risk",
         "affected_assets": [
-          "SPY",
           "SMH"
         ],
         "source_urls": [
@@ -88,32 +82,25 @@
       },
       {
         "id": 5,
-        "title": "利率上行壓抑估值彈性",
-        "summary": "^TNX五日變化為2.83%，距MA20與MA50分別為正，市場狀態標示 rates=rising；這對長久期成長股估值構成約束，降低追價與集中配置的吸引力。",
-        "confidence": 84,
-        "category": "macro",
+        "title": "槓桿半導體路徑風險高",
+        "summary": "SOXL的20日回報為-19.47%、20日回撤為-29.82%，年化20日波動約93.15%；即使出現反彈，也不足以支持新增槓桿曝險。",
+        "confidence": 94,
+        "category": "risk",
         "affected_assets": [
-          "SPY",
-          "SMH",
-          "NVDA",
-          "AMD",
-          "TLT"
+          "SOXL"
         ],
         "source_urls": [
-          "https://finance.yahoo.com/",
-          "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve"
+          "https://finance.yahoo.com/"
         ]
       },
       {
         "id": 6,
-        "title": "科技與半導體表現分化",
-        "summary": "NVDA上一完成日1日與5日回報分別為3.21%及7.04%，但AMD分別為-0.55%及-4.96%，SMH的20日回報為-3.37%；產業內部分化不利於建立廣泛科技多頭曝險。",
-        "confidence": 87,
-        "category": "momentum",
+        "title": "利率環境不利久期資產",
+        "summary": "^TNX的5日與20日相對變化分別為+2.83%與+3.88%，市場狀態標示為rates=rising；因此不把TLT視為無條件的防禦替代品。",
+        "confidence": 84,
+        "category": "macro",
         "affected_assets": [
-          "SMH",
-          "NVDA",
-          "AMD"
+          "TLT"
         ],
         "source_urls": [
           "https://finance.yahoo.com/"
@@ -121,13 +108,12 @@
       },
       {
         "id": 7,
-        "title": "高波動工具下行路徑不對稱",
-        "summary": "SOXL年化20日波動為93.15%、20日回報為-19.47%，距MA20為-15.43%；此類每日重設工具可能在反彈與續跌路徑間快速轉換，不適合作為本輪替代現金的核心部位。",
-        "confidence": 95,
+        "title": "能源動能已偏擁擠",
+        "summary": "原油期貨20日回報為+20.99%、RSI14為72.997，ERX的20日回報為+27.52%、RSI14為74.50；追逐近期強勢可能承擔均值回歸風險。",
+        "confidence": 82,
         "category": "risk",
         "affected_assets": [
-          "SOXL",
-          "SMH"
+          "ERX"
         ],
         "source_urls": [
           "https://finance.yahoo.com/"
@@ -135,13 +121,12 @@
       },
       {
         "id": 8,
-        "title": "反向ETF缺乏可重複性證據",
-        "summary": "SQQQ雖然20日回報為3.71%，但本輪沒有3日與7日completed_windows、positive_windows及latest_return_percent，不能把單一窗口或盤中變化解讀為反向方向優勢。",
-        "confidence": 94,
-        "category": "risk",
+        "title": "黃金具分散潛力但非單向避險",
+        "summary": "GLD的20日回報為+3.37%、距MA50為+4.01%，但5日回報為-4.40%且20日回撤為-5.91%；其分散效果仍可能隨路徑改變。",
+        "confidence": 80,
+        "category": "diversification",
         "affected_assets": [
-          "SQQQ",
-          "SPY"
+          "GLD"
         ],
         "source_urls": [
           "https://finance.yahoo.com/"
@@ -149,14 +134,14 @@
       },
       {
         "id": 9,
-        "title": "波動曲線正常但不代表無風險",
-        "summary": "Cboe觀測顯示VIX9D為12.44、VIX為14.95、VIX3M為17.69，曲線為contango_like且level為normal；這支持未啟動危機式避險，但不能取代完成日績效驗證或保證市場穩定。",
-        "confidence": 90,
+        "title": "波動曲線未顯示即時壓力尖峰",
+        "summary": "Cboe觀測到VIX9D 12.08、VIX 14.6、VIX3M 17.55，曲線為contango_like且level為normal；這降低立即避險需求，但不構成新增風險部位理由。",
+        "confidence": 83,
         "category": "risk",
         "affected_assets": [
           "SPY",
           "SMH",
-          "SQQQ"
+          "CASH"
         ],
         "source_urls": [
           "https://cdn.cboe.com/api/global/delayed_quotes/quotes/_VIX9D.json",
@@ -166,14 +151,15 @@
       },
       {
         "id": 10,
-        "title": "能源價格處於偏熱位置",
-        "summary": "CL=F的5日與20日回報分別為10.68%及20.99%，RSI14為73.00，距MA20為8.26%；油價強勢可能增加通膨與利率風險，但因缺少供需及事件對齊資料，僅支持降低追逐風險的意願。",
-        "confidence": 78,
-        "category": "macro",
+        "title": "現金保留機會成本可接受",
+        "summary": "SPY、IWM、DIA與VTI在截至2026-09-02的5日或20日尺度多數為負，而2026-09-03盤中上漲尚未完成交易日確認；現金因此優先於追逐單日反彈。",
+        "confidence": 87,
+        "category": "liquidity",
         "affected_assets": [
+          "CASH",
           "SPY",
-          "TLT",
-          "ERX"
+          "IWM",
+          "DIA"
         ],
         "source_urls": [
           "https://finance.yahoo.com/"
@@ -184,12 +170,12 @@
       {
         "kind": "statistical_maturity",
         "severity": "high",
-        "summary": "缺少被檢驗標的的3日與7日完成交易日short_window_evidence。",
-        "effect": "不得以盤中價格、RSI、距均線或單日回報更新方向性曝險、資產排序或槓桿與反向ETF持有期限。",
+        "summary": "至少SPY、TLT、GLD的3日與7日completed_windows、positive_windows及latest_return_percent未提供。",
+        "effect": "無法驗證短期研究假設的可重複性；不得將單日或盤中變化轉化為策略優勢、勝率或預期報酬主張。",
         "affected_claims": [
-          "短期可重複性",
-          "反向ETF方向優勢",
-          "風險資產新增配置"
+          "短期方向性優勢",
+          "反向ETF相對表現",
+          "降低現金比例"
         ],
         "source_urls": [
           "https://finance.yahoo.com/"
@@ -197,13 +183,12 @@
       },
       {
         "kind": "data_quality",
-        "severity": "high",
-        "summary": "市場資料含2026-09-03未完成交易日的盤中行情，技術features則截至2026-09-02完成交易日。",
-        "effect": "不同時間頻率不可直接混用；盤中反彈僅可作背景與風控觀察。",
+        "severity": "medium",
+        "summary": "本輪同時存在尚未完成的daily bar與不同時間戳的盤中及已完成交易日資料。",
+        "effect": "盤中價格僅能作背景與風控參考，不能與截至2026-09-02的完成交易日技術特徵混合解讀。",
         "affected_claims": [
-          "短期趨勢",
-          "反彈延續",
-          "多日績效"
+          "2026-09-03單日反彈",
+          "短期動能判斷"
         ],
         "source_urls": [
           "https://finance.yahoo.com/"
@@ -211,71 +196,79 @@
       },
       {
         "kind": "data_quality",
-        "severity": "high",
-        "summary": "事件日曆的BLS與earnings來源錯誤，FOMC與NYSE覆蓋不完整。",
-        "effect": "無法可靠建立未來事件的point-in-time對齊，也不能把市場變化歸因於特定宏觀或財報催化。",
+        "severity": "medium",
+        "summary": "Yahoo Finance via yfinance為次級市場資料來源，且部分商品採已完成收盤資料、部分採延遲或盤中資料。",
+        "effect": "價格與成交量可供研究，但不代表可執行成交價格；本決策不宣稱任何交易已成交。",
         "affected_claims": [
-          "事件驅動敘事",
-          "短期因果判斷"
+          "可交易價格",
+          "成交執行"
         ],
         "source_urls": [
-          "https://www.bls.gov/schedule/",
-          "https://www.sec.gov/edgar/searchedgar/companysearch",
-          "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-          "https://www.nyse.com/trade/hours-calendars"
+          "https://finance.yahoo.com/"
+        ]
+      },
+      {
+        "kind": "evidence_gap",
+        "severity": "high",
+        "summary": "BLS事件來源為HTTPError，earnings事件覆蓋為missing。",
+        "effect": "無法可靠建立近期就業或公司財報事件的point-in-time因果鏈；相關敘事僅能維持背景風控層級。",
+        "affected_claims": [
+          "宏觀催化",
+          "財報催化",
+          "短期因果歸因"
+        ],
+        "source_urls": [
+          "https://www.bls.gov/schedule/news_release/bls.ics",
+          "https://investor.apple.com/investor-relations/default.aspx"
         ]
       },
       {
         "kind": "evidence_gap",
         "severity": "medium",
-        "summary": "選擇權成交量與未平倉量資料缺失，且缺少bid-ask spread與市場深度。",
-        "effect": "無法充分量化避險需求、投資人方向意圖與實際交易摩擦；流動性判斷主要依成交量近似。",
+        "summary": "OCC選擇權成交量與未平倉量資料缺失。",
+        "effect": "無法以聚合選擇權部位補充市場擁擠度、避險需求或方向性定位；不據此推導偏多或偏空。",
         "affected_claims": [
           "選擇權定位",
-          "交易成本",
-          "流動性比較"
+          "尾部風險"
         ],
         "source_urls": [
           "https://www.theocc.com/market-data/market-data-reports/volume-and-open-interest/exchange-volume-by-class"
         ]
       },
       {
-        "kind": "evidence_gap",
+        "kind": "policy_constraint",
         "severity": "medium",
-        "summary": "NVDA與AMD的近期財報雖有營運結果，但缺少本輪要求的毛利率、研發、銷管及其他費用可追溯拆解。",
-        "effect": "獲利規模只能作中長期背景，不能用來提高短期方向或催化信心。",
+        "summary": "反向及槓桿ETF具有每日重設與路徑風險，本輪又缺少gap stress的可交易量化驗證。",
+        "effect": "不增加SQQQ、SOXL或其他槓桿ETF曝險；若未來研究配置，須以保守部位大小及明確價格失效條件重新審查。",
         "affected_claims": [
-          "NVDA與AMD相對偏好",
-          "財報催化",
-          "成本效率"
+          "槓桿ETF配置",
+          "反向ETF對沖效率"
         ],
         "source_urls": [
-          "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
-          "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json"
+          "https://finance.yahoo.com/"
         ]
       },
       {
-        "kind": "policy_constraint",
-        "severity": "high",
-        "summary": "質詢後已採用缺資料欄位鎖定規則。",
-        "effect": "在short_window_evidence補齊前，不納入槓桿或反向ETF，不更新其排序、持有天數或方向性優先級。",
+        "kind": "evidence_gap",
+        "severity": "medium",
+        "summary": "事件日曆完整性提示：美國勞工統計局資料狀態為 error；公司財報資料狀態為 missing。",
+        "effect": "這只限制事件時間與事件因果的解讀，不改變市場方向、配置權重或風險否決。",
         "affected_claims": [
-          "SQQQ配置",
-          "SOXL配置",
-          "戰術持有期"
+          "事件時間",
+          "事件因果"
         ],
         "source_urls": []
       }
     ],
     "invalidation_conditions": [
-      "下一輪取得至少實際檢驗標的的3日與7日completed_windows、positive_windows及latest_return_percent，並完成隔夜跳空或close-to-close壓力檢查後，重新評估現金比例。",
-      "事件日曆修復並提供可驗證的point-in-time FOMC、BLS、財報與交易日資料後，才重新評估短期催化與方向性曝險。",
-      "若後續完成交易日資料顯示主要風險資產的短窗統計一致改善，且利率與波動條件未同步惡化，現金配置可被重新檢視；這不代表必然增加曝險。"
+      "取得至少SPY、TLT、GLD的完成交易日3日與7日short-window evidence，且包含completed_windows、positive_windows與latest_return_percent後，重新評估現金比例。",
+      "BLS與earnings的point-in-time事件輸入恢復可驗證，並能與新資料時間對齊後，重新檢視短期事件風險與配置。",
+      "若後續完成交易日資料顯示風險資產趨勢同步轉強，且SPY距MA20持續轉正、短期回報與成交量確認改善，則現金配置可重新審查。"
     ],
     "major_risks": [
-      "現金配置可能錯過風險資產突然反彈，但本輪缺乏足以量化該機會成本的完成交易日短窗證據。",
-      "利率、油價或未對齊的重大事件可能造成隔夜跳空；即使維持現金，也無法消除再進場時的價格與流動性風險。",
-      "資料供應商或事件管道若持續異常，後續決策信心仍需降低，不能以語氣補足缺失證據。"
+      "全額現金可能錯過風險資產快速反彈，但本輪資料不足以量化該機會成本或支持反彈可持續性。",
+      "通膨、油價或利率變化可能使TLT與GLD的分散效果偏離預期；兩者均不應被視為保證避險。",
+      "若未來使用反向或槓桿ETF，震盪反彈、每日重設與隔夜跳空可能造成顯著路徑損失；本輪未提出此類新增曝險。"
     ],
     "risk_veto": false,
     "veto_reason": null

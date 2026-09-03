@@ -174,7 +174,7 @@ a {
 }
 
 .tab-controls {
-  position: sticky;
+  position: static;
   top: 5.4rem;
   z-index: 18;
   display: flex;
@@ -314,7 +314,7 @@ a {
   display: grid;
   grid-template-columns: minmax(0, 1.45fr) minmax(270px, 0.55fr);
   gap: 1rem;
-  padding: 5.2rem 0 1rem;
+  padding: 2rem 0 1rem;
 }
 
 .hero-main,
@@ -351,6 +351,14 @@ a {
   font-weight: 620;
   line-height: 0.92;
   letter-spacing: -0.07em;
+}
+
+@media (min-width: 1000px) {
+  .hero h1 {
+    max-width: none;
+    white-space: nowrap;
+    font-size: clamp(2.7rem, 4.2vw, 3.8rem);
+  }
 }
 
 .hero h1 span {
@@ -2823,7 +2831,7 @@ td {
   }
 
   .hero {
-    padding-top: 3.9rem;
+    padding-top: 1rem;
   }
 
   .hero-main,

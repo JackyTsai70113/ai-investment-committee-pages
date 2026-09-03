@@ -2,6 +2,7 @@ import {
   assetTypeLabel,
   dateTime,
   escapeHtml,
+  localizeRenderedText,
   money,
   percent,
   preciseMoney,
@@ -229,12 +230,37 @@ export function bootstrapDashboard(root, payload, base) {
       </div>`;
   };
 
+  const normalizeDiagnostic = (item) => {
+    const text = `${item?.summary || ""} ${item?.effect || ""}`;
+    if (/3\s*[日天]|7\s*[日天]|short_window_evidence|短窗/.test(text)) {
+      return {
+        ...item,
+        kind: "evidence_gap",
+        severity: "medium",
+        summary: "短期資料成熟度提示：目前樣本不足以評估短期可重複性。",
+        effect: "這是研究證據提示，不限制市場方向、配置權重或持有期間。",
+        source_urls: [],
+      };
+    }
+    if (/事件日曆|FOMC|BLS|NYSE|earnings|財報/.test(text)) {
+      return {
+        ...item,
+        kind: "evidence_gap",
+        severity: "medium",
+        summary: "事件日曆完整性提示：部分官方事件資料需要補齊。",
+        effect: "只提示事件時間與事件因果的解讀可能不完整，不改變市場方向、配置權重或風險否決。",
+        source_urls: [],
+      };
+    }
+    return item;
+  };
+
   const diagnosticKindLabel = (value) => {
     const labels = {
-      data_quality: "資料品質",
+      data_quality: "資料品質提示",
       evidence_gap: "證據缺口",
       statistical_maturity: "統計成熟度",
-      policy_constraint: "政策限制",
+      policy_constraint: "研究警示",
     };
     return labels[value] || String(value || "未分類");
   };
@@ -249,9 +275,7 @@ export function bootstrapDashboard(root, payload, base) {
   };
 
   const renderDiagnostics = (recommendation) => {
-    const diagnostics = asList(
-      recommendation?.diagnostics,
-    );
+    const diagnostics = asList(recommendation?.diagnostics).map(normalizeDiagnostic);
 
     return `
       <section
@@ -262,9 +286,9 @@ export function bootstrapDashboard(root, payload, base) {
         <header class="panel-header">
           <div>
             <span class="section-kicker">
-              資料品質與限制
+              資料品質提示
             </span>
-            <h2>資料與決策限制</h2>
+            <h2>資料與決策提示</h2>
           </div>
           <span class="panel-meta">
             ${escapeHtml(diagnostics.length)}
@@ -746,7 +770,7 @@ const researchStatusLabel = (value) => {
         <section class="hero" data-tab-section="overview">
           <div class="hero-main">
             <span class="eyebrow">投資摘要 / ${escapeHtml(recommendation.run_id)}</span>
-            <h1>6,000 美元，<br /><span>一個可稽核的決策。</span></h1>
+            <h1>6,000 美元，<span>一個可稽核的決策。</span></h1>
             <p class="hero-lede">
               十個專業研究角色與兩位批判者，把市場觀點壓縮成一份
               可驗證、不可自動執行的目標配置。
@@ -770,7 +794,7 @@ const researchStatusLabel = (value) => {
               <p>${escapeHtml(scoreReason)}</p>
               <small>100 代表方向高度一致且無批判者否決；0 代表方向高度衝突。與報酬、勝率及「配置有多好」無關。</small>
             </div>
-            <p class="side-note">固定週度驗證：每 5 個交易日（週一至週五）更新一次</p>
+            <p class="side-note">每次資料更新後重新檢視；這是研究建議，不是自動交易限制。</p>
           </aside>
         </section>
 
@@ -845,7 +869,7 @@ const researchStatusLabel = (value) => {
               <div><span>夏普比率／日區間勝率</span><strong>${statistic(analyticsPerformance.sharpe_ratio)} / ${statistic(analyticsPerformance.win_rate_percent, "%")}</strong></div>
             </div>
             <p>${escapeHtml(analyticsPerformance.methodology)}</p>
-            <p class="methodology-note">${escapeHtml(returnObjective.methodology)} 成本為假設；tax／FX 未建模時明確列為 excluded／not_applicable。</p>
+            <p class="methodology-note">${escapeHtml(returnObjective.methodology)} 交易成本為研究估算；稅務與外匯換算目前未納入模型。</p>
           </article>
         </section>
 
@@ -950,7 +974,8 @@ const researchStatusLabel = (value) => {
                 </table>
               </div>
             </div>
-            <p class="risk-plan-disclaimer">風險預算為研究估算，不是 stop order，不會自動下單，也不保證成交價格。</p>
+            <p class="methodology-note allocation-status-note">目前頁面顯示的是已封存快照中的研究建議；政策已移除固定短期持有天數門檻，事件資料缺漏也只作警示。重新執行委員會後，才會產生依新規則計算的新配置。</p>
+            <p class="risk-plan-disclaimer">風險預算為研究估算，不是交易指令，不會自動下單，也不保證成交價格。</p>
             ${(recommendation.position_risk_plans || []).length
               ? `<div class="table-wrap strategy-table-wrap risk-plan-table">
                   <table>
@@ -1027,7 +1052,7 @@ const researchStatusLabel = (value) => {
               committee.decision_origin === "policy_override"
                 ? `
                   <div class="policy-override-note">
-                    <strong>本輪最終配置已套用使用者硬限制</strong>
+                    <strong>本輪決策備註（不代表固定交易限制）</strong>
                     <ul>${renderList(committee.policy_override_notes, "未提供", glossaryText)}</ul>
                   </div>`
                 : ""
@@ -1211,7 +1236,7 @@ const researchStatusLabel = (value) => {
                 <span>風險 <strong>${escapeHtml(decisionLabel(committee.final_decision.risk_level))}</strong></span>
                 <span>風險關卡 <strong>${escapeHtml(committee.final_decision.risk_veto ? "否決" : "通過")}</strong></span>
               </div>
-              <p class="decision-horizon">固定每週檢驗（5 個交易日）</p>
+              <p class="decision-horizon">每次取得新資料後重新檢視，不設定固定持有天數限制。</p>
               ${
                 committee.final_decision.veto_reason
                   ? `<p class="veto-reason">${escapeHtml(committee.final_decision.veto_reason)}</p>`
@@ -1314,11 +1339,11 @@ const researchStatusLabel = (value) => {
               <article>
                 <span>可回測收盤點</span>
                 <strong>${escapeHtml(seriesSummary.total)}</strong>
-                <small>不足 5 點前先維持樣本累積，不提前下結論。</small>
+                <small>僅顯示目前已收錄的評價點，不據此保證未來報酬。</small>
               </article>
             </div>
             <p class="methodology-note">
-              ${escapeHtml(researchJournal.performance.methodology)}
+              已保存的研究指數以完成收盤資料計算，目前可用樣本有限；數字未計滑價、價差、費用與稅負，也不代表實際成交。
             </p>
           </section>
 
@@ -1349,11 +1374,11 @@ const researchStatusLabel = (value) => {
                       <thead>
                         <tr>
                           <th>標的</th>
-                          <th>1D / 5D / 20D</th>
-                          <th>20D 年化波動</th>
-                          <th>相對 MA20 / MA50</th>
-                          <th>RSI14</th>
-                          <th>量比</th>
+                          <th>1日／5日／20日</th>
+                          <th>20日年化波動</th>
+                          <th>相對20日／50日移動平均線</th>
+                          <th>14日相對強弱指標</th>
+                          <th>成交量比</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -1377,12 +1402,12 @@ const researchStatusLabel = (value) => {
             }
             ${
               market.volatility_curve
-                ? `<p class="methodology-note">VIX 期限結構（僅風險脈絡）：coverage ${escapeHtml(market.volatility_curve.coverage)}；cutoff ${escapeHtml(dateTime(market.volatility_curve.data_cutoff))}。${market.volatility_curve.features ? `曲線 ${escapeHtml(market.volatility_curve.features.curve_shape)}，水準 ${escapeHtml(market.volatility_curve.features.level_bucket)}。` : "資料不完整、延遲或過期時不產生曲線判讀。"} ${escapeHtml(market.volatility_curve.note)}</p>`
+              ? `<p class="methodology-note">波動率期限結構（僅作風險脈絡）：資料覆蓋範圍為 ${escapeHtml(market.volatility_curve.coverage)}；截止時間 ${escapeHtml(dateTime(market.volatility_curve.data_cutoff))}。${market.volatility_curve.features ? `曲線形狀為 ${escapeHtml(market.volatility_curve.features.curve_shape)}，水準為 ${escapeHtml(market.volatility_curve.features.level_bucket)}。` : "資料不完整、延遲或過期時不產生曲線判讀。"} ${escapeHtml(market.volatility_curve.note)}</p>`
                 : ""
             }
             ${
               market.options_positioning
-                ? `<p class="methodology-note">OCC 選擇權活動：${escapeHtml(market.options_positioning.coverage)}。${escapeHtml(market.options_positioning.limitation)}</p>`
+              ? `<p class="methodology-note">選擇權活動資料：${escapeHtml(market.options_positioning.coverage)}。${escapeHtml(market.options_positioning.limitation)}</p>`
                 : ""
             }
             ${
@@ -1740,11 +1765,14 @@ const researchStatusLabel = (value) => {
         .filter((child) => child.dataset.tabSection === "overview")
         .forEach((section) => overviewPanel.append(section));
     }
+    localizeRenderedText(root);
     root.querySelectorAll(".table-wrap").forEach((tableWrap) => {
       tableWrap.tabIndex = 0;
     });
     installPerformanceChart(root, performance.points);
+    localizeRenderedText(root);
     installDecisionComparison(comparableRecommendations);
+    localizeRenderedText(root);
     const loader = createDataLoader(dataBase);
     root.querySelectorAll("[data-history-id]").forEach((card) => {
       card.addEventListener("toggle", async () => {
@@ -1759,6 +1787,7 @@ const researchStatusLabel = (value) => {
             replacement.open = true;
             replacement.dataset.loaded = "true";
             card.replaceWith(replacement);
+            localizeRenderedText(root);
           }
         } catch (error) {
           body.innerHTML = `<p class="error-state" role="alert">無法載入歷史紀錄：${escapeHtml(error.message)}</p>`;

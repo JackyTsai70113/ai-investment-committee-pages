@@ -9,7 +9,7 @@ export function installTabNavigation(root, { onActivate } = {}) {
     return;
   }
 
-  const setTab = (target, { focus = false } = {}) => {
+  const setTab = (target, { focus = false, preserveScroll = false } = {}) => {
     const compactNavigation = window.matchMedia("(max-width: 640px)").matches;
     triggers.forEach((trigger) => {
       const isActive = trigger.dataset.tabTarget === target;
@@ -20,7 +20,7 @@ export function installTabNavigation(root, { onActivate } = {}) {
     panels.forEach((panel) => { panel.hidden = panel.dataset.tabPanel !== target; });
     strip?.classList.remove("is-open");
     menuToggle?.setAttribute("aria-expanded", "false");
-    if (focus || compactNavigation) {
+    if ((focus || compactNavigation) && !preserveScroll) {
       const targetPanel = panels.find((panel) => panel.dataset.tabPanel === target);
       if (compactNavigation && targetPanel) {
         const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -65,5 +65,7 @@ export function installTabNavigation(root, { onActivate } = {}) {
       else if (glossaryId) location.hash = `#${glossaryId}`;
     });
   });
-  setTab(root.querySelector("[data-tab-trigger].active")?.dataset.tabTarget || "overview");
+  setTab(root.querySelector("[data-tab-trigger].active")?.dataset.tabTarget || "overview", {
+    preserveScroll: true,
+  });
 }

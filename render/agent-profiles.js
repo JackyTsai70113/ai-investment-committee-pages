@@ -19,7 +19,7 @@ export function createAgentProfileRenderers({
     technical: "技術分析",
     momentum: "動能",
     news: "新聞事件",
-    etf: "ETF 分析",
+    etf: "交易所交易基金分析",
     earnings: "財報分析",
     portfolio: "組合配置",
     liquidity: "流動性",
@@ -51,7 +51,7 @@ export function createAgentProfileRenderers({
   const agentLink = (value) => {
     const key = normalizeAgentName(value);
     const profile = profiles[key];
-    if (!profile) return `<strong>${escapeHtml(value)}</strong>`;
+    if (!profile) return `<strong>${escapeHtml(roleLabel(key))}</strong>`;
     return `
       <a
         class="agent-profile-link"

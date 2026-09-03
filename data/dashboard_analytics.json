@@ -1,17 +1,17 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-03T08:38:49.745530Z",
-  "data_cutoff": "2026-09-02T16:53:12.540434Z",
+  "generated_at": "2026-09-03T16:13:25.625617Z",
+  "data_cutoff": "2026-09-03T14:38:15.013831Z",
   "portfolio_health": {
-    "score": 59,
-    "grade": "caution",
-    "summary": "現金與低槓桿使組合本身具防護；最新模型管線失敗，目前沿用上一份決策，委員共識高，但績效樣本仍不足。健康分數不能解讀為獲利機率。",
+    "score": 74,
+    "grade": "stable",
+    "summary": "現金與低槓桿使組合本身具防護；最新模型管線成功完成，委員共識高，但績效樣本仍不足。健康分數不能解讀為獲利機率。",
     "components": [
       {
         "component": "曝險分散度",
         "score": 2,
         "maximum": 20,
-        "explanation": "Look-through coverage 為 unavailable；資料缺口不能視為分散。"
+        "explanation": "穿透式持倉覆蓋狀態為 unavailable；資料缺口不能視為分散。"
       },
       {
         "component": "流動性",
@@ -27,34 +27,34 @@
       },
       {
         "component": "管線可靠性",
-        "score": 5,
+        "score": 20,
         "maximum": 20,
-        "explanation": "最新正式委員會失敗，目前沿用上一份決策。"
+        "explanation": "最新正式委員會成功完成。"
       },
       {
         "component": "證據與共識",
         "score": 12,
         "maximum": 20,
-        "explanation": "委員共識度 93/100；研究準備度 not_ready。"
+        "explanation": "委員共識度 92/100；研究準備度 not_ready。"
       }
     ]
   },
   "performance": {
-    "completed_points": 13,
-    "completed_intervals": 12,
-    "distinct_completed_sessions": 12,
+    "completed_points": 14,
+    "completed_intervals": 13,
+    "distinct_completed_sessions": 13,
     "ending_value_usd": "6080.58",
     "total_return_percent": "1.3430",
-    "net_ending_value_usd": "6079.94",
-    "net_total_return_percent": "1.3323",
+    "net_ending_value_usd": "6079.45",
+    "net_total_return_percent": "1.3242",
     "net_maximum_drawdown_percent": "-0.9700",
-    "cumulative_turnover": "0.3000",
+    "cumulative_turnover": "0.6000",
     "benchmark_status": "ready",
     "maximum_drawdown_percent": "-0.9700",
-    "sharpe_ratio": "3.2130",
-    "win_rate_percent": "58.3333",
+    "sharpe_ratio": "3.0821",
+    "win_rate_percent": "53.8462",
     "sample_status": "provisional",
-    "methodology": "同一市場交易日只保留最後一個明確標記的收盤評價，且連續完全相同的估值點不重複計算。Sharpe 與勝率以目前已有的完成交易日區間計算，樣本較短時僅代表目前觀察期，會隨資料累積而穩定。成本未建模時 net 暫以 gross 作為 proxy；tax／FX 依每個 point 的狀態揭露。"
+    "methodology": "同一市場交易日只保留最後一個明確標記的收盤評價，且連續完全相同的估值點不重複計算。Sharpe 與勝率以目前已有的完成交易日區間計算，樣本較短時僅代表目前觀察期，會隨資料累積而穩定。成本未建模時，淨報酬暫以毛報酬代理；稅務與外匯換算依每個評價點的狀態揭露。"
   },
   "return_objective": {
     "annualized_target_percent": "24.0000",
@@ -72,23 +72,23 @@
       "VTI"
     ],
     "benchmark_status": "ready",
-    "synchronized_completed_sessions": 12,
+    "synchronized_completed_sessions": 13,
     "comparison_start_session": "2026-07-23",
-    "comparison_end_session": "2026-09-02",
-    "strategy_comparison_return_percent": "0.6106",
-    "primary_benchmark_return_percent": "3.6255",
+    "comparison_end_session": "2026-09-03",
+    "strategy_comparison_return_percent": "0.6025",
+    "primary_benchmark_return_percent": "4.0939",
     "strongest_benchmark_symbol": "SPY",
-    "strongest_benchmark_return_percent": "3.6255",
-    "excess_return_vs_strongest_benchmark_percent": "-3.0149",
-    "latest_monthly_strategy_return_percent": "1.1689",
-    "latest_monthly_strongest_benchmark_return_percent": "7.0353",
-    "latest_monthly_excess_return_percent": "-5.8664",
+    "strongest_benchmark_return_percent": "4.0939",
+    "excess_return_vs_strongest_benchmark_percent": "-3.4913",
+    "latest_monthly_strategy_return_percent": "1.0568",
+    "latest_monthly_strongest_benchmark_return_percent": "7.2739",
+    "latest_monthly_excess_return_percent": "-6.2171",
     "monthly_pace_status": "gross_below_both_hurdles",
-    "latest_annual_strategy_return_percent": "14.9650",
-    "latest_annual_strongest_benchmark_return_percent": "126.1136",
-    "latest_annual_excess_return_percent": "-111.1486",
+    "latest_annual_strategy_return_percent": "13.4447",
+    "latest_annual_strongest_benchmark_return_percent": "132.2367",
+    "latest_annual_excess_return_percent": "-118.7920",
     "annual_pace_status": "gross_below_both_hurdles",
-    "methodology": "Primary benchmark 固定為 SPY；challenge set 為 SPY、QQQ、IWM、DIA、VTI。僅使用 performance point 同步封存的收盤資料；缺資料維持 partial，禁止 forward-fill。以目前已封存的完成交易日計算；目前只有 11 個交易日區間，年化 pace 僅作短期觀察，會隨資料累積而更穩定。"
+    "methodology": "主要比較基準固定為 SPY；比較組為 SPY、QQQ、IWM、DIA、VTI。僅使用與績效評價點同步封存的收盤資料；缺資料維持部分覆蓋，不以前後資料填補。以目前已封存的完成交易日計算；目前只有 12 個交易日區間，年化速度僅作短期觀察，會隨資料累積而更穩定。"
   },
   "agent_leaderboard": [
     {
@@ -223,6 +223,6 @@
   "warnings": [
     "Portfolio Health Score 是資料、風控與流程完整度，不是獲利機率。",
     "Agent 命中率樣本極少，不得據此調整投票權重。",
-    "績效數值以目前已有的完成交易日計算；短期樣本較少，會隨時間累積而更穩定。"
+    "績效數值以目前已有的完成交易日計算；目前樣本較少，會隨時間累積而更穩定。"
   ]
 }
