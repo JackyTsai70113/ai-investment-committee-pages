@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0",
-  "review_id": "learning-20260904T053307Z",
-  "reviewed_run_id": "20260904T040332Z",
-  "generated_at": "2026-09-04T05:33:07.543865Z",
-  "evaluation_cutoff": "2026-09-04T05:32:18.129687Z",
+  "review_id": "learning-20260904T085036Z",
+  "reviewed_run_id": "20260904T053231Z",
+  "generated_at": "2026-09-04T08:50:36.809489Z",
+  "evaluation_cutoff": "2026-09-04T08:49:50.334326Z",
   "evidence_source": "Yahoo Finance via yfinance with bounded retry and Nasdaq completed-close fallback",
   "verdict": "too_early",
   "lessons": [
@@ -11,10 +11,9 @@
       "title": "市場方向有變化，但策略還在觀察期",
       "evidence": "最近市場有上漲與下跌的日子；目前累積的資料還不夠長，不能只靠幾天的結果判斷策略好壞。",
       "implication": "我們會繼續記錄每個交易日的結果，等資料夠多後再判斷這個做法是否真的值得延續。",
-      "confidence": 88,
+      "confidence": 92,
       "affected_assets": [
         "SPY",
-        "QQQ",
         "TLT",
         "GLD"
       ]
@@ -23,12 +22,11 @@
       "title": "看懂短期波動，需要多看幾個收盤日",
       "evidence": "單日上漲或下跌很常見，可能只是市場當天的情緒，還看不出策略是否穩定。",
       "implication": "接下來會用連續多日的收盤結果來比對，避免因為一天的波動就改變方向。",
-      "confidence": 82,
+      "confidence": 95,
       "affected_assets": [
+        "CASH",
         "SPY",
-        "TLT",
-        "GLD",
-        "CASH"
+        "GLD"
       ]
     }
   ],

@@ -1,44 +1,90 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-04T05:33:18.058879Z",
-  "pricing_cutoff": "2026-09-04T05:32:18.129687Z",
+  "generated_at": "2026-09-04T08:50:49.331401Z",
+  "pricing_cutoff": "2026-09-04T08:49:50.334326Z",
   "pricing_session": "2026-09-03",
-  "from_run_id": "20260904T040332Z",
-  "to_run_id": "20260904T053231Z",
-  "capital_usd": "6000.00",
+  "from_run_id": "20260904T053231Z",
+  "to_run_id": "20260904T085003Z",
+  "capital_usd": "10808.36",
   "status": "research_only",
   "basis": "以前一輪研究配置為比較基準，差額股數採最近已完成交易日收盤價估算。",
   "instructions": [
     {
-      "symbol": "SPY",
-      "action": "add",
-      "reference_close_usd": "773.169983",
-      "previous_target_usd": "0",
-      "new_target_usd": "600.00",
-      "change_usd": "600.00",
-      "estimated_share_change": "0.7760"
-    },
-    {
       "symbol": "GLD",
       "action": "add",
       "reference_close_usd": "410.220001",
+      "previous_target_usd": "300.00",
+      "new_target_usd": "1621.25",
+      "change_usd": "1321.25",
+      "estimated_share_change": "3.2208"
+    },
+    {
+      "symbol": "META",
+      "action": "add",
+      "reference_close_usd": null,
       "previous_target_usd": "0",
-      "new_target_usd": "300.00",
-      "change_usd": "300.00",
-      "estimated_share_change": "0.7313"
+      "new_target_usd": "864.67",
+      "change_usd": "864.67",
+      "estimated_share_change": null
+    },
+    {
+      "symbol": "NVDA",
+      "action": "add",
+      "reference_close_usd": "228.449997",
+      "previous_target_usd": "0",
+      "new_target_usd": "1621.25",
+      "change_usd": "1621.25",
+      "estimated_share_change": "7.0967"
+    },
+    {
+      "symbol": "AVGO",
+      "action": "add",
+      "reference_close_usd": null,
+      "previous_target_usd": "0",
+      "new_target_usd": "1080.84",
+      "change_usd": "1080.84",
+      "estimated_share_change": null
+    },
+    {
+      "symbol": "SPY",
+      "action": "add",
+      "reference_close_usd": "773.169983",
+      "previous_target_usd": "600.00",
+      "new_target_usd": "2161.67",
+      "change_usd": "1561.67",
+      "estimated_share_change": "2.0198"
+    },
+    {
+      "symbol": "TLT",
+      "action": "add",
+      "reference_close_usd": "82.07",
+      "previous_target_usd": "0",
+      "new_target_usd": "1080.84",
+      "change_usd": "1080.84",
+      "estimated_share_change": "13.1697"
+    },
+    {
+      "symbol": "PLTR",
+      "action": "add",
+      "reference_close_usd": "182.529999",
+      "previous_target_usd": "0",
+      "new_target_usd": "216.17",
+      "change_usd": "216.17",
+      "estimated_share_change": "1.1843"
     },
     {
       "symbol": "CASH",
       "action": "reduce",
       "reference_close_usd": null,
-      "previous_target_usd": "6000.00",
-      "new_target_usd": "5100.00",
-      "change_usd": "-900.00",
+      "previous_target_usd": "5100.00",
+      "new_target_usd": "2161.67",
+      "change_usd": "-2938.33",
       "estimated_share_change": null
     }
   ],
   "warnings": [
     "這是兩輪研究建議的差額，不代表實際持股、成交或自動下單。",
-    "股數僅以最近一個已完成交易日收盤價估算；實際操作前須核對券商即時價格。"
+    "股數僅以最近一個已完成交易日收盤價估算；實際操作前須核對券商即時價格。",
+    "缺少收盤價，無法估算股數：AVGO, META。"
   ]
 }

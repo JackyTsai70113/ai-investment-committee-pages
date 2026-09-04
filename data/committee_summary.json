@@ -1,7 +1,7 @@
 {
-  "run_id": "20260904T053231Z",
+  "run_id": "20260904T085003Z",
   "mode": "live",
-  "decision_origin": "model",
+  "decision_origin": "policy_override",
   "policy_override_notes": [],
   "proposals": [],
   "critiques": [],
@@ -10,59 +10,85 @@
   "critique_resolutions": [],
   "final_decision_audits": [],
   "final_decision": {
-    "opening_statement": "我在質詢後撤回任何方向性升級，改以 85% 現金保留彈性；僅配置小額 SPY 與 GLD，等待完成日短窗與事件資料補齊。",
+    "opening_statement": "我在質詢後降低單一科技股集中度，改以 SPY、GLD、TLT 與現金分散風險；在短窗與事件證據未補齊前，我不新增槓桿或反向曝險。",
     "tone": "cautious",
     "market_stance": "neutral",
     "model_score": 100,
     "model_score_reason": "方向一致度 100/100；10 位提案委員按信心加權，0 項協商後否決仍未解除，扣除 0 分。",
-    "risk_level": "moderate",
-    "expected_horizon": "研究配置；每取得新的可追溯完成交易日資料即重新評估，不設定固定持有天數。",
+    "risk_level": "high",
+    "expected_horizon": "中期研究配置；每取得新的可追溯完成交易日資料即重新評估，不設定固定持有天數，也不代表已成交。",
     "allocations": [
       {
         "symbol": "CASH",
         "asset_type": "cash",
-        "target_weight": "0.85",
-        "note": "主要作為資料與事件對齊不足下的流動性緩衝，並保留未來重新配置彈性。",
+        "target_weight": "0.2",
+        "note": "保留流動性並降低事件、跳空及資料不完整時的組合波動。",
         "invalidation_type": "cash",
         "invalidation_price": null
       },
       {
         "symbol": "SPY",
         "asset_type": "etf",
-        "target_weight": "0.1",
-        "note": "小額核心市場曝險；僅反映已完成收盤的風險偏好背景，不代表已驗證的多日優勢。參考收盤價773.17美元。",
+        "target_weight": "0.2",
+        "note": "作為較廣泛的核心股票曝險；2026-09-03收盤仍高於50日均線，但僅視為情境支持，不視為多日延續證據。",
         "invalidation_type": "price",
-        "invalidation_price": "750"
+        "invalidation_price": "730"
       },
       {
         "symbol": "GLD",
         "asset_type": "commodity_etf",
-        "target_weight": "0.05",
-        "note": "小額分散配置；金價ETF近期20日報酬為正，但仍需避免將單一窗口表現解讀為穩定避險效果。參考收盤價410.22美元。",
+        "target_weight": "0.15",
+        "note": "提供與股票及利率資產不同的分散來源；近期20日報酬為正，但油價與通膨路徑仍可能提高波動。",
         "invalidation_type": "price",
         "invalidation_price": "390"
+      },
+      {
+        "symbol": "TLT",
+        "asset_type": "etf",
+        "target_weight": "0.1",
+        "note": "作為利率與股票風險的分散部位；長端利率仍有上行壓力，因此控制權重。",
+        "invalidation_type": "price",
+        "invalidation_price": "78"
+      },
+      {
+        "symbol": "NVDA",
+        "asset_type": "stock",
+        "target_weight": "0.15",
+        "note": "保留已披露獲利與現金流背景下的成長曝險，但由原持倉的高集中度下調，避免把單日強勢外推為可重複優勢。",
+        "invalidation_type": "price",
+        "invalidation_price": "205"
+      },
+      {
+        "symbol": "META",
+        "asset_type": "stock",
+        "target_weight": "0.08",
+        "note": "保留獲利與營運現金流較具規模的個股曝險，但以小於單一核心指數部位的權重控制公司特定風險。",
+        "invalidation_type": "price",
+        "invalidation_price": "480"
+      },
+      {
+        "symbol": "AVGO",
+        "asset_type": "stock",
+        "target_weight": "0.1",
+        "note": "保留半導體與基礎設施成長曝險；財務資料相對較舊，且產業估值與供應鏈風險需持續驗證。",
+        "invalidation_type": "price",
+        "invalidation_price": "300"
+      },
+      {
+        "symbol": "PLTR",
+        "asset_type": "stock",
+        "target_weight": "0.02",
+        "note": "僅保留觀察性小部位；近期動能強但波動率高，且價格已明顯高於50日均線。",
+        "invalidation_type": "price",
+        "invalidation_price": "160"
       }
     ],
     "top_reasons": [
       {
         "id": 1,
-        "title": "整體市場仍處於溫和風險偏好背景",
-        "summary": "市場狀態標示為 risk_on，SPY 20日報酬為0.599821%，且收盤高於50日均線2.252307%；因此保留小額SPY，而非完全排除風險資產。這是背景證據，不是多日策略有效性驗證。",
-        "confidence": 72,
-        "category": "macro",
-        "affected_assets": [
-          "SPY",
-          "CASH"
-        ],
-        "source_urls": [
-          "https://finance.yahoo.com/"
-        ]
-      },
-      {
-        "id": 2,
-        "title": "SPY完成日反彈但延續性尚未證實",
-        "summary": "SPY於2026-09-03完成收盤上漲1.046841%，成交量為43,494,000股；然而缺少要求的3日與7日完成交易日統計，因此部位限制在10%，不追價放大曝險。",
-        "confidence": 78,
+        "title": "核心市場仍具有限度支撐",
+        "summary": "SPY於2026-09-03上漲1.0468%，20日報酬為0.5998%，且高於50日均線2.2523%；這支持保留有限核心股票曝險，但不足以證明多日延續。",
+        "confidence": 67,
         "category": "technical",
         "affected_assets": [
           "SPY"
@@ -72,59 +98,69 @@
         ]
       },
       {
-        "id": 3,
-        "title": "波動水準目前偏低但觀測已過時",
-        "summary": "VIX收於14.32，單日下降5.789475%，regime標示 volatility normal；但VIX、VIX9D與VIX3M均標記 stale，故只能支持溫和配置，不能支持激進加碼。",
-        "confidence": 70,
-        "category": "risk",
+        "id": 2,
+        "title": "市場內部動能明顯分化",
+        "summary": "QQQ的5日報酬為-0.4770%、RSI14為40.25；IWM的5日及20日報酬分別為-1.5410%及-1.0260%，顯示大盤反彈尚未廣泛擴散，因此不提高高beta配置。",
+        "confidence": 82,
+        "category": "momentum",
         "affected_assets": [
           "SPY",
-          "CASH"
+          "IWM",
+          "SMH"
         ],
         "source_urls": [
-          "https://cdn.cboe.com/api/global/delayed_quotes/quotes/_VIX.json",
-          "https://cdn.cboe.com/api/global/delayed_quotes/quotes/_VIX9D.json",
-          "https://cdn.cboe.com/api/global/delayed_quotes/quotes/_VIX3M.json"
+          "https://finance.yahoo.com/"
+        ]
+      },
+      {
+        "id": 3,
+        "title": "半導體板塊回撤風險仍高",
+        "summary": "SMH的5日與20日報酬分別為-3.5602%及-3.3037%，距20日及50日均線為-2.4026%及-3.9564%；半導體曝險應透過NVDA與AVGO限額持有。",
+        "confidence": 84,
+        "category": "risk",
+        "affected_assets": [
+          "SMH",
+          "NVDA",
+          "AVGO"
+        ],
+        "source_urls": [
+          "https://finance.yahoo.com/"
         ]
       },
       {
         "id": 4,
-        "title": "利率背景仍可能壓抑估值擴張",
-        "summary": "10年期美債殖利率指標為4.762%，5日相對變化為1.926373%，雖單日下降0.708922%，顯示利率背景並非單向寬鬆；因此不提高久期或成長風格集中曝險。",
-        "confidence": 65,
-        "category": "macro",
+        "title": "NVDA基本面提供背景支撐",
+        "summary": "NVDA最新10-Q列示六個月淨利118.010B美元、營業利益117.270B美元、營運現金流74.421B美元；這支持保留部位，但不代表短期股價必然延續或下行風險受限。",
+        "confidence": 62,
+        "category": "valuation",
         "affected_assets": [
-          "SPY",
-          "CASH"
+          "NVDA"
         ],
         "source_urls": [
-          "https://finance.yahoo.com/"
+          "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json"
         ]
       },
       {
         "id": 5,
-        "title": "能源價格上行增加通膨再定價風險",
-        "summary": "原油期貨20日上漲18.126539%、5日上漲9.302052%，RSI14為71.86；這只支持保留風險緩衝與分散考量，不能單獨推導股市方向。",
-        "confidence": 73,
-        "category": "risk",
+        "title": "大型科技公司獲利品質具分散價值",
+        "summary": "META六個月營收117.111B美元、淨利42.621B美元、營運現金流64.088B美元；相較純粹高波動題材，保留較小META部位可增加公司獲利來源的多樣性。",
+        "confidence": 64,
+        "category": "diversification",
         "affected_assets": [
-          "SPY",
-          "GLD",
-          "CASH"
+          "META"
         ],
         "source_urls": [
-          "https://finance.yahoo.com/"
+          "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json"
         ]
       },
       {
         "id": 6,
-        "title": "GLD具有限度的資產分散用途",
-        "summary": "GLD於2026-09-03上漲1.847163%，20日報酬為5.27369%，且距離50日均線5.691283%；因此配置5%作為非股票分散，但不宣稱其避險效果已被驗證。",
-        "confidence": 68,
+        "title": "黃金近期具分散效果但非無風險",
+        "summary": "GLD的20日報酬為5.2737%，高於50日均線5.6913%，且2026-09-03上漲1.8472%；因此提高至中等分散權重，但仍須承受利率與商品價格反轉。",
+        "confidence": 70,
         "category": "diversification",
         "affected_assets": [
-          "GLD",
-          "SPY"
+          "GLD"
         ],
         "source_urls": [
           "https://finance.yahoo.com/"
@@ -132,13 +168,12 @@
       },
       {
         "id": 7,
-        "title": "半導體板塊短中期相對疲弱",
-        "summary": "SMH單日上漲0.385118%，但5日與20日報酬分別為-3.560214%及-3.303704%，距離20日均線-2.402585%；因此不新增SMH或槓桿半導體曝險。",
-        "confidence": 78,
-        "category": "momentum",
+        "title": "長債可分散但受利率上行牽制",
+        "summary": "TLT的20日報酬為-0.5453%，距20日及50日均線分別為-0.3957%及-1.7291%；其配置目的主要是分散股票風險，而非押注已確認的降息行情。",
+        "confidence": 76,
+        "category": "macro",
         "affected_assets": [
-          "SPY",
-          "CASH"
+          "TLT"
         ],
         "source_urls": [
           "https://finance.yahoo.com/"
@@ -146,12 +181,14 @@
       },
       {
         "id": 8,
-        "title": "槓桿科技曝險的波動成本過高",
-        "summary": "SOXL的20日年化波動率為93.179194%，5日與20日報酬分別為-13.254778%及-19.338021%，顯示路徑風險顯著；本輪不配置槓桿ETF。",
-        "confidence": 86,
-        "category": "risk",
+        "title": "能源價格增加通膨尾端風險",
+        "summary": "原油期貨5日及20日報酬分別為10.6774%及20.9918%，RSI14為72.997；若油價延續強勢，可能壓縮估值並不利長久期資產，因此維持現金與控制TLT權重。",
+        "confidence": 78,
+        "category": "macro",
         "affected_assets": [
-          "CASH"
+          "TLT",
+          "SPY",
+          "GLD"
         ],
         "source_urls": [
           "https://finance.yahoo.com/"
@@ -159,12 +196,13 @@
       },
       {
         "id": 9,
-        "title": "個股訊號分化，不適合集中押注",
-        "summary": "NVDA單日上漲1.800273%、20日上漲4.319828%，但AMD單日下跌0.196909%、20日下跌6.769129%；同一半導體主題內部分化，故不以個股取代ETF核心曝險。",
-        "confidence": 75,
-        "category": "momentum",
+        "title": "槓桿曝險的路徑風險不值得新增",
+        "summary": "SOXL的20日報酬為-19.3380%、20日波動率年化93.18%，TQQQ的20日回撤為-6.6364%；在方向延續尚未驗證時，新增槓桿可能放大反彈失敗與每日重設造成的偏離。",
+        "confidence": 88,
+        "category": "risk",
         "affected_assets": [
-          "SPY",
+          "SOXL",
+          "TQQQ",
           "CASH"
         ],
         "source_urls": [
@@ -173,30 +211,32 @@
       },
       {
         "id": 10,
-        "title": "高波動個股上漲不構成追價依據",
-        "summary": "PLTR單日上漲7.71273%、20日上漲17.066445%，但20日年化波動率為62.155239%，且仍低於20日高點2.065676%；本輪不配置該高波動個股，避免將單日跳升直接轉為部位。",
-        "confidence": 79,
+        "title": "部位重整優先於追逐單一強勢股",
+        "summary": "使用者確認持倉中NVDA權重31.70%、AVGO權重23.12%，使個股集中度偏高；本輪將NVDA降至15%、AVGO降至10%，以符合單一股票25%上限並降低公司特定風險。",
+        "confidence": 93,
         "category": "risk",
         "affected_assets": [
+          "NVDA",
+          "AVGO",
+          "META",
           "CASH"
         ],
-        "source_urls": [
-          "https://finance.yahoo.com/"
-        ]
+        "source_urls": []
       }
     ],
     "diagnostics": [],
     "invalidation_conditions": [
-      "若後續取得SPY、TLT、GLD的3日與7日完成交易日統計，並顯示方向與風險承擔具有一致且可重複的證據，應重新評估現金比重與SPY配置。",
-      "若SPY收盤跌破750美元，或新的完成交易日資料確認市場趨勢與本輪小額核心曝險不再相容，應重新檢視SPY研究配置。",
-      "若BLS與earnings事件資料恢復並完成point-in-time對齊，且重大事件進入可定義的限制期間，應重新評估新增風險曝險。",
-      "若VIX期限結構恢復新鮮且顯示持續性壓力，應重新評估股票與商品ETF的相對部位。"
+      "若SPY在新的完成交易日資料中跌破730美元，且距50日均線轉為負，應重新檢視核心股票配置。",
+      "若NVDA跌破205美元，或後續可驗證申報顯示獲利、營業利益與營運現金流同步明顯惡化，應下調其研究權重。",
+      "若VIX由正常區間明顯上升且波動率期限結構恢復可驗證並轉為壓力型結構，應優先提高現金並降低高波動股票。",
+      "若後續補齊的3日與7日完成交易日統計顯示股票風險擴散轉強，且事件對齊資料恢復，才重新評估提高股票或降低現金的必要性。"
     ],
     "major_risks": [
-      "資料缺口可能使短期市場方向與事件風險被低估；本輪不以缺資料自行推導偏多或偏空。",
-      "原油20日漲幅與高RSI可能透過利率或通膨預期造成估值壓力，但本輪缺少最新通膨數據，因果關係未被驗證。",
-      "SPY與GLD配置仍可能遭遇價格跳空、流動性摩擦或市場相關性上升；本輪未提供價差、深度或滑價資料。",
-      "槓桿與反向ETF具有每日重設及路徑風險；本輪未配置，且不以單日倍數推論多日報酬。"
+      "現有組合仍集中於大型科技、半導體及AI相關公司，即使降權後仍具有共同估值、供應鏈與利率敏感度。",
+      "油價20日漲幅及高RSI可能帶來通膨再定價，對長債與高估值成長股形成雙重壓力。",
+      "GLD與TLT並非保本資產；實質利率、美元或通膨預期反轉時，兩者仍可能同步波動。",
+      "資料缺少完成交易日短窗與部分事件日曆，可能低估近期反轉、跳空或催化事件風險。",
+      "槓桿與反向ETF具每日重設及路徑依賴；若市場先反向再回落，方向判斷即使部分正確，也可能因複利路徑產生損失。"
     ],
     "risk_veto": false,
     "veto_reason": null

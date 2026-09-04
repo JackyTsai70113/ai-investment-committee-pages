@@ -1,38 +1,78 @@
 {
   "schema_version": "1.0",
-  "run_id": "20260904T053231Z",
-  "generated_at": "2026-09-04T05:33:18.058879Z",
-  "data_cutoff": "2026-09-04T05:32:18.129687Z",
+  "run_id": "20260904T085003Z",
+  "generated_at": "2026-09-04T08:50:49.331401Z",
+  "data_cutoff": "2026-09-04T08:49:50.334326Z",
   "status": "live",
-  "capital_usd": "6000.00",
+  "capital_usd": "10808.36",
   "model_score": 100,
   "model_score_reason": "方向一致度 100/100；10 位提案委員按信心加權，0 項協商後否決仍未解除，扣除 0 分。",
-  "risk_level": "moderate",
-  "expected_horizon": "研究配置；每取得新的可追溯完成交易日資料即重新評估，不設定固定持有天數。",
+  "risk_level": "high",
+  "expected_horizon": "中期研究配置；每取得新的可追溯完成交易日資料即重新評估，不設定固定持有天數，也不代表已成交。",
   "allocations": [
     {
       "symbol": "CASH",
       "asset_type": "cash",
-      "target_weight": "0.85",
-      "target_amount_usd": "5100.00",
-      "action": "reduce",
+      "target_weight": "0.2",
+      "target_amount_usd": "2161.67",
+      "action": "buy",
       "note": "保留彈性，等待下一次研究判斷。"
     },
     {
       "symbol": "SPY",
       "asset_type": "etf",
-      "target_weight": "0.1",
-      "target_amount_usd": "600.00",
+      "target_weight": "0.2",
+      "target_amount_usd": "2161.67",
       "action": "buy",
       "note": "作為核心市場配置，比例由本輪風險判斷決定。"
     },
     {
       "symbol": "GLD",
       "asset_type": "commodity_etf",
-      "target_weight": "0.05",
-      "target_amount_usd": "300.00",
+      "target_weight": "0.15",
+      "target_amount_usd": "1621.25",
       "action": "buy",
       "note": "用來分散股票市場風險。"
+    },
+    {
+      "symbol": "TLT",
+      "asset_type": "etf",
+      "target_weight": "0.1",
+      "target_amount_usd": "1080.84",
+      "action": "buy",
+      "note": "依本輪研究配置。"
+    },
+    {
+      "symbol": "NVDA",
+      "asset_type": "stock",
+      "target_weight": "0.15",
+      "target_amount_usd": "1621.25",
+      "action": "reduce",
+      "note": "依本輪研究配置。"
+    },
+    {
+      "symbol": "META",
+      "asset_type": "stock",
+      "target_weight": "0.08",
+      "target_amount_usd": "864.67",
+      "action": "reduce",
+      "note": "依本輪研究配置。"
+    },
+    {
+      "symbol": "AVGO",
+      "asset_type": "stock",
+      "target_weight": "0.1",
+      "target_amount_usd": "1080.84",
+      "action": "reduce",
+      "note": "依本輪研究配置。"
+    },
+    {
+      "symbol": "PLTR",
+      "asset_type": "stock",
+      "target_weight": "0.02",
+      "target_amount_usd": "216.17",
+      "action": "reduce",
+      "note": "依本輪研究配置。"
     }
   ],
   "position_risk_plans": [
@@ -53,52 +93,108 @@
     {
       "symbol": "SPY",
       "reference_price": "773.169983",
-      "reference_timestamp": "2026-09-04T05:32:18.129687Z",
+      "reference_timestamp": "2026-09-04T08:49:50.334326Z",
       "invalidation_type": "price",
-      "invalidation_price": "750",
+      "invalidation_price": "730",
       "status": "quantified",
-      "base_loss_usd": "17.98",
-      "base_loss_fraction": "0.0030",
+      "base_loss_usd": "120.70",
+      "base_loss_fraction": "0.0112",
       "stress_gap_percent": "0.05",
-      "stress_loss_usd": "30.00",
-      "portfolio_contribution": "0.0050",
+      "stress_loss_usd": "108.08",
+      "portfolio_contribution": "0.0100",
       "methodology": "Research estimate only: target amount/reference price × max(reference price − invalidation price, 0); gap stress does not assume stop execution."
     },
     {
       "symbol": "GLD",
       "reference_price": "410.220001",
-      "reference_timestamp": "2026-09-04T05:32:18.129687Z",
+      "reference_timestamp": "2026-09-04T08:49:50.334326Z",
       "invalidation_type": "price",
       "invalidation_price": "390",
       "status": "quantified",
-      "base_loss_usd": "14.79",
-      "base_loss_fraction": "0.0025",
+      "base_loss_usd": "79.91",
+      "base_loss_fraction": "0.0074",
       "stress_gap_percent": "0.06",
-      "stress_loss_usd": "18.00",
-      "portfolio_contribution": "0.0030",
+      "stress_loss_usd": "97.28",
+      "portfolio_contribution": "0.0090",
+      "methodology": "Research estimate only: target amount/reference price × max(reference price − invalidation price, 0); gap stress does not assume stop execution."
+    },
+    {
+      "symbol": "TLT",
+      "reference_price": "82.07",
+      "reference_timestamp": "2026-09-04T08:49:50.334326Z",
+      "invalidation_type": "price",
+      "invalidation_price": "78",
+      "status": "quantified",
+      "base_loss_usd": "53.60",
+      "base_loss_fraction": "0.0050",
+      "stress_gap_percent": "0.05",
+      "stress_loss_usd": "54.04",
+      "portfolio_contribution": "0.0050",
+      "methodology": "Research estimate only: target amount/reference price × max(reference price − invalidation price, 0); gap stress does not assume stop execution."
+    },
+    {
+      "symbol": "NVDA",
+      "reference_price": "228.449997",
+      "reference_timestamp": "2026-09-04T08:49:50.334326Z",
+      "invalidation_type": "price",
+      "invalidation_price": "205",
+      "status": "quantified",
+      "base_loss_usd": "166.42",
+      "base_loss_fraction": "0.0154",
+      "stress_gap_percent": "0.08",
+      "stress_loss_usd": "129.70",
+      "portfolio_contribution": "0.0120",
+      "methodology": "Research estimate only: target amount/reference price × max(reference price − invalidation price, 0); gap stress does not assume stop execution."
+    },
+    {
+      "symbol": "META",
+      "reference_price": null,
+      "reference_timestamp": null,
+      "invalidation_type": "price",
+      "invalidation_price": "480",
+      "status": "unquantified",
+      "base_loss_usd": "0",
+      "base_loss_fraction": "0",
+      "stress_gap_percent": "0",
+      "stress_loss_usd": "0",
+      "portfolio_contribution": "0",
+      "methodology": "Missing or non-positive market quote; risk gate cannot quantify loss."
+    },
+    {
+      "symbol": "AVGO",
+      "reference_price": null,
+      "reference_timestamp": null,
+      "invalidation_type": "price",
+      "invalidation_price": "300",
+      "status": "unquantified",
+      "base_loss_usd": "0",
+      "base_loss_fraction": "0",
+      "stress_gap_percent": "0",
+      "stress_loss_usd": "0",
+      "portfolio_contribution": "0",
+      "methodology": "Missing or non-positive market quote; risk gate cannot quantify loss."
+    },
+    {
+      "symbol": "PLTR",
+      "reference_price": "182.529999",
+      "reference_timestamp": "2026-09-04T08:49:50.334326Z",
+      "invalidation_type": "price",
+      "invalidation_price": "160",
+      "status": "quantified",
+      "base_loss_usd": "26.68",
+      "base_loss_fraction": "0.0025",
+      "stress_gap_percent": "0.08",
+      "stress_loss_usd": "17.29",
+      "portfolio_contribution": "0.0016",
       "methodology": "Research estimate only: target amount/reference price × max(reference price − invalidation price, 0); gap stress does not assume stop execution."
     }
   ],
   "top_reasons": [
     {
       "id": 1,
-      "title": "整體市場仍處於溫和風險偏好背景",
-      "summary": "利率仍會影響成長股估值，因此配置保持分散。",
-      "confidence": 72,
-      "category": "macro",
-      "affected_assets": [
-        "SPY",
-        "CASH"
-      ],
-      "source_urls": [
-        "https://finance.yahoo.com/"
-      ]
-    },
-    {
-      "id": 2,
-      "title": "SPY完成日反彈但延續性尚未證實",
+      "title": "核心市場仍具有限度支撐",
       "summary": "近期走勢提供正面訊號，但配置仍維持節制。",
-      "confidence": 78,
+      "confidence": 67,
       "category": "technical",
       "affected_assets": [
         "SPY"
@@ -108,59 +204,69 @@
       ]
     },
     {
-      "id": 3,
-      "title": "波動水準目前偏低但觀測已過時",
-      "summary": "風險環境維持中性，不因單一指標放大部位。",
-      "confidence": 70,
-      "category": "risk",
+      "id": 2,
+      "title": "市場內部動能明顯分化",
+      "summary": "這項判斷已納入本輪配置取捨。",
+      "confidence": 82,
+      "category": "momentum",
       "affected_assets": [
         "SPY",
-        "CASH"
+        "IWM",
+        "SMH"
       ],
       "source_urls": [
-        "https://cdn.cboe.com/api/global/delayed_quotes/quotes/_VIX.json",
-        "https://cdn.cboe.com/api/global/delayed_quotes/quotes/_VIX9D.json",
-        "https://cdn.cboe.com/api/global/delayed_quotes/quotes/_VIX3M.json"
+        "https://finance.yahoo.com/"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "半導體板塊回撤風險仍高",
+      "summary": "風險環境維持中性，不因單一指標放大部位。",
+      "confidence": 84,
+      "category": "risk",
+      "affected_assets": [
+        "SMH",
+        "NVDA",
+        "AVGO"
+      ],
+      "source_urls": [
+        "https://finance.yahoo.com/"
       ]
     },
     {
       "id": 4,
-      "title": "利率背景仍可能壓抑估值擴張",
-      "summary": "利率仍會影響成長股估值，因此配置保持分散。",
-      "confidence": 65,
-      "category": "macro",
+      "title": "NVDA基本面提供背景支撐",
+      "summary": "這項判斷已納入本輪配置取捨。",
+      "confidence": 62,
+      "category": "valuation",
       "affected_assets": [
-        "SPY",
-        "CASH"
+        "NVDA"
       ],
       "source_urls": [
-        "https://finance.yahoo.com/"
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json"
       ]
     },
     {
       "id": 5,
-      "title": "能源價格上行增加通膨再定價風險",
-      "summary": "風險環境維持中性，不因單一指標放大部位。",
-      "confidence": 73,
-      "category": "risk",
+      "title": "大型科技公司獲利品質具分散價值",
+      "summary": "這項判斷已納入本輪配置取捨。",
+      "confidence": 64,
+      "category": "diversification",
       "affected_assets": [
-        "SPY",
-        "GLD",
-        "CASH"
+        "META"
       ],
       "source_urls": [
-        "https://finance.yahoo.com/"
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json"
       ]
     },
     {
       "id": 6,
-      "title": "GLD具有限度的資產分散用途",
+      "title": "黃金近期具分散效果但非無風險",
       "summary": "這項判斷已納入本輪配置取捨。",
-      "confidence": 68,
+      "confidence": 70,
       "category": "diversification",
       "affected_assets": [
-        "GLD",
-        "SPY"
+        "GLD"
       ],
       "source_urls": [
         "https://finance.yahoo.com/"
@@ -168,13 +274,12 @@
     },
     {
       "id": 7,
-      "title": "半導體板塊短中期相對疲弱",
-      "summary": "這項判斷已納入本輪配置取捨。",
-      "confidence": 78,
-      "category": "momentum",
+      "title": "長債可分散但受利率上行牽制",
+      "summary": "利率仍會影響成長股估值，因此配置保持分散。",
+      "confidence": 76,
+      "category": "macro",
       "affected_assets": [
-        "SPY",
-        "CASH"
+        "TLT"
       ],
       "source_urls": [
         "https://finance.yahoo.com/"
@@ -182,12 +287,14 @@
     },
     {
       "id": 8,
-      "title": "槓桿科技曝險的波動成本過高",
-      "summary": "風險環境維持中性，不因單一指標放大部位。",
-      "confidence": 86,
-      "category": "risk",
+      "title": "能源價格增加通膨尾端風險",
+      "summary": "利率仍會影響成長股估值，因此配置保持分散。",
+      "confidence": 78,
+      "category": "macro",
       "affected_assets": [
-        "CASH"
+        "TLT",
+        "SPY",
+        "GLD"
       ],
       "source_urls": [
         "https://finance.yahoo.com/"
@@ -195,12 +302,13 @@
     },
     {
       "id": 9,
-      "title": "個股訊號分化，不適合集中押注",
-      "summary": "這項判斷已納入本輪配置取捨。",
-      "confidence": 75,
-      "category": "momentum",
+      "title": "槓桿曝險的路徑風險不值得新增",
+      "summary": "風險環境維持中性，不因單一指標放大部位。",
+      "confidence": 88,
+      "category": "risk",
       "affected_assets": [
-        "SPY",
+        "SOXL",
+        "TQQQ",
         "CASH"
       ],
       "source_urls": [
@@ -209,30 +317,31 @@
     },
     {
       "id": 10,
-      "title": "高波動個股上漲不構成追價依據",
+      "title": "部位重整優先於追逐單一強勢股",
       "summary": "風險環境維持中性，不因單一指標放大部位。",
-      "confidence": 79,
+      "confidence": 93,
       "category": "risk",
       "affected_assets": [
+        "NVDA",
+        "AVGO",
+        "META",
         "CASH"
       ],
-      "source_urls": [
-        "https://finance.yahoo.com/"
-      ]
+      "source_urls": []
     }
   ],
   "diagnostics": [],
   "exposure_snapshot": {
     "schema_version": "1.0",
     "methodology_version": "1.0",
-    "run_id": "20260904T053231Z",
-    "generated_at": "2026-09-04T05:35:05.711628Z",
-    "data_cutoff": "2026-09-04T05:32:18.129687Z",
+    "run_id": "20260904T085003Z",
+    "generated_at": "2026-09-04T08:52:45.143966Z",
+    "data_cutoff": "2026-09-04T08:49:50.334326Z",
     "instruments": [
       {
         "symbol": "SPY",
-        "direct_weight": "0.1",
-        "underlying_equivalent_weight": "0.1",
+        "direct_weight": "0.2",
+        "underlying_equivalent_weight": "0.2",
         "asset_class": "equity_etf",
         "underlying": "S&P 500",
         "coverage_status": "unavailable",
@@ -245,22 +354,22 @@
         "sector_contributions": [
           {
             "label": "US large cap",
-            "weight": "0.1",
-            "gross_weight": "0.1"
+            "weight": "0.2",
+            "gross_weight": "0.2"
           }
         ],
         "factor_contributions": [
           {
             "label": "equity_beta",
-            "weight": "0.1",
-            "gross_weight": "0.1"
+            "weight": "0.2",
+            "gross_weight": "0.2"
           }
         ]
       },
       {
         "symbol": "GLD",
-        "direct_weight": "0.05",
-        "underlying_equivalent_weight": "0.05",
+        "direct_weight": "0.15",
+        "underlying_equivalent_weight": "0.15",
         "asset_class": "commodity_etf",
         "underlying": "Gold bullion",
         "coverage_status": "unavailable",
@@ -273,47 +382,268 @@
         "sector_contributions": [
           {
             "label": "gold",
-            "weight": "0.05",
-            "gross_weight": "0.05"
+            "weight": "0.15",
+            "gross_weight": "0.15"
           }
         ],
         "factor_contributions": [
           {
             "label": "gold_commodity",
-            "weight": "0.05",
-            "gross_weight": "0.05"
+            "weight": "0.15",
+            "gross_weight": "0.15"
+          }
+        ]
+      },
+      {
+        "symbol": "TLT",
+        "direct_weight": "0.1",
+        "underlying_equivalent_weight": "0.1",
+        "asset_class": "bond_etf",
+        "underlying": "US Treasury 20+ Year",
+        "coverage_status": "unavailable",
+        "source_url": "https://www.ishares.com/us/products/239454/ishares-20-year-treasury-bond-etf",
+        "source_authority": "BlackRock iShares",
+        "source_timestamp": null,
+        "effective_date": null,
+        "limitations": [],
+        "issuer_contributions": [],
+        "sector_contributions": [
+          {
+            "label": "US duration",
+            "weight": "0.1",
+            "gross_weight": "0.1"
+          }
+        ],
+        "factor_contributions": [
+          {
+            "label": "duration_rates",
+            "weight": "0.1",
+            "gross_weight": "0.1"
+          }
+        ]
+      },
+      {
+        "symbol": "NVDA",
+        "direct_weight": "0.15",
+        "underlying_equivalent_weight": "0.15",
+        "asset_class": "stock",
+        "underlying": "NVIDIA",
+        "coverage_status": "ready",
+        "source_url": "https://investor.nvidia.com/",
+        "source_authority": "issuer",
+        "source_timestamp": null,
+        "effective_date": null,
+        "limitations": [],
+        "issuer_contributions": [
+          {
+            "label": "NVDA",
+            "weight": "0.15",
+            "gross_weight": "0.15"
+          }
+        ],
+        "sector_contributions": [
+          {
+            "label": "semiconductors",
+            "weight": "0.15",
+            "gross_weight": "0.15"
+          }
+        ],
+        "factor_contributions": [
+          {
+            "label": "equity_beta",
+            "weight": "0.15",
+            "gross_weight": "0.15"
+          },
+          {
+            "label": "mega_cap",
+            "weight": "0.15",
+            "gross_weight": "0.15"
+          }
+        ]
+      },
+      {
+        "symbol": "META",
+        "direct_weight": "0.08",
+        "underlying_equivalent_weight": "0.08",
+        "asset_class": "stock",
+        "underlying": "Meta Platforms",
+        "coverage_status": "ready",
+        "source_url": "https://investor.atmeta.com/",
+        "source_authority": "issuer",
+        "source_timestamp": null,
+        "effective_date": null,
+        "limitations": [],
+        "issuer_contributions": [
+          {
+            "label": "META",
+            "weight": "0.08",
+            "gross_weight": "0.08"
+          }
+        ],
+        "sector_contributions": [
+          {
+            "label": "technology",
+            "weight": "0.08",
+            "gross_weight": "0.08"
+          }
+        ],
+        "factor_contributions": [
+          {
+            "label": "equity_beta",
+            "weight": "0.08",
+            "gross_weight": "0.08"
+          },
+          {
+            "label": "mega_cap",
+            "weight": "0.08",
+            "gross_weight": "0.08"
+          }
+        ]
+      },
+      {
+        "symbol": "AVGO",
+        "direct_weight": "0.1",
+        "underlying_equivalent_weight": "0.1",
+        "asset_class": "stock",
+        "underlying": "Broadcom",
+        "coverage_status": "ready",
+        "source_url": "https://investors.broadcom.com/",
+        "source_authority": "issuer",
+        "source_timestamp": null,
+        "effective_date": null,
+        "limitations": [],
+        "issuer_contributions": [
+          {
+            "label": "AVGO",
+            "weight": "0.1",
+            "gross_weight": "0.1"
+          }
+        ],
+        "sector_contributions": [
+          {
+            "label": "semiconductors",
+            "weight": "0.1",
+            "gross_weight": "0.1"
+          }
+        ],
+        "factor_contributions": [
+          {
+            "label": "equity_beta",
+            "weight": "0.1",
+            "gross_weight": "0.1"
+          },
+          {
+            "label": "mega_cap",
+            "weight": "0.1",
+            "gross_weight": "0.1"
+          }
+        ]
+      },
+      {
+        "symbol": "PLTR",
+        "direct_weight": "0.02",
+        "underlying_equivalent_weight": "0.02",
+        "asset_class": "stock",
+        "underlying": "Palantir",
+        "coverage_status": "ready",
+        "source_url": "https://investors.palantir.com/",
+        "source_authority": "issuer",
+        "source_timestamp": null,
+        "effective_date": null,
+        "limitations": [],
+        "issuer_contributions": [
+          {
+            "label": "PLTR",
+            "weight": "0.02",
+            "gross_weight": "0.02"
+          }
+        ],
+        "sector_contributions": [
+          {
+            "label": "technology",
+            "weight": "0.02",
+            "gross_weight": "0.02"
+          }
+        ],
+        "factor_contributions": [
+          {
+            "label": "equity_beta",
+            "weight": "0.02",
+            "gross_weight": "0.02"
           }
         ]
       }
     ],
-    "issuer_exposures": [],
-    "sector_exposures": [
+    "issuer_exposures": [
       {
-        "factor": "US large cap",
+        "factor": "AVGO",
         "weight": "0.1"
       },
       {
+        "factor": "META",
+        "weight": "0.08"
+      },
+      {
+        "factor": "NVDA",
+        "weight": "0.15"
+      },
+      {
+        "factor": "PLTR",
+        "weight": "0.02"
+      }
+    ],
+    "sector_exposures": [
+      {
+        "factor": "US duration",
+        "weight": "0.1"
+      },
+      {
+        "factor": "US large cap",
+        "weight": "0.2"
+      },
+      {
         "factor": "gold",
-        "weight": "0.05"
+        "weight": "0.15"
+      },
+      {
+        "factor": "semiconductors",
+        "weight": "0.25"
+      },
+      {
+        "factor": "technology",
+        "weight": "0.10"
       }
     ],
     "factor_exposures": [
       {
-        "factor": "equity_beta",
+        "factor": "duration_rates",
         "weight": "0.1"
       },
       {
+        "factor": "equity_beta",
+        "weight": "0.55"
+      },
+      {
         "factor": "gold_commodity",
-        "weight": "0.05"
+        "weight": "0.15"
+      },
+      {
+        "factor": "mega_cap",
+        "weight": "0.33"
       }
     ],
     "correlation_clusters": [
       {
         "symbols": [
           "SPY",
-          "GLD"
+          "GLD",
+          "TLT",
+          "NVDA",
+          "META",
+          "AVGO",
+          "PLTR"
         ],
-        "weight": "0.15",
+        "weight": "0.80",
         "status": "insufficient",
         "threshold": "0.80",
         "sample_size": 0,
@@ -324,21 +654,22 @@
       "taxonomy_status": "ready",
       "lookthrough_status": "unavailable",
       "correlation_status": "insufficient",
-      "decision_cutoff": "2026-09-04T05:32:18.129687Z",
+      "decision_cutoff": "2026-09-04T08:49:50.334326Z",
       "limitations": []
     }
   },
   "invalidation_conditions": [
-    "若後續取得SPY、TLT、GLD的3日與7日完成交易日統計，並顯示方向與風險承擔具有一致且可重複的證據，應重新評估現金比重與SPY配置。",
-    "若SPY收盤跌破750美元，或新的完成交易日資料確認市場趨勢與本輪小額核心曝險不再相容，應重新檢視SPY研究配置。",
-    "若BLS與earnings事件資料恢復並完成point-in-time對齊，且重大事件進入可定義的限制期間，應重新評估新增風險曝險。",
-    "若VIX期限結構恢復新鮮且顯示持續性壓力，應重新評估股票與商品ETF的相對部位。"
+    "若SPY在新的完成交易日資料中跌破730美元，且距50日均線轉為負，應重新檢視核心股票配置。",
+    "若NVDA跌破205美元，或後續可驗證申報顯示獲利、營業利益與營運現金流同步明顯惡化，應下調其研究權重。",
+    "若VIX由正常區間明顯上升且波動率期限結構恢復可驗證並轉為壓力型結構，應優先提高現金並降低高波動股票。",
+    "若後續補齊的3日與7日完成交易日統計顯示股票風險擴散轉強，且事件對齊資料恢復，才重新評估提高股票或降低現金的必要性。"
   ],
   "major_risks": [
-    "資料缺口可能使短期市場方向與事件風險被低估；本輪不以缺資料自行推導偏多或偏空。",
-    "原油20日漲幅與高RSI可能透過利率或通膨預期造成估值壓力，但本輪缺少最新通膨數據，因果關係未被驗證。",
-    "SPY與GLD配置仍可能遭遇價格跳空、流動性摩擦或市場相關性上升；本輪未提供價差、深度或滑價資料。",
-    "槓桿與反向ETF具有每日重設及路徑風險；本輪未配置，且不以單日倍數推論多日報酬。"
+    "現有組合仍集中於大型科技、半導體及AI相關公司，即使降權後仍具有共同估值、供應鏈與利率敏感度。",
+    "油價20日漲幅及高RSI可能帶來通膨再定價，對長債與高估值成長股形成雙重壓力。",
+    "GLD與TLT並非保本資產；實質利率、美元或通膨預期反轉時，兩者仍可能同步波動。",
+    "資料缺少完成交易日短窗與部分事件日曆，可能低估近期反轉、跳空或催化事件風險。",
+    "槓桿與反向ETF具每日重設及路徑依賴；若市場先反向再回落，方向判斷即使部分正確，也可能因複利路徑產生損失。"
   ],
   "disclaimer": "研究建議，尚未執行。下單前須由使用者核對券商即時價格、成本與風險；系統不存取券商、不自動下單。"
 }

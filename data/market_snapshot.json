@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-04T05:32:18.129687Z",
+  "generated_at": "2026-09-04T08:49:50.334326Z",
   "mode": "live",
   "source": "Yahoo Finance via yfinance with bounded retry and Nasdaq completed-close fallback",
   "quotes": [
@@ -10,7 +10,7 @@
       "previous_close": "765.159973",
       "change_percent": "1.046841",
       "volume": 43494000,
-      "as_of": "2026-09-04T05:32:18.129687Z",
+      "as_of": "2026-09-04T08:49:50.334326Z",
       "price_session": "2026-09-03",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -23,7 +23,7 @@
       "previous_close": "709.23999",
       "change_percent": "1.188595",
       "volume": 29393000,
-      "as_of": "2026-09-04T05:32:18.129687Z",
+      "as_of": "2026-09-04T08:49:50.334326Z",
       "price_session": "2026-09-03",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -36,7 +36,7 @@
       "previous_close": "294.01001",
       "change_percent": "0.401344",
       "volume": 16621200,
-      "as_of": "2026-09-04T05:32:18.129687Z",
+      "as_of": "2026-09-04T08:49:50.334326Z",
       "price_session": "2026-09-03",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -49,7 +49,7 @@
       "previous_close": "530.619995",
       "change_percent": "1.189174",
       "volume": 4806300,
-      "as_of": "2026-09-04T05:32:18.129687Z",
+      "as_of": "2026-09-04T08:49:50.334326Z",
       "price_session": "2026-09-03",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -62,7 +62,7 @@
       "previous_close": "376.880005",
       "change_percent": "1.074609",
       "volume": 2562600,
-      "as_of": "2026-09-04T05:32:18.129687Z",
+      "as_of": "2026-09-04T08:49:50.334326Z",
       "price_session": "2026-09-03",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -75,7 +75,7 @@
       "previous_close": "550.47998",
       "change_percent": "0.385118",
       "volume": 5584500,
-      "as_of": "2026-09-04T05:32:18.129687Z",
+      "as_of": "2026-09-04T08:49:50.334326Z",
       "price_session": "2026-09-03",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -88,7 +88,7 @@
       "previous_close": "106.349998",
       "change_percent": "0.366713",
       "volume": 54680200,
-      "as_of": "2026-09-04T05:32:18.129687Z",
+      "as_of": "2026-09-04T08:49:50.334326Z",
       "price_session": "2026-09-03",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -101,7 +101,7 @@
       "previous_close": "69.599998",
       "change_percent": "3.49138",
       "volume": 46433500,
-      "as_of": "2026-09-04T05:32:18.129687Z",
+      "as_of": "2026-09-04T08:49:50.334326Z",
       "price_session": "2026-09-03",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -114,7 +114,7 @@
       "previous_close": "224.410004",
       "change_percent": "1.800273",
       "volume": 133994100,
-      "as_of": "2026-09-04T05:32:18.129687Z",
+      "as_of": "2026-09-04T08:49:50.334326Z",
       "price_session": "2026-09-03",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -127,7 +127,7 @@
       "previous_close": "457.059998",
       "change_percent": "-0.196909",
       "volume": 14838600,
-      "as_of": "2026-09-04T05:32:18.129687Z",
+      "as_of": "2026-09-04T08:49:50.334326Z",
       "price_session": "2026-09-03",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -140,7 +140,7 @@
       "previous_close": "169.460007",
       "change_percent": "7.71273",
       "volume": 38016200,
-      "as_of": "2026-09-04T05:32:18.129687Z",
+      "as_of": "2026-09-04T08:49:50.334326Z",
       "price_session": "2026-09-03",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -153,7 +153,7 @@
       "previous_close": "112.099998",
       "change_percent": "-1.427296",
       "volume": 216600,
-      "as_of": "2026-09-04T05:32:18.129687Z",
+      "as_of": "2026-09-04T08:49:50.334326Z",
       "price_session": "2026-09-03",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -166,7 +166,7 @@
       "previous_close": "402.779999",
       "change_percent": "1.847163",
       "volume": 12456000,
-      "as_of": "2026-09-04T05:32:18.129687Z",
+      "as_of": "2026-09-04T08:49:50.334326Z",
       "price_session": "2026-09-03",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -179,7 +179,7 @@
       "previous_close": "81.949997",
       "change_percent": "0.146434",
       "volume": 18033000,
-      "as_of": "2026-09-04T05:32:18.129687Z",
+      "as_of": "2026-09-04T08:49:50.334326Z",
       "price_session": "2026-09-03",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -192,7 +192,7 @@
       "previous_close": "39.709999",
       "change_percent": "-3.45001",
       "volume": 43952400,
-      "as_of": "2026-09-04T05:32:18.129687Z",
+      "as_of": "2026-09-04T08:49:50.334326Z",
       "price_session": "2026-09-03",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -201,12 +201,12 @@
     },
     {
       "symbol": "CL=F",
-      "price": "91.300003",
-      "previous_close": "91.010002",
-      "change_percent": "0.318647",
-      "volume": 283450,
-      "as_of": "2026-09-04T05:32:18.129687Z",
-      "price_session": "2026-09-03",
+      "price": "91.010002",
+      "previous_close": "90.220001",
+      "change_percent": "0.875638",
+      "volume": 331106,
+      "as_of": "2026-09-04T08:49:50.334326Z",
+      "price_session": "2026-09-02",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
       "session_status": "completed",
@@ -218,7 +218,7 @@
       "previous_close": "15.2",
       "change_percent": "-5.789475",
       "volume": 0,
-      "as_of": "2026-09-04T05:32:18.129687Z",
+      "as_of": "2026-09-04T08:49:50.334326Z",
       "price_session": "2026-09-03",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -231,7 +231,7 @@
       "previous_close": "4.796",
       "change_percent": "-0.708922",
       "volume": 0,
-      "as_of": "2026-09-04T05:32:18.129687Z",
+      "as_of": "2026-09-04T08:49:50.334326Z",
       "price_session": "2026-09-03",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -437,16 +437,16 @@
     },
     {
       "symbol": "CL=F",
-      "data_session": "2026-09-03",
-      "return_1d_percent": "0.318647",
-      "return_5d_percent": "9.302052",
-      "return_20d_percent": "18.126539",
-      "volatility_20d_annualized_percent": "34.453194",
+      "data_session": "2026-09-02",
+      "return_1d_percent": "0.875638",
+      "return_5d_percent": "10.677366",
+      "return_20d_percent": "20.991758",
+      "volatility_20d_annualized_percent": "35.025371",
       "drawdown_20d_percent": "0.0",
-      "distance_from_ma20_percent": "7.702565",
-      "distance_from_ma50_percent": "13.323804",
-      "rsi14": "71.856593",
-      "volume_ratio_20d": "1.225893"
+      "distance_from_ma20_percent": "8.255028",
+      "distance_from_ma50_percent": "13.554697",
+      "rsi14": "72.997184",
+      "volume_ratio_20d": "1.428767"
     },
     {
       "symbol": "^VIX",
@@ -491,41 +491,41 @@
         "index": "VIX9D",
         "value": "11.68",
         "value_timestamp": "2026-09-03T20:15:01Z",
-        "collected_at": "2026-09-04T05:32:18.129687Z",
+        "collected_at": "2026-09-04T08:49:50.334326Z",
         "source_url": "https://cdn.cboe.com/api/global/delayed_quotes/quotes/_VIX9D.json",
         "authority": "official",
         "market_session": "Cboe delayed index session",
         "latency_note": "Cboe delayed quote exceeds the configured maximum age.",
         "status": "stale",
-        "data_cutoff": "2026-09-04T05:32:18.129687Z"
+        "data_cutoff": "2026-09-04T08:49:50.334326Z"
       },
       {
         "index": "VIX",
-        "value": "14.32",
+        "value": "14.18",
         "value_timestamp": "2026-09-03T20:15:01Z",
-        "collected_at": "2026-09-04T05:32:18.129687Z",
+        "collected_at": "2026-09-04T08:49:50.334326Z",
         "source_url": "https://cdn.cboe.com/api/global/delayed_quotes/quotes/_VIX.json",
         "authority": "official",
         "market_session": "Cboe delayed index session",
         "latency_note": "Cboe delayed quote exceeds the configured maximum age.",
         "status": "stale",
-        "data_cutoff": "2026-09-04T05:32:18.129687Z"
+        "data_cutoff": "2026-09-04T08:49:50.334326Z"
       },
       {
         "index": "VIX3M",
         "value": "17.42",
         "value_timestamp": "2026-09-03T20:15:01Z",
-        "collected_at": "2026-09-04T05:32:18.129687Z",
+        "collected_at": "2026-09-04T08:49:50.334326Z",
         "source_url": "https://cdn.cboe.com/api/global/delayed_quotes/quotes/_VIX3M.json",
         "authority": "official",
         "market_session": "Cboe delayed index session",
         "latency_note": "Cboe delayed quote exceeds the configured maximum age.",
         "status": "stale",
-        "data_cutoff": "2026-09-04T05:32:18.129687Z"
+        "data_cutoff": "2026-09-04T08:49:50.334326Z"
       }
     ],
     "coverage": "stale",
-    "data_cutoff": "2026-09-04T05:32:18.129687Z",
+    "data_cutoff": "2026-09-04T08:49:50.334326Z",
     "maximum_age_minutes": 30,
     "features": null,
     "note": "Curve is incomplete or stale and is not classified as complete."
@@ -535,11 +535,11 @@
     "scope": "OCC exchange option volume and open-interest report",
     "volume": null,
     "open_interest": null,
-    "collected_at": "2026-09-04T05:32:18.129687Z",
+    "collected_at": "2026-09-04T08:49:50.334326Z",
     "source_url": "https://www.theocc.com/market-data/market-data-reports/volume-and-open-interest/exchange-volume-by-class",
     "authority": "official",
     "coverage": "missing",
-    "data_cutoff": "2026-09-04T05:32:18.129687Z",
+    "data_cutoff": "2026-09-04T08:49:50.334326Z",
     "limitation": "Aggregate OCC volume and open interest do not identify investor intent or bullish/bearish direction; this optional evidence gap does not limit equity or ETF direction, allocation, or cash-market liquidity analysis."
   },
   "source_catalog": [],
@@ -2729,7 +2729,7 @@
   ],
   "event_calendar": {
     "schema_version": "1.0",
-    "generated_at": "2026-09-04T01:32:12.050238-04:00",
+    "generated_at": "2026-09-04T04:49:45.922158-04:00",
     "input_mode": "official_snapshot",
     "required_categories": [
       "fomc",
@@ -2741,8 +2741,8 @@
       {
         "category": "fomc",
         "status": "complete",
-        "queried_at": "2026-09-04T05:32:12.259630Z",
-        "data_cutoff": "2026-09-04T05:32:12.259630Z",
+        "queried_at": "2026-09-04T08:49:46.074673Z",
+        "data_cutoff": "2026-09-04T08:49:46.074673Z",
         "coverage_start": "2026-09-16T14:00:00-04:00",
         "coverage_end": "2027-12-08T14:00:00-05:00",
         "timezone": "America/New_York",
@@ -2751,14 +2751,14 @@
           "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         ],
         "covered_symbols": [],
-        "content_digest": "7360f9e1f6bbc07871eb72832a375765540fc8df642d64fd51783ec2967a43c2",
+        "content_digest": "206f652708853c8f50e322010329f7d542121b6b86312456009d3667045f2a2c",
         "note": "Federal Reserve FOMC calendar"
       },
       {
         "category": "bls",
         "status": "error",
-        "queried_at": "2026-09-04T01:32:12.050238-04:00",
-        "data_cutoff": "2026-09-04T01:32:12.050238-04:00",
+        "queried_at": "2026-09-04T04:49:45.922158-04:00",
+        "data_cutoff": "2026-09-04T04:49:45.922158-04:00",
         "coverage_start": null,
         "coverage_end": null,
         "timezone": "America/New_York",
@@ -2772,25 +2772,25 @@
       },
       {
         "category": "nyse",
-        "status": "complete",
-        "queried_at": "2026-09-04T05:32:12.330060Z",
-        "data_cutoff": "2026-09-04T05:32:12.330060Z",
-        "coverage_start": "2026-11-27T13:00:00-05:00",
-        "coverage_end": "2028-07-03T13:00:00-04:00",
+        "status": "error",
+        "queried_at": "2026-09-04T04:49:45.922158-04:00",
+        "data_cutoff": "2026-09-04T04:49:45.922158-04:00",
+        "coverage_start": null,
+        "coverage_end": null,
         "timezone": "America/New_York",
         "authority": "official",
         "source_urls": [
           "https://www.nyse.com/trade/hours-calendars"
         ],
         "covered_symbols": [],
-        "content_digest": "49ee8a651ec01ef2866e347842c0fb11309541f247d17aeaaf7ad9d6a513b1ed",
-        "note": "NYSE official hours and calendars"
+        "content_digest": null,
+        "note": "NYSE source failure: HTTPError"
       },
       {
         "category": "earnings",
         "status": "missing",
-        "queried_at": "2026-09-04T01:32:15.538048-04:00",
-        "data_cutoff": "2026-09-04T01:32:15.538048-04:00",
+        "queried_at": "2026-09-04T04:49:48.151675-04:00",
+        "data_cutoff": "2026-09-04T04:49:48.151675-04:00",
         "coverage_start": null,
         "coverage_end": null,
         "timezone": "America/New_York",
@@ -2822,8 +2822,8 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-        "source_as_of": "2026-09-04T05:32:12.259630Z",
-        "content_digest": "7360f9e1f6bbc07871eb72832a375765540fc8df642d64fd51783ec2967a43c2"
+        "source_as_of": "2026-09-04T08:49:46.074673Z",
+        "content_digest": "206f652708853c8f50e322010329f7d542121b6b86312456009d3667045f2a2c"
       },
       {
         "event_id": "fomc-20261028",
@@ -2835,8 +2835,8 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-        "source_as_of": "2026-09-04T05:32:12.259630Z",
-        "content_digest": "7360f9e1f6bbc07871eb72832a375765540fc8df642d64fd51783ec2967a43c2"
+        "source_as_of": "2026-09-04T08:49:46.074673Z",
+        "content_digest": "206f652708853c8f50e322010329f7d542121b6b86312456009d3667045f2a2c"
       },
       {
         "event_id": "fomc-20261209",
@@ -2848,8 +2848,8 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-        "source_as_of": "2026-09-04T05:32:12.259630Z",
-        "content_digest": "7360f9e1f6bbc07871eb72832a375765540fc8df642d64fd51783ec2967a43c2"
+        "source_as_of": "2026-09-04T08:49:46.074673Z",
+        "content_digest": "206f652708853c8f50e322010329f7d542121b6b86312456009d3667045f2a2c"
       },
       {
         "event_id": "fomc-20270127",
@@ -2861,8 +2861,8 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-        "source_as_of": "2026-09-04T05:32:12.259630Z",
-        "content_digest": "7360f9e1f6bbc07871eb72832a375765540fc8df642d64fd51783ec2967a43c2"
+        "source_as_of": "2026-09-04T08:49:46.074673Z",
+        "content_digest": "206f652708853c8f50e322010329f7d542121b6b86312456009d3667045f2a2c"
       },
       {
         "event_id": "fomc-20270317",
@@ -2874,8 +2874,8 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-        "source_as_of": "2026-09-04T05:32:12.259630Z",
-        "content_digest": "7360f9e1f6bbc07871eb72832a375765540fc8df642d64fd51783ec2967a43c2"
+        "source_as_of": "2026-09-04T08:49:46.074673Z",
+        "content_digest": "206f652708853c8f50e322010329f7d542121b6b86312456009d3667045f2a2c"
       },
       {
         "event_id": "fomc-20270428",
@@ -2887,8 +2887,8 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-        "source_as_of": "2026-09-04T05:32:12.259630Z",
-        "content_digest": "7360f9e1f6bbc07871eb72832a375765540fc8df642d64fd51783ec2967a43c2"
+        "source_as_of": "2026-09-04T08:49:46.074673Z",
+        "content_digest": "206f652708853c8f50e322010329f7d542121b6b86312456009d3667045f2a2c"
       },
       {
         "event_id": "fomc-20270609",
@@ -2900,8 +2900,8 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-        "source_as_of": "2026-09-04T05:32:12.259630Z",
-        "content_digest": "7360f9e1f6bbc07871eb72832a375765540fc8df642d64fd51783ec2967a43c2"
+        "source_as_of": "2026-09-04T08:49:46.074673Z",
+        "content_digest": "206f652708853c8f50e322010329f7d542121b6b86312456009d3667045f2a2c"
       },
       {
         "event_id": "fomc-20270728",
@@ -2913,8 +2913,8 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-        "source_as_of": "2026-09-04T05:32:12.259630Z",
-        "content_digest": "7360f9e1f6bbc07871eb72832a375765540fc8df642d64fd51783ec2967a43c2"
+        "source_as_of": "2026-09-04T08:49:46.074673Z",
+        "content_digest": "206f652708853c8f50e322010329f7d542121b6b86312456009d3667045f2a2c"
       },
       {
         "event_id": "fomc-20270915",
@@ -2926,8 +2926,8 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-        "source_as_of": "2026-09-04T05:32:12.259630Z",
-        "content_digest": "7360f9e1f6bbc07871eb72832a375765540fc8df642d64fd51783ec2967a43c2"
+        "source_as_of": "2026-09-04T08:49:46.074673Z",
+        "content_digest": "206f652708853c8f50e322010329f7d542121b6b86312456009d3667045f2a2c"
       },
       {
         "event_id": "fomc-20271027",
@@ -2939,8 +2939,8 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-        "source_as_of": "2026-09-04T05:32:12.259630Z",
-        "content_digest": "7360f9e1f6bbc07871eb72832a375765540fc8df642d64fd51783ec2967a43c2"
+        "source_as_of": "2026-09-04T08:49:46.074673Z",
+        "content_digest": "206f652708853c8f50e322010329f7d542121b6b86312456009d3667045f2a2c"
       },
       {
         "event_id": "fomc-20271208",
@@ -2952,294 +2952,219 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-        "source_as_of": "2026-09-04T05:32:12.259630Z",
-        "content_digest": "7360f9e1f6bbc07871eb72832a375765540fc8df642d64fd51783ec2967a43c2"
-      },
-      {
-        "event_id": "nyse-calendar-20280101",
-        "category": "nyse",
-        "title": "NYSE holiday closure",
-        "starts_at": "2028-01-01T00:00:00-05:00",
-        "ends_at": null,
-        "timezone": "America/New_York",
-        "affected_symbols": [],
-        "authority": "official",
-        "source_url": "https://www.nyse.com/trade/hours-calendars",
-        "source_as_of": "2026-09-04T05:32:12.330060Z",
-        "content_digest": "49ee8a651ec01ef2866e347842c0fb11309541f247d17aeaaf7ad9d6a513b1ed"
-      },
-      {
-        "event_id": "nyse-calendar-20280703",
-        "category": "nyse",
-        "title": "NYSE holiday closure",
-        "starts_at": "2028-07-03T00:00:00-04:00",
-        "ends_at": null,
-        "timezone": "America/New_York",
-        "affected_symbols": [],
-        "authority": "official",
-        "source_url": "https://www.nyse.com/trade/hours-calendars",
-        "source_as_of": "2026-09-04T05:32:12.330060Z",
-        "content_digest": "49ee8a651ec01ef2866e347842c0fb11309541f247d17aeaaf7ad9d6a513b1ed"
-      },
-      {
-        "event_id": "nyse-calendar-20261127",
-        "category": "nyse",
-        "title": "NYSE early close",
-        "starts_at": "2026-11-27T13:00:00-05:00",
-        "ends_at": "2026-11-27T13:00:00-05:00",
-        "timezone": "America/New_York",
-        "affected_symbols": [],
-        "authority": "official",
-        "source_url": "https://www.nyse.com/trade/hours-calendars",
-        "source_as_of": "2026-09-04T05:32:12.330060Z",
-        "content_digest": "49ee8a651ec01ef2866e347842c0fb11309541f247d17aeaaf7ad9d6a513b1ed"
-      },
-      {
-        "event_id": "nyse-calendar-20261224",
-        "category": "nyse",
-        "title": "NYSE early close",
-        "starts_at": "2026-12-24T13:00:00-05:00",
-        "ends_at": "2026-12-24T13:00:00-05:00",
-        "timezone": "America/New_York",
-        "affected_symbols": [],
-        "authority": "official",
-        "source_url": "https://www.nyse.com/trade/hours-calendars",
-        "source_as_of": "2026-09-04T05:32:12.330060Z",
-        "content_digest": "49ee8a651ec01ef2866e347842c0fb11309541f247d17aeaaf7ad9d6a513b1ed"
-      },
-      {
-        "event_id": "nyse-calendar-20280101",
-        "category": "nyse",
-        "title": "NYSE holiday closure",
-        "starts_at": "2028-01-01T00:00:00-05:00",
-        "ends_at": null,
-        "timezone": "America/New_York",
-        "affected_symbols": [],
-        "authority": "official",
-        "source_url": "https://www.nyse.com/trade/hours-calendars",
-        "source_as_of": "2026-09-04T05:32:12.330060Z",
-        "content_digest": "49ee8a651ec01ef2866e347842c0fb11309541f247d17aeaaf7ad9d6a513b1ed"
-      },
-      {
-        "event_id": "nyse-calendar-20280703",
-        "category": "nyse",
-        "title": "NYSE early close",
-        "starts_at": "2028-07-03T13:00:00-04:00",
-        "ends_at": "2028-07-03T13:00:00-04:00",
-        "timezone": "America/New_York",
-        "affected_symbols": [],
-        "authority": "official",
-        "source_url": "https://www.nyse.com/trade/hours-calendars",
-        "source_as_of": "2026-09-04T05:32:12.330060Z",
-        "content_digest": "49ee8a651ec01ef2866e347842c0fb11309541f247d17aeaaf7ad9d6a513b1ed"
-      },
-      {
-        "event_id": "nyse-calendar-20261127",
-        "category": "nyse",
-        "title": "NYSE early close",
-        "starts_at": "2026-11-27T13:00:00-05:00",
-        "ends_at": "2026-11-27T13:00:00-05:00",
-        "timezone": "America/New_York",
-        "affected_symbols": [],
-        "authority": "official",
-        "source_url": "https://www.nyse.com/trade/hours-calendars",
-        "source_as_of": "2026-09-04T05:32:12.330060Z",
-        "content_digest": "49ee8a651ec01ef2866e347842c0fb11309541f247d17aeaaf7ad9d6a513b1ed"
-      },
-      {
-        "event_id": "nyse-calendar-20261224",
-        "category": "nyse",
-        "title": "NYSE early close",
-        "starts_at": "2026-12-24T13:00:00-05:00",
-        "ends_at": "2026-12-24T13:00:00-05:00",
-        "timezone": "America/New_York",
-        "affected_symbols": [],
-        "authority": "official",
-        "source_url": "https://www.nyse.com/trade/hours-calendars",
-        "source_as_of": "2026-09-04T05:32:12.330060Z",
-        "content_digest": "49ee8a651ec01ef2866e347842c0fb11309541f247d17aeaaf7ad9d6a513b1ed"
+        "source_as_of": "2026-09-04T08:49:46.074673Z",
+        "content_digest": "206f652708853c8f50e322010329f7d542121b6b86312456009d3667045f2a2c"
       }
     ],
     "warnings": [
       "BLS: error; BLS source failure: HTTPError",
+      "NYSE: error; NYSE source failure: HTTPError",
       "公司財報: missing; No future dated primary issuer earnings event could be verified; coverage remains a warning."
     ]
   },
   "research_evidence": [
     {
-      "evidence_id": "US-ECON-1",
+      "evidence_id": "US-ECO-001",
       "category": "us_economy",
       "region": "US",
-      "title": "BEA 國民帳戶（GDP）與個人所得/消費（PCE）最新一期發布入口",
-      "summary": "BEA（美國經濟分析局）提供 GDP、個人所得、個人消費支出（含 PCE 口徑）之最新一期數據與歷史修訂。用於檢查經濟動能（消費/投資/淨出口）是否與市場對成長與通膨壓力的預期一致。由於本次無法即時核對到 2026-09-04 的最新發布值，建議以 BEA 網頁之「最新 release date/資料表」為準。",
-      "market_relevance": "若經濟動能（尤其消費與投資）偏強，通常支撐企業定價權與信用風險預期；若 PCE 結構顯示核心項目降溫，則利率路徑與估值（特別是長天期成長股）會受影響。",
-      "source_title": "Bureau of Economic Analysis (BEA) – National Accounts & Personal Income/Consumption",
-      "source_url": "https://www.bea.gov/data/income-saving/personal-income-and-outlays",
+      "title": "美國總體景氣監測：核心宏觀指標與交叉驗證框架（BEA/BLS/聯準會）",
+      "summary": "BEA提供GDP與個人所得/消費、BLS提供CPI/PCE與就業/通膨相關分項，聯準會則提供金融條件與景氣摘要。投資端可用「成長（GDP）—價格（PCE/CPI）—需求（零售/消費）—勞動（就業/工時/薪資）—金融狀況（利率/信貸）」交叉判讀，以降低單一數據偏差。",
+      "market_relevance": "若最新數據顯示需求降溫但通膨黏性，通常利率路徑偏高、股市估值承壓；若通膨回落且勞動市場走弱同步，則利率下行空間增加、風險資產偏向反彈（需同時觀察信用利差與失業率）。",
+      "source_title": "BEA、BLS 與 Federal Reserve 官方資料入口",
+      "source_url": "https://www.bea.gov/",
       "published_at": null,
       "affected_symbols": [
         "SPY",
         "QQQ",
         "IWM",
-        "DIA"
+        "DIA",
+        "TLT"
       ]
     },
     {
-      "evidence_id": "US-INFL-1",
+      "evidence_id": "US-LBR-002",
+      "category": "labor",
+      "region": "US",
+      "title": "人力市場：失業率、就業成長與工資/工時的分項解讀（BLS）",
+      "summary": "BLS月度就業報告（失業率、就業人數變動）需搭配工資增速、工時與就業類別分布（服務業/製造業、私營/政府）觀察「需求走弱是否轉為供給（勞動）鬆動」。同時可用職缺與勞動需求指標交叉驗證。",
+      "market_relevance": "市場通常先交易「降息是否可行」：當工資/工時降溫但職缺仍高，常見為軟著陸；若職缺與就業同時下行，衰退風險提高、信用/銀行股波動上升。",
+      "source_title": "BLS（人力市場/就業）官方入口",
+      "source_url": "https://www.bls.gov/",
+      "published_at": null,
+      "affected_symbols": [
+        "SPY",
+        "IWM",
+        "XLF",
+        "XLK"
+      ]
+    },
+    {
+      "evidence_id": "US-RATES-003",
       "category": "rates",
       "region": "US",
-      "title": "BLS CPI/PPI（通膨）與 Fed/美債利率的關聯觀測框架",
-      "summary": "BLS 提供 CPI（消費端通膨）與 PPI（生產端通膨）資料，並可用於判斷通膨是否從供給端向終端傳導，以及服務/商品的分解。由於本次無法即時確認 2026-09-04 當前最新一期數字，需在實際研判時對照 BLS 網頁的最新發布日期與表格分解項目（如核心、服務、能源等）。",
-      "market_relevance": "通膨分解（核心服務、住房等）常影響市場對 Fed 降息/停止的機率計價，進而牽動 2Y/10Y 美債殖利率與美元走勢，對成長股與金融股估值均有傳導。",
-      "source_title": "U.S. Bureau of Labor Statistics – Consumer Price Index / Producer Price Index",
-      "source_url": "https://www.bls.gov/cpi/",
+      "title": "美債利率路徑：聯準會利率決策與FOMC公告（決策/措辭/點陣圖）",
+      "summary": "FOMC公告與新聞稿提供政策利率目標範圍、通膨與就業表述、以及政策反應函數的最新措辭。利率市場會以「措辭（forward guidance）—點陣圖—資產負債表（若更新）」重新定價中短端與長端利率。",
+      "market_relevance": "若FOMC措辭更偏緊（強調通膨回落不夠），通常拖累長端（對高久期成長股不利）並支持美元；反之若措辭偏鴿且承認需求降溫，長端利率可能下行、科技/成長股相對有利。",
+      "source_title": "Federal Reserve（FOMC）官方網站",
+      "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
       "published_at": null,
       "affected_symbols": [
         "TLT",
         "^TNX",
-        "SPY"
+        "SPY",
+        "QQQ",
+        "XLK"
       ]
     },
     {
-      "evidence_id": "US-LABOR-1",
-      "category": "labor",
-      "region": "US",
-      "title": "BLS JOLTS 職缺/離職率與勞動市場降溫的早期指標入口",
-      "summary": "BLS 的 JOLTS 提供職缺（Job Openings）、離職（Quits）、裁員（Layoffs）等勞動市場摩擦指標，可用來追蹤降溫是否「先從職缺/離職降溫」開始，而非等到失業率上升。此類動態常用於評估薪資黏性與服務通膨風險。因本次無法核對最新一期數值，請以 JOLTS 網頁最新 release 為準。",
-      "market_relevance": "若職缺與離職率明顯下行，通常會降低薪資與服務通膨壓力，利率預期可能轉鴿；反之則可能造成市場再定價、波動上升。",
-      "source_title": "U.S. Bureau of Labor Statistics – Job Openings and Labor Turnover Survey (JOLTS)",
-      "source_url": "https://www.bls.gov/jlt/",
-      "published_at": null,
-      "affected_symbols": [
-        "IWM",
-        "SPY"
-      ]
-    },
-    {
-      "evidence_id": "US-POLICY-1",
+      "evidence_id": "US-INFL-004",
       "category": "us_politics",
       "region": "US",
-      "title": "白宮/行政命令與聯邦監管機構（SEC、CFTC、FTC、EPA）政策公告追蹤入口",
-      "summary": "美國政治與監管的最新變化需以一手官方公告為準：可從 WhiteHouse.gov 與主要監管機構（SEC、CFTC、FTC、EPA）「News/Press releases」與規則提案/最終規則頁面追蹤。由於本次無法即時鎖定 2026-09-04 前後特定公告內容與生效時間，建議在建模時以事件日歷逐一比對公告主旨（例如反壟斷、資本市場、能源/環境規範）。",
-      "market_relevance": "監管（尤其反壟斷、金融市場、能源/環境）會直接影響特定產業供給/成本結構與合規成本，並改變風險溢酬（貼現率）與估值因子。",
-      "source_title": "WhiteHouse.gov – News & Statements (監管政策可由此連結或交叉核對機構公告)",
-      "source_url": "https://www.whitehouse.gov/news/",
+      "title": "通膨/金融監管的政策風險：美國監管機構與法規動態入口（SEC/CFTC/FSOC 等）",
+      "summary": "政策與監管會透過資本市場規則（披露、交易、槓桿/保證金）、以及金融穩定機制（如系統性風險監管協調）影響風險偏好。投資端可定期檢視SEC/CFTC/FSOC的公告與法規進展，特別留意影響衍生品與高槓桿策略的變動。",
+      "market_relevance": "監管若提升槓桿成本或改變交易/清算規則，可能提高波動並影響成長股與高beta策略的資金流；反之若政策偏支持市場運作，風險溢價可能下降。",
+      "source_title": "SEC / CFTC 官方入口（監管公告）",
+      "source_url": "https://www.sec.gov/",
       "published_at": null,
       "affected_symbols": [
         "XLF",
-        "XLV",
-        "XLE"
+        "SPY",
+        "QQQ",
+        "TQQQ"
       ]
     },
     {
-      "evidence_id": "US-RATES-1",
-      "category": "rates",
+      "evidence_id": "US-CONS-005",
+      "category": "social_demand",
       "region": "US",
-      "title": "美聯儲（Fed）利率/政策聲明與資產負債表（Balance Sheet）公告入口",
-      "summary": "Fed 提供 FOMC 聲明、政策利率與（若適用）資產負債表相關公告，作為市場計價利率路徑的核心一手來源。由於本次無法即時核對 2026-09-04 的最新 FOMC 內容或其對資產負債表的具體指引，需在研判時以 Fed 官方最新發布為準。",
-      "market_relevance": "利率政策措辭（例如對就業/通膨風險的權重）會影響前瞻指引與期限結構，進一步影響美股估值（尤其久期敏感板塊）。",
-      "source_title": "Federal Reserve – Monetary Policy & FOMC statements",
-      "source_url": "https://www.federalreserve.gov/monetarypolicy.htm",
+      "title": "消費與社會需求：零售/消費支出與消費者壓力指標（Census/BEA）",
+      "summary": "消費端可用（1）Census零售銷售（就地觀察需求韌性）、（2）BEA個人消費（宏觀一致性），以及（3）相關的支付/信貸壓力（需搭配信用指標）交叉判讀。當實質收入改善但信貸壓力上升，會提高未來消費放緩風險。",
+      "market_relevance": "若零售與消費支出顯示韌性，通常支撐景氣循環股與信用；若需求突然轉弱，可能使企業獲利預期下修、壓縮風險資產估值。",
+      "source_title": "U.S. Census Bureau（零售銷售）官方入口",
+      "source_url": "https://www.census.gov/",
       "published_at": null,
       "affected_symbols": [
-        "TLT",
-        "^TNX",
+        "XLE",
+        "XLF",
         "SPY"
       ]
     },
     {
-      "evidence_id": "US-COMP-1",
-      "category": "earnings",
+      "evidence_id": "US-IND-006",
+      "category": "industry",
       "region": "US",
-      "title": "SEC EDGAR：公司季報/年報（10-Q/10-K）取得營收、淨利與成本項目分解",
-      "summary": "SEC EDGAR 提供公司財報申報（10-Q、10-K）可用於抓取：營收成長、毛利率、營業費用結構（R&D、S&M、G&A）、以及淨利與一次性項目。由於本次非交易日且無法即時彙整特定公司名單與最新申報期內容，建議以「最新 filing date」篩選後再做成本/利潤結構分布。",
-      "market_relevance": "成本項目（原材料、物流、人力、折舊攤銷、利息費用）變化常比營收先反映景氣轉折；分布（上游 vs 下游、服務 vs 製造）可用來判斷板塊輪動。",
-      "source_title": "SEC EDGAR – Company Filings Search",
+      "title": "產業供需與商品端：原油/天然氣與能源供應鏈的價格傳導（EIA）",
+      "summary": "能源供需透過燃料成本、通膨預期與企業毛利（上游/下游）傳導至股市。EIA提供石油/天然氣產量、庫存、消費與短期展望，可用於判斷「庫存變化→價格→企業成本/利潤」鏈條。",
+      "market_relevance": "油價若因供給緊縮上行，能源股受益但可能抬升整體成本並影響消費；若油價回落且庫存上升，通常降低通膨壓力、利率下行機率提高。",
+      "source_title": "U.S. EIA（能源資訊管理局）官方資料入口",
+      "source_url": "https://www.eia.gov/",
+      "published_at": null,
+      "affected_symbols": [
+        "XLE",
+        "SPY",
+        "GLD"
+      ]
+    },
+    {
+      "evidence_id": "US-CO-007",
+      "category": "company",
+      "region": "US",
+      "title": "公司財報拆解：SEC申報檔（10-K/10-Q）用於分辨營收成長、毛利率與成本結構",
+      "summary": "用SEC EDGAR取得公司10-Q/10-K可追蹤：營收（量價/客戶/地區）、毛利率（材料/製造效率）、費用（研發、SG&A、折舊攤銷）與淨利（利息、一次性項目）。同時可檢視現金流與指引以判斷成本壓力與需求能見度。",
+      "market_relevance": "若市場因單一指標誤判，EDGAR拆解常能校正：例如表觀營收持平但毛利率惡化→股價通常承壓；反之若成本下降而營收疲弱→風險較可控。",
+      "source_title": "SEC EDGAR（公司申報）官方入口",
       "source_url": "https://www.sec.gov/edgar/search/",
       "published_at": null,
       "affected_symbols": [
         "NVDA",
         "MSFT",
-        "AAPL"
+        "AAPL",
+        "META",
+        "PLTR"
       ]
     },
     {
-      "evidence_id": "US-TECHCAPX-1",
+      "evidence_id": "US-TECHCAPEX-008",
       "category": "industry",
       "region": "US",
-      "title": "SEC/公司 IR：資本支出（Capex）指引與資本配置（share repurchase、debt）揭露入口",
-      "summary": "科技與資本密集產業的資本支出趨勢通常在公司 IR（投資人關係）與 10-Q/10-K（MD&A、資本支出與流動性段落）揭露。由於本次無法即時核對 2026-09-04 的最新財報會議內容或更新指引，僅能提供一手入口以供抓取最新 Capex/資本配置語句。",
-      "market_relevance": "Capex 指引（尤其半導體設備、AI 基礎設施、雲端）會直接影響供應鏈訂單能見度與估值（供給側產能擴張是否快於需求）。",
-      "source_title": "Investor Relations（公司官網通常置於各公司頁面；財報以 SEC EDGAR 為交叉核對）",
-      "source_url": "https://www.sec.gov/ixviewer/documents/index.html",
+      "title": "科技發展與資本支出：半導體/雲端投資與資料中心需求的官方與監理線索（SEC+公司IR）",
+      "summary": "科技資本支出通常透過公司IR的指引（capex、COGS/供應鏈、WACC/折舊假設）與監理/法規資訊反映。可在公司IR（投資人關係）與SEC申報中同步檢視：資本支出預期、產能利用率假設、以及是否有延後/加速。",
+      "market_relevance": "capex若仍上修→利好供應鏈（設備/材料/通訊）；若轉為降速或更保守指引→產業週期可能轉折並影響估值（特別是高預期成長股）。",
+      "source_title": "NVIDIA 投資人關係（IR）與公告入口（示例，可用同法擴展至其他公司）",
+      "source_url": "https://investor.nvidia.com/",
       "published_at": null,
       "affected_symbols": [
         "NVDA",
         "TSLA",
-        "AMD"
+        "SMH",
+        "XLK"
       ]
     },
     {
-      "evidence_id": "GLOBAL-GEO-1",
+      "evidence_id": "GEO-009",
       "category": "geopolitics",
       "region": "Global",
-      "title": "聯合國/主要官方與危機通報：地緣政治風險與制裁/航運影響的核對來源",
-      "summary": "地緣政治風險（制裁、海上航線、能源供應中斷）會透過油價、運費與供應鏈交付時間影響企業成本與通膨預期。較可靠的做法是以聯合國公告與各國政府/主管機構之制裁或出口管制公告為準；本次因無即時核對特定最新消息內容，僅提供官方核對框架與入口，避免用未證實來源下結論。",
-      "market_relevance": "供應鏈與能源風險通常先反映到商品（油/天然氣）、運輸與部分工業原材料的成本；同時也影響風險偏好與避險資產需求。",
-      "source_title": "United Nations – News & Updates (作為地緣風險核對的官方入口之一)",
-      "source_url": "https://news.un.org/",
+      "title": "全球地緣政治與供應鏈風險：制裁/航運/海上安全（美國財政部OFAC + 商務部）",
+      "summary": "地緣政治風險主要透過：制裁/出口管制、航運路徑與保險成本、以及關鍵零組件可得性影響企業供需。OFAC與美國商務部出口管制相關資訊可作為即時風險掃描來源。",
+      "market_relevance": "出口管制若擴大或執法趨嚴，可能導致先進科技/設備出貨與交付節奏改變；航運/制裁風險上升通常拉高供應鏈成本並增添尾端波動。",
+      "source_title": "U.S. Treasury OFAC 官方入口",
+      "source_url": "https://home.treasury.gov/policy-issues/financial-sanctions/sanctions-programs-and-country-information",
       "published_at": null,
       "affected_symbols": [
-        "XLE",
-        "GLD"
+        "XLK",
+        "XLI",
+        "TSM"
       ]
     },
     {
-      "evidence_id": "ASIA-1",
+      "evidence_id": "ASIA-010",
       "category": "global_economy",
       "region": "China",
-      "title": "中國：國家統計局/官方發布入口（成長、通膨、就業與工業）",
-      "summary": "中國的成長與需求動能會影響全球商品需求與供應鏈週期（特別是電子、化工、機械）。建議以國家統計局（NBS）與人民銀行/財政等官方發布核對最新一期經濟數據。由於本次無法即時確認 2026-09-04 的最新數值與發布節奏，需以官方最新 release 為準。",
-      "market_relevance": "中國需求若走弱，通常對上游商品與全球製造循環形成壓力；若政策托底，則可能改善區域訂單與企業營收能見度。",
-      "source_title": "National Bureau of Statistics of China (NBS) – Official Data",
+      "title": "中國總體與政策風險追蹤：統計與政策公告的官方來源（國家統計局+央行）",
+      "summary": "對中國的經濟發展需同時看：成長/就業/價格（國家統計局）與政策槓桿（央行流動性/信貸）。在全球需求轉弱或外需波動時，內需政策反應與信用投放節奏將影響商品與製造業循環。",
+      "market_relevance": "若政策支持內需但資產負債風險限制信用擴張，市場可能呈現「短期托底、長期分歧」的估值特徵。",
+      "source_title": "National Bureau of Statistics of China（國家統計局）入口",
       "source_url": "https://www.stats.gov.cn/english/",
       "published_at": null,
       "affected_symbols": [
-        "SPY",
-        "XLE"
+        "TSM",
+        "SOXX",
+        "SPY"
       ]
     },
     {
-      "evidence_id": "ASIA-2",
+      "evidence_id": "ASIA-011",
       "category": "global_economy",
       "region": "Japan",
-      "title": "日本：央行（BOJ）與官方景氣/通膨發布核對入口",
-      "summary": "日本端的關鍵在於 BOJ 政策路徑與通膨/薪資動態，影響日圓與全球資金流向（風險偏好與外溢至美債/科技股估值）。本次無法即時核對最新政策細節，因此提供以 BOJ 官方與政府統計為主的核對來源。",
-      "market_relevance": "若日本政策持續偏向正常化，日圓利差交易可能降溫，對美元、風險資產與資金成本形成反向壓力。",
-      "source_title": "Bank of Japan – Monetary Policy (Official)",
-      "source_url": "https://www.boj.or.jp/en/index.htm",
+      "title": "日本：央行政策與通膨路徑（BoJ）對日圓與全球利差的影響",
+      "summary": "日本央行的政策利率與收益率曲線控制相關調整，會影響日圓與全球金融條件。若日本利率上行快於他國，可能帶來匯率與跨境資本流動重定價。",
+      "market_relevance": "日圓走強時通常對以美元計價風險資產形成一定壓力；若全球風險偏好上升，避險需求下降則緩衝匯率波動。",
+      "source_title": "Bank of Japan 官方入口",
+      "source_url": "https://www.boj.or.jp/en/",
       "published_at": null,
       "affected_symbols": [
-        "TLT",
-        "^TNX"
+        "SPY",
+        "TLT"
       ]
     },
     {
-      "evidence_id": "EU-1",
+      "evidence_id": "EU-012",
       "category": "global_economy",
       "region": "Europe",
-      "title": "歐洲：ECB 貨幣政策與通膨/成長指標的官方核對入口",
-      "summary": "ECB 的利率路徑與歐元區通膨/成長數據會影響全球美元流動性、歐洲金融條件與跨市場資金配置。由於本次無即時核對最新發布值，僅提供官方入口，研判時需對照 ECB/Eurostat 最新 release。",
-      "market_relevance": "歐洲利差與金融條件變化會影響信用利差、銀行板塊風險溢酬與全球風險偏好。",
-      "source_title": "European Central Bank (ECB) – Monetary policy & press releases",
+      "title": "歐洲景氣監測：EC與ECB的官方指標與金融條件摘要",
+      "summary": "歐洲的景氣通常由：製造業/服務業景氣、能源成本、以及ECB對通膨與金融狀況的評估共同決定。EC（委員會）與ECB的官方公告可用於判斷歐洲需求與利率政策的方向性。",
+      "market_relevance": "若歐洲景氣惡化、ECB再度偏鴿，可能帶來全球利差收斂與對美元資產相對吸引力變化；反之則可能提高海外資本回流的風險溢價。",
+      "source_title": "European Central Bank 官方入口",
       "source_url": "https://www.ecb.europa.eu/home/html/index.en.html",
       "published_at": null,
       "affected_symbols": [
-        "XLF",
-        "SPY"
+        "SPY",
+        "TLT",
+        "XLF"
       ]
     }
   ],
   "research_mode": "non_trading_day_survey",
-  "research_generated_at": "2026-09-04T05:32:32.020431Z",
+  "research_generated_at": "2026-09-04T08:50:03.817581Z",
   "warnings": []
 }
