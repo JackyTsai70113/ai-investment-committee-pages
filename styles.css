@@ -99,10 +99,30 @@ a {
 }
 
 .app-shell {
-  width: min(1480px, 100%);
+  width: min(1680px, 100%);
   margin: 0 auto;
   padding: 1rem;
+  display: grid;
+  grid-template-columns: 15.5rem minmax(0, 1fr);
+  gap: 1rem;
   overflow-x: clip;
+}
+
+.app-sidebar {
+  position: sticky;
+  top: 1rem;
+  align-self: start;
+  min-width: 0;
+  padding: 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(7, 17, 15, 0.82);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.app-content {
+  min-width: 0;
 }
 
 .tab-panel,
@@ -113,19 +133,11 @@ a {
 }
 
 .topbar {
-  position: sticky;
-  z-index: 20;
-  top: 0.75rem;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: stretch;
   gap: 1rem;
-  padding: 0.75rem 0.8rem 0.75rem 1rem;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: rgba(7, 17, 15, 0.82);
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(18px);
+  padding: 0.45rem;
 }
 
 .brand {
@@ -168,21 +180,33 @@ a {
 }
 
 .topbar-meta {
-  display: flex;
+  display: grid;
   align-items: center;
   gap: 0.55rem;
 }
 
 .tab-controls {
-  position: static;
-  top: 5.4rem;
-  z-index: 18;
-  display: flex;
-  justify-content: space-between;
-  gap: 0.75rem;
-  align-items: center;
-  padding: 0.4rem 0.2rem;
-  margin-bottom: 0.5rem;
+  display: grid;
+  gap: 0.55rem;
+  padding: 0.45rem;
+}
+
+.sidebar-toggle {
+  justify-self: end;
+  width: 1.85rem;
+  height: 1.85rem;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.sidebar-toggle:hover {
+  border-color: rgba(199, 241, 91, 0.35);
+  color: var(--acid);
 }
 
 .tab-menu-toggle {
@@ -203,17 +227,38 @@ a {
 }
 
 .tab-strip {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem;
+  display: grid;
+  gap: 0.3rem;
 }
 
 .tab-trigger {
+  display: grid;
+  grid-template-columns: 1.4rem minmax(0, 1fr);
+  align-items: center;
+  gap: 0.55rem;
+  width: 100%;
+  text-align: left;
   border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: 0.4rem 0.75rem;
+  border-radius: 0.65rem;
+  padding: 0.6rem;
   color: var(--muted);
   background: var(--panel);
+  cursor: pointer;
+}
+
+.tab-icon {
+  display: grid;
+  width: 1.4rem;
+  height: 1.4rem;
+  place-items: center;
+  color: var(--acid);
+  font: 700 0.85rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.tab-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .tab-trigger:hover {
@@ -224,6 +269,31 @@ a {
   color: var(--acid);
   border-color: rgba(199, 241, 91, 0.45);
   background: rgba(199, 241, 91, 0.08);
+}
+
+.sidebar-collapsed {
+  grid-template-columns: 4.5rem minmax(0, 1fr);
+}
+
+.sidebar-collapsed .app-sidebar {
+  padding-inline: 0.55rem;
+}
+
+.sidebar-collapsed .brand,
+.sidebar-collapsed .topbar-meta {
+  justify-content: center;
+}
+
+.sidebar-collapsed .brand-copy,
+.sidebar-collapsed .topbar-meta,
+.sidebar-collapsed .tab-label {
+  display: none;
+}
+
+.sidebar-collapsed .tab-trigger {
+  grid-template-columns: 1fr;
+  justify-items: center;
+  padding-inline: 0.45rem;
 }
 
 .tab-panel:focus {
@@ -547,6 +617,36 @@ a {
 .health-components {
   display: grid;
   gap: 0.75rem;
+}
+
+.health-decision-readiness {
+  display: grid;
+  gap: 0.25rem;
+  margin: 1rem 0;
+  padding: 0.75rem;
+  border: 1px solid var(--orange);
+  border-left-width: 3px;
+  background: color-mix(in srgb, var(--orange) 8%, transparent);
+}
+
+.health-decision-readiness span,
+.health-decision-readiness small {
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.health-decision-readiness strong {
+  color: var(--orange);
+  font-size: 0.85rem;
+}
+
+.health-decision-readiness.ready_for_daily_research {
+  border-color: var(--acid);
+  background: color-mix(in srgb, var(--acid) 8%, transparent);
+}
+
+.health-decision-readiness.ready_for_daily_research strong {
+  color: var(--acid);
 }
 
 .health-components > div {
@@ -949,14 +1049,14 @@ a {
 }
 
 .leaderboard-more {
-  display: block;
-  margin: 1rem auto 0;
-  padding: 0.55rem 1rem;
+  flex: 0 0 auto;
+  padding: 0.32rem 0.55rem;
   border: 1px solid var(--line);
-  border-radius: 999px;
-  background: var(--panel-2);
+  border-radius: 0.45rem;
+  background: transparent;
   color: var(--acid);
   cursor: pointer;
+  font-size: 0.72rem;
 }
 
 .leaderboard-more:hover {
@@ -1593,6 +1693,10 @@ a {
   justify-content: space-between;
   gap: 1rem;
   margin-bottom: 1.45rem;
+}
+
+.leaderboard-header {
+  align-items: center;
 }
 
 .panel h2 {
@@ -2832,9 +2936,51 @@ td {
   }
 }
 
+@media (max-width: 760px) {
+  .app-shell,
+  .sidebar-collapsed {
+    display: block;
+  }
+
+  .app-sidebar {
+    position: static;
+    margin-bottom: 0.7rem;
+  }
+
+  .topbar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .topbar-meta {
+    display: flex;
+  }
+
+  .sidebar-toggle {
+    display: none;
+  }
+
+  .sidebar-collapsed .brand-copy,
+  .sidebar-collapsed .topbar-meta,
+  .sidebar-collapsed .tab-label {
+    display: initial;
+  }
+
+  .sidebar-collapsed .tab-trigger {
+    grid-template-columns: 1.4rem minmax(0, 1fr);
+    justify-items: initial;
+  }
+}
+
 @media (max-width: 640px) {
   .app-shell {
     padding: 0.65rem;
+  }
+
+  .app-sidebar {
+    padding: 0.45rem;
+    border-radius: 18px;
   }
 
   .topbar {
@@ -2896,7 +3042,9 @@ td {
   }
 
   .tab-trigger {
-    justify-content: center;
+    grid-template-columns: 1.4rem minmax(0, 1fr);
+    justify-content: initial;
+    text-align: left;
   }
 
   .glossary-grid {

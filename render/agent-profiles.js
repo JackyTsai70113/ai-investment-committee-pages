@@ -90,7 +90,7 @@ export function createAgentProfileRenderers({
                   <div><dt>使用資訊</dt><dd>${escapeHtml(profile.inputs)}</dd></div>
                   <div><dt>存在原因</dt><dd>${escapeHtml(profile.purpose)}</dd></div>
                   <div><dt>目標</dt><dd>${escapeHtml(profile.goal)}</dd></div>
-                  <div><dt>不負責</dt><dd>${escapeHtml(profile.boundary)}</dd></div>
+                  <div><dt>範圍界線</dt><dd>${escapeHtml(profile.boundary)}</dd></div>
                 </dl>
                 <a class="agent-profile-back" href="#committee">返回委員會內容</a>
               </article>`;

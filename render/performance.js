@@ -63,7 +63,7 @@ export function createPerformanceRenderer() {
           <small data-chart-change>${escapeHtml(signedMoney(safePoints[latestIndex].profit_loss_usd))} vs. 起始資金</small>
         </div>
         <svg class="performance-chart" viewBox="0 0 ${width} ${height}" role="group" aria-labelledby="performance-chart-title performance-chart-description">
-          <title id="performance-chart-title">USD 6,000 假設策略走勢</title>
+          <title id="performance-chart-title">假設策略走勢</title>
           <desc id="performance-chart-description">橫軸為評價時間，縱軸為策略資金總額。可使用滑鼠、觸控或鍵盤查看每一個評價點。</desc>
           <defs>
             <linearGradient id="performance-area-gradient" x1="0" y1="0" x2="0" y2="1">

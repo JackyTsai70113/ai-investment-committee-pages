@@ -1,6 +1,7 @@
 export function installTabNavigation(root, { onActivate } = {}) {
   const controls = root.querySelector("[data-tab-controls]");
   const menuToggle = controls?.querySelector("[data-tab-menu-toggle]");
+  const sidebarToggle = controls?.querySelector("[data-sidebar-toggle]");
   const strip = controls?.querySelector("[data-tab-strip]");
   const triggers = [...root.querySelectorAll("[data-tab-trigger]")];
   const panels = [...root.querySelectorAll("[role=tabpanel][data-tab-panel]")];
@@ -8,6 +9,20 @@ export function installTabNavigation(root, { onActivate } = {}) {
     panels.forEach((panel) => { panel.hidden = false; });
     return;
   }
+
+  const setSidebarCollapsed = (collapsed) => {
+    root.querySelector(".app-shell")?.classList.toggle("sidebar-collapsed", collapsed);
+    sidebarToggle?.setAttribute("aria-expanded", String(!collapsed));
+    sidebarToggle?.setAttribute("aria-label", collapsed ? "展開側欄" : "收合側欄");
+    if (sidebarToggle) sidebarToggle.textContent = collapsed ? "›" : "‹";
+    try { localStorage.setItem("investment-dashboard-sidebar-collapsed", String(collapsed)); } catch {}
+  };
+  try {
+    setSidebarCollapsed(localStorage.getItem("investment-dashboard-sidebar-collapsed") === "true");
+  } catch {}
+  sidebarToggle?.addEventListener("click", () => {
+    setSidebarCollapsed(!root.querySelector(".app-shell")?.classList.contains("sidebar-collapsed"));
+  });
 
   const setTab = (target, { focus = false, preserveScroll = false } = {}) => {
     const compactNavigation = window.matchMedia("(max-width: 640px)").matches;
