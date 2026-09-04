@@ -1,7 +1,7 @@
 export function installTabNavigation(root, { onActivate } = {}) {
   const controls = root.querySelector("[data-tab-controls]");
   const menuToggle = controls?.querySelector("[data-tab-menu-toggle]");
-  const sidebarToggle = controls?.querySelector("[data-sidebar-toggle]");
+  const sidebarToggle = root.querySelector("[data-sidebar-toggle]");
   const strip = controls?.querySelector("[data-tab-strip]");
   const triggers = [...root.querySelectorAll("[data-tab-trigger]")];
   const panels = [...root.querySelectorAll("[role=tabpanel][data-tab-panel]")];
@@ -14,7 +14,11 @@ export function installTabNavigation(root, { onActivate } = {}) {
     root.querySelector(".app-shell")?.classList.toggle("sidebar-collapsed", collapsed);
     sidebarToggle?.setAttribute("aria-expanded", String(!collapsed));
     sidebarToggle?.setAttribute("aria-label", collapsed ? "展開側欄" : "收合側欄");
-    if (sidebarToggle) sidebarToggle.textContent = collapsed ? "›" : "‹";
+    if (sidebarToggle) {
+      sidebarToggle.innerHTML = collapsed
+        ? '<span aria-hidden="true">→</span><span class="sidebar-toggle-label">展開側欄</span>'
+        : '<span aria-hidden="true">←</span><span class="sidebar-toggle-label">收合側欄</span>';
+    }
     try { localStorage.setItem("investment-dashboard-sidebar-collapsed", String(collapsed)); } catch {}
   };
   try {

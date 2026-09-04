@@ -590,15 +590,6 @@ const researchStatusLabel = (value) => {
     return labels[value] || String(value || "未評估");
   };
 
-  const decisionReadinessLabel = (value) => {
-    const labels = {
-      research_only: "研究資料建置中",
-      ready_for_daily_research: "每日研究可用",
-      not_ready_for_event_driven_trading: "每日研究可用；事件資料建置中",
-    };
-    return labels[value] || "決策用途未確認";
-  };
-
   const statistic = (value, suffix = "") =>
     value === null || value === undefined
       ? "—"
@@ -628,29 +619,17 @@ const researchStatusLabel = (value) => {
         <a class="skip-link" href="#dashboard-main">跳到主要內容</a>
         <aside class="app-sidebar">
           <header class="topbar">
+            <span class="sidebar-project-name">研究平台</span>
             <div class="brand">
-              <span class="brand-mark">IC</span>
+              <span class="brand-mark" aria-hidden="true">▱</span>
               <span class="brand-copy">
                 <strong>投資委員會</strong>
                 <span>組合研究與短線追蹤</span>
               </span>
             </div>
-            <div class="topbar-meta">
-              <span class="pill ${isLive ? "live" : "review"}">${statusLabel}</span>
-              <span class="pill">${escapeHtml(system.version)}</span>
-            </div>
           </header>
 
           <nav class="tab-controls" aria-label="區段切換" data-tab-controls>
-            <button
-              type="button"
-              class="sidebar-toggle"
-              data-sidebar-toggle
-              aria-expanded="true"
-              aria-label="收合側欄"
-            >
-              <span aria-hidden="true">‹</span>
-            </button>
             <button
               type="button"
               class="tab-menu-toggle"
@@ -662,13 +641,26 @@ const researchStatusLabel = (value) => {
               <span class="menu-icon" aria-hidden="true">☰</span>
               <span>導覽</span>
             </button>
+            <div class="sidebar-section-label" aria-hidden="true">已釘選</div>
             <div class="tab-strip" id="main-tab-strip" data-tab-strip role="tablist" aria-label="儀表板內容">
               <button type="button" class="tab-trigger active" data-tab-trigger data-tab-target="overview" id="tab-overview" role="tab" aria-label="總覽" aria-controls="panel-overview" aria-selected="true" tabindex="0"><span class="tab-icon" aria-hidden="true">⌂</span><span class="tab-label">總覽</span></button>
-              <button type="button" class="tab-trigger" data-tab-trigger data-tab-target="committee" id="tab-committee" role="tab" aria-label="委員會實際內容" aria-controls="panel-committee" aria-selected="false" tabindex="-1"><span class="tab-icon" aria-hidden="true">◫</span><span class="tab-label">委員會實際內容</span></button>
-              <button type="button" class="tab-trigger" data-tab-trigger data-tab-target="agent-intel" id="tab-agent-intel" role="tab" aria-label="角色觀點" aria-controls="panel-agent-intel" aria-selected="false" tabindex="-1"><span class="tab-icon" aria-hidden="true">◉</span><span class="tab-label">角色觀點</span></button>
-              <button type="button" class="tab-trigger" data-tab-trigger data-tab-target="glossary" id="tab-glossary" role="tab" aria-label="術語表" aria-controls="panel-glossary" aria-selected="false" tabindex="-1"><span class="tab-icon" aria-hidden="true">?</span><span class="tab-label">術語表</span></button>
+              <button type="button" class="tab-trigger" data-tab-trigger data-tab-target="committee" id="tab-committee" role="tab" aria-label="委員會實際內容" aria-controls="panel-committee" aria-selected="false" tabindex="-1"><span class="tab-icon" aria-hidden="true">▤</span><span class="tab-label">委員會實際內容</span></button>
+              <button type="button" class="tab-trigger" data-tab-trigger data-tab-target="agent-intel" id="tab-agent-intel" role="tab" aria-label="角色觀點" aria-controls="panel-agent-intel" aria-selected="false" tabindex="-1"><span class="tab-icon" aria-hidden="true">♙</span><span class="tab-label">角色觀點</span></button>
+              <button type="button" class="tab-trigger" data-tab-trigger data-tab-target="glossary" id="tab-glossary" role="tab" aria-label="術語表" aria-controls="panel-glossary" aria-selected="false" tabindex="-1"><span class="tab-icon" aria-hidden="true">ⓘ</span><span class="tab-label">術語表</span></button>
             </div>
           </nav>
+          <footer class="sidebar-footer">
+            <span class="sidebar-footer-note">研究用途</span>
+            <button
+              type="button"
+              class="sidebar-toggle"
+              data-sidebar-toggle
+              aria-expanded="true"
+              aria-label="收合側欄"
+            >
+              <span aria-hidden="true">←</span><span class="sidebar-toggle-label">收合側欄</span>
+            </button>
+          </footer>
         </aside>
 
         <div class="app-content">
@@ -731,7 +723,7 @@ const researchStatusLabel = (value) => {
           <article class="terminal-card health-terminal">
             <div class="terminal-card-head">
               <div>
-                <span class="section-kicker">配置防護與決策限制</span>
+                <span class="section-kicker">配置風險重點</span>
                 <h2>配置防護評估</h2>
               </div>
               <div class="health-score grade-${escapeHtml(health.grade)}">
@@ -739,12 +731,7 @@ const researchStatusLabel = (value) => {
                 <span>/ 100</span>
               </div>
             </div>
-            <p>${escapeHtml(healthGradeLabel(health.grade))} · ${escapeHtml(health.summary)}</p>
-            <div class="health-decision-readiness ${escapeHtml(health.decision_readiness)}">
-              <span>決策用途</span>
-              <strong>${escapeHtml(decisionReadinessLabel(health.decision_readiness))}</strong>
-              <small>${escapeHtml(health.decision_readiness_explanation)}</small>
-            </div>
+            <p>${escapeHtml(healthGradeLabel(health.grade))}</p>
             <div class="health-components">
               ${health.components
                 .map(
@@ -753,7 +740,6 @@ const researchStatusLabel = (value) => {
                       <span>${escapeHtml(item.component)}</span>
                       <div class="health-bar"><i style="--health-width:${escapeHtml((Number(item.score) / Number(item.maximum)) * 100)}%"></i></div>
                       <strong>${escapeHtml(item.score)} / ${escapeHtml(item.maximum)}</strong>
-                      <small>${escapeHtml(item.explanation)}</small>
                     </div>`,
                 )
                 .join("")}
@@ -779,9 +765,6 @@ const researchStatusLabel = (value) => {
               <div><span>完成交易日區間</span><strong>${escapeHtml(analyticsPerformance.distinct_completed_sessions)}</strong></div>
               <div><span>夏普比率／日區間勝率</span><strong>${statistic(analyticsPerformance.sharpe_ratio)} / ${statistic(analyticsPerformance.win_rate_percent, "%")}</strong></div>
             </div>
-            <p>${escapeHtml(analyticsPerformance.methodology)}</p>
-            <p class="methodology-note">目前有 ${escapeHtml(analyticsPerformance.distinct_completed_sessions)} 個完成交易日區間可計算短期統計；樣本會隨時間累積而更穩定。</p>
-            <p class="methodology-note">${escapeHtml(returnObjective.methodology)} 交易成本為研究估算；稅務與外匯換算目前未納入模型。</p>
           </article>
         </section>
 

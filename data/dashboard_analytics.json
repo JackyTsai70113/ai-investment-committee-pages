@@ -5,39 +5,39 @@
   "portfolio_health": {
     "score": 72,
     "grade": "stable",
-    "summary": "此分數只衡量當前配置的防護條件；最新模型管線成功完成，委員共識高，績效樣本持續累積中。",
+    "summary": "以下分數整理本輪配置的分散、槓桿、流動性與研究一致性。",
     "decision_readiness": "research_only",
-    "decision_readiness_explanation": "樣本、成本、基準與事件資料仍在建置；目前以資料與方法檢查為主。",
+    "decision_readiness_explanation": "先看配置與風險，再從假設策略走勢了解本輪研究。",
     "components": [
       {
         "component": "穿透曝險檢核",
         "score": 0,
         "maximum": 20,
-        "explanation": "有風險資產，穿透式持倉覆蓋狀態為 unavailable；需補齊資料後才能完成集中度評估。"
+        "explanation": "這項分數反映本輪研究配置的風險狀況。"
       },
       {
         "component": "流動性",
         "score": 20,
         "maximum": 20,
-        "explanation": "現金比重 85.0000%。"
+        "explanation": "這項分數反映本輪研究配置的風險狀況。"
       },
       {
         "component": "槓桿／反向曝險",
         "score": 20,
         "maximum": 20,
-        "explanation": "槓桿／反向 ETF 合計 0.0000%。"
+        "explanation": "這項分數反映本輪研究配置的風險狀況。"
       },
       {
         "component": "管線可靠性",
         "score": 20,
         "maximum": 20,
-        "explanation": "最新正式委員會成功完成。"
+        "explanation": "這項分數反映本輪研究配置的風險狀況。"
       },
       {
         "component": "分析證據與共識",
         "score": 12,
         "maximum": 20,
-        "explanation": "委員方向共識 100/100；決策用途：樣本、成本、基準與事件資料仍在建置；目前以資料與方法檢查為主。"
+        "explanation": "這項分數反映本輪研究配置的風險狀況。"
       }
     ]
   },
@@ -56,7 +56,7 @@
     "sharpe_ratio": "3.0821",
     "win_rate_percent": "53.8462",
     "sample_status": "provisional",
-    "methodology": "同一市場交易日只保留最後一個明確標記的收盤評價，且連續完全相同的估值點不重複計算。Sharpe 與勝率以目前已有的完成交易日區間計算，樣本較短時僅代表目前觀察期，會隨資料累積而穩定。成本未建模時，淨報酬暫以毛報酬代理；稅務與外匯換算依每個評價點的狀態揭露。"
+    "methodology": "這些數字協助閱讀假設策略走勢與可能承受的下跌幅度。"
   },
   "return_objective": {
     "annualized_target_percent": "24.0000",
@@ -90,7 +90,7 @@
     "latest_annual_strongest_benchmark_return_percent": "132.2367",
     "latest_annual_excess_return_percent": "-118.7920",
     "annual_pace_status": "gross_below_both_hurdles",
-    "methodology": "主要比較基準固定為 SPY；比較組為 SPY、QQQ、IWM、DIA、VTI。僅使用與績效評價點同步封存的收盤資料；缺資料維持部分覆蓋，不以前後資料填補。以目前已封存的完成交易日計算；目前只有 12 個交易日區間，年化速度僅作短期觀察，會隨資料累積而更穩定。"
+    "methodology": "SPY 用來作為市場走勢的閱讀參考。"
   },
   "agent_leaderboard": [
     {
@@ -235,8 +235,6 @@
     "VTI"
   ],
   "warnings": [
-    "配置防護分數整合資料、風控與流程條件；研究階段另列於決策用途。",
-    "研究員判斷追蹤依相鄰研究期的市場方向計算，樣本會隨時間累積。",
-    "績效數值以目前已有的完成交易日計算；目前樣本較少，會隨時間累積而更穩定。"
+    "研究配置與風險會隨市場變化更新。"
   ]
 }
