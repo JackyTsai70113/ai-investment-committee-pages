@@ -5,7 +5,6 @@ import {
   localizeRenderedText,
   money,
   percent,
-  preciseMoney,
 } from "../formatters.js";
 import { asList, createAgentProfileRenderers } from "./agent-profiles.js";
 import { createGlossaryRenderer } from "./glossary.js";
@@ -111,7 +110,7 @@ export function bootstrapDashboard(root, payload, base) {
 
   const tablePercent = (value) => {
     const parsed = toNumber(value);
-    return parsed === null ? "—" : `${parsed.toFixed(2)}%`;
+    return parsed === null ? "—" : `${parsed.toFixed(1)}%`;
   };
 
   const tableNumber = (value, digits = 1) => {
@@ -154,28 +153,6 @@ export function bootstrapDashboard(root, payload, base) {
       <a class="symbol-link" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">
         ${escapeHtml(symbol)}
       </a>`;
-  };
-
-  const formatDateLabel = (value) => {
-    const parsed = new Date(value);
-    if (Number.isNaN(parsed.getTime())) {
-      return "未提供";
-    }
-    return new Intl.DateTimeFormat("zh-TW", {
-      dateStyle: "medium",
-      timeZone: "Asia/Taipei",
-    }).format(parsed);
-  };
-
-  const performanceSeriesSummary = (points) => {
-    const sorted = (Array.isArray(points) ? points : [])
-      .filter((point) => Number.isFinite(Number(point?.value_usd)) && point?.as_of)
-      .sort((left, right) => new Date(left.as_of) - new Date(right.as_of));
-    return {
-      first: sorted[0]?.as_of || "",
-      last: sorted.at(-1)?.as_of || "",
-      total: sorted.length,
-    };
   };
 
   const { applyLinks: glossaryText, render: renderGlossary } = createGlossaryRenderer(escapeHtml);
@@ -483,7 +460,6 @@ const researchStatusLabel = (value) => {
     const overview = createOverviewModel({ dashboardAnalytics, committee, recommendation });
     const { isLive, investedWeight, cash, modelScore, scoreBand, scoreReason, scoreAngle, donut, committeeSize, health, analyticsPerformance, returnObjective } = overview;
     const statusLabel = "研究建議 · 研究用途";
-    const seriesSummary = performanceSeriesSummary(performance.points);
     root.innerHTML = `
       <div class="app-shell">
         <a class="skip-link" href="#dashboard-main">跳到主要內容</a>
@@ -1026,42 +1002,8 @@ const researchStatusLabel = (value) => {
                 <span class="section-kicker">研究走勢</span>
                 <h2>假設策略走勢：研究配置後，結果怎麼變化？</h2>
               </div>
-              <span class="panel-meta">${escapeHtml(performance.points.length)}<br />評價點</span>
             </header>
             ${buildPerformanceChart(performance.points)}
-            <p class="methodology-note">把這條線想成同一份研究配置的成績單：每個點都記下當時的假設資金變化。重點不是單次漲跌，而是隨著更多紀錄出現，我們能不能看見一致的結果。</p>
-            <div class="performance-dates" tabindex="0" aria-label="策略資金各評價日期與金額">
-              ${performance.points
-                .map(
-                  (point) => `
-                    <span>
-                      ${escapeHtml(dateTime(point.as_of))}
-                      <strong>${money(point.value_usd)}</strong>
-                    </span>`,
-                )
-                .join("")}
-            </div>
-            <p class="methodology-note">${escapeHtml(performance.methodology)}</p>
-            <div class="performance-audit">
-              <article>
-                <span>最後完成評價</span>
-                <strong>${preciseMoney(researchJournal.performance.last_completed_value_usd)}</strong>
-                <small>${escapeHtml(researchJournal.performance.last_completed_return_percent)}% · ${escapeHtml(dateTime(researchJournal.performance.last_completed_evaluation_at))}</small>
-              </article>
-              <article>
-                <span>績效評估資料區間</span>
-                <strong>${escapeHtml(formatDateLabel(seriesSummary.first))}</strong>
-                <small>起訖：${escapeHtml(formatDateLabel(seriesSummary.last))}</small>
-              </article>
-              <article>
-                <span>可回測收盤點</span>
-                <strong>${escapeHtml(seriesSummary.total)}</strong>
-                <small>僅顯示目前已收錄的評價點，不據此保證未來報酬。</small>
-              </article>
-            </div>
-            <p class="methodology-note">
-              已保存的研究指數以完成收盤資料計算；目前樣本有限，成本項目仍待納入。
-            </p>
           </section>
 
           <section class="panel evidence" id="evidence" data-tab-section="overview">
@@ -1070,7 +1012,6 @@ const researchStatusLabel = (value) => {
                 <span class="section-kicker">證據引擎</span>
                 <h2>市場、財報與來源證據</h2>
               </div>
-              <span class="panel-meta">${escapeHtml((market.features || []).length)} 項特徵<br />${escapeHtml((market.filing_events || []).length)} 份申報</span>
             </header>
             ${
               market.regime
@@ -1079,8 +1020,7 @@ const researchStatusLabel = (value) => {
                     <article><span>趨勢狀態</span><strong>${escapeHtml(decisionLabel(market.regime.trend))}</strong></article>
                     <article><span>波動狀態</span><strong>${escapeHtml(decisionLabel(market.regime.volatility))}</strong></article>
                     <article><span>利率狀態</span><strong>${escapeHtml(decisionLabel(market.regime.rates))}</strong></article>
-                  </div>
-                  <ul class="evidence-notes">${renderList(market.regime.evidence, "未提供", glossaryText)}</ul>`
+                  </div>`
                 : `<p class="methodology-note">這份舊資料尚未包含確定性市場狀態；下一次正式委員會會開始產生。</p>`
             }
             ${
@@ -1109,8 +1049,8 @@ const researchStatusLabel = (value) => {
                                 <td class="numeric">${escapeHtml(tablePercent(item.return_20d_percent))}</td>
                                 <td class="numeric">${escapeHtml(tablePercent(item.distance_from_ma20_percent))}</td>
                                 <td class="numeric">${escapeHtml(tablePercent(item.volatility_20d_annualized_percent))}</td>
-                                <td class="numeric">${escapeHtml(tableNumber(item.volume_ratio_20d, 2))}×</td>
-                                <td class="numeric">${escapeHtml(tableNumber(item.rsi14))}</td>
+                                <td class="numeric">${escapeHtml(tableNumber(item.volume_ratio_20d, 1))}×</td>
+                                <td class="numeric">${escapeHtml(tableNumber(item.rsi14, 0))}</td>
                               </tr>`,
                           )
                           .join("")}
@@ -1301,28 +1241,6 @@ const researchStatusLabel = (value) => {
                     .map((item) => `<li>${escapeHtml(item)}</li>`)
                     .join("")}
                 </ol>
-              </section>
-              <section class="journal-column next">
-                <header>
-                  <span>04</span>
-                  <h3>接下來會追蹤什麼</h3>
-                </header>
-                <div class="next-step-list">
-                  ${researchJournal.next_steps
-                    .map(
-                      (item) => `
-                        <article class="next-step">
-                          <div class="next-step-head">
-                            <span>${escapeHtml(item.priority)}</span>
-                            <strong>${escapeHtml(item.gap)}</strong>
-                          </div>
-                          <p>${escapeHtml(item.action)}</p>
-                          <small><strong>完成條件</strong>${escapeHtml(item.acceptance_test)}</small>
-                          ${renderSourceLinks(item.source_urls)}
-                        </article>`,
-                    )
-                    .join("")}
-                </div>
               </section>
             </div>
           </section>

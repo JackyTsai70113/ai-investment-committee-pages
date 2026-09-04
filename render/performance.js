@@ -1,4 +1,4 @@
-import { dateTime, escapeHtml, money, preciseMoney } from "../formatters.js";
+import { dateTime, escapeHtml, money } from "../formatters.js";
 
 const signedMoney = (value) => {
   const numeric = Number(value || 0);
@@ -59,7 +59,7 @@ export function createPerformanceRenderer() {
       <div class="performance-chart-shell" data-performance-chart>
         <div class="chart-tooltip" data-chart-tooltip role="status" aria-live="polite">
           <span data-chart-date>${escapeHtml(dateTime(safePoints[latestIndex].as_of))}</span>
-          <strong data-chart-value>${escapeHtml(preciseMoney(safePoints[latestIndex].value_usd))}</strong>
+          <strong data-chart-value>${escapeHtml(money(safePoints[latestIndex].value_usd))}</strong>
           <small data-chart-change>${escapeHtml(signedMoney(safePoints[latestIndex].profit_loss_usd))} vs. 起始資金</small>
         </div>
         <svg class="performance-chart" viewBox="0 0 ${width} ${height}" role="group" aria-labelledby="performance-chart-title performance-chart-description">
@@ -135,12 +135,12 @@ export function createPerformanceRenderer() {
       tooltip.style.left = `${(x / 960) * 100}%`;
       tooltip.classList.toggle("align-right", x > 720);
       dateLabel.textContent = dateTime(point.as_of);
-      valueLabel.textContent = preciseMoney(point.value_usd);
+      valueLabel.textContent = money(point.value_usd);
       changeLabel.textContent = `${signedMoney(point.profit_loss_usd)} vs. 起始資金`;
       hitArea.setAttribute("aria-valuenow", String(activeIndex + 1));
       hitArea.setAttribute(
         "aria-valuetext",
-        `${dateTime(point.as_of)}，資金總額 ${preciseMoney(point.value_usd)}`,
+        `${dateTime(point.as_of)}，資金總額 ${money(point.value_usd)}`,
       );
       dots.forEach((item, dotIndex) =>
         item.classList.toggle("selected", dotIndex === activeIndex),

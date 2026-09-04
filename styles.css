@@ -441,6 +441,7 @@ a {
 }
 
 .hero-main {
+  min-width: 0;
   min-height: 430px;
   padding: clamp(1.5rem, 4vw, 4rem);
   border-radius: 34px;
@@ -457,18 +458,20 @@ a {
 }
 
 .hero h1 {
-  max-width: 850px;
+  max-inline-size: 100%;
   margin: 1rem 0 0.9rem;
   font-size: clamp(2.7rem, 7vw, 6.3rem);
   font-weight: 620;
   line-height: 0.92;
   letter-spacing: -0.07em;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
 }
 
 @media (min-width: 1000px) {
   .hero h1 {
-    max-width: none;
-    white-space: nowrap;
+    max-inline-size: 15ch;
+    white-space: normal;
     font-size: clamp(2.7rem, 4.2vw, 3.8rem);
   }
 }
