@@ -9,7 +9,6 @@ import {
 } from "../formatters.js";
 import { asList, createAgentProfileRenderers } from "./agent-profiles.js";
 import { createGlossaryRenderer } from "./glossary.js";
-import { createHistoryRenderer } from "./history.js";
 import { installTabNavigation } from "./navigation.js";
 import { createPerformanceRenderer } from "./performance.js";
 import { createDataLoader } from "../data.js";
@@ -551,17 +550,6 @@ export function bootstrapDashboard(root, payload, base) {
       })
     : () => '<p class="methodology-note" role="status">完整委員會內容將在開啟此分頁時載入。</p>';
 
-  const renderHistoricalRecord = createHistoryRenderer({
-    agentLink,
-    dateTime,
-    decisionLabel,
-    escapeHtml,
-    glossaryText,
-    money,
-    percent,
-    renderList,
-  });
-
 
 const researchStatusLabel = (value) => {
   const labels = {
@@ -616,105 +604,11 @@ const researchStatusLabel = (value) => {
       ? "—"
       : `${Number(value).toFixed(2)}${suffix}`;
 
-  const comparisonRecords = (history, recommendation) => {
-    const records = new Map();
-    history.forEach((item) => {
-      const archivedRecommendation = item.comparison || item.recommendation;
-      if (archivedRecommendation) {
-        records.set(archivedRecommendation.run_id, archivedRecommendation);
-      }
-    });
-    records.set(recommendation.run_id, recommendation);
-    return [...records.values()].sort(
-      (left, right) => new Date(left.generated_at) - new Date(right.generated_at),
-    );
-  };
-
-  const buildComparisonRows = (fromRecommendation, toRecommendation) => {
-    const from = new Map(
-      fromRecommendation.allocations.map((item) => [item.symbol, item]),
-    );
-    const to = new Map(toRecommendation.allocations.map((item) => [item.symbol, item]));
-    return [...new Set([...from.keys(), ...to.keys()])]
-      .sort()
-      .map((symbol) => {
-        const previous = from.get(symbol);
-        const current = to.get(symbol);
-        const previousAmount = Number(previous?.target_amount_usd || 0);
-        const currentAmount = Number(current?.target_amount_usd || 0);
-        return {
-          symbol,
-          previousAmount,
-          currentAmount,
-          changeAmount: currentAmount - previousAmount,
-          previousWeight: Number(previous?.target_weight || 0),
-          currentWeight: Number(current?.target_weight || 0),
-        };
-      });
-  };
-
-  const installDecisionComparison = (records) => {
-    const fromSelect = document.querySelector("[data-compare-from]");
-    const toSelect = document.querySelector("[data-compare-to]");
-    const result = document.querySelector("[data-compare-result]");
-    if (!fromSelect || !toSelect || !result || records.length < 2) return;
-
-    const renderComparison = () => {
-      const fromRecommendation = records.find((item) => item.run_id === fromSelect.value);
-      const toRecommendation = records.find((item) => item.run_id === toSelect.value);
-      if (!fromRecommendation || !toRecommendation) return;
-      const rows = buildComparisonRows(fromRecommendation, toRecommendation);
-      const previousReasons = new Map(
-        fromRecommendation.top_reasons.map((item) => [item.id, item.title]),
-      );
-      const changedReasons = toRecommendation.top_reasons.filter(
-        (item) => previousReasons.get(item.id) !== item.title,
-      );
-      result.innerHTML = `
-        <div class="comparison-summary">
-          <span>${escapeHtml(fromRecommendation.run_id)}</span>
-          <strong>→</strong>
-          <span>${escapeHtml(toRecommendation.run_id)}</span>
-          <small>${changedReasons.length} / 10 個理由標題改變</small>
-        </div>
-        <div class="comparison-grid">
-          ${rows
-            .map(
-              (item) => `
-                <article>
-                  <strong>${escapeHtml(item.symbol)}</strong>
-                  <span>${money(item.previousAmount)} → ${money(item.currentAmount)}</span>
-                  <small>${signedMoney(item.changeAmount)} · ${percent(item.previousWeight)} → ${percent(item.currentWeight)}</small>
-                </article>`,
-            )
-            .join("")}
-        </div>
-        <div class="changed-reasons">
-          <strong>十大理由變化</strong>
-          ${
-            changedReasons.length
-              ? `<ol>${changedReasons
-                  .map(
-                    (item) =>
-                      `<li><span>${String(item.id).padStart(2, "0")}</span>${escapeHtml(item.title)}</li>`,
-                  )
-                  .join("")}</ol>`
-              : "<p>兩輪理由標題沒有變化。</p>"
-          }
-        </div>`;
-    };
-    fromSelect.addEventListener("change", renderComparison);
-    toSelect.addEventListener("change", renderComparison);
-    renderComparison();
-  };
-
-
   const render = ({
     recommendation,
     committee,
     market,
     system,
-    history,
     learning,
     performance,
     rebalance,
@@ -728,7 +622,6 @@ const researchStatusLabel = (value) => {
     const overview = createOverviewModel({ dashboardAnalytics, committee, recommendation });
     const { isLive, invested, cash, modelScore, scoreBand, scoreReason, scoreAngle, donut, committeeSize, health, analyticsPerformance, returnObjective } = overview;
     const statusLabel = "研究建議 · 研究用途";
-    const comparableRecommendations = comparisonRecords(history, recommendation);
     const seriesSummary = performanceSeriesSummary(performance.points);
     root.innerHTML = `
       <div class="app-shell">
@@ -1328,12 +1221,13 @@ const researchStatusLabel = (value) => {
           <section class="panel performance" id="performance" data-tab-section="overview">
             <header class="panel-header">
               <div>
-                <span class="section-kicker">假設策略指數</span>
-                <h2>${money(performance.initial_value_usd)} 假設策略走勢</h2>
+                <span class="section-kicker">研究走勢</span>
+                <h2>假設策略走勢：研究配置後，結果怎麼變化？</h2>
               </div>
               <span class="panel-meta">${escapeHtml(performance.points.length)}<br />評價點</span>
             </header>
             ${buildPerformanceChart(performance.points)}
+            <p class="methodology-note">把這條線想成同一份研究配置的成績單：每個點都記下當時的假設資金變化。重點不是單次漲跌，而是隨著更多紀錄出現，我們能不能看見一致的結果。</p>
             <div class="performance-dates" tabindex="0" aria-label="策略資金各評價日期與金額">
               ${performance.points
                 .map(
@@ -1550,19 +1444,20 @@ const researchStatusLabel = (value) => {
           <section class="panel learning" id="learning" data-tab-section="overview">
             <header class="panel-header">
               <div>
-                <span class="section-kicker">學習循環</span>
-                <h2>這次假設驗證，我們學到什麼？</h2>
+                <span class="section-kicker">白話研究回顧</span>
+                <h2>這輪研究，我們知道了什麼？</h2>
               </div>
               <span class="panel-meta">${escapeHtml(researchStatusLabel(learning.verdict))}<br />${escapeHtml(dateTime(learning.evaluation_cutoff))}</span>
             </header>
+            <p class="methodology-note">這裡不是技術檢查表，而是把研究過程翻成白話：先看市場出現了什麼，再說明目前能得出的結論，以及下一次會怎麼把答案變得更可靠。</p>
             <div class="learning-grid">
               ${learning.lessons
                 .map(
                   (lesson) => `
                     <article class="learning-card">
                       <h3>${escapeHtml(lesson.title)}</h3>
-                      <p><strong>證據</strong>${escapeHtml(lesson.evidence)}</p>
-                      <p><strong>下輪影響</strong>${escapeHtml(lesson.implication)}</p>
+                      <p><strong>我們看到什麼</strong>${escapeHtml(lesson.evidence)}</p>
+                      <p><strong>接下來怎麼做</strong>${escapeHtml(lesson.implication)}</p>
                       <div class="reason-meta">
                         <span>信心 ${escapeHtml(lesson.confidence)}</span>
                         <span>${escapeHtml(lesson.affected_assets.join(" · "))}</span>
@@ -1571,39 +1466,25 @@ const researchStatusLabel = (value) => {
                 )
                 .join("")}
             </div>
-            <div class="committee-columns learning-decisions">
-              <section class="committee-block">
-                <h3>委員會修正</h3>
-                <ul>${renderList(learning.committee_changes, "未提供", glossaryText)}</ul>
-              </section>
-              <section class="committee-block">
-                <h3>是否新增委員</h3>
-                <p>${escapeHtml(learning.member_assessment)}</p>
-              </section>
-              <section class="committee-block">
-                <h3>是否需要 Skill</h3>
-                <p>${escapeHtml(learning.skill_assessment)}</p>
-              </section>
-            </div>
           </section>
 
           <section class="panel research-journal" id="research-journal" data-tab-section="overview">
             <header class="panel-header">
               <div>
-                <span class="section-kicker">每日研究日誌</span>
-                <h2>每日研究：假設、驗證與學習</h2>
+                <span class="section-kicker">研究怎麼累積</span>
+                <h2>用白話看：想法、觀察與下一步</h2>
               </div>
               <span class="panel-meta">${escapeHtml(readinessLabel(researchJournal.readiness))}<br />${escapeHtml(dateTime(researchJournal.data_cutoff))}</span>
             </header>
             <div class="readiness-verdict ${researchJournal.readiness}">
-              <strong>目前系統判定：不足以應付即時事件驅動盤勢</strong>
+              <strong>目前還在累積足夠的比較資料</strong>
               <p>${escapeHtml(researchJournal.readiness_summary)}</p>
             </div>
             <div class="journal-layout">
               <section class="journal-column">
                 <header>
                   <span>01</span>
-                  <h3>我們假設什麼</h3>
+                  <h3>我們想確認什麼</h3>
                 </header>
                 <div class="journal-cards">
                   ${researchJournal.assumptions
@@ -1615,8 +1496,8 @@ const researchStatusLabel = (value) => {
                             <span class="research-status ${escapeHtml(item.status)}">${escapeHtml(researchStatusLabel(item.status))}</span>
                           </div>
                           <p>${escapeHtml(item.statement)}</p>
-                          <small><strong>怎麼驗證</strong>${escapeHtml(item.observable_test)}</small>
-                          <small><strong>目前證據</strong>${escapeHtml(item.evidence)}</small>
+                          <small><strong>我們會怎麼看</strong>${escapeHtml(item.observable_test)}</small>
+                          <small><strong>目前看到的情況</strong>${escapeHtml(item.evidence)}</small>
                         </article>`,
                     )
                     .join("")}
@@ -1625,7 +1506,7 @@ const researchStatusLabel = (value) => {
               <section class="journal-column">
                 <header>
                   <span>02</span>
-                  <h3>我們驗證了什麼</h3>
+                  <h3>目前看到什麼</h3>
                 </header>
                 <div class="journal-cards">
                   ${researchJournal.validations
@@ -1647,7 +1528,7 @@ const researchStatusLabel = (value) => {
               <section class="journal-column lessons">
                 <header>
                   <span>03</span>
-                  <h3>我們學到了什麼</h3>
+                  <h3>這次帶走的重點</h3>
                 </header>
                 <ol class="journal-list">
                   ${researchJournal.lessons
@@ -1658,7 +1539,7 @@ const researchStatusLabel = (value) => {
               <section class="journal-column next">
                 <header>
                   <span>04</span>
-                  <h3>下一步怎麼精進</h3>
+                  <h3>接下來會追蹤什麼</h3>
                 </header>
                 <div class="next-step-list">
                   ${researchJournal.next_steps
@@ -1679,74 +1560,6 @@ const researchStatusLabel = (value) => {
               </section>
             </div>
             <ul class="rebalance-warnings">${renderList(researchJournal.warnings, "無提醒", glossaryText)}</ul>
-          </section>
-
-          <section class="panel decision-compare" id="decision-compare" data-tab-section="overview">
-            <header class="panel-header">
-              <div>
-                <span class="section-kicker">決策差異終端</span>
-                <h2>比較任兩輪配置與十大理由</h2>
-              </div>
-              <span class="panel-meta">${escapeHtml(comparableRecommendations.length)} 次建議<br />公開研究</span>
-            </header>
-            <div class="privacy-boundary">
-              <strong>建議與實際部位比較：私人資料，不在公開網站發布</strong>
-              <p>公開網站只比較相鄰兩輪研究建議；實際部位與成交紀錄僅能在私人環境中依使用者確認資料計算。</p>
-            </div>
-            ${
-              comparableRecommendations.length >= 2
-                ? `
-                  <div class="comparison-controls">
-                    <label>
-                      <span>起始決策</span>
-                      <select data-compare-from>
-                        ${comparableRecommendations
-                          .map(
-                            (item, index) =>
-                              `<option value="${escapeHtml(item.run_id)}"${index === comparableRecommendations.length - 2 ? " selected" : ""}>${escapeHtml(item.run_id)}</option>`,
-                          )
-                          .join("")}
-                      </select>
-                    </label>
-                    <span class="comparison-arrow">→</span>
-                    <label>
-                      <span>目標決策</span>
-                      <select data-compare-to>
-                        ${comparableRecommendations
-                          .map(
-                            (item, index) =>
-                              `<option value="${escapeHtml(item.run_id)}"${index === comparableRecommendations.length - 1 ? " selected" : ""}>${escapeHtml(item.run_id)}</option>`,
-                          )
-                          .join("")}
-                      </select>
-                    </label>
-                  </div>
-                  <div data-compare-result></div>`
-                : `<p class="methodology-note">目前只有一輪可比較建議；累積第二輪後才會啟用差異檢視。</p>`
-            }
-          </section>
-
-          <section class="panel archive" id="archive" data-tab-section="overview">
-            <header class="panel-header">
-              <div>
-                <span class="section-kicker">公開決策封存</span>
-                <h2>歷史決策、討論與驗證</h2>
-              </div>
-              <span class="panel-meta">${escapeHtml(history.length)}<br />公開紀錄</span>
-            </header>
-            <div class="committee-intro">
-              <p>
-                公開資訊與非個人資料會保留在此。內容包含結構化提案、批判、${agentLink("cio")} 決策與
-                假設績效驗證；不包含實際帳戶、來源帳戶、個人識別、成交或隱藏推理。
-              </p>
-            </div>
-            <div class="archive-list">
-              ${history
-                .slice()
-                .reverse()
-                .map((record) => renderHistoricalRecord(record))
-                .join("")}
-            </div>
           </section>
 
           <section class="panel" id="risk" data-tab-section="overview">
@@ -1803,29 +1616,7 @@ const researchStatusLabel = (value) => {
     });
     installPerformanceChart(root, performance.points);
     localizeRenderedText(root);
-    installDecisionComparison(comparableRecommendations);
-    localizeRenderedText(root);
     const loader = createDataLoader(dataBase);
-    root.querySelectorAll("[data-history-id]").forEach((card) => {
-      card.addEventListener("toggle", async () => {
-        if (!card.open || card.dataset.loaded === "true") return;
-        const body = card.querySelector(".archive-body");
-        if (!body) return;
-        body.innerHTML = '<p class="methodology-note" role="status">正在載入完整公開紀錄…</p>';
-        try {
-          const detail = await loader.loadHistoryRecord(card.dataset.historyId);
-          const replacement = document.createRange().createContextualFragment(renderHistoricalRecord(detail)).firstElementChild;
-          if (replacement) {
-            replacement.open = true;
-            replacement.dataset.loaded = "true";
-            card.replaceWith(replacement);
-            localizeRenderedText(root);
-          }
-        } catch (error) {
-          body.innerHTML = `<p class="error-state" role="alert">無法載入歷史紀錄：${escapeHtml(error.message)}</p>`;
-        }
-      });
-    });
     const showLazyTabError = (target, error) => {
       const section = root.querySelector(`[data-tab-section="${target}"]`);
       if (!section) return;

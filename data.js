@@ -1,5 +1,4 @@
 const cache = new Map();
-const historyId = /^[A-Za-z0-9][A-Za-z0-9._+-]*$/;
 
 export function createDataLoader(base) {
   const fetchJson = (name, { immutable = false } = {}) => {
@@ -33,7 +32,6 @@ export function createDataLoader(base) {
     committee,
     market,
     system,
-    history,
     learning,
     performance,
     rebalance,
@@ -48,7 +46,6 @@ export function createDataLoader(base) {
     fetchJson("committee_summary.json"),
     fetchJson("market_snapshot.json"),
     fetchJson("system.json"),
-    fetchJson("history/index.json"),
     fetchJson("learning.json"),
     fetchJson("performance.json"),
     fetchJson("rebalance.json"),
@@ -60,18 +57,13 @@ export function createDataLoader(base) {
     fetchOptionalJson("research_extension_status.json"),
   ]);
 
-    return { recommendation, committee, market, system, history, learning, performance, rebalance, researchJournal, dashboardAnalytics, thesisBook, earningsReviews, marketIntelligence, extensionStatus, agentProfiles: {} };
+    return { recommendation, committee, market, system, learning, performance, rebalance, researchJournal, dashboardAnalytics, thesisBook, earningsReviews, marketIntelligence, extensionStatus, agentProfiles: {} };
   };
 
   const loadCommitteePayload = () => fetchJson("committee.json");
-  const loadHistoryIndex = () => fetchJson("history/index.json");
-  const loadHistoryRecord = (id) => {
-    if (!historyId.test(id)) throw new Error("invalid history archive id");
-    return fetchJson(`history/${id}.json`, { immutable: true });
-  };
   const loadAgentProfiles = () => fetchJson("agent_profiles.json");
 
-  return { loadOverviewPayload, loadCommitteePayload, loadHistoryIndex, loadHistoryRecord, loadAgentProfiles };
+  return { loadOverviewPayload, loadCommitteePayload, loadAgentProfiles };
 }
 
 export function loadDashboardPayload(base) {

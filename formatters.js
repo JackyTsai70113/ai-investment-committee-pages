@@ -40,7 +40,6 @@ const DISPLAY_TRANSLATIONS = [
   ["completed_windows", "已完成區間"],
   ["positive_windows", "正報酬區間"],
   ["latest_return_percent", "最近報酬率"],
-  ["short_window_evidence", "短期證據"],
   ["point-in-time", "特定時間點"],
   ["close-to-close", "收盤至收盤"],
   ["forward-fill", "向前填補"],
