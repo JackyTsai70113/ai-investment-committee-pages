@@ -230,115 +230,6 @@ export function bootstrapDashboard(root, payload, base) {
       </div>`;
   };
 
-  const normalizeDiagnostic = (item) => {
-    const text = `${item?.summary || ""} ${item?.effect || ""}`;
-    if (/事件日曆|FOMC|BLS|NYSE|earnings|財報/.test(text)) {
-      return {
-        ...item,
-        kind: "evidence_gap",
-        severity: "medium",
-        summary: "事件日曆完整性提示：部分官方事件資料需要補齊。",
-        effect: "只提示事件時間與事件因果的解讀可能不完整，不改變市場方向、配置權重或風險否決。",
-        source_urls: [],
-      };
-    }
-    return item;
-  };
-
-  const diagnosticKindLabel = (value) => {
-    const labels = {
-      data_quality: "資料品質提示",
-      evidence_gap: "證據缺口",
-      statistical_maturity: "統計成熟度",
-      policy_constraint: "研究警示",
-    };
-    return labels[value] || String(value || "未分類");
-  };
-
-  const diagnosticSeverityLabel = (value) => {
-    const labels = {
-      low: "低",
-      medium: "中",
-      high: "高",
-    };
-    return labels[value] || String(value || "未分類");
-  };
-
-  const renderDiagnostics = (recommendation) => {
-    const diagnostics = asList(recommendation?.diagnostics).map(normalizeDiagnostic);
-
-    return `
-      <section
-        class="panel"
-        id="diagnostics"
-        data-tab-section="overview"
-      >
-        <header class="panel-header">
-          <div>
-            <span class="section-kicker">
-              資料品質提示
-            </span>
-            <h2>資料與決策提示</h2>
-          </div>
-          <span class="panel-meta">
-            ${escapeHtml(diagnostics.length)}
-            項
-          </span>
-        </header>
-
-        ${
-          diagnostics.length
-            ? `
-              <div class="reasons-grid">
-                ${diagnostics
-                  .map(
-                    (item) => `
-                      <article class="reason-card">
-                        <h3>
-                          ${escapeHtml(item.summary)}
-                        </h3>
-
-                        <p>
-                          ${escapeHtml(item.effect)}
-                        </p>
-
-                        <div class="reason-meta">
-                          <span>
-                            ${escapeHtml(
-                              diagnosticKindLabel(
-                                item.kind,
-                              ),
-                            )}
-                          </span>
-                          <span>
-                            嚴重度
-                            ${escapeHtml(
-                              diagnosticSeverityLabel(
-                                item.severity,
-                              ),
-                            )}
-                          </span>
-                        </div>
-
-                        ${renderSourceLinks(
-                          item.source_urls,
-                        )}
-                      </article>
-                    `,
-                  )
-                  .join("")}
-              </div>
-            `
-            : `
-              <p class="methodology-note">
-                本輪沒有需要另外揭露的重大資料品質或決策限制。
-              </p>
-            `
-        }
-      </section>
-    `;
-  };
-
   const normalizeAgentName = (value) =>
     String(value || "")
       .trim()
@@ -871,7 +762,6 @@ const researchStatusLabel = (value) => {
                 </table>
               </div>
             </div>
-            <p class="methodology-note allocation-status-note">目前頁面顯示的是已封存快照中的研究建議；政策已移除固定短期持有天數門檻，事件資料缺漏也只作警示。重新執行委員會後，才會產生依新規則計算的新配置。</p>
             <p class="risk-plan-disclaimer">風險預算依下一個完成交易日重新檢視。</p>
             ${(recommendation.position_risk_plans || []).length
               ? `<div class="table-wrap strategy-table-wrap risk-plan-table">
@@ -883,7 +773,7 @@ const researchStatusLabel = (value) => {
                         <td data-label="參考／失效價">${plan.reference_price ? `${money(plan.reference_price)} / ${money(plan.invalidation_price)}` : "無法量化"}</td>
                         <td data-label="基本損失">${money(plan.base_loss_usd)} (${percent(plan.base_loss_fraction)})</td>
                         <td data-label="跳空壓力">${money(plan.stress_loss_usd)} (${percent(plan.stress_gap_percent)})</td>
-                        <td data-label="狀態">${plan.status === "unquantified" ? "未量化，未通過 1.5%" : escapeHtml(plan.status)}</td>
+                        <td data-label="狀態">${plan.status === "unquantified" ? "尚無可用風險區間" : plan.status === "quantified" ? "已量化" : "不適用"}</td>
                       </tr>`).join("")}</tbody>
                   </table>
                 </div>`
@@ -917,7 +807,6 @@ const researchStatusLabel = (value) => {
             </div>
           </section>
 
-          ${renderDiagnostics(recommendation)}
         </div>
         </div>
 
@@ -1198,7 +1087,6 @@ const researchStatusLabel = (value) => {
                 </tbody>
               </table>
             </div>
-            <ul class="rebalance-warnings">${renderList(rebalance.warnings, "無提醒", glossaryText)}</ul>
           </section>
 
           <section class="panel performance" id="performance" data-tab-section="overview">
@@ -1353,34 +1241,6 @@ const researchStatusLabel = (value) => {
                   </details>`
                 : ""
             }
-            ${
-              (market.source_catalog || []).length
-                ? `
-                  <details class="evidence-details">
-                    <summary>查看資料來源、時效與限制</summary>
-                    <div class="source-grid">
-                      ${market.source_catalog
-                        .map(
-                          (source) => {
-                            const localized = localizedSource(source);
-                            return `
-                            <article class="source-card">
-                              <header>
-                                <a href="${escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(localized.name)}</a>
-                                <span>${source.active ? "引擎支援" : "候選來源"}</span>
-                              </header>
-                              <p>${escapeHtml(localized.use)}</p>
-                              <small>${escapeHtml(localized.cadence)} · ${escapeHtml(localized.latency)}</small>
-                              <ul>${renderList(localized.limits, "未提供", glossaryText)}</ul>
-                            </article>`;
-                          },
-                        )
-                        .join("")}
-                    </div>
-                  </details>`
-                : ""
-            }
-            <ul class="rebalance-warnings">${renderList(market.warnings, "無警示", glossaryText)}</ul>
           </section>
 
           <section class="panel learning" id="market-survey" data-tab-section="overview">
@@ -1542,7 +1402,6 @@ const researchStatusLabel = (value) => {
                 </div>
               </section>
             </div>
-            <ul class="rebalance-warnings">${renderList(researchJournal.warnings, "無提醒", glossaryText)}</ul>
           </section>
 
           <section class="panel" id="risk" data-tab-section="overview">

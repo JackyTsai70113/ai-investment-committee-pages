@@ -18,6 +18,13 @@
   --text: #f0f5ea;
   --shadow: 0 28px 80px rgba(0, 0, 0, 0.28);
   --radius: 22px;
+  --sidebar-base: #0b1815;
+  --sidebar-raised: #10231d;
+  --sidebar-hover: #173329;
+  --sidebar-active: #1b4134;
+  --sidebar-line: #1d3b31;
+  --sidebar-ink: #e0ede4;
+  --sidebar-muted: #a7bcb0;
   font-family:
     Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
@@ -104,6 +111,7 @@ a {
   display: grid;
   grid-template-columns: 14rem minmax(0, 1fr);
   gap: 0;
+  background: var(--base);
   overflow-x: clip;
 }
 
@@ -116,14 +124,19 @@ a {
   display: grid;
   grid-template-rows: auto minmax(0, 1fr) auto;
   padding: 0.85rem 0.45rem 0.55rem;
-  border-right: 1px solid #dfdfe8;
-  background: #f2f1f8;
-  color: #30303b;
+  border-right: 1px solid var(--sidebar-line);
+  background:
+    linear-gradient(180deg, rgba(25, 59, 47, 0.38), transparent 15rem),
+    var(--sidebar-base);
+  color: var(--sidebar-ink);
 }
 
 .app-content {
   min-width: 0;
   padding: 1rem;
+  background:
+    radial-gradient(circle at 10% -10%, rgba(199, 241, 91, 0.05), transparent 29rem),
+    var(--base);
 }
 
 .tab-panel,
@@ -142,7 +155,7 @@ a {
 }
 
 .sidebar-project-name {
-  color: #26334b;
+  color: var(--sidebar-muted);
   font-size: 0.78rem;
   font-weight: 700;
 }
@@ -160,10 +173,10 @@ a {
   height: 1.55rem;
   flex: 0 0 auto;
   place-content: center;
-  border: 1px solid #e2bb6a;
+  border: 1px solid rgba(199, 241, 91, 0.58);
   border-radius: 0.35rem;
-  background: #fff6d9;
-  color: #b1791e;
+  background: rgba(199, 241, 91, 0.12);
+  color: var(--acid);
   font: 800 1.1rem/1 ui-sans-serif, sans-serif;
 }
 
@@ -174,7 +187,7 @@ a {
 
 .brand-copy strong {
   overflow: hidden;
-  color: #30303b;
+  color: var(--sidebar-ink);
   font-size: 0.88rem;
   letter-spacing: 0.01em;
   text-overflow: ellipsis;
@@ -182,7 +195,7 @@ a {
 }
 
 .brand-copy span {
-  color: #666570;
+  color: var(--sidebar-muted);
   font: 500 0.69rem/1.3 ui-sans-serif, sans-serif;
 }
 
@@ -204,15 +217,15 @@ a {
   border: 0;
   border-radius: 0.4rem;
   background: transparent;
-  color: #3c3c48;
+  color: var(--sidebar-ink);
   cursor: pointer;
   font-size: 0.82rem;
   text-align: left;
 }
 
 .sidebar-toggle:hover {
-  background: #e3e2eb;
-  color: #1f4b7a;
+  background: var(--sidebar-hover);
+  color: var(--acid);
 }
 
 .tab-menu-toggle {
@@ -239,7 +252,7 @@ a {
 
 .sidebar-section-label {
   padding: 0.3rem 0.5rem 0.15rem;
-  color: #6b6a75;
+  color: var(--sidebar-muted);
   font-size: 0.74rem;
   font-weight: 600;
 }
@@ -255,7 +268,7 @@ a {
   border: 0;
   border-radius: 0.4rem;
   padding: 0.35rem 0.5rem;
-  color: #3c3c48;
+  color: var(--sidebar-ink);
   background: transparent;
   cursor: pointer;
   font-size: 0.84rem;
@@ -267,7 +280,7 @@ a {
   width: 1.5rem;
   height: 1.5rem;
   place-items: center;
-  color: #52515d;
+  color: var(--sidebar-muted);
   font: 500 1.05rem/1 ui-sans-serif, sans-serif;
 }
 
@@ -278,29 +291,30 @@ a {
 }
 
 .tab-trigger:hover {
-  background: #e7e6ee;
+  background: var(--sidebar-hover);
 }
 
 .tab-trigger.active {
-  color: #214263;
-  background: #d8e5f8;
+  color: var(--acid);
+  background: var(--sidebar-active);
+  box-shadow: inset 0.2rem 0 0 var(--acid);
   font-weight: 650;
 }
 
 .tab-trigger.active .tab-icon {
-  color: #214263;
+  color: var(--acid);
 }
 
 .sidebar-footer {
   display: grid;
   gap: 0.4rem;
   padding: 0.5rem 0.05rem 0;
-  border-top: 1px solid #dedde6;
+  border-top: 1px solid var(--sidebar-line);
 }
 
 .sidebar-footer-note {
   padding: 0 0.5rem;
-  color: #64636e;
+  color: var(--sidebar-muted);
   font-size: 0.72rem;
 }
 
@@ -2988,7 +3002,7 @@ td {
     height: auto;
     margin-bottom: 0;
     border-right: 0;
-    border-bottom: 1px solid #dfdfe8;
+    border-bottom: 1px solid var(--sidebar-line);
   }
 
   .topbar {
