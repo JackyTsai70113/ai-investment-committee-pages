@@ -17,9 +17,9 @@ const colors = ["#c7f15b", "#67b7ff", "#ae91ff", "#ff9864", "#7ecb83", "#f3f0d8"
 const LEADERBOARD_VISIBLE_LIMIT = 5;
 
 function createOverviewModel({ dashboardAnalytics, committee, recommendation }) {
-  const invested = recommendation.allocations
+  const investedWeight = recommendation.allocations
     .filter((item) => item.symbol !== "CASH")
-    .reduce((total, item) => total + Number(item.target_amount_usd), 0);
+    .reduce((total, item) => total + Number(item.target_weight), 0);
   const cash = recommendation.allocations.find((item) => item.symbol === "CASH");
   const modelScore = Math.max(0, Math.min(100, Number(recommendation.model_score) || 0));
   const scoreBand =
@@ -44,7 +44,7 @@ function createOverviewModel({ dashboardAnalytics, committee, recommendation }) 
       (committee.summary_counts?.critiques ?? committee.critiques.length),
     donut: `conic-gradient(${segments.join(",")})`,
     health: dashboardAnalytics.portfolio_health,
-    invested,
+    investedWeight,
     isLive: recommendation.status === "live",
     modelScore,
     returnObjective: dashboardAnalytics.return_objective,
@@ -109,16 +109,14 @@ export function bootstrapDashboard(root, payload, base) {
       (market.quotes || []).filter((item) => symbols.includes(item.symbol)),
     ).slice(0, limit);
 
-  const portfolioMix = (recommendation) => {
-    const invested = recommendation.allocations
-      .filter((item) => item.symbol !== "CASH")
-      .reduce((total, item) => total + Number(item.target_weight), 0);
-    const cash = recommendation.allocations.find((item) => item.symbol === "CASH");
-    return {
-      investedWeight: invested,
-      cashWeight: Number(cash?.target_weight || 0),
-      cashAmount: Number(cash?.target_amount_usd || 0),
-    };
+  const tablePercent = (value) => {
+    const parsed = toNumber(value);
+    return parsed === null ? "—" : `${parsed.toFixed(2)}%`;
+  };
+
+  const tableNumber = (value, digits = 1) => {
+    const parsed = toNumber(value);
+    return parsed === null ? "—" : parsed.toFixed(digits);
   };
 
   const { buildChart: buildPerformanceChart, installChart: installPerformanceChart } = createPerformanceRenderer();
@@ -156,24 +154,6 @@ export function bootstrapDashboard(root, payload, base) {
       <a class="symbol-link" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">
         ${escapeHtml(symbol)}
       </a>`;
-  };
-
-  const rebalanceActionLabel = (value) => {
-    const labels = { add: "增加", hold: "維持", reduce: "減少", exit: "退出" };
-    return labels[value] || String(value || "");
-  };
-
-  const signedMoney = (value) => {
-    const numeric = Number(value || 0);
-    const sign = numeric > 0 ? "+" : "";
-    return `${sign}${money(numeric)}`;
-  };
-
-  const signedShares = (value) => {
-    if (value === null || value === undefined) return "—";
-    const numeric = Number(value);
-    const sign = numeric > 0 ? "+" : "";
-    return `${sign}${numeric.toFixed(4)} 股`;
   };
 
   const formatDateLabel = (value) => {
@@ -493,7 +473,6 @@ const researchStatusLabel = (value) => {
     system,
     learning,
     performance,
-    rebalance,
     researchJournal,
     dashboardAnalytics,
     thesisBook,
@@ -502,7 +481,7 @@ const researchStatusLabel = (value) => {
     extensionStatus,
   }) => {
     const overview = createOverviewModel({ dashboardAnalytics, committee, recommendation });
-    const { isLive, invested, cash, modelScore, scoreBand, scoreReason, scoreAngle, donut, committeeSize, health, analyticsPerformance, returnObjective } = overview;
+    const { isLive, investedWeight, cash, modelScore, scoreBand, scoreReason, scoreAngle, donut, committeeSize, health, analyticsPerformance, returnObjective } = overview;
     const statusLabel = "研究建議 · 研究用途";
     const seriesSummary = performanceSeriesSummary(performance.points);
     root.innerHTML = `
@@ -512,7 +491,6 @@ const researchStatusLabel = (value) => {
           <header class="topbar">
             <span class="sidebar-project-name">研究平台</span>
             <div class="brand">
-              <span class="brand-mark" aria-hidden="true">▱</span>
               <span class="brand-copy">
                 <strong>投資委員會</strong>
                 <span>組合研究與短線追蹤</span>
@@ -589,19 +567,19 @@ const researchStatusLabel = (value) => {
 
         <section class="metrics" aria-label="投資組合總覽" data-tab-section="overview">
           <article class="metric">
-            <span class="metric-label">總策略資金</span>
-            <strong class="metric-value">${money(recommendation.capital_usd)}</strong>
-            <span class="metric-foot">本次委員會配置基準</span>
+            <span class="metric-label">本輪市場立場</span>
+            <strong class="metric-value">${escapeHtml(decisionLabel(recommendation.market_stance))}</strong>
+            <span class="metric-foot">研究方向，不代表交易指令</span>
           </article>
           <article class="metric">
             <span class="metric-label">風險資產</span>
-            <strong class="metric-value">${money(invested)}</strong>
-            <span class="metric-foot">${percent(invested / Number(recommendation.capital_usd || 1))} 策略曝險</span>
+            <strong class="metric-value">${percent(investedWeight)}</strong>
+            <span class="metric-foot">本輪研究配置比例</span>
           </article>
           <article class="metric">
             <span class="metric-label">預留現金</span>
-            <strong class="metric-value">${money(cash?.target_amount_usd || 0)}</strong>
-            <span class="metric-foot">${percent(cash?.target_weight || 0)} 流動性緩衝</span>
+            <strong class="metric-value">${percent(cash?.target_weight || 0)}</strong>
+            <span class="metric-foot">可依下一輪研究調整</span>
           </article>
           <article class="metric">
             <span class="metric-label">委員會</span>
@@ -717,8 +695,8 @@ const researchStatusLabel = (value) => {
               <div class="allocation-visual">
                 <div class="donut" style="--donut:${escapeHtml(donut)}">
                   <div class="donut-center">
-                    <strong>${money(recommendation.capital_usd)}</strong>
-                    <span>策略資金</span>
+                    <strong>100%</strong>
+                    <span>配置比例</span>
                   </div>
                 </div>
                 <div class="legend">
@@ -739,7 +717,6 @@ const researchStatusLabel = (value) => {
                   <thead>
                     <tr>
                       <th>標的</th>
-                      <th>建議金額</th>
                       <th>目標比例</th>
                       <th>類型</th>
                       <th>研究／風控備註</th>
@@ -751,7 +728,6 @@ const researchStatusLabel = (value) => {
                         (item) => `
                           <tr>
                             <td data-label="標的">${symbolLink(item.symbol)}</td>
-                            <td data-label="建議金額">${money(item.target_amount_usd)}</td>
                             <td data-label="目標比例">${percent(item.target_weight)}</td>
                             <td data-label="類型"><span class="asset-type">${escapeHtml(assetTypeLabel(item.asset_type))}</span></td>
                             <td data-label="研究／風控備註" class="allocation-note">${glossaryText(item.note)}</td>
@@ -1044,51 +1020,6 @@ const researchStatusLabel = (value) => {
             ${renderAgentDirectory(market, recommendation, learning)}
           </section>
 
-          <section class="panel rebalance" id="rebalance" data-tab-section="overview">
-            <header class="panel-header">
-              <div>
-                <span class="section-kicker">研究配置調整摘要</span>
-                <h2>本輪建議如何調整</h2>
-              </div>
-              <span class="panel-meta">${escapeHtml(rebalance.pricing_session)} 收盤</span>
-            </header>
-            <p class="methodology-note">${escapeHtml(rebalance.basis)}</p>
-            <div class="table-wrap strategy-table-wrap">
-              <table>
-                <thead>
-                  <tr>
-                    <th>標的</th>
-                    <th>方向</th>
-                    <th>建議金額變化</th>
-                    <th>股數變化</th>
-                    <th>調整後配置</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  ${rebalance.instructions
-                    .map(
-                      (item) => `
-                    <tr>
-                          <td data-label="標的">${symbolLink(item.symbol)}</td>
-                          <td data-label="方向">${escapeHtml(rebalanceActionLabel(item.action))}</td>
-                          <td data-label="建議金額變化">${escapeHtml(signedMoney(item.change_usd))}</td>
-                            <td data-label="股數變化">
-                              ${escapeHtml(signedShares(item.estimated_share_change))}
-                              ${
-                                item.reference_close_usd
-                                  ? `<small class="close-reference">@ ${money(item.reference_close_usd)}</small>`
-                                  : ""
-                              }
-                            </td>
-                          <td data-label="調整後配置">${money(item.new_target_usd)}</td>
-                        </tr>`,
-                    )
-                    .join("")}
-                </tbody>
-              </table>
-            </div>
-          </section>
-
           <section class="panel performance" id="performance" data-tab-section="overview">
             <header class="panel-header">
               <div>
@@ -1160,11 +1091,12 @@ const researchStatusLabel = (value) => {
                       <thead>
                         <tr>
                           <th>標的</th>
-                          <th>1日／5日／20日</th>
-                          <th>20日年化波動</th>
-                          <th>相對20日／50日移動平均線</th>
-                          <th>14日相對強弱指標</th>
-                          <th>成交量比</th>
+                          <th>短線動能<br /><small>5日</small></th>
+                          <th>月度趨勢<br /><small>20日</small></th>
+                          <th>趨勢位置<br /><small>距20日均線</small></th>
+                          <th>波動風險<br /><small>20日年化</small></th>
+                          <th>成交確認<br /><small>20日量比</small></th>
+                          <th>動能狀態<br /><small>RSI 14日</small></th>
                         </tr>
                       </thead>
                       <tbody>
@@ -1173,27 +1105,18 @@ const researchStatusLabel = (value) => {
                             (item) => `
                               <tr>
                                 <td>${symbolLink(item.symbol)}</td>
-                                <td>${escapeHtml(item.return_1d_percent ?? "—")}% / ${escapeHtml(item.return_5d_percent ?? "—")}% / ${escapeHtml(item.return_20d_percent ?? "—")}%</td>
-                                <td>${escapeHtml(item.volatility_20d_annualized_percent ?? "—")}%</td>
-                                <td>${escapeHtml(item.distance_from_ma20_percent ?? "—")}% / ${escapeHtml(item.distance_from_ma50_percent ?? "—")}%</td>
-                                <td>${escapeHtml(item.rsi14 ?? "—")}</td>
-                                <td>${escapeHtml(item.volume_ratio_20d ?? "—")}×</td>
+                                <td class="numeric">${escapeHtml(tablePercent(item.return_5d_percent))}</td>
+                                <td class="numeric">${escapeHtml(tablePercent(item.return_20d_percent))}</td>
+                                <td class="numeric">${escapeHtml(tablePercent(item.distance_from_ma20_percent))}</td>
+                                <td class="numeric">${escapeHtml(tablePercent(item.volatility_20d_annualized_percent))}</td>
+                                <td class="numeric">${escapeHtml(tableNumber(item.volume_ratio_20d, 2))}×</td>
+                                <td class="numeric">${escapeHtml(tableNumber(item.rsi14))}</td>
                               </tr>`,
                           )
                           .join("")}
                       </tbody>
                     </table>
                   </div>`
-                : ""
-            }
-            ${
-              market.volatility_curve
-              ? `<p class="methodology-note">波動率期限結構（僅作風險脈絡）：資料覆蓋範圍為 ${escapeHtml(market.volatility_curve.coverage)}；截止時間 ${escapeHtml(dateTime(market.volatility_curve.data_cutoff))}。${market.volatility_curve.features ? `曲線形狀為 ${escapeHtml(market.volatility_curve.features.curve_shape)}，水準為 ${escapeHtml(market.volatility_curve.features.level_bucket)}。` : "資料不完整、延遲或過期時不產生曲線判讀。"} ${escapeHtml(market.volatility_curve.note)}</p>`
-                : ""
-            }
-            ${
-              market.options_positioning
-              ? `<p class="methodology-note">選擇權活動資料：${escapeHtml(market.options_positioning.coverage)}。${escapeHtml(market.options_positioning.limitation)}</p>`
                 : ""
             }
             ${

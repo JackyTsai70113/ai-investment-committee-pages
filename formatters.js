@@ -96,6 +96,8 @@ const DISPLAY_TRANSLATIONS = [
   ["complete", "完整"],
   ["supported", "暫時支持"],
   ["challenged", "受到挑戰"],
+  ["stale", "資料已過時"],
+  ["lower-confidence fallback", "低信心參考"],
   ["volatility_curve", "波動率期限結構"],
   ["curve_", "曲線"],
   ["level_bucket", "水準分類"],

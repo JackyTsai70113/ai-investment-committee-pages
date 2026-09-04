@@ -167,19 +167,6 @@ a {
   min-width: 0;
 }
 
-.brand-mark {
-  display: grid;
-  width: 1.55rem;
-  height: 1.55rem;
-  flex: 0 0 auto;
-  place-content: center;
-  border: 1px solid rgba(199, 241, 91, 0.58);
-  border-radius: 0.35rem;
-  background: rgba(199, 241, 91, 0.12);
-  color: var(--acid);
-  font: 800 1.1rem/1 ui-sans-serif, sans-serif;
-}
-
 .brand-copy {
   display: grid;
   min-width: 0;
@@ -890,6 +877,12 @@ a {
 
 .evidence-table-wrap {
   margin-top: 1rem;
+}
+
+.evidence-table-wrap .numeric {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  white-space: nowrap;
 }
 
 .filing-grid {
