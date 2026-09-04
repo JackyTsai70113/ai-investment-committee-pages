@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "currency": "USD",
   "initial_value_usd": "6000.00",
-  "updated_at": "2026-09-03T14:38:15.013831Z",
+  "updated_at": "2026-09-04T14:24:58.278696Z",
   "status": "hypothetical",
   "methodology": "假設按每輪建議權重持有碎股，並在下一個評價點按最新建議重新平衡；忽略手續費、價差、滑價、稅負與匯率。這是研究策略指數，不是實際帳戶績效。",
   "points": [
@@ -1414,6 +1414,141 @@
       "data_provenance": "Benchmark closes were captured from this market snapshot; no later data is used.",
       "target_weights": {
         "CASH": "1"
+      }
+    },
+    {
+      "as_of": "2026-09-04T14:24:58.278696Z",
+      "run_id": "learning-20260904T142549Z",
+      "price_session": "2026-09-04",
+      "value_usd": "6104.99",
+      "profit_loss_usd": "104.99",
+      "return_percent": "1.7498",
+      "prices": [
+        {
+          "symbol": "AMD",
+          "price_usd": "468.230011"
+        },
+        {
+          "symbol": "CL=F",
+          "price_usd": "91.300003"
+        },
+        {
+          "symbol": "DIA",
+          "price_usd": "534.099976"
+        },
+        {
+          "symbol": "ERX",
+          "price_usd": "108.010002"
+        },
+        {
+          "symbol": "GLD",
+          "price_usd": "406.269989"
+        },
+        {
+          "symbol": "IWM",
+          "price_usd": "295.570007"
+        },
+        {
+          "symbol": "NVDA",
+          "price_usd": "234.399796"
+        },
+        {
+          "symbol": "PLTR",
+          "price_usd": "176.940002"
+        },
+        {
+          "symbol": "QQQ",
+          "price_usd": "719.590027"
+        },
+        {
+          "symbol": "SMH",
+          "price_usd": "567.325012"
+        },
+        {
+          "symbol": "SOXL",
+          "price_usd": "116.5"
+        },
+        {
+          "symbol": "SPY",
+          "price_usd": "771.090027"
+        },
+        {
+          "symbol": "SQQQ",
+          "price_usd": "38.09"
+        },
+        {
+          "symbol": "TLT",
+          "price_usd": "82.441902"
+        },
+        {
+          "symbol": "TQQQ",
+          "price_usd": "72.57"
+        },
+        {
+          "symbol": "VTI",
+          "price_usd": "380.0"
+        },
+        {
+          "symbol": "^TNX",
+          "price_usd": "4.762"
+        },
+        {
+          "symbol": "^VIX",
+          "price_usd": "14.32"
+        }
+      ],
+      "note": "缺少行情的標的按零報酬處理：AVGO, META。假設績效，不代表實際成交。",
+      "net_value_usd": "6102.01",
+      "turnover": "0.80",
+      "estimated_spread_usd": "0.85",
+      "estimated_slippage_usd": "0.99",
+      "estimated_fees_usd": "0.00",
+      "cost_model_version": "2026-08-15.1",
+      "cost_model_source": "Research assumption; one-way estimated friction, not broker execution data.",
+      "tax_treatment": "excluded",
+      "fx_treatment": "not_applicable",
+      "benchmarks": [
+        {
+          "symbol": "DIA",
+          "price_usd": "534.099976",
+          "price_session": "2026-09-04",
+          "source": "Yahoo Finance via yfinance"
+        },
+        {
+          "symbol": "IWM",
+          "price_usd": "295.570007",
+          "price_session": "2026-09-04",
+          "source": "Yahoo Finance via yfinance"
+        },
+        {
+          "symbol": "QQQ",
+          "price_usd": "719.590027",
+          "price_session": "2026-09-04",
+          "source": "Yahoo Finance via yfinance"
+        },
+        {
+          "symbol": "SPY",
+          "price_usd": "771.090027",
+          "price_session": "2026-09-04",
+          "source": "Yahoo Finance via yfinance"
+        },
+        {
+          "symbol": "VTI",
+          "price_usd": "380.0",
+          "price_session": "2026-09-04",
+          "source": "Yahoo Finance via yfinance"
+        }
+      ],
+      "data_provenance": "Benchmark closes were captured from this market snapshot; no later data is used.",
+      "target_weights": {
+        "CASH": "0.2",
+        "SPY": "0.2",
+        "GLD": "0.15",
+        "TLT": "0.1",
+        "NVDA": "0.15",
+        "META": "0.08",
+        "AVGO": "0.1",
+        "PLTR": "0.02"
       }
     }
   ]
