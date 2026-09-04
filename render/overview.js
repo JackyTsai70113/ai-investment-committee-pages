@@ -155,6 +155,15 @@ export function bootstrapDashboard(root, payload, base) {
       </a>`;
   };
 
+  const renderTickerText = (value) => {
+    const symbols = Object.keys(googleFinanceExchange).sort((left, right) => right.length - left.length);
+    const pattern = new RegExp(`\\b(${symbols.join("|")})\\b`, "g");
+    return String(value ?? "")
+      .split(pattern)
+      .map((part) => (googleFinanceExchange[part] ? symbolLink(part) : escapeHtml(part)))
+      .join("");
+  };
+
   const { applyLinks: glossaryText, render: renderGlossary } = createGlossaryRenderer(escapeHtml);
   const renderList = (items, emptyMessage = "未提供", transform = escapeHtml) => {
     const values = Array.isArray(items) ? items : [];
@@ -459,6 +468,9 @@ const researchStatusLabel = (value) => {
   }) => {
     const overview = createOverviewModel({ dashboardAnalytics, committee, recommendation });
     const { isLive, investedWeight, cash, modelScore, scoreBand, scoreReason, scoreAngle, donut, committeeSize, health, analyticsPerformance, returnObjective } = overview;
+    const riskPlans = (recommendation.position_risk_plans || []).filter(
+      (plan) => plan.status === "quantified",
+    );
     const statusLabel = "研究建議 · 研究用途";
     root.innerHTML = `
       <div class="app-shell">
@@ -714,18 +726,17 @@ const researchStatusLabel = (value) => {
                 </table>
               </div>
             </div>
-            <p class="risk-plan-disclaimer">風險預算依下一個完成交易日重新檢視。</p>
-            ${(recommendation.position_risk_plans || []).length
+            ${riskPlans.length
               ? `<div class="table-wrap strategy-table-wrap risk-plan-table">
                   <table>
                     <thead><tr><th>部位風險</th><th>參考／失效價</th><th>基本損失</th><th>跳空壓力</th><th>狀態</th></tr></thead>
-                    <tbody>${recommendation.position_risk_plans.map((plan) => `
-                      <tr class="${plan.status === "unquantified" ? "risk-unquantified" : ""}">
-                        <td data-label="部位風險">${escapeHtml(plan.symbol)}</td>
-                        <td data-label="參考／失效價">${plan.reference_price ? `${money(plan.reference_price)} / ${money(plan.invalidation_price)}` : "無法量化"}</td>
+                    <tbody>${riskPlans.map((plan) => `
+                      <tr>
+                        <td data-label="部位風險">${symbolLink(plan.symbol)}</td>
+                        <td data-label="參考／失效價">${money(plan.reference_price)} / ${money(plan.invalidation_price)}</td>
                         <td data-label="基本損失">${money(plan.base_loss_usd)} (${percent(plan.base_loss_fraction)})</td>
                         <td data-label="跳空壓力">${money(plan.stress_loss_usd)} (${percent(plan.stress_gap_percent)})</td>
-                        <td data-label="狀態">${plan.status === "unquantified" ? "尚無可用風險區間" : plan.status === "quantified" ? "已量化" : "不適用"}</td>
+                        <td data-label="狀態">已設定</td>
                       </tr>`).join("")}</tbody>
                   </table>
                 </div>`
@@ -1060,24 +1071,6 @@ const researchStatusLabel = (value) => {
                 : ""
             }
             ${
-              (market.filing_events || []).length
-                ? `
-                  <div class="filing-grid">
-                    ${market.filing_events
-                      .slice(0, 24)
-                      .map(
-                        (event) => `
-                          <a class="filing-card" href="${escapeHtml(event.source_url)}" target="_blank" rel="noopener noreferrer">
-                            <span><strong>${escapeHtml(event.symbol)}</strong> · ${escapeHtml(event.form)}</span>
-                            <strong>${escapeHtml(event.description)}</strong>
-                            <small>${escapeHtml(event.filing_date)}</small>
-                          </a>`,
-                      )
-                      .join("")}
-                  </div>`
-                : ""
-            }
-            ${
               (market.fundamental_facts || []).length
                 ? `
                   <details class="evidence-details">
@@ -1125,16 +1118,13 @@ const researchStatusLabel = (value) => {
                 ? `
                   <div class="learning-grid">
                     ${market.research_evidence
+                      .slice(0, 3)
                       .map(
                         (item) => `
-                          <article class="learning-card">
+                          <article class="learning-card market-survey-card">
                             <h3>${escapeHtml(item.title)}</h3>
-                            <p>${escapeHtml(item.summary)}</p>
-                            <p><strong>市場關聯</strong>${escapeHtml(item.market_relevance)}</p>
-                            <div class="reason-meta">
-                              <span>${escapeHtml(item.category)} · ${escapeHtml(item.region)}</span>
-                              <a href="${escapeHtml(item.source_url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.source_title)}</a>
-                            </div>
+                            <p class="market-survey-summary">${escapeHtml(item.summary)}</p>
+                            <a class="market-survey-source" href="${escapeHtml(item.source_url)}" target="_blank" rel="noopener noreferrer">查看來源</a>
                           </article>`,
                       )
                       .join("")}
@@ -1248,19 +1238,19 @@ const researchStatusLabel = (value) => {
           <section class="panel" id="risk" data-tab-section="overview">
             <header class="panel-header">
               <div>
-                <span class="section-kicker">風險關卡</span>
-                <h2>風險與失效條件</h2>
+                <span class="section-kicker">風險提醒</span>
+                <h2>什麼情況需要重新看？</h2>
               </div>
-              <span class="panel-meta">${escapeHtml(committee.final_decision.risk_veto ? "否決" : "通過")}<br />風險審查</span>
+              <span class="panel-meta">${escapeHtml(committee.final_decision.risk_veto ? "暫停調整" : "目前可執行")}<br />風險檢查</span>
             </header>
             <div class="risk-grid">
               <div class="risk-box">
-                <h3>主要風險</h3>
-                <ul>${recommendation.major_risks.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+                <h3>要先知道的風險</h3>
+                <ul>${recommendation.major_risks.map((item) => `<li>${renderTickerText(item)}</li>`).join("")}</ul>
               </div>
               <div class="risk-box">
-                <h3>策略失效條件</h3>
-                <ul>${recommendation.invalidation_conditions.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+                <h3>何時重新檢查</h3>
+                <ul>${recommendation.invalidation_conditions.map((item) => `<li>${renderTickerText(item)}</li>`).join("")}</ul>
               </div>
             </div>
           </section>
@@ -1268,10 +1258,7 @@ const researchStatusLabel = (value) => {
         </main>
 
     <footer class="footer">
-      <span>研究儀表板</span>
-      <span>市場資料 ${escapeHtml(market.source)}</span>
-      <span>最後更新 ${escapeHtml(dateTime(system.updated_at))}</span>
-      <span>每日收盤後重新驗證與決策</span>
+      <span>資料更新 ${escapeHtml(dateTime(system.updated_at))}</span>
     </footer>
     </div>
   </div>

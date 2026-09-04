@@ -4,7 +4,7 @@
   "generated_at": "2026-07-26T07:20:38.640083Z",
   "data_cutoff": "2026-07-25T10:00:20.353794Z",
   "readiness": "not_ready",
-  "readiness_summary": "先從假設策略走勢看研究配置的變化，再對照配置與風險，理解哪些條件可能影響下一步。",
+  "readiness_summary": "先看市場走勢，再看目前配置與風險；需要調整時，會把原因說清楚。",
   "performance": {
     "last_completed_evaluation_at": "2026-07-25T10:00:20.353794Z",
     "last_completed_value_usd": "6055.77",
@@ -14,77 +14,77 @@
     "provisional_intraday_return_percent": "0.9295",
     "provisional_period_return_percent": "0",
     "sample_assessment": "too_early",
-    "methodology": "這條線把每次研究配置放在同一把尺上比較。它幫我們看方向與變化，隨著紀錄增加，才會更容易判斷策略是否穩定。"
+    "methodology": "這條線呈現研究配置的假設走勢，幫助比較調整前後的變化。"
   },
   "assumptions": [
     {
       "hypothesis_id": "H1",
-      "statement": "這個研究配置能否在不同市場日子裡保持合理表現？",
-      "observable_test": "持續記錄更多收盤日，觀察結果是否在不同日子仍大致一致。",
+      "statement": "這個配置是否仍符合現在的市場走勢與風險？",
+      "observable_test": "比較最新價格、配置比例與風險訊號。",
       "status": "untested",
-      "evidence": "目前資料仍在累積；現在看到的是初步趨勢，不是最後答案。"
+      "evidence": "若走勢明顯改變，就重新檢查配置。"
     },
     {
       "hypothesis_id": "H2",
-      "statement": "這個研究配置能否在不同市場日子裡保持合理表現？",
-      "observable_test": "持續記錄更多收盤日，觀察結果是否在不同日子仍大致一致。",
+      "statement": "這個配置是否仍符合現在的市場走勢與風險？",
+      "observable_test": "比較最新價格、配置比例與風險訊號。",
       "status": "untested",
-      "evidence": "目前資料仍在累積；現在看到的是初步趨勢，不是最後答案。"
+      "evidence": "若走勢明顯改變，就重新檢查配置。"
     },
     {
       "hypothesis_id": "H3",
-      "statement": "這個研究配置能否在不同市場日子裡保持合理表現？",
-      "observable_test": "持續記錄更多收盤日，觀察結果是否在不同日子仍大致一致。",
+      "statement": "這個配置是否仍符合現在的市場走勢與風險？",
+      "observable_test": "比較最新價格、配置比例與風險訊號。",
       "status": "supported",
-      "evidence": "目前資料仍在累積；現在看到的是初步趨勢，不是最後答案。"
+      "evidence": "若走勢明顯改變，就重新檢查配置。"
     }
   ],
   "validations": [
     {
-      "claim": "目前的結果足以證明策略長期有效。",
+      "claim": "目前配置是否需要立即調整？",
       "result": "challenged",
-      "evidence": "還不夠。短期結果會受到市場情緒影響，需要更多收盤日才能公平比較。",
+      "evidence": "先看價格、風險與配置是否一起改變，再決定是否調整。",
       "source_urls": []
     },
     {
-      "claim": "目前的結果足以證明策略長期有效。",
+      "claim": "目前配置是否需要立即調整？",
       "result": "too_early",
-      "evidence": "還不夠。短期結果會受到市場情緒影響，需要更多收盤日才能公平比較。",
+      "evidence": "先看價格、風險與配置是否一起改變，再決定是否調整。",
       "source_urls": []
     },
     {
-      "claim": "目前的結果足以證明策略長期有效。",
+      "claim": "目前配置是否需要立即調整？",
       "result": "challenged",
-      "evidence": "還不夠。短期結果會受到市場情緒影響，需要更多收盤日才能公平比較。",
+      "evidence": "先看價格、風險與配置是否一起改變，再決定是否調整。",
       "source_urls": [
         "https://www.investor.gov/build-wealth-over-time-through-saving-and-investing"
       ]
     }
   ],
   "lessons": [
-    "先看一段時間的結果，再決定是否調整；一天的漲跌不需要立刻改變方向。",
-    "把每次研究配置放在同一把尺上記錄，才能分辨運氣和真正有用的做法。"
+    "市場快速轉弱時，先降低不必要的風險，再重新判斷。",
+    "配置調整要有清楚理由：價格、風險或市場環境其中一項出現明顯變化。"
   ],
   "next_steps": [
     {
       "priority": "P0",
-      "gap": "累積更多可比較的收盤紀錄",
-      "action": "每天用同一種方式記錄研究配置的變化，逐步累積可比較的結果。",
-      "acceptance_test": "資料能清楚說明每次觀察的日期、配置與結果。",
+      "gap": "重新檢查目前配置",
+      "action": "出現明顯市場變化時，檢查價格、風險與配置比例。",
+      "acceptance_test": "每次調整都能清楚說明原因與影響。",
       "source_urls": []
     },
     {
       "priority": "P0",
-      "gap": "累積更多可比較的收盤紀錄",
-      "action": "每天用同一種方式記錄研究配置的變化，逐步累積可比較的結果。",
-      "acceptance_test": "資料能清楚說明每次觀察的日期、配置與結果。",
+      "gap": "重新檢查目前配置",
+      "action": "出現明顯市場變化時，檢查價格、風險與配置比例。",
+      "acceptance_test": "每次調整都能清楚說明原因與影響。",
       "source_urls": []
     },
     {
       "priority": "P0",
-      "gap": "累積更多可比較的收盤紀錄",
-      "action": "每天用同一種方式記錄研究配置的變化，逐步累積可比較的結果。",
-      "acceptance_test": "資料能清楚說明每次觀察的日期、配置與結果。",
+      "gap": "重新檢查目前配置",
+      "action": "出現明顯市場變化時，檢查價格、風險與配置比例。",
+      "acceptance_test": "每次調整都能清楚說明原因與影響。",
       "source_urls": [
         "https://www.investor.gov/build-wealth-over-time-through-saving-and-investing"
       ]

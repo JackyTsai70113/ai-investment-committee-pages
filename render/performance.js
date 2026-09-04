@@ -6,11 +6,23 @@ const signedMoney = (value) => {
   return `${sign}${money(numeric)}`;
 };
 
+export const orderPerformancePoints = (points) =>
+  (Array.isArray(points) ? points : [])
+    .map((item, index) => ({
+      item,
+      index,
+      timestamp: new Date(item?.as_of).getTime(),
+    }))
+    .filter(({ item, timestamp }) => Number.isFinite(Number(item?.value_usd)) && Number.isFinite(timestamp))
+    .sort((left, right) => left.timestamp - right.timestamp || left.index - right.index)
+    .map(({ item }) => item);
+
 export function createPerformanceRenderer() {
   const buildChart = (points) => {
-    const safePoints = points.length
-      ? points
-      : [{ as_of: new Date().toISOString(), value_usd: 6000, profit_loss_usd: 0 }];
+    const safePoints = orderPerformancePoints(points);
+    if (safePoints.length === 0) {
+      safePoints.push({ as_of: new Date().toISOString(), value_usd: 0, profit_loss_usd: 0 });
+    }
     const values = safePoints.map((item) => Number(item.value_usd));
     const timestamps = safePoints.map((item) => new Date(item.as_of).getTime());
     const valueMinimum = Math.min(...values);
@@ -28,7 +40,7 @@ export function createPerformanceRenderer() {
     const timeSpread = Math.max(timeMaximum - timeMinimum, 1);
     const width = 960;
     const height = 380;
-    const padding = { top: 34, right: 24, bottom: 56, left: 84 };
+    const padding = { top: 48, right: 48, bottom: 68, left: 104 };
     const plotWidth = width - padding.left - padding.right;
     const plotHeight = height - padding.top - padding.bottom;
     const coordinates = safePoints.map((item, index) => {
@@ -107,8 +119,9 @@ export function createPerformanceRenderer() {
   };
 
   const installChart = (root, points) => {
+    const safePoints = orderPerformancePoints(points);
     const shell = root.querySelector("[data-performance-chart]");
-    if (!shell || points.length === 0) return;
+    if (!shell || safePoints.length === 0) return;
     const svg = shell.querySelector("svg");
     const hitArea = shell.querySelector("[data-chart-hit-area]");
     const crosshair = shell.querySelector("[data-chart-crosshair]");
@@ -120,11 +133,11 @@ export function createPerformanceRenderer() {
     const dots = [...shell.querySelectorAll(".chart-dot")];
     if (!svg || !hitArea || !crosshair || !activeDot || !tooltip) return;
 
-    let activeIndex = points.length - 1;
+    let activeIndex = safePoints.length - 1;
     const selectPoint = (index) => {
-      activeIndex = Math.max(0, Math.min(points.length - 1, index));
+      activeIndex = Math.max(0, Math.min(safePoints.length - 1, index));
       const dot = dots[activeIndex];
-      const point = points[activeIndex];
+      const point = safePoints[activeIndex];
       if (!dot || !point) return;
       const x = Number(dot.getAttribute("cx"));
       const y = Number(dot.getAttribute("cy"));

@@ -281,10 +281,12 @@ a {
   background: var(--sidebar-hover);
 }
 
-.tab-trigger.active {
+.tab-trigger.active,
+.tab-trigger.active:hover {
   color: var(--acid);
-  background: var(--sidebar-active);
-  box-shadow: inset 0.2rem 0 0 var(--acid);
+  background: transparent;
+  border-inline-start: 0;
+  box-shadow: none;
   font-weight: 650;
 }
 
@@ -959,8 +961,8 @@ a {
 
 .performance-chart-shell {
   position: relative;
-  margin: 0.25rem 0 0.75rem;
-  padding-top: 4.6rem;
+  margin: 1rem 0;
+  padding-top: 5.1rem;
   border: 1px solid var(--line);
   border-radius: 18px;
   background:
@@ -1040,7 +1042,7 @@ a {
 .chart-tooltip {
   position: absolute;
   z-index: 2;
-  top: 1rem;
+  top: 1.25rem;
   left: 50%;
   display: grid;
   min-width: 190px;
@@ -1573,6 +1575,7 @@ a {
 }
 
 .learning-card {
+  min-width: 0;
   padding: 18px;
   border: 1px solid var(--line);
   border-radius: 16px;
@@ -1594,6 +1597,45 @@ a {
   font-size: 0.75rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.market-survey-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.market-survey-card h3 {
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.learning-card .market-survey-summary {
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+}
+
+.market-survey-source {
+  align-self: flex-start;
+  margin-top: auto;
+  color: var(--blue);
+  font-size: 0.82rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.market-survey-source:hover,
+.market-survey-source:focus-visible {
+  color: var(--acid);
+  text-decoration: underline;
 }
 
 .learning-decisions {
@@ -1804,19 +1846,8 @@ a {
   align-items: start;
 }
 
-.risk-plan-disclaimer {
-  margin: 1.2rem 0 0.75rem;
-  color: var(--faint);
-  font-size: 0.85rem;
-}
-
 .risk-plan-table {
   margin-top: 0.75rem;
-}
-
-.risk-unquantified td {
-  color: var(--danger);
-  background: rgba(255, 109, 104, 0.08);
 }
 
 .allocation-visual {
@@ -2792,8 +2823,13 @@ td {
 }
 
 .symbol-link {
+  display: inline-block;
   color: inherit;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.92em;
   font-weight: 800;
+  letter-spacing: 0.025em;
+  white-space: nowrap;
   text-decoration-color: var(--acid);
   text-decoration-thickness: 2px;
   text-underline-offset: 0.2em;
@@ -2877,26 +2913,26 @@ td {
 .risk-box h3 {
   margin: 0 0 0.8rem;
   color: var(--orange);
-  font: 700 0.75rem/1.3 ui-monospace, SFMono-Regular, Menlo, monospace;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: 0.95rem;
+  line-height: 1.35;
 }
 
 .risk-box ul {
   margin: 0;
   padding-left: 1.15rem;
   color: var(--muted);
-  font-size: 0.78rem;
-  line-height: 1.65;
+  font-size: 0.9rem;
+  line-height: 1.7;
 }
 
 .footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 1rem;
   padding: 2rem 0.4rem 0.75rem;
   color: var(--faint);
-  font: 600 0.75rem/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.75rem;
+  line-height: 1.5;
 }
 
 .error-state {
