@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-03T16:13:25.625617Z",
-  "data_cutoff": "2026-09-03T14:38:15.013831Z",
+  "generated_at": "2026-09-04T02:29:21.748737Z",
+  "data_cutoff": "2026-09-03T17:43:01.030337Z",
   "portfolio_health": {
     "score": 74,
     "grade": "stable",
@@ -35,7 +35,7 @@
         "component": "證據與共識",
         "score": 12,
         "maximum": 20,
-        "explanation": "委員共識度 92/100；研究準備度 not_ready。"
+        "explanation": "委員共識度 94/100；研究準備度 not_ready。"
       }
     ]
   },
@@ -94,122 +94,134 @@
     {
       "rank": 1,
       "agent": "liquidity",
+      "participation_calls": 9,
       "evaluated_calls": 8,
       "correct_calls": 4,
       "hit_rate_percent": "50.0000",
       "average_confidence": "72.8889",
-      "status": "too_early",
-      "note": "以相鄰決策點的 SPY 方向做粗略 shadow 評價；少於 20 次不得調整投票權重，此命中率不是個別標的獲利勝率。"
+      "status": "accumulating",
+      "note": "參與次數統計已提交的結構化提案；已評估次數只計入已取得後續 SPY 結果的提案。命中率從第一筆完成評估開始累積，不代表個別標的獲利勝率，也不改變投票權重。"
     },
     {
       "rank": 2,
       "agent": "portfolio",
+      "participation_calls": 9,
       "evaluated_calls": 8,
       "correct_calls": 4,
       "hit_rate_percent": "50.0000",
       "average_confidence": "66.8889",
-      "status": "too_early",
-      "note": "以相鄰決策點的 SPY 方向做粗略 shadow 評價；少於 20 次不得調整投票權重，此命中率不是個別標的獲利勝率。"
+      "status": "accumulating",
+      "note": "參與次數統計已提交的結構化提案；已評估次數只計入已取得後續 SPY 結果的提案。命中率從第一筆完成評估開始累積，不代表個別標的獲利勝率，也不改變投票權重。"
     },
     {
       "rank": 3,
       "agent": "learning",
+      "participation_calls": 8,
       "evaluated_calls": 7,
       "correct_calls": 3,
       "hit_rate_percent": "42.8571",
       "average_confidence": "78.1250",
-      "status": "too_early",
-      "note": "以相鄰決策點的 SPY 方向做粗略 shadow 評價；少於 20 次不得調整投票權重，此命中率不是個別標的獲利勝率。"
+      "status": "accumulating",
+      "note": "參與次數統計已提交的結構化提案；已評估次數只計入已取得後續 SPY 結果的提案。命中率從第一筆完成評估開始累積，不代表個別標的獲利勝率，也不改變投票權重。"
     },
     {
       "rank": 4,
       "agent": "news",
+      "participation_calls": 9,
       "evaluated_calls": 8,
       "correct_calls": 3,
       "hit_rate_percent": "37.5000",
       "average_confidence": "68.1111",
-      "status": "too_early",
-      "note": "以相鄰決策點的 SPY 方向做粗略 shadow 評價；少於 20 次不得調整投票權重，此命中率不是個別標的獲利勝率。"
+      "status": "accumulating",
+      "note": "參與次數統計已提交的結構化提案；已評估次數只計入已取得後續 SPY 結果的提案。命中率從第一筆完成評估開始累積，不代表個別標的獲利勝率，也不改變投票權重。"
     },
     {
       "rank": 5,
       "agent": "ownership",
+      "participation_calls": 7,
       "evaluated_calls": 6,
       "correct_calls": 2,
       "hit_rate_percent": "33.3333",
       "average_confidence": "62.8571",
-      "status": "too_early",
-      "note": "以相鄰決策點的 SPY 方向做粗略 shadow 評價；少於 20 次不得調整投票權重，此命中率不是個別標的獲利勝率。"
+      "status": "accumulating",
+      "note": "參與次數統計已提交的結構化提案；已評估次數只計入已取得後續 SPY 結果的提案。命中率從第一筆完成評估開始累積，不代表個別標的獲利勝率，也不改變投票權重。"
     },
     {
       "rank": 6,
       "agent": "etf",
+      "participation_calls": 9,
       "evaluated_calls": 8,
       "correct_calls": 2,
       "hit_rate_percent": "25.0000",
       "average_confidence": "67.6667",
-      "status": "too_early",
-      "note": "以相鄰決策點的 SPY 方向做粗略 shadow 評價；少於 20 次不得調整投票權重，此命中率不是個別標的獲利勝率。"
+      "status": "accumulating",
+      "note": "參與次數統計已提交的結構化提案；已評估次數只計入已取得後續 SPY 結果的提案。命中率從第一筆完成評估開始累積，不代表個別標的獲利勝率，也不改變投票權重。"
     },
     {
       "rank": 7,
       "agent": "momentum",
+      "participation_calls": 9,
       "evaluated_calls": 8,
       "correct_calls": 2,
       "hit_rate_percent": "25.0000",
       "average_confidence": "64.7778",
-      "status": "too_early",
-      "note": "以相鄰決策點的 SPY 方向做粗略 shadow 評價；少於 20 次不得調整投票權重，此命中率不是個別標的獲利勝率。"
+      "status": "accumulating",
+      "note": "參與次數統計已提交的結構化提案；已評估次數只計入已取得後續 SPY 結果的提案。命中率從第一筆完成評估開始累積，不代表個別標的獲利勝率，也不改變投票權重。"
     },
     {
       "rank": 8,
       "agent": "earnings",
+      "participation_calls": 9,
       "evaluated_calls": 8,
       "correct_calls": 1,
       "hit_rate_percent": "12.5000",
       "average_confidence": "66.1111",
-      "status": "too_early",
-      "note": "以相鄰決策點的 SPY 方向做粗略 shadow 評價；少於 20 次不得調整投票權重，此命中率不是個別標的獲利勝率。"
+      "status": "accumulating",
+      "note": "參與次數統計已提交的結構化提案；已評估次數只計入已取得後續 SPY 結果的提案。命中率從第一筆完成評估開始累積，不代表個別標的獲利勝率，也不改變投票權重。"
     },
     {
       "rank": 9,
       "agent": "macro",
+      "participation_calls": 9,
       "evaluated_calls": 8,
       "correct_calls": 1,
       "hit_rate_percent": "12.5000",
       "average_confidence": "67.6667",
-      "status": "too_early",
-      "note": "以相鄰決策點的 SPY 方向做粗略 shadow 評價；少於 20 次不得調整投票權重，此命中率不是個別標的獲利勝率。"
+      "status": "accumulating",
+      "note": "參與次數統計已提交的結構化提案；已評估次數只計入已取得後續 SPY 結果的提案。命中率從第一筆完成評估開始累積，不代表個別標的獲利勝率，也不改變投票權重。"
     },
     {
       "rank": 10,
       "agent": "technical",
+      "participation_calls": 9,
       "evaluated_calls": 8,
       "correct_calls": 1,
       "hit_rate_percent": "12.5000",
       "average_confidence": "69.3333",
-      "status": "too_early",
-      "note": "以相鄰決策點的 SPY 方向做粗略 shadow 評價；少於 20 次不得調整投票權重，此命中率不是個別標的獲利勝率。"
+      "status": "accumulating",
+      "note": "參與次數統計已提交的結構化提案；已評估次數只計入已取得後續 SPY 結果的提案。命中率從第一筆完成評估開始累積，不代表個別標的獲利勝率，也不改變投票權重。"
     },
     {
       "rank": 11,
       "agent": "execution_governance",
+      "participation_calls": 1,
       "evaluated_calls": 0,
       "correct_calls": 0,
       "hit_rate_percent": null,
       "average_confidence": "62.0000",
-      "status": "too_early",
-      "note": "以相鄰決策點的 SPY 方向做粗略 shadow 評價；少於 20 次不得調整投票權重，此命中率不是個別標的獲利勝率。"
+      "status": "no_evidence",
+      "note": "參與次數統計已提交的結構化提案；已評估次數只計入已取得後續 SPY 結果的提案。命中率從第一筆完成評估開始累積，不代表個別標的獲利勝率，也不改變投票權重。"
     },
     {
       "rank": 12,
       "agent": "trading_stress",
+      "participation_calls": 1,
       "evaluated_calls": 0,
       "correct_calls": 0,
       "hit_rate_percent": null,
       "average_confidence": "36.0000",
-      "status": "too_early",
-      "note": "以相鄰決策點的 SPY 方向做粗略 shadow 評價；少於 20 次不得調整投票權重，此命中率不是個別標的獲利勝率。"
+      "status": "no_evidence",
+      "note": "參與次數統計已提交的結構化提案；已評估次數只計入已取得後續 SPY 結果的提案。命中率從第一筆完成評估開始累積，不代表個別標的獲利勝率，也不改變投票權重。"
     }
   ],
   "actual_comparison_status": "private_not_published",
@@ -222,7 +234,7 @@
   ],
   "warnings": [
     "Portfolio Health Score 是資料、風控與流程完整度，不是獲利機率。",
-    "Agent 命中率樣本極少，不得據此調整投票權重。",
+    "Agent 結果評估從第一筆可配對結果開始累積；早期命中率僅供觀察，不調整投票權重。",
     "績效數值以目前已有的完成交易日計算；目前樣本較少，會隨時間累積而更穩定。"
   ]
 }

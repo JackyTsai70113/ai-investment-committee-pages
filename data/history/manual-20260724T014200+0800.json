@@ -796,6 +796,7 @@
         "price_session": null,
         "price_timestamp": null,
         "price_mode": null,
+        "session_status": "latest-known",
         "source": "Yahoo Finance via yfinance"
       },
       {
@@ -808,6 +809,7 @@
         "price_session": null,
         "price_timestamp": null,
         "price_mode": null,
+        "session_status": "latest-known",
         "source": "Yahoo Finance via yfinance"
       },
       {
@@ -820,6 +822,7 @@
         "price_session": null,
         "price_timestamp": null,
         "price_mode": null,
+        "session_status": "latest-known",
         "source": "Yahoo Finance via yfinance"
       },
       {
@@ -832,6 +835,7 @@
         "price_session": null,
         "price_timestamp": null,
         "price_mode": null,
+        "session_status": "latest-known",
         "source": "Yahoo Finance via yfinance"
       },
       {
@@ -844,6 +848,7 @@
         "price_session": null,
         "price_timestamp": null,
         "price_mode": null,
+        "session_status": "latest-known",
         "source": "Yahoo Finance via yfinance"
       },
       {
@@ -856,6 +861,7 @@
         "price_session": null,
         "price_timestamp": null,
         "price_mode": null,
+        "session_status": "latest-known",
         "source": "Yahoo Finance via yfinance"
       },
       {
@@ -868,6 +874,7 @@
         "price_session": null,
         "price_timestamp": null,
         "price_mode": null,
+        "session_status": "latest-known",
         "source": "Yahoo Finance via yfinance"
       },
       {
@@ -880,6 +887,7 @@
         "price_session": null,
         "price_timestamp": null,
         "price_mode": null,
+        "session_status": "latest-known",
         "source": "Yahoo Finance via yfinance"
       },
       {
@@ -892,6 +900,7 @@
         "price_session": null,
         "price_timestamp": null,
         "price_mode": null,
+        "session_status": "latest-known",
         "source": "Yahoo Finance via yfinance"
       },
       {
@@ -904,6 +913,7 @@
         "price_session": null,
         "price_timestamp": null,
         "price_mode": null,
+        "session_status": "latest-known",
         "source": "Yahoo Finance via yfinance"
       },
       {
@@ -916,6 +926,7 @@
         "price_session": null,
         "price_timestamp": null,
         "price_mode": null,
+        "session_status": "latest-known",
         "source": "Yahoo Finance via yfinance"
       },
       {
@@ -928,6 +939,7 @@
         "price_session": null,
         "price_timestamp": null,
         "price_mode": null,
+        "session_status": "latest-known",
         "source": "Yahoo Finance via yfinance"
       },
       {
@@ -940,6 +952,7 @@
         "price_session": null,
         "price_timestamp": null,
         "price_mode": null,
+        "session_status": "latest-known",
         "source": "Yahoo Finance via yfinance"
       },
       {
@@ -952,6 +965,7 @@
         "price_session": null,
         "price_timestamp": null,
         "price_mode": null,
+        "session_status": "latest-known",
         "source": "Yahoo Finance via yfinance"
       },
       {
@@ -964,6 +978,7 @@
         "price_session": null,
         "price_timestamp": null,
         "price_mode": null,
+        "session_status": "latest-known",
         "source": "Yahoo Finance via yfinance"
       }
     ],

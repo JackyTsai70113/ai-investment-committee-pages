@@ -15,6 +15,7 @@ import { createPerformanceRenderer } from "./performance.js";
 import { createDataLoader } from "../data.js";
 
 const colors = ["#c7f15b", "#67b7ff", "#ae91ff", "#ff9864", "#7ecb83", "#f3f0d8"];
+const LEADERBOARD_VISIBLE_LIMIT = 5;
 
 function createOverviewModel({ dashboardAnalytics, committee, recommendation }) {
   const invested = recommendation.allocations
@@ -232,16 +233,6 @@ export function bootstrapDashboard(root, payload, base) {
 
   const normalizeDiagnostic = (item) => {
     const text = `${item?.summary || ""} ${item?.effect || ""}`;
-    if (/3\s*[日天]|7\s*[日天]|short_window_evidence|短窗/.test(text)) {
-      return {
-        ...item,
-        kind: "evidence_gap",
-        severity: "medium",
-        summary: "短期資料成熟度提示：目前樣本不足以評估短期可重複性。",
-        effect: "這是研究證據提示，不限制市場方向、配置權重或持有期間。",
-        source_urls: [],
-      };
-    }
     if (/事件日曆|FOMC|BLS|NYSE|earnings|財報/.test(text)) {
       return {
         ...item,
@@ -581,6 +572,8 @@ const researchStatusLabel = (value) => {
     invalidated: "已失效",
     mixed: "證據混合",
     too_early: "尚未開始",
+    no_evidence: "尚無可驗證結果",
+    accumulating: "結果累積中",
     insufficient: "樣本不足",
     provisional: "暫定",
     usable: "可評估",
@@ -865,10 +858,11 @@ const researchStatusLabel = (value) => {
               <div><span>超越最強基準</span><strong>${statistic(returnObjective.excess_return_vs_strongest_benchmark_percent, "%")}</strong></div>
               <div><span>年化報酬／24%目標</span><strong>${statistic(returnObjective.latest_annual_strategy_return_percent, "%")} / ${statistic(returnObjective.annualized_target_percent, "%")}</strong></div>
               <div><span>基準資料狀態</span><strong>${escapeHtml(returnObjective.benchmark_status === "ready" ? "可比較" : "部分資料")}</strong></div>
-              <div><span>完成收盤日</span><strong>${escapeHtml(analyticsPerformance.distinct_completed_sessions)}</strong></div>
+              <div><span>完成交易日區間</span><strong>${escapeHtml(analyticsPerformance.distinct_completed_sessions)}</strong></div>
               <div><span>夏普比率／日區間勝率</span><strong>${statistic(analyticsPerformance.sharpe_ratio)} / ${statistic(analyticsPerformance.win_rate_percent, "%")}</strong></div>
             </div>
             <p>${escapeHtml(analyticsPerformance.methodology)}</p>
+            <p class="methodology-note">目前 ${escapeHtml(analyticsPerformance.distinct_completed_sessions)} 個完成交易日區間可計算短期統計；${escapeHtml(researchStatusLabel(analyticsPerformance.sample_status))} 僅代表樣本仍會隨累積而穩定，不是配置限制。</p>
             <p class="methodology-note">${escapeHtml(returnObjective.methodology)} 交易成本為研究估算；稅務與外匯換算目前未納入模型。</p>
           </article>
         </section>
@@ -877,14 +871,14 @@ const researchStatusLabel = (value) => {
           <section class="panel leaderboard" id="leaderboard" data-tab-section="overview">
             <header class="panel-header">
               <div>
-                <span class="section-kicker">研究員表現排行</span>
-                <h2>各研究員命中率排行榜</h2>
+                <span class="section-kicker">研究員判斷追蹤</span>
+                <h2>研究員判斷與結果追蹤</h2>
               </div>
               <span class="panel-meta">影子測試<br />不影響投票權重</span>
             </header>
             <p class="methodology-note">
-              以相鄰決策點的 SPY 方向做粗略評價；樣本未滿 20 次前不得據此調整權重，
-              命中率也不是獲利勝率。
+              參與次數與結果評估次數都來自同一份結構化提案紀錄。結果評估會在後續 SPY
+              收盤資料可配對後開始；命中率從第一筆結果起即時累積，不是獲利勝率，也不調整投票權重。
             </p>
             <div class="table-wrap leaderboard-table-wrap">
               <table>
@@ -892,7 +886,8 @@ const researchStatusLabel = (value) => {
                   <tr>
                     <th>排名</th>
                     <th>研究員</th>
-                    <th>命中</th>
+                    <th>參與</th>
+                    <th>命中／已評估</th>
                     <th>命中率</th>
                     <th>平均信心</th>
                     <th>狀態</th>
@@ -901,11 +896,12 @@ const researchStatusLabel = (value) => {
                 <tbody>
                   ${dashboardAnalytics.agent_leaderboard
                     .map(
-                      (item) => `
-                        <tr>
+                      (item, index) => `
+                        <tr${index >= LEADERBOARD_VISIBLE_LIMIT ? ' hidden data-leaderboard-extra="true"' : ""}>
                           <td>${escapeHtml(item.rank)}</td>
                           <td>${agentLink(item.agent)}</td>
-                          <td>${escapeHtml(item.correct_calls)} / ${escapeHtml(item.evaluated_calls)}</td>
+                          <td>${escapeHtml(item.participation_calls)}</td>
+                          <td>${item.evaluated_calls ? `${escapeHtml(item.correct_calls)} / ${escapeHtml(item.evaluated_calls)}` : "尚無結果"}</td>
                           <td>${statistic(item.hit_rate_percent, "%")}</td>
                           <td>${statistic(item.average_confidence)}</td>
                           <td><span class="research-status ${escapeHtml(item.status)}">${escapeHtml(researchStatusLabel(item.status))}</span></td>
@@ -914,6 +910,11 @@ const researchStatusLabel = (value) => {
                     .join("")}
                 </tbody>
               </table>
+              ${dashboardAnalytics.agent_leaderboard.length > LEADERBOARD_VISIBLE_LIMIT
+                ? `<button type="button" class="leaderboard-more" data-leaderboard-more aria-expanded="false">
+                    顯示更多（還有 ${escapeHtml(dashboardAnalytics.agent_leaderboard.length - LEADERBOARD_VISIBLE_LIMIT)} 位）
+                  </button>`
+                : ""}
             </div>
           </section>
 
@@ -1768,6 +1769,15 @@ const researchStatusLabel = (value) => {
     localizeRenderedText(root);
     root.querySelectorAll(".table-wrap").forEach((tableWrap) => {
       tableWrap.tabIndex = 0;
+    });
+    root.querySelectorAll("[data-leaderboard-more]").forEach((button) => {
+      button.addEventListener("click", () => {
+        button.closest(".leaderboard-table-wrap")?.querySelectorAll("[data-leaderboard-extra]").forEach((row) => {
+          row.hidden = false;
+        });
+        button.setAttribute("aria-expanded", "true");
+        button.hidden = true;
+      });
     });
     installPerformanceChart(root, performance.points);
     localizeRenderedText(root);

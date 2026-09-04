@@ -958,6 +958,7 @@
         "price_session": "2026-07-29",
         "price_timestamp": null,
         "price_mode": null,
+        "session_status": "latest-known",
         "source": "Yahoo Finance via yfinance"
       },
       {
@@ -970,6 +971,7 @@
         "price_session": "2026-07-29",
         "price_timestamp": null,
         "price_mode": null,
+        "session_status": "latest-known",
         "source": "Yahoo Finance via yfinance"
       },
       {
@@ -982,6 +984,7 @@
         "price_session": "2026-07-29",
         "price_timestamp": null,
         "price_mode": null,
+        "session_status": "latest-known",
         "source": "Yahoo Finance via yfinance"
       },
       {
@@ -994,6 +997,7 @@
         "price_session": "2026-07-29",
         "price_timestamp": null,
         "price_mode": null,
+        "session_status": "latest-known",
         "source": "Yahoo Finance via yfinance"
       },
       {
@@ -1006,6 +1010,7 @@
         "price_session": "2026-07-29",
         "price_timestamp": null,
         "price_mode": null,
+        "session_status": "latest-known",
         "source": "Yahoo Finance via yfinance"
       },
       {
@@ -1018,6 +1023,7 @@
         "price_session": "2026-07-29",
         "price_timestamp": null,
         "price_mode": null,
+        "session_status": "latest-known",
         "source": "Yahoo Finance via yfinance"
       },
       {
@@ -1030,6 +1036,7 @@
         "price_session": "2026-07-29",
         "price_timestamp": null,
         "price_mode": null,
+        "session_status": "latest-known",
         "source": "Yahoo Finance via yfinance"
       },
       {
@@ -1042,6 +1049,7 @@
         "price_session": "2026-07-29",
         "price_timestamp": null,
         "price_mode": null,
+        "session_status": "latest-known",
         "source": "Yahoo Finance via yfinance"
       },
       {
@@ -1054,6 +1062,7 @@
         "price_session": "2026-07-29",
         "price_timestamp": null,
         "price_mode": null,
+        "session_status": "latest-known",
         "source": "Yahoo Finance via yfinance"
       },
       {
@@ -1066,6 +1075,7 @@
         "price_session": "2026-07-29",
         "price_timestamp": null,
         "price_mode": null,
+        "session_status": "latest-known",
         "source": "Yahoo Finance via yfinance"
       },
       {
@@ -1078,6 +1088,7 @@
         "price_session": "2026-07-29",
         "price_timestamp": null,
         "price_mode": null,
+        "session_status": "latest-known",
         "source": "Yahoo Finance via yfinance"
       },
       {
@@ -1090,6 +1101,7 @@
         "price_session": "2026-07-29",
         "price_timestamp": null,
         "price_mode": null,
+        "session_status": "latest-known",
         "source": "Yahoo Finance via yfinance"
       },
       {
@@ -1102,6 +1114,7 @@
         "price_session": "2026-07-29",
         "price_timestamp": null,
         "price_mode": null,
+        "session_status": "latest-known",
         "source": "Yahoo Finance via yfinance"
       },
       {
@@ -1114,6 +1127,7 @@
         "price_session": "2026-07-29",
         "price_timestamp": null,
         "price_mode": null,
+        "session_status": "latest-known",
         "source": "Yahoo Finance via yfinance"
       },
       {
@@ -1126,6 +1140,7 @@
         "price_session": "2026-07-29",
         "price_timestamp": null,
         "price_mode": null,
+        "session_status": "latest-known",
         "source": "Yahoo Finance via yfinance"
       }
     ],

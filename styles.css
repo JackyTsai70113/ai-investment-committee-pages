@@ -945,7 +945,22 @@ a {
 }
 
 .leaderboard-table-wrap {
-  max-height: 34rem;
+  overflow-x: auto;
+}
+
+.leaderboard-more {
+  display: block;
+  margin: 1rem auto 0;
+  padding: 0.55rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel-2);
+  color: var(--acid);
+  cursor: pointer;
+}
+
+.leaderboard-more:hover {
+  border-color: var(--acid);
 }
 
 .leaderboard-table-wrap td:first-child {
@@ -2007,9 +2022,15 @@ td {
 }
 
 .research-status.partial,
-.research-status.too_early {
+.research-status.too_early,
+.research-status.no_evidence {
   border-color: rgba(255, 152, 100, 0.3);
   color: var(--orange);
+}
+
+.research-status.accumulating {
+  border-color: rgba(103, 183, 255, 0.3);
+  color: var(--blue);
 }
 
 .journal-list,
