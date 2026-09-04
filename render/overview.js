@@ -1477,7 +1477,7 @@ const researchStatusLabel = (value) => {
               <span class="panel-meta">${escapeHtml(readinessLabel(researchJournal.readiness))}<br />${escapeHtml(dateTime(researchJournal.data_cutoff))}</span>
             </header>
             <div class="readiness-verdict ${researchJournal.readiness}">
-              <strong>目前還在累積足夠的比較資料</strong>
+              <strong>本輪研究重點：走勢、配置與風險</strong>
               <p>${escapeHtml(researchJournal.readiness_summary)}</p>
             </div>
             <div class="journal-layout">

@@ -4,7 +4,7 @@
   "generated_at": "2026-07-26T07:20:38.640083Z",
   "data_cutoff": "2026-07-25T10:00:20.353794Z",
   "readiness": "not_ready",
-  "readiness_summary": "我們已能整理市場資訊與研究配置，但還在累積足夠長的結果，暫時不把短期波動當成策略已被證明。",
+  "readiness_summary": "先從假設策略走勢看研究配置的變化，再對照配置與風險，理解哪些條件可能影響下一步。",
   "performance": {
     "last_completed_evaluation_at": "2026-07-25T10:00:20.353794Z",
     "last_completed_value_usd": "6055.77",
