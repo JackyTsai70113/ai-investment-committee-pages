@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0",
-  "review_id": "learning-20260905T103016Z",
-  "reviewed_run_id": "20260904T142514Z",
-  "generated_at": "2026-09-05T10:30:16.753008Z",
-  "evaluation_cutoff": "2026-09-05T10:29:34.990401Z",
+  "review_id": "learning-20260905T132917Z",
+  "reviewed_run_id": "20260905T102951Z",
+  "generated_at": "2026-09-05T13:29:17.688365Z",
+  "evaluation_cutoff": "2026-09-05T13:28:35.740638Z",
   "evidence_source": "Yahoo Finance via yfinance with bounded retry and Nasdaq completed-close fallback",
   "verdict": "too_early",
   "lessons": [
@@ -11,7 +11,7 @@
       "title": "先看方向，再決定要不要調整",
       "evidence": "市場每天都會波動；單日漲跌不代表配置方向已經改變。",
       "implication": "走勢持續轉弱或快速改變時，重新檢查配置比例。",
-      "confidence": 93,
+      "confidence": 94,
       "affected_assets": [
         "SPY",
         "TLT",
@@ -24,9 +24,11 @@
       "implication": "每次調整前，同時檢查風險、配置比例與最新市場走勢。",
       "confidence": 91,
       "affected_assets": [
-        "SPY",
+        "NVDA",
         "GLD",
-        "NVDA"
+        "SPY",
+        "TLT",
+        "PLTR"
       ]
     }
   ],
