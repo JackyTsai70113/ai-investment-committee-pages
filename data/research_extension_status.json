@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "run_id": "20260904T142514Z",
-  "data_cutoff": "2026-09-04T14:24:58.278696Z",
+  "run_id": "20260905T102951Z",
+  "data_cutoff": "2026-09-05T10:29:34.990401Z",
   "extensions": [
     {
       "name": "earnings-review",
@@ -57,6 +57,6 @@
     "earnings-review:extension_failure",
     "finance-connector:extension_disabled"
   ],
-  "finance_agent_pack_enabled": false,
+  "finance_agent_pack_enabled": true,
   "decision_context_mode": "shadow_only"
 }
