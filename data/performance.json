@@ -516,89 +516,6 @@
       "target_weights": {}
     },
     {
-      "as_of": "2026-08-05T12:20:27.256629Z",
-      "run_id": "learning-20260805T122152Z",
-      "price_session": "2026-08-04",
-      "value_usd": "6050.11",
-      "profit_loss_usd": "50.11",
-      "return_percent": "0.8352",
-      "prices": [
-        {
-          "symbol": "AMD",
-          "price_usd": "518.580017"
-        },
-        {
-          "symbol": "CL=F",
-          "price_usd": "75.769997"
-        },
-        {
-          "symbol": "ERX",
-          "price_usd": "91.309998"
-        },
-        {
-          "symbol": "GLD",
-          "price_usd": "374.160004"
-        },
-        {
-          "symbol": "NVDA",
-          "price_usd": "211.940002"
-        },
-        {
-          "symbol": "PLTR",
-          "price_usd": "162.660004"
-        },
-        {
-          "symbol": "QQQ",
-          "price_usd": "723.849976"
-        },
-        {
-          "symbol": "SMH",
-          "price_usd": "575.710022"
-        },
-        {
-          "symbol": "SOXL",
-          "price_usd": "139.899994"
-        },
-        {
-          "symbol": "SPY",
-          "price_usd": "771.330017"
-        },
-        {
-          "symbol": "SQQQ",
-          "price_usd": "37.259998"
-        },
-        {
-          "symbol": "TLT",
-          "price_usd": "82.82"
-        },
-        {
-          "symbol": "TQQQ",
-          "price_usd": "74.82"
-        },
-        {
-          "symbol": "^TNX",
-          "price_usd": "4.627"
-        },
-        {
-          "symbol": "^VIX",
-          "price_usd": "16.5"
-        }
-      ],
-      "note": "依上一輪建議權重與最新可得行情計算；假設績效，不代表實際成交。",
-      "net_value_usd": null,
-      "turnover": null,
-      "estimated_spread_usd": null,
-      "estimated_slippage_usd": null,
-      "estimated_fees_usd": null,
-      "cost_model_version": null,
-      "cost_model_source": null,
-      "tax_treatment": "excluded",
-      "fx_treatment": "not_applicable",
-      "benchmarks": [],
-      "data_provenance": null,
-      "target_weights": {}
-    },
-    {
       "as_of": "2026-08-04T15:38:19.715163Z",
       "run_id": "learning-20260804T155627Z",
       "price_session": null,
@@ -677,6 +594,89 @@
         {
           "symbol": "^VIX",
           "price_usd": "16.219999"
+        }
+      ],
+      "note": "依上一輪建議權重與最新可得行情計算；假設績效，不代表實際成交。",
+      "net_value_usd": null,
+      "turnover": null,
+      "estimated_spread_usd": null,
+      "estimated_slippage_usd": null,
+      "estimated_fees_usd": null,
+      "cost_model_version": null,
+      "cost_model_source": null,
+      "tax_treatment": "excluded",
+      "fx_treatment": "not_applicable",
+      "benchmarks": [],
+      "data_provenance": null,
+      "target_weights": {}
+    },
+    {
+      "as_of": "2026-08-05T12:20:27.256629Z",
+      "run_id": "learning-20260805T122152Z",
+      "price_session": "2026-08-04",
+      "value_usd": "6050.11",
+      "profit_loss_usd": "50.11",
+      "return_percent": "0.8352",
+      "prices": [
+        {
+          "symbol": "AMD",
+          "price_usd": "518.580017"
+        },
+        {
+          "symbol": "CL=F",
+          "price_usd": "75.769997"
+        },
+        {
+          "symbol": "ERX",
+          "price_usd": "91.309998"
+        },
+        {
+          "symbol": "GLD",
+          "price_usd": "374.160004"
+        },
+        {
+          "symbol": "NVDA",
+          "price_usd": "211.940002"
+        },
+        {
+          "symbol": "PLTR",
+          "price_usd": "162.660004"
+        },
+        {
+          "symbol": "QQQ",
+          "price_usd": "723.849976"
+        },
+        {
+          "symbol": "SMH",
+          "price_usd": "575.710022"
+        },
+        {
+          "symbol": "SOXL",
+          "price_usd": "139.899994"
+        },
+        {
+          "symbol": "SPY",
+          "price_usd": "771.330017"
+        },
+        {
+          "symbol": "SQQQ",
+          "price_usd": "37.259998"
+        },
+        {
+          "symbol": "TLT",
+          "price_usd": "82.82"
+        },
+        {
+          "symbol": "TQQQ",
+          "price_usd": "74.82"
+        },
+        {
+          "symbol": "^TNX",
+          "price_usd": "4.627"
+        },
+        {
+          "symbol": "^VIX",
+          "price_usd": "16.5"
         }
       ],
       "note": "依上一輪建議權重與最新可得行情計算；假設績效，不代表實際成交。",
