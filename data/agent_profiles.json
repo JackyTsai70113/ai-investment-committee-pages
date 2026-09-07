@@ -115,5 +115,32 @@
     "purpose": "讓委員會只有一份一致、可稽核的結論。",
     "goal": "輸出合規配置、風險、期限、失效條件與剛好十項理由。",
     "boundary": "不能忽略硬性政策、捏造共識或把建議描述成已執行交易。"
+  },
+  "ai_capex_concentration": {
+    "title": "AI 資本支出與集中風險研究員",
+    "summary": "檢查 AI 資本支出、供應鏈與多部位重疊曝險。",
+    "responsibility": "分析 hyperscaler capex、融資與 counterparty risk、替代供應鏈及 factor overlap。",
+    "inputs": "正規化的 competitive、factor exposure、catalyst 與 provenance artifacts。",
+    "purpose": "辨識同一 AI event 對個股與 ETF 組合造成的集中風險。",
+    "goal": "提出 evidence-backed concentration caveat，不把風險 gate 當成研究結論。",
+    "boundary": "不執行 exposure gate、不直接配置，也不取得 broker、MCP 或其他外部工具。"
+  },
+  "thesis_delta": {
+    "title": "Thesis 變化研究員",
+    "summary": "比較前後 thesis 狀態並找出真正改變信念的證據。",
+    "responsibility": "辨識支援、削弱與失效的 thesis pillars，分開價格波動與 thesis break。",
+    "inputs": "有 cutoff、可追溯且經過正規化的 thesis book 與 thesis deltas。",
+    "purpose": "讓 CIO 看見哪些部位 conviction 改變，哪些只需要觀察。",
+    "goal": "提出最強 disconfirming evidence 與可驗證的研究後續。",
+    "boundary": "不決定 target weights、不抓外部資料，也不重做 technical analysis。"
+  },
+  "valuation_competition": {
+    "title": "估值與競爭研究員",
+    "summary": "把相對估值與競爭位置放在同一個可比較框架。",
+    "responsibility": "分析 peer metrics、pricing power、替代品、客戶集中度與公司價值捕捉。",
+    "inputs": "有一致 period、unit、accounting basis 與 provenance 的 market-intelligence artifacts。",
+    "purpose": "分辨好公司但價格過高，以及便宜但競爭力惡化。",
+    "goal": "提出可追溯的 relative valuation 判斷與主要競爭風險。",
+    "boundary": "不做完整 DCF、不抽取 raw filings，也不產生短線技術訊號。"
   }
 }
