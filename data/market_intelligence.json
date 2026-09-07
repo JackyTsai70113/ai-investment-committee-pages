@@ -1,11 +1,84 @@
 {
   "schema_version": "1.0",
-  "run_id": "20260905T132849Z",
-  "data_cutoff": "2026-09-05T13:28:35.740638Z",
+  "run_id": "20260907T043543Z",
+  "data_cutoff": "2026-09-07T04:35:31.344105Z",
   "peer_universe": {
-    "theme": "unavailable",
-    "sector": "unavailable",
-    "peers": [],
+    "theme": "已蒐集市場研究",
+    "sector": "跨產業",
+    "peers": [
+      {
+        "symbol": "AAPL",
+        "role": "申報公司",
+        "inclusion_reason": "已有可追溯的公司申報或基本面資料。",
+        "evidence_ids": [
+          "sec:AAPL"
+        ]
+      },
+      {
+        "symbol": "AMD",
+        "role": "申報公司",
+        "inclusion_reason": "已有可追溯的公司申報或基本面資料。",
+        "evidence_ids": [
+          "sec:AMD"
+        ]
+      },
+      {
+        "symbol": "AVGO",
+        "role": "申報公司",
+        "inclusion_reason": "已有可追溯的公司申報或基本面資料。",
+        "evidence_ids": [
+          "sec:AVGO"
+        ]
+      },
+      {
+        "symbol": "META",
+        "role": "申報公司",
+        "inclusion_reason": "已有可追溯的公司申報或基本面資料。",
+        "evidence_ids": [
+          "sec:META"
+        ]
+      },
+      {
+        "symbol": "MSFT",
+        "role": "申報公司",
+        "inclusion_reason": "已有可追溯的公司申報或基本面資料。",
+        "evidence_ids": [
+          "sec:MSFT"
+        ]
+      },
+      {
+        "symbol": "NVDA",
+        "role": "申報公司",
+        "inclusion_reason": "已有可追溯的公司申報或基本面資料。",
+        "evidence_ids": [
+          "sec:NVDA"
+        ]
+      },
+      {
+        "symbol": "PLTR",
+        "role": "申報公司",
+        "inclusion_reason": "已有可追溯的公司申報或基本面資料。",
+        "evidence_ids": [
+          "sec:PLTR"
+        ]
+      },
+      {
+        "symbol": "TSLA",
+        "role": "申報公司",
+        "inclusion_reason": "已有可追溯的公司申報或基本面資料。",
+        "evidence_ids": [
+          "sec:TSLA"
+        ]
+      },
+      {
+        "symbol": "TSM",
+        "role": "申報公司",
+        "inclusion_reason": "已有可追溯的公司申報或基本面資料。",
+        "evidence_ids": [
+          "sec:TSM"
+        ]
+      }
+    ],
     "benchmark_symbols": [],
     "warnings": []
   },

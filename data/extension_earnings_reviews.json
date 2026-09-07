@@ -1,6 +1,85 @@
 {
   "schema_version": "1.0",
-  "run_id": "20260905T132849Z",
-  "data_cutoff": "2026-09-05T13:28:35.740638Z",
-  "reviews": []
+  "run_id": "20260907T043543Z",
+  "data_cutoff": "2026-09-07T04:35:31.344105Z",
+  "reviews": [
+    {
+      "schema_version": "1.0",
+      "event_id": "sec:NVDA:2026-08-26",
+      "symbol": "NVDA",
+      "company": "NVDA",
+      "fiscal_period": "Q2",
+      "event_time": "2026-08-26T00:00:00Z",
+      "data_cutoff": "2026-09-07T04:35:31.344105Z",
+      "observations": [
+        {
+          "metric_name": "operating_income",
+          "actual": {
+            "value": "117270000000",
+            "unit": "USD",
+            "currency": "USD",
+            "fiscal_period": "Q2",
+            "accounting_basis": "gaap",
+            "evidence_ids": [
+              "sec:NVDA:10-Q:2026-08-26:operating_income"
+            ]
+          },
+          "consensus": null,
+          "prior_company_guidance": null,
+          "prior_internal_estimate": null,
+          "new_guidance": null,
+          "one_time": false,
+          "note": null
+        }
+      ],
+      "variances": [
+        {
+          "metric_name": "operating_income",
+          "actual_vs_consensus": null,
+          "actual_vs_prior_company_guidance": null,
+          "actual_vs_prior_internal_estimate": null,
+          "new_guidance_vs_prior_guidance": null,
+          "warnings": []
+        }
+      ],
+      "guidance": [],
+      "guidance_variances": [],
+      "segment_drivers": [],
+      "one_time_items": [],
+      "management_tone": null,
+      "unresolved_questions": [],
+      "thesis_impacts": [],
+      "sources": [
+        {
+          "evidence_id": "sec:NVDA:10-Q:2026-08-26:operating_income",
+          "role": "sec_filing",
+          "summary": "10-Q 申報的 operating_income 實際數值。",
+          "provenance": {
+            "provider": "sec-edgar",
+            "source_type": "filing_fact",
+            "source_id": "sec:NVDA:10-Q:2026-08-26:operating_income",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+            "published_at": "2026-08-26T00:00:00Z",
+            "as_of": "2026-07-26T00:00:00Z",
+            "retrieved_at": "2026-09-07T04:35:31.344105Z",
+            "semantics": "point_in_time",
+            "license_note": null,
+            "affected_symbols": [
+              "NVDA"
+            ],
+            "categories": [
+              "earnings"
+            ],
+            "gap": null
+          }
+        }
+      ],
+      "gaps": [
+        "missing_consensus",
+        "transcript_unavailable"
+      ],
+      "overall_read": "insufficient",
+      "confidence": 60
+    }
+  ]
 }

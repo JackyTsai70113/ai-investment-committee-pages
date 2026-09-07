@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0",
-  "review_id": "learning-20260905T132917Z",
-  "reviewed_run_id": "20260905T102951Z",
-  "generated_at": "2026-09-05T13:29:17.688365Z",
-  "evaluation_cutoff": "2026-09-05T13:28:35.740638Z",
+  "review_id": "learning-20260907T043617Z",
+  "reviewed_run_id": "20260905T132849Z",
+  "generated_at": "2026-09-07T04:36:17.100730Z",
+  "evaluation_cutoff": "2026-09-07T04:35:31.344105Z",
   "evidence_source": "Yahoo Finance via yfinance with bounded retry and Nasdaq completed-close fallback",
   "verdict": "too_early",
   "lessons": [
@@ -15,7 +15,8 @@
       "affected_assets": [
         "SPY",
         "TLT",
-        "GLD"
+        "GLD",
+        "IWM"
       ]
     },
     {
@@ -24,10 +25,10 @@
       "implication": "每次調整前，同時檢查風險、配置比例與最新市場走勢。",
       "confidence": 91,
       "affected_assets": [
-        "NVDA",
-        "GLD",
         "SPY",
         "TLT",
+        "GLD",
+        "NVDA",
         "PLTR"
       ]
     }

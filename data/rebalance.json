@@ -1,14 +1,41 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-05T13:29:30.172714Z",
-  "pricing_cutoff": "2026-09-05T13:28:35.740638Z",
+  "generated_at": "2026-09-07T04:36:28.581083Z",
+  "pricing_cutoff": "2026-09-07T04:35:31.344105Z",
   "pricing_session": "2026-09-04",
-  "from_run_id": "20260905T102951Z",
-  "to_run_id": "20260905T132849Z",
+  "from_run_id": "20260905T132849Z",
+  "to_run_id": "20260907T043543Z",
   "capital_usd": "10808.36",
   "status": "research_only",
   "basis": "以前一輪研究配置為比較基準，差額股數採最近已完成交易日收盤價估算。",
   "instructions": [
+    {
+      "symbol": "AVGO",
+      "action": "exit",
+      "reference_close_usd": null,
+      "previous_target_usd": "1080.84",
+      "new_target_usd": "0.00",
+      "change_usd": "-1080.84",
+      "estimated_share_change": null
+    },
+    {
+      "symbol": "NVDA",
+      "action": "exit",
+      "reference_close_usd": "230.360001",
+      "previous_target_usd": "1945.50",
+      "new_target_usd": "0.00",
+      "change_usd": "-1945.50",
+      "estimated_share_change": "-8.4455"
+    },
+    {
+      "symbol": "GLD",
+      "action": "exit",
+      "reference_close_usd": "406.769989",
+      "previous_target_usd": "1297.00",
+      "new_target_usd": "0.00",
+      "change_usd": "-1297.00",
+      "estimated_share_change": "-3.1885"
+    },
     {
       "symbol": "PLTR",
       "action": "hold",
@@ -19,66 +46,39 @@
       "estimated_share_change": "0.0000"
     },
     {
-      "symbol": "GLD",
-      "action": "reduce",
-      "reference_close_usd": "406.769989",
-      "previous_target_usd": "1621.25",
-      "new_target_usd": "1297.00",
-      "change_usd": "-324.25",
-      "estimated_share_change": "-0.7971"
-    },
-    {
-      "symbol": "SPY",
-      "action": "add",
-      "reference_close_usd": "770.190002",
-      "previous_target_usd": "1080.84",
-      "new_target_usd": "1621.25",
-      "change_usd": "540.41",
-      "estimated_share_change": "0.7017"
-    },
-    {
-      "symbol": "NVDA",
-      "action": "reduce",
-      "reference_close_usd": "230.360001",
-      "previous_target_usd": "2161.67",
-      "new_target_usd": "1945.50",
-      "change_usd": "-216.17",
-      "estimated_share_change": "-0.9384"
-    },
-    {
-      "symbol": "AVGO",
-      "action": "reduce",
-      "reference_close_usd": null,
-      "previous_target_usd": "2161.67",
-      "new_target_usd": "1080.84",
-      "change_usd": "-1080.83",
-      "estimated_share_change": null
-    },
-    {
       "symbol": "TLT",
-      "action": "hold",
+      "action": "exit",
       "reference_close_usd": "82.209999",
       "previous_target_usd": "1080.84",
-      "new_target_usd": "1080.84",
-      "change_usd": "0.00",
-      "estimated_share_change": "0.0000"
+      "new_target_usd": "0",
+      "change_usd": "-1080.84",
+      "estimated_share_change": "-13.1473"
     },
     {
       "symbol": "META",
-      "action": "reduce",
+      "action": "exit",
       "reference_close_usd": null,
-      "previous_target_usd": "1621.25",
-      "new_target_usd": "1080.84",
-      "change_usd": "-540.41",
+      "previous_target_usd": "1080.84",
+      "new_target_usd": "0.00",
+      "change_usd": "-1080.84",
       "estimated_share_change": null
+    },
+    {
+      "symbol": "SPY",
+      "action": "exit",
+      "reference_close_usd": "770.190002",
+      "previous_target_usd": "1621.25",
+      "new_target_usd": "0",
+      "change_usd": "-1621.25",
+      "estimated_share_change": "-2.1050"
     },
     {
       "symbol": "CASH",
       "action": "add",
       "reference_close_usd": null,
-      "previous_target_usd": "1080.84",
-      "new_target_usd": "2702.09",
-      "change_usd": "1621.25",
+      "previous_target_usd": "2702.09",
+      "new_target_usd": "10808.36",
+      "change_usd": "8106.27",
       "estimated_share_change": null
     }
   ],
