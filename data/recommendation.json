@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0",
-  "run_id": "20260907T060010Z",
-  "generated_at": "2026-09-07T06:00:46.207570Z",
-  "data_cutoff": "2026-09-07T05:59:56.227868Z",
+  "run_id": "20260907T155507Z",
+  "generated_at": "2026-09-07T15:55:43.401928Z",
+  "data_cutoff": "2026-09-07T15:54:53.747830Z",
   "status": "live",
   "capital_usd": "10808.36",
-  "model_score": 66,
-  "model_score_reason": "方向一致度 96/100；13 位提案委員按信心加權，2 項協商後否決仍未解除，扣除 30 分。",
+  "model_score": 68,
+  "model_score_reason": "方向一致度 98/100；13 位提案委員按信心加權，2 項協商後否決仍未解除，扣除 30 分。",
   "risk_level": "high",
-  "expected_horizon": "短期至數週；每取得新的可追溯完成交易日資料即重新評估，非固定持有期限。",
+  "expected_horizon": "研究性再平衡；持續持有但每次取得新的可追溯完成交易日資料後重新評估，不設定固定持有天數。",
   "allocations": [
     {
       "symbol": "AVGO",
@@ -148,61 +148,59 @@
   "top_reasons": [
     {
       "id": 1,
-      "title": "先修正NVDA單股集中度",
+      "title": "短窗驗證缺失限制方向性加碼",
       "summary": "風險環境維持中性，不因單一指標放大部位。",
       "confidence": 98,
       "category": "risk",
       "affected_assets": [
-        "NVDA"
+        "CASH",
+        "SPY",
+        "TLT",
+        "GLD"
       ],
       "source_urls": []
     },
     {
       "id": 2,
-      "title": "整體股票曝險需受跳空壓力約束",
-      "summary": "風險環境維持中性，不因單一指標放大部位。",
+      "title": "大盤趨勢呈現分裂而非明確上升",
+      "summary": "近期走勢提供正面訊號，但配置仍維持節制。",
       "confidence": 82,
-      "category": "risk",
+      "category": "technical",
       "affected_assets": [
-        "NVDA",
-        "AVGO",
-        "META",
-        "PLTR",
-        "SPY",
-        "CASH"
+        "SPY"
       ],
       "source_urls": []
     },
     {
       "id": 3,
-      "title": "市場趨勢仍為mixed",
-      "summary": "近期走勢提供正面訊號，但配置仍維持節制。",
-      "confidence": 78,
-      "category": "technical",
+      "title": "中小型股承壓顯示市場廣度不足",
+      "summary": "這項判斷已納入本輪配置取捨。",
+      "confidence": 84,
+      "category": "momentum",
       "affected_assets": [
-        "SPY",
-        "IWM"
+        "IWM",
+        "PLTR"
       ],
       "source_urls": []
     },
     {
       "id": 4,
-      "title": "半導體反彈尚未確認為趨勢",
+      "title": "半導體反彈仍未確認趨勢反轉",
       "summary": "這項判斷已納入本輪配置取捨。",
-      "confidence": 79,
+      "confidence": 86,
       "category": "momentum",
       "affected_assets": [
         "NVDA",
-        "SMH"
+        "AVGO"
       ],
       "source_urls": []
     },
     {
       "id": 5,
-      "title": "NVDA具可追溯獲利資料但證據不完整",
+      "title": "NVDA具相對強度但估值證據不完整",
       "summary": "這項判斷已納入本輪配置取捨。",
-      "confidence": 70,
-      "category": "news",
+      "confidence": 75,
+      "category": "momentum",
       "affected_assets": [
         "NVDA"
       ],
@@ -212,79 +210,83 @@
     },
     {
       "id": 6,
-      "title": "黃金提供有限分散效果",
-      "summary": "這項判斷已納入本輪配置取捨。",
-      "confidence": 68,
-      "category": "diversification",
+      "title": "PLTR短期動能與波動不利",
+      "summary": "風險環境維持中性，不因單一指標放大部位。",
+      "confidence": 88,
+      "category": "risk",
       "affected_assets": [
-        "GLD",
-        "SPY"
+        "PLTR"
       ],
       "source_urls": []
     },
     {
       "id": 7,
-      "title": "債券可降低股票因子集中",
+      "title": "黃金提供不同於科技股的分散來源",
       "summary": "這項判斷已納入本輪配置取捨。",
-      "confidence": 65,
+      "confidence": 78,
       "category": "diversification",
       "affected_assets": [
-        "TLT",
-        "SPY"
+        "GLD",
+        "NVDA",
+        "AVGO",
+        "META"
       ],
       "source_urls": []
     },
     {
       "id": 8,
-      "title": "能源與利率風險限制追價",
+      "title": "利率背景未提供明確方向優勢",
       "summary": "利率仍會影響成長股估值，因此配置保持分散。",
-      "confidence": 62,
+      "confidence": 72,
       "category": "macro",
       "affected_assets": [
-        "NVDA",
-        "SPY",
         "TLT",
-        "GLD"
+        "CASH"
       ],
       "source_urls": [
-        "https://www.eia.gov/petroleum/"
+        "https://www.federalreserve.gov/monetarypolicy.htm"
       ]
     },
     {
       "id": 9,
-      "title": "槓桿與反向工具不適合作為本輪新增曝險",
-      "summary": "風險環境維持中性，不因單一指標放大部位。",
-      "confidence": 96,
-      "category": "risk",
+      "title": "能源走強可能增加利率與成本不確定性",
+      "summary": "利率仍會影響成長股估值，因此配置保持分散。",
+      "confidence": 78,
+      "category": "macro",
       "affected_assets": [
-        "SQQQ",
-        "SOXL",
-        "CASH"
+        "CASH",
+        "NVDA",
+        "META",
+        "AVGO"
       ],
       "source_urls": []
     },
     {
       "id": 10,
-      "title": "現金保留選擇權而非方向判斷",
-      "summary": "這項判斷已納入本輪配置取捨。",
-      "confidence": 95,
-      "category": "liquidity",
+      "title": "正常波動不等於低風險",
+      "summary": "風險環境維持中性，不因單一指標放大部位。",
+      "confidence": 92,
+      "category": "risk",
       "affected_assets": [
         "CASH",
-        "SPY",
-        "TLT",
-        "GLD"
+        "NVDA",
+        "AVGO",
+        "META"
       ],
-      "source_urls": []
+      "source_urls": [
+        "https://cdn.cboe.com/api/global/delayed_quotes/quotes/_VIX.json",
+        "https://cdn.cboe.com/api/global/delayed_quotes/quotes/_VIX9D.json",
+        "https://cdn.cboe.com/api/global/delayed_quotes/quotes/_VIX3M.json"
+      ]
     }
   ],
   "diagnostics": [],
   "exposure_snapshot": {
     "schema_version": "1.0",
     "methodology_version": "1.0",
-    "run_id": "20260907T060010Z",
-    "generated_at": "2026-09-07T06:02:57.483033Z",
-    "data_cutoff": "2026-09-07T05:59:56.227868Z",
+    "run_id": "20260907T155507Z",
+    "generated_at": "2026-09-07T15:58:08.112245Z",
+    "data_cutoff": "2026-09-07T15:54:53.747830Z",
     "instruments": [
       {
         "symbol": "AVGO",
@@ -532,7 +534,7 @@
       "taxonomy_status": "ready",
       "lookthrough_status": "unavailable",
       "correlation_status": "insufficient",
-      "decision_cutoff": "2026-09-07T05:59:56.227868Z",
+      "decision_cutoff": "2026-09-07T15:54:53.747830Z",
       "limitations": []
     }
   },
