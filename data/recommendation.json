@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0",
-  "run_id": "20260907T155507Z",
-  "generated_at": "2026-09-07T15:55:43.401928Z",
-  "data_cutoff": "2026-09-07T15:54:53.747830Z",
+  "run_id": "20260908T143814Z",
+  "generated_at": "2026-09-08T14:38:59.344017Z",
+  "data_cutoff": "2026-09-08T14:37:58.361288Z",
   "status": "live",
   "capital_usd": "10808.36",
-  "model_score": 68,
-  "model_score_reason": "方向一致度 98/100；13 位提案委員按信心加權，2 項協商後否決仍未解除，扣除 30 分。",
+  "model_score": 56,
+  "model_score_reason": "方向一致度 86/100；13 位提案委員按信心加權，2 項協商後否決仍未解除，扣除 30 分。",
   "risk_level": "high",
-  "expected_horizon": "研究性再平衡；持續持有但每次取得新的可追溯完成交易日資料後重新評估，不設定固定持有天數。",
+  "expected_horizon": "研究性配置至下一次取得可追溯新資料；不代表固定持有期間或已成交交易。",
   "allocations": [
     {
       "symbol": "AVGO",
@@ -148,9 +148,119 @@
   "top_reasons": [
     {
       "id": 1,
-      "title": "短窗驗證缺失限制方向性加碼",
+      "title": "NVDA 集中度觸及單股上限",
       "summary": "風險環境維持中性，不因單一指標放大部位。",
-      "confidence": 98,
+      "confidence": 96,
+      "category": "risk",
+      "affected_assets": [
+        "NVDA",
+        "CASH"
+      ],
+      "source_urls": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "大型股指數方向混合而非明確上行",
+      "summary": "近期走勢提供正面訊號，但配置仍維持節制。",
+      "confidence": 78,
+      "category": "technical",
+      "affected_assets": [
+        "SPY",
+        "NVDA",
+        "AVGO",
+        "META"
+      ],
+      "source_urls": []
+    },
+    {
+      "id": 3,
+      "title": "小型股相對弱勢提高風險控制必要性",
+      "summary": "這項判斷已納入本輪配置取捨。",
+      "confidence": 80,
+      "category": "momentum",
+      "affected_assets": [
+        "IWM",
+        "CASH",
+        "PLTR"
+      ],
+      "source_urls": []
+    },
+    {
+      "id": 4,
+      "title": "PLTR 短期動能明顯轉弱",
+      "summary": "這項判斷已納入本輪配置取捨。",
+      "confidence": 82,
+      "category": "momentum",
+      "affected_assets": [
+        "PLTR",
+        "CASH"
+      ],
+      "source_urls": []
+    },
+    {
+      "id": 5,
+      "title": "半導體強勢仍未形成一致趨勢",
+      "summary": "這項判斷已納入本輪配置取捨。",
+      "confidence": 84,
+      "category": "momentum",
+      "affected_assets": [
+        "NVDA",
+        "AVGO"
+      ],
+      "source_urls": []
+    },
+    {
+      "id": 6,
+      "title": "波動曲線正常削弱使用 SQQQ 的必要性",
+      "summary": "風險環境維持中性，不因單一指標放大部位。",
+      "confidence": 86,
+      "category": "risk",
+      "affected_assets": [
+        "SQQQ",
+        "CASH",
+        "SPY"
+      ],
+      "source_urls": [
+        "https://cdn.cboe.com/api/global/delayed_quotes/quotes/_VIX9D.json",
+        "https://cdn.cboe.com/api/global/delayed_quotes/quotes/_VIX.json"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "利率背景對成長估值仍是風險",
+      "summary": "利率仍會影響成長股估值，因此配置保持分散。",
+      "confidence": 68,
+      "category": "macro",
+      "affected_assets": [
+        "NVDA",
+        "AVGO",
+        "META",
+        "TLT"
+      ],
+      "source_urls": [
+        "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+      ]
+    },
+    {
+      "id": 8,
+      "title": "GLD 提供不同於股票的分散來源",
+      "summary": "這項判斷已納入本輪配置取捨。",
+      "confidence": 73,
+      "category": "diversification",
+      "affected_assets": [
+        "GLD",
+        "NVDA",
+        "SPY"
+      ],
+      "source_urls": []
+    },
+    {
+      "id": 9,
+      "title": "現金具有等待驗證的選擇權價值",
+      "summary": "風險環境維持中性，不因單一指標放大部位。",
+      "confidence": 90,
       "category": "risk",
       "affected_assets": [
         "CASH",
@@ -161,122 +271,18 @@
       "source_urls": []
     },
     {
-      "id": 2,
-      "title": "大盤趨勢呈現分裂而非明確上升",
-      "summary": "近期走勢提供正面訊號，但配置仍維持節制。",
-      "confidence": 82,
-      "category": "technical",
-      "affected_assets": [
-        "SPY"
-      ],
-      "source_urls": []
-    },
-    {
-      "id": 3,
-      "title": "中小型股承壓顯示市場廣度不足",
+      "id": 10,
+      "title": "不以單次財報數字支持加碼",
       "summary": "這項判斷已納入本輪配置取捨。",
-      "confidence": 84,
-      "category": "momentum",
-      "affected_assets": [
-        "IWM",
-        "PLTR"
-      ],
-      "source_urls": []
-    },
-    {
-      "id": 4,
-      "title": "半導體反彈仍未確認趨勢反轉",
-      "summary": "這項判斷已納入本輪配置取捨。",
-      "confidence": 86,
-      "category": "momentum",
+      "confidence": 88,
+      "category": "valuation",
       "affected_assets": [
         "NVDA",
-        "AVGO"
-      ],
-      "source_urls": []
-    },
-    {
-      "id": 5,
-      "title": "NVDA具相對強度但估值證據不完整",
-      "summary": "這項判斷已納入本輪配置取捨。",
-      "confidence": 75,
-      "category": "momentum",
-      "affected_assets": [
-        "NVDA"
+        "AVGO",
+        "META"
       ],
       "source_urls": [
         "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json"
-      ]
-    },
-    {
-      "id": 6,
-      "title": "PLTR短期動能與波動不利",
-      "summary": "風險環境維持中性，不因單一指標放大部位。",
-      "confidence": 88,
-      "category": "risk",
-      "affected_assets": [
-        "PLTR"
-      ],
-      "source_urls": []
-    },
-    {
-      "id": 7,
-      "title": "黃金提供不同於科技股的分散來源",
-      "summary": "這項判斷已納入本輪配置取捨。",
-      "confidence": 78,
-      "category": "diversification",
-      "affected_assets": [
-        "GLD",
-        "NVDA",
-        "AVGO",
-        "META"
-      ],
-      "source_urls": []
-    },
-    {
-      "id": 8,
-      "title": "利率背景未提供明確方向優勢",
-      "summary": "利率仍會影響成長股估值，因此配置保持分散。",
-      "confidence": 72,
-      "category": "macro",
-      "affected_assets": [
-        "TLT",
-        "CASH"
-      ],
-      "source_urls": [
-        "https://www.federalreserve.gov/monetarypolicy.htm"
-      ]
-    },
-    {
-      "id": 9,
-      "title": "能源走強可能增加利率與成本不確定性",
-      "summary": "利率仍會影響成長股估值，因此配置保持分散。",
-      "confidence": 78,
-      "category": "macro",
-      "affected_assets": [
-        "CASH",
-        "NVDA",
-        "META",
-        "AVGO"
-      ],
-      "source_urls": []
-    },
-    {
-      "id": 10,
-      "title": "正常波動不等於低風險",
-      "summary": "風險環境維持中性，不因單一指標放大部位。",
-      "confidence": 92,
-      "category": "risk",
-      "affected_assets": [
-        "CASH",
-        "NVDA",
-        "AVGO",
-        "META"
-      ],
-      "source_urls": [
-        "https://cdn.cboe.com/api/global/delayed_quotes/quotes/_VIX.json",
-        "https://cdn.cboe.com/api/global/delayed_quotes/quotes/_VIX9D.json",
-        "https://cdn.cboe.com/api/global/delayed_quotes/quotes/_VIX3M.json"
       ]
     }
   ],
@@ -284,9 +290,9 @@
   "exposure_snapshot": {
     "schema_version": "1.0",
     "methodology_version": "1.0",
-    "run_id": "20260907T155507Z",
-    "generated_at": "2026-09-07T15:58:08.112245Z",
-    "data_cutoff": "2026-09-07T15:54:53.747830Z",
+    "run_id": "20260908T143814Z",
+    "generated_at": "2026-09-08T14:42:00.224850Z",
+    "data_cutoff": "2026-09-08T14:37:58.361288Z",
     "instruments": [
       {
         "symbol": "AVGO",
@@ -534,7 +540,7 @@
       "taxonomy_status": "ready",
       "lookthrough_status": "unavailable",
       "correlation_status": "insufficient",
-      "decision_cutoff": "2026-09-07T15:54:53.747830Z",
+      "decision_cutoff": "2026-09-08T14:37:58.361288Z",
       "limitations": []
     }
   },
