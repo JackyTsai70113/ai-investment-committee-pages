@@ -1,31 +1,22 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-08T14:38:59.344017Z",
-  "pricing_cutoff": "2026-09-08T14:37:58.361288Z",
-  "pricing_session": "2026-09-08",
-  "from_run_id": "20260907T155507Z",
-  "to_run_id": "20260908T143814Z",
+  "generated_at": "2026-09-09T14:40:56.993554Z",
+  "pricing_cutoff": "2026-09-09T14:39:50.059824Z",
+  "pricing_session": "2026-09-09",
+  "from_run_id": "20260908T143814Z",
+  "to_run_id": "20260909T144005Z",
   "capital_usd": "10808.36",
   "status": "research_only",
   "basis": "以前一輪研究配置為比較基準，差額股數採最近已完成交易日收盤價估算。",
   "instructions": [
     {
-      "symbol": "PLTR",
+      "symbol": "META",
       "action": "hold",
-      "reference_close_usd": "172.791107",
-      "previous_target_usd": "912.23",
-      "new_target_usd": "912.23",
+      "reference_close_usd": null,
+      "previous_target_usd": "1832.02",
+      "new_target_usd": "1832.02",
       "change_usd": "0.00",
-      "estimated_share_change": "0.0000"
-    },
-    {
-      "symbol": "NVDA",
-      "action": "hold",
-      "reference_close_usd": "227.412399",
-      "previous_target_usd": "3426.25",
-      "new_target_usd": "3426.25",
-      "change_usd": "0.00",
-      "estimated_share_change": "0.0000"
+      "estimated_share_change": null
     },
     {
       "symbol": "AVGO",
@@ -37,18 +28,27 @@
       "estimated_share_change": null
     },
     {
-      "symbol": "META",
+      "symbol": "NVDA",
       "action": "hold",
-      "reference_close_usd": null,
-      "previous_target_usd": "1832.02",
-      "new_target_usd": "1832.02",
+      "reference_close_usd": "224.439896",
+      "previous_target_usd": "3426.25",
+      "new_target_usd": "3426.25",
       "change_usd": "0.00",
-      "estimated_share_change": null
+      "estimated_share_change": "0.0000"
+    },
+    {
+      "symbol": "PLTR",
+      "action": "hold",
+      "reference_close_usd": "171.720001",
+      "previous_target_usd": "912.23",
+      "new_target_usd": "912.23",
+      "change_usd": "0.00",
+      "estimated_share_change": "0.0000"
     },
     {
       "symbol": "GLD",
       "action": "hold",
-      "reference_close_usd": "403.450012",
+      "reference_close_usd": "405.924988",
       "previous_target_usd": "1231.07",
       "new_target_usd": "1231.07",
       "change_usd": "0.00",

@@ -1,5 +1,5 @@
 {
-  "run_id": "20260908T143814Z",
+  "run_id": "20260909T144005Z",
   "mode": "live",
   "decision_origin": "policy_override",
   "policy_override_notes": [],
@@ -10,13 +10,13 @@
   "critique_resolutions": [],
   "final_decision_audits": [],
   "final_decision": {
-    "opening_statement": "我維持觀察性降曝險：降低 NVDA 集中度、保留 GLD 與 25% 現金，但不啟用 SQQQ；因完成日 3/7 日短窗與部分交易摩擦資料仍缺失，本輪不把偏弱背景升級為方向性偏空策略。",
+    "opening_statement": "我在質詢後撤回反向 ETF 的戰術配置，將超額集中部位降至較可控水準，改以現金、廣泛市場、TLT 與 GLD 緩衝；在完成日短窗統計補齊前，我不把盤中偏弱升級成強烈方向押注。",
     "tone": "cautious",
     "market_stance": "neutral",
-    "model_score": 56,
-    "model_score_reason": "方向一致度 86/100；13 位提案委員按信心加權，2 項協商後否決仍未解除，扣除 30 分。",
+    "model_score": 64,
+    "model_score_reason": "方向一致度 94/100；13 位提案委員按信心加權，2 項協商後否決仍未解除，扣除 30 分。",
     "risk_level": "high",
-    "expected_horizon": "研究性配置至下一次取得可追溯新資料；不代表固定持有期間或已成交交易。",
+    "expected_horizon": "以 1 至 3 個月為研究再平衡 horizon；每次取得新的可追溯完成交易日資料後重新評估，不代表已成交或固定持有期限。",
     "allocations": [
       {
         "symbol": "AVGO",
@@ -70,122 +70,27 @@
     "top_reasons": [
       {
         "id": 1,
-        "title": "NVDA 集中度觸及單股上限",
-        "summary": "使用者確認的 2026-09-04 持倉中，NVDA 權重為 31.70%，高於政策規定的單一股票最高 25%；即使公司申報的 operating income 有可追溯證據，也不足以抵銷部位集中風險，因此目標降至 25%。",
-        "confidence": 96,
+        "title": "降低 NVDA 單一股票集中度",
+        "summary": "實際持倉中 NVDA 權重約 31.70%，超過本輪建議的 15%；其 20 日報酬仍為 3.76%，但完成日單日下跌 2.01%、20 日年化波動約 44.88%，部位大小需先受控。",
+        "confidence": 91,
         "category": "risk",
         "affected_assets": [
           "NVDA",
           "CASH"
         ],
-        "source_urls": [
-          "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json"
-        ]
+        "source_urls": []
       },
       {
         "id": 2,
-        "title": "大型股指數方向混合而非明確上行",
-        "summary": "SPY 完成日 20 日報酬為 -0.397%、RSI14 為 47.52，距 MA50 仍為正但距 MA20 僅 0.15%；這支持避免擴大股票淨曝險，但不足以支持全面反向配置。",
-        "confidence": 78,
-        "category": "technical",
-        "affected_assets": [
-          "SPY",
-          "NVDA",
-          "AVGO",
-          "META"
-        ],
-        "source_urls": []
-      },
-      {
-        "id": 3,
-        "title": "小型股相對弱勢提高風險控制必要性",
-        "summary": "IWM 完成日 20 日報酬為 -1.840%、RSI14 為 36.92，且距 MA20 為 -0.955%；小型股弱於大盤的背景支持保留現金與降低高波動個股權重。",
-        "confidence": 80,
-        "category": "momentum",
-        "affected_assets": [
-          "IWM",
-          "CASH",
-          "PLTR"
-        ],
-        "source_urls": []
-      },
-      {
-        "id": 4,
-        "title": "PLTR 短期動能明顯轉弱",
-        "summary": "PLTR 完成日 5 日報酬為 -6.420%、1 日報酬為 -4.492%、距 MA20 為 -1.464%，雖 20 日仍為正，但短期回撤與 53.96% 年化波動使其不適合維持較高配置。",
-        "confidence": 82,
-        "category": "momentum",
-        "affected_assets": [
-          "PLTR",
-          "CASH"
-        ],
-        "source_urls": []
-      },
-      {
-        "id": 5,
-        "title": "半導體強勢仍未形成一致趨勢",
-        "summary": "SMH 完成日 1 日與 5 日報酬分別為 2.608% 與 2.513%，但 20 日報酬為 -2.693%、距 MA50 為 -1.212%；SOXL 20 日報酬更為 -16.378%，顯示局部反彈不能外推為穩定科技上行。",
-        "confidence": 84,
-        "category": "momentum",
-        "affected_assets": [
-          "NVDA",
-          "AVGO"
-        ],
-        "source_urls": []
-      },
-      {
-        "id": 6,
-        "title": "波動曲線正常削弱使用 SQQQ 的必要性",
-        "summary": "Cboe 延遲資料顯示 VIX9D 14.63、VIX 15.54、VIX3M 18.24，曲線為 contango_like 且波動等級為 normal；這不代表市場安全，但使每日重設反向 ETF 的反彈與震盪損耗更不適合作為本輪核心配置。",
-        "confidence": 86,
-        "category": "risk",
-        "affected_assets": [
-          "SQQQ",
-          "CASH",
-          "SPY"
-        ],
-        "source_urls": [
-          "https://cdn.cboe.com/api/global/delayed_quotes/quotes/_VIX9D.json",
-          "https://cdn.cboe.com/api/global/delayed_quotes/quotes/_VIX.json"
-        ]
-      },
-      {
-        "id": 7,
-        "title": "利率背景對成長估值仍是風險",
-        "summary": "^TNX 完成日 5 日相對變化為 1.356%、20 日為 2.661%，而 regime 標示 rates stable；利率未失控但仍可能限制高估值成長股的估值擴張，因此不提高科技集中度。",
-        "confidence": 68,
-        "category": "macro",
-        "affected_assets": [
-          "NVDA",
-          "AVGO",
-          "META",
-          "TLT"
-        ],
-        "source_urls": [
-          "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
-        ]
-      },
-      {
-        "id": 8,
-        "title": "GLD 提供不同於股票的分散來源",
-        "summary": "GLD 完成日 20 日報酬為 2.083%、距 MA50 為 4.601%，與近期股票指數偏弱背景不同；雖其當日下跌且缺少交易摩擦量化，不宜大幅加碼，但保留 10% 可降低單一科技因子集中。",
-        "confidence": 73,
+        "title": "降低整體 AI 個股重疊風險",
+        "summary": "現有 AVGO、META、NVDA、PLTR 合計約 80.08%，使組合高度依賴大型成長與 AI 風格；本輪改以 SPY、TLT、GLD 與現金分散，而非增加同類曝險。",
+        "confidence": 88,
         "category": "diversification",
         "affected_assets": [
-          "GLD",
+          "AVGO",
+          "META",
           "NVDA",
-          "SPY"
-        ],
-        "source_urls": []
-      },
-      {
-        "id": 9,
-        "title": "現金具有等待驗證的選擇權價值",
-        "summary": "SPY、QQQ、IWM、DIA 的近期表現分裂，且委員會要求的 SPY、TLT、GLD 完成日 3/7 日統計尚未交付；在無法確認短期方向可重複性時，提高現金至 25% 比追逐局部半導體反彈更符合風險控制。",
-        "confidence": 90,
-        "category": "risk",
-        "affected_assets": [
-          "CASH",
+          "PLTR",
           "SPY",
           "TLT",
           "GLD"
@@ -193,15 +98,105 @@
         "source_urls": []
       },
       {
+        "id": 3,
+        "title": "PLTR 短中期動能較弱",
+        "summary": "PLTR 完成日 1 日報酬為 -2.31%、5 日為 -8.63%、20 日為 -2.81%，且低於 MA20 約 3.61%；在缺少最新基本面與財報指引時，不足以支持保留原有 8.44% 權重。",
+        "confidence": 82,
+        "category": "momentum",
+        "affected_assets": [
+          "PLTR"
+        ],
+        "source_urls": []
+      },
+      {
+        "id": 4,
+        "title": "大盤趨勢呈混合而非單邊",
+        "summary": "SPY 完成日 20 日報酬為 -0.91%、RSI14 約 48.48，雖仍高於 MA50 約 1.10%；這支持維持部分股票曝險，但不支持全面追多或強烈反向押注。",
+        "confidence": 79,
+        "category": "technical",
+        "affected_assets": [
+          "SPY",
+          "CASH"
+        ],
+        "source_urls": []
+      },
+      {
+        "id": 5,
+        "title": "小型股與道瓊相對偏弱",
+        "summary": "IWM 完成日 20 日報酬為 -1.77%、RSI14 約 40.17，DIA 20 日報酬為 -2.03%、RSI14 約 44.38；因此採廣泛市場中等配置並保留現金，而非提高高 beta 部位。",
+        "confidence": 76,
+        "category": "technical",
+        "affected_assets": [
+          "IWM",
+          "DIA",
+          "SPY"
+        ],
+        "source_urls": []
+      },
+      {
+        "id": 6,
+        "title": "半導體相對強但波動較高",
+        "summary": "SMH 完成日 5 日報酬為 3.07%、20 日為 0.76%，高於 MA20 約 1.43%，但 20 日年化波動約 30.45%；相對強度不足以支持槓桿化追價。",
+        "confidence": 78,
+        "category": "momentum",
+        "affected_assets": [
+          "SMH",
+          "NVDA"
+        ],
+        "source_urls": []
+      },
+      {
+        "id": 7,
+        "title": "AMD 動能較強但不宜外推",
+        "summary": "AMD 完成日 1 日報酬為 5.90%、5 日為 7.44%、20 日為 7.71%，成交量比約 1.57；這是局部強勢證據，但本輪缺少可驗證財測與估值，故不納入目標配置。",
+        "confidence": 72,
+        "category": "momentum",
+        "affected_assets": [
+          "AMD"
+        ],
+        "source_urls": []
+      },
+      {
+        "id": 8,
+        "title": "油價上行增加利率與估值風險",
+        "summary": "CL=F 完成日 5 日報酬為 8.48%、20 日為 13.27%，且 RSI14 約 70.69、距 MA20 約 8.20%；在缺少 EIA 供需拆解下，只能視為通膨與折現率的觀察性壓力。",
+        "confidence": 68,
+        "category": "macro",
+        "affected_assets": [
+          "SPY",
+          "TLT",
+          "GLD"
+        ],
+        "source_urls": [
+          "https://www.eia.gov/petroleum/"
+        ]
+      },
+      {
+        "id": 9,
+        "title": "波動正常不支持核心反向 ETF",
+        "summary": "Cboe 觀測 VIX9D 15.55、VIX 16.25、VIX3M 18.69，期限結構為 contango_like、level 為 normal；這較符合保留現金與分散，而非將 SQQQ、SOXS 或 SPXU 作核心。",
+        "confidence": 86,
+        "category": "risk",
+        "affected_assets": [
+          "SQQQ",
+          "SOXS",
+          "SPXU",
+          "CASH"
+        ],
+        "source_urls": [
+          "https://cdn.cboe.com/api/global/delayed_quotes/quotes/_VIX9D.json",
+          "https://cdn.cboe.com/api/global/delayed_quotes/quotes/_VIX.json",
+          "https://cdn.cboe.com/api/global/delayed_quotes/quotes/_VIX3M.json"
+        ]
+      },
+      {
         "id": 10,
-        "title": "不以單次財報數字支持加碼",
-        "summary": "NVDA 的 2026 Q2 申報 operating income 約 117.27B 美元具可追溯性，但缺少共識比較、公司新指引與完整盈利品質拆解；因此該證據只能支持保留核心部位，不能支持提高 NVDA 或整體科技權重。",
-        "confidence": 88,
+        "title": "NVDA 基本面有實數但缺乏相對預期",
+        "summary": "NVDA 可追溯申報資料顯示 Q2 operating income 約 117.27B 美元，但本輪缺少共識、公司指引與電話會議內容，無法判斷相對預期的超額幅度，因此只保留 15% 目標權重。",
+        "confidence": 70,
         "category": "valuation",
         "affected_assets": [
-          "NVDA",
-          "AVGO",
-          "META"
+          "NVDA"
         ],
         "source_urls": [
           "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json"
@@ -210,20 +205,20 @@
     ],
     "diagnostics": [],
     "invalidation_conditions": [
-      "若下一輪補齊 SPY、TLT、GLD 同一完成日口徑的 3/7 日聚合統計，且風險資產動能同步改善，應重新評估現金比例與股票上限。",
-      "若 VIX 曲線由 normal/contango_like 轉為持續明顯倒掛，且 SPY、QQQ 或 IWM 完成日下跌同步加速，才可重新研究有限度對沖工具；仍須先量化每日重設路徑風險。",
-      "若 NVDA、AVGO、META 或 PLTR 出現可追溯的新指引、估值或獲利品質證據，且與價格趨勢一致，才可考慮提高個別研究權重。",
-      "若任一持倉跌破其配置項目指定的價格失效線，或原有投資論點被可追溯資料否定，應重新評估而非自動交易。"
+      "若下一個或後續完成交易日顯示 SPY 同時重新站上 MA20 且 RSI14 持續高於 55，應重新評估現金與核心股票比例；判定只使用完成日資料。",
+      "若 SPY、TLT、GLD 的 completed-days 3/7 統計補齊，且方向與目前配置假設顯著不同，應重新評估現金、TLT 與股票權重。",
+      "若任何現有個股出現可驗證的財報指引下修、營運現金流惡化或 thesis 直接失效，應個別降低該標的，而非以市場方向替代判斷。",
+      "若隔夜缺口資料顯示股票、ETF 或商品 ETF 的政策壓力上限被持續觸發，應降低相應曝險並重新計算組合壓力。"
     ],
     "major_risks": [
-      "科技與大型成長曝險仍占 60%：NVDA、AVGO、META 合計 60%，即使 NVDA 已壓至政策上限，組合仍可能受同一 AI/成長因子同步回撤影響。",
-      "反向與槓桿 ETF具有每日重設路徑風險；在反彈、震盪或隔夜跳空下，累積報酬可能偏離單日方向，且本輪沒有足夠統計支持其有效性。",
-      "GLD、TLT、SQQQ 缺少完整交易摩擦資料，實際價差、深度與滑價可能低估；本輪因此不配置 TLT 或 SQQQ。",
-      "BLS 與公司財報事件資料不完整，無法可靠辨識近期催化或事件時間，持倉可能面臨未量化的跳空風險。",
-      "目前資料截止於 2026-09-08 14:37:58Z，部分報價為盤中或 Cboe 延遲資料；此建議不是交易執行，也不保證報酬或勝率。"
+      "股票風格仍可能因利率、油價或未覆蓋的宏觀事件快速反彈或下跌；現金與分散部位不保證避免損失。",
+      "TLT 可能在殖利率上升時與股票同跌；其配置是分散工具，不是確定性避險。",
+      "GLD 已有較高價格波動與回撤，且商品 ETF 不產生企業現金流，不能視為無風險資產。",
+      "NVDA、AVGO、META 仍合計 30% 目標權重，AI 與大型成長因子集中風險尚未完全消除。",
+      "所有報價與特徵受資料截止時間限制；研究建議不代表成交、報酬保證或勝率保證。"
     ],
     "risk_veto": true,
-    "veto_reason": "協商後的最終審核仍未通過：binding_constraints #1 未滿足：CIO 的 top_reasons 與多處論述使用了 SPY/IWM 的“20 日報酬、RSI、距 MA20/MA50”等完成日之外或非 short-window 的技術/統計特徵作為主要風險判斷來源（例如“SPY 完成日 20 日報酬為 -0.397%、RSI14…”、“IWM 完成日 20 日報酬…”、“PLTR 完成日 5 日報酬…距 MA20…”、“GLD 完成日 20 日報酬…”等）。在本輪 SPY/TLT/GLD completed-days（3/7 日）short-window 聚合驗證尚未交付的前提下，binding constraint 明確要求不得依賴上述非短窗/非 completed-days 口徑證據作為主因，因此構成違反。；binding_constraints #2 未滿足（相對性與“顯著低於可比 SPY/IWM”的要求未能證明）：CIO 配置 GLD 為 10%，且理由仍包含“GLD 完成日 20 日報酬…”等證據陳述，但本輪缺乏 binding constraint 所要求的 GLD/TLT/SQQQ 交易摩擦 proxy，且草案未提供“顯著低於可比的 SPY/IWM”的具體保守化規則/對照量化（例如相對權重上限或與 SPY/IWM 的明確比較基準）。在未完成 proxy 與對照的情況下，無法確認其部位上限達到 binding constraint 的“顯著低於”標準。；未滿足 C1：CIO 草案中未要求/交付「反向/槓桿 ETF 的失效條件」至少一個量化研究項（含明確指標/定義/資料口徑），用以度量反彈/震盪下的路徑偏離方向或路徑損耗代理；因此無法解除對反向/槓桿有效性表述的限制。；未滿足 C3：草案未把「情境性對沖（如反向/槓桿工具）」的啟用與退出條件寫成 CIO 可檢查的規則；且目前僅表示本輪不啟用 SQQQ，未提供在 completed-days short-window 缺失狀態下，何時啟用/何時退出、以及如何對應缺失狀態的可稽核觸發規則。"
+    "veto_reason": "協商後的最終審核仍未通過：所有失效/降風險“觸發欄位”必須明確區分：方向性判定僅使用完成交易日收盤資料；隔夜缺口風險則必須使用前一完成日收盤→下一日 regular session 開盤的可審計 gap 序列計算，並落到政策欄位（gap_stress_percent_by_asset_type=0.15 for leveraged_etf）與 daily_loss_warning/drawdown_warning 對應的“最大美元損失/缺口壓力”結果：本輪 CIO 草案未交付隔夜 gap 序列與其“最大美元損失/缺口壓力”計算結果，也未將 gap_to_policy 的對應落實到必要的政策欄位/可重複輸出；僅有原則性文字（例如提到若隔夜缺口資料觸發則降低曝險）但缺少可檢查的量化輸入與對應結果。；未滿足 Binding 1：CIO 最終草案雖承諾“在完成日短窗統計補齊前不把盤中偏弱升級成強烈方向押注”，但截至資料截止仍未交付/呈現 SPY、TLT、GLD 的 completed-days 3/7 聚合統計欄位（completed_windows、positive_windows、latest_return_percent）。且草案未能證明“時間尺度與口徑一致性”的該聚合欄位已被取得並可用於下一輪 verdict 前置條件。；未滿足 Binding 3：草案沒有提供同口徑（completed-days 3/7）下的“反向槓桿 ETF（SQQQ/SOXS/SPXU） vs CASH”的可追溯檢驗/比較統計摘要（至少包含 latest_return_percent、positive_windows 等）。因此無法視為已完成針對每日重設路徑損耗/失效風險的同口徑可驗證處理；僅用現金與非槓桿分散替代，仍屬於未達 binding 的資料交付要求。；未滿足 Binding 4：雖有“維持觀察性、降低因果語氣/不宣稱相對優勢”等敘述（diagnostics 中也提到 BLS/事件鏈不完整），但未見研究輸出中對“因果或催化歸因語句”設置明確的禁止結論清單/可量化的信心折減規則（例如：哪些類型結論不得出現、信心折減上限由哪個資料缺口觸發）。因此無法認定已履行 binding 要求的“定義哪些結論不得出現＋說明信心折減依據來自資料缺口而非事後合理化”。；（關聯性補充）Binding 2 部分雖有符合方向（VIX/盤中僅背景情境），但整體仍因 Binding 1、3、4 未滿足而不能判定整體合規可接受。"
   },
   "summary_counts": {
     "proposals": 13,
