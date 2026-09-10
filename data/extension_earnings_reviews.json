@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "run_id": "20260910T143037Z",
-  "data_cutoff": "2026-09-10T14:30:16.414008Z",
+  "run_id": "20260910T180744Z",
+  "data_cutoff": "2026-09-10T18:07:27.476583Z",
   "reviews": [
     {
       "schema_version": "1.0",
@@ -9,10 +9,10 @@
       "symbol": "AAPL",
       "company": "AAPL",
       "fiscal_period": "2026-Q3",
-      "event_time": "2026-07-31T00:00:00Z",
-      "publication_date": null,
-      "publication_precision": "exact",
-      "data_cutoff": "2026-09-10T14:30:16.414008Z",
+      "event_time": "2026-08-01T00:00:00-04:00",
+      "publication_date": "2026-07-31",
+      "publication_precision": "date",
+      "data_cutoff": "2026-09-10T18:07:27.476583Z",
       "observations": [
         {
           "metric_name": "operating_cash_flow",
@@ -21,9 +21,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q3 2024-09-29至2025-06-28",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2024-09-29",
+            "period_end": "2025-06-28",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AAPL:10-Q:2026-07-31:operating_cash_flow:2024-09-29:2025-06-28"
@@ -64,10 +64,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:AAPL:10-Q:2026-07-31:operating_cash_flow:2024-09-29:2025-06-28",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
-            "published_at": "2026-07-31T00:00:00Z",
+            "published_at": null,
             "as_of": "2025-06-28T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "AAPL"
@@ -81,10 +81,11 @@
       ],
       "gaps": [
         "missing_consensus",
-        "transcript_unavailable"
+        "transcript_unavailable",
+        "發布時間僅有日期或未知，事件時間代表保守可用時間。"
       ],
       "overall_read": "insufficient",
-      "confidence": 60
+      "confidence": 20
     },
     {
       "schema_version": "1.0",
@@ -92,10 +93,10 @@
       "symbol": "AAPL",
       "company": "AAPL",
       "fiscal_period": "2026-Q3",
-      "event_time": "2026-07-31T00:00:00Z",
-      "publication_date": null,
-      "publication_precision": "exact",
-      "data_cutoff": "2026-09-10T14:30:16.414008Z",
+      "event_time": "2026-08-01T00:00:00-04:00",
+      "publication_date": "2026-07-31",
+      "publication_precision": "date",
+      "data_cutoff": "2026-09-10T18:07:27.476583Z",
       "observations": [
         {
           "metric_name": "assets",
@@ -105,8 +106,8 @@
             "currency": "USD",
             "fiscal_period": "Q3",
             "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_end": "2025-09-27",
+            "period_kind": "instant",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AAPL:10-Q:2026-07-31:assets:instant:2025-09-27"
@@ -127,8 +128,8 @@
             "currency": "USD",
             "fiscal_period": "Q3",
             "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_end": "2025-09-27",
+            "period_kind": "instant",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AAPL:10-Q:2026-07-31:cash:instant:2025-09-27"
@@ -149,8 +150,8 @@
             "currency": "USD",
             "fiscal_period": "Q3",
             "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_end": "2025-09-27",
+            "period_kind": "instant",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AAPL:10-Q:2026-07-31:liabilities:instant:2025-09-27"
@@ -207,10 +208,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:AAPL:10-Q:2026-07-31:assets:instant:2025-09-27",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
-            "published_at": "2026-07-31T00:00:00Z",
+            "published_at": null,
             "as_of": "2025-09-27T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "AAPL"
@@ -230,10 +231,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:AAPL:10-Q:2026-07-31:cash:instant:2025-09-27",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
-            "published_at": "2026-07-31T00:00:00Z",
+            "published_at": null,
             "as_of": "2025-09-27T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "AAPL"
@@ -253,10 +254,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:AAPL:10-Q:2026-07-31:liabilities:instant:2025-09-27",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
-            "published_at": "2026-07-31T00:00:00Z",
+            "published_at": null,
             "as_of": "2025-09-27T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "AAPL"
@@ -270,10 +271,11 @@
       ],
       "gaps": [
         "missing_consensus",
-        "transcript_unavailable"
+        "transcript_unavailable",
+        "發布時間僅有日期或未知，事件時間代表保守可用時間。"
       ],
       "overall_read": "insufficient",
-      "confidence": 60
+      "confidence": 20
     },
     {
       "schema_version": "1.0",
@@ -281,10 +283,10 @@
       "symbol": "AAPL",
       "company": "AAPL",
       "fiscal_period": "2026-Q3",
-      "event_time": "2026-07-31T00:00:00Z",
-      "publication_date": null,
-      "publication_precision": "exact",
-      "data_cutoff": "2026-09-10T14:30:16.414008Z",
+      "event_time": "2026-08-01T00:00:00-04:00",
+      "publication_date": "2026-07-31",
+      "publication_precision": "date",
+      "data_cutoff": "2026-09-10T18:07:27.476583Z",
       "observations": [
         {
           "metric_name": "assets",
@@ -294,8 +296,8 @@
             "currency": "USD",
             "fiscal_period": "Q3",
             "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_end": "2026-06-27",
+            "period_kind": "instant",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AAPL:10-Q:2026-07-31:assets:instant:2026-06-27"
@@ -316,8 +318,8 @@
             "currency": "USD",
             "fiscal_period": "Q3",
             "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_end": "2026-06-27",
+            "period_kind": "instant",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AAPL:10-Q:2026-07-31:cash:instant:2026-06-27"
@@ -337,9 +339,9 @@
             "unit": "USD/shares",
             "currency": null,
             "fiscal_period": "Q3 2025-09-28至2026-06-27",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2025-09-28",
+            "period_end": "2026-06-27",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AAPL:10-Q:2026-07-31:diluted_eps:2025-09-28:2026-06-27"
@@ -359,9 +361,9 @@
             "unit": "USD/shares",
             "currency": null,
             "fiscal_period": "Q3 2026-03-29至2026-06-27",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2026-03-29",
+            "period_end": "2026-06-27",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AAPL:10-Q:2026-07-31:diluted_eps:2026-03-29:2026-06-27"
@@ -382,8 +384,8 @@
             "currency": "USD",
             "fiscal_period": "Q3",
             "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_end": "2026-06-27",
+            "period_kind": "instant",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AAPL:10-Q:2026-07-31:liabilities:instant:2026-06-27"
@@ -403,9 +405,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q3 2025-09-28至2026-06-27",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2025-09-28",
+            "period_end": "2026-06-27",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AAPL:10-Q:2026-07-31:net_income:2025-09-28:2026-06-27"
@@ -425,9 +427,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q3 2026-03-29至2026-06-27",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2026-03-29",
+            "period_end": "2026-06-27",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AAPL:10-Q:2026-07-31:net_income:2026-03-29:2026-06-27"
@@ -447,9 +449,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q3 2025-09-28至2026-06-27",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2025-09-28",
+            "period_end": "2026-06-27",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AAPL:10-Q:2026-07-31:operating_cash_flow:2025-09-28:2026-06-27"
@@ -469,9 +471,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q3 2025-09-28至2026-06-27",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2025-09-28",
+            "period_end": "2026-06-27",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AAPL:10-Q:2026-07-31:operating_income:2025-09-28:2026-06-27"
@@ -491,9 +493,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q3 2026-03-29至2026-06-27",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2026-03-29",
+            "period_end": "2026-06-27",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AAPL:10-Q:2026-07-31:operating_income:2026-03-29:2026-06-27"
@@ -513,9 +515,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q3 2025-09-28至2026-06-27",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2025-09-28",
+            "period_end": "2026-06-27",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AAPL:10-Q:2026-07-31:revenue:2025-09-28:2026-06-27"
@@ -535,9 +537,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q3 2026-03-29至2026-06-27",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2026-03-29",
+            "period_end": "2026-06-27",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AAPL:10-Q:2026-07-31:revenue:2026-03-29:2026-06-27"
@@ -666,10 +668,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:AAPL:10-Q:2026-07-31:assets:instant:2026-06-27",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
-            "published_at": "2026-07-31T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-27T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "AAPL"
@@ -689,10 +691,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:AAPL:10-Q:2026-07-31:cash:instant:2026-06-27",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
-            "published_at": "2026-07-31T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-27T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "AAPL"
@@ -712,10 +714,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:AAPL:10-Q:2026-07-31:diluted_eps:2025-09-28:2026-06-27",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
-            "published_at": "2026-07-31T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-27T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "AAPL"
@@ -735,10 +737,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:AAPL:10-Q:2026-07-31:diluted_eps:2026-03-29:2026-06-27",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
-            "published_at": "2026-07-31T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-27T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "AAPL"
@@ -758,10 +760,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:AAPL:10-Q:2026-07-31:liabilities:instant:2026-06-27",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
-            "published_at": "2026-07-31T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-27T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "AAPL"
@@ -781,10 +783,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:AAPL:10-Q:2026-07-31:net_income:2025-09-28:2026-06-27",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
-            "published_at": "2026-07-31T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-27T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "AAPL"
@@ -804,10 +806,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:AAPL:10-Q:2026-07-31:net_income:2026-03-29:2026-06-27",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
-            "published_at": "2026-07-31T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-27T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "AAPL"
@@ -827,10 +829,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:AAPL:10-Q:2026-07-31:operating_cash_flow:2025-09-28:2026-06-27",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
-            "published_at": "2026-07-31T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-27T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "AAPL"
@@ -850,10 +852,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:AAPL:10-Q:2026-07-31:operating_income:2025-09-28:2026-06-27",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
-            "published_at": "2026-07-31T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-27T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "AAPL"
@@ -873,10 +875,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:AAPL:10-Q:2026-07-31:operating_income:2026-03-29:2026-06-27",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
-            "published_at": "2026-07-31T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-27T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "AAPL"
@@ -896,10 +898,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:AAPL:10-Q:2026-07-31:revenue:2025-09-28:2026-06-27",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
-            "published_at": "2026-07-31T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-27T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "AAPL"
@@ -919,10 +921,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:AAPL:10-Q:2026-07-31:revenue:2026-03-29:2026-06-27",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
-            "published_at": "2026-07-31T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-27T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "AAPL"
@@ -936,10 +938,11 @@
       ],
       "gaps": [
         "missing_consensus",
-        "transcript_unavailable"
+        "transcript_unavailable",
+        "發布時間僅有日期或未知，事件時間代表保守可用時間。"
       ],
       "overall_read": "insufficient",
-      "confidence": 60
+      "confidence": 20
     },
     {
       "schema_version": "1.0",
@@ -947,10 +950,10 @@
       "symbol": "AMD",
       "company": "AMD",
       "fiscal_period": "2026-Q2",
-      "event_time": "2026-08-05T00:00:00Z",
-      "publication_date": null,
-      "publication_precision": "exact",
-      "data_cutoff": "2026-09-10T14:30:16.414008Z",
+      "event_time": "2026-08-06T00:00:00-04:00",
+      "publication_date": "2026-08-05",
+      "publication_precision": "date",
+      "data_cutoff": "2026-09-10T18:07:27.476583Z",
       "observations": [
         {
           "metric_name": "operating_cash_flow",
@@ -959,9 +962,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2024-12-29至2025-06-28",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2024-12-29",
+            "period_end": "2025-06-28",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AMD:10-Q:2026-08-05:operating_cash_flow:2024-12-29:2025-06-28"
@@ -1002,10 +1005,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:AMD:10-Q:2026-08-05:operating_cash_flow:2024-12-29:2025-06-28",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
-            "published_at": "2026-08-05T00:00:00Z",
+            "published_at": null,
             "as_of": "2025-06-28T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "AMD"
@@ -1019,10 +1022,11 @@
       ],
       "gaps": [
         "missing_consensus",
-        "transcript_unavailable"
+        "transcript_unavailable",
+        "發布時間僅有日期或未知，事件時間代表保守可用時間。"
       ],
       "overall_read": "insufficient",
-      "confidence": 60
+      "confidence": 20
     },
     {
       "schema_version": "1.0",
@@ -1030,10 +1034,10 @@
       "symbol": "AMD",
       "company": "AMD",
       "fiscal_period": "2026-Q2",
-      "event_time": "2026-08-05T00:00:00Z",
-      "publication_date": null,
-      "publication_precision": "exact",
-      "data_cutoff": "2026-09-10T14:30:16.414008Z",
+      "event_time": "2026-08-06T00:00:00-04:00",
+      "publication_date": "2026-08-05",
+      "publication_precision": "date",
+      "data_cutoff": "2026-09-10T18:07:27.476583Z",
       "observations": [
         {
           "metric_name": "assets",
@@ -1043,8 +1047,8 @@
             "currency": "USD",
             "fiscal_period": "Q2",
             "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_end": "2025-12-27",
+            "period_kind": "instant",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AMD:10-Q:2026-08-05:assets:instant:2025-12-27"
@@ -1065,8 +1069,8 @@
             "currency": "USD",
             "fiscal_period": "Q2",
             "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_end": "2025-12-27",
+            "period_kind": "instant",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AMD:10-Q:2026-08-05:cash:instant:2025-12-27"
@@ -1115,10 +1119,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:AMD:10-Q:2026-08-05:assets:instant:2025-12-27",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
-            "published_at": "2026-08-05T00:00:00Z",
+            "published_at": null,
             "as_of": "2025-12-27T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "AMD"
@@ -1138,10 +1142,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:AMD:10-Q:2026-08-05:cash:instant:2025-12-27",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
-            "published_at": "2026-08-05T00:00:00Z",
+            "published_at": null,
             "as_of": "2025-12-27T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "AMD"
@@ -1155,10 +1159,11 @@
       ],
       "gaps": [
         "missing_consensus",
-        "transcript_unavailable"
+        "transcript_unavailable",
+        "發布時間僅有日期或未知，事件時間代表保守可用時間。"
       ],
       "overall_read": "insufficient",
-      "confidence": 60
+      "confidence": 20
     },
     {
       "schema_version": "1.0",
@@ -1166,10 +1171,10 @@
       "symbol": "AMD",
       "company": "AMD",
       "fiscal_period": "2026-Q2",
-      "event_time": "2026-08-05T00:00:00Z",
-      "publication_date": null,
-      "publication_precision": "exact",
-      "data_cutoff": "2026-09-10T14:30:16.414008Z",
+      "event_time": "2026-08-06T00:00:00-04:00",
+      "publication_date": "2026-08-05",
+      "publication_precision": "date",
+      "data_cutoff": "2026-09-10T18:07:27.476583Z",
       "observations": [
         {
           "metric_name": "assets",
@@ -1179,8 +1184,8 @@
             "currency": "USD",
             "fiscal_period": "Q2",
             "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_end": "2026-06-27",
+            "period_kind": "instant",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AMD:10-Q:2026-08-05:assets:instant:2026-06-27"
@@ -1201,8 +1206,8 @@
             "currency": "USD",
             "fiscal_period": "Q2",
             "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_end": "2026-06-27",
+            "period_kind": "instant",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AMD:10-Q:2026-08-05:cash:instant:2026-06-27"
@@ -1222,9 +1227,9 @@
             "unit": "USD/shares",
             "currency": null,
             "fiscal_period": "Q2 2025-12-28至2026-06-27",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2025-12-28",
+            "period_end": "2026-06-27",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AMD:10-Q:2026-08-05:diluted_eps:2025-12-28:2026-06-27"
@@ -1244,9 +1249,9 @@
             "unit": "USD/shares",
             "currency": null,
             "fiscal_period": "Q2 2026-03-29至2026-06-27",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2026-03-29",
+            "period_end": "2026-06-27",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AMD:10-Q:2026-08-05:diluted_eps:2026-03-29:2026-06-27"
@@ -1266,9 +1271,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2025-12-28至2026-06-27",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2025-12-28",
+            "period_end": "2026-06-27",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AMD:10-Q:2026-08-05:net_income:2025-12-28:2026-06-27"
@@ -1288,9 +1293,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2026-03-29至2026-06-27",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2026-03-29",
+            "period_end": "2026-06-27",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AMD:10-Q:2026-08-05:net_income:2026-03-29:2026-06-27"
@@ -1310,9 +1315,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2025-12-28至2026-06-27",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2025-12-28",
+            "period_end": "2026-06-27",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AMD:10-Q:2026-08-05:operating_cash_flow:2025-12-28:2026-06-27"
@@ -1332,9 +1337,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2025-12-28至2026-06-27",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2025-12-28",
+            "period_end": "2026-06-27",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AMD:10-Q:2026-08-05:operating_income:2025-12-28:2026-06-27"
@@ -1354,9 +1359,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2026-03-29至2026-06-27",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2026-03-29",
+            "period_end": "2026-06-27",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AMD:10-Q:2026-08-05:operating_income:2026-03-29:2026-06-27"
@@ -1376,9 +1381,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2025-12-28至2026-06-27",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2025-12-28",
+            "period_end": "2026-06-27",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AMD:10-Q:2026-08-05:revenue:2025-12-28:2026-06-27"
@@ -1398,9 +1403,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2026-03-29至2026-06-27",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2026-03-29",
+            "period_end": "2026-06-27",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AMD:10-Q:2026-08-05:revenue:2026-03-29:2026-06-27"
@@ -1521,10 +1526,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:AMD:10-Q:2026-08-05:assets:instant:2026-06-27",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
-            "published_at": "2026-08-05T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-27T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "AMD"
@@ -1544,10 +1549,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:AMD:10-Q:2026-08-05:cash:instant:2026-06-27",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
-            "published_at": "2026-08-05T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-27T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "AMD"
@@ -1567,10 +1572,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:AMD:10-Q:2026-08-05:diluted_eps:2025-12-28:2026-06-27",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
-            "published_at": "2026-08-05T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-27T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "AMD"
@@ -1590,10 +1595,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:AMD:10-Q:2026-08-05:diluted_eps:2026-03-29:2026-06-27",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
-            "published_at": "2026-08-05T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-27T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "AMD"
@@ -1613,10 +1618,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:AMD:10-Q:2026-08-05:net_income:2025-12-28:2026-06-27",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
-            "published_at": "2026-08-05T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-27T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "AMD"
@@ -1636,10 +1641,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:AMD:10-Q:2026-08-05:net_income:2026-03-29:2026-06-27",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
-            "published_at": "2026-08-05T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-27T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "AMD"
@@ -1659,10 +1664,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:AMD:10-Q:2026-08-05:operating_cash_flow:2025-12-28:2026-06-27",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
-            "published_at": "2026-08-05T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-27T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "AMD"
@@ -1682,10 +1687,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:AMD:10-Q:2026-08-05:operating_income:2025-12-28:2026-06-27",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
-            "published_at": "2026-08-05T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-27T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "AMD"
@@ -1705,10 +1710,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:AMD:10-Q:2026-08-05:operating_income:2026-03-29:2026-06-27",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
-            "published_at": "2026-08-05T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-27T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "AMD"
@@ -1728,10 +1733,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:AMD:10-Q:2026-08-05:revenue:2025-12-28:2026-06-27",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
-            "published_at": "2026-08-05T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-27T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "AMD"
@@ -1751,10 +1756,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:AMD:10-Q:2026-08-05:revenue:2026-03-29:2026-06-27",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
-            "published_at": "2026-08-05T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-27T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "AMD"
@@ -1768,842 +1773,11 @@
       ],
       "gaps": [
         "missing_consensus",
-        "transcript_unavailable"
+        "transcript_unavailable",
+        "發布時間僅有日期或未知，事件時間代表保守可用時間。"
       ],
       "overall_read": "insufficient",
-      "confidence": 60
-    },
-    {
-      "schema_version": "1.0",
-      "event_id": "sec:AVGO:10-Q:2026-09-10:2026:Q3",
-      "symbol": "AVGO",
-      "company": "AVGO",
-      "fiscal_period": "2026-Q3",
-      "event_time": "2026-09-10T00:00:00Z",
-      "publication_date": null,
-      "publication_precision": "exact",
-      "data_cutoff": "2026-09-10T14:30:16.414008Z",
-      "observations": [
-        {
-          "metric_name": "operating_cash_flow",
-          "actual": {
-            "value": "19834000000",
-            "unit": "USD",
-            "currency": "USD",
-            "fiscal_period": "Q3 2024-11-04至2025-08-03",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
-            "accounting_basis": "gaap",
-            "evidence_ids": [
-              "sec:AVGO:10-Q:2026-09-10:operating_cash_flow:2024-11-04:2025-08-03"
-            ]
-          },
-          "consensus": null,
-          "prior_company_guidance": null,
-          "prior_internal_estimate": null,
-          "new_guidance": null,
-          "one_time": false,
-          "note": "申報期間 2024-11-04 至 2025-08-03。"
-        }
-      ],
-      "variances": [
-        {
-          "metric_name": "operating_cash_flow",
-          "actual_vs_consensus": null,
-          "actual_vs_prior_company_guidance": null,
-          "actual_vs_prior_internal_estimate": null,
-          "new_guidance_vs_prior_guidance": null,
-          "warnings": []
-        }
-      ],
-      "guidance": [],
-      "guidance_variances": [],
-      "segment_drivers": [],
-      "one_time_items": [],
-      "management_tone": null,
-      "unresolved_questions": [],
-      "thesis_impacts": [],
-      "sources": [
-        {
-          "evidence_id": "sec:AVGO:10-Q:2026-09-10:operating_cash_flow:2024-11-04:2025-08-03",
-          "role": "sec_filing",
-          "summary": "10-Q 申報的 operating_cash_flow 實際數值。",
-          "provenance": {
-            "provider": "sec-edgar",
-            "source_type": "filing_fact",
-            "source_id": "sec:AVGO:10-Q:2026-09-10:operating_cash_flow:2024-11-04:2025-08-03",
-            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
-            "published_at": "2026-09-10T00:00:00Z",
-            "as_of": "2025-08-03T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
-            "license_note": null,
-            "affected_symbols": [
-              "AVGO"
-            ],
-            "categories": [
-              "earnings"
-            ],
-            "gap": null
-          }
-        }
-      ],
-      "gaps": [
-        "missing_consensus",
-        "transcript_unavailable"
-      ],
-      "overall_read": "insufficient",
-      "confidence": 60
-    },
-    {
-      "schema_version": "1.0",
-      "event_id": "sec:AVGO:10-Q:2026-09-10:2026:Q3",
-      "symbol": "AVGO",
-      "company": "AVGO",
-      "fiscal_period": "2026-Q3",
-      "event_time": "2026-09-10T00:00:00Z",
-      "publication_date": null,
-      "publication_precision": "exact",
-      "data_cutoff": "2026-09-10T14:30:16.414008Z",
-      "observations": [
-        {
-          "metric_name": "assets",
-          "actual": {
-            "value": "171092000000",
-            "unit": "USD",
-            "currency": "USD",
-            "fiscal_period": "Q3",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
-            "accounting_basis": "gaap",
-            "evidence_ids": [
-              "sec:AVGO:10-Q:2026-09-10:assets:instant:2025-11-02"
-            ]
-          },
-          "consensus": null,
-          "prior_company_guidance": null,
-          "prior_internal_estimate": null,
-          "new_guidance": null,
-          "one_time": false,
-          "note": "期間終點 2025-11-02；起點未提供。"
-        },
-        {
-          "metric_name": "cash",
-          "actual": {
-            "value": "16178000000",
-            "unit": "USD",
-            "currency": "USD",
-            "fiscal_period": "Q3",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
-            "accounting_basis": "gaap",
-            "evidence_ids": [
-              "sec:AVGO:10-Q:2026-09-10:cash:instant:2025-11-02"
-            ]
-          },
-          "consensus": null,
-          "prior_company_guidance": null,
-          "prior_internal_estimate": null,
-          "new_guidance": null,
-          "one_time": false,
-          "note": "期間終點 2025-11-02；起點未提供。"
-        },
-        {
-          "metric_name": "liabilities",
-          "actual": {
-            "value": "89800000000",
-            "unit": "USD",
-            "currency": "USD",
-            "fiscal_period": "Q3",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
-            "accounting_basis": "gaap",
-            "evidence_ids": [
-              "sec:AVGO:10-Q:2026-09-10:liabilities:instant:2025-11-02"
-            ]
-          },
-          "consensus": null,
-          "prior_company_guidance": null,
-          "prior_internal_estimate": null,
-          "new_guidance": null,
-          "one_time": false,
-          "note": "期間終點 2025-11-02；起點未提供。"
-        }
-      ],
-      "variances": [
-        {
-          "metric_name": "assets",
-          "actual_vs_consensus": null,
-          "actual_vs_prior_company_guidance": null,
-          "actual_vs_prior_internal_estimate": null,
-          "new_guidance_vs_prior_guidance": null,
-          "warnings": []
-        },
-        {
-          "metric_name": "cash",
-          "actual_vs_consensus": null,
-          "actual_vs_prior_company_guidance": null,
-          "actual_vs_prior_internal_estimate": null,
-          "new_guidance_vs_prior_guidance": null,
-          "warnings": []
-        },
-        {
-          "metric_name": "liabilities",
-          "actual_vs_consensus": null,
-          "actual_vs_prior_company_guidance": null,
-          "actual_vs_prior_internal_estimate": null,
-          "new_guidance_vs_prior_guidance": null,
-          "warnings": []
-        }
-      ],
-      "guidance": [],
-      "guidance_variances": [],
-      "segment_drivers": [],
-      "one_time_items": [],
-      "management_tone": null,
-      "unresolved_questions": [],
-      "thesis_impacts": [],
-      "sources": [
-        {
-          "evidence_id": "sec:AVGO:10-Q:2026-09-10:assets:instant:2025-11-02",
-          "role": "sec_filing",
-          "summary": "10-Q 申報的 assets 實際數值。",
-          "provenance": {
-            "provider": "sec-edgar",
-            "source_type": "filing_fact",
-            "source_id": "sec:AVGO:10-Q:2026-09-10:assets:instant:2025-11-02",
-            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
-            "published_at": "2026-09-10T00:00:00Z",
-            "as_of": "2025-11-02T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
-            "license_note": null,
-            "affected_symbols": [
-              "AVGO"
-            ],
-            "categories": [
-              "earnings"
-            ],
-            "gap": null
-          }
-        },
-        {
-          "evidence_id": "sec:AVGO:10-Q:2026-09-10:cash:instant:2025-11-02",
-          "role": "sec_filing",
-          "summary": "10-Q 申報的 cash 實際數值。",
-          "provenance": {
-            "provider": "sec-edgar",
-            "source_type": "filing_fact",
-            "source_id": "sec:AVGO:10-Q:2026-09-10:cash:instant:2025-11-02",
-            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
-            "published_at": "2026-09-10T00:00:00Z",
-            "as_of": "2025-11-02T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
-            "license_note": null,
-            "affected_symbols": [
-              "AVGO"
-            ],
-            "categories": [
-              "earnings"
-            ],
-            "gap": null
-          }
-        },
-        {
-          "evidence_id": "sec:AVGO:10-Q:2026-09-10:liabilities:instant:2025-11-02",
-          "role": "sec_filing",
-          "summary": "10-Q 申報的 liabilities 實際數值。",
-          "provenance": {
-            "provider": "sec-edgar",
-            "source_type": "filing_fact",
-            "source_id": "sec:AVGO:10-Q:2026-09-10:liabilities:instant:2025-11-02",
-            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
-            "published_at": "2026-09-10T00:00:00Z",
-            "as_of": "2025-11-02T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
-            "license_note": null,
-            "affected_symbols": [
-              "AVGO"
-            ],
-            "categories": [
-              "earnings"
-            ],
-            "gap": null
-          }
-        }
-      ],
-      "gaps": [
-        "missing_consensus",
-        "transcript_unavailable"
-      ],
-      "overall_read": "insufficient",
-      "confidence": 60
-    },
-    {
-      "schema_version": "1.0",
-      "event_id": "sec:AVGO:10-Q:2026-09-10:2026:Q3",
-      "symbol": "AVGO",
-      "company": "AVGO",
-      "fiscal_period": "2026-Q3",
-      "event_time": "2026-09-10T00:00:00Z",
-      "publication_date": null,
-      "publication_precision": "exact",
-      "data_cutoff": "2026-09-10T14:30:16.414008Z",
-      "observations": [
-        {
-          "metric_name": "assets",
-          "actual": {
-            "value": "188148000000",
-            "unit": "USD",
-            "currency": "USD",
-            "fiscal_period": "Q3",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
-            "accounting_basis": "gaap",
-            "evidence_ids": [
-              "sec:AVGO:10-Q:2026-09-10:assets:instant:2026-08-02"
-            ]
-          },
-          "consensus": null,
-          "prior_company_guidance": null,
-          "prior_internal_estimate": null,
-          "new_guidance": null,
-          "one_time": false,
-          "note": "期間終點 2026-08-02；起點未提供。"
-        },
-        {
-          "metric_name": "cash",
-          "actual": {
-            "value": "23975000000",
-            "unit": "USD",
-            "currency": "USD",
-            "fiscal_period": "Q3",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
-            "accounting_basis": "gaap",
-            "evidence_ids": [
-              "sec:AVGO:10-Q:2026-09-10:cash:instant:2026-08-02"
-            ]
-          },
-          "consensus": null,
-          "prior_company_guidance": null,
-          "prior_internal_estimate": null,
-          "new_guidance": null,
-          "one_time": false,
-          "note": "期間終點 2026-08-02；起點未提供。"
-        },
-        {
-          "metric_name": "diluted_eps",
-          "actual": {
-            "value": "6.09",
-            "unit": "USD/shares",
-            "currency": null,
-            "fiscal_period": "Q3 2025-11-03至2026-08-02",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
-            "accounting_basis": "gaap",
-            "evidence_ids": [
-              "sec:AVGO:10-Q:2026-09-10:diluted_eps:2025-11-03:2026-08-02"
-            ]
-          },
-          "consensus": null,
-          "prior_company_guidance": null,
-          "prior_internal_estimate": null,
-          "new_guidance": null,
-          "one_time": false,
-          "note": "申報期間 2025-11-03 至 2026-08-02。"
-        },
-        {
-          "metric_name": "diluted_eps",
-          "actual": {
-            "value": "2.68",
-            "unit": "USD/shares",
-            "currency": null,
-            "fiscal_period": "Q3 2026-05-04至2026-08-02",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
-            "accounting_basis": "gaap",
-            "evidence_ids": [
-              "sec:AVGO:10-Q:2026-09-10:diluted_eps:2026-05-04:2026-08-02"
-            ]
-          },
-          "consensus": null,
-          "prior_company_guidance": null,
-          "prior_internal_estimate": null,
-          "new_guidance": null,
-          "one_time": false,
-          "note": "申報期間 2026-05-04 至 2026-08-02。"
-        },
-        {
-          "metric_name": "liabilities",
-          "actual": {
-            "value": "88458000000",
-            "unit": "USD",
-            "currency": "USD",
-            "fiscal_period": "Q3",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
-            "accounting_basis": "gaap",
-            "evidence_ids": [
-              "sec:AVGO:10-Q:2026-09-10:liabilities:instant:2026-08-02"
-            ]
-          },
-          "consensus": null,
-          "prior_company_guidance": null,
-          "prior_internal_estimate": null,
-          "new_guidance": null,
-          "one_time": false,
-          "note": "期間終點 2026-08-02；起點未提供。"
-        },
-        {
-          "metric_name": "operating_cash_flow",
-          "actual": {
-            "value": "32950000000",
-            "unit": "USD",
-            "currency": "USD",
-            "fiscal_period": "Q3 2025-11-03至2026-08-02",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
-            "accounting_basis": "gaap",
-            "evidence_ids": [
-              "sec:AVGO:10-Q:2026-09-10:operating_cash_flow:2025-11-03:2026-08-02"
-            ]
-          },
-          "consensus": null,
-          "prior_company_guidance": null,
-          "prior_internal_estimate": null,
-          "new_guidance": null,
-          "one_time": false,
-          "note": "申報期間 2025-11-03 至 2026-08-02。"
-        },
-        {
-          "metric_name": "operating_income",
-          "actual": {
-            "value": "35306000000",
-            "unit": "USD",
-            "currency": "USD",
-            "fiscal_period": "Q3 2025-11-03至2026-08-02",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
-            "accounting_basis": "gaap",
-            "evidence_ids": [
-              "sec:AVGO:10-Q:2026-09-10:operating_income:2025-11-03:2026-08-02"
-            ]
-          },
-          "consensus": null,
-          "prior_company_guidance": null,
-          "prior_internal_estimate": null,
-          "new_guidance": null,
-          "one_time": false,
-          "note": "申報期間 2025-11-03 至 2026-08-02。"
-        },
-        {
-          "metric_name": "operating_income",
-          "actual": {
-            "value": "15955000000",
-            "unit": "USD",
-            "currency": "USD",
-            "fiscal_period": "Q3 2026-05-04至2026-08-02",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
-            "accounting_basis": "gaap",
-            "evidence_ids": [
-              "sec:AVGO:10-Q:2026-09-10:operating_income:2026-05-04:2026-08-02"
-            ]
-          },
-          "consensus": null,
-          "prior_company_guidance": null,
-          "prior_internal_estimate": null,
-          "new_guidance": null,
-          "one_time": false,
-          "note": "申報期間 2026-05-04 至 2026-08-02。"
-        },
-        {
-          "metric_name": "revenue",
-          "actual": {
-            "value": "71089000000",
-            "unit": "USD",
-            "currency": "USD",
-            "fiscal_period": "Q3 2025-11-03至2026-08-02",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
-            "accounting_basis": "gaap",
-            "evidence_ids": [
-              "sec:AVGO:10-Q:2026-09-10:revenue:2025-11-03:2026-08-02"
-            ]
-          },
-          "consensus": null,
-          "prior_company_guidance": null,
-          "prior_internal_estimate": null,
-          "new_guidance": null,
-          "one_time": false,
-          "note": "申報期間 2025-11-03 至 2026-08-02。"
-        },
-        {
-          "metric_name": "revenue",
-          "actual": {
-            "value": "29591000000",
-            "unit": "USD",
-            "currency": "USD",
-            "fiscal_period": "Q3 2026-05-04至2026-08-02",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
-            "accounting_basis": "gaap",
-            "evidence_ids": [
-              "sec:AVGO:10-Q:2026-09-10:revenue:2026-05-04:2026-08-02"
-            ]
-          },
-          "consensus": null,
-          "prior_company_guidance": null,
-          "prior_internal_estimate": null,
-          "new_guidance": null,
-          "one_time": false,
-          "note": "申報期間 2026-05-04 至 2026-08-02。"
-        }
-      ],
-      "variances": [
-        {
-          "metric_name": "assets",
-          "actual_vs_consensus": null,
-          "actual_vs_prior_company_guidance": null,
-          "actual_vs_prior_internal_estimate": null,
-          "new_guidance_vs_prior_guidance": null,
-          "warnings": []
-        },
-        {
-          "metric_name": "cash",
-          "actual_vs_consensus": null,
-          "actual_vs_prior_company_guidance": null,
-          "actual_vs_prior_internal_estimate": null,
-          "new_guidance_vs_prior_guidance": null,
-          "warnings": []
-        },
-        {
-          "metric_name": "diluted_eps",
-          "actual_vs_consensus": null,
-          "actual_vs_prior_company_guidance": null,
-          "actual_vs_prior_internal_estimate": null,
-          "new_guidance_vs_prior_guidance": null,
-          "warnings": []
-        },
-        {
-          "metric_name": "diluted_eps",
-          "actual_vs_consensus": null,
-          "actual_vs_prior_company_guidance": null,
-          "actual_vs_prior_internal_estimate": null,
-          "new_guidance_vs_prior_guidance": null,
-          "warnings": []
-        },
-        {
-          "metric_name": "liabilities",
-          "actual_vs_consensus": null,
-          "actual_vs_prior_company_guidance": null,
-          "actual_vs_prior_internal_estimate": null,
-          "new_guidance_vs_prior_guidance": null,
-          "warnings": []
-        },
-        {
-          "metric_name": "operating_cash_flow",
-          "actual_vs_consensus": null,
-          "actual_vs_prior_company_guidance": null,
-          "actual_vs_prior_internal_estimate": null,
-          "new_guidance_vs_prior_guidance": null,
-          "warnings": []
-        },
-        {
-          "metric_name": "operating_income",
-          "actual_vs_consensus": null,
-          "actual_vs_prior_company_guidance": null,
-          "actual_vs_prior_internal_estimate": null,
-          "new_guidance_vs_prior_guidance": null,
-          "warnings": []
-        },
-        {
-          "metric_name": "operating_income",
-          "actual_vs_consensus": null,
-          "actual_vs_prior_company_guidance": null,
-          "actual_vs_prior_internal_estimate": null,
-          "new_guidance_vs_prior_guidance": null,
-          "warnings": []
-        },
-        {
-          "metric_name": "revenue",
-          "actual_vs_consensus": null,
-          "actual_vs_prior_company_guidance": null,
-          "actual_vs_prior_internal_estimate": null,
-          "new_guidance_vs_prior_guidance": null,
-          "warnings": []
-        },
-        {
-          "metric_name": "revenue",
-          "actual_vs_consensus": null,
-          "actual_vs_prior_company_guidance": null,
-          "actual_vs_prior_internal_estimate": null,
-          "new_guidance_vs_prior_guidance": null,
-          "warnings": []
-        }
-      ],
-      "guidance": [],
-      "guidance_variances": [],
-      "segment_drivers": [],
-      "one_time_items": [],
-      "management_tone": null,
-      "unresolved_questions": [],
-      "thesis_impacts": [],
-      "sources": [
-        {
-          "evidence_id": "sec:AVGO:10-Q:2026-09-10:assets:instant:2026-08-02",
-          "role": "sec_filing",
-          "summary": "10-Q 申報的 assets 實際數值。",
-          "provenance": {
-            "provider": "sec-edgar",
-            "source_type": "filing_fact",
-            "source_id": "sec:AVGO:10-Q:2026-09-10:assets:instant:2026-08-02",
-            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
-            "published_at": "2026-09-10T00:00:00Z",
-            "as_of": "2026-08-02T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
-            "license_note": null,
-            "affected_symbols": [
-              "AVGO"
-            ],
-            "categories": [
-              "earnings"
-            ],
-            "gap": null
-          }
-        },
-        {
-          "evidence_id": "sec:AVGO:10-Q:2026-09-10:cash:instant:2026-08-02",
-          "role": "sec_filing",
-          "summary": "10-Q 申報的 cash 實際數值。",
-          "provenance": {
-            "provider": "sec-edgar",
-            "source_type": "filing_fact",
-            "source_id": "sec:AVGO:10-Q:2026-09-10:cash:instant:2026-08-02",
-            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
-            "published_at": "2026-09-10T00:00:00Z",
-            "as_of": "2026-08-02T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
-            "license_note": null,
-            "affected_symbols": [
-              "AVGO"
-            ],
-            "categories": [
-              "earnings"
-            ],
-            "gap": null
-          }
-        },
-        {
-          "evidence_id": "sec:AVGO:10-Q:2026-09-10:diluted_eps:2025-11-03:2026-08-02",
-          "role": "sec_filing",
-          "summary": "10-Q 申報的 diluted_eps 實際數值。",
-          "provenance": {
-            "provider": "sec-edgar",
-            "source_type": "filing_fact",
-            "source_id": "sec:AVGO:10-Q:2026-09-10:diluted_eps:2025-11-03:2026-08-02",
-            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
-            "published_at": "2026-09-10T00:00:00Z",
-            "as_of": "2026-08-02T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
-            "license_note": null,
-            "affected_symbols": [
-              "AVGO"
-            ],
-            "categories": [
-              "earnings"
-            ],
-            "gap": null
-          }
-        },
-        {
-          "evidence_id": "sec:AVGO:10-Q:2026-09-10:diluted_eps:2026-05-04:2026-08-02",
-          "role": "sec_filing",
-          "summary": "10-Q 申報的 diluted_eps 實際數值。",
-          "provenance": {
-            "provider": "sec-edgar",
-            "source_type": "filing_fact",
-            "source_id": "sec:AVGO:10-Q:2026-09-10:diluted_eps:2026-05-04:2026-08-02",
-            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
-            "published_at": "2026-09-10T00:00:00Z",
-            "as_of": "2026-08-02T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
-            "license_note": null,
-            "affected_symbols": [
-              "AVGO"
-            ],
-            "categories": [
-              "earnings"
-            ],
-            "gap": null
-          }
-        },
-        {
-          "evidence_id": "sec:AVGO:10-Q:2026-09-10:liabilities:instant:2026-08-02",
-          "role": "sec_filing",
-          "summary": "10-Q 申報的 liabilities 實際數值。",
-          "provenance": {
-            "provider": "sec-edgar",
-            "source_type": "filing_fact",
-            "source_id": "sec:AVGO:10-Q:2026-09-10:liabilities:instant:2026-08-02",
-            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
-            "published_at": "2026-09-10T00:00:00Z",
-            "as_of": "2026-08-02T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
-            "license_note": null,
-            "affected_symbols": [
-              "AVGO"
-            ],
-            "categories": [
-              "earnings"
-            ],
-            "gap": null
-          }
-        },
-        {
-          "evidence_id": "sec:AVGO:10-Q:2026-09-10:operating_cash_flow:2025-11-03:2026-08-02",
-          "role": "sec_filing",
-          "summary": "10-Q 申報的 operating_cash_flow 實際數值。",
-          "provenance": {
-            "provider": "sec-edgar",
-            "source_type": "filing_fact",
-            "source_id": "sec:AVGO:10-Q:2026-09-10:operating_cash_flow:2025-11-03:2026-08-02",
-            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
-            "published_at": "2026-09-10T00:00:00Z",
-            "as_of": "2026-08-02T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
-            "license_note": null,
-            "affected_symbols": [
-              "AVGO"
-            ],
-            "categories": [
-              "earnings"
-            ],
-            "gap": null
-          }
-        },
-        {
-          "evidence_id": "sec:AVGO:10-Q:2026-09-10:operating_income:2025-11-03:2026-08-02",
-          "role": "sec_filing",
-          "summary": "10-Q 申報的 operating_income 實際數值。",
-          "provenance": {
-            "provider": "sec-edgar",
-            "source_type": "filing_fact",
-            "source_id": "sec:AVGO:10-Q:2026-09-10:operating_income:2025-11-03:2026-08-02",
-            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
-            "published_at": "2026-09-10T00:00:00Z",
-            "as_of": "2026-08-02T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
-            "license_note": null,
-            "affected_symbols": [
-              "AVGO"
-            ],
-            "categories": [
-              "earnings"
-            ],
-            "gap": null
-          }
-        },
-        {
-          "evidence_id": "sec:AVGO:10-Q:2026-09-10:operating_income:2026-05-04:2026-08-02",
-          "role": "sec_filing",
-          "summary": "10-Q 申報的 operating_income 實際數值。",
-          "provenance": {
-            "provider": "sec-edgar",
-            "source_type": "filing_fact",
-            "source_id": "sec:AVGO:10-Q:2026-09-10:operating_income:2026-05-04:2026-08-02",
-            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
-            "published_at": "2026-09-10T00:00:00Z",
-            "as_of": "2026-08-02T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
-            "license_note": null,
-            "affected_symbols": [
-              "AVGO"
-            ],
-            "categories": [
-              "earnings"
-            ],
-            "gap": null
-          }
-        },
-        {
-          "evidence_id": "sec:AVGO:10-Q:2026-09-10:revenue:2025-11-03:2026-08-02",
-          "role": "sec_filing",
-          "summary": "10-Q 申報的 revenue 實際數值。",
-          "provenance": {
-            "provider": "sec-edgar",
-            "source_type": "filing_fact",
-            "source_id": "sec:AVGO:10-Q:2026-09-10:revenue:2025-11-03:2026-08-02",
-            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
-            "published_at": "2026-09-10T00:00:00Z",
-            "as_of": "2026-08-02T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
-            "license_note": null,
-            "affected_symbols": [
-              "AVGO"
-            ],
-            "categories": [
-              "earnings"
-            ],
-            "gap": null
-          }
-        },
-        {
-          "evidence_id": "sec:AVGO:10-Q:2026-09-10:revenue:2026-05-04:2026-08-02",
-          "role": "sec_filing",
-          "summary": "10-Q 申報的 revenue 實際數值。",
-          "provenance": {
-            "provider": "sec-edgar",
-            "source_type": "filing_fact",
-            "source_id": "sec:AVGO:10-Q:2026-09-10:revenue:2026-05-04:2026-08-02",
-            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
-            "published_at": "2026-09-10T00:00:00Z",
-            "as_of": "2026-08-02T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
-            "license_note": null,
-            "affected_symbols": [
-              "AVGO"
-            ],
-            "categories": [
-              "earnings"
-            ],
-            "gap": null
-          }
-        }
-      ],
-      "gaps": [
-        "missing_consensus",
-        "transcript_unavailable"
-      ],
-      "overall_read": "insufficient",
-      "confidence": 60
+      "confidence": 20
     },
     {
       "schema_version": "1.0",
@@ -2611,10 +1785,10 @@
       "symbol": "META",
       "company": "META",
       "fiscal_period": "2026-Q2",
-      "event_time": "2026-07-30T00:00:00Z",
-      "publication_date": null,
-      "publication_precision": "exact",
-      "data_cutoff": "2026-09-10T14:30:16.414008Z",
+      "event_time": "2026-07-31T00:00:00-04:00",
+      "publication_date": "2026-07-30",
+      "publication_precision": "date",
+      "data_cutoff": "2026-09-10T18:07:27.476583Z",
       "observations": [
         {
           "metric_name": "operating_cash_flow",
@@ -2623,9 +1797,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2025-01-01至2025-06-30",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2025-01-01",
+            "period_end": "2025-06-30",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:META:10-Q:2026-07-30:operating_cash_flow:2025-01-01:2025-06-30"
@@ -2666,10 +1840,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:META:10-Q:2026-07-30:operating_cash_flow:2025-01-01:2025-06-30",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
-            "published_at": "2026-07-30T00:00:00Z",
+            "published_at": null,
             "as_of": "2025-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "META"
@@ -2683,10 +1857,11 @@
       ],
       "gaps": [
         "missing_consensus",
-        "transcript_unavailable"
+        "transcript_unavailable",
+        "發布時間僅有日期或未知，事件時間代表保守可用時間。"
       ],
       "overall_read": "insufficient",
-      "confidence": 60
+      "confidence": 20
     },
     {
       "schema_version": "1.0",
@@ -2694,10 +1869,10 @@
       "symbol": "META",
       "company": "META",
       "fiscal_period": "2026-Q2",
-      "event_time": "2026-07-30T00:00:00Z",
-      "publication_date": null,
-      "publication_precision": "exact",
-      "data_cutoff": "2026-09-10T14:30:16.414008Z",
+      "event_time": "2026-07-31T00:00:00-04:00",
+      "publication_date": "2026-07-30",
+      "publication_precision": "date",
+      "data_cutoff": "2026-09-10T18:07:27.476583Z",
       "observations": [
         {
           "metric_name": "assets",
@@ -2707,8 +1882,8 @@
             "currency": "USD",
             "fiscal_period": "Q2",
             "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_end": "2025-12-31",
+            "period_kind": "instant",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:META:10-Q:2026-07-30:assets:instant:2025-12-31"
@@ -2729,8 +1904,8 @@
             "currency": "USD",
             "fiscal_period": "Q2",
             "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_end": "2025-12-31",
+            "period_kind": "instant",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:META:10-Q:2026-07-30:cash:instant:2025-12-31"
@@ -2751,8 +1926,8 @@
             "currency": "USD",
             "fiscal_period": "Q2",
             "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_end": "2025-12-31",
+            "period_kind": "instant",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:META:10-Q:2026-07-30:liabilities:instant:2025-12-31"
@@ -2809,10 +1984,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:META:10-Q:2026-07-30:assets:instant:2025-12-31",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
-            "published_at": "2026-07-30T00:00:00Z",
+            "published_at": null,
             "as_of": "2025-12-31T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "META"
@@ -2832,10 +2007,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:META:10-Q:2026-07-30:cash:instant:2025-12-31",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
-            "published_at": "2026-07-30T00:00:00Z",
+            "published_at": null,
             "as_of": "2025-12-31T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "META"
@@ -2855,10 +2030,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:META:10-Q:2026-07-30:liabilities:instant:2025-12-31",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
-            "published_at": "2026-07-30T00:00:00Z",
+            "published_at": null,
             "as_of": "2025-12-31T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "META"
@@ -2872,10 +2047,11 @@
       ],
       "gaps": [
         "missing_consensus",
-        "transcript_unavailable"
+        "transcript_unavailable",
+        "發布時間僅有日期或未知，事件時間代表保守可用時間。"
       ],
       "overall_read": "insufficient",
-      "confidence": 60
+      "confidence": 20
     },
     {
       "schema_version": "1.0",
@@ -2883,10 +2059,10 @@
       "symbol": "META",
       "company": "META",
       "fiscal_period": "2026-Q2",
-      "event_time": "2026-07-30T00:00:00Z",
-      "publication_date": null,
-      "publication_precision": "exact",
-      "data_cutoff": "2026-09-10T14:30:16.414008Z",
+      "event_time": "2026-07-31T00:00:00-04:00",
+      "publication_date": "2026-07-30",
+      "publication_precision": "date",
+      "data_cutoff": "2026-09-10T18:07:27.476583Z",
       "observations": [
         {
           "metric_name": "assets",
@@ -2896,8 +2072,8 @@
             "currency": "USD",
             "fiscal_period": "Q2",
             "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_end": "2026-06-30",
+            "period_kind": "instant",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:META:10-Q:2026-07-30:assets:instant:2026-06-30"
@@ -2918,8 +2094,8 @@
             "currency": "USD",
             "fiscal_period": "Q2",
             "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_end": "2026-06-30",
+            "period_kind": "instant",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:META:10-Q:2026-07-30:cash:instant:2026-06-30"
@@ -2939,9 +2115,9 @@
             "unit": "USD/shares",
             "currency": null,
             "fiscal_period": "Q2 2026-01-01至2026-06-30",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2026-01-01",
+            "period_end": "2026-06-30",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:META:10-Q:2026-07-30:diluted_eps:2026-01-01:2026-06-30"
@@ -2961,9 +2137,9 @@
             "unit": "USD/shares",
             "currency": null,
             "fiscal_period": "Q2 2026-04-01至2026-06-30",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2026-04-01",
+            "period_end": "2026-06-30",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:META:10-Q:2026-07-30:diluted_eps:2026-04-01:2026-06-30"
@@ -2984,8 +2160,8 @@
             "currency": "USD",
             "fiscal_period": "Q2",
             "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_end": "2026-06-30",
+            "period_kind": "instant",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:META:10-Q:2026-07-30:liabilities:instant:2026-06-30"
@@ -3005,9 +2181,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2026-01-01至2026-06-30",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2026-01-01",
+            "period_end": "2026-06-30",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:META:10-Q:2026-07-30:net_income:2026-01-01:2026-06-30"
@@ -3027,9 +2203,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2026-04-01至2026-06-30",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2026-04-01",
+            "period_end": "2026-06-30",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:META:10-Q:2026-07-30:net_income:2026-04-01:2026-06-30"
@@ -3049,9 +2225,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2026-01-01至2026-06-30",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2026-01-01",
+            "period_end": "2026-06-30",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:META:10-Q:2026-07-30:operating_cash_flow:2026-01-01:2026-06-30"
@@ -3071,9 +2247,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2026-01-01至2026-06-30",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2026-01-01",
+            "period_end": "2026-06-30",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:META:10-Q:2026-07-30:operating_income:2026-01-01:2026-06-30"
@@ -3093,9 +2269,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2026-04-01至2026-06-30",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2026-04-01",
+            "period_end": "2026-06-30",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:META:10-Q:2026-07-30:operating_income:2026-04-01:2026-06-30"
@@ -3115,9 +2291,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2026-01-01至2026-06-30",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2026-01-01",
+            "period_end": "2026-06-30",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:META:10-Q:2026-07-30:revenue:2026-01-01:2026-06-30"
@@ -3137,9 +2313,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2026-04-01至2026-06-30",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2026-04-01",
+            "period_end": "2026-06-30",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:META:10-Q:2026-07-30:revenue:2026-04-01:2026-06-30"
@@ -3268,10 +2444,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:META:10-Q:2026-07-30:assets:instant:2026-06-30",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
-            "published_at": "2026-07-30T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "META"
@@ -3291,10 +2467,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:META:10-Q:2026-07-30:cash:instant:2026-06-30",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
-            "published_at": "2026-07-30T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "META"
@@ -3314,10 +2490,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:META:10-Q:2026-07-30:diluted_eps:2026-01-01:2026-06-30",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
-            "published_at": "2026-07-30T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "META"
@@ -3337,10 +2513,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:META:10-Q:2026-07-30:diluted_eps:2026-04-01:2026-06-30",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
-            "published_at": "2026-07-30T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "META"
@@ -3360,10 +2536,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:META:10-Q:2026-07-30:liabilities:instant:2026-06-30",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
-            "published_at": "2026-07-30T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "META"
@@ -3383,10 +2559,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:META:10-Q:2026-07-30:net_income:2026-01-01:2026-06-30",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
-            "published_at": "2026-07-30T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "META"
@@ -3406,10 +2582,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:META:10-Q:2026-07-30:net_income:2026-04-01:2026-06-30",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
-            "published_at": "2026-07-30T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "META"
@@ -3429,10 +2605,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:META:10-Q:2026-07-30:operating_cash_flow:2026-01-01:2026-06-30",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
-            "published_at": "2026-07-30T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "META"
@@ -3452,10 +2628,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:META:10-Q:2026-07-30:operating_income:2026-01-01:2026-06-30",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
-            "published_at": "2026-07-30T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "META"
@@ -3475,10 +2651,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:META:10-Q:2026-07-30:operating_income:2026-04-01:2026-06-30",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
-            "published_at": "2026-07-30T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "META"
@@ -3498,10 +2674,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:META:10-Q:2026-07-30:revenue:2026-01-01:2026-06-30",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
-            "published_at": "2026-07-30T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "META"
@@ -3521,10 +2697,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:META:10-Q:2026-07-30:revenue:2026-04-01:2026-06-30",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
-            "published_at": "2026-07-30T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "META"
@@ -3538,10 +2714,11 @@
       ],
       "gaps": [
         "missing_consensus",
-        "transcript_unavailable"
+        "transcript_unavailable",
+        "發布時間僅有日期或未知，事件時間代表保守可用時間。"
       ],
       "overall_read": "insufficient",
-      "confidence": 60
+      "confidence": 20
     },
     {
       "schema_version": "1.0",
@@ -3549,10 +2726,10 @@
       "symbol": "MSFT",
       "company": "MSFT",
       "fiscal_period": "2026-FY",
-      "event_time": "2026-07-29T00:00:00Z",
-      "publication_date": null,
-      "publication_precision": "exact",
-      "data_cutoff": "2026-09-10T14:30:16.414008Z",
+      "event_time": "2026-07-30T00:00:00-04:00",
+      "publication_date": "2026-07-29",
+      "publication_precision": "date",
+      "data_cutoff": "2026-09-10T18:07:27.476583Z",
       "observations": [
         {
           "metric_name": "assets",
@@ -3562,8 +2739,8 @@
             "currency": "USD",
             "fiscal_period": "FY",
             "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_end": "2025-06-30",
+            "period_kind": "instant",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:MSFT:10-K:2026-07-29:assets:instant:2025-06-30"
@@ -3584,8 +2761,8 @@
             "currency": "USD",
             "fiscal_period": "FY",
             "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_end": "2025-06-30",
+            "period_kind": "instant",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:MSFT:10-K:2026-07-29:cash:instant:2025-06-30"
@@ -3605,9 +2782,9 @@
             "unit": "USD/shares",
             "currency": null,
             "fiscal_period": "FY 2024-07-01至2025-06-30",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2024-07-01",
+            "period_end": "2025-06-30",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:MSFT:10-K:2026-07-29:diluted_eps:2024-07-01:2025-06-30"
@@ -3628,8 +2805,8 @@
             "currency": "USD",
             "fiscal_period": "FY",
             "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_end": "2025-06-30",
+            "period_kind": "instant",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:MSFT:10-K:2026-07-29:liabilities:instant:2025-06-30"
@@ -3649,9 +2826,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "FY 2024-07-01至2025-06-30",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2024-07-01",
+            "period_end": "2025-06-30",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:MSFT:10-K:2026-07-29:net_income:2024-07-01:2025-06-30"
@@ -3671,9 +2848,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "FY 2024-07-01至2025-06-30",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2024-07-01",
+            "period_end": "2025-06-30",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:MSFT:10-K:2026-07-29:operating_cash_flow:2024-07-01:2025-06-30"
@@ -3693,9 +2870,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "FY 2024-07-01至2025-06-30",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2024-07-01",
+            "period_end": "2025-06-30",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:MSFT:10-K:2026-07-29:operating_income:2024-07-01:2025-06-30"
@@ -3715,9 +2892,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "FY 2024-07-01至2025-06-30",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2024-07-01",
+            "period_end": "2025-06-30",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:MSFT:10-K:2026-07-29:revenue:2024-07-01:2025-06-30"
@@ -3814,10 +2991,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:MSFT:10-K:2026-07-29:assets:instant:2025-06-30",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
-            "published_at": "2026-07-29T00:00:00Z",
+            "published_at": null,
             "as_of": "2025-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "MSFT"
@@ -3837,10 +3014,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:MSFT:10-K:2026-07-29:cash:instant:2025-06-30",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
-            "published_at": "2026-07-29T00:00:00Z",
+            "published_at": null,
             "as_of": "2025-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "MSFT"
@@ -3860,10 +3037,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:MSFT:10-K:2026-07-29:diluted_eps:2024-07-01:2025-06-30",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
-            "published_at": "2026-07-29T00:00:00Z",
+            "published_at": null,
             "as_of": "2025-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "MSFT"
@@ -3883,10 +3060,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:MSFT:10-K:2026-07-29:liabilities:instant:2025-06-30",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
-            "published_at": "2026-07-29T00:00:00Z",
+            "published_at": null,
             "as_of": "2025-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "MSFT"
@@ -3906,10 +3083,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:MSFT:10-K:2026-07-29:net_income:2024-07-01:2025-06-30",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
-            "published_at": "2026-07-29T00:00:00Z",
+            "published_at": null,
             "as_of": "2025-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "MSFT"
@@ -3929,10 +3106,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:MSFT:10-K:2026-07-29:operating_cash_flow:2024-07-01:2025-06-30",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
-            "published_at": "2026-07-29T00:00:00Z",
+            "published_at": null,
             "as_of": "2025-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "MSFT"
@@ -3952,10 +3129,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:MSFT:10-K:2026-07-29:operating_income:2024-07-01:2025-06-30",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
-            "published_at": "2026-07-29T00:00:00Z",
+            "published_at": null,
             "as_of": "2025-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "MSFT"
@@ -3975,10 +3152,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:MSFT:10-K:2026-07-29:revenue:2024-07-01:2025-06-30",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
-            "published_at": "2026-07-29T00:00:00Z",
+            "published_at": null,
             "as_of": "2025-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "MSFT"
@@ -3992,10 +3169,11 @@
       ],
       "gaps": [
         "missing_consensus",
-        "transcript_unavailable"
+        "transcript_unavailable",
+        "發布時間僅有日期或未知，事件時間代表保守可用時間。"
       ],
       "overall_read": "insufficient",
-      "confidence": 60
+      "confidence": 20
     },
     {
       "schema_version": "1.0",
@@ -4003,10 +3181,10 @@
       "symbol": "MSFT",
       "company": "MSFT",
       "fiscal_period": "2026-FY",
-      "event_time": "2026-07-29T00:00:00Z",
-      "publication_date": null,
-      "publication_precision": "exact",
-      "data_cutoff": "2026-09-10T14:30:16.414008Z",
+      "event_time": "2026-07-30T00:00:00-04:00",
+      "publication_date": "2026-07-29",
+      "publication_precision": "date",
+      "data_cutoff": "2026-09-10T18:07:27.476583Z",
       "observations": [
         {
           "metric_name": "assets",
@@ -4016,8 +3194,8 @@
             "currency": "USD",
             "fiscal_period": "FY",
             "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_end": "2026-06-30",
+            "period_kind": "instant",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:MSFT:10-K:2026-07-29:assets:instant:2026-06-30"
@@ -4038,8 +3216,8 @@
             "currency": "USD",
             "fiscal_period": "FY",
             "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_end": "2026-06-30",
+            "period_kind": "instant",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:MSFT:10-K:2026-07-29:cash:instant:2026-06-30"
@@ -4059,9 +3237,9 @@
             "unit": "USD/shares",
             "currency": null,
             "fiscal_period": "FY 2025-07-01至2026-06-30",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2025-07-01",
+            "period_end": "2026-06-30",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:MSFT:10-K:2026-07-29:diluted_eps:2025-07-01:2026-06-30"
@@ -4082,8 +3260,8 @@
             "currency": "USD",
             "fiscal_period": "FY",
             "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_end": "2026-06-30",
+            "period_kind": "instant",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:MSFT:10-K:2026-07-29:liabilities:instant:2026-06-30"
@@ -4103,9 +3281,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "FY 2025-07-01至2026-06-30",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2025-07-01",
+            "period_end": "2026-06-30",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:MSFT:10-K:2026-07-29:net_income:2025-07-01:2026-06-30"
@@ -4125,9 +3303,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "FY 2025-07-01至2026-06-30",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2025-07-01",
+            "period_end": "2026-06-30",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:MSFT:10-K:2026-07-29:operating_cash_flow:2025-07-01:2026-06-30"
@@ -4147,9 +3325,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "FY 2025-07-01至2026-06-30",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2025-07-01",
+            "period_end": "2026-06-30",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:MSFT:10-K:2026-07-29:operating_income:2025-07-01:2026-06-30"
@@ -4169,9 +3347,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "FY 2025-07-01至2026-06-30",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2025-07-01",
+            "period_end": "2026-06-30",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:MSFT:10-K:2026-07-29:revenue:2025-07-01:2026-06-30"
@@ -4268,10 +3446,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:MSFT:10-K:2026-07-29:assets:instant:2026-06-30",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
-            "published_at": "2026-07-29T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "MSFT"
@@ -4291,10 +3469,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:MSFT:10-K:2026-07-29:cash:instant:2026-06-30",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
-            "published_at": "2026-07-29T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "MSFT"
@@ -4314,10 +3492,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:MSFT:10-K:2026-07-29:diluted_eps:2025-07-01:2026-06-30",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
-            "published_at": "2026-07-29T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "MSFT"
@@ -4337,10 +3515,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:MSFT:10-K:2026-07-29:liabilities:instant:2026-06-30",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
-            "published_at": "2026-07-29T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "MSFT"
@@ -4360,10 +3538,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:MSFT:10-K:2026-07-29:net_income:2025-07-01:2026-06-30",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
-            "published_at": "2026-07-29T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "MSFT"
@@ -4383,10 +3561,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:MSFT:10-K:2026-07-29:operating_cash_flow:2025-07-01:2026-06-30",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
-            "published_at": "2026-07-29T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "MSFT"
@@ -4406,10 +3584,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:MSFT:10-K:2026-07-29:operating_income:2025-07-01:2026-06-30",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
-            "published_at": "2026-07-29T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "MSFT"
@@ -4429,10 +3607,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:MSFT:10-K:2026-07-29:revenue:2025-07-01:2026-06-30",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
-            "published_at": "2026-07-29T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "MSFT"
@@ -4446,10 +3624,11 @@
       ],
       "gaps": [
         "missing_consensus",
-        "transcript_unavailable"
+        "transcript_unavailable",
+        "發布時間僅有日期或未知，事件時間代表保守可用時間。"
       ],
       "overall_read": "insufficient",
-      "confidence": 60
+      "confidence": 20
     },
     {
       "schema_version": "1.0",
@@ -4457,10 +3636,10 @@
       "symbol": "NVDA",
       "company": "NVDA",
       "fiscal_period": "2027-Q2",
-      "event_time": "2026-08-26T00:00:00Z",
-      "publication_date": null,
-      "publication_precision": "exact",
-      "data_cutoff": "2026-09-10T14:30:16.414008Z",
+      "event_time": "2026-08-27T00:00:00-04:00",
+      "publication_date": "2026-08-26",
+      "publication_precision": "date",
+      "data_cutoff": "2026-09-10T18:07:27.476583Z",
       "observations": [
         {
           "metric_name": "operating_cash_flow",
@@ -4469,9 +3648,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2025-01-27至2025-07-27",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2025-01-27",
+            "period_end": "2025-07-27",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:NVDA:10-Q:2026-08-26:operating_cash_flow:2025-01-27:2025-07-27"
@@ -4512,10 +3691,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:NVDA:10-Q:2026-08-26:operating_cash_flow:2025-01-27:2025-07-27",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
-            "published_at": "2026-08-26T00:00:00Z",
+            "published_at": null,
             "as_of": "2025-07-27T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "NVDA"
@@ -4529,10 +3708,11 @@
       ],
       "gaps": [
         "missing_consensus",
-        "transcript_unavailable"
+        "transcript_unavailable",
+        "發布時間僅有日期或未知，事件時間代表保守可用時間。"
       ],
       "overall_read": "insufficient",
-      "confidence": 60
+      "confidence": 20
     },
     {
       "schema_version": "1.0",
@@ -4540,10 +3720,10 @@
       "symbol": "NVDA",
       "company": "NVDA",
       "fiscal_period": "2027-Q2",
-      "event_time": "2026-08-26T00:00:00Z",
-      "publication_date": null,
-      "publication_precision": "exact",
-      "data_cutoff": "2026-09-10T14:30:16.414008Z",
+      "event_time": "2026-08-27T00:00:00-04:00",
+      "publication_date": "2026-08-26",
+      "publication_precision": "date",
+      "data_cutoff": "2026-09-10T18:07:27.476583Z",
       "observations": [
         {
           "metric_name": "assets",
@@ -4553,8 +3733,8 @@
             "currency": "USD",
             "fiscal_period": "Q2",
             "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_end": "2026-01-25",
+            "period_kind": "instant",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:NVDA:10-Q:2026-08-26:assets:instant:2026-01-25"
@@ -4575,8 +3755,8 @@
             "currency": "USD",
             "fiscal_period": "Q2",
             "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_end": "2026-01-25",
+            "period_kind": "instant",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:NVDA:10-Q:2026-08-26:cash:instant:2026-01-25"
@@ -4597,8 +3777,8 @@
             "currency": "USD",
             "fiscal_period": "Q2",
             "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_end": "2026-01-25",
+            "period_kind": "instant",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:NVDA:10-Q:2026-08-26:liabilities:instant:2026-01-25"
@@ -4655,10 +3835,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:NVDA:10-Q:2026-08-26:assets:instant:2026-01-25",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
-            "published_at": "2026-08-26T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-01-25T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "NVDA"
@@ -4678,10 +3858,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:NVDA:10-Q:2026-08-26:cash:instant:2026-01-25",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
-            "published_at": "2026-08-26T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-01-25T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "NVDA"
@@ -4701,10 +3881,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:NVDA:10-Q:2026-08-26:liabilities:instant:2026-01-25",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
-            "published_at": "2026-08-26T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-01-25T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "NVDA"
@@ -4718,10 +3898,11 @@
       ],
       "gaps": [
         "missing_consensus",
-        "transcript_unavailable"
+        "transcript_unavailable",
+        "發布時間僅有日期或未知，事件時間代表保守可用時間。"
       ],
       "overall_read": "insufficient",
-      "confidence": 60
+      "confidence": 20
     },
     {
       "schema_version": "1.0",
@@ -4729,10 +3910,10 @@
       "symbol": "NVDA",
       "company": "NVDA",
       "fiscal_period": "2027-Q2",
-      "event_time": "2026-08-26T00:00:00Z",
-      "publication_date": null,
-      "publication_precision": "exact",
-      "data_cutoff": "2026-09-10T14:30:16.414008Z",
+      "event_time": "2026-08-27T00:00:00-04:00",
+      "publication_date": "2026-08-26",
+      "publication_precision": "date",
+      "data_cutoff": "2026-09-10T18:07:27.476583Z",
       "observations": [
         {
           "metric_name": "assets",
@@ -4742,8 +3923,8 @@
             "currency": "USD",
             "fiscal_period": "Q2",
             "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_end": "2026-07-26",
+            "period_kind": "instant",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:NVDA:10-Q:2026-08-26:assets:instant:2026-07-26"
@@ -4764,8 +3945,8 @@
             "currency": "USD",
             "fiscal_period": "Q2",
             "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_end": "2026-07-26",
+            "period_kind": "instant",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:NVDA:10-Q:2026-08-26:cash:instant:2026-07-26"
@@ -4785,9 +3966,9 @@
             "unit": "USD/shares",
             "currency": null,
             "fiscal_period": "Q2 2026-01-26至2026-07-26",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2026-01-26",
+            "period_end": "2026-07-26",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:NVDA:10-Q:2026-08-26:diluted_eps:2026-01-26:2026-07-26"
@@ -4807,9 +3988,9 @@
             "unit": "USD/shares",
             "currency": null,
             "fiscal_period": "Q2 2026-04-27至2026-07-26",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2026-04-27",
+            "period_end": "2026-07-26",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:NVDA:10-Q:2026-08-26:diluted_eps:2026-04-27:2026-07-26"
@@ -4830,8 +4011,8 @@
             "currency": "USD",
             "fiscal_period": "Q2",
             "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_end": "2026-07-26",
+            "period_kind": "instant",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:NVDA:10-Q:2026-08-26:liabilities:instant:2026-07-26"
@@ -4851,9 +4032,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2026-01-26至2026-07-26",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2026-01-26",
+            "period_end": "2026-07-26",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:NVDA:10-Q:2026-08-26:net_income:2026-01-26:2026-07-26"
@@ -4873,9 +4054,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2026-04-27至2026-07-26",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2026-04-27",
+            "period_end": "2026-07-26",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:NVDA:10-Q:2026-08-26:net_income:2026-04-27:2026-07-26"
@@ -4895,9 +4076,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2026-01-26至2026-07-26",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2026-01-26",
+            "period_end": "2026-07-26",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:NVDA:10-Q:2026-08-26:operating_cash_flow:2026-01-26:2026-07-26"
@@ -4917,9 +4098,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2026-01-26至2026-07-26",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2026-01-26",
+            "period_end": "2026-07-26",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:NVDA:10-Q:2026-08-26:operating_income:2026-01-26:2026-07-26"
@@ -4939,9 +4120,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2026-04-27至2026-07-26",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2026-04-27",
+            "period_end": "2026-07-26",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:NVDA:10-Q:2026-08-26:operating_income:2026-04-27:2026-07-26"
@@ -5054,10 +4235,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:NVDA:10-Q:2026-08-26:assets:instant:2026-07-26",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
-            "published_at": "2026-08-26T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-07-26T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "NVDA"
@@ -5077,10 +4258,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:NVDA:10-Q:2026-08-26:cash:instant:2026-07-26",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
-            "published_at": "2026-08-26T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-07-26T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "NVDA"
@@ -5100,10 +4281,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:NVDA:10-Q:2026-08-26:diluted_eps:2026-01-26:2026-07-26",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
-            "published_at": "2026-08-26T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-07-26T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "NVDA"
@@ -5123,10 +4304,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:NVDA:10-Q:2026-08-26:diluted_eps:2026-04-27:2026-07-26",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
-            "published_at": "2026-08-26T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-07-26T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "NVDA"
@@ -5146,10 +4327,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:NVDA:10-Q:2026-08-26:liabilities:instant:2026-07-26",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
-            "published_at": "2026-08-26T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-07-26T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "NVDA"
@@ -5169,10 +4350,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:NVDA:10-Q:2026-08-26:net_income:2026-01-26:2026-07-26",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
-            "published_at": "2026-08-26T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-07-26T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "NVDA"
@@ -5192,10 +4373,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:NVDA:10-Q:2026-08-26:net_income:2026-04-27:2026-07-26",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
-            "published_at": "2026-08-26T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-07-26T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "NVDA"
@@ -5215,10 +4396,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:NVDA:10-Q:2026-08-26:operating_cash_flow:2026-01-26:2026-07-26",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
-            "published_at": "2026-08-26T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-07-26T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "NVDA"
@@ -5238,10 +4419,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:NVDA:10-Q:2026-08-26:operating_income:2026-01-26:2026-07-26",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
-            "published_at": "2026-08-26T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-07-26T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "NVDA"
@@ -5261,10 +4442,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:NVDA:10-Q:2026-08-26:operating_income:2026-04-27:2026-07-26",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
-            "published_at": "2026-08-26T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-07-26T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "NVDA"
@@ -5278,10 +4459,11 @@
       ],
       "gaps": [
         "missing_consensus",
-        "transcript_unavailable"
+        "transcript_unavailable",
+        "發布時間僅有日期或未知，事件時間代表保守可用時間。"
       ],
       "overall_read": "insufficient",
-      "confidence": 60
+      "confidence": 20
     },
     {
       "schema_version": "1.0",
@@ -5289,10 +4471,10 @@
       "symbol": "PLTR",
       "company": "PLTR",
       "fiscal_period": "2026-Q2",
-      "event_time": "2026-08-04T00:00:00Z",
-      "publication_date": null,
-      "publication_precision": "exact",
-      "data_cutoff": "2026-09-10T14:30:16.414008Z",
+      "event_time": "2026-08-05T00:00:00-04:00",
+      "publication_date": "2026-08-04",
+      "publication_precision": "date",
+      "data_cutoff": "2026-09-10T18:07:27.476583Z",
       "observations": [
         {
           "metric_name": "operating_cash_flow",
@@ -5301,9 +4483,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2025-01-01至2025-06-30",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2025-01-01",
+            "period_end": "2025-06-30",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:PLTR:10-Q:2026-08-04:operating_cash_flow:2025-01-01:2025-06-30"
@@ -5344,10 +4526,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:PLTR:10-Q:2026-08-04:operating_cash_flow:2025-01-01:2025-06-30",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
-            "published_at": "2026-08-04T00:00:00Z",
+            "published_at": null,
             "as_of": "2025-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "PLTR"
@@ -5361,10 +4543,11 @@
       ],
       "gaps": [
         "missing_consensus",
-        "transcript_unavailable"
+        "transcript_unavailable",
+        "發布時間僅有日期或未知，事件時間代表保守可用時間。"
       ],
       "overall_read": "insufficient",
-      "confidence": 60
+      "confidence": 20
     },
     {
       "schema_version": "1.0",
@@ -5372,10 +4555,10 @@
       "symbol": "PLTR",
       "company": "PLTR",
       "fiscal_period": "2026-Q2",
-      "event_time": "2026-08-04T00:00:00Z",
-      "publication_date": null,
-      "publication_precision": "exact",
-      "data_cutoff": "2026-09-10T14:30:16.414008Z",
+      "event_time": "2026-08-05T00:00:00-04:00",
+      "publication_date": "2026-08-04",
+      "publication_precision": "date",
+      "data_cutoff": "2026-09-10T18:07:27.476583Z",
       "observations": [
         {
           "metric_name": "assets",
@@ -5385,8 +4568,8 @@
             "currency": "USD",
             "fiscal_period": "Q2",
             "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_end": "2025-12-31",
+            "period_kind": "instant",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:PLTR:10-Q:2026-08-04:assets:instant:2025-12-31"
@@ -5407,8 +4590,8 @@
             "currency": "USD",
             "fiscal_period": "Q2",
             "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_end": "2025-12-31",
+            "period_kind": "instant",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:PLTR:10-Q:2026-08-04:cash:instant:2025-12-31"
@@ -5429,8 +4612,8 @@
             "currency": "USD",
             "fiscal_period": "Q2",
             "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_end": "2025-12-31",
+            "period_kind": "instant",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:PLTR:10-Q:2026-08-04:liabilities:instant:2025-12-31"
@@ -5487,10 +4670,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:PLTR:10-Q:2026-08-04:assets:instant:2025-12-31",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
-            "published_at": "2026-08-04T00:00:00Z",
+            "published_at": null,
             "as_of": "2025-12-31T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "PLTR"
@@ -5510,10 +4693,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:PLTR:10-Q:2026-08-04:cash:instant:2025-12-31",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
-            "published_at": "2026-08-04T00:00:00Z",
+            "published_at": null,
             "as_of": "2025-12-31T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "PLTR"
@@ -5533,10 +4716,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:PLTR:10-Q:2026-08-04:liabilities:instant:2025-12-31",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
-            "published_at": "2026-08-04T00:00:00Z",
+            "published_at": null,
             "as_of": "2025-12-31T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "PLTR"
@@ -5550,10 +4733,11 @@
       ],
       "gaps": [
         "missing_consensus",
-        "transcript_unavailable"
+        "transcript_unavailable",
+        "發布時間僅有日期或未知，事件時間代表保守可用時間。"
       ],
       "overall_read": "insufficient",
-      "confidence": 60
+      "confidence": 20
     },
     {
       "schema_version": "1.0",
@@ -5561,10 +4745,10 @@
       "symbol": "PLTR",
       "company": "PLTR",
       "fiscal_period": "2026-Q2",
-      "event_time": "2026-08-04T00:00:00Z",
-      "publication_date": null,
-      "publication_precision": "exact",
-      "data_cutoff": "2026-09-10T14:30:16.414008Z",
+      "event_time": "2026-08-05T00:00:00-04:00",
+      "publication_date": "2026-08-04",
+      "publication_precision": "date",
+      "data_cutoff": "2026-09-10T18:07:27.476583Z",
       "observations": [
         {
           "metric_name": "assets",
@@ -5574,8 +4758,8 @@
             "currency": "USD",
             "fiscal_period": "Q2",
             "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_end": "2026-06-30",
+            "period_kind": "instant",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:PLTR:10-Q:2026-08-04:assets:instant:2026-06-30"
@@ -5596,8 +4780,8 @@
             "currency": "USD",
             "fiscal_period": "Q2",
             "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_end": "2026-06-30",
+            "period_kind": "instant",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:PLTR:10-Q:2026-08-04:cash:instant:2026-06-30"
@@ -5617,9 +4801,9 @@
             "unit": "USD/shares",
             "currency": null,
             "fiscal_period": "Q2 2026-01-01至2026-06-30",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2026-01-01",
+            "period_end": "2026-06-30",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:PLTR:10-Q:2026-08-04:diluted_eps:2026-01-01:2026-06-30"
@@ -5639,9 +4823,9 @@
             "unit": "USD/shares",
             "currency": null,
             "fiscal_period": "Q2 2026-04-01至2026-06-30",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2026-04-01",
+            "period_end": "2026-06-30",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:PLTR:10-Q:2026-08-04:diluted_eps:2026-04-01:2026-06-30"
@@ -5662,8 +4846,8 @@
             "currency": "USD",
             "fiscal_period": "Q2",
             "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_end": "2026-06-30",
+            "period_kind": "instant",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:PLTR:10-Q:2026-08-04:liabilities:instant:2026-06-30"
@@ -5683,9 +4867,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2026-01-01至2026-06-30",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2026-01-01",
+            "period_end": "2026-06-30",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:PLTR:10-Q:2026-08-04:net_income:2026-01-01:2026-06-30"
@@ -5705,9 +4889,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2026-04-01至2026-06-30",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2026-04-01",
+            "period_end": "2026-06-30",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:PLTR:10-Q:2026-08-04:net_income:2026-04-01:2026-06-30"
@@ -5727,9 +4911,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2026-01-01至2026-06-30",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2026-01-01",
+            "period_end": "2026-06-30",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:PLTR:10-Q:2026-08-04:operating_cash_flow:2026-01-01:2026-06-30"
@@ -5749,9 +4933,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2026-01-01至2026-06-30",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2026-01-01",
+            "period_end": "2026-06-30",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:PLTR:10-Q:2026-08-04:operating_income:2026-01-01:2026-06-30"
@@ -5771,9 +4955,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2026-04-01至2026-06-30",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2026-04-01",
+            "period_end": "2026-06-30",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:PLTR:10-Q:2026-08-04:operating_income:2026-04-01:2026-06-30"
@@ -5793,9 +4977,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2026-01-01至2026-06-30",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2026-01-01",
+            "period_end": "2026-06-30",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:PLTR:10-Q:2026-08-04:revenue:2026-01-01:2026-06-30"
@@ -5815,9 +4999,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2026-04-01至2026-06-30",
-            "period_start": null,
-            "period_end": null,
-            "period_kind": "unknown",
+            "period_start": "2026-04-01",
+            "period_end": "2026-06-30",
+            "period_kind": "duration",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:PLTR:10-Q:2026-08-04:revenue:2026-04-01:2026-06-30"
@@ -5946,10 +5130,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:PLTR:10-Q:2026-08-04:assets:instant:2026-06-30",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
-            "published_at": "2026-08-04T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "PLTR"
@@ -5969,10 +5153,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:PLTR:10-Q:2026-08-04:cash:instant:2026-06-30",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
-            "published_at": "2026-08-04T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "PLTR"
@@ -5992,10 +5176,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:PLTR:10-Q:2026-08-04:diluted_eps:2026-01-01:2026-06-30",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
-            "published_at": "2026-08-04T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "PLTR"
@@ -6015,10 +5199,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:PLTR:10-Q:2026-08-04:diluted_eps:2026-04-01:2026-06-30",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
-            "published_at": "2026-08-04T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "PLTR"
@@ -6038,10 +5222,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:PLTR:10-Q:2026-08-04:liabilities:instant:2026-06-30",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
-            "published_at": "2026-08-04T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "PLTR"
@@ -6061,10 +5245,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:PLTR:10-Q:2026-08-04:net_income:2026-01-01:2026-06-30",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
-            "published_at": "2026-08-04T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "PLTR"
@@ -6084,10 +5268,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:PLTR:10-Q:2026-08-04:net_income:2026-04-01:2026-06-30",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
-            "published_at": "2026-08-04T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "PLTR"
@@ -6107,10 +5291,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:PLTR:10-Q:2026-08-04:operating_cash_flow:2026-01-01:2026-06-30",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
-            "published_at": "2026-08-04T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "PLTR"
@@ -6130,10 +5314,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:PLTR:10-Q:2026-08-04:operating_income:2026-01-01:2026-06-30",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
-            "published_at": "2026-08-04T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "PLTR"
@@ -6153,10 +5337,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:PLTR:10-Q:2026-08-04:operating_income:2026-04-01:2026-06-30",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
-            "published_at": "2026-08-04T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "PLTR"
@@ -6176,10 +5360,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:PLTR:10-Q:2026-08-04:revenue:2026-01-01:2026-06-30",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
-            "published_at": "2026-08-04T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "PLTR"
@@ -6199,10 +5383,10 @@
             "source_type": "filing_fact",
             "source_id": "sec:PLTR:10-Q:2026-08-04:revenue:2026-04-01:2026-06-30",
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
-            "published_at": "2026-08-04T00:00:00Z",
+            "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-10T14:30:16.414008Z",
-            "semantics": "point_in_time",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
               "PLTR"
@@ -6216,10 +5400,952 @@
       ],
       "gaps": [
         "missing_consensus",
-        "transcript_unavailable"
+        "transcript_unavailable",
+        "發布時間僅有日期或未知，事件時間代表保守可用時間。"
       ],
       "overall_read": "insufficient",
-      "confidence": 60
+      "confidence": 20
+    },
+    {
+      "schema_version": "1.0",
+      "event_id": "sec:TSLA:10-Q:2026-07-23:2026:Q2",
+      "symbol": "TSLA",
+      "company": "TSLA",
+      "fiscal_period": "2026-Q2",
+      "event_time": "2026-07-24T00:00:00-04:00",
+      "publication_date": "2026-07-23",
+      "publication_precision": "date",
+      "data_cutoff": "2026-09-10T18:07:27.476583Z",
+      "observations": [
+        {
+          "metric_name": "operating_cash_flow",
+          "actual": {
+            "value": "4696000000",
+            "unit": "USD",
+            "currency": "USD",
+            "fiscal_period": "Q2 2025-01-01至2025-06-30",
+            "period_start": "2025-01-01",
+            "period_end": "2025-06-30",
+            "period_kind": "duration",
+            "accounting_basis": "gaap",
+            "evidence_ids": [
+              "sec:TSLA:10-Q:2026-07-23:operating_cash_flow:2025-01-01:2025-06-30"
+            ]
+          },
+          "consensus": null,
+          "prior_company_guidance": null,
+          "prior_internal_estimate": null,
+          "new_guidance": null,
+          "one_time": false,
+          "note": "申報期間 2025-01-01 至 2025-06-30。"
+        }
+      ],
+      "variances": [
+        {
+          "metric_name": "operating_cash_flow",
+          "actual_vs_consensus": null,
+          "actual_vs_prior_company_guidance": null,
+          "actual_vs_prior_internal_estimate": null,
+          "new_guidance_vs_prior_guidance": null,
+          "warnings": []
+        }
+      ],
+      "guidance": [],
+      "guidance_variances": [],
+      "segment_drivers": [],
+      "one_time_items": [],
+      "management_tone": null,
+      "unresolved_questions": [],
+      "thesis_impacts": [],
+      "sources": [
+        {
+          "evidence_id": "sec:TSLA:10-Q:2026-07-23:operating_cash_flow:2025-01-01:2025-06-30",
+          "role": "sec_filing",
+          "summary": "10-Q 申報的 operating_cash_flow 實際數值。",
+          "provenance": {
+            "provider": "sec-edgar",
+            "source_type": "filing_fact",
+            "source_id": "sec:TSLA:10-Q:2026-07-23:operating_cash_flow:2025-01-01:2025-06-30",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json",
+            "published_at": null,
+            "as_of": "2025-06-30T00:00:00Z",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
+            "license_note": null,
+            "affected_symbols": [
+              "TSLA"
+            ],
+            "categories": [
+              "earnings"
+            ],
+            "gap": null
+          }
+        }
+      ],
+      "gaps": [
+        "missing_consensus",
+        "transcript_unavailable",
+        "發布時間僅有日期或未知，事件時間代表保守可用時間。"
+      ],
+      "overall_read": "insufficient",
+      "confidence": 20
+    },
+    {
+      "schema_version": "1.0",
+      "event_id": "sec:TSLA:10-Q:2026-07-23:2026:Q2",
+      "symbol": "TSLA",
+      "company": "TSLA",
+      "fiscal_period": "2026-Q2",
+      "event_time": "2026-07-24T00:00:00-04:00",
+      "publication_date": "2026-07-23",
+      "publication_precision": "date",
+      "data_cutoff": "2026-09-10T18:07:27.476583Z",
+      "observations": [
+        {
+          "metric_name": "assets",
+          "actual": {
+            "value": "137806000000",
+            "unit": "USD",
+            "currency": "USD",
+            "fiscal_period": "Q2",
+            "period_start": null,
+            "period_end": "2025-12-31",
+            "period_kind": "instant",
+            "accounting_basis": "gaap",
+            "evidence_ids": [
+              "sec:TSLA:10-Q:2026-07-23:assets:instant:2025-12-31"
+            ]
+          },
+          "consensus": null,
+          "prior_company_guidance": null,
+          "prior_internal_estimate": null,
+          "new_guidance": null,
+          "one_time": false,
+          "note": "期間終點 2025-12-31；起點未提供。"
+        },
+        {
+          "metric_name": "cash",
+          "actual": {
+            "value": "16513000000",
+            "unit": "USD",
+            "currency": "USD",
+            "fiscal_period": "Q2",
+            "period_start": null,
+            "period_end": "2025-12-31",
+            "period_kind": "instant",
+            "accounting_basis": "gaap",
+            "evidence_ids": [
+              "sec:TSLA:10-Q:2026-07-23:cash:instant:2025-12-31"
+            ]
+          },
+          "consensus": null,
+          "prior_company_guidance": null,
+          "prior_internal_estimate": null,
+          "new_guidance": null,
+          "one_time": false,
+          "note": "期間終點 2025-12-31；起點未提供。"
+        },
+        {
+          "metric_name": "liabilities",
+          "actual": {
+            "value": "54941000000",
+            "unit": "USD",
+            "currency": "USD",
+            "fiscal_period": "Q2",
+            "period_start": null,
+            "period_end": "2025-12-31",
+            "period_kind": "instant",
+            "accounting_basis": "gaap",
+            "evidence_ids": [
+              "sec:TSLA:10-Q:2026-07-23:liabilities:instant:2025-12-31"
+            ]
+          },
+          "consensus": null,
+          "prior_company_guidance": null,
+          "prior_internal_estimate": null,
+          "new_guidance": null,
+          "one_time": false,
+          "note": "期間終點 2025-12-31；起點未提供。"
+        }
+      ],
+      "variances": [
+        {
+          "metric_name": "assets",
+          "actual_vs_consensus": null,
+          "actual_vs_prior_company_guidance": null,
+          "actual_vs_prior_internal_estimate": null,
+          "new_guidance_vs_prior_guidance": null,
+          "warnings": []
+        },
+        {
+          "metric_name": "cash",
+          "actual_vs_consensus": null,
+          "actual_vs_prior_company_guidance": null,
+          "actual_vs_prior_internal_estimate": null,
+          "new_guidance_vs_prior_guidance": null,
+          "warnings": []
+        },
+        {
+          "metric_name": "liabilities",
+          "actual_vs_consensus": null,
+          "actual_vs_prior_company_guidance": null,
+          "actual_vs_prior_internal_estimate": null,
+          "new_guidance_vs_prior_guidance": null,
+          "warnings": []
+        }
+      ],
+      "guidance": [],
+      "guidance_variances": [],
+      "segment_drivers": [],
+      "one_time_items": [],
+      "management_tone": null,
+      "unresolved_questions": [],
+      "thesis_impacts": [],
+      "sources": [
+        {
+          "evidence_id": "sec:TSLA:10-Q:2026-07-23:assets:instant:2025-12-31",
+          "role": "sec_filing",
+          "summary": "10-Q 申報的 assets 實際數值。",
+          "provenance": {
+            "provider": "sec-edgar",
+            "source_type": "filing_fact",
+            "source_id": "sec:TSLA:10-Q:2026-07-23:assets:instant:2025-12-31",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json",
+            "published_at": null,
+            "as_of": "2025-12-31T00:00:00Z",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
+            "license_note": null,
+            "affected_symbols": [
+              "TSLA"
+            ],
+            "categories": [
+              "earnings"
+            ],
+            "gap": null
+          }
+        },
+        {
+          "evidence_id": "sec:TSLA:10-Q:2026-07-23:cash:instant:2025-12-31",
+          "role": "sec_filing",
+          "summary": "10-Q 申報的 cash 實際數值。",
+          "provenance": {
+            "provider": "sec-edgar",
+            "source_type": "filing_fact",
+            "source_id": "sec:TSLA:10-Q:2026-07-23:cash:instant:2025-12-31",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json",
+            "published_at": null,
+            "as_of": "2025-12-31T00:00:00Z",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
+            "license_note": null,
+            "affected_symbols": [
+              "TSLA"
+            ],
+            "categories": [
+              "earnings"
+            ],
+            "gap": null
+          }
+        },
+        {
+          "evidence_id": "sec:TSLA:10-Q:2026-07-23:liabilities:instant:2025-12-31",
+          "role": "sec_filing",
+          "summary": "10-Q 申報的 liabilities 實際數值。",
+          "provenance": {
+            "provider": "sec-edgar",
+            "source_type": "filing_fact",
+            "source_id": "sec:TSLA:10-Q:2026-07-23:liabilities:instant:2025-12-31",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json",
+            "published_at": null,
+            "as_of": "2025-12-31T00:00:00Z",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
+            "license_note": null,
+            "affected_symbols": [
+              "TSLA"
+            ],
+            "categories": [
+              "earnings"
+            ],
+            "gap": null
+          }
+        }
+      ],
+      "gaps": [
+        "missing_consensus",
+        "transcript_unavailable",
+        "發布時間僅有日期或未知，事件時間代表保守可用時間。"
+      ],
+      "overall_read": "insufficient",
+      "confidence": 20
+    },
+    {
+      "schema_version": "1.0",
+      "event_id": "sec:TSLA:10-Q:2026-07-23:2026:Q2",
+      "symbol": "TSLA",
+      "company": "TSLA",
+      "fiscal_period": "2026-Q2",
+      "event_time": "2026-07-24T00:00:00-04:00",
+      "publication_date": "2026-07-23",
+      "publication_precision": "date",
+      "data_cutoff": "2026-09-10T18:07:27.476583Z",
+      "observations": [
+        {
+          "metric_name": "assets",
+          "actual": {
+            "value": "148524000000",
+            "unit": "USD",
+            "currency": "USD",
+            "fiscal_period": "Q2",
+            "period_start": null,
+            "period_end": "2026-06-30",
+            "period_kind": "instant",
+            "accounting_basis": "gaap",
+            "evidence_ids": [
+              "sec:TSLA:10-Q:2026-07-23:assets:instant:2026-06-30"
+            ]
+          },
+          "consensus": null,
+          "prior_company_guidance": null,
+          "prior_internal_estimate": null,
+          "new_guidance": null,
+          "one_time": false,
+          "note": "期間終點 2026-06-30；起點未提供。"
+        },
+        {
+          "metric_name": "cash",
+          "actual": {
+            "value": "15219000000",
+            "unit": "USD",
+            "currency": "USD",
+            "fiscal_period": "Q2",
+            "period_start": null,
+            "period_end": "2026-06-30",
+            "period_kind": "instant",
+            "accounting_basis": "gaap",
+            "evidence_ids": [
+              "sec:TSLA:10-Q:2026-07-23:cash:instant:2026-06-30"
+            ]
+          },
+          "consensus": null,
+          "prior_company_guidance": null,
+          "prior_internal_estimate": null,
+          "new_guidance": null,
+          "one_time": false,
+          "note": "期間終點 2026-06-30；起點未提供。"
+        },
+        {
+          "metric_name": "diluted_eps",
+          "actual": {
+            "value": "0.45",
+            "unit": "USD/shares",
+            "currency": null,
+            "fiscal_period": "Q2 2026-01-01至2026-06-30",
+            "period_start": "2026-01-01",
+            "period_end": "2026-06-30",
+            "period_kind": "duration",
+            "accounting_basis": "gaap",
+            "evidence_ids": [
+              "sec:TSLA:10-Q:2026-07-23:diluted_eps:2026-01-01:2026-06-30"
+            ]
+          },
+          "consensus": null,
+          "prior_company_guidance": null,
+          "prior_internal_estimate": null,
+          "new_guidance": null,
+          "one_time": false,
+          "note": "申報期間 2026-01-01 至 2026-06-30。"
+        },
+        {
+          "metric_name": "diluted_eps",
+          "actual": {
+            "value": "0.32",
+            "unit": "USD/shares",
+            "currency": null,
+            "fiscal_period": "Q2 2026-04-01至2026-06-30",
+            "period_start": "2026-04-01",
+            "period_end": "2026-06-30",
+            "period_kind": "duration",
+            "accounting_basis": "gaap",
+            "evidence_ids": [
+              "sec:TSLA:10-Q:2026-07-23:diluted_eps:2026-04-01:2026-06-30"
+            ]
+          },
+          "consensus": null,
+          "prior_company_guidance": null,
+          "prior_internal_estimate": null,
+          "new_guidance": null,
+          "one_time": false,
+          "note": "申報期間 2026-04-01 至 2026-06-30。"
+        },
+        {
+          "metric_name": "liabilities",
+          "actual": {
+            "value": "61005000000",
+            "unit": "USD",
+            "currency": "USD",
+            "fiscal_period": "Q2",
+            "period_start": null,
+            "period_end": "2026-06-30",
+            "period_kind": "instant",
+            "accounting_basis": "gaap",
+            "evidence_ids": [
+              "sec:TSLA:10-Q:2026-07-23:liabilities:instant:2026-06-30"
+            ]
+          },
+          "consensus": null,
+          "prior_company_guidance": null,
+          "prior_internal_estimate": null,
+          "new_guidance": null,
+          "one_time": false,
+          "note": "期間終點 2026-06-30；起點未提供。"
+        },
+        {
+          "metric_name": "net_income",
+          "actual": {
+            "value": "1591000000",
+            "unit": "USD",
+            "currency": "USD",
+            "fiscal_period": "Q2 2026-01-01至2026-06-30",
+            "period_start": "2026-01-01",
+            "period_end": "2026-06-30",
+            "period_kind": "duration",
+            "accounting_basis": "gaap",
+            "evidence_ids": [
+              "sec:TSLA:10-Q:2026-07-23:net_income:2026-01-01:2026-06-30"
+            ]
+          },
+          "consensus": null,
+          "prior_company_guidance": null,
+          "prior_internal_estimate": null,
+          "new_guidance": null,
+          "one_time": false,
+          "note": "申報期間 2026-01-01 至 2026-06-30。"
+        },
+        {
+          "metric_name": "net_income",
+          "actual": {
+            "value": "1114000000",
+            "unit": "USD",
+            "currency": "USD",
+            "fiscal_period": "Q2 2026-04-01至2026-06-30",
+            "period_start": "2026-04-01",
+            "period_end": "2026-06-30",
+            "period_kind": "duration",
+            "accounting_basis": "gaap",
+            "evidence_ids": [
+              "sec:TSLA:10-Q:2026-07-23:net_income:2026-04-01:2026-06-30"
+            ]
+          },
+          "consensus": null,
+          "prior_company_guidance": null,
+          "prior_internal_estimate": null,
+          "new_guidance": null,
+          "one_time": false,
+          "note": "申報期間 2026-04-01 至 2026-06-30。"
+        },
+        {
+          "metric_name": "operating_cash_flow",
+          "actual": {
+            "value": "8634000000",
+            "unit": "USD",
+            "currency": "USD",
+            "fiscal_period": "Q2 2026-01-01至2026-06-30",
+            "period_start": "2026-01-01",
+            "period_end": "2026-06-30",
+            "period_kind": "duration",
+            "accounting_basis": "gaap",
+            "evidence_ids": [
+              "sec:TSLA:10-Q:2026-07-23:operating_cash_flow:2026-01-01:2026-06-30"
+            ]
+          },
+          "consensus": null,
+          "prior_company_guidance": null,
+          "prior_internal_estimate": null,
+          "new_guidance": null,
+          "one_time": false,
+          "note": "申報期間 2026-01-01 至 2026-06-30。"
+        },
+        {
+          "metric_name": "operating_income",
+          "actual": {
+            "value": "1339000000",
+            "unit": "USD",
+            "currency": "USD",
+            "fiscal_period": "Q2 2026-01-01至2026-06-30",
+            "period_start": "2026-01-01",
+            "period_end": "2026-06-30",
+            "period_kind": "duration",
+            "accounting_basis": "gaap",
+            "evidence_ids": [
+              "sec:TSLA:10-Q:2026-07-23:operating_income:2026-01-01:2026-06-30"
+            ]
+          },
+          "consensus": null,
+          "prior_company_guidance": null,
+          "prior_internal_estimate": null,
+          "new_guidance": null,
+          "one_time": false,
+          "note": "申報期間 2026-01-01 至 2026-06-30。"
+        },
+        {
+          "metric_name": "operating_income",
+          "actual": {
+            "value": "398000000",
+            "unit": "USD",
+            "currency": "USD",
+            "fiscal_period": "Q2 2026-04-01至2026-06-30",
+            "period_start": "2026-04-01",
+            "period_end": "2026-06-30",
+            "period_kind": "duration",
+            "accounting_basis": "gaap",
+            "evidence_ids": [
+              "sec:TSLA:10-Q:2026-07-23:operating_income:2026-04-01:2026-06-30"
+            ]
+          },
+          "consensus": null,
+          "prior_company_guidance": null,
+          "prior_internal_estimate": null,
+          "new_guidance": null,
+          "one_time": false,
+          "note": "申報期間 2026-04-01 至 2026-06-30。"
+        },
+        {
+          "metric_name": "revenue",
+          "actual": {
+            "value": "50623000000",
+            "unit": "USD",
+            "currency": "USD",
+            "fiscal_period": "Q2 2026-01-01至2026-06-30",
+            "period_start": "2026-01-01",
+            "period_end": "2026-06-30",
+            "period_kind": "duration",
+            "accounting_basis": "gaap",
+            "evidence_ids": [
+              "sec:TSLA:10-Q:2026-07-23:revenue:2026-01-01:2026-06-30"
+            ]
+          },
+          "consensus": null,
+          "prior_company_guidance": null,
+          "prior_internal_estimate": null,
+          "new_guidance": null,
+          "one_time": false,
+          "note": "申報期間 2026-01-01 至 2026-06-30。"
+        },
+        {
+          "metric_name": "revenue",
+          "actual": {
+            "value": "28236000000",
+            "unit": "USD",
+            "currency": "USD",
+            "fiscal_period": "Q2 2026-04-01至2026-06-30",
+            "period_start": "2026-04-01",
+            "period_end": "2026-06-30",
+            "period_kind": "duration",
+            "accounting_basis": "gaap",
+            "evidence_ids": [
+              "sec:TSLA:10-Q:2026-07-23:revenue:2026-04-01:2026-06-30"
+            ]
+          },
+          "consensus": null,
+          "prior_company_guidance": null,
+          "prior_internal_estimate": null,
+          "new_guidance": null,
+          "one_time": false,
+          "note": "申報期間 2026-04-01 至 2026-06-30。"
+        }
+      ],
+      "variances": [
+        {
+          "metric_name": "assets",
+          "actual_vs_consensus": null,
+          "actual_vs_prior_company_guidance": null,
+          "actual_vs_prior_internal_estimate": null,
+          "new_guidance_vs_prior_guidance": null,
+          "warnings": []
+        },
+        {
+          "metric_name": "cash",
+          "actual_vs_consensus": null,
+          "actual_vs_prior_company_guidance": null,
+          "actual_vs_prior_internal_estimate": null,
+          "new_guidance_vs_prior_guidance": null,
+          "warnings": []
+        },
+        {
+          "metric_name": "diluted_eps",
+          "actual_vs_consensus": null,
+          "actual_vs_prior_company_guidance": null,
+          "actual_vs_prior_internal_estimate": null,
+          "new_guidance_vs_prior_guidance": null,
+          "warnings": []
+        },
+        {
+          "metric_name": "diluted_eps",
+          "actual_vs_consensus": null,
+          "actual_vs_prior_company_guidance": null,
+          "actual_vs_prior_internal_estimate": null,
+          "new_guidance_vs_prior_guidance": null,
+          "warnings": []
+        },
+        {
+          "metric_name": "liabilities",
+          "actual_vs_consensus": null,
+          "actual_vs_prior_company_guidance": null,
+          "actual_vs_prior_internal_estimate": null,
+          "new_guidance_vs_prior_guidance": null,
+          "warnings": []
+        },
+        {
+          "metric_name": "net_income",
+          "actual_vs_consensus": null,
+          "actual_vs_prior_company_guidance": null,
+          "actual_vs_prior_internal_estimate": null,
+          "new_guidance_vs_prior_guidance": null,
+          "warnings": []
+        },
+        {
+          "metric_name": "net_income",
+          "actual_vs_consensus": null,
+          "actual_vs_prior_company_guidance": null,
+          "actual_vs_prior_internal_estimate": null,
+          "new_guidance_vs_prior_guidance": null,
+          "warnings": []
+        },
+        {
+          "metric_name": "operating_cash_flow",
+          "actual_vs_consensus": null,
+          "actual_vs_prior_company_guidance": null,
+          "actual_vs_prior_internal_estimate": null,
+          "new_guidance_vs_prior_guidance": null,
+          "warnings": []
+        },
+        {
+          "metric_name": "operating_income",
+          "actual_vs_consensus": null,
+          "actual_vs_prior_company_guidance": null,
+          "actual_vs_prior_internal_estimate": null,
+          "new_guidance_vs_prior_guidance": null,
+          "warnings": []
+        },
+        {
+          "metric_name": "operating_income",
+          "actual_vs_consensus": null,
+          "actual_vs_prior_company_guidance": null,
+          "actual_vs_prior_internal_estimate": null,
+          "new_guidance_vs_prior_guidance": null,
+          "warnings": []
+        },
+        {
+          "metric_name": "revenue",
+          "actual_vs_consensus": null,
+          "actual_vs_prior_company_guidance": null,
+          "actual_vs_prior_internal_estimate": null,
+          "new_guidance_vs_prior_guidance": null,
+          "warnings": []
+        },
+        {
+          "metric_name": "revenue",
+          "actual_vs_consensus": null,
+          "actual_vs_prior_company_guidance": null,
+          "actual_vs_prior_internal_estimate": null,
+          "new_guidance_vs_prior_guidance": null,
+          "warnings": []
+        }
+      ],
+      "guidance": [],
+      "guidance_variances": [],
+      "segment_drivers": [],
+      "one_time_items": [],
+      "management_tone": null,
+      "unresolved_questions": [],
+      "thesis_impacts": [],
+      "sources": [
+        {
+          "evidence_id": "sec:TSLA:10-Q:2026-07-23:assets:instant:2026-06-30",
+          "role": "sec_filing",
+          "summary": "10-Q 申報的 assets 實際數值。",
+          "provenance": {
+            "provider": "sec-edgar",
+            "source_type": "filing_fact",
+            "source_id": "sec:TSLA:10-Q:2026-07-23:assets:instant:2026-06-30",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json",
+            "published_at": null,
+            "as_of": "2026-06-30T00:00:00Z",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
+            "license_note": null,
+            "affected_symbols": [
+              "TSLA"
+            ],
+            "categories": [
+              "earnings"
+            ],
+            "gap": null
+          }
+        },
+        {
+          "evidence_id": "sec:TSLA:10-Q:2026-07-23:cash:instant:2026-06-30",
+          "role": "sec_filing",
+          "summary": "10-Q 申報的 cash 實際數值。",
+          "provenance": {
+            "provider": "sec-edgar",
+            "source_type": "filing_fact",
+            "source_id": "sec:TSLA:10-Q:2026-07-23:cash:instant:2026-06-30",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json",
+            "published_at": null,
+            "as_of": "2026-06-30T00:00:00Z",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
+            "license_note": null,
+            "affected_symbols": [
+              "TSLA"
+            ],
+            "categories": [
+              "earnings"
+            ],
+            "gap": null
+          }
+        },
+        {
+          "evidence_id": "sec:TSLA:10-Q:2026-07-23:diluted_eps:2026-01-01:2026-06-30",
+          "role": "sec_filing",
+          "summary": "10-Q 申報的 diluted_eps 實際數值。",
+          "provenance": {
+            "provider": "sec-edgar",
+            "source_type": "filing_fact",
+            "source_id": "sec:TSLA:10-Q:2026-07-23:diluted_eps:2026-01-01:2026-06-30",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json",
+            "published_at": null,
+            "as_of": "2026-06-30T00:00:00Z",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
+            "license_note": null,
+            "affected_symbols": [
+              "TSLA"
+            ],
+            "categories": [
+              "earnings"
+            ],
+            "gap": null
+          }
+        },
+        {
+          "evidence_id": "sec:TSLA:10-Q:2026-07-23:diluted_eps:2026-04-01:2026-06-30",
+          "role": "sec_filing",
+          "summary": "10-Q 申報的 diluted_eps 實際數值。",
+          "provenance": {
+            "provider": "sec-edgar",
+            "source_type": "filing_fact",
+            "source_id": "sec:TSLA:10-Q:2026-07-23:diluted_eps:2026-04-01:2026-06-30",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json",
+            "published_at": null,
+            "as_of": "2026-06-30T00:00:00Z",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
+            "license_note": null,
+            "affected_symbols": [
+              "TSLA"
+            ],
+            "categories": [
+              "earnings"
+            ],
+            "gap": null
+          }
+        },
+        {
+          "evidence_id": "sec:TSLA:10-Q:2026-07-23:liabilities:instant:2026-06-30",
+          "role": "sec_filing",
+          "summary": "10-Q 申報的 liabilities 實際數值。",
+          "provenance": {
+            "provider": "sec-edgar",
+            "source_type": "filing_fact",
+            "source_id": "sec:TSLA:10-Q:2026-07-23:liabilities:instant:2026-06-30",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json",
+            "published_at": null,
+            "as_of": "2026-06-30T00:00:00Z",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
+            "license_note": null,
+            "affected_symbols": [
+              "TSLA"
+            ],
+            "categories": [
+              "earnings"
+            ],
+            "gap": null
+          }
+        },
+        {
+          "evidence_id": "sec:TSLA:10-Q:2026-07-23:net_income:2026-01-01:2026-06-30",
+          "role": "sec_filing",
+          "summary": "10-Q 申報的 net_income 實際數值。",
+          "provenance": {
+            "provider": "sec-edgar",
+            "source_type": "filing_fact",
+            "source_id": "sec:TSLA:10-Q:2026-07-23:net_income:2026-01-01:2026-06-30",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json",
+            "published_at": null,
+            "as_of": "2026-06-30T00:00:00Z",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
+            "license_note": null,
+            "affected_symbols": [
+              "TSLA"
+            ],
+            "categories": [
+              "earnings"
+            ],
+            "gap": null
+          }
+        },
+        {
+          "evidence_id": "sec:TSLA:10-Q:2026-07-23:net_income:2026-04-01:2026-06-30",
+          "role": "sec_filing",
+          "summary": "10-Q 申報的 net_income 實際數值。",
+          "provenance": {
+            "provider": "sec-edgar",
+            "source_type": "filing_fact",
+            "source_id": "sec:TSLA:10-Q:2026-07-23:net_income:2026-04-01:2026-06-30",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json",
+            "published_at": null,
+            "as_of": "2026-06-30T00:00:00Z",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
+            "license_note": null,
+            "affected_symbols": [
+              "TSLA"
+            ],
+            "categories": [
+              "earnings"
+            ],
+            "gap": null
+          }
+        },
+        {
+          "evidence_id": "sec:TSLA:10-Q:2026-07-23:operating_cash_flow:2026-01-01:2026-06-30",
+          "role": "sec_filing",
+          "summary": "10-Q 申報的 operating_cash_flow 實際數值。",
+          "provenance": {
+            "provider": "sec-edgar",
+            "source_type": "filing_fact",
+            "source_id": "sec:TSLA:10-Q:2026-07-23:operating_cash_flow:2026-01-01:2026-06-30",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json",
+            "published_at": null,
+            "as_of": "2026-06-30T00:00:00Z",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
+            "license_note": null,
+            "affected_symbols": [
+              "TSLA"
+            ],
+            "categories": [
+              "earnings"
+            ],
+            "gap": null
+          }
+        },
+        {
+          "evidence_id": "sec:TSLA:10-Q:2026-07-23:operating_income:2026-01-01:2026-06-30",
+          "role": "sec_filing",
+          "summary": "10-Q 申報的 operating_income 實際數值。",
+          "provenance": {
+            "provider": "sec-edgar",
+            "source_type": "filing_fact",
+            "source_id": "sec:TSLA:10-Q:2026-07-23:operating_income:2026-01-01:2026-06-30",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json",
+            "published_at": null,
+            "as_of": "2026-06-30T00:00:00Z",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
+            "license_note": null,
+            "affected_symbols": [
+              "TSLA"
+            ],
+            "categories": [
+              "earnings"
+            ],
+            "gap": null
+          }
+        },
+        {
+          "evidence_id": "sec:TSLA:10-Q:2026-07-23:operating_income:2026-04-01:2026-06-30",
+          "role": "sec_filing",
+          "summary": "10-Q 申報的 operating_income 實際數值。",
+          "provenance": {
+            "provider": "sec-edgar",
+            "source_type": "filing_fact",
+            "source_id": "sec:TSLA:10-Q:2026-07-23:operating_income:2026-04-01:2026-06-30",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json",
+            "published_at": null,
+            "as_of": "2026-06-30T00:00:00Z",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
+            "license_note": null,
+            "affected_symbols": [
+              "TSLA"
+            ],
+            "categories": [
+              "earnings"
+            ],
+            "gap": null
+          }
+        },
+        {
+          "evidence_id": "sec:TSLA:10-Q:2026-07-23:revenue:2026-01-01:2026-06-30",
+          "role": "sec_filing",
+          "summary": "10-Q 申報的 revenue 實際數值。",
+          "provenance": {
+            "provider": "sec-edgar",
+            "source_type": "filing_fact",
+            "source_id": "sec:TSLA:10-Q:2026-07-23:revenue:2026-01-01:2026-06-30",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json",
+            "published_at": null,
+            "as_of": "2026-06-30T00:00:00Z",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
+            "license_note": null,
+            "affected_symbols": [
+              "TSLA"
+            ],
+            "categories": [
+              "earnings"
+            ],
+            "gap": null
+          }
+        },
+        {
+          "evidence_id": "sec:TSLA:10-Q:2026-07-23:revenue:2026-04-01:2026-06-30",
+          "role": "sec_filing",
+          "summary": "10-Q 申報的 revenue 實際數值。",
+          "provenance": {
+            "provider": "sec-edgar",
+            "source_type": "filing_fact",
+            "source_id": "sec:TSLA:10-Q:2026-07-23:revenue:2026-04-01:2026-06-30",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json",
+            "published_at": null,
+            "as_of": "2026-06-30T00:00:00Z",
+            "retrieved_at": "2026-09-10T18:07:27.476583Z",
+            "semantics": "delayed",
+            "license_note": null,
+            "affected_symbols": [
+              "TSLA"
+            ],
+            "categories": [
+              "earnings"
+            ],
+            "gap": null
+          }
+        }
+      ],
+      "gaps": [
+        "missing_consensus",
+        "transcript_unavailable",
+        "發布時間僅有日期或未知，事件時間代表保守可用時間。"
+      ],
+      "overall_read": "insufficient",
+      "confidence": 20
     }
   ]
 }

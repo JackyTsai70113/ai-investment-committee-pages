@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "run_id": "20260910T143037Z",
-  "data_cutoff": "2026-09-10T14:30:16.414008Z",
+  "run_id": "20260910T180744Z",
+  "data_cutoff": "2026-09-10T18:07:27.476583Z",
   "peer_universe": {
     "theme": "已蒐集市場研究",
     "sector": "跨產業",
@@ -46,15 +46,7 @@
         "inclusion_reason": "已有可追溯的公司申報或基本面資料。",
         "evidence_ids": [
           "sec:AVGO:10-K:2024-12-20:net_income:2023-10-30:2024-11-03",
-          "sec:AVGO:10-K:2024-12-20:net_income:2022-10-31:2023-10-29",
-          "sec:AVGO:10-Q:2026-09-10:assets:instant:2026-08-02",
-          "sec:AVGO:10-Q:2026-09-10:assets:instant:2025-11-02",
-          "sec:AVGO:10-Q:2026-09-10:cash:instant:2026-08-02",
-          "sec:AVGO:10-Q:2026-09-10:cash:instant:2025-11-02",
-          "sec:AVGO:10-Q:2026-09-10:diluted_eps:2025-11-03:2026-08-02",
-          "sec:AVGO:10-Q:2026-09-10:diluted_eps:2026-05-04:2026-08-02",
-          "sec:AVGO:10-Q:2026-09-10:liabilities:instant:2026-08-02",
-          "sec:AVGO:10-Q:2026-09-10:liabilities:instant:2025-11-02"
+          "sec:AVGO:10-K:2024-12-20:net_income:2022-10-31:2023-10-29"
         ]
       },
       {
@@ -161,232 +153,15 @@
   },
   "competitive": [],
   "valuation": [],
-  "factor_exposures": [
-    {
-      "factor_id": "official-filing:AAPL",
-      "exposure_type": "official_filing",
-      "symbols": [
-        "AAPL"
-      ],
-      "evidence_ids": [
-        "sec:AAPL:10-Q:2026-07-31:assets:instant:2026-06-27",
-        "sec:AAPL:10-Q:2026-07-31:assets:instant:2025-09-27",
-        "sec:AAPL:10-Q:2026-07-31:cash:instant:2026-06-27",
-        "sec:AAPL:10-Q:2026-07-31:cash:instant:2025-09-27",
-        "sec:AAPL:10-Q:2026-07-31:diluted_eps:2025-09-28:2026-06-27",
-        "sec:AAPL:10-Q:2026-07-31:diluted_eps:2026-03-29:2026-06-27",
-        "sec:AAPL:10-Q:2026-07-31:liabilities:instant:2026-06-27",
-        "sec:AAPL:10-Q:2026-07-31:liabilities:instant:2025-09-27",
-        "sec:AAPL:10-Q:2026-07-31:net_income:2025-09-28:2026-06-27",
-        "sec:AAPL:10-Q:2026-07-31:net_income:2026-03-29:2026-06-27",
-        "sec:AAPL:10-Q:2026-07-31:operating_cash_flow:2025-09-28:2026-06-27",
-        "sec:AAPL:10-Q:2026-07-31:operating_cash_flow:2024-09-29:2025-06-28",
-        "sec:AAPL:10-Q:2026-07-31:operating_income:2025-09-28:2026-06-27",
-        "sec:AAPL:10-Q:2026-07-31:operating_income:2026-03-29:2026-06-27",
-        "sec:AAPL:10-Q:2026-07-31:revenue:2025-09-28:2026-06-27",
-        "sec:AAPL:10-Q:2026-07-31:revenue:2026-03-29:2026-06-27"
-      ],
-      "overlap_warning": null
-    },
-    {
-      "factor_id": "official-filing:AMD",
-      "exposure_type": "official_filing",
-      "symbols": [
-        "AMD"
-      ],
-      "evidence_ids": [
-        "sec:AMD:10-Q:2026-08-05:assets:instant:2026-06-27",
-        "sec:AMD:10-Q:2026-08-05:assets:instant:2025-12-27",
-        "sec:AMD:10-Q:2026-08-05:cash:instant:2026-06-27",
-        "sec:AMD:10-Q:2026-08-05:cash:instant:2025-12-27",
-        "sec:AMD:10-Q:2026-08-05:diluted_eps:2025-12-28:2026-06-27",
-        "sec:AMD:10-Q:2026-08-05:diluted_eps:2026-03-29:2026-06-27",
-        "sec:AMD:10-Q:2026-08-05:net_income:2025-12-28:2026-06-27",
-        "sec:AMD:10-Q:2026-08-05:net_income:2026-03-29:2026-06-27",
-        "sec:AMD:10-Q:2026-08-05:operating_cash_flow:2025-12-28:2026-06-27",
-        "sec:AMD:10-Q:2026-08-05:operating_cash_flow:2024-12-29:2025-06-28",
-        "sec:AMD:10-Q:2026-08-05:operating_income:2025-12-28:2026-06-27",
-        "sec:AMD:10-Q:2026-08-05:operating_income:2026-03-29:2026-06-27",
-        "sec:AMD:10-Q:2026-08-05:revenue:2025-12-28:2026-06-27",
-        "sec:AMD:10-Q:2026-08-05:revenue:2026-03-29:2026-06-27"
-      ],
-      "overlap_warning": null
-    },
-    {
-      "factor_id": "official-filing:AVGO",
-      "exposure_type": "official_filing",
-      "symbols": [
-        "AVGO"
-      ],
-      "evidence_ids": [
-        "sec:AVGO:10-K:2024-12-20:net_income:2023-10-30:2024-11-03",
-        "sec:AVGO:10-K:2024-12-20:net_income:2022-10-31:2023-10-29",
-        "sec:AVGO:10-Q:2026-09-10:assets:instant:2026-08-02",
-        "sec:AVGO:10-Q:2026-09-10:assets:instant:2025-11-02",
-        "sec:AVGO:10-Q:2026-09-10:cash:instant:2026-08-02",
-        "sec:AVGO:10-Q:2026-09-10:cash:instant:2025-11-02",
-        "sec:AVGO:10-Q:2026-09-10:diluted_eps:2025-11-03:2026-08-02",
-        "sec:AVGO:10-Q:2026-09-10:diluted_eps:2026-05-04:2026-08-02",
-        "sec:AVGO:10-Q:2026-09-10:liabilities:instant:2026-08-02",
-        "sec:AVGO:10-Q:2026-09-10:liabilities:instant:2025-11-02",
-        "sec:AVGO:10-Q:2026-09-10:operating_cash_flow:2025-11-03:2026-08-02",
-        "sec:AVGO:10-Q:2026-09-10:operating_cash_flow:2024-11-04:2025-08-03",
-        "sec:AVGO:10-Q:2026-09-10:operating_income:2025-11-03:2026-08-02",
-        "sec:AVGO:10-Q:2026-09-10:operating_income:2026-05-04:2026-08-02",
-        "sec:AVGO:10-Q:2026-09-10:revenue:2025-11-03:2026-08-02",
-        "sec:AVGO:10-Q:2026-09-10:revenue:2026-05-04:2026-08-02"
-      ],
-      "overlap_warning": null
-    },
-    {
-      "factor_id": "official-filing:META",
-      "exposure_type": "official_filing",
-      "symbols": [
-        "META"
-      ],
-      "evidence_ids": [
-        "sec:META:10-Q:2026-07-30:assets:instant:2026-06-30",
-        "sec:META:10-Q:2026-07-30:assets:instant:2025-12-31",
-        "sec:META:10-Q:2026-07-30:cash:instant:2026-06-30",
-        "sec:META:10-Q:2026-07-30:cash:instant:2025-12-31",
-        "sec:META:10-Q:2026-07-30:diluted_eps:2026-01-01:2026-06-30",
-        "sec:META:10-Q:2026-07-30:diluted_eps:2026-04-01:2026-06-30",
-        "sec:META:10-Q:2026-07-30:liabilities:instant:2026-06-30",
-        "sec:META:10-Q:2026-07-30:liabilities:instant:2025-12-31",
-        "sec:META:10-Q:2026-07-30:net_income:2026-01-01:2026-06-30",
-        "sec:META:10-Q:2026-07-30:net_income:2026-04-01:2026-06-30",
-        "sec:META:10-Q:2026-07-30:operating_cash_flow:2026-01-01:2026-06-30",
-        "sec:META:10-Q:2026-07-30:operating_cash_flow:2025-01-01:2025-06-30",
-        "sec:META:10-Q:2026-07-30:operating_income:2026-01-01:2026-06-30",
-        "sec:META:10-Q:2026-07-30:operating_income:2026-04-01:2026-06-30",
-        "sec:META:10-Q:2026-07-30:revenue:2026-01-01:2026-06-30",
-        "sec:META:10-Q:2026-07-30:revenue:2026-04-01:2026-06-30"
-      ],
-      "overlap_warning": null
-    },
-    {
-      "factor_id": "official-filing:MSFT",
-      "exposure_type": "official_filing",
-      "symbols": [
-        "MSFT"
-      ],
-      "evidence_ids": [
-        "sec:MSFT:10-K:2026-07-29:assets:instant:2026-06-30",
-        "sec:MSFT:10-K:2026-07-29:assets:instant:2025-06-30",
-        "sec:MSFT:10-K:2026-07-29:cash:instant:2026-06-30",
-        "sec:MSFT:10-K:2026-07-29:cash:instant:2025-06-30",
-        "sec:MSFT:10-K:2026-07-29:diluted_eps:2025-07-01:2026-06-30",
-        "sec:MSFT:10-K:2026-07-29:diluted_eps:2024-07-01:2025-06-30",
-        "sec:MSFT:10-K:2026-07-29:liabilities:instant:2026-06-30",
-        "sec:MSFT:10-K:2026-07-29:liabilities:instant:2025-06-30",
-        "sec:MSFT:10-K:2026-07-29:net_income:2025-07-01:2026-06-30",
-        "sec:MSFT:10-K:2026-07-29:net_income:2024-07-01:2025-06-30",
-        "sec:MSFT:10-K:2026-07-29:operating_cash_flow:2025-07-01:2026-06-30",
-        "sec:MSFT:10-K:2026-07-29:operating_cash_flow:2024-07-01:2025-06-30",
-        "sec:MSFT:10-K:2026-07-29:operating_income:2025-07-01:2026-06-30",
-        "sec:MSFT:10-K:2026-07-29:operating_income:2024-07-01:2025-06-30",
-        "sec:MSFT:10-K:2026-07-29:revenue:2025-07-01:2026-06-30",
-        "sec:MSFT:10-K:2026-07-29:revenue:2024-07-01:2025-06-30"
-      ],
-      "overlap_warning": null
-    },
-    {
-      "factor_id": "official-filing:NVDA",
-      "exposure_type": "official_filing",
-      "symbols": [
-        "NVDA"
-      ],
-      "evidence_ids": [
-        "sec:NVDA:10-K:2022-03-18:revenue:2021-02-01:2022-01-30",
-        "sec:NVDA:10-K:2022-03-18:revenue:2020-01-27:2021-01-31",
-        "sec:NVDA:10-Q:2026-08-26:assets:instant:2026-07-26",
-        "sec:NVDA:10-Q:2026-08-26:assets:instant:2026-01-25",
-        "sec:NVDA:10-Q:2026-08-26:cash:instant:2026-07-26",
-        "sec:NVDA:10-Q:2026-08-26:cash:instant:2026-01-25",
-        "sec:NVDA:10-Q:2026-08-26:diluted_eps:2026-01-26:2026-07-26",
-        "sec:NVDA:10-Q:2026-08-26:diluted_eps:2026-04-27:2026-07-26",
-        "sec:NVDA:10-Q:2026-08-26:liabilities:instant:2026-07-26",
-        "sec:NVDA:10-Q:2026-08-26:liabilities:instant:2026-01-25",
-        "sec:NVDA:10-Q:2026-08-26:net_income:2026-01-26:2026-07-26",
-        "sec:NVDA:10-Q:2026-08-26:net_income:2026-04-27:2026-07-26",
-        "sec:NVDA:10-Q:2026-08-26:operating_cash_flow:2026-01-26:2026-07-26",
-        "sec:NVDA:10-Q:2026-08-26:operating_cash_flow:2025-01-27:2025-07-27",
-        "sec:NVDA:10-Q:2026-08-26:operating_income:2026-01-26:2026-07-26",
-        "sec:NVDA:10-Q:2026-08-26:operating_income:2026-04-27:2026-07-26"
-      ],
-      "overlap_warning": null
-    },
-    {
-      "factor_id": "official-filing:PLTR",
-      "exposure_type": "official_filing",
-      "symbols": [
-        "PLTR"
-      ],
-      "evidence_ids": [
-        "sec:PLTR:10-Q:2026-08-04:assets:instant:2026-06-30",
-        "sec:PLTR:10-Q:2026-08-04:assets:instant:2025-12-31",
-        "sec:PLTR:10-Q:2026-08-04:cash:instant:2026-06-30",
-        "sec:PLTR:10-Q:2026-08-04:cash:instant:2025-12-31",
-        "sec:PLTR:10-Q:2026-08-04:diluted_eps:2026-01-01:2026-06-30",
-        "sec:PLTR:10-Q:2026-08-04:diluted_eps:2026-04-01:2026-06-30",
-        "sec:PLTR:10-Q:2026-08-04:liabilities:instant:2026-06-30",
-        "sec:PLTR:10-Q:2026-08-04:liabilities:instant:2025-12-31",
-        "sec:PLTR:10-Q:2026-08-04:net_income:2026-01-01:2026-06-30",
-        "sec:PLTR:10-Q:2026-08-04:net_income:2026-04-01:2026-06-30",
-        "sec:PLTR:10-Q:2026-08-04:operating_cash_flow:2026-01-01:2026-06-30",
-        "sec:PLTR:10-Q:2026-08-04:operating_cash_flow:2025-01-01:2025-06-30",
-        "sec:PLTR:10-Q:2026-08-04:operating_income:2026-01-01:2026-06-30",
-        "sec:PLTR:10-Q:2026-08-04:operating_income:2026-04-01:2026-06-30",
-        "sec:PLTR:10-Q:2026-08-04:revenue:2026-01-01:2026-06-30",
-        "sec:PLTR:10-Q:2026-08-04:revenue:2026-04-01:2026-06-30"
-      ],
-      "overlap_warning": null
-    },
-    {
-      "factor_id": "official-filing:TSLA",
-      "exposure_type": "official_filing",
-      "symbols": [
-        "TSLA"
-      ],
-      "evidence_ids": [
-        "sec:TSLA:10-Q:2026-07-23:assets:instant:2026-06-30",
-        "sec:TSLA:10-Q:2026-07-23:assets:instant:2025-12-31",
-        "sec:TSLA:10-Q:2026-07-23:cash:instant:2026-06-30",
-        "sec:TSLA:10-Q:2026-07-23:cash:instant:2025-12-31",
-        "sec:TSLA:10-Q:2026-07-23:diluted_eps:2026-01-01:2026-06-30",
-        "sec:TSLA:10-Q:2026-07-23:diluted_eps:2026-04-01:2026-06-30",
-        "sec:TSLA:10-Q:2026-07-23:liabilities:instant:2026-06-30",
-        "sec:TSLA:10-Q:2026-07-23:liabilities:instant:2025-12-31",
-        "sec:TSLA:10-Q:2026-07-23:net_income:2026-01-01:2026-06-30",
-        "sec:TSLA:10-Q:2026-07-23:net_income:2026-04-01:2026-06-30",
-        "sec:TSLA:10-Q:2026-07-23:operating_cash_flow:2026-01-01:2026-06-30",
-        "sec:TSLA:10-Q:2026-07-23:operating_cash_flow:2025-01-01:2025-06-30",
-        "sec:TSLA:10-Q:2026-07-23:operating_income:2026-01-01:2026-06-30",
-        "sec:TSLA:10-Q:2026-07-23:operating_income:2026-04-01:2026-06-30",
-        "sec:TSLA:10-Q:2026-07-23:revenue:2026-01-01:2026-06-30",
-        "sec:TSLA:10-Q:2026-07-23:revenue:2026-04-01:2026-06-30"
-      ],
-      "overlap_warning": null
-    },
-    {
-      "factor_id": "official-filing:TSM",
-      "exposure_type": "official_filing",
-      "symbols": [
-        "TSM"
-      ],
-      "evidence_ids": [
-        "sec:TSM:20-F:2025-04-17:assets:instant:2024-12-31",
-        "sec:TSM:20-F:2025-04-17:assets:instant:2023-12-31",
-        "sec:TSM:20-F:2025-04-17:liabilities:instant:2024-12-31",
-        "sec:TSM:20-F:2025-04-17:liabilities:instant:2023-12-31",
-        "sec:TSM:20-F:2025-04-17:net_income:2024-01-01:2024-12-31",
-        "sec:TSM:20-F:2025-04-17:net_income:2023-01-01:2023-12-31"
-      ],
-      "overlap_warning": null
-    }
-  ],
+  "factor_exposures": [],
   "catalysts": [],
   "ideas_shortlist": [],
   "source_observations": [],
-  "diagnostics": []
+  "diagnostics": [
+    "competition: 已保留來源觀察，但缺少可比的競爭地位與價值鏈分析。",
+    "valuation: 缺少同期間及會計口徑的可追溯估值數值。",
+    "concentration: 缺少營收、客戶或供應鏈共同曝險的可追溯分析。",
+    "catalyst: 缺少可核實事件時間與影響的催化資料。",
+    "ideas: 缺少完整可反證論點與估值依據，未產生候選建議。"
+  ]
 }
