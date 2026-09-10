@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0",
-  "run_id": "20260909T144005Z",
-  "data_cutoff": "2026-09-09T14:39:50.059824Z",
+  "run_id": "20260910T143037Z",
+  "data_cutoff": "2026-09-10T14:30:16.414008Z",
   "extensions": [
     {
       "name": "earnings-review",
       "version": "1.0.0",
       "status": "partial",
-      "artifact_count": 1,
-      "evidence_count": 1,
+      "artifact_count": 20,
+      "evidence_count": 106,
       "gap_count": 0,
       "duplicated_evidence_removed": 0,
       "connector_calls": 0,
@@ -44,7 +44,7 @@
       "version": "1.0.0",
       "status": "success",
       "artifact_count": 1,
-      "evidence_count": 0,
+      "evidence_count": 132,
       "gap_count": 0,
       "duplicated_evidence_removed": 0,
       "connector_calls": 0,

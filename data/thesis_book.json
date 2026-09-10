@@ -1,8 +1,773 @@
 {
   "schema_version": "1.0",
-  "run_id": "20260909T144005Z",
-  "data_cutoff": "2026-09-09T14:39:50.059824Z",
-  "theses": {},
-  "recent_deltas": [],
-  "gaps": []
+  "run_id": "20260910T143037Z",
+  "data_cutoff": "2026-09-10T14:30:16.414008Z",
+  "theses": {
+    "AAPL": {
+      "symbol": "AAPL",
+      "orientation": "watch",
+      "thesis_statement": "Insufficient supplied evidence to establish a complete thesis for AAPL; keep this symbol on watch.",
+      "status": "watch",
+      "conviction": 100,
+      "created_at": "2026-09-10T14:30:16.414008Z",
+      "updated_at": "2026-09-10T14:30:16.414008Z",
+      "evidence_cutoff": "2026-09-10T14:30:16.414008Z",
+      "pillars": [],
+      "invalidators": [],
+      "catalysts": []
+    },
+    "AMD": {
+      "symbol": "AMD",
+      "orientation": "watch",
+      "thesis_statement": "Insufficient supplied evidence to establish a complete thesis for AMD; keep this symbol on watch.",
+      "status": "watch",
+      "conviction": 100,
+      "created_at": "2026-09-10T14:30:16.414008Z",
+      "updated_at": "2026-09-10T14:30:16.414008Z",
+      "evidence_cutoff": "2026-09-10T14:30:16.414008Z",
+      "pillars": [],
+      "invalidators": [],
+      "catalysts": []
+    },
+    "AVGO": {
+      "symbol": "AVGO",
+      "orientation": "watch",
+      "thesis_statement": "Insufficient supplied evidence to establish a complete thesis for AVGO; keep this symbol on watch.",
+      "status": "watch",
+      "conviction": 100,
+      "created_at": "2026-09-10T14:30:16.414008Z",
+      "updated_at": "2026-09-10T14:30:16.414008Z",
+      "evidence_cutoff": "2026-09-10T14:30:16.414008Z",
+      "pillars": [],
+      "invalidators": [],
+      "catalysts": []
+    },
+    "META": {
+      "symbol": "META",
+      "orientation": "watch",
+      "thesis_statement": "Insufficient supplied evidence to establish a complete thesis for META; keep this symbol on watch.",
+      "status": "watch",
+      "conviction": 100,
+      "created_at": "2026-09-10T14:30:16.414008Z",
+      "updated_at": "2026-09-10T14:30:16.414008Z",
+      "evidence_cutoff": "2026-09-10T14:30:16.414008Z",
+      "pillars": [],
+      "invalidators": [],
+      "catalysts": []
+    },
+    "MSFT": {
+      "symbol": "MSFT",
+      "orientation": "watch",
+      "thesis_statement": "Insufficient supplied evidence to establish a complete thesis for MSFT; keep this symbol on watch.",
+      "status": "watch",
+      "conviction": 100,
+      "created_at": "2026-09-10T14:30:16.414008Z",
+      "updated_at": "2026-09-10T14:30:16.414008Z",
+      "evidence_cutoff": "2026-09-10T14:30:16.414008Z",
+      "pillars": [],
+      "invalidators": [],
+      "catalysts": []
+    },
+    "NVDA": {
+      "symbol": "NVDA",
+      "orientation": "watch",
+      "thesis_statement": "Insufficient supplied evidence to establish a complete thesis for NVDA; keep this symbol on watch.",
+      "status": "watch",
+      "conviction": 100,
+      "created_at": "2026-09-10T14:30:16.414008Z",
+      "updated_at": "2026-09-10T14:30:16.414008Z",
+      "evidence_cutoff": "2026-09-10T14:30:16.414008Z",
+      "pillars": [],
+      "invalidators": [],
+      "catalysts": []
+    },
+    "PLTR": {
+      "symbol": "PLTR",
+      "orientation": "watch",
+      "thesis_statement": "Insufficient supplied evidence to establish a complete thesis for PLTR; keep this symbol on watch.",
+      "status": "watch",
+      "conviction": 100,
+      "created_at": "2026-09-10T14:30:16.414008Z",
+      "updated_at": "2026-09-10T14:30:16.414008Z",
+      "evidence_cutoff": "2026-09-10T14:30:16.414008Z",
+      "pillars": [],
+      "invalidators": [],
+      "catalysts": []
+    },
+    "TSLA": {
+      "symbol": "TSLA",
+      "orientation": "watch",
+      "thesis_statement": "Insufficient supplied evidence to establish a complete thesis for TSLA; keep this symbol on watch.",
+      "status": "watch",
+      "conviction": 100,
+      "created_at": "2026-09-10T14:30:16.414008Z",
+      "updated_at": "2026-09-10T14:30:16.414008Z",
+      "evidence_cutoff": "2026-09-10T14:30:16.414008Z",
+      "pillars": [],
+      "invalidators": [],
+      "catalysts": []
+    },
+    "TSM": {
+      "symbol": "TSM",
+      "orientation": "watch",
+      "thesis_statement": "Insufficient supplied evidence to establish a complete thesis for TSM; keep this symbol on watch.",
+      "status": "watch",
+      "conviction": 60,
+      "created_at": "2026-09-10T14:30:16.414008Z",
+      "updated_at": "2026-09-10T14:30:16.414008Z",
+      "evidence_cutoff": "2026-09-10T14:30:16.414008Z",
+      "pillars": [],
+      "invalidators": [],
+      "catalysts": []
+    }
+  },
+  "recent_deltas": [
+    {
+      "evidence_ids": [
+        "sec:NVDA:10-Q:2026-08-26:cash:instant:2026-01-25"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 40,
+      "conviction_after": 50,
+      "rationale": "10-Q 申報的 cash 為 10605000000 USD，期間終點 2026-01-25。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:NVDA:10-Q:2026-08-26:cash:instant:2026-07-26"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 50,
+      "conviction_after": 60,
+      "rationale": "10-Q 申報的 cash 為 22443000000 USD，期間終點 2026-07-26。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:NVDA:10-Q:2026-08-26:diluted_eps:2026-01-26:2026-07-26"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 60,
+      "conviction_after": 70,
+      "rationale": "10-Q 申報的 diluted_eps 為 4.85 USD/shares，期間終點 2026-07-26。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:NVDA:10-Q:2026-08-26:diluted_eps:2026-04-27:2026-07-26"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 70,
+      "conviction_after": 80,
+      "rationale": "10-Q 申報的 diluted_eps 為 2.46 USD/shares，期間終點 2026-07-26。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:NVDA:10-Q:2026-08-26:liabilities:instant:2026-01-25"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 80,
+      "conviction_after": 90,
+      "rationale": "10-Q 申報的 liabilities 為 49510000000 USD，期間終點 2026-01-25。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:NVDA:10-Q:2026-08-26:liabilities:instant:2026-07-26"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 90,
+      "conviction_after": 100,
+      "rationale": "10-Q 申報的 liabilities 為 91288000000 USD，期間終點 2026-07-26。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:NVDA:10-Q:2026-08-26:net_income:2026-01-26:2026-07-26"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 100,
+      "conviction_after": 100,
+      "rationale": "10-Q 申報的 net_income 為 118010000000 USD，期間終點 2026-07-26。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:NVDA:10-Q:2026-08-26:net_income:2026-04-27:2026-07-26"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 100,
+      "conviction_after": 100,
+      "rationale": "10-Q 申報的 net_income 為 59688000000 USD，期間終點 2026-07-26。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:NVDA:10-Q:2026-08-26:operating_cash_flow:2025-01-27:2025-07-27"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 100,
+      "conviction_after": 100,
+      "rationale": "10-Q 申報的 operating_cash_flow 為 42779000000 USD，期間終點 2025-07-27。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:NVDA:10-Q:2026-08-26:operating_cash_flow:2026-01-26:2026-07-26"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 100,
+      "conviction_after": 100,
+      "rationale": "10-Q 申報的 operating_cash_flow 為 74421000000 USD，期間終點 2026-07-26。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:NVDA:10-Q:2026-08-26:operating_income:2026-01-26:2026-07-26"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 100,
+      "conviction_after": 100,
+      "rationale": "10-Q 申報的 operating_income 為 117270000000 USD，期間終點 2026-07-26。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:NVDA:10-Q:2026-08-26:operating_income:2026-04-27:2026-07-26"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 100,
+      "conviction_after": 100,
+      "rationale": "10-Q 申報的 operating_income 為 63734000000 USD，期間終點 2026-07-26。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:PLTR:10-Q:2026-08-04:assets:instant:2025-12-31"
+      ],
+      "impact": "neutral",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 0,
+      "conviction_after": 10,
+      "rationale": "New symbol is recorded as watch-only; no complete thesis is inferred.",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:PLTR:10-Q:2026-08-04:assets:instant:2026-06-30"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 10,
+      "conviction_after": 20,
+      "rationale": "10-Q 申報的 assets 為 11678564000 USD，期間終點 2026-06-30。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:PLTR:10-Q:2026-08-04:cash:instant:2025-12-31"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 20,
+      "conviction_after": 30,
+      "rationale": "10-Q 申報的 cash 為 1423796000 USD，期間終點 2025-12-31。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:PLTR:10-Q:2026-08-04:cash:instant:2026-06-30"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 30,
+      "conviction_after": 40,
+      "rationale": "10-Q 申報的 cash 為 2030047000 USD，期間終點 2026-06-30。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:PLTR:10-Q:2026-08-04:diluted_eps:2026-01-01:2026-06-30"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 40,
+      "conviction_after": 50,
+      "rationale": "10-Q 申報的 diluted_eps 為 0.75 USD/shares，期間終點 2026-06-30。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:PLTR:10-Q:2026-08-04:diluted_eps:2026-04-01:2026-06-30"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 50,
+      "conviction_after": 60,
+      "rationale": "10-Q 申報的 diluted_eps 為 0.41 USD/shares，期間終點 2026-06-30。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:PLTR:10-Q:2026-08-04:liabilities:instant:2025-12-31"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 60,
+      "conviction_after": 70,
+      "rationale": "10-Q 申報的 liabilities 為 1412381000 USD，期間終點 2025-12-31。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:PLTR:10-Q:2026-08-04:liabilities:instant:2026-06-30"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 70,
+      "conviction_after": 80,
+      "rationale": "10-Q 申報的 liabilities 為 1793680000 USD，期間終點 2026-06-30。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:PLTR:10-Q:2026-08-04:net_income:2026-01-01:2026-06-30"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 80,
+      "conviction_after": 90,
+      "rationale": "10-Q 申報的 net_income 為 1932417000 USD，期間終點 2026-06-30。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:PLTR:10-Q:2026-08-04:net_income:2026-04-01:2026-06-30"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 90,
+      "conviction_after": 100,
+      "rationale": "10-Q 申報的 net_income 為 1061890000 USD，期間終點 2026-06-30。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:PLTR:10-Q:2026-08-04:operating_cash_flow:2025-01-01:2025-06-30"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 100,
+      "conviction_after": 100,
+      "rationale": "10-Q 申報的 operating_cash_flow 為 849514000 USD，期間終點 2025-06-30。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:PLTR:10-Q:2026-08-04:operating_cash_flow:2026-01-01:2026-06-30"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 100,
+      "conviction_after": 100,
+      "rationale": "10-Q 申報的 operating_cash_flow 為 2115332000 USD，期間終點 2026-06-30。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:PLTR:10-Q:2026-08-04:operating_income:2026-01-01:2026-06-30"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 100,
+      "conviction_after": 100,
+      "rationale": "10-Q 申報的 operating_income 為 1666002000 USD，期間終點 2026-06-30。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:PLTR:10-Q:2026-08-04:operating_income:2026-04-01:2026-06-30"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 100,
+      "conviction_after": 100,
+      "rationale": "10-Q 申報的 operating_income 為 912004000 USD，期間終點 2026-06-30。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:PLTR:10-Q:2026-08-04:revenue:2026-01-01:2026-06-30"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 100,
+      "conviction_after": 100,
+      "rationale": "10-Q 申報的 revenue 為 3568047000 USD，期間終點 2026-06-30。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:PLTR:10-Q:2026-08-04:revenue:2026-04-01:2026-06-30"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 100,
+      "conviction_after": 100,
+      "rationale": "10-Q 申報的 revenue 為 1935464000 USD，期間終點 2026-06-30。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:TSLA:10-Q:2026-07-23:assets:instant:2025-12-31"
+      ],
+      "impact": "neutral",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 0,
+      "conviction_after": 10,
+      "rationale": "New symbol is recorded as watch-only; no complete thesis is inferred.",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:TSLA:10-Q:2026-07-23:assets:instant:2026-06-30"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 10,
+      "conviction_after": 20,
+      "rationale": "10-Q 申報的 assets 為 148524000000 USD，期間終點 2026-06-30。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:TSLA:10-Q:2026-07-23:cash:instant:2025-12-31"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 20,
+      "conviction_after": 30,
+      "rationale": "10-Q 申報的 cash 為 16513000000 USD，期間終點 2025-12-31。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:TSLA:10-Q:2026-07-23:cash:instant:2026-06-30"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 30,
+      "conviction_after": 40,
+      "rationale": "10-Q 申報的 cash 為 15219000000 USD，期間終點 2026-06-30。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:TSLA:10-Q:2026-07-23:diluted_eps:2026-01-01:2026-06-30"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 40,
+      "conviction_after": 50,
+      "rationale": "10-Q 申報的 diluted_eps 為 0.45 USD/shares，期間終點 2026-06-30。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:TSLA:10-Q:2026-07-23:diluted_eps:2026-04-01:2026-06-30"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 50,
+      "conviction_after": 60,
+      "rationale": "10-Q 申報的 diluted_eps 為 0.32 USD/shares，期間終點 2026-06-30。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:TSLA:10-Q:2026-07-23:liabilities:instant:2025-12-31"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 60,
+      "conviction_after": 70,
+      "rationale": "10-Q 申報的 liabilities 為 54941000000 USD，期間終點 2025-12-31。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:TSLA:10-Q:2026-07-23:liabilities:instant:2026-06-30"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 70,
+      "conviction_after": 80,
+      "rationale": "10-Q 申報的 liabilities 為 61005000000 USD，期間終點 2026-06-30。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:TSLA:10-Q:2026-07-23:net_income:2026-01-01:2026-06-30"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 80,
+      "conviction_after": 90,
+      "rationale": "10-Q 申報的 net_income 為 1591000000 USD，期間終點 2026-06-30。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:TSLA:10-Q:2026-07-23:net_income:2026-04-01:2026-06-30"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 90,
+      "conviction_after": 100,
+      "rationale": "10-Q 申報的 net_income 為 1114000000 USD，期間終點 2026-06-30。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:TSLA:10-Q:2026-07-23:operating_cash_flow:2025-01-01:2025-06-30"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 100,
+      "conviction_after": 100,
+      "rationale": "10-Q 申報的 operating_cash_flow 為 4696000000 USD，期間終點 2025-06-30。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:TSLA:10-Q:2026-07-23:operating_cash_flow:2026-01-01:2026-06-30"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 100,
+      "conviction_after": 100,
+      "rationale": "10-Q 申報的 operating_cash_flow 為 8634000000 USD，期間終點 2026-06-30。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:TSLA:10-Q:2026-07-23:operating_income:2026-01-01:2026-06-30"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 100,
+      "conviction_after": 100,
+      "rationale": "10-Q 申報的 operating_income 為 1339000000 USD，期間終點 2026-06-30。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:TSLA:10-Q:2026-07-23:operating_income:2026-04-01:2026-06-30"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 100,
+      "conviction_after": 100,
+      "rationale": "10-Q 申報的 operating_income 為 398000000 USD，期間終點 2026-06-30。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:TSLA:10-Q:2026-07-23:revenue:2026-01-01:2026-06-30"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 100,
+      "conviction_after": 100,
+      "rationale": "10-Q 申報的 revenue 為 50623000000 USD，期間終點 2026-06-30。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:TSLA:10-Q:2026-07-23:revenue:2026-04-01:2026-06-30"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 100,
+      "conviction_after": 100,
+      "rationale": "10-Q 申報的 revenue 為 28236000000 USD，期間終點 2026-06-30。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:TSM:20-F:2025-04-17:assets:instant:2023-12-31"
+      ],
+      "impact": "neutral",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 0,
+      "conviction_after": 10,
+      "rationale": "New symbol is recorded as watch-only; no complete thesis is inferred.",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:TSM:20-F:2025-04-17:assets:instant:2024-12-31"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 10,
+      "conviction_after": 20,
+      "rationale": "20-F 申報的 assets 為 6691764700000 TWD，期間終點 2024-12-31。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:TSM:20-F:2025-04-17:liabilities:instant:2023-12-31"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 20,
+      "conviction_after": 30,
+      "rationale": "20-F 申報的 liabilities 為 2078330100000 TWD，期間終點 2023-12-31。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:TSM:20-F:2025-04-17:liabilities:instant:2024-12-31"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 30,
+      "conviction_after": 40,
+      "rationale": "20-F 申報的 liabilities 為 2412493100000 TWD，期間終點 2024-12-31。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:TSM:20-F:2025-04-17:net_income:2023-01-01:2023-12-31"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 40,
+      "conviction_after": 50,
+      "rationale": "20-F 申報的 net_income 為 851027700000 TWD，期間終點 2023-12-31。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "evidence_ids": [
+        "sec:TSM:20-F:2025-04-17:net_income:2024-01-01:2024-12-31"
+      ],
+      "impact": "strengthen",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 50,
+      "conviction_after": 60,
+      "rationale": "20-F 申報的 net_income 為 1157523900000 TWD，期間終點 2024-12-31。",
+      "recommended_research_action": "no_change"
+    }
+  ],
+  "gaps": [
+    {
+      "symbol": "AAPL",
+      "code": "insufficient_initial_evidence",
+      "detail": "New symbols remain watch-only until a complete thesis is supplied."
+    },
+    {
+      "symbol": "AMD",
+      "code": "insufficient_initial_evidence",
+      "detail": "New symbols remain watch-only until a complete thesis is supplied."
+    },
+    {
+      "symbol": "AVGO",
+      "code": "insufficient_initial_evidence",
+      "detail": "New symbols remain watch-only until a complete thesis is supplied."
+    },
+    {
+      "symbol": "META",
+      "code": "insufficient_initial_evidence",
+      "detail": "New symbols remain watch-only until a complete thesis is supplied."
+    },
+    {
+      "symbol": "MSFT",
+      "code": "insufficient_initial_evidence",
+      "detail": "New symbols remain watch-only until a complete thesis is supplied."
+    },
+    {
+      "symbol": "NVDA",
+      "code": "insufficient_initial_evidence",
+      "detail": "New symbols remain watch-only until a complete thesis is supplied."
+    },
+    {
+      "symbol": "PLTR",
+      "code": "insufficient_initial_evidence",
+      "detail": "New symbols remain watch-only until a complete thesis is supplied."
+    },
+    {
+      "symbol": "TSLA",
+      "code": "insufficient_initial_evidence",
+      "detail": "New symbols remain watch-only until a complete thesis is supplied."
+    },
+    {
+      "symbol": "TSM",
+      "code": "insufficient_initial_evidence",
+      "detail": "New symbols remain watch-only until a complete thesis is supplied."
+    }
+  ]
 }
