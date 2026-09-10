@@ -181,6 +181,8 @@
         "evidence_source_urls": []
       }
     ],
+    "allocation_scope": null,
+    "active_sleeve_tradeoffs": [],
     "methodology": "同一資料 cutoff 與主動部位分母比較確認持倉 HOLD 與已通過政策的 CIO 候選；成本為研究假設，不代表券商成交，且未支持時不輸出數值預期報酬。"
   },
   "model_draft": {
@@ -498,6 +500,7 @@
       "TLT 對殖利率變化敏感，GLD 也可能與股票同跌；兩者均非無條件避險。",
       "槓桿及反向 ETF 具有每日重設、反彈與震盪路徑風險，本輪不將其作為核心配置。"
     ],
+    "active_sleeve_tradeoffs": [],
     "scoped_constraints": [
       {
         "constraint_id": "SPY_TLT_GLD_completed_days_3of7_short_window_gate",
@@ -1428,6 +1431,7 @@
       "配置調整仍承受市場波動與執行成本。",
       "未量化的風險不代表零損失，研究結論仍受本輪證據限制。"
     ],
+    "active_sleeve_tradeoffs": [],
     "scoped_constraints": [
       {
         "constraint_id": "SPY_TLT_GLD_completed_days_3of7_short_window_gate",

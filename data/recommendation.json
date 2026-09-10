@@ -5,6 +5,8 @@
   "data_cutoff": "2026-09-10T18:07:27.476583Z",
   "status": "live",
   "capital_usd": "10691.32",
+  "allocation_scope": null,
+  "active_sleeve_tradeoffs": [],
   "model_score": 96,
   "model_score_reason": "方向一致度 96/100；13 位提案委員按信心加權，0 項協商後否決仍未解除，扣除 0 分。",
   "risk_level": "high",

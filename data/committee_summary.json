@@ -428,6 +428,7 @@
       "配置調整仍承受市場波動與執行成本。",
       "未量化的風險不代表零損失，研究結論仍受本輪證據限制。"
     ],
+    "active_sleeve_tradeoffs": [],
     "scoped_constraints": [
       {
         "constraint_id": "SPY_TLT_GLD_completed_days_3of7_short_window_gate",

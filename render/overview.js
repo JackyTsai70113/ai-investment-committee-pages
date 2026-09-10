@@ -12,6 +12,13 @@ import { installTabNavigation } from "./navigation.js";
 import { createPerformanceRenderer } from "./performance.js";
 import { createDataLoader } from "../data.js";
 
+export function allocationScopeNote(recommendation) {
+  return recommendation.allocation_scope
+    ? "可調整部位：固定核心不納入本輪配置分母，也不產生交易建議。"
+    : "本輪為未記錄可調整範圍的舊制建議，不代表現行可調整部位政策。";
+}
+
+
 const colors = ["#c7f15b", "#67b7ff", "#ae91ff", "#ff9864", "#7ecb83", "#f3f0d8"];
 const LEADERBOARD_VISIBLE_LIMIT = 5;
 
@@ -700,6 +707,7 @@ const researchStatusLabel = (value) => {
               </div>
               <span class="panel-meta">建議版本 ${escapeHtml(recommendation.run_id)}</span>
             </header>
+            <p class="panel-meta">${allocationScopeNote(recommendation)}</p>
             <div class="strategy-layout">
               <div class="allocation-visual">
                 <div class="donut" style="--donut:${escapeHtml(donut)}">
