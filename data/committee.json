@@ -17,6 +17,7 @@
     "Position-risk shadow: 5 個風險部位未量化或超過每筆 US$162.13 研究損失預算。",
     "Exposure shadow warning: correlation cluster AVGO,GLD,META,NVDA,PLTR weight 0.9160 exceeds 0.60"
   ],
+  "allocation_comparison": null,
   "final_decision": {
     "opening_statement": "我在質詢後撤回反向 ETF 的戰術配置，將超額集中部位降至較可控水準，改以現金、廣泛市場、TLT 與 GLD 緩衝；在完成日短窗統計補齊前，我不把盤中偏弱升級成強烈方向押注。",
     "tone": "cautious",
