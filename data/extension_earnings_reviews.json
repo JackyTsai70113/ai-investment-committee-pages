@@ -10,6 +10,8 @@
       "company": "AAPL",
       "fiscal_period": "2026-Q3",
       "event_time": "2026-07-31T00:00:00Z",
+      "publication_date": null,
+      "publication_precision": "exact",
       "data_cutoff": "2026-09-10T14:30:16.414008Z",
       "observations": [
         {
@@ -19,6 +21,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q3 2024-09-29至2025-06-28",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AAPL:10-Q:2026-07-31:operating_cash_flow:2024-09-29:2025-06-28"
@@ -88,6 +93,8 @@
       "company": "AAPL",
       "fiscal_period": "2026-Q3",
       "event_time": "2026-07-31T00:00:00Z",
+      "publication_date": null,
+      "publication_precision": "exact",
       "data_cutoff": "2026-09-10T14:30:16.414008Z",
       "observations": [
         {
@@ -97,6 +104,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q3",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AAPL:10-Q:2026-07-31:assets:instant:2025-09-27"
@@ -116,6 +126,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q3",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AAPL:10-Q:2026-07-31:cash:instant:2025-09-27"
@@ -135,6 +148,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q3",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AAPL:10-Q:2026-07-31:liabilities:instant:2025-09-27"
@@ -266,6 +282,8 @@
       "company": "AAPL",
       "fiscal_period": "2026-Q3",
       "event_time": "2026-07-31T00:00:00Z",
+      "publication_date": null,
+      "publication_precision": "exact",
       "data_cutoff": "2026-09-10T14:30:16.414008Z",
       "observations": [
         {
@@ -275,6 +293,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q3",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AAPL:10-Q:2026-07-31:assets:instant:2026-06-27"
@@ -294,6 +315,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q3",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AAPL:10-Q:2026-07-31:cash:instant:2026-06-27"
@@ -313,6 +337,9 @@
             "unit": "USD/shares",
             "currency": null,
             "fiscal_period": "Q3 2025-09-28至2026-06-27",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AAPL:10-Q:2026-07-31:diluted_eps:2025-09-28:2026-06-27"
@@ -332,6 +359,9 @@
             "unit": "USD/shares",
             "currency": null,
             "fiscal_period": "Q3 2026-03-29至2026-06-27",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AAPL:10-Q:2026-07-31:diluted_eps:2026-03-29:2026-06-27"
@@ -351,6 +381,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q3",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AAPL:10-Q:2026-07-31:liabilities:instant:2026-06-27"
@@ -370,6 +403,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q3 2025-09-28至2026-06-27",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AAPL:10-Q:2026-07-31:net_income:2025-09-28:2026-06-27"
@@ -389,6 +425,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q3 2026-03-29至2026-06-27",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AAPL:10-Q:2026-07-31:net_income:2026-03-29:2026-06-27"
@@ -408,6 +447,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q3 2025-09-28至2026-06-27",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AAPL:10-Q:2026-07-31:operating_cash_flow:2025-09-28:2026-06-27"
@@ -427,6 +469,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q3 2025-09-28至2026-06-27",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AAPL:10-Q:2026-07-31:operating_income:2025-09-28:2026-06-27"
@@ -446,6 +491,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q3 2026-03-29至2026-06-27",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AAPL:10-Q:2026-07-31:operating_income:2026-03-29:2026-06-27"
@@ -465,6 +513,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q3 2025-09-28至2026-06-27",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AAPL:10-Q:2026-07-31:revenue:2025-09-28:2026-06-27"
@@ -484,6 +535,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q3 2026-03-29至2026-06-27",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AAPL:10-Q:2026-07-31:revenue:2026-03-29:2026-06-27"
@@ -894,6 +948,8 @@
       "company": "AMD",
       "fiscal_period": "2026-Q2",
       "event_time": "2026-08-05T00:00:00Z",
+      "publication_date": null,
+      "publication_precision": "exact",
       "data_cutoff": "2026-09-10T14:30:16.414008Z",
       "observations": [
         {
@@ -903,6 +959,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2024-12-29至2025-06-28",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AMD:10-Q:2026-08-05:operating_cash_flow:2024-12-29:2025-06-28"
@@ -972,6 +1031,8 @@
       "company": "AMD",
       "fiscal_period": "2026-Q2",
       "event_time": "2026-08-05T00:00:00Z",
+      "publication_date": null,
+      "publication_precision": "exact",
       "data_cutoff": "2026-09-10T14:30:16.414008Z",
       "observations": [
         {
@@ -981,6 +1042,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AMD:10-Q:2026-08-05:assets:instant:2025-12-27"
@@ -1000,6 +1064,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AMD:10-Q:2026-08-05:cash:instant:2025-12-27"
@@ -1100,6 +1167,8 @@
       "company": "AMD",
       "fiscal_period": "2026-Q2",
       "event_time": "2026-08-05T00:00:00Z",
+      "publication_date": null,
+      "publication_precision": "exact",
       "data_cutoff": "2026-09-10T14:30:16.414008Z",
       "observations": [
         {
@@ -1109,6 +1178,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AMD:10-Q:2026-08-05:assets:instant:2026-06-27"
@@ -1128,6 +1200,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AMD:10-Q:2026-08-05:cash:instant:2026-06-27"
@@ -1147,6 +1222,9 @@
             "unit": "USD/shares",
             "currency": null,
             "fiscal_period": "Q2 2025-12-28至2026-06-27",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AMD:10-Q:2026-08-05:diluted_eps:2025-12-28:2026-06-27"
@@ -1166,6 +1244,9 @@
             "unit": "USD/shares",
             "currency": null,
             "fiscal_period": "Q2 2026-03-29至2026-06-27",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AMD:10-Q:2026-08-05:diluted_eps:2026-03-29:2026-06-27"
@@ -1185,6 +1266,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2025-12-28至2026-06-27",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AMD:10-Q:2026-08-05:net_income:2025-12-28:2026-06-27"
@@ -1204,6 +1288,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2026-03-29至2026-06-27",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AMD:10-Q:2026-08-05:net_income:2026-03-29:2026-06-27"
@@ -1223,6 +1310,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2025-12-28至2026-06-27",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AMD:10-Q:2026-08-05:operating_cash_flow:2025-12-28:2026-06-27"
@@ -1242,6 +1332,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2025-12-28至2026-06-27",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AMD:10-Q:2026-08-05:operating_income:2025-12-28:2026-06-27"
@@ -1261,6 +1354,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2026-03-29至2026-06-27",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AMD:10-Q:2026-08-05:operating_income:2026-03-29:2026-06-27"
@@ -1280,6 +1376,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2025-12-28至2026-06-27",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AMD:10-Q:2026-08-05:revenue:2025-12-28:2026-06-27"
@@ -1299,6 +1398,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2026-03-29至2026-06-27",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AMD:10-Q:2026-08-05:revenue:2026-03-29:2026-06-27"
@@ -1678,6 +1780,8 @@
       "company": "AVGO",
       "fiscal_period": "2026-Q3",
       "event_time": "2026-09-10T00:00:00Z",
+      "publication_date": null,
+      "publication_precision": "exact",
       "data_cutoff": "2026-09-10T14:30:16.414008Z",
       "observations": [
         {
@@ -1687,6 +1791,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q3 2024-11-04至2025-08-03",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AVGO:10-Q:2026-09-10:operating_cash_flow:2024-11-04:2025-08-03"
@@ -1756,6 +1863,8 @@
       "company": "AVGO",
       "fiscal_period": "2026-Q3",
       "event_time": "2026-09-10T00:00:00Z",
+      "publication_date": null,
+      "publication_precision": "exact",
       "data_cutoff": "2026-09-10T14:30:16.414008Z",
       "observations": [
         {
@@ -1765,6 +1874,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q3",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AVGO:10-Q:2026-09-10:assets:instant:2025-11-02"
@@ -1784,6 +1896,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q3",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AVGO:10-Q:2026-09-10:cash:instant:2025-11-02"
@@ -1803,6 +1918,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q3",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AVGO:10-Q:2026-09-10:liabilities:instant:2025-11-02"
@@ -1934,6 +2052,8 @@
       "company": "AVGO",
       "fiscal_period": "2026-Q3",
       "event_time": "2026-09-10T00:00:00Z",
+      "publication_date": null,
+      "publication_precision": "exact",
       "data_cutoff": "2026-09-10T14:30:16.414008Z",
       "observations": [
         {
@@ -1943,6 +2063,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q3",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AVGO:10-Q:2026-09-10:assets:instant:2026-08-02"
@@ -1962,6 +2085,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q3",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AVGO:10-Q:2026-09-10:cash:instant:2026-08-02"
@@ -1981,6 +2107,9 @@
             "unit": "USD/shares",
             "currency": null,
             "fiscal_period": "Q3 2025-11-03至2026-08-02",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AVGO:10-Q:2026-09-10:diluted_eps:2025-11-03:2026-08-02"
@@ -2000,6 +2129,9 @@
             "unit": "USD/shares",
             "currency": null,
             "fiscal_period": "Q3 2026-05-04至2026-08-02",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AVGO:10-Q:2026-09-10:diluted_eps:2026-05-04:2026-08-02"
@@ -2019,6 +2151,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q3",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AVGO:10-Q:2026-09-10:liabilities:instant:2026-08-02"
@@ -2038,6 +2173,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q3 2025-11-03至2026-08-02",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AVGO:10-Q:2026-09-10:operating_cash_flow:2025-11-03:2026-08-02"
@@ -2057,6 +2195,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q3 2025-11-03至2026-08-02",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AVGO:10-Q:2026-09-10:operating_income:2025-11-03:2026-08-02"
@@ -2076,6 +2217,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q3 2026-05-04至2026-08-02",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AVGO:10-Q:2026-09-10:operating_income:2026-05-04:2026-08-02"
@@ -2095,6 +2239,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q3 2025-11-03至2026-08-02",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AVGO:10-Q:2026-09-10:revenue:2025-11-03:2026-08-02"
@@ -2114,6 +2261,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q3 2026-05-04至2026-08-02",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:AVGO:10-Q:2026-09-10:revenue:2026-05-04:2026-08-02"
@@ -2462,6 +2612,8 @@
       "company": "META",
       "fiscal_period": "2026-Q2",
       "event_time": "2026-07-30T00:00:00Z",
+      "publication_date": null,
+      "publication_precision": "exact",
       "data_cutoff": "2026-09-10T14:30:16.414008Z",
       "observations": [
         {
@@ -2471,6 +2623,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2025-01-01至2025-06-30",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:META:10-Q:2026-07-30:operating_cash_flow:2025-01-01:2025-06-30"
@@ -2540,6 +2695,8 @@
       "company": "META",
       "fiscal_period": "2026-Q2",
       "event_time": "2026-07-30T00:00:00Z",
+      "publication_date": null,
+      "publication_precision": "exact",
       "data_cutoff": "2026-09-10T14:30:16.414008Z",
       "observations": [
         {
@@ -2549,6 +2706,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:META:10-Q:2026-07-30:assets:instant:2025-12-31"
@@ -2568,6 +2728,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:META:10-Q:2026-07-30:cash:instant:2025-12-31"
@@ -2587,6 +2750,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:META:10-Q:2026-07-30:liabilities:instant:2025-12-31"
@@ -2718,6 +2884,8 @@
       "company": "META",
       "fiscal_period": "2026-Q2",
       "event_time": "2026-07-30T00:00:00Z",
+      "publication_date": null,
+      "publication_precision": "exact",
       "data_cutoff": "2026-09-10T14:30:16.414008Z",
       "observations": [
         {
@@ -2727,6 +2895,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:META:10-Q:2026-07-30:assets:instant:2026-06-30"
@@ -2746,6 +2917,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:META:10-Q:2026-07-30:cash:instant:2026-06-30"
@@ -2765,6 +2939,9 @@
             "unit": "USD/shares",
             "currency": null,
             "fiscal_period": "Q2 2026-01-01至2026-06-30",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:META:10-Q:2026-07-30:diluted_eps:2026-01-01:2026-06-30"
@@ -2784,6 +2961,9 @@
             "unit": "USD/shares",
             "currency": null,
             "fiscal_period": "Q2 2026-04-01至2026-06-30",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:META:10-Q:2026-07-30:diluted_eps:2026-04-01:2026-06-30"
@@ -2803,6 +2983,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:META:10-Q:2026-07-30:liabilities:instant:2026-06-30"
@@ -2822,6 +3005,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2026-01-01至2026-06-30",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:META:10-Q:2026-07-30:net_income:2026-01-01:2026-06-30"
@@ -2841,6 +3027,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2026-04-01至2026-06-30",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:META:10-Q:2026-07-30:net_income:2026-04-01:2026-06-30"
@@ -2860,6 +3049,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2026-01-01至2026-06-30",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:META:10-Q:2026-07-30:operating_cash_flow:2026-01-01:2026-06-30"
@@ -2879,6 +3071,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2026-01-01至2026-06-30",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:META:10-Q:2026-07-30:operating_income:2026-01-01:2026-06-30"
@@ -2898,6 +3093,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2026-04-01至2026-06-30",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:META:10-Q:2026-07-30:operating_income:2026-04-01:2026-06-30"
@@ -2917,6 +3115,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2026-01-01至2026-06-30",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:META:10-Q:2026-07-30:revenue:2026-01-01:2026-06-30"
@@ -2936,6 +3137,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2026-04-01至2026-06-30",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:META:10-Q:2026-07-30:revenue:2026-04-01:2026-06-30"
@@ -3346,6 +3550,8 @@
       "company": "MSFT",
       "fiscal_period": "2026-FY",
       "event_time": "2026-07-29T00:00:00Z",
+      "publication_date": null,
+      "publication_precision": "exact",
       "data_cutoff": "2026-09-10T14:30:16.414008Z",
       "observations": [
         {
@@ -3355,6 +3561,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "FY",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:MSFT:10-K:2026-07-29:assets:instant:2025-06-30"
@@ -3374,6 +3583,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "FY",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:MSFT:10-K:2026-07-29:cash:instant:2025-06-30"
@@ -3393,6 +3605,9 @@
             "unit": "USD/shares",
             "currency": null,
             "fiscal_period": "FY 2024-07-01至2025-06-30",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:MSFT:10-K:2026-07-29:diluted_eps:2024-07-01:2025-06-30"
@@ -3412,6 +3627,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "FY",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:MSFT:10-K:2026-07-29:liabilities:instant:2025-06-30"
@@ -3431,6 +3649,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "FY 2024-07-01至2025-06-30",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:MSFT:10-K:2026-07-29:net_income:2024-07-01:2025-06-30"
@@ -3450,6 +3671,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "FY 2024-07-01至2025-06-30",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:MSFT:10-K:2026-07-29:operating_cash_flow:2024-07-01:2025-06-30"
@@ -3469,6 +3693,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "FY 2024-07-01至2025-06-30",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:MSFT:10-K:2026-07-29:operating_income:2024-07-01:2025-06-30"
@@ -3488,6 +3715,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "FY 2024-07-01至2025-06-30",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:MSFT:10-K:2026-07-29:revenue:2024-07-01:2025-06-30"
@@ -3774,6 +4004,8 @@
       "company": "MSFT",
       "fiscal_period": "2026-FY",
       "event_time": "2026-07-29T00:00:00Z",
+      "publication_date": null,
+      "publication_precision": "exact",
       "data_cutoff": "2026-09-10T14:30:16.414008Z",
       "observations": [
         {
@@ -3783,6 +4015,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "FY",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:MSFT:10-K:2026-07-29:assets:instant:2026-06-30"
@@ -3802,6 +4037,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "FY",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:MSFT:10-K:2026-07-29:cash:instant:2026-06-30"
@@ -3821,6 +4059,9 @@
             "unit": "USD/shares",
             "currency": null,
             "fiscal_period": "FY 2025-07-01至2026-06-30",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:MSFT:10-K:2026-07-29:diluted_eps:2025-07-01:2026-06-30"
@@ -3840,6 +4081,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "FY",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:MSFT:10-K:2026-07-29:liabilities:instant:2026-06-30"
@@ -3859,6 +4103,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "FY 2025-07-01至2026-06-30",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:MSFT:10-K:2026-07-29:net_income:2025-07-01:2026-06-30"
@@ -3878,6 +4125,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "FY 2025-07-01至2026-06-30",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:MSFT:10-K:2026-07-29:operating_cash_flow:2025-07-01:2026-06-30"
@@ -3897,6 +4147,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "FY 2025-07-01至2026-06-30",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:MSFT:10-K:2026-07-29:operating_income:2025-07-01:2026-06-30"
@@ -3916,6 +4169,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "FY 2025-07-01至2026-06-30",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:MSFT:10-K:2026-07-29:revenue:2025-07-01:2026-06-30"
@@ -4202,6 +4458,8 @@
       "company": "NVDA",
       "fiscal_period": "2027-Q2",
       "event_time": "2026-08-26T00:00:00Z",
+      "publication_date": null,
+      "publication_precision": "exact",
       "data_cutoff": "2026-09-10T14:30:16.414008Z",
       "observations": [
         {
@@ -4211,6 +4469,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2025-01-27至2025-07-27",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:NVDA:10-Q:2026-08-26:operating_cash_flow:2025-01-27:2025-07-27"
@@ -4280,6 +4541,8 @@
       "company": "NVDA",
       "fiscal_period": "2027-Q2",
       "event_time": "2026-08-26T00:00:00Z",
+      "publication_date": null,
+      "publication_precision": "exact",
       "data_cutoff": "2026-09-10T14:30:16.414008Z",
       "observations": [
         {
@@ -4289,6 +4552,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:NVDA:10-Q:2026-08-26:assets:instant:2026-01-25"
@@ -4308,6 +4574,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:NVDA:10-Q:2026-08-26:cash:instant:2026-01-25"
@@ -4327,6 +4596,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:NVDA:10-Q:2026-08-26:liabilities:instant:2026-01-25"
@@ -4458,6 +4730,8 @@
       "company": "NVDA",
       "fiscal_period": "2027-Q2",
       "event_time": "2026-08-26T00:00:00Z",
+      "publication_date": null,
+      "publication_precision": "exact",
       "data_cutoff": "2026-09-10T14:30:16.414008Z",
       "observations": [
         {
@@ -4467,6 +4741,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:NVDA:10-Q:2026-08-26:assets:instant:2026-07-26"
@@ -4486,6 +4763,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:NVDA:10-Q:2026-08-26:cash:instant:2026-07-26"
@@ -4505,6 +4785,9 @@
             "unit": "USD/shares",
             "currency": null,
             "fiscal_period": "Q2 2026-01-26至2026-07-26",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:NVDA:10-Q:2026-08-26:diluted_eps:2026-01-26:2026-07-26"
@@ -4524,6 +4807,9 @@
             "unit": "USD/shares",
             "currency": null,
             "fiscal_period": "Q2 2026-04-27至2026-07-26",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:NVDA:10-Q:2026-08-26:diluted_eps:2026-04-27:2026-07-26"
@@ -4543,6 +4829,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:NVDA:10-Q:2026-08-26:liabilities:instant:2026-07-26"
@@ -4562,6 +4851,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2026-01-26至2026-07-26",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:NVDA:10-Q:2026-08-26:net_income:2026-01-26:2026-07-26"
@@ -4581,6 +4873,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2026-04-27至2026-07-26",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:NVDA:10-Q:2026-08-26:net_income:2026-04-27:2026-07-26"
@@ -4600,6 +4895,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2026-01-26至2026-07-26",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:NVDA:10-Q:2026-08-26:operating_cash_flow:2026-01-26:2026-07-26"
@@ -4619,6 +4917,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2026-01-26至2026-07-26",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:NVDA:10-Q:2026-08-26:operating_income:2026-01-26:2026-07-26"
@@ -4638,6 +4939,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2026-04-27至2026-07-26",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:NVDA:10-Q:2026-08-26:operating_income:2026-04-27:2026-07-26"
@@ -4986,6 +5290,8 @@
       "company": "PLTR",
       "fiscal_period": "2026-Q2",
       "event_time": "2026-08-04T00:00:00Z",
+      "publication_date": null,
+      "publication_precision": "exact",
       "data_cutoff": "2026-09-10T14:30:16.414008Z",
       "observations": [
         {
@@ -4995,6 +5301,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2025-01-01至2025-06-30",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:PLTR:10-Q:2026-08-04:operating_cash_flow:2025-01-01:2025-06-30"
@@ -5064,6 +5373,8 @@
       "company": "PLTR",
       "fiscal_period": "2026-Q2",
       "event_time": "2026-08-04T00:00:00Z",
+      "publication_date": null,
+      "publication_precision": "exact",
       "data_cutoff": "2026-09-10T14:30:16.414008Z",
       "observations": [
         {
@@ -5073,6 +5384,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:PLTR:10-Q:2026-08-04:assets:instant:2025-12-31"
@@ -5092,6 +5406,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:PLTR:10-Q:2026-08-04:cash:instant:2025-12-31"
@@ -5111,6 +5428,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:PLTR:10-Q:2026-08-04:liabilities:instant:2025-12-31"
@@ -5242,6 +5562,8 @@
       "company": "PLTR",
       "fiscal_period": "2026-Q2",
       "event_time": "2026-08-04T00:00:00Z",
+      "publication_date": null,
+      "publication_precision": "exact",
       "data_cutoff": "2026-09-10T14:30:16.414008Z",
       "observations": [
         {
@@ -5251,6 +5573,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:PLTR:10-Q:2026-08-04:assets:instant:2026-06-30"
@@ -5270,6 +5595,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:PLTR:10-Q:2026-08-04:cash:instant:2026-06-30"
@@ -5289,6 +5617,9 @@
             "unit": "USD/shares",
             "currency": null,
             "fiscal_period": "Q2 2026-01-01至2026-06-30",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:PLTR:10-Q:2026-08-04:diluted_eps:2026-01-01:2026-06-30"
@@ -5308,6 +5639,9 @@
             "unit": "USD/shares",
             "currency": null,
             "fiscal_period": "Q2 2026-04-01至2026-06-30",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:PLTR:10-Q:2026-08-04:diluted_eps:2026-04-01:2026-06-30"
@@ -5327,6 +5661,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:PLTR:10-Q:2026-08-04:liabilities:instant:2026-06-30"
@@ -5346,6 +5683,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2026-01-01至2026-06-30",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:PLTR:10-Q:2026-08-04:net_income:2026-01-01:2026-06-30"
@@ -5365,6 +5705,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2026-04-01至2026-06-30",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:PLTR:10-Q:2026-08-04:net_income:2026-04-01:2026-06-30"
@@ -5384,6 +5727,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2026-01-01至2026-06-30",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:PLTR:10-Q:2026-08-04:operating_cash_flow:2026-01-01:2026-06-30"
@@ -5403,6 +5749,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2026-01-01至2026-06-30",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:PLTR:10-Q:2026-08-04:operating_income:2026-01-01:2026-06-30"
@@ -5422,6 +5771,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2026-04-01至2026-06-30",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:PLTR:10-Q:2026-08-04:operating_income:2026-04-01:2026-06-30"
@@ -5441,6 +5793,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2026-01-01至2026-06-30",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:PLTR:10-Q:2026-08-04:revenue:2026-01-01:2026-06-30"
@@ -5460,6 +5815,9 @@
             "unit": "USD",
             "currency": "USD",
             "fiscal_period": "Q2 2026-04-01至2026-06-30",
+            "period_start": null,
+            "period_end": null,
+            "period_kind": "unknown",
             "accounting_basis": "gaap",
             "evidence_ids": [
               "sec:PLTR:10-Q:2026-08-04:revenue:2026-04-01:2026-06-30"

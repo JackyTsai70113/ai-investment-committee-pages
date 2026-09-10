@@ -123,6 +123,9 @@
   },
   "recent_deltas": [
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:NVDA:10-Q:2026-08-26:cash:instant:2026-01-25"
       ],
@@ -135,6 +138,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:NVDA:10-Q:2026-08-26:cash:instant:2026-07-26"
       ],
@@ -147,6 +153,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:NVDA:10-Q:2026-08-26:diluted_eps:2026-01-26:2026-07-26"
       ],
@@ -159,6 +168,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:NVDA:10-Q:2026-08-26:diluted_eps:2026-04-27:2026-07-26"
       ],
@@ -171,6 +183,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:NVDA:10-Q:2026-08-26:liabilities:instant:2026-01-25"
       ],
@@ -183,6 +198,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:NVDA:10-Q:2026-08-26:liabilities:instant:2026-07-26"
       ],
@@ -195,6 +213,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:NVDA:10-Q:2026-08-26:net_income:2026-01-26:2026-07-26"
       ],
@@ -207,6 +228,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:NVDA:10-Q:2026-08-26:net_income:2026-04-27:2026-07-26"
       ],
@@ -219,6 +243,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:NVDA:10-Q:2026-08-26:operating_cash_flow:2025-01-27:2025-07-27"
       ],
@@ -231,6 +258,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:NVDA:10-Q:2026-08-26:operating_cash_flow:2026-01-26:2026-07-26"
       ],
@@ -243,6 +273,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:NVDA:10-Q:2026-08-26:operating_income:2026-01-26:2026-07-26"
       ],
@@ -255,6 +288,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:NVDA:10-Q:2026-08-26:operating_income:2026-04-27:2026-07-26"
       ],
@@ -267,6 +303,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:PLTR:10-Q:2026-08-04:assets:instant:2025-12-31"
       ],
@@ -279,6 +318,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:PLTR:10-Q:2026-08-04:assets:instant:2026-06-30"
       ],
@@ -291,6 +333,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:PLTR:10-Q:2026-08-04:cash:instant:2025-12-31"
       ],
@@ -303,6 +348,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:PLTR:10-Q:2026-08-04:cash:instant:2026-06-30"
       ],
@@ -315,6 +363,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:PLTR:10-Q:2026-08-04:diluted_eps:2026-01-01:2026-06-30"
       ],
@@ -327,6 +378,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:PLTR:10-Q:2026-08-04:diluted_eps:2026-04-01:2026-06-30"
       ],
@@ -339,6 +393,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:PLTR:10-Q:2026-08-04:liabilities:instant:2025-12-31"
       ],
@@ -351,6 +408,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:PLTR:10-Q:2026-08-04:liabilities:instant:2026-06-30"
       ],
@@ -363,6 +423,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:PLTR:10-Q:2026-08-04:net_income:2026-01-01:2026-06-30"
       ],
@@ -375,6 +438,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:PLTR:10-Q:2026-08-04:net_income:2026-04-01:2026-06-30"
       ],
@@ -387,6 +453,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:PLTR:10-Q:2026-08-04:operating_cash_flow:2025-01-01:2025-06-30"
       ],
@@ -399,6 +468,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:PLTR:10-Q:2026-08-04:operating_cash_flow:2026-01-01:2026-06-30"
       ],
@@ -411,6 +483,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:PLTR:10-Q:2026-08-04:operating_income:2026-01-01:2026-06-30"
       ],
@@ -423,6 +498,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:PLTR:10-Q:2026-08-04:operating_income:2026-04-01:2026-06-30"
       ],
@@ -435,6 +513,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:PLTR:10-Q:2026-08-04:revenue:2026-01-01:2026-06-30"
       ],
@@ -447,6 +528,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:PLTR:10-Q:2026-08-04:revenue:2026-04-01:2026-06-30"
       ],
@@ -459,6 +543,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:TSLA:10-Q:2026-07-23:assets:instant:2025-12-31"
       ],
@@ -471,6 +558,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:TSLA:10-Q:2026-07-23:assets:instant:2026-06-30"
       ],
@@ -483,6 +573,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:TSLA:10-Q:2026-07-23:cash:instant:2025-12-31"
       ],
@@ -495,6 +588,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:TSLA:10-Q:2026-07-23:cash:instant:2026-06-30"
       ],
@@ -507,6 +603,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:TSLA:10-Q:2026-07-23:diluted_eps:2026-01-01:2026-06-30"
       ],
@@ -519,6 +618,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:TSLA:10-Q:2026-07-23:diluted_eps:2026-04-01:2026-06-30"
       ],
@@ -531,6 +633,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:TSLA:10-Q:2026-07-23:liabilities:instant:2025-12-31"
       ],
@@ -543,6 +648,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:TSLA:10-Q:2026-07-23:liabilities:instant:2026-06-30"
       ],
@@ -555,6 +663,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:TSLA:10-Q:2026-07-23:net_income:2026-01-01:2026-06-30"
       ],
@@ -567,6 +678,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:TSLA:10-Q:2026-07-23:net_income:2026-04-01:2026-06-30"
       ],
@@ -579,6 +693,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:TSLA:10-Q:2026-07-23:operating_cash_flow:2025-01-01:2025-06-30"
       ],
@@ -591,6 +708,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:TSLA:10-Q:2026-07-23:operating_cash_flow:2026-01-01:2026-06-30"
       ],
@@ -603,6 +723,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:TSLA:10-Q:2026-07-23:operating_income:2026-01-01:2026-06-30"
       ],
@@ -615,6 +738,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:TSLA:10-Q:2026-07-23:operating_income:2026-04-01:2026-06-30"
       ],
@@ -627,6 +753,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:TSLA:10-Q:2026-07-23:revenue:2026-01-01:2026-06-30"
       ],
@@ -639,6 +768,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:TSLA:10-Q:2026-07-23:revenue:2026-04-01:2026-06-30"
       ],
@@ -651,6 +783,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:TSM:20-F:2025-04-17:assets:instant:2023-12-31"
       ],
@@ -663,6 +798,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:TSM:20-F:2025-04-17:assets:instant:2024-12-31"
       ],
@@ -675,6 +813,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:TSM:20-F:2025-04-17:liabilities:instant:2023-12-31"
       ],
@@ -687,6 +828,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:TSM:20-F:2025-04-17:liabilities:instant:2024-12-31"
       ],
@@ -699,6 +843,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:TSM:20-F:2025-04-17:net_income:2023-01-01:2023-12-31"
       ],
@@ -711,6 +858,9 @@
       "recommended_research_action": "no_change"
     },
     {
+      "source_identity": null,
+      "source_version": null,
+      "replaces_version": null,
       "evidence_ids": [
         "sec:TSM:20-F:2025-04-17:net_income:2024-01-01:2024-12-31"
       ],
@@ -769,5 +919,9 @@
       "code": "insufficient_initial_evidence",
       "detail": "New symbols remain watch-only until a complete thesis is supplied."
     }
-  ]
+  ],
+  "processed_evidence": {},
+  "daily_change": {},
+  "change_date": null,
+  "daily_source_groups": []
 }

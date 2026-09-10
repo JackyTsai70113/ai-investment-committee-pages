@@ -18,6 +18,9 @@
     "Exposure shadow warning: correlation cluster AVGO,GLD,META,NVDA,PLTR weight 0.9160 exceeds 0.60"
   ],
   "allocation_comparison": null,
+  "model_draft": null,
+  "constraint_assessments": [],
+  "legacy_exposure_exceptions": [],
   "final_decision": {
     "opening_statement": "本輪受風控限制，維持既有部位；沒有新增交易建議。",
     "tone": "cautious",
@@ -91,6 +94,7 @@
           "PLTR",
           "CASH"
         ],
+        "claim_ids": [],
         "source_urls": []
       },
       {
@@ -107,6 +111,7 @@
           "PLTR",
           "CASH"
         ],
+        "claim_ids": [],
         "source_urls": []
       },
       {
@@ -123,6 +128,7 @@
           "PLTR",
           "CASH"
         ],
+        "claim_ids": [],
         "source_urls": []
       },
       {
@@ -139,6 +145,7 @@
           "PLTR",
           "CASH"
         ],
+        "claim_ids": [],
         "source_urls": []
       },
       {
@@ -155,6 +162,7 @@
           "PLTR",
           "CASH"
         ],
+        "claim_ids": [],
         "source_urls": []
       },
       {
@@ -171,6 +179,7 @@
           "PLTR",
           "CASH"
         ],
+        "claim_ids": [],
         "source_urls": []
       },
       {
@@ -187,6 +196,7 @@
           "PLTR",
           "CASH"
         ],
+        "claim_ids": [],
         "source_urls": []
       },
       {
@@ -203,6 +213,7 @@
           "PLTR",
           "CASH"
         ],
+        "claim_ids": [],
         "source_urls": []
       },
       {
@@ -219,6 +230,7 @@
           "PLTR",
           "CASH"
         ],
+        "claim_ids": [],
         "source_urls": []
       },
       {
@@ -235,6 +247,7 @@
           "PLTR",
           "CASH"
         ],
+        "claim_ids": [],
         "source_urls": []
       }
     ],
@@ -331,6 +344,8 @@
       "限制解除前新增曝險可能承受尚未量化的損失。",
       "維持既有部位可能錯過新的市場機會。"
     ],
+    "scoped_constraints": [],
+    "evidence_claims": [],
     "risk_veto": true,
     "veto_reason": "協商後的最終審核仍未通過：未滿足 C1（可重複短窗依據的前置證據交付要求）：CIO 草案與 top_reasons 主要基於單日/20日技術特徵與 VIX 等資訊，但本輪仍未交付並核對委員會門檻要求之 SPY/TLT/GLD（completed regular session daily bar 口徑）completed-days 3/7 short-window 聚合表（completed_windows、positive_windows、latest_return_percent，及事件對齊/窗口定義）。因此無法確認任何『方向性升級為可重複短窗依據』前置條件已被滿足。；未滿足 C3（反向/槓桿 ETF 路徑風險的已完成日尺度量化交付要求）：雖然 CIO 最終不配置反向/槓桿 ETF，但 binding_constraint 明確要求研究至少包含以 completed-days 比較樣本量化反彈損失/失效條件的可追溯結果；本輪 CIO 草案未提供此類 completed-days 樣本化路徑風險量化（仍僅為不配置/敘事層級說明），因此該 binding_constraint 未被完成。",
     "decision_outcome": "hold_due_to_constraint",
