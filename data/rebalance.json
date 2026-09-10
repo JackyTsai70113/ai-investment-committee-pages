@@ -6,7 +6,6 @@
   "from_run_id": "20260908T143814Z",
   "to_run_id": "20260909T144005Z",
   "capital_usd": "10808.36",
-  "actual_valuation": null,
   "status": "research_only",
   "basis": "以前一輪研究配置為比較基準，差額股數採最近已完成交易日收盤價估算。",
   "instructions": [
@@ -15,7 +14,6 @@
       "action": "hold",
       "reference_close_usd": null,
       "previous_target_usd": "1832.02",
-      "actual_value_usd": null,
       "new_target_usd": "1832.02",
       "change_usd": "0.00",
       "estimated_share_change": null
@@ -25,7 +23,6 @@
       "action": "hold",
       "reference_close_usd": null,
       "previous_target_usd": "2498.89",
-      "actual_value_usd": null,
       "new_target_usd": "2498.89",
       "change_usd": "0.00",
       "estimated_share_change": null
@@ -35,7 +32,6 @@
       "action": "hold",
       "reference_close_usd": "224.439896",
       "previous_target_usd": "3426.25",
-      "actual_value_usd": null,
       "new_target_usd": "3426.25",
       "change_usd": "0.00",
       "estimated_share_change": "0.0000"
@@ -45,7 +41,6 @@
       "action": "hold",
       "reference_close_usd": "171.720001",
       "previous_target_usd": "912.23",
-      "actual_value_usd": null,
       "new_target_usd": "912.23",
       "change_usd": "0.00",
       "estimated_share_change": "0.0000"
@@ -55,7 +50,6 @@
       "action": "hold",
       "reference_close_usd": "405.924988",
       "previous_target_usd": "1231.07",
-      "actual_value_usd": null,
       "new_target_usd": "1231.07",
       "change_usd": "0.00",
       "estimated_share_change": "0.0000"
@@ -65,7 +59,6 @@
       "action": "hold",
       "reference_close_usd": null,
       "previous_target_usd": "907.90",
-      "actual_value_usd": null,
       "new_target_usd": "907.90",
       "change_usd": "0.00",
       "estimated_share_change": null

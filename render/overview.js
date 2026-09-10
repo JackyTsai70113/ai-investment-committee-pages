@@ -131,6 +131,10 @@ export function bootstrapDashboard(root, payload, base) {
 
   const googleFinanceExchange = {
     AMD: "NASDAQ",
+    AVGO: "NASDAQ",
+    DIA: "NYSEARCA",
+    IWM: "NYSEARCA",
+    META: "NASDAQ",
     NVDA: "NASDAQ",
     PLTR: "NASDAQ",
     QQQ: "NASDAQ",
@@ -459,6 +463,7 @@ const researchStatusLabel = (value) => {
     system,
     learning,
     performance,
+    rebalance,
     researchJournal,
     dashboardAnalytics,
     thesisBook,
@@ -469,8 +474,21 @@ const researchStatusLabel = (value) => {
     const overview = createOverviewModel({ dashboardAnalytics, committee, recommendation });
     const { isLive, investedWeight, cash, modelScore, scoreBand, scoreReason, scoreAngle, donut, committeeSize, health, analyticsPerformance, returnObjective } = overview;
     const riskPlans = (recommendation.position_risk_plans || []).filter(
-      (plan) => plan.status === "quantified",
+      (plan) => plan.status !== "exempt",
     );
+    const hasNewTrade = (rebalance.instructions || []).some(
+      (instruction) => instruction.action !== "hold",
+    );
+    const riskPlanStatus = (plan) =>
+      plan.status === "quantified" ? "已量化" : "未量化（不可視為零風險）";
+    const riskPlanValues = (plan) =>
+      plan.status === "quantified"
+        ? {
+            base: `${money(plan.base_loss_usd)} (${percent(plan.base_loss_fraction)})`,
+            reference: `${money(plan.reference_price)} / ${money(plan.invalidation_price)}`,
+            stress: `${money(plan.stress_loss_usd)} (${percent(plan.stress_gap_percent)})`,
+          }
+        : { base: "未量化", reference: "未量化", stress: "未量化" };
     const statusLabel = "研究建議 · 研究用途";
     root.innerHTML = `
       <div class="app-shell">
@@ -534,6 +552,9 @@ const researchStatusLabel = (value) => {
             <div class="hero-strip">
               <span class="pill">資料截止 ${escapeHtml(dateTime(recommendation.data_cutoff))}</span>
               <span class="pill">風險 ${escapeHtml(decisionLabel(recommendation.risk_level))}</span>
+              <span class="pill">主動研究配置 ${escapeHtml(percent(investedWeight))}</span>
+              <span class="pill">${escapeHtml(hasNewTrade ? "本輪含調整建議" : "本輪無新交易建議")}</span>
+              <span class="pill">定價基準 ${escapeHtml(rebalance.pricing_session || "未提供")}</span>
             </div>
           </div>
           <aside class="hero-side">
@@ -730,14 +751,17 @@ const researchStatusLabel = (value) => {
               ? `<div class="table-wrap strategy-table-wrap risk-plan-table">
                   <table>
                     <thead><tr><th>部位風險</th><th>參考／失效價</th><th>基本損失</th><th>跳空壓力</th><th>狀態</th></tr></thead>
-                    <tbody>${riskPlans.map((plan) => `
+                    <tbody>${riskPlans.map((plan) => {
+                      const values = riskPlanValues(plan);
+                      return `
                       <tr>
                         <td data-label="部位風險">${symbolLink(plan.symbol)}</td>
-                        <td data-label="參考／失效價">${money(plan.reference_price)} / ${money(plan.invalidation_price)}</td>
-                        <td data-label="基本損失">${money(plan.base_loss_usd)} (${percent(plan.base_loss_fraction)})</td>
-                        <td data-label="跳空壓力">${money(plan.stress_loss_usd)} (${percent(plan.stress_gap_percent)})</td>
-                        <td data-label="狀態">已設定</td>
-                      </tr>`).join("")}</tbody>
+                        <td data-label="參考／失效價">${escapeHtml(values.reference)}</td>
+                        <td data-label="基本損失">${escapeHtml(values.base)}</td>
+                        <td data-label="跳空壓力">${escapeHtml(values.stress)}</td>
+                        <td data-label="狀態">${escapeHtml(riskPlanStatus(plan))}</td>
+                      </tr>`;
+                    }).join("")}</tbody>
                   </table>
                 </div>`
               : ""}
