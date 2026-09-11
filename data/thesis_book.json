@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "run_id": "20260910T190226Z",
-  "data_cutoff": "2026-09-10T19:02:02.344398Z",
+  "run_id": "20260911T142937Z",
+  "data_cutoff": "2026-09-11T14:29:19.120694Z",
   "theses": {
     "AAPL": {
       "symbol": "AAPL",
@@ -36,8 +36,8 @@
       "status": "watch",
       "conviction": 10,
       "created_at": "2026-09-10T14:30:16.414008Z",
-      "updated_at": "2026-09-10T18:07:27.476583Z",
-      "evidence_cutoff": "2026-09-10T18:07:27.476583Z",
+      "updated_at": "2026-09-11T14:29:19.120694Z",
+      "evidence_cutoff": "2026-09-11T14:29:19.120694Z",
       "pillars": [],
       "invalidators": [],
       "catalysts": []
@@ -122,216 +122,6 @@
     }
   },
   "recent_deltas": [
-    {
-      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json:cash:None:2025-12-27",
-      "source_version": "881f7e4f6ee3f1218a4b6391095950525953dd7e32e106647bb27c04f9b4e6b6",
-      "replaces_version": null,
-      "evidence_ids": [
-        "sec:AMD:10-Q:2026-08-05:cash:instant:2025-12-27"
-      ],
-      "impact": "neutral",
-      "affected_pillar_id": null,
-      "affected_invalidator_id": null,
-      "conviction_before": 10,
-      "conviction_after": 10,
-      "rationale": "10-Q 申報的 cash 為 5539000000 USD，期間終點 2025-12-27。",
-      "recommended_research_action": "no_change"
-    },
-    {
-      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json:cash:None:2026-06-27",
-      "source_version": "4a72e5e8492f687cc54f796b7dbc606a76bd712185dd7fbd5a5453d1fd1f2c78",
-      "replaces_version": null,
-      "evidence_ids": [
-        "sec:AMD:10-Q:2026-08-05:cash:instant:2026-06-27"
-      ],
-      "impact": "neutral",
-      "affected_pillar_id": null,
-      "affected_invalidator_id": null,
-      "conviction_before": 10,
-      "conviction_after": 10,
-      "rationale": "10-Q 申報的 cash 為 5086000000 USD，期間終點 2026-06-27。",
-      "recommended_research_action": "no_change"
-    },
-    {
-      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json:diluted_eps:2025-12-28:2026-06-27",
-      "source_version": "08958e1786c32e55980877e475487e9e51972341710d37ffa4e6fa68cdfeaa5e",
-      "replaces_version": null,
-      "evidence_ids": [
-        "sec:AMD:10-Q:2026-08-05:diluted_eps:2025-12-28:2026-06-27"
-      ],
-      "impact": "neutral",
-      "affected_pillar_id": null,
-      "affected_invalidator_id": null,
-      "conviction_before": 10,
-      "conviction_after": 10,
-      "rationale": "10-Q 申報的 diluted_eps 為 2.22 USD/shares，期間終點 2026-06-27。",
-      "recommended_research_action": "no_change"
-    },
-    {
-      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json:diluted_eps:2026-03-29:2026-06-27",
-      "source_version": "eb1f1d46a7c48f70be11b6c04e79093ccb3348a4368b1733a1848c59909346ca",
-      "replaces_version": null,
-      "evidence_ids": [
-        "sec:AMD:10-Q:2026-08-05:diluted_eps:2026-03-29:2026-06-27"
-      ],
-      "impact": "neutral",
-      "affected_pillar_id": null,
-      "affected_invalidator_id": null,
-      "conviction_before": 10,
-      "conviction_after": 10,
-      "rationale": "10-Q 申報的 diluted_eps 為 1.38 USD/shares，期間終點 2026-06-27。",
-      "recommended_research_action": "no_change"
-    },
-    {
-      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json:net_income:2025-12-28:2026-06-27",
-      "source_version": "c3450b8d3750dbc768dc4b2408b52577ad3cf77c7dea5512cd53a11524bf177f",
-      "replaces_version": null,
-      "evidence_ids": [
-        "sec:AMD:10-Q:2026-08-05:net_income:2025-12-28:2026-06-27"
-      ],
-      "impact": "neutral",
-      "affected_pillar_id": null,
-      "affected_invalidator_id": null,
-      "conviction_before": 10,
-      "conviction_after": 10,
-      "rationale": "10-Q 申報的 net_income 為 3680000000 USD，期間終點 2026-06-27。",
-      "recommended_research_action": "no_change"
-    },
-    {
-      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json:net_income:2026-03-29:2026-06-27",
-      "source_version": "aa98d89b584eb959ca9e3ff5cc5efa34b8765126d7befc11c9dc6343cf8c4028",
-      "replaces_version": null,
-      "evidence_ids": [
-        "sec:AMD:10-Q:2026-08-05:net_income:2026-03-29:2026-06-27"
-      ],
-      "impact": "neutral",
-      "affected_pillar_id": null,
-      "affected_invalidator_id": null,
-      "conviction_before": 10,
-      "conviction_after": 10,
-      "rationale": "10-Q 申報的 net_income 為 2297000000 USD，期間終點 2026-06-27。",
-      "recommended_research_action": "no_change"
-    },
-    {
-      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json:operating_cash_flow:2024-12-29:2025-06-28",
-      "source_version": "c9c3e5e4f5ab25209953cd3c7292e1e8ce956e31100ba5ecb423372f19a395f9",
-      "replaces_version": null,
-      "evidence_ids": [
-        "sec:AMD:10-Q:2026-08-05:operating_cash_flow:2024-12-29:2025-06-28"
-      ],
-      "impact": "neutral",
-      "affected_pillar_id": null,
-      "affected_invalidator_id": null,
-      "conviction_before": 10,
-      "conviction_after": 10,
-      "rationale": "10-Q 申報的 operating_cash_flow 為 2950000000 USD，期間終點 2025-06-28。",
-      "recommended_research_action": "no_change"
-    },
-    {
-      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json:operating_cash_flow:2025-12-28:2026-06-27",
-      "source_version": "da8161843c66d529c30bcb606c99fa6506cf7c045b20f70ffcd5a704d464f471",
-      "replaces_version": null,
-      "evidence_ids": [
-        "sec:AMD:10-Q:2026-08-05:operating_cash_flow:2025-12-28:2026-06-27"
-      ],
-      "impact": "neutral",
-      "affected_pillar_id": null,
-      "affected_invalidator_id": null,
-      "conviction_before": 10,
-      "conviction_after": 10,
-      "rationale": "10-Q 申報的 operating_cash_flow 為 5321000000 USD，期間終點 2026-06-27。",
-      "recommended_research_action": "no_change"
-    },
-    {
-      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json:operating_income:2025-12-28:2026-06-27",
-      "source_version": "8ffa1adaa1236bce30c11689483181a2b592366513a0b20efa22f6bfa46cd1e0",
-      "replaces_version": null,
-      "evidence_ids": [
-        "sec:AMD:10-Q:2026-08-05:operating_income:2025-12-28:2026-06-27"
-      ],
-      "impact": "neutral",
-      "affected_pillar_id": null,
-      "affected_invalidator_id": null,
-      "conviction_before": 10,
-      "conviction_after": 10,
-      "rationale": "10-Q 申報的 operating_income 為 3466000000 USD，期間終點 2026-06-27。",
-      "recommended_research_action": "no_change"
-    },
-    {
-      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json:operating_income:2026-03-29:2026-06-27",
-      "source_version": "363a641e736915e45de6369f0f867faf94f01189d56572340f6ec06d48e8e12b",
-      "replaces_version": null,
-      "evidence_ids": [
-        "sec:AMD:10-Q:2026-08-05:operating_income:2026-03-29:2026-06-27"
-      ],
-      "impact": "neutral",
-      "affected_pillar_id": null,
-      "affected_invalidator_id": null,
-      "conviction_before": 10,
-      "conviction_after": 10,
-      "rationale": "10-Q 申報的 operating_income 為 1990000000 USD，期間終點 2026-06-27。",
-      "recommended_research_action": "no_change"
-    },
-    {
-      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json:revenue:2025-12-28:2026-06-27",
-      "source_version": "823ba3f6bb9581a1317c17cb4deec0b88f4ca2e7ffe3a74edc314a3560fc0b36",
-      "replaces_version": null,
-      "evidence_ids": [
-        "sec:AMD:10-Q:2026-08-05:revenue:2025-12-28:2026-06-27"
-      ],
-      "impact": "neutral",
-      "affected_pillar_id": null,
-      "affected_invalidator_id": null,
-      "conviction_before": 10,
-      "conviction_after": 10,
-      "rationale": "10-Q 申報的 revenue 為 21789000000 USD，期間終點 2026-06-27。",
-      "recommended_research_action": "no_change"
-    },
-    {
-      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json:revenue:2026-03-29:2026-06-27",
-      "source_version": "f08eeab0a2facc571ef9034111640a80fe21ed5178de9f27a30d72204e2dc0e9",
-      "replaces_version": null,
-      "evidence_ids": [
-        "sec:AMD:10-Q:2026-08-05:revenue:2026-03-29:2026-06-27"
-      ],
-      "impact": "neutral",
-      "affected_pillar_id": null,
-      "affected_invalidator_id": null,
-      "conviction_before": 10,
-      "conviction_after": 10,
-      "rationale": "10-Q 申報的 revenue 為 11536000000 USD，期間終點 2026-06-27。",
-      "recommended_research_action": "no_change"
-    },
-    {
-      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json:net_income:2022-10-31:2023-10-29",
-      "source_version": "b9f1460b5bca6eef950df477222511e5538654acc14a2e42981951ae41e4cce8",
-      "replaces_version": null,
-      "evidence_ids": [
-        "sec:AVGO:10-K:2024-12-20:net_income:2022-10-31:2023-10-29"
-      ],
-      "impact": "neutral",
-      "affected_pillar_id": null,
-      "affected_invalidator_id": null,
-      "conviction_before": 10,
-      "conviction_after": 10,
-      "rationale": "10-K 申報的 net_income 為 14082000000 USD，期間終點 2023-10-29。",
-      "recommended_research_action": "no_change"
-    },
-    {
-      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json:net_income:2023-10-30:2024-11-03",
-      "source_version": "8acf462eb30a2044dc88c80c6c639ad8e5872c6a6e2dab630eb9a480c23ba395",
-      "replaces_version": null,
-      "evidence_ids": [
-        "sec:AVGO:10-K:2024-12-20:net_income:2023-10-30:2024-11-03"
-      ],
-      "impact": "neutral",
-      "affected_pillar_id": null,
-      "affected_invalidator_id": null,
-      "conviction_before": 10,
-      "conviction_after": 10,
-      "rationale": "10-K 申報的 net_income 為 5895000000 USD，期間終點 2024-11-03。",
-      "recommended_research_action": "no_change"
-    },
     {
       "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json:assets:None:2025-12-31",
       "source_version": "d620a4e4c1381c4a81df55faa984fbccceae6643e48089c1a1f94c2060e2781a",
@@ -871,6 +661,216 @@
       "conviction_after": 10,
       "rationale": "10-Q 申報的 assets 為 320272000000 USD，期間終點 2026-07-26。",
       "recommended_research_action": "no_change"
+    },
+    {
+      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json:assets:None:2025-11-02",
+      "source_version": "af481b44b3fbc2ec0b6e3016901bae512a6a069fd23a7d411215e8bc9febbd44",
+      "replaces_version": null,
+      "evidence_ids": [
+        "sec:AVGO:10-Q:2026-09-10:assets:instant:2025-11-02"
+      ],
+      "impact": "neutral",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 10,
+      "conviction_after": 10,
+      "rationale": "10-Q 申報的 assets 為 171092000000 USD，期間終點 2025-11-02。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json:assets:None:2026-08-02",
+      "source_version": "a1cd0fff6ccbc4d86d9f2054eb1075bf776cc9dd30ad225fb6d37d00e0149788",
+      "replaces_version": null,
+      "evidence_ids": [
+        "sec:AVGO:10-Q:2026-09-10:assets:instant:2026-08-02"
+      ],
+      "impact": "neutral",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 10,
+      "conviction_after": 10,
+      "rationale": "10-Q 申報的 assets 為 188148000000 USD，期間終點 2026-08-02。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json:cash:None:2025-11-02",
+      "source_version": "5fe5f864f94463b78435ef251d2cfb2d1ef3be159226d39eb5ee53c8c0e67623",
+      "replaces_version": null,
+      "evidence_ids": [
+        "sec:AVGO:10-Q:2026-09-10:cash:instant:2025-11-02"
+      ],
+      "impact": "neutral",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 10,
+      "conviction_after": 10,
+      "rationale": "10-Q 申報的 cash 為 16178000000 USD，期間終點 2025-11-02。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json:cash:None:2026-08-02",
+      "source_version": "d6b3197878aae2de196f29276cfbb0807ca6dff32533c8731ee7a57370280c4d",
+      "replaces_version": null,
+      "evidence_ids": [
+        "sec:AVGO:10-Q:2026-09-10:cash:instant:2026-08-02"
+      ],
+      "impact": "neutral",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 10,
+      "conviction_after": 10,
+      "rationale": "10-Q 申報的 cash 為 23975000000 USD，期間終點 2026-08-02。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json:diluted_eps:2025-11-03:2026-08-02",
+      "source_version": "4a343cba5a4293d12a88372d0fd87214499eaadf3629acf2e860fcea0f26ed9e",
+      "replaces_version": null,
+      "evidence_ids": [
+        "sec:AVGO:10-Q:2026-09-10:diluted_eps:2025-11-03:2026-08-02"
+      ],
+      "impact": "neutral",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 10,
+      "conviction_after": 10,
+      "rationale": "10-Q 申報的 diluted_eps 為 6.09 USD/shares，期間終點 2026-08-02。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json:diluted_eps:2026-05-04:2026-08-02",
+      "source_version": "4024167512e96e9a7953c236cb449c211b9eb898ad444fe4545fbcae660827c5",
+      "replaces_version": null,
+      "evidence_ids": [
+        "sec:AVGO:10-Q:2026-09-10:diluted_eps:2026-05-04:2026-08-02"
+      ],
+      "impact": "neutral",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 10,
+      "conviction_after": 10,
+      "rationale": "10-Q 申報的 diluted_eps 為 2.68 USD/shares，期間終點 2026-08-02。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json:liabilities:None:2025-11-02",
+      "source_version": "79be94a369d907560d23c9ab399fd0fea30667e96c50d7e787db2ec26e3c3b7c",
+      "replaces_version": null,
+      "evidence_ids": [
+        "sec:AVGO:10-Q:2026-09-10:liabilities:instant:2025-11-02"
+      ],
+      "impact": "neutral",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 10,
+      "conviction_after": 10,
+      "rationale": "10-Q 申報的 liabilities 為 89800000000 USD，期間終點 2025-11-02。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json:liabilities:None:2026-08-02",
+      "source_version": "76b1152e36e4edafe3d9d640798f1478ca7133a93a2bbe4b597bfb6c941d10c1",
+      "replaces_version": null,
+      "evidence_ids": [
+        "sec:AVGO:10-Q:2026-09-10:liabilities:instant:2026-08-02"
+      ],
+      "impact": "neutral",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 10,
+      "conviction_after": 10,
+      "rationale": "10-Q 申報的 liabilities 為 88458000000 USD，期間終點 2026-08-02。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json:operating_cash_flow:2024-11-04:2025-08-03",
+      "source_version": "2fd9046202fde82644427919185a0dbd30889142bea835a308ad60d599a69aee",
+      "replaces_version": null,
+      "evidence_ids": [
+        "sec:AVGO:10-Q:2026-09-10:operating_cash_flow:2024-11-04:2025-08-03"
+      ],
+      "impact": "neutral",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 10,
+      "conviction_after": 10,
+      "rationale": "10-Q 申報的 operating_cash_flow 為 19834000000 USD，期間終點 2025-08-03。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json:operating_cash_flow:2025-11-03:2026-08-02",
+      "source_version": "95fac0e3de2f543afbbd27731762dd391ff880055be7c60d91bf9b2a09377204",
+      "replaces_version": null,
+      "evidence_ids": [
+        "sec:AVGO:10-Q:2026-09-10:operating_cash_flow:2025-11-03:2026-08-02"
+      ],
+      "impact": "neutral",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 10,
+      "conviction_after": 10,
+      "rationale": "10-Q 申報的 operating_cash_flow 為 32950000000 USD，期間終點 2026-08-02。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json:operating_income:2025-11-03:2026-08-02",
+      "source_version": "40b45cbf2e98f92d2daa962e4631d9ffef2cf1414c4ec9aae7e3bc67dc78e21e",
+      "replaces_version": null,
+      "evidence_ids": [
+        "sec:AVGO:10-Q:2026-09-10:operating_income:2025-11-03:2026-08-02"
+      ],
+      "impact": "neutral",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 10,
+      "conviction_after": 10,
+      "rationale": "10-Q 申報的 operating_income 為 35306000000 USD，期間終點 2026-08-02。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json:operating_income:2026-05-04:2026-08-02",
+      "source_version": "8084dbc3e1f2b9f3d7f46558b3b22efbbbad66ae78d0939fb1660f564daa7632",
+      "replaces_version": null,
+      "evidence_ids": [
+        "sec:AVGO:10-Q:2026-09-10:operating_income:2026-05-04:2026-08-02"
+      ],
+      "impact": "neutral",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 10,
+      "conviction_after": 10,
+      "rationale": "10-Q 申報的 operating_income 為 15955000000 USD，期間終點 2026-08-02。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json:revenue:2025-11-03:2026-08-02",
+      "source_version": "2b2cca048e1457b94c5777983a3a2a7d9add7e256ce635ebb7ee768353a8b475",
+      "replaces_version": null,
+      "evidence_ids": [
+        "sec:AVGO:10-Q:2026-09-10:revenue:2025-11-03:2026-08-02"
+      ],
+      "impact": "neutral",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 10,
+      "conviction_after": 10,
+      "rationale": "10-Q 申報的 revenue 為 71089000000 USD，期間終點 2026-08-02。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json:revenue:2026-05-04:2026-08-02",
+      "source_version": "5ac7fa15d96eb9c138f4421e3c6c369a4360a40761933db71a18966203928080",
+      "replaces_version": null,
+      "evidence_ids": [
+        "sec:AVGO:10-Q:2026-09-10:revenue:2026-05-04:2026-08-02"
+      ],
+      "impact": "neutral",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 10,
+      "conviction_after": 10,
+      "rationale": "10-Q 申報的 revenue 為 29591000000 USD，期間終點 2026-08-02。",
+      "recommended_research_action": "no_change"
     }
   ],
   "gaps": [
@@ -1369,16 +1369,53 @@
     "TSM:https://data.sec.gov/api/xbrl/companyfacts/CIK0001046179.json:liabilities:None:2023-12-31": [],
     "TSM:https://data.sec.gov/api/xbrl/companyfacts/CIK0001046179.json:liabilities:None:2024-12-31": [],
     "TSM:https://data.sec.gov/api/xbrl/companyfacts/CIK0001046179.json:net_income:2023-01-01:2023-12-31": [],
-    "TSM:https://data.sec.gov/api/xbrl/companyfacts/CIK0001046179.json:net_income:2024-01-01:2024-12-31": []
+    "TSM:https://data.sec.gov/api/xbrl/companyfacts/CIK0001046179.json:net_income:2024-01-01:2024-12-31": [],
+    "AVGO:https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json:assets:None:2025-11-02": [
+      "af481b44b3fbc2ec0b6e3016901bae512a6a069fd23a7d411215e8bc9febbd44"
+    ],
+    "AVGO:https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json:assets:None:2026-08-02": [
+      "a1cd0fff6ccbc4d86d9f2054eb1075bf776cc9dd30ad225fb6d37d00e0149788"
+    ],
+    "AVGO:https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json:cash:None:2025-11-02": [
+      "5fe5f864f94463b78435ef251d2cfb2d1ef3be159226d39eb5ee53c8c0e67623"
+    ],
+    "AVGO:https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json:cash:None:2026-08-02": [
+      "d6b3197878aae2de196f29276cfbb0807ca6dff32533c8731ee7a57370280c4d"
+    ],
+    "AVGO:https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json:diluted_eps:2025-11-03:2026-08-02": [
+      "4a343cba5a4293d12a88372d0fd87214499eaadf3629acf2e860fcea0f26ed9e"
+    ],
+    "AVGO:https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json:diluted_eps:2026-05-04:2026-08-02": [
+      "4024167512e96e9a7953c236cb449c211b9eb898ad444fe4545fbcae660827c5"
+    ],
+    "AVGO:https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json:liabilities:None:2025-11-02": [
+      "79be94a369d907560d23c9ab399fd0fea30667e96c50d7e787db2ec26e3c3b7c"
+    ],
+    "AVGO:https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json:liabilities:None:2026-08-02": [
+      "76b1152e36e4edafe3d9d640798f1478ca7133a93a2bbe4b597bfb6c941d10c1"
+    ],
+    "AVGO:https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json:operating_cash_flow:2024-11-04:2025-08-03": [
+      "2fd9046202fde82644427919185a0dbd30889142bea835a308ad60d599a69aee"
+    ],
+    "AVGO:https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json:operating_cash_flow:2025-11-03:2026-08-02": [
+      "95fac0e3de2f543afbbd27731762dd391ff880055be7c60d91bf9b2a09377204"
+    ],
+    "AVGO:https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json:operating_income:2025-11-03:2026-08-02": [
+      "40b45cbf2e98f92d2daa962e4631d9ffef2cf1414c4ec9aae7e3bc67dc78e21e"
+    ],
+    "AVGO:https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json:operating_income:2026-05-04:2026-08-02": [
+      "8084dbc3e1f2b9f3d7f46558b3b22efbbbad66ae78d0939fb1660f564daa7632"
+    ],
+    "AVGO:https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json:revenue:2025-11-03:2026-08-02": [
+      "2b2cca048e1457b94c5777983a3a2a7d9add7e256ce635ebb7ee768353a8b475"
+    ],
+    "AVGO:https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json:revenue:2026-05-04:2026-08-02": [
+      "5ac7fa15d96eb9c138f4421e3c6c369a4360a40761933db71a18966203928080"
+    ]
   },
   "daily_change": {
-    "AAPL": 0,
-    "AMD": 0,
-    "AVGO": 0,
-    "META": 0,
-    "MSFT": 0,
-    "NVDA": 0
+    "AVGO": 0
   },
-  "change_date": "2026-09-10",
+  "change_date": "2026-09-11",
   "daily_source_groups": []
 }

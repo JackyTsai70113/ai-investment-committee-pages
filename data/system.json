@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0",
   "version": "1.0.0",
-  "updated_at": "2026-09-10T19:03:10.257803Z",
+  "updated_at": "2026-09-11T14:30:28.394968Z",
   "environment": "live",
-  "latest_commit": "b85af80619e22cdf39921fa70095a958349e7474",
+  "latest_commit": "508383130b77bdca7adef72f5de868f21219a57f",
   "data_pipeline": "Continuous Research-to-Publication",
   "site_pipeline": "Continuous Research-to-Publication",
   "committee_strategy_fingerprint": "4e959b9ed9d83d6c7fa4731ad49a3ebddf413faec234cd28a69377b7264bf7c4",
