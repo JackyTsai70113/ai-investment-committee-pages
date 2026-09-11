@@ -5,6 +5,7 @@
   "generated_at": "2026-09-11T14:30:14.818438Z",
   "evaluation_cutoff": "2026-09-11T14:29:19.120694Z",
   "evidence_source": "Yahoo Finance via yfinance with bounded retry and Nasdaq completed-close fallback",
+  "knowledge_items": [],
   "verdict": "too_early",
   "lessons": [
     {
