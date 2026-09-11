@@ -17,6 +17,10 @@
     "Position-risk shadow: 5 個風險部位未量化或超過每筆 US$161.85 研究損失預算。",
     "Exposure shadow warning: correlation cluster NVDA,AVGO,META,PLTR,GLD weight 0.9159542680892395067952814870 exceeds 0.60"
   ],
+  "effective_risk_profile": null,
+  "drawdown_review": null,
+  "joint_shock_scenarios": [],
+  "risk_profile_summary": null,
   "allocation_comparison": {
     "schema_version": "1.0",
     "run_id": "20260911T142937Z",
