@@ -3506,7 +3506,8 @@
         "IWM",
         "TLT",
         "GLD"
-      ]
+      ],
+      "retrieval": null
     },
     {
       "evidence_id": "e2_fed_fomc_statement_calendar_2026",
@@ -3522,7 +3523,8 @@
         "^TNX",
         "TLT",
         "U.S. Dollar（DXY）"
-      ]
+      ],
+      "retrieval": null
     },
     {
       "evidence_id": "e3_bls_labor_employment_situation_latest",
@@ -3537,7 +3539,8 @@
       "affected_symbols": [
         "IWM",
         "SPY"
-      ]
+      ],
+      "retrieval": null
     },
     {
       "evidence_id": "e4_bls_cpi_core_pce_inflation_latest",
@@ -3553,7 +3556,8 @@
         "^TNX",
         "TLT",
         "USD（需另查DXY）"
-      ]
+      ],
+      "retrieval": null
     },
     {
       "evidence_id": "e5_treasury_daily_yield_curve_and_auction_calendar",
@@ -3569,7 +3573,8 @@
         "^TNX",
         "TLT",
         "TMF/短天期利率敏感資產（需另判）"
-      ]
+      ],
+      "retrieval": null
     },
     {
       "evidence_id": "e6_sec_edgar_filings_catalysts_next_7_days",
@@ -3588,7 +3593,8 @@
         "AMD",
         "META",
         "SOXX（成分公司需個別查）"
-      ]
+      ],
+      "retrieval": null
     },
     {
       "evidence_id": "e7_tech_capex_semis_demand_supply_iea_wits_usdoe",
@@ -3606,7 +3612,8 @@
         "NVDA",
         "AMD",
         "TSM"
-      ]
+      ],
+      "retrieval": null
     },
     {
       "evidence_id": "e8_company_ir_capex_guidance_latest_filing_requirement",
@@ -3622,7 +3629,8 @@
         "NVDA",
         "SOXX",
         "SMH"
-      ]
+      ],
+      "retrieval": null
     },
     {
       "evidence_id": "e9_global_geopolitics_official_updates",
@@ -3637,7 +3645,8 @@
       "affected_symbols": [
         "CL=F（能源鏈需另查）",
         "SOXX（出口限制風險需另判）"
-      ]
+      ],
+      "retrieval": null
     },
     {
       "evidence_id": "e10_global_economy_central_bank_and_imf_wEO",
@@ -3653,7 +3662,8 @@
         "Europe（需以ETF/利率另查）",
         "China（需以ETF/出口另查）",
         "USD（需另查DXY）"
-      ]
+      ],
+      "retrieval": null
     }
   ],
   "research_mode": "completed_session_review",
