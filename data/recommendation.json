@@ -301,6 +301,14 @@
       "affected_assets": [
         "NVDA"
       ],
+      "reason_type": "legacy_unverified",
+      "support_status": "unverified",
+      "evidence_refs": [],
+      "source_observations": {},
+      "final_action": {},
+      "final_weight": {},
+      "policy_digest": null,
+      "artifact_refs": [],
       "claim_ids": [],
       "source_urls": []
     },
@@ -313,6 +321,14 @@
       "affected_assets": [
         "AVGO"
       ],
+      "reason_type": "legacy_unverified",
+      "support_status": "unverified",
+      "evidence_refs": [],
+      "source_observations": {},
+      "final_action": {},
+      "final_weight": {},
+      "policy_digest": null,
+      "artifact_refs": [],
       "claim_ids": [],
       "source_urls": []
     },
@@ -325,6 +341,14 @@
       "affected_assets": [
         "META"
       ],
+      "reason_type": "legacy_unverified",
+      "support_status": "unverified",
+      "evidence_refs": [],
+      "source_observations": {},
+      "final_action": {},
+      "final_weight": {},
+      "policy_digest": null,
+      "artifact_refs": [],
       "claim_ids": [],
       "source_urls": []
     },
@@ -337,6 +361,14 @@
       "affected_assets": [
         "PLTR"
       ],
+      "reason_type": "legacy_unverified",
+      "support_status": "unverified",
+      "evidence_refs": [],
+      "source_observations": {},
+      "final_action": {},
+      "final_weight": {},
+      "policy_digest": null,
+      "artifact_refs": [],
       "claim_ids": [],
       "source_urls": []
     },
@@ -349,6 +381,14 @@
       "affected_assets": [
         "GLD"
       ],
+      "reason_type": "legacy_unverified",
+      "support_status": "unverified",
+      "evidence_refs": [],
+      "source_observations": {},
+      "final_action": {},
+      "final_weight": {},
+      "policy_digest": null,
+      "artifact_refs": [],
       "claim_ids": [],
       "source_urls": []
     },
@@ -361,6 +401,14 @@
       "affected_assets": [
         "CASH"
       ],
+      "reason_type": "legacy_unverified",
+      "support_status": "unverified",
+      "evidence_refs": [],
+      "source_observations": {},
+      "final_action": {},
+      "final_weight": {},
+      "policy_digest": null,
+      "artifact_refs": [],
       "claim_ids": [],
       "source_urls": []
     },
@@ -378,6 +426,14 @@
         "GLD",
         "CASH"
       ],
+      "reason_type": "legacy_unverified",
+      "support_status": "unverified",
+      "evidence_refs": [],
+      "source_observations": {},
+      "final_action": {},
+      "final_weight": {},
+      "policy_digest": null,
+      "artifact_refs": [],
       "claim_ids": [],
       "source_urls": []
     },
@@ -395,6 +451,14 @@
         "GLD",
         "CASH"
       ],
+      "reason_type": "legacy_unverified",
+      "support_status": "unverified",
+      "evidence_refs": [],
+      "source_observations": {},
+      "final_action": {},
+      "final_weight": {},
+      "policy_digest": null,
+      "artifact_refs": [],
       "claim_ids": [],
       "source_urls": []
     },
@@ -412,6 +476,14 @@
         "GLD",
         "CASH"
       ],
+      "reason_type": "legacy_unverified",
+      "support_status": "unverified",
+      "evidence_refs": [],
+      "source_observations": {},
+      "final_action": {},
+      "final_weight": {},
+      "policy_digest": null,
+      "artifact_refs": [],
       "claim_ids": [],
       "source_urls": []
     },
@@ -429,6 +501,14 @@
         "GLD",
         "CASH"
       ],
+      "reason_type": "legacy_unverified",
+      "support_status": "unverified",
+      "evidence_refs": [],
+      "source_observations": {},
+      "final_action": {},
+      "final_weight": {},
+      "policy_digest": null,
+      "artifact_refs": [],
       "claim_ids": [],
       "source_urls": []
     }

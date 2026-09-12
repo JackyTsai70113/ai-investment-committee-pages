@@ -480,6 +480,33 @@ const researchStatusLabel = (value) => {
   }) => {
     const overview = createOverviewModel({ dashboardAnalytics, committee, recommendation });
     const { isLive, investedWeight, cash, modelScore, scoreBand, scoreReason, scoreAngle, donut, committeeSize, health, analyticsPerformance, returnObjective } = overview;
+    const investmentReasons = (recommendation.top_reasons || []).filter(
+      (reason) => reason.reason_type !== "policy_explanation",
+    );
+    const policyReasons = (recommendation.top_reasons || []).filter(
+      (reason) => reason.reason_type === "policy_explanation",
+    );
+    const reasonActions = (reason) => Object.entries(reason.final_action || {}).map(
+      ([symbol, action]) => {
+        const weight = (reason.final_weight || {})[symbol];
+        const weightLabel = weight == null ? "權重未提供" : percent(weight);
+        return `${symbolLink(symbol)} ${escapeHtml({ increase: "加碼", hold: "維持", reduce: "減碼", exit: "退出" }[action] || "檢視")} ${escapeHtml(weightLabel)}`;
+      },
+    ).join("、");
+    const reasonSourceLabel = (reason) => reason.reason_type === "investment_evidence"
+      ? "來源觀測"
+      : reason.reason_type === "policy_explanation"
+        ? "風控紀錄"
+        : "歷史理由／未保存可核對來源";
+    const reasonCard = (reason) => `
+      <article class="reason-card">
+        <span class="reason-number">${String(reason.id).padStart(2, "0")}</span>
+        <h3>${escapeHtml(reason.title)}</h3>
+        <p>${glossaryText(reason.summary)}</p>
+        ${Object.keys(reason.final_action || {}).length ? `<p>最終配置：${reasonActions(reason)}</p>` : ""}
+        <div class="reason-meta"><span>${escapeHtml(decisionLabel(reason.category))}</span><span>${reasonSourceLabel(reason)}</span></div>
+        ${renderSourceLinks(reason.source_urls)}
+      </article>`;
     const riskPlans = (recommendation.position_risk_plans || []).filter(
       (plan) => plan.status !== "exempt",
     );
@@ -568,7 +595,7 @@ const researchStatusLabel = (value) => {
             <div
               class="score-orbit"
               style="--score-angle:${escapeHtml(scoreAngle)}"
-              aria-label="模型評分 ${escapeHtml(recommendation.model_score)}，滿分 100"
+              aria-label="委員立場共識 ${escapeHtml(recommendation.model_score)}，滿分 100"
             >
               <span class="score-number">${escapeHtml(modelScore)}<small>/100</small></span>
               <span class="score-caption">委員方向共識度</span>
@@ -779,28 +806,23 @@ const researchStatusLabel = (value) => {
             <header class="panel-header">
               <div>
                 <span class="section-kicker">委員會理由</span>
-                <h2>十大理由</h2>
+                <h2>投資理由</h2>
               </div>
-              <span class="panel-meta">10 / 10<br />結構化</span>
+              <span class="panel-meta">${investmentReasons.length} 項</span>
             </header>
             <div class="reasons-grid">
-              ${recommendation.top_reasons
-                .map(
-                  (reason) => `
-                    <article class="reason-card">
-                      <span class="reason-number">${String(reason.id).padStart(2, "0")}</span>
-                      <h3>${escapeHtml(reason.title)}</h3>
-                      <p>${glossaryText(reason.summary)}</p>
-                      <div class="reason-meta">
-                        <span>${escapeHtml(decisionLabel(reason.category))}</span>
-                        <span>信心 ${escapeHtml(reason.confidence)}</span>
-                      </div>
-                      ${renderSourceLinks(reason.source_urls)}
-                    </article>`,
-                )
-                .join("")}
+              ${investmentReasons.length ? investmentReasons.map(reasonCard).join("") : '<p>本輪沒有可追溯的投資理由；資料不足不代表偏多或偏空。</p>'}
             </div>
           </section>
+          ${policyReasons.length ? `
+          <section class="panel" id="policy-explanations" data-tab-section="overview">
+            <header class="panel-header">
+              <div><span class="section-kicker">風控紀錄</span><h2>風控與動作說明</h2></div>
+              <span class="panel-meta">${policyReasons.length} 項</span>
+            </header>
+            <div class="reasons-grid">${policyReasons.map(reasonCard).join("")}</div>
+          </section>` : ""}
+
 
         </div>
         </div>
