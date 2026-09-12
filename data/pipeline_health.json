@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0",
-  "attempted_at": "2026-09-11T14:35:44.509584Z",
+  "attempted_at": "2026-09-12T13:43:39.376641Z",
   "status": "healthy",
   "trigger": "schedule",
   "committee_outcome": "success",
   "failure_kind": "none",
-  "run_url": "https://github.com/JackyTsai70113/ai-investment-committee/actions/runs/34610351210",
-  "last_successful_run_id": "20260911T142937Z",
-  "last_successful_data_cutoff": "2026-09-11T14:29:19.120694Z",
+  "run_url": "https://github.com/JackyTsai70113/ai-investment-committee/actions/runs/34696955485",
+  "last_successful_run_id": "20260912T133838Z",
+  "last_successful_data_cutoff": "2026-09-12T13:38:24.258128Z",
   "message": "最新委員會已成功完成並通過資料驗證。"
 }

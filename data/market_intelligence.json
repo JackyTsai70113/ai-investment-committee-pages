@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "run_id": "20260911T142937Z",
-  "data_cutoff": "2026-09-11T14:29:19.120694Z",
+  "run_id": "20260912T133838Z",
+  "data_cutoff": "2026-09-12T13:38:24.258128Z",
   "peer_universe": {
     "theme": "已蒐集市場研究",
     "sector": "跨產業",
@@ -164,7 +164,62 @@
   "factor_exposures": [],
   "catalysts": [],
   "ideas_shortlist": [],
-  "source_observations": [],
+  "source_observations": [
+    {
+      "evidence_id": "official-43310db6bc6a0ae9ea35b1ff2cbb3d3d",
+      "source_url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
+      "published_at": null,
+      "available_at": "2026-08-27T04:00:00Z",
+      "retrieval": {
+        "document_id": "9bc4950664f1773de163da3dd9058b9373a2a553b8e772949ad5899a0c0436dc",
+        "content_hash": "d3bb05b15118b65b9866f38d1230cc918c76292a14ed47b0404dbed28608389a",
+        "source_query": "https://nvidianews.nvidia.com/news?q=earnings",
+        "source_type": "company_ir",
+        "authority": "official",
+        "retrieved_at": "2026-09-12T13:38:39.989293Z",
+        "publication_date": "2026-08-26",
+        "publication_precision": "date",
+        "available_at": "2026-08-27T04:00:00Z",
+        "content_locator": "已讀 HTML 全文後節選；字元區間：0:6000,8397:11914,18532:22039,24135:27642",
+        "excerpt": "NVIDIA (NASDAQ: NVDA) today reported revenue for the second quarter ended July 26, 2026, of $96.2 billion, up 18% from the previous quarter and up 106% from a year ago. For the quarter, GAAP and non-GAAP gross margins were both 75.0%. GAAP and non-GAAP earnings per diluted share were $2.46 and $2.22, respectively.",
+        "claim_kind": "fact",
+        "source_status": "current"
+      },
+      "symbols": [
+        "NVDA"
+      ],
+      "summary": "文件指出 NVIDIA 第二季（截至 2026-07-26）營收為 962.21 億美元，較前一季上升 18%、較去年同期上升 106%；GAAP 與非 GAAP 的毛利率皆為 75.0%；GAAP/非 GAAP 稀釋後每股盈餘分別為 2.46 與 2.22。",
+      "market_relevance": "營收規模、毛利率與稀釋後 EPS 的同時上修/高位，反映公司當季獲利能力與需求動能的量化結果，可能影響市場對其 AI 基礎建設相關硬體/平台變現與獲利品質的評估。",
+      "interpretation": "untrusted_observation"
+    },
+    {
+      "evidence_id": "official-c4e3601eeeb7f7e5c1a94a75118203e7",
+      "source_url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
+      "published_at": null,
+      "available_at": "2026-08-27T04:00:00Z",
+      "retrieval": {
+        "document_id": "9bc4950664f1773de163da3dd9058b9373a2a553b8e772949ad5899a0c0436dc",
+        "content_hash": "d3bb05b15118b65b9866f38d1230cc918c76292a14ed47b0404dbed28608389a",
+        "source_query": "https://nvidianews.nvidia.com/news?q=earnings",
+        "source_type": "company_ir",
+        "authority": "official",
+        "retrieved_at": "2026-09-12T13:38:39.989293Z",
+        "publication_date": "2026-08-26",
+        "publication_precision": "date",
+        "available_at": "2026-08-27T04:00:00Z",
+        "content_locator": "已讀 HTML 全文後節選；字元區間：0:6000,8397:11914,18532:22039,24135:27642",
+        "excerpt": "NVIDIA’s outlook for the third quarter of fiscal 2027 is as follows:\nRevenue is expected to be $108.0 billion, plus or minus 2%. NVIDIA is not assuming any Data Center compute revenue from China in its outlook.\nGAAP and non-GAAP gross margins are expected to be 74.0%, plus or minus 50 basis points.\nGAAP and non-GAAP operating expenses are expected to be approximately $9.2 billion and $9.0 billion, respectively.",
+        "claim_kind": "company_guidance",
+        "source_status": "current"
+      },
+      "symbols": [
+        "NVDA"
+      ],
+      "summary": "文件提供 NVIDIA 第三季（2027 財年）展望：營收預期為 1080 億美元（±2%）；GAAP/非 GAAP 毛利率預期 74.0%（±50 個基點）；GAAP 與非 GAAP 營業費用預期約 92 億與 90 億美元。",
+      "market_relevance": "第三季的營收區間、毛利率與營業費用指引屬於公司層級的短期資本支出/成本與獲利指標路徑，可能作為市場追蹤其供需節奏與利潤率可持續性的依據。",
+      "interpretation": "untrusted_observation"
+    }
+  ],
   "diagnostics": [
     "competition: 已保留來源觀察，但缺少可比的競爭地位與價值鏈分析。",
     "valuation: 缺少同期間及會計口徑的可追溯估值數值。",
