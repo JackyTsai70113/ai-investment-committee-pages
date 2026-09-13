@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-12T13:38:24.258128Z",
+  "generated_at": "2026-09-13T14:27:57.248201Z",
   "mode": "live",
   "source": "Yahoo Finance via yfinance with bounded retry and Nasdaq completed-close fallback",
   "quotes": [
@@ -12,7 +12,7 @@
       "completed_close_session": "2026-09-11",
       "change_percent": "0.852429",
       "volume": 45477300,
-      "as_of": "2026-09-12T13:38:24.258128Z",
+      "as_of": "2026-09-13T14:27:57.248201Z",
       "price_session": "2026-09-11",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -27,7 +27,7 @@
       "completed_close_session": "2026-09-11",
       "change_percent": "0.873443",
       "volume": 26598700,
-      "as_of": "2026-09-12T13:38:24.258128Z",
+      "as_of": "2026-09-13T14:27:57.248201Z",
       "price_session": "2026-09-11",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -42,7 +42,7 @@
       "completed_close_session": "2026-09-11",
       "change_percent": "0.413626",
       "volume": 26353300,
-      "as_of": "2026-09-12T13:38:24.258128Z",
+      "as_of": "2026-09-13T14:27:57.248201Z",
       "price_session": "2026-09-11",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -57,7 +57,7 @@
       "completed_close_session": "2026-09-11",
       "change_percent": "0.967831",
       "volume": 3435700,
-      "as_of": "2026-09-12T13:38:24.258128Z",
+      "as_of": "2026-09-13T14:27:57.248201Z",
       "price_session": "2026-09-11",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -72,7 +72,7 @@
       "completed_close_session": "2026-09-11",
       "change_percent": "0.822529",
       "volume": 2647300,
-      "as_of": "2026-09-12T13:38:24.258128Z",
+      "as_of": "2026-09-13T14:27:57.248201Z",
       "price_session": "2026-09-11",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -87,7 +87,7 @@
       "completed_close_session": "2026-09-11",
       "change_percent": "1.472478",
       "volume": 5199300,
-      "as_of": "2026-09-12T13:38:24.258128Z",
+      "as_of": "2026-09-13T14:27:57.248201Z",
       "price_session": "2026-09-11",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -102,7 +102,7 @@
       "completed_close_session": "2026-09-11",
       "change_percent": "5.234967",
       "volume": 53294900,
-      "as_of": "2026-09-12T13:38:24.258128Z",
+      "as_of": "2026-09-13T14:27:57.248201Z",
       "price_session": "2026-09-11",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -117,7 +117,7 @@
       "completed_close_session": "2026-09-11",
       "change_percent": "2.55744",
       "volume": 48930900,
-      "as_of": "2026-09-12T13:38:24.258128Z",
+      "as_of": "2026-09-13T14:27:57.248201Z",
       "price_session": "2026-09-11",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -132,7 +132,7 @@
       "completed_close_session": "2026-09-11",
       "change_percent": "-0.032061",
       "volume": 88804100,
-      "as_of": "2026-09-12T13:38:24.258128Z",
+      "as_of": "2026-09-13T14:27:57.248201Z",
       "price_session": "2026-09-11",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -147,7 +147,7 @@
       "completed_close_session": "2026-09-11",
       "change_percent": "2.488086",
       "volume": 19001000,
-      "as_of": "2026-09-12T13:38:24.258128Z",
+      "as_of": "2026-09-13T14:27:57.248201Z",
       "price_session": "2026-09-11",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -162,7 +162,7 @@
       "completed_close_session": "2026-09-11",
       "change_percent": "0.825995",
       "volume": 15383200,
-      "as_of": "2026-09-12T13:38:24.258128Z",
+      "as_of": "2026-09-13T14:27:57.248201Z",
       "price_session": "2026-09-11",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -177,7 +177,7 @@
       "completed_close_session": "2026-09-11",
       "change_percent": "0.5743",
       "volume": 480200,
-      "as_of": "2026-09-12T13:38:24.258128Z",
+      "as_of": "2026-09-13T14:27:57.248201Z",
       "price_session": "2026-09-11",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -192,7 +192,7 @@
       "completed_close_session": "2026-09-11",
       "change_percent": "0.608034",
       "volume": 10943000,
-      "as_of": "2026-09-12T13:38:24.258128Z",
+      "as_of": "2026-09-13T14:27:57.248201Z",
       "price_session": "2026-09-11",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -207,7 +207,7 @@
       "completed_close_session": "2026-09-11",
       "change_percent": "0.111419",
       "volume": 32420500,
-      "as_of": "2026-09-12T13:38:24.258128Z",
+      "as_of": "2026-09-13T14:27:57.248201Z",
       "price_session": "2026-09-11",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -222,7 +222,7 @@
       "completed_close_session": "2026-09-11",
       "change_percent": "-2.58146",
       "volume": 49143200,
-      "as_of": "2026-09-12T13:38:24.258128Z",
+      "as_of": "2026-09-13T14:27:57.248201Z",
       "price_session": "2026-09-11",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -236,8 +236,8 @@
       "completed_close": "100.050003",
       "completed_close_session": "2026-09-11",
       "change_percent": "-2.371195",
-      "volume": 437382,
-      "as_of": "2026-09-12T13:38:24.258128Z",
+      "volume": 373308,
+      "as_of": "2026-09-13T14:27:57.248201Z",
       "price_session": "2026-09-11",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -252,7 +252,7 @@
       "completed_close_session": "2026-09-11",
       "change_percent": "-11.210762",
       "volume": 0,
-      "as_of": "2026-09-12T13:38:24.258128Z",
+      "as_of": "2026-09-13T14:27:57.248201Z",
       "price_session": "2026-09-11",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -267,7 +267,7 @@
       "completed_close_session": "2026-09-11",
       "change_percent": "0.627025",
       "volume": 0,
-      "as_of": "2026-09-12T13:38:24.258128Z",
+      "as_of": "2026-09-13T14:27:57.248201Z",
       "price_session": "2026-09-11",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -282,7 +282,7 @@
       "completed_close_session": "2026-09-11",
       "change_percent": "0.321482",
       "volume": 21142900,
-      "as_of": "2026-09-12T13:38:24.258128Z",
+      "as_of": "2026-09-13T14:27:57.248201Z",
       "price_session": "2026-09-11",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -297,7 +297,7 @@
       "completed_close_session": "2026-09-11",
       "change_percent": "0.56644",
       "volume": 16908400,
-      "as_of": "2026-09-12T13:38:24.258128Z",
+      "as_of": "2026-09-13T14:27:57.248201Z",
       "price_session": "2026-09-11",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -312,7 +312,7 @@
       "completed_close_session": "2026-09-11",
       "change_percent": "1.863057",
       "volume": 5663000,
-      "as_of": "2026-09-12T13:38:24.258128Z",
+      "as_of": "2026-09-13T14:27:57.248201Z",
       "price_session": "2026-09-11",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -327,7 +327,7 @@
       "completed_close_session": "2026-09-11",
       "change_percent": "1.32275",
       "volume": 6534700,
-      "as_of": "2026-09-12T13:38:24.258128Z",
+      "as_of": "2026-09-13T14:27:57.248201Z",
       "price_session": "2026-09-11",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -342,7 +342,7 @@
       "completed_close_session": "2026-09-11",
       "change_percent": "0.668193",
       "volume": 34701500,
-      "as_of": "2026-09-12T13:38:24.258128Z",
+      "as_of": "2026-09-13T14:27:57.248201Z",
       "price_session": "2026-09-11",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -357,7 +357,7 @@
       "completed_close_session": "2026-09-11",
       "change_percent": "0.323424",
       "volume": 30532000,
-      "as_of": "2026-09-12T13:38:24.258128Z",
+      "as_of": "2026-09-13T14:27:57.248201Z",
       "price_session": "2026-09-11",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -372,7 +372,7 @@
       "completed_close_session": "2026-09-11",
       "change_percent": "-0.181096",
       "volume": 6501800,
-      "as_of": "2026-09-12T13:38:24.258128Z",
+      "as_of": "2026-09-13T14:27:57.248201Z",
       "price_session": "2026-09-11",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -387,7 +387,7 @@
       "completed_close_session": "2026-09-11",
       "change_percent": "-5.562692",
       "volume": 63536100,
-      "as_of": "2026-09-12T13:38:24.258128Z",
+      "as_of": "2026-09-13T14:27:57.248201Z",
       "price_session": "2026-09-11",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -402,7 +402,7 @@
       "completed_close_session": "2026-09-11",
       "change_percent": "2.435989",
       "volume": 1825500,
-      "as_of": "2026-09-12T13:38:24.258128Z",
+      "as_of": "2026-09-13T14:27:57.248201Z",
       "price_session": "2026-09-11",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -417,7 +417,7 @@
       "completed_close_session": "2026-09-11",
       "change_percent": "-2.41869",
       "volume": 9592500,
-      "as_of": "2026-09-12T13:38:24.258128Z",
+      "as_of": "2026-09-13T14:27:57.248201Z",
       "price_session": "2026-09-11",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -432,7 +432,7 @@
       "completed_close_session": "2026-09-11",
       "change_percent": "0.647795",
       "volume": 14510500,
-      "as_of": "2026-09-12T13:38:24.258128Z",
+      "as_of": "2026-09-13T14:27:57.248201Z",
       "price_session": "2026-09-11",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -447,7 +447,7 @@
       "completed_close_session": "2026-09-11",
       "change_percent": "1.745409",
       "volume": 50659000,
-      "as_of": "2026-09-12T13:38:24.258128Z",
+      "as_of": "2026-09-13T14:27:57.248201Z",
       "price_session": "2026-09-11",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -462,7 +462,7 @@
       "completed_close_session": "2026-09-11",
       "change_percent": "0.51711",
       "volume": 30091300,
-      "as_of": "2026-09-12T13:38:24.258128Z",
+      "as_of": "2026-09-13T14:27:57.248201Z",
       "price_session": "2026-09-11",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -477,7 +477,7 @@
       "completed_close_session": "2026-09-11",
       "change_percent": "1.217202",
       "volume": 10629200,
-      "as_of": "2026-09-12T13:38:24.258128Z",
+      "as_of": "2026-09-13T14:27:57.248201Z",
       "price_session": "2026-09-11",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
@@ -692,7 +692,7 @@
       "distance_from_ma20_percent": "13.020838",
       "distance_from_ma50_percent": "20.21224",
       "rsi14": "73.388568",
-      "volume_ratio_20d": "1.65644"
+      "volume_ratio_20d": "1.431145"
     },
     {
       "symbol": "^VIX",
@@ -919,41 +919,41 @@
         "index": "VIX9D",
         "value": "14.47",
         "value_timestamp": "2026-09-11T20:15:01Z",
-        "collected_at": "2026-09-12T13:38:24.258128Z",
+        "collected_at": "2026-09-13T14:27:57.248201Z",
         "source_url": "https://cdn.cboe.com/api/global/delayed_quotes/quotes/_VIX9D.json",
         "authority": "official",
         "market_session": "Cboe delayed index session",
         "latency_note": "Cboe delayed quote exceeds the configured maximum age.",
         "status": "stale",
-        "data_cutoff": "2026-09-12T13:38:24.258128Z"
+        "data_cutoff": "2026-09-13T14:27:57.248201Z"
       },
       {
         "index": "VIX",
         "value": "15.84",
         "value_timestamp": "2026-09-11T20:15:01Z",
-        "collected_at": "2026-09-12T13:38:24.258128Z",
+        "collected_at": "2026-09-13T14:27:57.248201Z",
         "source_url": "https://cdn.cboe.com/api/global/delayed_quotes/quotes/_VIX.json",
         "authority": "official",
         "market_session": "Cboe delayed index session",
         "latency_note": "Cboe delayed quote exceeds the configured maximum age.",
         "status": "stale",
-        "data_cutoff": "2026-09-12T13:38:24.258128Z"
+        "data_cutoff": "2026-09-13T14:27:57.248201Z"
       },
       {
         "index": "VIX3M",
         "value": "18.6",
         "value_timestamp": "2026-09-11T20:15:01Z",
-        "collected_at": "2026-09-12T13:38:24.258128Z",
+        "collected_at": "2026-09-13T14:27:57.248201Z",
         "source_url": "https://cdn.cboe.com/api/global/delayed_quotes/quotes/_VIX3M.json",
         "authority": "official",
         "market_session": "Cboe delayed index session",
         "latency_note": "Cboe delayed quote exceeds the configured maximum age.",
         "status": "stale",
-        "data_cutoff": "2026-09-12T13:38:24.258128Z"
+        "data_cutoff": "2026-09-13T14:27:57.248201Z"
       }
     ],
     "coverage": "stale",
-    "data_cutoff": "2026-09-12T13:38:24.258128Z",
+    "data_cutoff": "2026-09-13T14:27:57.248201Z",
     "maximum_age_minutes": 30,
     "features": null,
     "note": "Curve is incomplete or stale and is not classified as complete."
@@ -963,11 +963,11 @@
     "scope": "OCC exchange option volume and open-interest report",
     "volume": null,
     "open_interest": null,
-    "collected_at": "2026-09-12T13:38:24.258128Z",
+    "collected_at": "2026-09-13T14:27:57.248201Z",
     "source_url": "https://www.theocc.com/market-data/market-data-reports/volume-and-open-interest/exchange-volume-by-class",
     "authority": "official",
     "coverage": "missing",
-    "data_cutoff": "2026-09-12T13:38:24.258128Z",
+    "data_cutoff": "2026-09-13T14:27:57.248201Z",
     "limitation": "Aggregate OCC volume and open interest do not identify investor intent or bullish/bearish direction; this optional evidence gap does not limit equity or ETF direction, allocation, or cash-market liquidity analysis."
   },
   "source_catalog": [],
@@ -1027,14 +1027,6 @@
       "report_date": "2026-06-26",
       "description": "8-K",
       "source_url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000115/amd-20260626.htm"
-    },
-    {
-      "symbol": "AMD",
-      "form": "8-K",
-      "filing_date": "2026-05-15",
-      "report_date": "2026-05-13",
-      "description": "8-K",
-      "source_url": "https://www.sec.gov/Archives/edgar/data/2488/000119312526226746/d118163d8k.htm"
     },
     {
       "symbol": "AVGO",
@@ -1395,22 +1387,6 @@
       "report_date": "2026-04-30",
       "description": "6-K",
       "source_url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000292/tsm-monthend6kx20260526.htm"
-    },
-    {
-      "symbol": "TSM",
-      "form": "6-K",
-      "filing_date": "2026-05-15",
-      "report_date": "2026-05-15",
-      "description": "6-K",
-      "source_url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000280/tsmctosell81ofvanguardinte.htm"
-    },
-    {
-      "symbol": "TSM",
-      "form": "6-K",
-      "filing_date": "2026-05-15",
-      "report_date": "2026-03-31",
-      "description": "6-K",
-      "source_url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000278/tsm-fsx20260515x6k.htm"
     }
   ],
   "fundamental_facts": [
@@ -3133,7 +3109,7 @@
   ],
   "event_calendar": {
     "schema_version": "1.0",
-    "generated_at": "2026-09-12T09:38:19.240035-04:00",
+    "generated_at": "2026-09-13T10:27:52.527837-04:00",
     "input_mode": "official_snapshot",
     "required_categories": [
       "fomc",
@@ -3145,8 +3121,8 @@
       {
         "category": "fomc",
         "status": "complete",
-        "queried_at": "2026-09-12T13:38:19.348908Z",
-        "data_cutoff": "2026-09-12T13:38:19.348908Z",
+        "queried_at": "2026-09-13T14:27:52.623386Z",
+        "data_cutoff": "2026-09-13T14:27:52.623386Z",
         "coverage_start": "2026-09-16T14:00:00-04:00",
         "coverage_end": "2027-12-08T14:00:00-05:00",
         "timezone": "America/New_York",
@@ -3155,14 +3131,14 @@
           "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         ],
         "covered_symbols": [],
-        "content_digest": "7ae1e730f29f70c666f01e71e1eee68bdbd2e4ec031204deaad5b90780f785ab",
+        "content_digest": "d80e2c7210b73d9c030c728c5f56fa2b307bf19e9c095557d4640193418bf6bd",
         "note": "Federal Reserve FOMC calendar"
       },
       {
         "category": "bls",
         "status": "error",
-        "queried_at": "2026-09-12T09:38:19.240035-04:00",
-        "data_cutoff": "2026-09-12T09:38:19.240035-04:00",
+        "queried_at": "2026-09-13T10:27:52.527837-04:00",
+        "data_cutoff": "2026-09-13T10:27:52.527837-04:00",
         "coverage_start": null,
         "coverage_end": null,
         "timezone": "America/New_York",
@@ -3177,8 +3153,8 @@
       {
         "category": "nyse",
         "status": "complete",
-        "queried_at": "2026-09-12T13:38:19.476532Z",
-        "data_cutoff": "2026-09-12T13:38:19.476532Z",
+        "queried_at": "2026-09-13T14:27:52.880233Z",
+        "data_cutoff": "2026-09-13T14:27:52.880233Z",
         "coverage_start": "2026-11-27T13:00:00-05:00",
         "coverage_end": "2028-07-03T13:00:00-04:00",
         "timezone": "America/New_York",
@@ -3193,8 +3169,8 @@
       {
         "category": "earnings",
         "status": "missing",
-        "queried_at": "2026-09-12T09:38:21.717371-04:00",
-        "data_cutoff": "2026-09-12T09:38:21.717371-04:00",
+        "queried_at": "2026-09-13T10:27:54.548177-04:00",
+        "data_cutoff": "2026-09-13T10:27:54.548177-04:00",
         "coverage_start": null,
         "coverage_end": null,
         "timezone": "America/New_York",
@@ -3226,8 +3202,8 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-        "source_as_of": "2026-09-12T13:38:19.348908Z",
-        "content_digest": "7ae1e730f29f70c666f01e71e1eee68bdbd2e4ec031204deaad5b90780f785ab"
+        "source_as_of": "2026-09-13T14:27:52.623386Z",
+        "content_digest": "d80e2c7210b73d9c030c728c5f56fa2b307bf19e9c095557d4640193418bf6bd"
       },
       {
         "event_id": "fomc-20261028",
@@ -3239,8 +3215,8 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-        "source_as_of": "2026-09-12T13:38:19.348908Z",
-        "content_digest": "7ae1e730f29f70c666f01e71e1eee68bdbd2e4ec031204deaad5b90780f785ab"
+        "source_as_of": "2026-09-13T14:27:52.623386Z",
+        "content_digest": "d80e2c7210b73d9c030c728c5f56fa2b307bf19e9c095557d4640193418bf6bd"
       },
       {
         "event_id": "fomc-20261209",
@@ -3252,8 +3228,8 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-        "source_as_of": "2026-09-12T13:38:19.348908Z",
-        "content_digest": "7ae1e730f29f70c666f01e71e1eee68bdbd2e4ec031204deaad5b90780f785ab"
+        "source_as_of": "2026-09-13T14:27:52.623386Z",
+        "content_digest": "d80e2c7210b73d9c030c728c5f56fa2b307bf19e9c095557d4640193418bf6bd"
       },
       {
         "event_id": "fomc-20270127",
@@ -3265,8 +3241,8 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-        "source_as_of": "2026-09-12T13:38:19.348908Z",
-        "content_digest": "7ae1e730f29f70c666f01e71e1eee68bdbd2e4ec031204deaad5b90780f785ab"
+        "source_as_of": "2026-09-13T14:27:52.623386Z",
+        "content_digest": "d80e2c7210b73d9c030c728c5f56fa2b307bf19e9c095557d4640193418bf6bd"
       },
       {
         "event_id": "fomc-20270317",
@@ -3278,8 +3254,8 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-        "source_as_of": "2026-09-12T13:38:19.348908Z",
-        "content_digest": "7ae1e730f29f70c666f01e71e1eee68bdbd2e4ec031204deaad5b90780f785ab"
+        "source_as_of": "2026-09-13T14:27:52.623386Z",
+        "content_digest": "d80e2c7210b73d9c030c728c5f56fa2b307bf19e9c095557d4640193418bf6bd"
       },
       {
         "event_id": "fomc-20270428",
@@ -3291,8 +3267,8 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-        "source_as_of": "2026-09-12T13:38:19.348908Z",
-        "content_digest": "7ae1e730f29f70c666f01e71e1eee68bdbd2e4ec031204deaad5b90780f785ab"
+        "source_as_of": "2026-09-13T14:27:52.623386Z",
+        "content_digest": "d80e2c7210b73d9c030c728c5f56fa2b307bf19e9c095557d4640193418bf6bd"
       },
       {
         "event_id": "fomc-20270609",
@@ -3304,8 +3280,8 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-        "source_as_of": "2026-09-12T13:38:19.348908Z",
-        "content_digest": "7ae1e730f29f70c666f01e71e1eee68bdbd2e4ec031204deaad5b90780f785ab"
+        "source_as_of": "2026-09-13T14:27:52.623386Z",
+        "content_digest": "d80e2c7210b73d9c030c728c5f56fa2b307bf19e9c095557d4640193418bf6bd"
       },
       {
         "event_id": "fomc-20270728",
@@ -3317,8 +3293,8 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-        "source_as_of": "2026-09-12T13:38:19.348908Z",
-        "content_digest": "7ae1e730f29f70c666f01e71e1eee68bdbd2e4ec031204deaad5b90780f785ab"
+        "source_as_of": "2026-09-13T14:27:52.623386Z",
+        "content_digest": "d80e2c7210b73d9c030c728c5f56fa2b307bf19e9c095557d4640193418bf6bd"
       },
       {
         "event_id": "fomc-20270915",
@@ -3330,8 +3306,8 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-        "source_as_of": "2026-09-12T13:38:19.348908Z",
-        "content_digest": "7ae1e730f29f70c666f01e71e1eee68bdbd2e4ec031204deaad5b90780f785ab"
+        "source_as_of": "2026-09-13T14:27:52.623386Z",
+        "content_digest": "d80e2c7210b73d9c030c728c5f56fa2b307bf19e9c095557d4640193418bf6bd"
       },
       {
         "event_id": "fomc-20271027",
@@ -3343,8 +3319,8 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-        "source_as_of": "2026-09-12T13:38:19.348908Z",
-        "content_digest": "7ae1e730f29f70c666f01e71e1eee68bdbd2e4ec031204deaad5b90780f785ab"
+        "source_as_of": "2026-09-13T14:27:52.623386Z",
+        "content_digest": "d80e2c7210b73d9c030c728c5f56fa2b307bf19e9c095557d4640193418bf6bd"
       },
       {
         "event_id": "fomc-20271208",
@@ -3356,8 +3332,8 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-        "source_as_of": "2026-09-12T13:38:19.348908Z",
-        "content_digest": "7ae1e730f29f70c666f01e71e1eee68bdbd2e4ec031204deaad5b90780f785ab"
+        "source_as_of": "2026-09-13T14:27:52.623386Z",
+        "content_digest": "d80e2c7210b73d9c030c728c5f56fa2b307bf19e9c095557d4640193418bf6bd"
       },
       {
         "event_id": "nyse-calendar-20280101",
@@ -3369,7 +3345,7 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.nyse.com/trade/hours-calendars",
-        "source_as_of": "2026-09-12T13:38:19.476532Z",
+        "source_as_of": "2026-09-13T14:27:52.880233Z",
         "content_digest": "49ee8a651ec01ef2866e347842c0fb11309541f247d17aeaaf7ad9d6a513b1ed"
       },
       {
@@ -3382,7 +3358,7 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.nyse.com/trade/hours-calendars",
-        "source_as_of": "2026-09-12T13:38:19.476532Z",
+        "source_as_of": "2026-09-13T14:27:52.880233Z",
         "content_digest": "49ee8a651ec01ef2866e347842c0fb11309541f247d17aeaaf7ad9d6a513b1ed"
       },
       {
@@ -3395,7 +3371,7 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.nyse.com/trade/hours-calendars",
-        "source_as_of": "2026-09-12T13:38:19.476532Z",
+        "source_as_of": "2026-09-13T14:27:52.880233Z",
         "content_digest": "49ee8a651ec01ef2866e347842c0fb11309541f247d17aeaaf7ad9d6a513b1ed"
       },
       {
@@ -3408,7 +3384,7 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.nyse.com/trade/hours-calendars",
-        "source_as_of": "2026-09-12T13:38:19.476532Z",
+        "source_as_of": "2026-09-13T14:27:52.880233Z",
         "content_digest": "49ee8a651ec01ef2866e347842c0fb11309541f247d17aeaaf7ad9d6a513b1ed"
       },
       {
@@ -3421,7 +3397,7 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.nyse.com/trade/hours-calendars",
-        "source_as_of": "2026-09-12T13:38:19.476532Z",
+        "source_as_of": "2026-09-13T14:27:52.880233Z",
         "content_digest": "49ee8a651ec01ef2866e347842c0fb11309541f247d17aeaaf7ad9d6a513b1ed"
       },
       {
@@ -3434,7 +3410,7 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.nyse.com/trade/hours-calendars",
-        "source_as_of": "2026-09-12T13:38:19.476532Z",
+        "source_as_of": "2026-09-13T14:27:52.880233Z",
         "content_digest": "49ee8a651ec01ef2866e347842c0fb11309541f247d17aeaaf7ad9d6a513b1ed"
       },
       {
@@ -3447,7 +3423,7 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.nyse.com/trade/hours-calendars",
-        "source_as_of": "2026-09-12T13:38:19.476532Z",
+        "source_as_of": "2026-09-13T14:27:52.880233Z",
         "content_digest": "49ee8a651ec01ef2866e347842c0fb11309541f247d17aeaaf7ad9d6a513b1ed"
       },
       {
@@ -3460,7 +3436,7 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.nyse.com/trade/hours-calendars",
-        "source_as_of": "2026-09-12T13:38:19.476532Z",
+        "source_as_of": "2026-09-13T14:27:52.880233Z",
         "content_digest": "49ee8a651ec01ef2866e347842c0fb11309541f247d17aeaaf7ad9d6a513b1ed"
       }
     ],
@@ -3474,9 +3450,9 @@
       "evidence_id": "official-43310db6bc6a0ae9ea35b1ff2cbb3d3d",
       "category": "earnings",
       "region": "US",
-      "title": "NVIDIA 公告第二季（2027 財年）營收與獲利（GAAP/非GAAP）",
-      "summary": "文件指出 NVIDIA 第二季（截至 2026-07-26）營收為 962.21 億美元，較前一季上升 18%、較去年同期上升 106%；GAAP 與非 GAAP 的毛利率皆為 75.0%；GAAP/非 GAAP 稀釋後每股盈餘分別為 2.46 與 2.22。",
-      "market_relevance": "營收規模、毛利率與稀釋後 EPS 的同時上修/高位，反映公司當季獲利能力與需求動能的量化結果，可能影響市場對其 AI 基礎建設相關硬體/平台變現與獲利品質的評估。",
+      "title": "NVIDIA 公布 2027 財年第二季（截至 2026/7/26）營收與毛利率、稀釋 EPS",
+      "summary": "文件指出，NVIDIA 公布第二季（截至 2026 年 7 月 26 日）營收 962.21 億美元、年增 106%；GAAP 與非 GAAP 毛利率均為 75.0%；GAAP 與非 GAAP 稀釋每股盈餘分別為 2.46 與 2.22。",
+      "market_relevance": "營收規模、毛利率與每股盈餘是投資人衡量獲利能力與需求動能的關鍵財務指標，亦可能影響市場對其 AI 供給/需求擴張期間的獲利品質評估。",
       "source_title": "NVIDIA Announces Financial Results for Second Quarter Fiscal 2027",
       "source_url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
       "published_at": null,
@@ -3489,7 +3465,7 @@
         "source_query": "https://nvidianews.nvidia.com/news?q=earnings",
         "source_type": "company_ir",
         "authority": "official",
-        "retrieved_at": "2026-09-12T13:38:39.989293Z",
+        "retrieved_at": "2026-09-13T14:28:12.703080Z",
         "publication_date": "2026-08-26",
         "publication_precision": "date",
         "available_at": "2026-08-27T04:00:00Z",
@@ -3503,9 +3479,9 @@
       "evidence_id": "official-c4e3601eeeb7f7e5c1a94a75118203e7",
       "category": "company",
       "region": "US",
-      "title": "NVIDIA 指引第三季（2027 財年）營收、毛利率與營業費用",
-      "summary": "文件提供 NVIDIA 第三季（2027 財年）展望：營收預期為 1080 億美元（±2%）；GAAP/非 GAAP 毛利率預期 74.0%（±50 個基點）；GAAP 與非 GAAP 營業費用預期約 92 億與 90 億美元。",
-      "market_relevance": "第三季的營收區間、毛利率與營業費用指引屬於公司層級的短期資本支出/成本與獲利指標路徑，可能作為市場追蹤其供需節奏與利潤率可持續性的依據。",
+      "title": "NVIDIA 對 2027 財年第三季（Q3）財務展望：營收、毛利率、營業費用",
+      "summary": "文件載明 NVIDIA 對第三季（fiscal 2027 第三季）營收預期為 1,080 億美元（±2%）；GAAP 與非 GAAP 毛利率預期為 74.0%（±50 bps）；並預期 GAAP 營業費用約 92 億美元、非 GAAP 約 90 億美元。",
+      "market_relevance": "公司給出的季度展望對短期估值與預期路徑具有指引作用，特別是營收與毛利率區間可能反映其產品/平台供需強度與成本結構。",
       "source_title": "NVIDIA Announces Financial Results for Second Quarter Fiscal 2027",
       "source_url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
       "published_at": null,
@@ -3518,7 +3494,7 @@
         "source_query": "https://nvidianews.nvidia.com/news?q=earnings",
         "source_type": "company_ir",
         "authority": "official",
-        "retrieved_at": "2026-09-12T13:38:39.989293Z",
+        "retrieved_at": "2026-09-13T14:28:12.703080Z",
         "publication_date": "2026-08-26",
         "publication_precision": "date",
         "available_at": "2026-08-27T04:00:00Z",
@@ -3527,9 +3503,101 @@
         "claim_kind": "company_guidance",
         "source_status": "current"
       }
+    },
+    {
+      "evidence_id": "official-b8fab5fa7ba28afbe0b796f2c1af91ae",
+      "category": "earnings",
+      "region": "US",
+      "title": "Broadcom 公布 2026 財年第三季（截至 2026/8/2）營收、營業利益、EPS與自由現金流",
+      "summary": "文件指出 Broadcom 2026 財年第三季營收 296.91 億美元（年增 86%）；GAAP 營業利益 159.55 億美元、非 GAAP 營業利益 200.95 億美元；GAAP 稀釋 EPS 2.68、非 GAAP 稀釋 EPS 3.32；並提到營運現金流 141.97 億美元、自由現金流 136.65 億美元。",
+      "market_relevance": "反映半導體/基礎設施軟體業務的獲利與現金創造能力，且自由現金流與 EPS 的變化通常會影響市場對現金回饋能力（如股利）與再投資空間的預期。",
+      "source_title": "Broadcom Inc. Announces Third Quarter Fiscal Year 2026 Financial Results and Quarterly Dividend",
+      "source_url": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial",
+      "published_at": "2026-09-02T20:15:00Z",
+      "affected_symbols": [
+        "AVGO"
+      ],
+      "retrieval": {
+        "document_id": "d7f5a8dc40019e48808816686d3bf96dc28d36931f3f8f43536436cdf11ab094",
+        "content_hash": "bc1b45a06494921863116e1ba190cf4b063720b85086cff941dd2fcbc2b42012",
+        "source_query": "https://investors.broadcom.com/rss/news-releases.xml",
+        "source_type": "company_ir",
+        "authority": "official",
+        "retrieved_at": "2026-09-13T14:28:14.058779Z",
+        "publication_date": "2026-09-02",
+        "publication_precision": "datetime",
+        "available_at": "2026-09-12T21:07:36Z",
+        "content_locator": "已讀 HTML 全文後節選；字元區間：0:6000,8017:11534",
+        "excerpt": "Revenue of\n$29.6 billion\nfor the third quarter, up 86 percent from the prior year period\nGAAP operating income of\n$16.0 billion\nfor the third quarter; Non-GAAP operating income of\n$20.1 billion\nfor the third quarter\nGAAP diluted EPS of\n$2.68\nfor the third quarter; Non-GAAP diluted EPS of\n$3.32\nfor the third quarter\nCash from operations of\n$14.2 billion\nfor the third quarter, less capital expenditures of\n$0.5 billion\n, resulted in\n$13.7 billion\nof free cash flow, or 46 percent of revenue",
+        "claim_kind": "fact",
+        "source_status": "revised"
+      }
+    },
+    {
+      "evidence_id": "official-abc15c67ddb4d96ca517f920a12cac30",
+      "category": "company",
+      "region": "US",
+      "title": "Broadcom 對 2026 財年第四季展望：營收約 348 億美元與非 GAAP 營業利益率",
+      "summary": "文件給出 2026 財年第四季（截至 2026/11/1）展望：第四季營收約 348 億美元；第四季非 GAAP 營業利益預期約為「預估營收的 66%」。",
+      "market_relevance": "公司展望提供下一季營收與非 GAAP 獲利能力的方向性區間，可能影響投資人對後續需求（特別是 AI 相關半導體與網通）與成本/利潤率延續性的預期。",
+      "source_title": "Broadcom Inc. Announces Third Quarter Fiscal Year 2026 Financial Results and Quarterly Dividend",
+      "source_url": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial",
+      "published_at": "2026-09-02T20:15:00Z",
+      "affected_symbols": [
+        "AVGO"
+      ],
+      "retrieval": {
+        "document_id": "d7f5a8dc40019e48808816686d3bf96dc28d36931f3f8f43536436cdf11ab094",
+        "content_hash": "bc1b45a06494921863116e1ba190cf4b063720b85086cff941dd2fcbc2b42012",
+        "source_query": "https://investors.broadcom.com/rss/news-releases.xml",
+        "source_type": "company_ir",
+        "authority": "official",
+        "retrieved_at": "2026-09-13T14:28:14.058779Z",
+        "publication_date": "2026-09-02",
+        "publication_precision": "datetime",
+        "available_at": "2026-09-12T21:07:36Z",
+        "content_locator": "已讀 HTML 全文後節選；字元區間：0:6000,8017:11534",
+        "excerpt": "Fourth quarter fiscal year 2026 revenue guidance of approximately\n$34.8 billion\n, an increase of 93 percent from the prior year period\nFourth quarter fiscal year 2026 Non-GAAP operating income guidance of approximately 66 percent of projected revenue",
+        "claim_kind": "company_guidance",
+        "source_status": "revised"
+      }
+    },
+    {
+      "evidence_id": "official-2c750f7dc0e9a7441a2506dda12e1e65",
+      "category": "rates",
+      "region": "US",
+      "title": "聯準會 FOMC：維持聯邦基金利率目標區間 3.50%–3.75%，並表示仍將維持充裕準備金",
+      "summary": "文件指出 FOMC 決定以 9–3 投票維持聯邦基金利率目標區間在 3-1/2 到 3-3/4 percent，並表示將持續維持銀行體系的充裕準備金（ample reserves）。",
+      "market_relevance": "政策利率目標區間與流動性立場會影響美元資金成本、期限結構與金融條件，通常對風險資產估值與資本市場預期產生傳導。",
+      "source_title": "Federal Reserve issues FOMC statement",
+      "source_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm",
+      "published_at": "2026-07-29T18:00:00Z",
+      "affected_symbols": [
+        "AVGO",
+        "CASH",
+        "GLD",
+        "META",
+        "NVDA",
+        "PLTR"
+      ],
+      "retrieval": {
+        "document_id": "e290aabba3caad80496847cfb5424b874694a37d342708327f2fa9dac0b163e6",
+        "content_hash": "5da0eaf7172d309600a8243b8f71e07060f6b36875972f03942a299224f53c1e",
+        "source_query": "https://www.federalreserve.gov/feeds/press_monetary.xml",
+        "source_type": "macro_release",
+        "authority": "official",
+        "retrieved_at": "2026-09-13T14:28:17.742390Z",
+        "publication_date": "2026-07-29",
+        "publication_precision": "datetime",
+        "available_at": "2026-07-29T18:00:15Z",
+        "content_locator": "已讀 HTML 全文；換行分隔文字節點",
+        "excerpt": "The Committee decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent, in support of the Federal Reserve's dual mandate. The Committee is continuing its policy of maintaining ample reserves in the banking system.",
+        "claim_kind": "fact",
+        "source_status": "revised"
+      }
     }
   ],
-  "research_mode": "completed_session_review",
-  "research_generated_at": "2026-09-12T13:38:55.729791Z",
+  "research_mode": "non_trading_day_survey",
+  "research_generated_at": "2026-09-13T14:28:42.387740Z",
   "warnings": []
 }
