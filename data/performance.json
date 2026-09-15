@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "currency": "USD",
   "initial_value_usd": "6000.00",
-  "updated_at": "2026-09-11T14:29:19.120694Z",
+  "updated_at": "2026-09-15T15:04:45.252167Z",
   "status": "hypothetical",
   "methodology": "假設按每輪建議權重持有碎股，並在下一個評價點按最新建議重新平衡；忽略手續費、價差、滑價、稅負與匯率。這是研究策略指數，不是實際帳戶績效。",
   "points": [
@@ -2189,6 +2189,195 @@
         "PLTR": "0.07804656264208074170248468457",
         "GLD": "0.1114081754137625558362667392",
         "CASH": "0.08501080399536904667044767445"
+      }
+    },
+    {
+      "as_of": "2026-09-15T15:04:45.252167Z",
+      "run_id": "learning-20260915T150531Z",
+      "price_session": "2026-09-15",
+      "value_usd": "5827.22",
+      "profit_loss_usd": "-172.78",
+      "return_percent": "-2.8797",
+      "prices": [
+        {
+          "symbol": "AAPL",
+          "price_usd": "329.649994"
+        },
+        {
+          "symbol": "AMD",
+          "price_usd": "505.61499"
+        },
+        {
+          "symbol": "AVGO",
+          "price_usd": "342.029999"
+        },
+        {
+          "symbol": "CL=F",
+          "price_usd": "101.389999"
+        },
+        {
+          "symbol": "DIA",
+          "price_usd": "519.507629"
+        },
+        {
+          "symbol": "ERX",
+          "price_usd": "112.690002"
+        },
+        {
+          "symbol": "GLD",
+          "price_usd": "392.700012"
+        },
+        {
+          "symbol": "IWM",
+          "price_usd": "284.600006"
+        },
+        {
+          "symbol": "META",
+          "price_usd": "669.409973"
+        },
+        {
+          "symbol": "MSFT",
+          "price_usd": "500.809998"
+        },
+        {
+          "symbol": "NVDA",
+          "price_usd": "212.490005"
+        },
+        {
+          "symbol": "PLTR",
+          "price_usd": "171.419998"
+        },
+        {
+          "symbol": "QQQ",
+          "price_usd": "705.47998"
+        },
+        {
+          "symbol": "SMH",
+          "price_usd": "542.89502"
+        },
+        {
+          "symbol": "SOXL",
+          "price_usd": "102.924202"
+        },
+        {
+          "symbol": "SOXS",
+          "price_usd": "50.82"
+        },
+        {
+          "symbol": "SOXX",
+          "price_usd": "499.600006"
+        },
+        {
+          "symbol": "SPXU",
+          "price_usd": "36.119999"
+        },
+        {
+          "symbol": "SPY",
+          "price_usd": "757.159973"
+        },
+        {
+          "symbol": "SQQQ",
+          "price_usd": "40.470001"
+        },
+        {
+          "symbol": "TLT",
+          "price_usd": "80.709999"
+        },
+        {
+          "symbol": "TQQQ",
+          "price_usd": "68.146004"
+        },
+        {
+          "symbol": "TSLA",
+          "price_usd": "358.079987"
+        },
+        {
+          "symbol": "TSM",
+          "price_usd": "413.820099"
+        },
+        {
+          "symbol": "UPRO",
+          "price_usd": "143.839996"
+        },
+        {
+          "symbol": "VTI",
+          "price_usd": "372.700012"
+        },
+        {
+          "symbol": "XLE",
+          "price_usd": "65.345001"
+        },
+        {
+          "symbol": "XLF",
+          "price_usd": "56.619999"
+        },
+        {
+          "symbol": "XLK",
+          "price_usd": "184.190002"
+        },
+        {
+          "symbol": "XLV",
+          "price_usd": "166.970001"
+        },
+        {
+          "symbol": "^TNX",
+          "price_usd": "4.961"
+        },
+        {
+          "symbol": "^VIX",
+          "price_usd": "17.1"
+        }
+      ],
+      "note": "依上一輪建議權重與最新可得行情計算；假設績效，不代表實際成交。",
+      "net_value_usd": "5822.45",
+      "turnover": "0.001333477276138434785594064175",
+      "estimated_spread_usd": "0.00",
+      "estimated_slippage_usd": "0.00",
+      "estimated_fees_usd": "0.00",
+      "cost_model_version": "2026-08-15.1",
+      "cost_model_source": "Research assumption; one-way estimated friction, not broker execution data.",
+      "tax_treatment": "excluded",
+      "fx_treatment": "not_applicable",
+      "benchmarks": [
+        {
+          "symbol": "DIA",
+          "price_usd": "519.507629",
+          "price_session": "2026-09-15",
+          "source": "Yahoo Finance via yfinance"
+        },
+        {
+          "symbol": "IWM",
+          "price_usd": "284.600006",
+          "price_session": "2026-09-15",
+          "source": "Yahoo Finance via yfinance"
+        },
+        {
+          "symbol": "QQQ",
+          "price_usd": "705.47998",
+          "price_session": "2026-09-15",
+          "source": "Yahoo Finance via yfinance"
+        },
+        {
+          "symbol": "SPY",
+          "price_usd": "757.159973",
+          "price_session": "2026-09-15",
+          "source": "Yahoo Finance via yfinance"
+        },
+        {
+          "symbol": "VTI",
+          "price_usd": "372.700012",
+          "price_session": "2026-09-15",
+          "source": "Yahoo Finance via yfinance"
+        }
+      ],
+      "data_provenance": "Benchmark closes were captured from this market snapshot; no later data is used.",
+      "target_weights": {
+        "NVDA": "0.3062524376453818720555348229",
+        "AVGO": "0.2370003937644914218265247618",
+        "META": "0.1818322114318904343287811913",
+        "PLTR": "0.07820574334972927522080273708",
+        "GLD": "0.1118917811716972184887861298",
+        "CASH": "0.08481743263680977807957035711"
       }
     }
   ]

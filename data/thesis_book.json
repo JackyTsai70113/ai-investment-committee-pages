@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "run_id": "20260913T142811Z",
-  "data_cutoff": "2026-09-13T14:27:57.248201Z",
+  "run_id": "20260915T150502Z",
+  "data_cutoff": "2026-09-15T15:04:45.252167Z",
   "theses": {
     "AAPL": {
       "symbol": "AAPL",
@@ -36,8 +36,8 @@
       "status": "watch",
       "conviction": 10,
       "created_at": "2026-09-10T14:30:16.414008Z",
-      "updated_at": "2026-09-13T14:27:57.248201Z",
-      "evidence_cutoff": "2026-09-13T14:27:57.248201Z",
+      "updated_at": "2026-09-15T15:04:45.252167Z",
+      "evidence_cutoff": "2026-09-15T15:04:45.252167Z",
       "pillars": [],
       "invalidators": [],
       "catalysts": []
@@ -49,8 +49,8 @@
       "status": "watch",
       "conviction": 10,
       "created_at": "2026-09-13T14:27:57.248201Z",
-      "updated_at": "2026-09-13T14:27:57.248201Z",
-      "evidence_cutoff": "2026-09-13T14:27:57.248201Z",
+      "updated_at": "2026-09-15T15:04:45.252167Z",
+      "evidence_cutoff": "2026-09-15T15:04:45.252167Z",
       "pillars": [],
       "invalidators": [],
       "catalysts": []
@@ -62,8 +62,8 @@
       "status": "watch",
       "conviction": 10,
       "created_at": "2026-09-13T14:27:57.248201Z",
-      "updated_at": "2026-09-13T14:27:57.248201Z",
-      "evidence_cutoff": "2026-09-13T14:27:57.248201Z",
+      "updated_at": "2026-09-15T15:04:45.252167Z",
+      "evidence_cutoff": "2026-09-15T15:04:45.252167Z",
       "pillars": [],
       "invalidators": [],
       "catalysts": []
@@ -75,8 +75,8 @@
       "status": "watch",
       "conviction": 10,
       "created_at": "2026-09-10T14:30:16.414008Z",
-      "updated_at": "2026-09-13T14:27:57.248201Z",
-      "evidence_cutoff": "2026-09-13T14:27:57.248201Z",
+      "updated_at": "2026-09-15T15:04:45.252167Z",
+      "evidence_cutoff": "2026-09-15T15:04:45.252167Z",
       "pillars": [],
       "invalidators": [],
       "catalysts": []
@@ -101,8 +101,8 @@
       "status": "watch",
       "conviction": 10,
       "created_at": "2026-09-10T14:30:16.414008Z",
-      "updated_at": "2026-09-13T14:27:57.248201Z",
-      "evidence_cutoff": "2026-09-13T14:27:57.248201Z",
+      "updated_at": "2026-09-15T15:04:45.252167Z",
+      "evidence_cutoff": "2026-09-15T15:04:45.252167Z",
       "pillars": [],
       "invalidators": [],
       "catalysts": []
@@ -114,8 +114,8 @@
       "status": "watch",
       "conviction": 10,
       "created_at": "2026-09-10T14:30:16.414008Z",
-      "updated_at": "2026-09-13T14:27:57.248201Z",
-      "evidence_cutoff": "2026-09-13T14:27:57.248201Z",
+      "updated_at": "2026-09-15T15:04:45.252167Z",
+      "evidence_cutoff": "2026-09-15T15:04:45.252167Z",
       "pillars": [],
       "invalidators": [],
       "catalysts": []
@@ -148,201 +148,6 @@
     }
   },
   "recent_deltas": [
-    {
-      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json:net_income:2026-01-01:2026-06-30",
-      "source_version": "2d91e329bbb9dcb69647e08b1eab14294a7adbafc420240fb94727645aed33c5",
-      "replaces_version": null,
-      "evidence_ids": [
-        "sec:META:10-Q:2026-07-30:net_income:2026-01-01:2026-06-30"
-      ],
-      "impact": "neutral",
-      "affected_pillar_id": null,
-      "affected_invalidator_id": null,
-      "conviction_before": 10,
-      "conviction_after": 10,
-      "rationale": "10-Q 申報的 net_income 為 42621000000 USD，期間終點 2026-06-30。",
-      "recommended_research_action": "no_change"
-    },
-    {
-      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json:net_income:2026-04-01:2026-06-30",
-      "source_version": "1a675e31a1204a0a08df6eaf79c5537437a40a984357ac1aac74d4c5b4679a6f",
-      "replaces_version": null,
-      "evidence_ids": [
-        "sec:META:10-Q:2026-07-30:net_income:2026-04-01:2026-06-30"
-      ],
-      "impact": "neutral",
-      "affected_pillar_id": null,
-      "affected_invalidator_id": null,
-      "conviction_before": 10,
-      "conviction_after": 10,
-      "rationale": "10-Q 申報的 net_income 為 15848000000 USD，期間終點 2026-06-30。",
-      "recommended_research_action": "no_change"
-    },
-    {
-      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json:operating_cash_flow:2025-01-01:2025-06-30",
-      "source_version": "2e3d4cdc6c4c08f44db1994de4abcc533d72fbf2271b805cca408a86f3c78585",
-      "replaces_version": null,
-      "evidence_ids": [
-        "sec:META:10-Q:2026-07-30:operating_cash_flow:2025-01-01:2025-06-30"
-      ],
-      "impact": "neutral",
-      "affected_pillar_id": null,
-      "affected_invalidator_id": null,
-      "conviction_before": 10,
-      "conviction_after": 10,
-      "rationale": "10-Q 申報的 operating_cash_flow 為 49587000000 USD，期間終點 2025-06-30。",
-      "recommended_research_action": "no_change"
-    },
-    {
-      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json:operating_cash_flow:2026-01-01:2026-06-30",
-      "source_version": "2c5ffcbfb0789d6091f58cbe65c32fb3d3b4c1f1d4496c81e34eca1c26d21e53",
-      "replaces_version": null,
-      "evidence_ids": [
-        "sec:META:10-Q:2026-07-30:operating_cash_flow:2026-01-01:2026-06-30"
-      ],
-      "impact": "neutral",
-      "affected_pillar_id": null,
-      "affected_invalidator_id": null,
-      "conviction_before": 10,
-      "conviction_after": 10,
-      "rationale": "10-Q 申報的 operating_cash_flow 為 64088000000 USD，期間終點 2026-06-30。",
-      "recommended_research_action": "no_change"
-    },
-    {
-      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json:operating_income:2026-01-01:2026-06-30",
-      "source_version": "77e44ee77f7acc66a4f6a62fdc9d7ac92052bb7a13c1fbbd9998ae0b032d22b6",
-      "replaces_version": null,
-      "evidence_ids": [
-        "sec:META:10-Q:2026-07-30:operating_income:2026-01-01:2026-06-30"
-      ],
-      "impact": "neutral",
-      "affected_pillar_id": null,
-      "affected_invalidator_id": null,
-      "conviction_before": 10,
-      "conviction_after": 10,
-      "rationale": "10-Q 申報的 operating_income 為 41647000000 USD，期間終點 2026-06-30。",
-      "recommended_research_action": "no_change"
-    },
-    {
-      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json:operating_income:2026-04-01:2026-06-30",
-      "source_version": "ce3d5f606dc5fd8cf92d04de7a295b09be18e7bcf99d4a3b52aa810ab36ab351",
-      "replaces_version": null,
-      "evidence_ids": [
-        "sec:META:10-Q:2026-07-30:operating_income:2026-04-01:2026-06-30"
-      ],
-      "impact": "neutral",
-      "affected_pillar_id": null,
-      "affected_invalidator_id": null,
-      "conviction_before": 10,
-      "conviction_after": 10,
-      "rationale": "10-Q 申報的 operating_income 為 18775000000 USD，期間終點 2026-06-30。",
-      "recommended_research_action": "no_change"
-    },
-    {
-      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json:revenue:2026-01-01:2026-06-30",
-      "source_version": "ff62d4e3017ea926f911c6b23c7c82fcbbb24270f84e1937efd4c71b34280aaa",
-      "replaces_version": null,
-      "evidence_ids": [
-        "sec:META:10-Q:2026-07-30:revenue:2026-01-01:2026-06-30"
-      ],
-      "impact": "neutral",
-      "affected_pillar_id": null,
-      "affected_invalidator_id": null,
-      "conviction_before": 10,
-      "conviction_after": 10,
-      "rationale": "10-Q 申報的 revenue 為 117111000000 USD，期間終點 2026-06-30。",
-      "recommended_research_action": "no_change"
-    },
-    {
-      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json:revenue:2026-04-01:2026-06-30",
-      "source_version": "5afa1391f12ee182836e54f55ba849a6d1d107a848d759d6c1df76e2485d7cda",
-      "replaces_version": null,
-      "evidence_ids": [
-        "sec:META:10-Q:2026-07-30:revenue:2026-04-01:2026-06-30"
-      ],
-      "impact": "neutral",
-      "affected_pillar_id": null,
-      "affected_invalidator_id": null,
-      "conviction_before": 10,
-      "conviction_after": 10,
-      "rationale": "10-Q 申報的 revenue 為 60801000000 USD，期間終點 2026-06-30。",
-      "recommended_research_action": "no_change"
-    },
-    {
-      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json:assets:None:2025-06-30",
-      "source_version": "4c550f40347ea63e681a270820362110d21f42dec2e524fa22ac55d0ec33d63c",
-      "replaces_version": null,
-      "evidence_ids": [
-        "sec:MSFT:10-K:2026-07-29:assets:instant:2025-06-30"
-      ],
-      "impact": "neutral",
-      "affected_pillar_id": null,
-      "affected_invalidator_id": null,
-      "conviction_before": 10,
-      "conviction_after": 10,
-      "rationale": "10-K 申報的 assets 為 619003000000 USD，期間終點 2025-06-30。",
-      "recommended_research_action": "no_change"
-    },
-    {
-      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json:assets:None:2026-06-30",
-      "source_version": "d62f401d253e72a457648f1d730e84f0bdfda893eccc8dcc423b7658b68e4459",
-      "replaces_version": null,
-      "evidence_ids": [
-        "sec:MSFT:10-K:2026-07-29:assets:instant:2026-06-30"
-      ],
-      "impact": "neutral",
-      "affected_pillar_id": null,
-      "affected_invalidator_id": null,
-      "conviction_before": 10,
-      "conviction_after": 10,
-      "rationale": "10-K 申報的 assets 為 758376000000 USD，期間終點 2026-06-30。",
-      "recommended_research_action": "no_change"
-    },
-    {
-      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json:cash:None:2025-06-30",
-      "source_version": "a6bd591582c14cdc490c76586ec1f269b48817298c9fb5bfa323fed22465ba66",
-      "replaces_version": null,
-      "evidence_ids": [
-        "sec:MSFT:10-K:2026-07-29:cash:instant:2025-06-30"
-      ],
-      "impact": "neutral",
-      "affected_pillar_id": null,
-      "affected_invalidator_id": null,
-      "conviction_before": 10,
-      "conviction_after": 10,
-      "rationale": "10-K 申報的 cash 為 30242000000 USD，期間終點 2025-06-30。",
-      "recommended_research_action": "no_change"
-    },
-    {
-      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json:cash:None:2026-06-30",
-      "source_version": "6415b11cefd3260b323df3802b154a59733c838617a6732bec419e3c501babcf",
-      "replaces_version": null,
-      "evidence_ids": [
-        "sec:MSFT:10-K:2026-07-29:cash:instant:2026-06-30"
-      ],
-      "impact": "neutral",
-      "affected_pillar_id": null,
-      "affected_invalidator_id": null,
-      "conviction_before": 10,
-      "conviction_after": 10,
-      "rationale": "10-K 申報的 cash 為 20935000000 USD，期間終點 2026-06-30。",
-      "recommended_research_action": "no_change"
-    },
-    {
-      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json:diluted_eps:2024-07-01:2025-06-30",
-      "source_version": "cc2ed6f450b260f071efb88c744ce11ac020846215d10ed224a8ab536c1a9204",
-      "replaces_version": null,
-      "evidence_ids": [
-        "sec:MSFT:10-K:2026-07-29:diluted_eps:2024-07-01:2025-06-30"
-      ],
-      "impact": "neutral",
-      "affected_pillar_id": null,
-      "affected_invalidator_id": null,
-      "conviction_before": 10,
-      "conviction_after": 10,
-      "rationale": "10-K 申報的 diluted_eps 為 13.64 USD/shares，期間終點 2025-06-30。",
-      "recommended_research_action": "no_change"
-    },
     {
       "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json:diluted_eps:2025-07-01:2026-06-30",
       "source_version": "80270e40236f9597b5a1b49927952280b64deb5e55d53270136abc11291e560d",
@@ -897,6 +702,201 @@
       "conviction_after": 10,
       "rationale": "official-2c750f7dc0e9a7441a2506dda12e1e65：文件指出 FOMC 決定以 9–3 投票維持聯邦基金利率目標區間在 3-1/2 到 3-3/4 percent，並表示將持續維持銀行體系的充裕準備金（ample reserves）。",
       "recommended_research_action": "no_change"
+    },
+    {
+      "source_identity": "5895968b941e893ae940f010268634dd017bbc4c4058557676a7d36a9b08e05d",
+      "source_version": "131a34937193d5631ac80c606ab233febeb7cbbb267ac6ccdaf9a091a9fee9f7",
+      "replaces_version": null,
+      "evidence_ids": [
+        "research:5895968b941e893ae940f010268634dd017bbc4c4058557676a7d36a9b08e05d:AVGO"
+      ],
+      "impact": "neutral",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 10,
+      "conviction_after": 10,
+      "rationale": "official-d6612b350fb9335b51f04dddcfdeeab4：文件指出：BEA 估計 2026 年 7 月個人所得增加 115.1B 美元（按月化成長 0.4%）；可支配所得（DPI）增加 125.9B 美元（0.5%）；個人消費支出（PCE）增加 36.3B 美元（0.2%）。同時，個人儲蓄為 712.0B 美元，儲蓄率為 DPI 的 3.0%。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "source_identity": "5895968b941e893ae940f010268634dd017bbc4c4058557676a7d36a9b08e05d",
+      "source_version": "131a34937193d5631ac80c606ab233febeb7cbbb267ac6ccdaf9a091a9fee9f7",
+      "replaces_version": null,
+      "evidence_ids": [
+        "research:5895968b941e893ae940f010268634dd017bbc4c4058557676a7d36a9b08e05d:CASH"
+      ],
+      "impact": "neutral",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 10,
+      "conviction_after": 10,
+      "rationale": "official-d6612b350fb9335b51f04dddcfdeeab4：文件指出：BEA 估計 2026 年 7 月個人所得增加 115.1B 美元（按月化成長 0.4%）；可支配所得（DPI）增加 125.9B 美元（0.5%）；個人消費支出（PCE）增加 36.3B 美元（0.2%）。同時，個人儲蓄為 712.0B 美元，儲蓄率為 DPI 的 3.0%。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "source_identity": "5895968b941e893ae940f010268634dd017bbc4c4058557676a7d36a9b08e05d",
+      "source_version": "131a34937193d5631ac80c606ab233febeb7cbbb267ac6ccdaf9a091a9fee9f7",
+      "replaces_version": null,
+      "evidence_ids": [
+        "research:5895968b941e893ae940f010268634dd017bbc4c4058557676a7d36a9b08e05d:GLD"
+      ],
+      "impact": "neutral",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 10,
+      "conviction_after": 10,
+      "rationale": "official-d6612b350fb9335b51f04dddcfdeeab4：文件指出：BEA 估計 2026 年 7 月個人所得增加 115.1B 美元（按月化成長 0.4%）；可支配所得（DPI）增加 125.9B 美元（0.5%）；個人消費支出（PCE）增加 36.3B 美元（0.2%）。同時，個人儲蓄為 712.0B 美元，儲蓄率為 DPI 的 3.0%。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "source_identity": "5895968b941e893ae940f010268634dd017bbc4c4058557676a7d36a9b08e05d",
+      "source_version": "131a34937193d5631ac80c606ab233febeb7cbbb267ac6ccdaf9a091a9fee9f7",
+      "replaces_version": null,
+      "evidence_ids": [
+        "research:5895968b941e893ae940f010268634dd017bbc4c4058557676a7d36a9b08e05d:META"
+      ],
+      "impact": "neutral",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 10,
+      "conviction_after": 10,
+      "rationale": "official-d6612b350fb9335b51f04dddcfdeeab4：文件指出：BEA 估計 2026 年 7 月個人所得增加 115.1B 美元（按月化成長 0.4%）；可支配所得（DPI）增加 125.9B 美元（0.5%）；個人消費支出（PCE）增加 36.3B 美元（0.2%）。同時，個人儲蓄為 712.0B 美元，儲蓄率為 DPI 的 3.0%。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "source_identity": "5895968b941e893ae940f010268634dd017bbc4c4058557676a7d36a9b08e05d",
+      "source_version": "131a34937193d5631ac80c606ab233febeb7cbbb267ac6ccdaf9a091a9fee9f7",
+      "replaces_version": null,
+      "evidence_ids": [
+        "research:5895968b941e893ae940f010268634dd017bbc4c4058557676a7d36a9b08e05d:NVDA"
+      ],
+      "impact": "neutral",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 10,
+      "conviction_after": 10,
+      "rationale": "official-d6612b350fb9335b51f04dddcfdeeab4：文件指出：BEA 估計 2026 年 7 月個人所得增加 115.1B 美元（按月化成長 0.4%）；可支配所得（DPI）增加 125.9B 美元（0.5%）；個人消費支出（PCE）增加 36.3B 美元（0.2%）。同時，個人儲蓄為 712.0B 美元，儲蓄率為 DPI 的 3.0%。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "source_identity": "5895968b941e893ae940f010268634dd017bbc4c4058557676a7d36a9b08e05d",
+      "source_version": "131a34937193d5631ac80c606ab233febeb7cbbb267ac6ccdaf9a091a9fee9f7",
+      "replaces_version": null,
+      "evidence_ids": [
+        "research:5895968b941e893ae940f010268634dd017bbc4c4058557676a7d36a9b08e05d:PLTR"
+      ],
+      "impact": "neutral",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 10,
+      "conviction_after": 10,
+      "rationale": "official-d6612b350fb9335b51f04dddcfdeeab4：文件指出：BEA 估計 2026 年 7 月個人所得增加 115.1B 美元（按月化成長 0.4%）；可支配所得（DPI）增加 125.9B 美元（0.5%）；個人消費支出（PCE）增加 36.3B 美元（0.2%）。同時，個人儲蓄為 712.0B 美元，儲蓄率為 DPI 的 3.0%。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "source_identity": "9bc4950664f1773de163da3dd9058b9373a2a553b8e772949ad5899a0c0436dc",
+      "source_version": "282f517583f249b35d4e497b64c8370439b42034e31fc0f31481753740e73c70",
+      "replaces_version": "d3bb05b15118b65b9866f38d1230cc918c76292a14ed47b0404dbed28608389a",
+      "evidence_ids": [
+        "research:9bc4950664f1773de163da3dd9058b9373a2a553b8e772949ad5899a0c0436dc:NVDA:rev:282f517583f249b35d4e497b"
+      ],
+      "impact": "neutral",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 10,
+      "conviction_after": 10,
+      "rationale": "來源修訂；official-7bb4df401e191fdf36bb54bf09883f21：文件表示：NVIDIA 第二季（截至 2026/7/26）營收為 96.2B 美元、年增 106%；GAAP 與非 GAAP 毛利率皆為 75.0%；GAAP 稀釋後 EPS 為 2.46 美元、非 GAAP 稀釋後 EPS 為 2.22 美元。；official-dbfd185ba2a4d63a1f569577fdb621dd：文件指出：NVIDIA 預期 FY2027 第三季營收為 108.0B 美元（±2%）；GAAP 與非 GAAP 毛利率預期為 74.0%（±50bps）。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "source_identity": "e290aabba3caad80496847cfb5424b874694a37d342708327f2fa9dac0b163e6",
+      "source_version": "93a73707a1cdf2f4fba92bf6f1a3154d59c2bc0319a9516fea5bd5eeed9908ef",
+      "replaces_version": "5da0eaf7172d309600a8243b8f71e07060f6b36875972f03942a299224f53c1e",
+      "evidence_ids": [
+        "research:e290aabba3caad80496847cfb5424b874694a37d342708327f2fa9dac0b163e6:AVGO:rev:93a73707a1cdf2f4fba92bf6"
+      ],
+      "impact": "neutral",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 10,
+      "conviction_after": 10,
+      "rationale": "來源修訂；official-a453bf5819d459e30f16085d24b588c2：文件指出：FOMC 以 9–3 投票決議維持聯邦基金利率目標區間在 3-1/2% 至 3-3/4%，並持續維持銀行體系的充裕準備金。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "source_identity": "e290aabba3caad80496847cfb5424b874694a37d342708327f2fa9dac0b163e6",
+      "source_version": "93a73707a1cdf2f4fba92bf6f1a3154d59c2bc0319a9516fea5bd5eeed9908ef",
+      "replaces_version": "5da0eaf7172d309600a8243b8f71e07060f6b36875972f03942a299224f53c1e",
+      "evidence_ids": [
+        "research:e290aabba3caad80496847cfb5424b874694a37d342708327f2fa9dac0b163e6:CASH:rev:93a73707a1cdf2f4fba92bf6"
+      ],
+      "impact": "neutral",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 10,
+      "conviction_after": 10,
+      "rationale": "來源修訂；official-a453bf5819d459e30f16085d24b588c2：文件指出：FOMC 以 9–3 投票決議維持聯邦基金利率目標區間在 3-1/2% 至 3-3/4%，並持續維持銀行體系的充裕準備金。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "source_identity": "e290aabba3caad80496847cfb5424b874694a37d342708327f2fa9dac0b163e6",
+      "source_version": "93a73707a1cdf2f4fba92bf6f1a3154d59c2bc0319a9516fea5bd5eeed9908ef",
+      "replaces_version": "5da0eaf7172d309600a8243b8f71e07060f6b36875972f03942a299224f53c1e",
+      "evidence_ids": [
+        "research:e290aabba3caad80496847cfb5424b874694a37d342708327f2fa9dac0b163e6:GLD:rev:93a73707a1cdf2f4fba92bf6"
+      ],
+      "impact": "neutral",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 10,
+      "conviction_after": 10,
+      "rationale": "來源修訂；official-a453bf5819d459e30f16085d24b588c2：文件指出：FOMC 以 9–3 投票決議維持聯邦基金利率目標區間在 3-1/2% 至 3-3/4%，並持續維持銀行體系的充裕準備金。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "source_identity": "e290aabba3caad80496847cfb5424b874694a37d342708327f2fa9dac0b163e6",
+      "source_version": "93a73707a1cdf2f4fba92bf6f1a3154d59c2bc0319a9516fea5bd5eeed9908ef",
+      "replaces_version": "5da0eaf7172d309600a8243b8f71e07060f6b36875972f03942a299224f53c1e",
+      "evidence_ids": [
+        "research:e290aabba3caad80496847cfb5424b874694a37d342708327f2fa9dac0b163e6:META:rev:93a73707a1cdf2f4fba92bf6"
+      ],
+      "impact": "neutral",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 10,
+      "conviction_after": 10,
+      "rationale": "來源修訂；official-a453bf5819d459e30f16085d24b588c2：文件指出：FOMC 以 9–3 投票決議維持聯邦基金利率目標區間在 3-1/2% 至 3-3/4%，並持續維持銀行體系的充裕準備金。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "source_identity": "e290aabba3caad80496847cfb5424b874694a37d342708327f2fa9dac0b163e6",
+      "source_version": "93a73707a1cdf2f4fba92bf6f1a3154d59c2bc0319a9516fea5bd5eeed9908ef",
+      "replaces_version": "5da0eaf7172d309600a8243b8f71e07060f6b36875972f03942a299224f53c1e",
+      "evidence_ids": [
+        "research:e290aabba3caad80496847cfb5424b874694a37d342708327f2fa9dac0b163e6:NVDA:rev:93a73707a1cdf2f4fba92bf6"
+      ],
+      "impact": "neutral",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 10,
+      "conviction_after": 10,
+      "rationale": "來源修訂；official-a453bf5819d459e30f16085d24b588c2：文件指出：FOMC 以 9–3 投票決議維持聯邦基金利率目標區間在 3-1/2% 至 3-3/4%，並持續維持銀行體系的充裕準備金。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "source_identity": "e290aabba3caad80496847cfb5424b874694a37d342708327f2fa9dac0b163e6",
+      "source_version": "93a73707a1cdf2f4fba92bf6f1a3154d59c2bc0319a9516fea5bd5eeed9908ef",
+      "replaces_version": "5da0eaf7172d309600a8243b8f71e07060f6b36875972f03942a299224f53c1e",
+      "evidence_ids": [
+        "research:e290aabba3caad80496847cfb5424b874694a37d342708327f2fa9dac0b163e6:PLTR:rev:93a73707a1cdf2f4fba92bf6"
+      ],
+      "impact": "neutral",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 10,
+      "conviction_after": 10,
+      "rationale": "來源修訂；official-a453bf5819d459e30f16085d24b588c2：文件指出：FOMC 以 9–3 投票決議維持聯邦基金利率目標區間在 3-1/2% 至 3-3/4%，並持續維持銀行體系的充裕準備金。",
+      "recommended_research_action": "no_change"
     }
   ],
   "gaps": [
@@ -1449,28 +1449,53 @@
       "5ac7fa15d96eb9c138f4421e3c6c369a4360a40761933db71a18966203928080"
     ],
     "NVDA:9bc4950664f1773de163da3dd9058b9373a2a553b8e772949ad5899a0c0436dc": [
-      "d3bb05b15118b65b9866f38d1230cc918c76292a14ed47b0404dbed28608389a"
+      "d3bb05b15118b65b9866f38d1230cc918c76292a14ed47b0404dbed28608389a",
+      "282f517583f249b35d4e497b64c8370439b42034e31fc0f31481753740e73c70"
     ],
     "AVGO:d7f5a8dc40019e48808816686d3bf96dc28d36931f3f8f43536436cdf11ab094": [
       "bc1b45a06494921863116e1ba190cf4b063720b85086cff941dd2fcbc2b42012"
     ],
     "AVGO:e290aabba3caad80496847cfb5424b874694a37d342708327f2fa9dac0b163e6": [
-      "5da0eaf7172d309600a8243b8f71e07060f6b36875972f03942a299224f53c1e"
+      "5da0eaf7172d309600a8243b8f71e07060f6b36875972f03942a299224f53c1e",
+      "93a73707a1cdf2f4fba92bf6f1a3154d59c2bc0319a9516fea5bd5eeed9908ef"
     ],
     "CASH:e290aabba3caad80496847cfb5424b874694a37d342708327f2fa9dac0b163e6": [
-      "5da0eaf7172d309600a8243b8f71e07060f6b36875972f03942a299224f53c1e"
+      "5da0eaf7172d309600a8243b8f71e07060f6b36875972f03942a299224f53c1e",
+      "93a73707a1cdf2f4fba92bf6f1a3154d59c2bc0319a9516fea5bd5eeed9908ef"
     ],
     "GLD:e290aabba3caad80496847cfb5424b874694a37d342708327f2fa9dac0b163e6": [
-      "5da0eaf7172d309600a8243b8f71e07060f6b36875972f03942a299224f53c1e"
+      "5da0eaf7172d309600a8243b8f71e07060f6b36875972f03942a299224f53c1e",
+      "93a73707a1cdf2f4fba92bf6f1a3154d59c2bc0319a9516fea5bd5eeed9908ef"
     ],
     "META:e290aabba3caad80496847cfb5424b874694a37d342708327f2fa9dac0b163e6": [
-      "5da0eaf7172d309600a8243b8f71e07060f6b36875972f03942a299224f53c1e"
+      "5da0eaf7172d309600a8243b8f71e07060f6b36875972f03942a299224f53c1e",
+      "93a73707a1cdf2f4fba92bf6f1a3154d59c2bc0319a9516fea5bd5eeed9908ef"
     ],
     "NVDA:e290aabba3caad80496847cfb5424b874694a37d342708327f2fa9dac0b163e6": [
-      "5da0eaf7172d309600a8243b8f71e07060f6b36875972f03942a299224f53c1e"
+      "5da0eaf7172d309600a8243b8f71e07060f6b36875972f03942a299224f53c1e",
+      "93a73707a1cdf2f4fba92bf6f1a3154d59c2bc0319a9516fea5bd5eeed9908ef"
     ],
     "PLTR:e290aabba3caad80496847cfb5424b874694a37d342708327f2fa9dac0b163e6": [
-      "5da0eaf7172d309600a8243b8f71e07060f6b36875972f03942a299224f53c1e"
+      "5da0eaf7172d309600a8243b8f71e07060f6b36875972f03942a299224f53c1e",
+      "93a73707a1cdf2f4fba92bf6f1a3154d59c2bc0319a9516fea5bd5eeed9908ef"
+    ],
+    "AVGO:5895968b941e893ae940f010268634dd017bbc4c4058557676a7d36a9b08e05d": [
+      "131a34937193d5631ac80c606ab233febeb7cbbb267ac6ccdaf9a091a9fee9f7"
+    ],
+    "CASH:5895968b941e893ae940f010268634dd017bbc4c4058557676a7d36a9b08e05d": [
+      "131a34937193d5631ac80c606ab233febeb7cbbb267ac6ccdaf9a091a9fee9f7"
+    ],
+    "GLD:5895968b941e893ae940f010268634dd017bbc4c4058557676a7d36a9b08e05d": [
+      "131a34937193d5631ac80c606ab233febeb7cbbb267ac6ccdaf9a091a9fee9f7"
+    ],
+    "META:5895968b941e893ae940f010268634dd017bbc4c4058557676a7d36a9b08e05d": [
+      "131a34937193d5631ac80c606ab233febeb7cbbb267ac6ccdaf9a091a9fee9f7"
+    ],
+    "NVDA:5895968b941e893ae940f010268634dd017bbc4c4058557676a7d36a9b08e05d": [
+      "131a34937193d5631ac80c606ab233febeb7cbbb267ac6ccdaf9a091a9fee9f7"
+    ],
+    "PLTR:5895968b941e893ae940f010268634dd017bbc4c4058557676a7d36a9b08e05d": [
+      "131a34937193d5631ac80c606ab233febeb7cbbb267ac6ccdaf9a091a9fee9f7"
     ]
   },
   "daily_change": {
@@ -1481,6 +1506,6 @@
     "NVDA": 0,
     "PLTR": 0
   },
-  "change_date": "2026-09-13",
+  "change_date": "2026-09-15",
   "daily_source_groups": []
 }

@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "run_id": "20260913T142811Z",
-  "data_cutoff": "2026-09-13T14:27:57.248201Z",
+  "run_id": "20260915T150502Z",
+  "data_cutoff": "2026-09-15T15:04:45.252167Z",
   "peer_universe": {
     "theme": "已蒐集市場研究",
     "sector": "跨產業",
@@ -166,17 +166,44 @@
   "ideas_shortlist": [],
   "source_observations": [
     {
-      "evidence_id": "official-2c750f7dc0e9a7441a2506dda12e1e65",
+      "evidence_id": "official-7bb4df401e191fdf36bb54bf09883f21",
+      "source_url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
+      "published_at": null,
+      "available_at": "2026-08-27T04:00:00Z",
+      "retrieval": {
+        "document_id": "9bc4950664f1773de163da3dd9058b9373a2a553b8e772949ad5899a0c0436dc",
+        "content_hash": "282f517583f249b35d4e497b64c8370439b42034e31fc0f31481753740e73c70",
+        "source_query": "https://nvidianews.nvidia.com/news?q=earnings",
+        "source_type": "company_ir",
+        "authority": "official",
+        "retrieved_at": "2026-09-15T15:05:03.581167Z",
+        "publication_date": "2026-08-26",
+        "publication_precision": "date",
+        "available_at": "2026-08-27T04:00:00Z",
+        "content_locator": "已讀 HTML 全文後節選；字元區間：0:6000,8397:11914,18532:22039,24103:27610",
+        "excerpt": "NVIDIA (NASDAQ: NVDA) today reported revenue for the second quarter ended July 26, 2026, of $96.2 billion, up 18% from the previous quarter and up 106% from a year ago. For the quarter, GAAP and non-GAAP gross margins were both 75.0%. GAAP and non-GAAP earnings per diluted share were $2.46 and $2.22, respectively.",
+        "claim_kind": "fact",
+        "source_status": "current"
+      },
+      "symbols": [
+        "NVDA"
+      ],
+      "summary": "文件表示：NVIDIA 第二季（截至 2026/7/26）營收為 96.2B 美元、年增 106%；GAAP 與非 GAAP 毛利率皆為 75.0%；GAAP 稀釋後 EPS 為 2.46 美元、非 GAAP 稀釋後 EPS 為 2.22 美元。",
+      "market_relevance": "上述財務數字反映公司當季獲利能力與收入規模，可能影響市場對其 AI 計算需求延續性與下一步資本支出/分配（如回購與股利）的觀察。",
+      "interpretation": "untrusted_observation"
+    },
+    {
+      "evidence_id": "official-a453bf5819d459e30f16085d24b588c2",
       "source_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm",
       "published_at": "2026-07-29T18:00:00Z",
       "available_at": "2026-07-29T18:00:15Z",
       "retrieval": {
         "document_id": "e290aabba3caad80496847cfb5424b874694a37d342708327f2fa9dac0b163e6",
-        "content_hash": "5da0eaf7172d309600a8243b8f71e07060f6b36875972f03942a299224f53c1e",
+        "content_hash": "93a73707a1cdf2f4fba92bf6f1a3154d59c2bc0319a9516fea5bd5eeed9908ef",
         "source_query": "https://www.federalreserve.gov/feeds/press_monetary.xml",
         "source_type": "macro_release",
         "authority": "official",
-        "retrieved_at": "2026-09-13T14:28:17.742390Z",
+        "retrieved_at": "2026-09-15T15:05:07.928896Z",
         "publication_date": "2026-07-29",
         "publication_precision": "datetime",
         "available_at": "2026-07-29T18:00:15Z",
@@ -193,52 +220,25 @@
         "NVDA",
         "PLTR"
       ],
-      "summary": "文件指出 FOMC 決定以 9–3 投票維持聯邦基金利率目標區間在 3-1/2 到 3-3/4 percent，並表示將持續維持銀行體系的充裕準備金（ample reserves）。",
-      "market_relevance": "政策利率目標區間與流動性立場會影響美元資金成本、期限結構與金融條件，通常對風險資產估值與資本市場預期產生傳導。",
-      "interpretation": "untrusted_observation"
-    },
-    {
-      "evidence_id": "official-43310db6bc6a0ae9ea35b1ff2cbb3d3d",
-      "source_url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
-      "published_at": null,
-      "available_at": "2026-08-27T04:00:00Z",
-      "retrieval": {
-        "document_id": "9bc4950664f1773de163da3dd9058b9373a2a553b8e772949ad5899a0c0436dc",
-        "content_hash": "d3bb05b15118b65b9866f38d1230cc918c76292a14ed47b0404dbed28608389a",
-        "source_query": "https://nvidianews.nvidia.com/news?q=earnings",
-        "source_type": "company_ir",
-        "authority": "official",
-        "retrieved_at": "2026-09-13T14:28:12.703080Z",
-        "publication_date": "2026-08-26",
-        "publication_precision": "date",
-        "available_at": "2026-08-27T04:00:00Z",
-        "content_locator": "已讀 HTML 全文後節選；字元區間：0:6000,8397:11914,18532:22039,24135:27642",
-        "excerpt": "NVIDIA (NASDAQ: NVDA) today reported revenue for the second quarter ended July 26, 2026, of $96.2 billion, up 18% from the previous quarter and up 106% from a year ago. For the quarter, GAAP and non-GAAP gross margins were both 75.0%. GAAP and non-GAAP earnings per diluted share were $2.46 and $2.22, respectively.",
-        "claim_kind": "fact",
-        "source_status": "current"
-      },
-      "symbols": [
-        "NVDA"
-      ],
-      "summary": "文件指出，NVIDIA 公布第二季（截至 2026 年 7 月 26 日）營收 962.21 億美元、年增 106%；GAAP 與非 GAAP 毛利率均為 75.0%；GAAP 與非 GAAP 稀釋每股盈餘分別為 2.46 與 2.22。",
-      "market_relevance": "營收規模、毛利率與每股盈餘是投資人衡量獲利能力與需求動能的關鍵財務指標，亦可能影響市場對其 AI 供給/需求擴張期間的獲利品質評估。",
+      "summary": "文件指出：FOMC 以 9–3 投票決議維持聯邦基金利率目標區間在 3-1/2% 至 3-3/4%，並持續維持銀行體系的充裕準備金。",
+      "market_relevance": "政策利率目標區間的維持通常會影響美元資金成本與殖利率環境，進而影響風險資產估值、企業融資成本與市場對需求/通膨路徑的定價。",
       "interpretation": "untrusted_observation"
     },
     {
       "evidence_id": "official-abc15c67ddb4d96ca517f920a12cac30",
       "source_url": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial",
       "published_at": "2026-09-02T20:15:00Z",
-      "available_at": "2026-09-12T21:07:36Z",
+      "available_at": "2026-09-15T06:31:14Z",
       "retrieval": {
         "document_id": "d7f5a8dc40019e48808816686d3bf96dc28d36931f3f8f43536436cdf11ab094",
         "content_hash": "bc1b45a06494921863116e1ba190cf4b063720b85086cff941dd2fcbc2b42012",
         "source_query": "https://investors.broadcom.com/rss/news-releases.xml",
         "source_type": "company_ir",
         "authority": "official",
-        "retrieved_at": "2026-09-13T14:28:14.058779Z",
+        "retrieved_at": "2026-09-15T15:05:05.034802Z",
         "publication_date": "2026-09-02",
         "publication_precision": "datetime",
-        "available_at": "2026-09-12T21:07:36Z",
+        "available_at": "2026-09-15T06:31:14Z",
         "content_locator": "已讀 HTML 全文後節選；字元區間：0:6000,8017:11534",
         "excerpt": "Fourth quarter fiscal year 2026 revenue guidance of approximately\n$34.8 billion\n, an increase of 93 percent from the prior year period\nFourth quarter fiscal year 2026 Non-GAAP operating income guidance of approximately 66 percent of projected revenue",
         "claim_kind": "company_guidance",
@@ -247,25 +247,25 @@
       "symbols": [
         "AVGO"
       ],
-      "summary": "文件給出 2026 財年第四季（截至 2026/11/1）展望：第四季營收約 348 億美元；第四季非 GAAP 營業利益預期約為「預估營收的 66%」。",
-      "market_relevance": "公司展望提供下一季營收與非 GAAP 獲利能力的方向性區間，可能影響投資人對後續需求（特別是 AI 相關半導體與網通）與成本/利潤率延續性的預期。",
+      "summary": "文件指出：Broadcom 對 FY2026 第四季（截至 2026/11/1）營收指引約 34.8B 美元；非 GAAP 營業利益預期約為預估營收的 66%。",
+      "market_relevance": "公司給出的 Q4 指引反映其對下一季收入規模與營業利潤率的管理層假設，可能影響市場對其 AI 週期續航、成本/毛利結構與需求時點的關注。",
       "interpretation": "untrusted_observation"
     },
     {
       "evidence_id": "official-b8fab5fa7ba28afbe0b796f2c1af91ae",
       "source_url": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial",
       "published_at": "2026-09-02T20:15:00Z",
-      "available_at": "2026-09-12T21:07:36Z",
+      "available_at": "2026-09-15T06:31:14Z",
       "retrieval": {
         "document_id": "d7f5a8dc40019e48808816686d3bf96dc28d36931f3f8f43536436cdf11ab094",
         "content_hash": "bc1b45a06494921863116e1ba190cf4b063720b85086cff941dd2fcbc2b42012",
         "source_query": "https://investors.broadcom.com/rss/news-releases.xml",
         "source_type": "company_ir",
         "authority": "official",
-        "retrieved_at": "2026-09-13T14:28:14.058779Z",
+        "retrieved_at": "2026-09-15T15:05:05.034802Z",
         "publication_date": "2026-09-02",
         "publication_precision": "datetime",
-        "available_at": "2026-09-12T21:07:36Z",
+        "available_at": "2026-09-15T06:31:14Z",
         "content_locator": "已讀 HTML 全文後節選；字元區間：0:6000,8017:11534",
         "excerpt": "Revenue of\n$29.6 billion\nfor the third quarter, up 86 percent from the prior year period\nGAAP operating income of\n$16.0 billion\nfor the third quarter; Non-GAAP operating income of\n$20.1 billion\nfor the third quarter\nGAAP diluted EPS of\n$2.68\nfor the third quarter; Non-GAAP diluted EPS of\n$3.32\nfor the third quarter\nCash from operations of\n$14.2 billion\nfor the third quarter, less capital expenditures of\n$0.5 billion\n, resulted in\n$13.7 billion\nof free cash flow, or 46 percent of revenue",
         "claim_kind": "fact",
@@ -274,35 +274,67 @@
       "symbols": [
         "AVGO"
       ],
-      "summary": "文件指出 Broadcom 2026 財年第三季營收 296.91 億美元（年增 86%）；GAAP 營業利益 159.55 億美元、非 GAAP 營業利益 200.95 億美元；GAAP 稀釋 EPS 2.68、非 GAAP 稀釋 EPS 3.32；並提到營運現金流 141.97 億美元、自由現金流 136.65 億美元。",
-      "market_relevance": "反映半導體/基礎設施軟體業務的獲利與現金創造能力，且自由現金流與 EPS 的變化通常會影響市場對現金回饋能力（如股利）與再投資空間的預期。",
+      "summary": "文件表示：Broadcom FY2026 第三季（截至 2026/8/2）營收為 29.6B 美元（年增 86%）；GAAP 營業利益為 16.0B 美元、非 GAAP 營業利益為 20.1B 美元；營業現金流 14.2B 美元減資本支出 0.5B 美元後形成自由現金流 13.7B 美元（相當於營收 46%）。",
+      "market_relevance": "此處的收入成長、獲利與現金流釋放程度，可能影響市場對其 AI 相關半導體/網通需求與後續資本配置（例如股利或回購）的評估。",
       "interpretation": "untrusted_observation"
     },
     {
-      "evidence_id": "official-c4e3601eeeb7f7e5c1a94a75118203e7",
+      "evidence_id": "official-d6612b350fb9335b51f04dddcfdeeab4",
+      "source_url": "https://www.bea.gov/news/2026/personal-income-and-outlays-july-2026",
+      "published_at": null,
+      "available_at": "2026-09-15T12:00:04Z",
+      "retrieval": {
+        "document_id": "5895968b941e893ae940f010268634dd017bbc4c4058557676a7d36a9b08e05d",
+        "content_hash": "131a34937193d5631ac80c606ab233febeb7cbbb267ac6ccdaf9a091a9fee9f7",
+        "source_query": "https://www.bea.gov/news/current-releases",
+        "source_type": "macro_release",
+        "authority": "official",
+        "retrieved_at": "2026-09-15T15:05:09.598966Z",
+        "publication_date": "2026-08-26",
+        "publication_precision": "date",
+        "available_at": "2026-09-15T12:00:04Z",
+        "content_locator": "已讀 HTML 全文；換行分隔文字節點",
+        "excerpt": "Personal income\nincreased $115.1 billion\n(0.4 percent at a monthly rate) in July, according to estimates released today by the U.S. Bureau of Economic Analysis (BEA).\nDisposable personal income (DPI)\n—personal income less personal current taxes—increased $125.9 billion (0.5 percent), and\npersonal consumption expenditures (PCE)\nincreased $36.3 billion (0.2 percent).\nPersonal outlays\n—the sum of PCE, personal interest payments, and personal current transfer payments—increased $36.6 billion in July.\nPersonal saving\nwas $712.0 billion in July, and the\npersonal saving rate\n—personal saving as a percentage of DPI—was 3.0 percent.",
+        "claim_kind": "fact",
+        "source_status": "revised"
+      },
+      "symbols": [
+        "AVGO",
+        "CASH",
+        "GLD",
+        "META",
+        "NVDA",
+        "PLTR"
+      ],
+      "summary": "文件指出：BEA 估計 2026 年 7 月個人所得增加 115.1B 美元（按月化成長 0.4%）；可支配所得（DPI）增加 125.9B 美元（0.5%）；個人消費支出（PCE）增加 36.3B 美元（0.2%）。同時，個人儲蓄為 712.0B 美元，儲蓄率為 DPI 的 3.0%。",
+      "market_relevance": "消費與收入的按月變化可作為短期需求動能的宏觀線索，可能間接影響與消費/服務相關產業的景氣預期。",
+      "interpretation": "untrusted_observation"
+    },
+    {
+      "evidence_id": "official-dbfd185ba2a4d63a1f569577fdb621dd",
       "source_url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
       "published_at": null,
       "available_at": "2026-08-27T04:00:00Z",
       "retrieval": {
         "document_id": "9bc4950664f1773de163da3dd9058b9373a2a553b8e772949ad5899a0c0436dc",
-        "content_hash": "d3bb05b15118b65b9866f38d1230cc918c76292a14ed47b0404dbed28608389a",
+        "content_hash": "282f517583f249b35d4e497b64c8370439b42034e31fc0f31481753740e73c70",
         "source_query": "https://nvidianews.nvidia.com/news?q=earnings",
         "source_type": "company_ir",
         "authority": "official",
-        "retrieved_at": "2026-09-13T14:28:12.703080Z",
+        "retrieved_at": "2026-09-15T15:05:03.581167Z",
         "publication_date": "2026-08-26",
         "publication_precision": "date",
         "available_at": "2026-08-27T04:00:00Z",
-        "content_locator": "已讀 HTML 全文後節選；字元區間：0:6000,8397:11914,18532:22039,24135:27642",
-        "excerpt": "NVIDIA’s outlook for the third quarter of fiscal 2027 is as follows:\nRevenue is expected to be $108.0 billion, plus or minus 2%. NVIDIA is not assuming any Data Center compute revenue from China in its outlook.\nGAAP and non-GAAP gross margins are expected to be 74.0%, plus or minus 50 basis points.\nGAAP and non-GAAP operating expenses are expected to be approximately $9.2 billion and $9.0 billion, respectively.",
+        "content_locator": "已讀 HTML 全文後節選；字元區間：0:6000,8397:11914,18532:22039,24103:27610",
+        "excerpt": "NVIDIA’s outlook for the third quarter of fiscal 2027 is as follows:\nRevenue is expected to be $108.0 billion, plus or minus 2%. NVIDIA is not assuming any Data Center compute revenue from China in its outlook.\nGAAP and non-GAAP gross margins are expected to be 74.0%, plus or minus 50 basis points.",
         "claim_kind": "company_guidance",
         "source_status": "current"
       },
       "symbols": [
         "NVDA"
       ],
-      "summary": "文件載明 NVIDIA 對第三季（fiscal 2027 第三季）營收預期為 1,080 億美元（±2%）；GAAP 與非 GAAP 毛利率預期為 74.0%（±50 bps）；並預期 GAAP 營業費用約 92 億美元、非 GAAP 約 90 億美元。",
-      "market_relevance": "公司給出的季度展望對短期估值與預期路徑具有指引作用，特別是營收與毛利率區間可能反映其產品/平台供需強度與成本結構。",
+      "summary": "文件指出：NVIDIA 預期 FY2027 第三季營收為 108.0B 美元（±2%）；GAAP 與非 GAAP 毛利率預期為 74.0%（±50bps）。",
+      "market_relevance": "公司提供的 Q3 營收與毛利率區間可作為短期經營動能與利潤率假設的依據，投資人通常會據此評估需求/供給節奏及成本結構變化，但不等同於市場共識或當期股價走勢。",
       "interpretation": "untrusted_observation"
     }
   ],

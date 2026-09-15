@@ -440,6 +440,14 @@ export function bootstrapDashboard(root, payload, base) {
     return labels[value] || String(value || "未分類");
   };
 
+  const leaderboardStatusLabel = (item) => {
+    const pending = Math.max(Number(item.participation_calls) - Number(item.evaluated_calls), 0);
+    if (item.evaluated_calls) {
+      return `評估樣本累積中（已評估 ${item.evaluated_calls}，待評估 ${pending}）`;
+    }
+    return `尚無可驗證結果（待評估 ${pending}）`;
+  };
+
   const info = (label, description) => `
     <details class="info-popover">
       <summary aria-label="${escapeHtml(label)}說明"><span aria-hidden="true">ⓘ</span></summary>
@@ -712,11 +720,11 @@ export function bootstrapDashboard(root, payload, base) {
                   <tr>
                     <th>排名</th>
                     <th>研究員</th>
-                    <th>參與${info("參與", "提交結構化研究提案的次數。")}</th>
-                    <th>命中／已評估${info("命中與已評估", "以相鄰研究期的市場方向評估；不是個別標的或實際交易的獲利勝率。")}</th>
-                    <th>命中率${info("命中率", "命中數除以已評估次數。尚無後續市場資料時不能計算，也不顯示為零。")}</th>
-                    <th>平均信心${info("平均信心", "研究員提交提案時的平均自評信心，非機率預測或績效保證。")}</th>
-                    <th>狀態${info("評估狀態", "表示可驗證結果的累積情況，不會改變配置或投票權重。")}</th>
+                    <th>提案數${info("提案數", "提交結構化研究提案的累計次數；它不等於已產生市場結果的次數。")}</th>
+                    <th>方向命中／已評估${info("方向命中／已評估", "以相鄰研究期的市場方向評估，左側是方向判斷符合的次數，右側是已有後續市場快照可評估的次數；不是個別標的或實際交易的獲利勝率。")}</th>
+                    <th>方向命中率${info("方向命中率", "方向命中數除以已評估次數。尚無後續市場快照時無法計算，會顯示不可用而不是 0%。")}</th>
+                    <th>平均自評信心${info("平均自評信心", "研究員提交提案時的平均自評信心；它不是機率預測，也不代表已驗證的績效。")}</th>
+                    <th>評估狀態${info("評估狀態", "「待評估」是已有提案但尚未有下一個相鄰市場快照的次數。狀態只說明樣本累積，不會改變投票權重或配置決策。")}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -727,10 +735,10 @@ export function bootstrapDashboard(root, payload, base) {
                           <td>${escapeHtml(item.rank)}</td>
                           <td>${agentLink(item.agent)}</td>
                           <td>${escapeHtml(item.participation_calls)}</td>
-                          <td>${item.evaluated_calls ? `${escapeHtml(item.correct_calls)} / ${escapeHtml(item.evaluated_calls)}` : "尚無結果"}</td>
+                          <td>${item.evaluated_calls ? `${escapeHtml(item.correct_calls)} / ${escapeHtml(item.evaluated_calls)}` : "尚無可驗證結果"}</td>
                           <td>${statistic(item.hit_rate_percent, "%")}</td>
                           <td>${statistic(item.average_confidence)}</td>
-                          <td><span class="research-status ${escapeHtml(item.status)}">${escapeHtml(researchStatusLabel(item.status))}</span></td>
+                          <td><span class="research-status ${escapeHtml(item.status)}">${escapeHtml(leaderboardStatusLabel(item))}</span></td>
                         </tr>`,
                     )
                     .join("")}
