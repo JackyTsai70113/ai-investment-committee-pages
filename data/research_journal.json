@@ -1,39 +1,39 @@
 {
   "schema_version": "1.0",
-  "journal_id": "audit-20260726T072038Z",
-  "generated_at": "2026-07-26T07:20:38.640083Z",
-  "data_cutoff": "2026-07-25T10:00:20.353794Z",
+  "journal_id": "audit-20260915T175808Z",
+  "generated_at": "2026-09-15T17:59:04.477165Z",
+  "data_cutoff": "2026-09-15T17:57:51.248788Z",
   "readiness": "not_ready",
-  "readiness_summary": "先看市場走勢，再看目前配置與風險；需要調整時，會把原因說清楚。",
+  "readiness_summary": "先看市場走勢，再看模擬配置比例與風險；需要調整時，會把原因說清楚。",
   "performance": {
-    "last_completed_evaluation_at": "2026-07-25T10:00:20.353794Z",
-    "last_completed_value_usd": "6055.77",
-    "last_completed_return_percent": "0.9295",
-    "provisional_intraday_at": "2026-07-25T10:00:20.353794Z",
-    "provisional_intraday_value_usd": "6055.77",
-    "provisional_intraday_return_percent": "0.9295",
+    "last_completed_evaluation_at": "2026-09-15T15:04:45.252167Z",
+    "last_completed_value_usd": "5827.22",
+    "last_completed_return_percent": "-2.8797",
+    "provisional_intraday_at": "2026-09-15T15:04:45.252167Z",
+    "provisional_intraday_value_usd": "5827.22",
+    "provisional_intraday_return_percent": "-2.8797",
     "provisional_period_return_percent": "0",
     "sample_assessment": "too_early",
-    "methodology": "這條線呈現研究配置的假設走勢，幫助比較調整前後的變化。"
+    "methodology": "這條線呈現模擬配置的標準化走勢，幫助比較調整前後的比例變化。"
   },
   "assumptions": [
     {
       "hypothesis_id": "H1",
-      "statement": "這個配置是否仍符合現在的市場走勢與風險？",
+      "statement": "這個模擬配置比例是否仍符合現在的市場走勢與風險？",
       "observable_test": "比較最新價格、配置比例與風險訊號。",
-      "status": "untested",
+      "status": "supported",
       "evidence": "若走勢明顯改變，就重新檢查配置。"
     },
     {
       "hypothesis_id": "H2",
-      "statement": "這個配置是否仍符合現在的市場走勢與風險？",
+      "statement": "這個模擬配置比例是否仍符合現在的市場走勢與風險？",
       "observable_test": "比較最新價格、配置比例與風險訊號。",
-      "status": "untested",
+      "status": "partially_tested",
       "evidence": "若走勢明顯改變，就重新檢查配置。"
     },
     {
       "hypothesis_id": "H3",
-      "statement": "這個配置是否仍符合現在的市場走勢與風險？",
+      "statement": "這個模擬配置比例是否仍符合現在的市場走勢與風險？",
       "observable_test": "比較最新價格、配置比例與風險訊號。",
       "status": "supported",
       "evidence": "若走勢明顯改變，就重新檢查配置。"
@@ -42,13 +42,7 @@
   "validations": [
     {
       "claim": "目前配置是否需要立即調整？",
-      "result": "challenged",
-      "evidence": "先看價格、風險與配置是否一起改變，再決定是否調整。",
-      "source_urls": []
-    },
-    {
-      "claim": "目前配置是否需要立即調整？",
-      "result": "too_early",
+      "result": "supported",
       "evidence": "先看價格、風險與配置是否一起改變，再決定是否調整。",
       "source_urls": []
     },
@@ -56,9 +50,13 @@
       "claim": "目前配置是否需要立即調整？",
       "result": "challenged",
       "evidence": "先看價格、風險與配置是否一起改變，再決定是否調整。",
-      "source_urls": [
-        "https://www.investor.gov/build-wealth-over-time-through-saving-and-investing"
-      ]
+      "source_urls": []
+    },
+    {
+      "claim": "目前配置是否需要立即調整？",
+      "result": "challenged",
+      "evidence": "先看價格、風險與配置是否一起改變，再決定是否調整。",
+      "source_urls": []
     }
   ],
   "lessons": [
@@ -74,23 +72,21 @@
       "source_urls": []
     },
     {
-      "priority": "P0",
+      "priority": "P1",
       "gap": "重新檢查目前配置",
       "action": "出現明顯市場變化時，檢查價格、風險與配置比例。",
       "acceptance_test": "每次調整都能清楚說明原因與影響。",
       "source_urls": []
     },
     {
-      "priority": "P0",
+      "priority": "P1",
       "gap": "重新檢查目前配置",
       "action": "出現明顯市場變化時，檢查價格、風險與配置比例。",
       "acceptance_test": "每次調整都能清楚說明原因與影響。",
-      "source_urls": [
-        "https://www.investor.gov/build-wealth-over-time-through-saving-and-investing"
-      ]
+      "source_urls": []
     }
   ],
   "warnings": [
-    "研究走勢用於理解策略變化，不等同於個人帳戶或交易成果。"
+    "研究走勢用於理解模擬策略變化，不等同於個人帳戶或交易成果。"
   ]
 }

@@ -1,60 +1,60 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-04T06:05:19.650993Z",
-  "data_cutoff": "2026-09-04T05:32:18.129687Z",
+  "generated_at": "2026-09-15T17:59:04.477165Z",
+  "data_cutoff": "2026-09-15T17:57:51.248788Z",
   "portfolio_health": {
-    "score": 72,
-    "grade": "stable",
-    "summary": "以下分數整理本輪配置的分散、槓桿、流動性與研究一致性。",
+    "score": 54,
+    "grade": "caution",
+    "summary": "以下分數整理本輪模擬配置的分散、槓桿、流動性與研究一致性。",
     "decision_readiness": "research_only",
-    "decision_readiness_explanation": "先看配置與風險，再從假設策略走勢了解本輪研究。",
+    "decision_readiness_explanation": "先看配置比例與風險，再從假設策略走勢了解本輪研究。",
     "components": [
       {
         "component": "穿透曝險檢核",
         "score": 0,
         "maximum": 20,
-        "explanation": "這項分數反映本輪研究配置的風險狀況。"
+        "explanation": "這項分數反映本輪模擬配置的風險狀況。"
       },
       {
         "component": "流動性",
-        "score": 20,
+        "score": 8,
         "maximum": 20,
-        "explanation": "這項分數反映本輪研究配置的風險狀況。"
+        "explanation": "這項分數反映本輪模擬配置的風險狀況。"
       },
       {
         "component": "槓桿／反向曝險",
         "score": 20,
         "maximum": 20,
-        "explanation": "這項分數反映本輪研究配置的風險狀況。"
+        "explanation": "這項分數反映本輪模擬配置的風險狀況。"
       },
       {
         "component": "管線可靠性",
         "score": 20,
         "maximum": 20,
-        "explanation": "這項分數反映本輪研究配置的風險狀況。"
+        "explanation": "這項分數反映本輪模擬配置的風險狀況。"
       },
       {
-        "component": "分析證據與共識",
-        "score": 12,
+        "component": "研究證據準備程度",
+        "score": 6,
         "maximum": 20,
-        "explanation": "這項分數反映本輪研究配置的風險狀況。"
+        "explanation": "這項分數反映本輪模擬配置的風險狀況。"
       }
     ]
   },
   "performance": {
-    "completed_points": 14,
-    "completed_intervals": 13,
-    "distinct_completed_sessions": 13,
-    "ending_value_usd": "6080.58",
-    "total_return_percent": "1.3430",
-    "net_ending_value_usd": "6079.45",
-    "net_total_return_percent": "1.3242",
-    "net_maximum_drawdown_percent": "-0.9700",
-    "cumulative_turnover": "0.6000",
+    "completed_points": 20,
+    "completed_intervals": 19,
+    "distinct_completed_sessions": 19,
+    "ending_value_usd": "5827.22",
+    "total_return_percent": "-2.8797",
+    "net_ending_value_usd": "5822.45",
+    "net_total_return_percent": "-2.9592",
+    "net_maximum_drawdown_percent": "-5.1456",
+    "cumulative_turnover": "1.8726",
     "benchmark_status": "ready",
-    "maximum_drawdown_percent": "-0.9700",
-    "sharpe_ratio": "3.0821",
-    "win_rate_percent": "53.8462",
+    "maximum_drawdown_percent": "-5.0679",
+    "sharpe_ratio": "-2.9021",
+    "win_rate_percent": "47.3684",
     "sample_status": "provisional",
     "methodology": "這些數字協助閱讀假設策略走勢與可能承受的下跌幅度。"
   },
@@ -74,21 +74,21 @@
       "VTI"
     ],
     "benchmark_status": "ready",
-    "synchronized_completed_sessions": 13,
+    "synchronized_completed_sessions": 19,
     "comparison_start_session": "2026-07-23",
-    "comparison_end_session": "2026-09-03",
-    "strategy_comparison_return_percent": "0.6025",
-    "primary_benchmark_return_percent": "4.0939",
+    "comparison_end_session": "2026-09-15",
+    "strategy_comparison_return_percent": "-3.6503",
+    "primary_benchmark_return_percent": "2.5712",
     "strongest_benchmark_symbol": "SPY",
-    "strongest_benchmark_return_percent": "4.0939",
-    "excess_return_vs_strongest_benchmark_percent": "-3.4913",
-    "latest_monthly_strategy_return_percent": "1.0568",
-    "latest_monthly_strongest_benchmark_return_percent": "7.2739",
-    "latest_monthly_excess_return_percent": "-6.2171",
+    "strongest_benchmark_return_percent": "2.5712",
+    "excess_return_vs_strongest_benchmark_percent": "-6.2215",
+    "latest_monthly_strategy_return_percent": "-4.2456",
+    "latest_monthly_strongest_benchmark_return_percent": "3.0061",
+    "latest_monthly_excess_return_percent": "-7.2517",
     "monthly_pace_status": "gross_below_both_hurdles",
-    "latest_annual_strategy_return_percent": "13.4447",
-    "latest_annual_strongest_benchmark_return_percent": "132.2367",
-    "latest_annual_excess_return_percent": "-118.7920",
+    "latest_annual_strategy_return_percent": "-40.5838",
+    "latest_annual_strongest_benchmark_return_percent": "42.6777",
+    "latest_annual_excess_return_percent": "-83.2615",
     "annual_pace_status": "gross_below_both_hurdles",
     "methodology": "SPY 用來作為市場走勢的閱讀參考。"
   },
@@ -235,6 +235,6 @@
     "VTI"
   ],
   "warnings": [
-    "研究配置與風險會隨市場變化更新。"
+    "模擬研究配置與風險會隨市場變化更新。"
   ]
 }

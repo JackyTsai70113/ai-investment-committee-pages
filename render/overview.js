@@ -69,9 +69,18 @@ export function bootstrapDashboard(root, payload, base) {
 
   const { agentProfiles: loadedAgentProfiles, committeeRendererFactory } = payload;
   const agentProfiles = loadedAgentProfiles || {};
+  const simulationCapitalExamples = [4000, 6000, 10000];
   const toNumber = (value) => {
     const parsed = Number(value);
     return Number.isFinite(parsed) ? parsed : null;
+  };
+  const simulationCapital = (value) => {
+    const parsed = toNumber(value);
+    return parsed && parsed > 0 ? parsed : null;
+  };
+  const simulatedMoney = (fraction, capital) => {
+    const parsed = toNumber(fraction);
+    return parsed === null || capital === null ? "輸入本金後換算" : money(parsed * capital);
   };
 
   const findQuote = (market, symbol) =>
@@ -506,11 +515,13 @@ export function bootstrapDashboard(root, payload, base) {
     const policyReasons = (recommendation.top_reasons || []).filter(
       (reason) => reason.reason_type === "policy_explanation",
     );
+    const actionLabel = (action) =>
+      ({ increase: "加碼", hold: "維持", reduce: "減碼", exit: "退出" }[action] || "檢視");
     const reasonActions = (reason) => Object.entries(reason.final_action || {}).map(
       ([symbol, action]) => {
         const weight = (reason.final_weight || {})[symbol];
         const weightLabel = weight == null ? "權重未提供" : percent(weight);
-        return `${symbolLink(symbol)} ${escapeHtml({ increase: "加碼", hold: "維持", reduce: "減碼", exit: "退出" }[action] || "檢視")} ${escapeHtml(weightLabel)}`;
+        return `${symbolLink(symbol)} ${escapeHtml(actionLabel(action))} ${escapeHtml(weightLabel)}`;
       },
     ).join("、");
     const reasonSourceLabel = (reason) => reason.reason_type === "investment_evidence"
@@ -527,22 +538,295 @@ export function bootstrapDashboard(root, payload, base) {
         <div class="reason-meta"><span>${escapeHtml(decisionLabel(reason.category))}</span><span>${reasonSourceLabel(reason)}</span></div>
         ${renderSourceLinks(reason.source_urls)}
       </article>`;
-    const riskPlans = (recommendation.position_risk_plans || []).filter(
-      (plan) => plan.status !== "exempt",
+    const artifactSource = (artifactRef) => {
+      const policyMatch = String(artifactRef || "").match(/committee\.json#\/policy_override_notes\/(\d+)/);
+      if (policyMatch) {
+        const index = Number(policyMatch[1]);
+        return {
+          label: `來源：風控紀錄 ${index + 1}`,
+          note: committee.policy_override_notes?.[index] || "",
+          href: `${dataBase}/data/committee_summary.json`,
+        };
+      }
+      if (String(artifactRef || "").includes("effective_risk_profile")) {
+        return {
+          label: "來源：有效風險設定",
+          note: "",
+          href: `${dataBase}/data/committee_summary.json`,
+        };
+      }
+      return {
+        label: `來源：${String(artifactRef || "未標示")}`,
+        note: "",
+        href: `${dataBase}/data/committee_summary.json`,
+      };
+    };
+    const policyReasonSource = (reason) =>
+      (reason.artifact_refs || [])
+        .map(artifactSource)
+        .find((source) => source.note) ||
+      (reason.artifact_refs || []).map(artifactSource)[0] ||
+      { label: "來源：最終推薦", note: "", href: `${dataBase}/data/recommendation.json` };
+    const readablePolicyNote = (note) => String(note || "")
+      .replace("Position-risk shadow:", "部位風險影子紀錄：")
+      .replace("Position-risk shadow warning:", "部位風險影子警示：")
+      .replace("Exposure shadow warning:", "共同曝險影子警示：")
+      .replace("Exposure shadow:", "共同曝險影子紀錄：")
+      .replace("correlation cluster", "相關性群組")
+      .replace("weight", "權重")
+      .replace("exceeds", "高於");
+    const affectedPolicyAssets = (reason) => {
+      const symbols = reason.affected_assets?.length
+        ? reason.affected_assets
+        : Object.keys(reason.final_action || {});
+      return symbols.length
+        ? symbols.map((symbol) => `<span class="ticker-chip">${symbolLink(symbol)}</span>`).join("")
+        : '<span class="muted-copy">未標示特定標的，視為整體配置風險。</span>';
+    };
+    const policyImpact = (reason) => {
+      const entries = Object.entries(reason.final_action || {});
+      if (!entries.length) return "本輪沒有記錄配置動作；以最終推薦權重為準。";
+      const changed = entries.filter(([, action]) => action !== "hold");
+      if (!changed.length) return "本輪沒有新增買賣動作；受影響配置維持在最終目標比例。";
+      return `本輪動作：${changed.map(([symbol, action]) => {
+        const weight = (reason.final_weight || {})[symbol];
+        const weightText = weight == null ? "權重未提供" : percent(weight);
+        return `${symbolLink(symbol)} ${escapeHtml(actionLabel(action))} ${escapeHtml(weightText)}`;
+      }).join("、")}。`;
+    };
+    const policyActionTaken = (reason, sourceNote) => {
+      const text = `${reason.title || ""} ${reason.summary || ""} ${sourceNote || ""}`.toLowerCase();
+      if (text.includes("shadow") || text.includes("影子")) {
+        return "列為影子風險紀錄，未啟用硬性限制；這表示資料或政策尚未達到阻擋條件。";
+      }
+      if (text.includes("硬性") || text.includes("binding")) {
+        return "列入硬性限制或可檢查約束；最終配置必須遵守這項條件。";
+      }
+      return "列為風控檢查紀錄；是否交易仍以最終配置與再平衡指示為準。";
+    };
+    const policyDisplayTitle = (reason, sourceNote) => {
+      const original = reason.title || "本輪風控檢查紀錄";
+      if (!["本輪研究風險警示", "本輪風控檢查紀錄"].includes(original)) return original;
+      if (sourceNote.includes("部位風險")) return "部位風險影子警示";
+      if (sourceNote.includes("共同曝險")) return "共同曝險影子警示";
+      if (sourceNote.includes("硬性") || sourceNote.toLowerCase().includes("binding")) {
+        return "風控硬性限制";
+      }
+      return original;
+    };
+    const policyResidualRisk = (sourceNote) =>
+      sourceNote
+        ? "未量化、超出門檻或缺少同口徑資料的部分仍存在；沒有啟用硬性限制不代表風險為零。"
+        : "來源未提供完整量化輸入；未顯示限制不代表沒有風險。";
+    const policyReviewCondition = (reason) => {
+      const invalidations = recommendation.invalidation_conditions || [];
+      if (invalidations.length) return invalidations.slice(0, 2).map(escapeHtml).join("；");
+      return "下一輪資料更新、風控政策觸發或來源證據改變時重新檢視。";
+    };
+    const policyReasonKey = (reason) => {
+      const source = policyReasonSource(reason);
+      return JSON.stringify([
+        reason.title || "",
+        reason.summary || "",
+        source.note || "",
+        Object.entries(reason.final_action || {}),
+        Object.entries(reason.final_weight || {}),
+      ]);
+    };
+    const uniquePolicyReasons = [];
+    const seenPolicyReasons = new Set();
+    for (const reason of policyReasons) {
+      const key = policyReasonKey(reason);
+      if (seenPolicyReasons.has(key)) continue;
+      seenPolicyReasons.add(key);
+      uniquePolicyReasons.push(reason);
+    }
+    const renderArtifactLinks = (reason) => {
+      const sources = (reason.artifact_refs || []).map(artifactSource);
+      const unique = [];
+      const seen = new Set();
+      for (const source of sources) {
+        const key = `${source.label}|${source.href}`;
+        if (seen.has(key)) continue;
+        seen.add(key);
+        unique.push(source);
+      }
+      if (!unique.length) return '<span class="muted-copy">來源未標示</span>';
+      return unique.map((source) => (
+        `<a href="${escapeHtml(source.href)}" target="_blank" rel="noopener noreferrer">${escapeHtml(source.label)}</a>`
+      )).join("");
+    };
+    const policyReasonCard = (reason, index) => {
+      const source = policyReasonSource(reason);
+      const sourceNote = readablePolicyNote(source.note);
+      const trigger = sourceNote || reason.summary || "本輪有風控紀錄，但缺少可讀來源摘要。";
+      return `
+        <article class="reason-card risk-policy-card">
+          <span class="reason-number">${String(index + 1).padStart(2, "0")}</span>
+          <h3>${escapeHtml(policyDisplayTitle(reason, sourceNote))}</h3>
+          <dl class="risk-policy-list">
+            <div>
+              <dt>風險／觸發原因</dt>
+              <dd>${glossaryText(trigger)}</dd>
+            </div>
+            <div>
+              <dt>受影響標的或配置</dt>
+              <dd class="ticker-chip-list">${affectedPolicyAssets(reason)}</dd>
+            </div>
+            <div>
+              <dt>對本輪決策的實際影響</dt>
+              <dd>${policyImpact(reason)}</dd>
+            </div>
+            <div>
+              <dt>已採取動作</dt>
+              <dd>${escapeHtml(policyActionTaken(reason, sourceNote))}</dd>
+            </div>
+            <div>
+              <dt>未消除的剩餘風險</dt>
+              <dd>${escapeHtml(policyResidualRisk(sourceNote))}</dd>
+            </div>
+            <div>
+              <dt>重新檢視條件</dt>
+              <dd>${policyReviewCondition(reason)}</dd>
+            </div>
+          </dl>
+          <details class="risk-policy-details">
+            <summary>查看來源與完整配置</summary>
+            <p>${escapeHtml(reason.summary || "未提供補充摘要。")}</p>
+            <p class="risk-policy-source-links">${renderArtifactLinks(reason)}</p>
+            ${Object.keys(reason.final_action || {}).length ? `<p>最終配置：${reasonActions(reason)}</p>` : ""}
+          </details>
+        </article>`;
+    };
+    const riskPlans = recommendation.position_risk_plans || [];
+    const allocationBySymbol = new Map(
+      (recommendation.allocations || []).map((item) => [item.symbol, item]),
+    );
+    const rebalanceBySymbol = new Map(
+      (rebalance.instructions || []).map((item) => [item.symbol, item]),
     );
     const hasNewTrade = (rebalance.instructions || []).some(
       (instruction) => instruction.action !== "hold",
     );
-    const riskPlanStatus = (plan) =>
-      plan.status === "quantified" ? "已量化" : "未量化（不可視為零風險）";
-    const riskPlanValues = (plan) =>
-      plan.status === "quantified"
-        ? {
-            base: `${money(plan.base_loss_usd)} (${percent(plan.base_loss_fraction)})`,
-            reference: `${money(plan.reference_price)} / ${money(plan.invalidation_price)}`,
-            stress: `${money(plan.stress_loss_usd)} (${percent(plan.stress_gap_percent)})`,
-          }
-        : { base: "未量化", reference: "未量化", stress: "未量化" };
+    const ratioFromUsd = (value, capital) => {
+      const parsed = toNumber(value);
+      const denominator = toNumber(capital);
+      return parsed === null || denominator === null || denominator <= 0 ? null : parsed / denominator;
+    };
+    const signedPercent = (value) => {
+      const parsed = toNumber(value);
+      if (parsed === null) return "未提供";
+      if (Math.abs(parsed) < 0.0000001) return "0%";
+      return `${parsed > 0 ? "+" : ""}${percent(parsed)}`;
+    };
+    const riskActionLabel = (action) => ({
+      add: "加碼",
+      increase: "加碼",
+      hold: "維持",
+      reduce: "減碼",
+      exit: "退出",
+    }[action] || "檢視");
+    const riskMethodology = (plan) => {
+      const methodology = String(plan.methodology || "");
+      if (plan.status === "exempt") {
+        return {
+          reason: "現金不適用價格失效估算。",
+          requirement: "若現金轉為風險資產，才需要報價與失效條件。",
+        };
+      }
+      if (methodology.includes("Zero target allocation")) {
+        return {
+          reason: "本輪目標比例為 0%，沒有新增風險預算。",
+          requirement: "若重新配置為風險資產，需提供報價與失效條件。",
+        };
+      }
+      if (methodology.includes("Missing or non-positive market quote")) {
+        return {
+          reason: "缺少可用市場報價或報價不是正數。",
+          requirement: "需要同一資料截止時間的有效參考價。",
+        };
+      }
+      if (methodology.includes("stale")) {
+        return {
+          reason: "報價逾時，不符合 position_risk_gate 的新鮮度要求。",
+          requirement: "需要未逾時的參考價與時間戳。",
+        };
+      }
+      if (methodology.includes("Event/thesis")) {
+        return {
+          reason: "失效條件為事件或論點，尚無可檢查價格界線。",
+          requirement: "需要明確失效價或保守價格代理，才會計算基本損失。",
+        };
+      }
+      if (methodology.includes("not below")) {
+        return {
+          reason: "失效價未低於多頭參考價，不能形成保守損失估算。",
+          requirement: "需要低於參考價的失效價或改列非價格型失效。",
+        };
+      }
+      if (plan.status === "quantified") {
+        return {
+          reason: "已使用參考價、失效價與政策跳空壓力估算。",
+          requirement: "若報價或失效價改變，下一輪重新計算。",
+        };
+      }
+      return {
+        reason: "資料不足，維持 fail-closed。",
+        requirement: "需要可驗證報價、時間戳與失效條件。",
+      };
+    };
+    const riskInputSummary = (plan) => {
+      if (plan.status === "exempt") return "現金不需要價格失效輸入。";
+      if (plan.status !== "quantified") return riskMethodology(plan).reason;
+      return `參考價 ${money(plan.reference_price)}，失效價 ${money(plan.invalidation_price)}，資料 ${dateTime(plan.reference_timestamp)}`;
+    };
+    const riskStatusLabel = (plan) => {
+      if (plan.status === "quantified") return "已量化";
+      if (plan.status === "exempt") return "免估算";
+      return "未量化";
+    };
+    const riskPlanCard = (plan) => {
+      const allocation = allocationBySymbol.get(plan.symbol) || {};
+      const instruction = rebalanceBySymbol.get(plan.symbol) || {};
+      const previousWeight = ratioFromUsd(instruction.previous_target_usd, rebalance.capital_usd);
+      const currentWeight = toNumber(allocation.target_weight);
+      const change = previousWeight === null || currentWeight === null ? null : currentWeight - previousWeight;
+      const methodology = riskMethodology(plan);
+      const statusClass = plan.status === "quantified" ? "quantified" : plan.status === "exempt" ? "exempt" : "unquantified";
+      const invalidation = plan.invalidation_type === "price" && plan.invalidation_price
+        ? `價格低於 ${money(plan.invalidation_price)} 時重新檢視。`
+        : plan.invalidation_type === "cash"
+          ? "現金配置不使用價格失效條件。"
+          : "事件或研究論點失效時重新檢視；目前沒有價格界線。";
+      const baseFraction = plan.status === "quantified" ? plan.base_loss_fraction : "";
+      const stressFraction = plan.status === "quantified" ? plan.portfolio_contribution : "";
+      return `
+        <article class="position-risk-card ${statusClass}">
+          <header>
+            <div>
+              <span class="section-kicker">${symbolLink(plan.symbol)}</span>
+              <h3>${escapeHtml(riskActionLabel(instruction.action || allocation.action || "hold"))}</h3>
+            </div>
+            <span class="risk-status">${escapeHtml(riskStatusLabel(plan))}</span>
+          </header>
+          <dl class="position-risk-grid">
+            <div><dt>前一輪目標</dt><dd>${previousWeight === null ? "未提供" : percent(previousWeight)}</dd></div>
+            <div><dt>本輪目標</dt><dd>${currentWeight === null ? "未提供" : percent(currentWeight)}</dd></div>
+            <div><dt>配置變化</dt><dd>${signedPercent(change)}</dd></div>
+            <div><dt>失效條件</dt><dd>${escapeHtml(invalidation)}</dd></div>
+            <div><dt>風險輸入</dt><dd>${escapeHtml(riskInputSummary(plan))}</dd></div>
+            <div><dt>基本損失比例</dt><dd>${plan.status === "quantified" ? percent(plan.base_loss_fraction) : "未量化"}</dd></div>
+            <div><dt>跳空壓力比例</dt><dd>${plan.status === "quantified" ? `${percent(plan.portfolio_contribution)}（政策壓力 ${percent(plan.stress_gap_percent)}）` : "未量化"}</dd></div>
+            <div><dt>所選本金換算</dt><dd data-sim-risk data-base-fraction="${escapeHtml(baseFraction)}" data-stress-fraction="${escapeHtml(stressFraction)}">${plan.status === "quantified" ? "輸入本金後換算" : "需要量化後才換算"}</dd></div>
+          </dl>
+          <details class="position-risk-details">
+            <summary>為什麼是這個狀態</summary>
+            <p>${escapeHtml(methodology.reason)}</p>
+            <p>${escapeHtml(methodology.requirement)}</p>
+            <p>這是模擬組合風險摘要，不代表真實帳戶，也不保證停損一定成交。</p>
+          </details>
+        </article>`;
+    };
     const statusLabel = "研究建議 · 研究用途";
     root.innerHTML = `
       <div class="app-shell">
@@ -573,7 +857,7 @@ export function bootstrapDashboard(root, payload, base) {
             <div class="sidebar-section-label" aria-hidden="true">已釘選</div>
             <div class="tab-strip" id="main-tab-strip" data-tab-strip role="tablist" aria-label="儀表板內容">
               <button type="button" class="tab-trigger active" data-tab-trigger data-tab-target="overview" id="tab-overview" role="tab" aria-label="總覽" aria-controls="panel-overview" aria-selected="true" tabindex="0"><span class="tab-icon" aria-hidden="true">⌂</span><span class="tab-label">總覽</span></button>
-              <button type="button" class="tab-trigger" data-tab-trigger data-tab-target="committee" id="tab-committee" role="tab" aria-label="委員會實際內容" aria-controls="panel-committee" aria-selected="false" tabindex="-1"><span class="tab-icon" aria-hidden="true">▤</span><span class="tab-label">委員會實際內容</span></button>
+              <button type="button" class="tab-trigger" data-tab-trigger data-tab-target="committee" id="tab-committee" role="tab" aria-label="委員會內容" aria-controls="panel-committee" aria-selected="false" tabindex="-1"><span class="tab-icon" aria-hidden="true">▤</span><span class="tab-label">委員會內容</span></button>
               <button type="button" class="tab-trigger" data-tab-trigger data-tab-target="agent-intel" id="tab-agent-intel" role="tab" aria-label="角色觀點" aria-controls="panel-agent-intel" aria-selected="false" tabindex="-1"><span class="tab-icon" aria-hidden="true">♙</span><span class="tab-label">角色觀點</span></button>
               <button type="button" class="tab-trigger" data-tab-trigger data-tab-target="glossary" id="tab-glossary" role="tab" aria-label="術語表" aria-controls="panel-glossary" aria-selected="false" tabindex="-1"><span class="tab-icon" aria-hidden="true">ⓘ</span><span class="tab-label">術語表</span></button>
             </div>
@@ -756,6 +1040,40 @@ export function bootstrapDashboard(root, payload, base) {
               <span class="panel-meta">建議版本 ${escapeHtml(recommendation.run_id)}</span>
             </header>
             <p class="panel-meta">${allocationScopeNote(recommendation)}</p>
+            <div class="simulation-capital-panel" aria-labelledby="simulation-capital-title">
+              <div>
+                <span class="section-kicker">本機換算</span>
+                <h3 id="simulation-capital-title">選擇模擬本金</h3>
+                <p>
+                  配置、報酬、回撤與風控判斷都以比例為準；本金只在瀏覽器中換算顯示金額，不寫入公開資料。
+                </p>
+              </div>
+              <label class="simulation-capital-input">
+                <span>模擬本金（USD）</span>
+                <input
+                  type="number"
+                  inputmode="decimal"
+                  min="1"
+                  step="100"
+                  placeholder="例如 10000"
+                  data-simulation-capital
+                  aria-describedby="simulation-capital-help"
+                />
+              </label>
+              <div class="simulation-capital-actions" aria-label="常用模擬本金">
+                ${simulationCapitalExamples
+                  .map(
+                    (value) => `
+                      <button type="button" data-simulation-capital-choice="${escapeHtml(value)}">
+                        ${escapeHtml(money(value))}
+                      </button>`,
+                  )
+                  .join("")}
+              </div>
+              <p id="simulation-capital-help" class="simulation-capital-help">
+                變更本金只改變本頁金額換算，不改變任何標的權重或研究結論。
+              </p>
+            </div>
             <div class="strategy-layout">
               <div class="allocation-visual">
                 <div class="donut" style="--donut:${escapeHtml(donut)}">
@@ -783,6 +1101,7 @@ export function bootstrapDashboard(root, payload, base) {
                     <tr>
                       <th>標的</th>
                       <th>目標比例</th>
+                      <th>所選本金換算</th>
                       <th>類型</th>
                       <th>研究／風控備註</th>
                     </tr>
@@ -794,6 +1113,7 @@ export function bootstrapDashboard(root, payload, base) {
                           <tr>
                             <td data-label="標的">${symbolLink(item.symbol)}</td>
                             <td data-label="目標比例">${percent(item.target_weight)}</td>
+                            <td data-label="所選本金換算" data-sim-amount data-weight="${escapeHtml(item.target_weight)}">輸入本金後換算</td>
                             <td data-label="類型"><span class="asset-type">${escapeHtml(assetTypeLabel(item.asset_type))}</span></td>
                             <td data-label="研究／風控備註" class="allocation-note">${glossaryText(item.note)}</td>
                           </tr>`,
@@ -804,22 +1124,16 @@ export function bootstrapDashboard(root, payload, base) {
               </div>
             </div>
             ${riskPlans.length
-              ? `<div class="table-wrap strategy-table-wrap risk-plan-table">
-                  <table>
-                    <thead><tr><th>部位風險${info("部位風險", "本輪模擬目標配置的風險摘要，不是實際券商持倉。")}</th><th>參考／失效價${info("參考與失效價", "以資料截止時的參考價及研究失效價格界線計算；事件或論點型失效沒有價格界線時會維持未量化。")}</th><th>基本損失${info("基本損失", "目標金額、參考價與失效價推算的損失估計；不是最大可能損失。")}</th><th>跳空壓力${info("跳空壓力", "依資產類型的政策壓力比例估算隔夜或事件跳空損失，不假設停損一定成交。")}</th><th>狀態${info("風險狀態", "未量化代表缺少可驗證輸入，絕不代表零風險。")}</th></tr></thead>
-                    <tbody>${riskPlans.map((plan) => {
-                      const values = riskPlanValues(plan);
-                      return `
-                      <tr>
-                        <td data-label="部位風險">${symbolLink(plan.symbol)}</td>
-                        <td data-label="參考／失效價">${escapeHtml(values.reference)}</td>
-                        <td data-label="基本損失">${escapeHtml(values.base)}</td>
-                        <td data-label="跳空壓力">${escapeHtml(values.stress)}</td>
-                        <td data-label="狀態">${escapeHtml(riskPlanStatus(plan))}</td>
-                      </tr>`;
-                    }).join("")}</tbody>
-                  </table>
-                </div>`
+              ? `<section class="position-risk-summary" aria-label="模擬配置轉換與部位風險摘要">
+                  <header>
+                    <div>
+                      <span class="section-kicker">模擬配置轉換</span>
+                      <h3>部位風險摘要 ${info("部位風險摘要", "本區比較前一輪與本輪模擬目標比例，並列出可量化與不可量化的風險輸入；不是實際券商持倉。")}</h3>
+                    </div>
+                    <p>金額只依上方所選模擬本金換算；核心判斷保存為比例與百分比。</p>
+                  </header>
+                  <div class="position-risk-cards">${riskPlans.map(riskPlanCard).join("")}</div>
+                </section>`
               : ""}
           </section>
 
@@ -835,13 +1149,13 @@ export function bootstrapDashboard(root, payload, base) {
               ${investmentReasons.length ? investmentReasons.map(reasonCard).join("") : '<p>本輪沒有可追溯的投資理由；資料不足不代表偏多或偏空。</p>'}
             </div>
           </section>
-          ${policyReasons.length ? `
+          ${uniquePolicyReasons.length ? `
           <section class="panel" id="policy-explanations" data-tab-section="overview">
             <header class="panel-header">
               <div><span class="section-kicker">風控紀錄</span><h2>風控與動作說明</h2></div>
-              <span class="panel-meta">${policyReasons.length} 項</span>
+              <span class="panel-meta">${uniquePolicyReasons.length} 項</span>
             </header>
-            <div class="reasons-grid">${policyReasons.map(reasonCard).join("")}</div>
+            <div class="reasons-grid risk-policy-grid">${uniquePolicyReasons.map(policyReasonCard).join("")}</div>
           </section>` : ""}
 
 
@@ -862,7 +1176,7 @@ export function bootstrapDashboard(root, payload, base) {
           <header class="panel-header">
             <div>
               <span class="section-kicker">委員會重播 / 完整紀錄</span>
-              <h2>委員會實際內容</h2>
+              <h2>委員會內容</h2>
             </div>
             <span class="panel-meta">${escapeHtml(decisionLabel(committee.mode))}</span>
           </header>
@@ -1086,7 +1400,7 @@ export function bootstrapDashboard(root, payload, base) {
             <header class="panel-header">
               <div>
                 <span class="section-kicker">研究走勢</span>
-                <h2>假設策略走勢：研究配置後，結果怎麼變化？</h2>
+                <h2>假設策略報酬率走勢：研究配置後，結果怎麼變化？</h2>
               </div>
             </header>
             ${buildPerformanceChart(performance.points)}
@@ -1334,6 +1648,9 @@ export function bootstrapDashboard(root, payload, base) {
 
     <footer class="footer">
       <span>資料更新 ${escapeHtml(dateTime(system.updated_at))}</span>
+      <a href="https://github.com/JackyTsai70113/ai-investment-committee/commit/${escapeHtml(system.latest_commit)}" target="_blank" rel="noopener noreferrer">
+        來源提交 ${escapeHtml(String(system.latest_commit || "").slice(0, 7))}
+      </a>
     </footer>
     </div>
   </div>
@@ -1381,6 +1698,31 @@ export function bootstrapDashboard(root, payload, base) {
         button.textContent = expanded ? "顯示更多" : "顯示更少";
       });
     });
+    const capitalInput = root.querySelector("[data-simulation-capital]");
+    const updateSimulationAmounts = () => {
+      const capital = simulationCapital(capitalInput?.value);
+      root.querySelectorAll("[data-sim-amount]").forEach((node) => {
+        node.textContent = simulatedMoney(node.dataset.weight, capital);
+      });
+      root.querySelectorAll("[data-sim-risk]").forEach((node) => {
+        if (!node.dataset.baseFraction && !node.dataset.stressFraction) {
+          node.textContent = "需要量化後才換算";
+          return;
+        }
+        const base = simulatedMoney(node.dataset.baseFraction, capital);
+        const stress = simulatedMoney(node.dataset.stressFraction, capital);
+        node.textContent = capital === null ? "輸入本金後換算" : `基本 ${base}／跳空 ${stress}`;
+      });
+    };
+    capitalInput?.addEventListener("input", updateSimulationAmounts);
+    root.querySelectorAll("[data-simulation-capital-choice]").forEach((button) => {
+      button.addEventListener("click", () => {
+        if (!capitalInput) return;
+        capitalInput.value = button.dataset.simulationCapitalChoice || "";
+        updateSimulationAmounts();
+      });
+    });
+    updateSimulationAmounts();
     installPerformanceChart(root, performance.points);
     localizeRenderedText(root);
     const loader = createDataLoader(dataBase);

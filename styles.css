@@ -1894,8 +1894,207 @@ a {
   align-items: start;
 }
 
+.simulation-capital-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(13rem, 0.34fr);
+  gap: 0.9rem 1rem;
+  align-items: end;
+  margin: 0 0 1.15rem;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0.9rem;
+  background: rgba(103, 183, 255, 0.045);
+}
+
+.simulation-capital-panel h3,
+.simulation-capital-panel p {
+  margin: 0;
+}
+
+.simulation-capital-panel h3 {
+  margin-top: 0.25rem;
+  color: var(--cream);
+  font-size: 1rem;
+}
+
+.simulation-capital-panel p {
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.55;
+}
+
+.simulation-capital-input {
+  display: grid;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.simulation-capital-input span {
+  color: var(--faint);
+  font: 650 0.72rem/1.2 ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.simulation-capital-input input {
+  width: 100%;
+  min-height: 2.4rem;
+  padding: 0.45rem 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  background: rgba(4, 12, 10, 0.72);
+  color: var(--ink);
+  font: 650 0.9rem/1.2 ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.simulation-capital-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  grid-column: 1 / -1;
+}
+
+.simulation-capital-actions button {
+  min-height: 2rem;
+  padding: 0.32rem 0.55rem;
+  border: 1px solid var(--line);
+  border-radius: 0.45rem;
+  background: transparent;
+  color: var(--acid);
+  cursor: pointer;
+  font-size: 0.72rem;
+}
+
+.simulation-capital-actions button:hover {
+  border-color: var(--acid);
+  background: rgba(199, 241, 91, 0.08);
+}
+
+.simulation-capital-help {
+  grid-column: 1 / -1;
+}
+
 .risk-plan-table {
   margin-top: 0.75rem;
+}
+
+.position-risk-summary {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 0.9rem;
+}
+
+.position-risk-summary > header {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.position-risk-summary h3 {
+  margin: 0.15rem 0 0;
+}
+
+.position-risk-summary > header p {
+  max-width: 26rem;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
+.position-risk-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.position-risk-card {
+  display: grid;
+  gap: 0.8rem;
+  min-width: 0;
+  padding: 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.018);
+}
+
+.position-risk-card.quantified {
+  border-color: rgba(126, 203, 131, 0.28);
+}
+
+.position-risk-card.unquantified {
+  border-color: rgba(255, 152, 100, 0.28);
+}
+
+.position-risk-card.exempt {
+  border-color: rgba(103, 183, 255, 0.22);
+}
+
+.position-risk-card > header {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.position-risk-card h3 {
+  margin: 0.2rem 0 0;
+  font-size: 1rem;
+}
+
+.risk-status {
+  flex: 0 0 auto;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--cream);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.position-risk-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin: 0;
+}
+
+.position-risk-grid > div {
+  min-width: 0;
+}
+
+.position-risk-grid dt {
+  color: var(--faint);
+  font: 700 0.68rem/1.25 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: 0.05em;
+}
+
+.position-risk-grid dd {
+  min-width: 0;
+  margin: 0.18rem 0 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.position-risk-details {
+  padding-top: 0.35rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.position-risk-details > summary {
+  color: var(--blue);
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.position-risk-details p {
+  margin: 0.45rem 0 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
 }
 
 .allocation-visual {
@@ -1992,7 +2191,8 @@ td {
 }
 
 .strategy-table-wrap th:last-child,
-.strategy-table-wrap td:last-child {
+.strategy-table-wrap td:last-child,
+.strategy-table-wrap .allocation-note {
   width: 44%;
   min-width: 240px;
   text-align: left;
@@ -2070,6 +2270,90 @@ td {
   color: var(--muted);
   font-size: 0.78rem;
   line-height: 1.55;
+}
+
+.risk-policy-grid {
+  align-items: stretch;
+}
+
+.risk-policy-card {
+  display: grid;
+  gap: 0.85rem;
+  min-width: 0;
+  min-height: 0;
+}
+
+.risk-policy-list {
+  display: grid;
+  gap: 0.65rem;
+  margin: 0;
+}
+
+.risk-policy-list > div {
+  display: grid;
+  gap: 0.28rem;
+  min-width: 0;
+}
+
+.risk-policy-list dt {
+  color: var(--faint);
+  font: 700 0.68rem/1.25 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: 0.06em;
+}
+
+.risk-policy-list dd {
+  min-width: 0;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.ticker-chip-list,
+.risk-policy-source-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.ticker-chip {
+  display: inline-flex;
+  max-width: 100%;
+}
+
+.risk-policy-details {
+  min-width: 0;
+  padding-top: 0.35rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.risk-policy-details > summary {
+  color: var(--blue);
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.risk-policy-details p {
+  overflow-wrap: anywhere;
+}
+
+.risk-policy-source-links a {
+  max-width: 100%;
+  padding: 0.3rem 0.45rem;
+  border: 1px solid rgba(103, 183, 255, 0.24);
+  border-radius: 999px;
+  color: var(--blue);
+  font-size: 0.74rem;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+  text-decoration: none;
+}
+
+.muted-copy {
+  color: var(--faint);
 }
 
 .reason-meta {
@@ -3239,6 +3523,7 @@ td {
 
   .strategy-layout,
   .allocation-visual,
+  .position-risk-cards,
   .risk-grid,
   .reasons-grid,
   .critique-grid,
@@ -3336,6 +3621,18 @@ td {
 
   .strategy-table-wrap {
     overflow: visible;
+  }
+
+  .simulation-capital-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .position-risk-summary > header {
+    display: grid;
+  }
+
+  .position-risk-grid {
+    grid-template-columns: 1fr;
   }
 
   .strategy-table-wrap table,

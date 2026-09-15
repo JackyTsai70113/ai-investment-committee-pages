@@ -1,0 +1,78 @@
+{
+  "data_cutoff": "2026-09-15T17:57:51.248788+00:00",
+  "files": {
+    "agent_profiles.json": {
+      "bytes": 9519,
+      "sha256": "60a237616dd3bf900e8ff5f37a7df36ebb6be716dba8ad0423ef114133a6f102"
+    },
+    "committee.json": {
+      "bytes": 96465,
+      "sha256": "8940f8a55a3fb722deb1f82c28503275395b0a6644058ada68ec47514bdc83c7"
+    },
+    "committee_summary.json": {
+      "bytes": 33342,
+      "sha256": "748bb41e0577986b36d80297ba43773bc38a90ea1ee5e274e92c707df5a2aea2"
+    },
+    "dashboard_analytics.json": {
+      "bytes": 8390,
+      "sha256": "4caba229e92a1d180b722489ec632453c116ebdb19955c640fe2998d4206a4d3"
+    },
+    "decision_snapshot.json": {
+      "bytes": 89,
+      "sha256": "40998c9bff661ceea93a3e501b58c8e596859cb6c7ec17a2f93bab942f623f60"
+    },
+    "extension_earnings_reviews.json": {
+      "bytes": 219294,
+      "sha256": "ba444d8173fb196dfed1b017f29a3c8c7501ebb02a7f68b5e81de002e9da4db7"
+    },
+    "learning.json": {
+      "bytes": 7503,
+      "sha256": "979b8109845ba155a16fdbea0b422bc2ebf36f3389227f1fa39597cbe811672c"
+    },
+    "market_intelligence.json": {
+      "bytes": 22375,
+      "sha256": "38301f4b97df9a3e227e55d9692b9d34f412020e867f28e2c4f1e08de1884bb8"
+    },
+    "market_snapshot.json": {
+      "bytes": 127001,
+      "sha256": "4096099ebeabe029441ba67dcfce2da2d4590ade53b4e294eca501bcef79e9b7"
+    },
+    "performance.json": {
+      "bytes": 8876,
+      "sha256": "499735941c5ad613c23c52306f48e1e63e30bd07873b5cb21389843f38b780cd"
+    },
+    "pipeline_health.json": {
+      "bytes": 478,
+      "sha256": "47f81d99f7afe5f24d70a1214788b6e87f3cd89f2c5a27f3731636317fed2f6d"
+    },
+    "rebalance.json": {
+      "bytes": 2480,
+      "sha256": "c55aad86f056c6dfcbaf63cea91e7017a075348179e8c76eee680cb9b76e1734"
+    },
+    "recommendation.json": {
+      "bytes": 38013,
+      "sha256": "d5a0b929793aa11f53b31bebef4f1056c668515cf3adb7ecc817509ddb1a54cc"
+    },
+    "research_extension_status.json": {
+      "bytes": 8794,
+      "sha256": "5f1f172bed7a56aa4e3885396344817501006855e27bda5c46bdf6fd6eae3318"
+    },
+    "research_journal.json": {
+      "bytes": 3673,
+      "sha256": "707f7c37d2db9e9dcf001341dc347ee9c44210ebf0711946d2194a3433d19b95"
+    },
+    "system.json": {
+      "bytes": 498,
+      "sha256": "bfe0d44e14ee2da5a68bdd2552f249e65ab440045032a26449bbbaa667caa033"
+    },
+    "thesis_book.json": {
+      "bytes": 79424,
+      "sha256": "01234de513f7d8264ceb0749bfd02232c3ac0a61f628bbb20b0ab6e860c5d891"
+    }
+  },
+  "generation_id": "20260915T175808Z",
+  "recommendation_generated_at": "2026-09-15T17:59:04.477165+00:00",
+  "recommendation_run_id": "20260915T175808Z",
+  "schema_version": "1.0",
+  "source_commit": "d104fa168ef3afc8543a3166ddd49699bf44eb87"
+}

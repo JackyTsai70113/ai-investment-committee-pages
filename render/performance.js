@@ -1,9 +1,17 @@
-import { dateTime, escapeHtml, money } from "../formatters.js";
+import { dateTime, escapeHtml } from "../formatters.js";
 
-const signedMoney = (value) => {
+const signedReturn = (value) => {
   const numeric = Number(value || 0);
   const sign = numeric > 0 ? "+" : "";
-  return `${sign}${money(numeric)}`;
+  return `${sign}${numeric.toFixed(2)}%`;
+};
+
+const pointReturnPercent = (point, initialValue) => {
+  const directReturn = Number(point?.return_percent);
+  if (Number.isFinite(directReturn)) return directReturn;
+  const value = Number(point?.value_usd);
+  const base = Number(initialValue) || value || 1;
+  return Number.isFinite(value) ? (value / base - 1) * 100 : 0;
 };
 
 export const orderPerformancePoints = (points) =>
@@ -13,7 +21,12 @@ export const orderPerformancePoints = (points) =>
       index,
       timestamp: new Date(item?.as_of).getTime(),
     }))
-    .filter(({ item, timestamp }) => Number.isFinite(Number(item?.value_usd)) && Number.isFinite(timestamp))
+    .filter(
+      ({ item, timestamp }) =>
+        (Number.isFinite(Number(item?.return_percent)) ||
+          Number.isFinite(Number(item?.value_usd))) &&
+        Number.isFinite(timestamp),
+    )
     .sort((left, right) => left.timestamp - right.timestamp || left.index - right.index)
     .map(({ item }) => item);
 
@@ -21,19 +34,19 @@ export function createPerformanceRenderer() {
   const buildChart = (points) => {
     const safePoints = orderPerformancePoints(points);
     if (safePoints.length === 0) {
-      safePoints.push({ as_of: new Date().toISOString(), value_usd: 0, profit_loss_usd: 0 });
+      safePoints.push({ as_of: new Date().toISOString(), return_percent: 0 });
     }
-    const values = safePoints.map((item) => Number(item.value_usd));
+    const initialValue = Number(safePoints.find((item) => Number.isFinite(Number(item.value_usd)))?.value_usd) || 1;
+    const values = safePoints.map((item) => pointReturnPercent(item, initialValue));
     const timestamps = safePoints.map((item) => new Date(item.as_of).getTime());
     const valueMinimum = Math.min(...values);
     const valueMaximum = Math.max(...values);
     const valuePadding = Math.max(
       (valueMaximum - valueMinimum) * 0.22,
-      valueMaximum * 0.0025,
-      10,
+      0.25,
     );
-    const minimum = Math.floor((valueMinimum - valuePadding) / 10) * 10;
-    const maximum = Math.ceil((valueMaximum + valuePadding) / 10) * 10;
+    const minimum = Math.floor((valueMinimum - valuePadding) * 10) / 10;
+    const maximum = Math.ceil((valueMaximum + valuePadding) * 10) / 10;
     const spread = Math.max(maximum - minimum, 1);
     const timeMinimum = Math.min(...timestamps);
     const timeMaximum = Math.max(...timestamps);
@@ -45,12 +58,13 @@ export function createPerformanceRenderer() {
     const plotHeight = height - padding.top - padding.bottom;
     const coordinates = safePoints.map((item, index) => {
       const timestamp = timestamps[index];
+      const pointReturn = values[index];
       const x =
         safePoints.length === 1
           ? padding.left + plotWidth / 2
           : padding.left + ((timestamp - timeMinimum) / timeSpread) * plotWidth;
       const y =
-        padding.top + ((maximum - Number(item.value_usd)) / spread) * plotHeight;
+        padding.top + ((maximum - pointReturn) / spread) * plotHeight;
       return { item, x, y };
     });
     const linePoints = coordinates.map(({ x, y }) => `${x},${y}`).join(" ");
@@ -71,12 +85,12 @@ export function createPerformanceRenderer() {
       <div class="performance-chart-shell" data-performance-chart>
         <div class="chart-tooltip" data-chart-tooltip role="status" aria-live="polite">
           <span data-chart-date>${escapeHtml(dateTime(safePoints[latestIndex].as_of))}</span>
-          <strong data-chart-value>${escapeHtml(money(safePoints[latestIndex].value_usd))}</strong>
-          <small data-chart-change>${escapeHtml(signedMoney(safePoints[latestIndex].profit_loss_usd))} vs. 起始資金</small>
+          <strong data-chart-value>${escapeHtml(signedReturn(values[latestIndex]))}</strong>
+          <small data-chart-change>相對起始模擬淨值</small>
         </div>
         <svg class="performance-chart" viewBox="0 0 ${width} ${height}" role="group" aria-labelledby="performance-chart-title performance-chart-description">
-          <title id="performance-chart-title">假設策略走勢</title>
-          <desc id="performance-chart-description">橫軸為評價時間，縱軸為策略資金總額。可使用滑鼠、觸控或鍵盤查看每一個評價點。</desc>
+          <title id="performance-chart-title">假設策略報酬率走勢</title>
+          <desc id="performance-chart-description">橫軸為評價時間，縱軸為相對起始模擬淨值的報酬率。可使用滑鼠、觸控或鍵盤查看每一個評價點。</desc>
           <defs>
             <linearGradient id="performance-area-gradient" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stop-color="#c7f15b" stop-opacity="0.3" />
@@ -87,7 +101,7 @@ export function createPerformanceRenderer() {
             .map(
               ({ value, y }) => `
                 <line x1="${padding.left}" y1="${y}" x2="${width - padding.right}" y2="${y}" class="chart-gridline" />
-                <text x="${padding.left - 14}" y="${y + 5}" text-anchor="end" class="chart-axis-label">${escapeHtml(money(value))}</text>`,
+                <text x="${padding.left - 14}" y="${y + 5}" text-anchor="end" class="chart-axis-label">${escapeHtml(signedReturn(value))}</text>`,
             )
             .join("")}
           <line x1="${padding.left}" y1="${padding.top}" x2="${padding.left}" y2="${baseline}" class="chart-axis" />
@@ -134,6 +148,7 @@ export function createPerformanceRenderer() {
     if (!svg || !hitArea || !crosshair || !activeDot || !tooltip) return;
 
     let activeIndex = safePoints.length - 1;
+    const initialValue = Number(safePoints.find((item) => Number.isFinite(Number(item.value_usd)))?.value_usd) || 1;
     const selectPoint = (index) => {
       activeIndex = Math.max(0, Math.min(safePoints.length - 1, index));
       const dot = dots[activeIndex];
@@ -148,12 +163,12 @@ export function createPerformanceRenderer() {
       tooltip.style.left = `${(x / 960) * 100}%`;
       tooltip.classList.toggle("align-right", x > 720);
       dateLabel.textContent = dateTime(point.as_of);
-      valueLabel.textContent = money(point.value_usd);
-      changeLabel.textContent = `${signedMoney(point.profit_loss_usd)} vs. 起始資金`;
+      valueLabel.textContent = signedReturn(pointReturnPercent(point, initialValue));
+      changeLabel.textContent = "相對起始模擬淨值";
       hitArea.setAttribute("aria-valuenow", String(activeIndex + 1));
       hitArea.setAttribute(
         "aria-valuetext",
-        `${dateTime(point.as_of)}，資金總額 ${money(point.value_usd)}`,
+        `${dateTime(point.as_of)}，模擬報酬率 ${signedReturn(pointReturnPercent(point, initialValue))}`,
       );
       dots.forEach((item, dotIndex) =>
         item.classList.toggle("selected", dotIndex === activeIndex),

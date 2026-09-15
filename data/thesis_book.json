@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "run_id": "20260915T150502Z",
-  "data_cutoff": "2026-09-15T15:04:45.252167Z",
+  "run_id": "20260915T175808Z",
+  "data_cutoff": "2026-09-15T17:57:51.248788Z",
   "theses": {
     "AAPL": {
       "symbol": "AAPL",
@@ -36,8 +36,8 @@
       "status": "watch",
       "conviction": 10,
       "created_at": "2026-09-10T14:30:16.414008Z",
-      "updated_at": "2026-09-15T15:04:45.252167Z",
-      "evidence_cutoff": "2026-09-15T15:04:45.252167Z",
+      "updated_at": "2026-09-15T17:57:51.248788Z",
+      "evidence_cutoff": "2026-09-15T17:57:51.248788Z",
       "pillars": [],
       "invalidators": [],
       "catalysts": []
@@ -49,8 +49,8 @@
       "status": "watch",
       "conviction": 10,
       "created_at": "2026-09-13T14:27:57.248201Z",
-      "updated_at": "2026-09-15T15:04:45.252167Z",
-      "evidence_cutoff": "2026-09-15T15:04:45.252167Z",
+      "updated_at": "2026-09-15T17:57:51.248788Z",
+      "evidence_cutoff": "2026-09-15T17:57:51.248788Z",
       "pillars": [],
       "invalidators": [],
       "catalysts": []
@@ -62,8 +62,8 @@
       "status": "watch",
       "conviction": 10,
       "created_at": "2026-09-13T14:27:57.248201Z",
-      "updated_at": "2026-09-15T15:04:45.252167Z",
-      "evidence_cutoff": "2026-09-15T15:04:45.252167Z",
+      "updated_at": "2026-09-15T17:57:51.248788Z",
+      "evidence_cutoff": "2026-09-15T17:57:51.248788Z",
       "pillars": [],
       "invalidators": [],
       "catalysts": []
@@ -75,8 +75,8 @@
       "status": "watch",
       "conviction": 10,
       "created_at": "2026-09-10T14:30:16.414008Z",
-      "updated_at": "2026-09-15T15:04:45.252167Z",
-      "evidence_cutoff": "2026-09-15T15:04:45.252167Z",
+      "updated_at": "2026-09-15T17:57:51.248788Z",
+      "evidence_cutoff": "2026-09-15T17:57:51.248788Z",
       "pillars": [],
       "invalidators": [],
       "catalysts": []
@@ -101,8 +101,8 @@
       "status": "watch",
       "conviction": 10,
       "created_at": "2026-09-10T14:30:16.414008Z",
-      "updated_at": "2026-09-15T15:04:45.252167Z",
-      "evidence_cutoff": "2026-09-15T15:04:45.252167Z",
+      "updated_at": "2026-09-15T17:57:51.248788Z",
+      "evidence_cutoff": "2026-09-15T17:57:51.248788Z",
       "pillars": [],
       "invalidators": [],
       "catalysts": []
@@ -114,8 +114,8 @@
       "status": "watch",
       "conviction": 10,
       "created_at": "2026-09-10T14:30:16.414008Z",
-      "updated_at": "2026-09-15T15:04:45.252167Z",
-      "evidence_cutoff": "2026-09-15T15:04:45.252167Z",
+      "updated_at": "2026-09-15T17:57:51.248788Z",
+      "evidence_cutoff": "2026-09-15T17:57:51.248788Z",
       "pillars": [],
       "invalidators": [],
       "catalysts": []
@@ -148,96 +148,6 @@
     }
   },
   "recent_deltas": [
-    {
-      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json:diluted_eps:2025-07-01:2026-06-30",
-      "source_version": "80270e40236f9597b5a1b49927952280b64deb5e55d53270136abc11291e560d",
-      "replaces_version": null,
-      "evidence_ids": [
-        "sec:MSFT:10-K:2026-07-29:diluted_eps:2025-07-01:2026-06-30"
-      ],
-      "impact": "neutral",
-      "affected_pillar_id": null,
-      "affected_invalidator_id": null,
-      "conviction_before": 10,
-      "conviction_after": 10,
-      "rationale": "10-K 申報的 diluted_eps 為 17.95 USD/shares，期間終點 2026-06-30。",
-      "recommended_research_action": "no_change"
-    },
-    {
-      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json:liabilities:None:2025-06-30",
-      "source_version": "7f783b7ced0a7e2e86dfb62f94146643d25da57fa3281f76dd86dbe619e2e40b",
-      "replaces_version": null,
-      "evidence_ids": [
-        "sec:MSFT:10-K:2026-07-29:liabilities:instant:2025-06-30"
-      ],
-      "impact": "neutral",
-      "affected_pillar_id": null,
-      "affected_invalidator_id": null,
-      "conviction_before": 10,
-      "conviction_after": 10,
-      "rationale": "10-K 申報的 liabilities 為 275524000000 USD，期間終點 2025-06-30。",
-      "recommended_research_action": "no_change"
-    },
-    {
-      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json:liabilities:None:2026-06-30",
-      "source_version": "d9293ac5bb342bd7d745980889a38a499cc0645e55381c3586f73ce477e20fce",
-      "replaces_version": null,
-      "evidence_ids": [
-        "sec:MSFT:10-K:2026-07-29:liabilities:instant:2026-06-30"
-      ],
-      "impact": "neutral",
-      "affected_pillar_id": null,
-      "affected_invalidator_id": null,
-      "conviction_before": 10,
-      "conviction_after": 10,
-      "rationale": "10-K 申報的 liabilities 為 315989000000 USD，期間終點 2026-06-30。",
-      "recommended_research_action": "no_change"
-    },
-    {
-      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json:net_income:2024-07-01:2025-06-30",
-      "source_version": "1565f11bb44bb4694b5381798f30b7e057fd28e88ac8551fd735097a1e5140fd",
-      "replaces_version": null,
-      "evidence_ids": [
-        "sec:MSFT:10-K:2026-07-29:net_income:2024-07-01:2025-06-30"
-      ],
-      "impact": "neutral",
-      "affected_pillar_id": null,
-      "affected_invalidator_id": null,
-      "conviction_before": 10,
-      "conviction_after": 10,
-      "rationale": "10-K 申報的 net_income 為 101832000000 USD，期間終點 2025-06-30。",
-      "recommended_research_action": "no_change"
-    },
-    {
-      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json:net_income:2025-07-01:2026-06-30",
-      "source_version": "92c39d62f578ca1fbbdd29e3b425adc66f6a4a3ef4c2819c8a426424d3bb2d12",
-      "replaces_version": null,
-      "evidence_ids": [
-        "sec:MSFT:10-K:2026-07-29:net_income:2025-07-01:2026-06-30"
-      ],
-      "impact": "neutral",
-      "affected_pillar_id": null,
-      "affected_invalidator_id": null,
-      "conviction_before": 10,
-      "conviction_after": 10,
-      "rationale": "10-K 申報的 net_income 為 133749000000 USD，期間終點 2026-06-30。",
-      "recommended_research_action": "no_change"
-    },
-    {
-      "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json:operating_cash_flow:2024-07-01:2025-06-30",
-      "source_version": "dd2c4a710b9be3ab5eeea94aa4515d1892e7be391e5f381ea67a868cfe32aa93",
-      "replaces_version": null,
-      "evidence_ids": [
-        "sec:MSFT:10-K:2026-07-29:operating_cash_flow:2024-07-01:2025-06-30"
-      ],
-      "impact": "neutral",
-      "affected_pillar_id": null,
-      "affected_invalidator_id": null,
-      "conviction_before": 10,
-      "conviction_after": 10,
-      "rationale": "10-K 申報的 operating_cash_flow 為 136162000000 USD，期間終點 2025-06-30。",
-      "recommended_research_action": "no_change"
-    },
     {
       "source_identity": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json:operating_cash_flow:2025-07-01:2026-06-30",
       "source_version": "6261d2d540f668b9a65038e5a82dfa7f9cf1a4e5e710c207425b00594af0ffa3",
@@ -897,6 +807,96 @@
       "conviction_after": 10,
       "rationale": "來源修訂；official-a453bf5819d459e30f16085d24b588c2：文件指出：FOMC 以 9–3 投票決議維持聯邦基金利率目標區間在 3-1/2% 至 3-3/4%，並持續維持銀行體系的充裕準備金。",
       "recommended_research_action": "no_change"
+    },
+    {
+      "source_identity": "e290aabba3caad80496847cfb5424b874694a37d342708327f2fa9dac0b163e6",
+      "source_version": "c9633bddfb6dbd8821e2145b601fdebb9397387c36f68161facb8de786363086",
+      "replaces_version": "93a73707a1cdf2f4fba92bf6f1a3154d59c2bc0319a9516fea5bd5eeed9908ef",
+      "evidence_ids": [
+        "research:e290aabba3caad80496847cfb5424b874694a37d342708327f2fa9dac0b163e6:AVGO:rev:c9633bddfb6dbd8821e2145b"
+      ],
+      "impact": "neutral",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 10,
+      "conviction_after": 10,
+      "rationale": "來源修訂；official-5050f4879c6ecaba497aaa21c4b9645d：文件表示：經濟活動以穩健速度擴張，但不確定性仍高，部分源於中東衝突；生產率成長與資本投資強；就業成長與勞動供給相符、失業率變化不大；通膨相對 2% 目標仍偏高，部分反映能源等部門的供給衝擊。；official-c56fac98536042076b723f844e6e0a60：文件指出：FOMC 以 9–3 表決決議維持聯邦基金利率目標區間在 3-1/2 到 3-3/4 percent；並表示將持續維持銀行體系中的「ample reserves」政策。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "source_identity": "e290aabba3caad80496847cfb5424b874694a37d342708327f2fa9dac0b163e6",
+      "source_version": "c9633bddfb6dbd8821e2145b601fdebb9397387c36f68161facb8de786363086",
+      "replaces_version": "93a73707a1cdf2f4fba92bf6f1a3154d59c2bc0319a9516fea5bd5eeed9908ef",
+      "evidence_ids": [
+        "research:e290aabba3caad80496847cfb5424b874694a37d342708327f2fa9dac0b163e6:CASH:rev:c9633bddfb6dbd8821e2145b"
+      ],
+      "impact": "neutral",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 10,
+      "conviction_after": 10,
+      "rationale": "來源修訂；official-5050f4879c6ecaba497aaa21c4b9645d：文件表示：經濟活動以穩健速度擴張，但不確定性仍高，部分源於中東衝突；生產率成長與資本投資強；就業成長與勞動供給相符、失業率變化不大；通膨相對 2% 目標仍偏高，部分反映能源等部門的供給衝擊。；official-c56fac98536042076b723f844e6e0a60：文件指出：FOMC 以 9–3 表決決議維持聯邦基金利率目標區間在 3-1/2 到 3-3/4 percent；並表示將持續維持銀行體系中的「ample reserves」政策。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "source_identity": "e290aabba3caad80496847cfb5424b874694a37d342708327f2fa9dac0b163e6",
+      "source_version": "c9633bddfb6dbd8821e2145b601fdebb9397387c36f68161facb8de786363086",
+      "replaces_version": "93a73707a1cdf2f4fba92bf6f1a3154d59c2bc0319a9516fea5bd5eeed9908ef",
+      "evidence_ids": [
+        "research:e290aabba3caad80496847cfb5424b874694a37d342708327f2fa9dac0b163e6:GLD:rev:c9633bddfb6dbd8821e2145b"
+      ],
+      "impact": "neutral",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 10,
+      "conviction_after": 10,
+      "rationale": "來源修訂；official-5050f4879c6ecaba497aaa21c4b9645d：文件表示：經濟活動以穩健速度擴張，但不確定性仍高，部分源於中東衝突；生產率成長與資本投資強；就業成長與勞動供給相符、失業率變化不大；通膨相對 2% 目標仍偏高，部分反映能源等部門的供給衝擊。；official-c56fac98536042076b723f844e6e0a60：文件指出：FOMC 以 9–3 表決決議維持聯邦基金利率目標區間在 3-1/2 到 3-3/4 percent；並表示將持續維持銀行體系中的「ample reserves」政策。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "source_identity": "e290aabba3caad80496847cfb5424b874694a37d342708327f2fa9dac0b163e6",
+      "source_version": "c9633bddfb6dbd8821e2145b601fdebb9397387c36f68161facb8de786363086",
+      "replaces_version": "93a73707a1cdf2f4fba92bf6f1a3154d59c2bc0319a9516fea5bd5eeed9908ef",
+      "evidence_ids": [
+        "research:e290aabba3caad80496847cfb5424b874694a37d342708327f2fa9dac0b163e6:META:rev:c9633bddfb6dbd8821e2145b"
+      ],
+      "impact": "neutral",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 10,
+      "conviction_after": 10,
+      "rationale": "來源修訂；official-5050f4879c6ecaba497aaa21c4b9645d：文件表示：經濟活動以穩健速度擴張，但不確定性仍高，部分源於中東衝突；生產率成長與資本投資強；就業成長與勞動供給相符、失業率變化不大；通膨相對 2% 目標仍偏高，部分反映能源等部門的供給衝擊。；official-c56fac98536042076b723f844e6e0a60：文件指出：FOMC 以 9–3 表決決議維持聯邦基金利率目標區間在 3-1/2 到 3-3/4 percent；並表示將持續維持銀行體系中的「ample reserves」政策。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "source_identity": "e290aabba3caad80496847cfb5424b874694a37d342708327f2fa9dac0b163e6",
+      "source_version": "c9633bddfb6dbd8821e2145b601fdebb9397387c36f68161facb8de786363086",
+      "replaces_version": "93a73707a1cdf2f4fba92bf6f1a3154d59c2bc0319a9516fea5bd5eeed9908ef",
+      "evidence_ids": [
+        "research:e290aabba3caad80496847cfb5424b874694a37d342708327f2fa9dac0b163e6:NVDA:rev:c9633bddfb6dbd8821e2145b"
+      ],
+      "impact": "neutral",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 10,
+      "conviction_after": 10,
+      "rationale": "來源修訂；official-5050f4879c6ecaba497aaa21c4b9645d：文件表示：經濟活動以穩健速度擴張，但不確定性仍高，部分源於中東衝突；生產率成長與資本投資強；就業成長與勞動供給相符、失業率變化不大；通膨相對 2% 目標仍偏高，部分反映能源等部門的供給衝擊。；official-c56fac98536042076b723f844e6e0a60：文件指出：FOMC 以 9–3 表決決議維持聯邦基金利率目標區間在 3-1/2 到 3-3/4 percent；並表示將持續維持銀行體系中的「ample reserves」政策。",
+      "recommended_research_action": "no_change"
+    },
+    {
+      "source_identity": "e290aabba3caad80496847cfb5424b874694a37d342708327f2fa9dac0b163e6",
+      "source_version": "c9633bddfb6dbd8821e2145b601fdebb9397387c36f68161facb8de786363086",
+      "replaces_version": "93a73707a1cdf2f4fba92bf6f1a3154d59c2bc0319a9516fea5bd5eeed9908ef",
+      "evidence_ids": [
+        "research:e290aabba3caad80496847cfb5424b874694a37d342708327f2fa9dac0b163e6:PLTR:rev:c9633bddfb6dbd8821e2145b"
+      ],
+      "impact": "neutral",
+      "affected_pillar_id": null,
+      "affected_invalidator_id": null,
+      "conviction_before": 10,
+      "conviction_after": 10,
+      "rationale": "來源修訂；official-5050f4879c6ecaba497aaa21c4b9645d：文件表示：經濟活動以穩健速度擴張，但不確定性仍高，部分源於中東衝突；生產率成長與資本投資強；就業成長與勞動供給相符、失業率變化不大；通膨相對 2% 目標仍偏高，部分反映能源等部門的供給衝擊。；official-c56fac98536042076b723f844e6e0a60：文件指出：FOMC 以 9–3 表決決議維持聯邦基金利率目標區間在 3-1/2 到 3-3/4 percent；並表示將持續維持銀行體系中的「ample reserves」政策。",
+      "recommended_research_action": "no_change"
     }
   ],
   "gaps": [
@@ -1457,27 +1457,33 @@
     ],
     "AVGO:e290aabba3caad80496847cfb5424b874694a37d342708327f2fa9dac0b163e6": [
       "5da0eaf7172d309600a8243b8f71e07060f6b36875972f03942a299224f53c1e",
-      "93a73707a1cdf2f4fba92bf6f1a3154d59c2bc0319a9516fea5bd5eeed9908ef"
+      "93a73707a1cdf2f4fba92bf6f1a3154d59c2bc0319a9516fea5bd5eeed9908ef",
+      "c9633bddfb6dbd8821e2145b601fdebb9397387c36f68161facb8de786363086"
     ],
     "CASH:e290aabba3caad80496847cfb5424b874694a37d342708327f2fa9dac0b163e6": [
       "5da0eaf7172d309600a8243b8f71e07060f6b36875972f03942a299224f53c1e",
-      "93a73707a1cdf2f4fba92bf6f1a3154d59c2bc0319a9516fea5bd5eeed9908ef"
+      "93a73707a1cdf2f4fba92bf6f1a3154d59c2bc0319a9516fea5bd5eeed9908ef",
+      "c9633bddfb6dbd8821e2145b601fdebb9397387c36f68161facb8de786363086"
     ],
     "GLD:e290aabba3caad80496847cfb5424b874694a37d342708327f2fa9dac0b163e6": [
       "5da0eaf7172d309600a8243b8f71e07060f6b36875972f03942a299224f53c1e",
-      "93a73707a1cdf2f4fba92bf6f1a3154d59c2bc0319a9516fea5bd5eeed9908ef"
+      "93a73707a1cdf2f4fba92bf6f1a3154d59c2bc0319a9516fea5bd5eeed9908ef",
+      "c9633bddfb6dbd8821e2145b601fdebb9397387c36f68161facb8de786363086"
     ],
     "META:e290aabba3caad80496847cfb5424b874694a37d342708327f2fa9dac0b163e6": [
       "5da0eaf7172d309600a8243b8f71e07060f6b36875972f03942a299224f53c1e",
-      "93a73707a1cdf2f4fba92bf6f1a3154d59c2bc0319a9516fea5bd5eeed9908ef"
+      "93a73707a1cdf2f4fba92bf6f1a3154d59c2bc0319a9516fea5bd5eeed9908ef",
+      "c9633bddfb6dbd8821e2145b601fdebb9397387c36f68161facb8de786363086"
     ],
     "NVDA:e290aabba3caad80496847cfb5424b874694a37d342708327f2fa9dac0b163e6": [
       "5da0eaf7172d309600a8243b8f71e07060f6b36875972f03942a299224f53c1e",
-      "93a73707a1cdf2f4fba92bf6f1a3154d59c2bc0319a9516fea5bd5eeed9908ef"
+      "93a73707a1cdf2f4fba92bf6f1a3154d59c2bc0319a9516fea5bd5eeed9908ef",
+      "c9633bddfb6dbd8821e2145b601fdebb9397387c36f68161facb8de786363086"
     ],
     "PLTR:e290aabba3caad80496847cfb5424b874694a37d342708327f2fa9dac0b163e6": [
       "5da0eaf7172d309600a8243b8f71e07060f6b36875972f03942a299224f53c1e",
-      "93a73707a1cdf2f4fba92bf6f1a3154d59c2bc0319a9516fea5bd5eeed9908ef"
+      "93a73707a1cdf2f4fba92bf6f1a3154d59c2bc0319a9516fea5bd5eeed9908ef",
+      "c9633bddfb6dbd8821e2145b601fdebb9397387c36f68161facb8de786363086"
     ],
     "AVGO:5895968b941e893ae940f010268634dd017bbc4c4058557676a7d36a9b08e05d": [
       "131a34937193d5631ac80c606ab233febeb7cbbb267ac6ccdaf9a091a9fee9f7"

@@ -1,6 +1,6 @@
 const sections = Object.freeze({
   overview: "總覽",
-  committee: "委員會實際內容",
+  committee: "委員會內容",
   "agent-intel": "角色觀點",
   glossary: "術語表",
 });
@@ -41,7 +41,7 @@ export function registerDashboardWebMCP(root) {
     }),
     register({
       name: "open_investment_dashboard_section",
-      description: "切換投資研究儀表板的既有區段。可選總覽、委員會實際內容、角色觀點或術語表。只改變目前畫面，不會修改任何資料或配置。",
+      description: "切換投資研究儀表板的既有區段。可選總覽、委員會內容、角色觀點或術語表。只改變目前畫面，不會修改任何資料或配置。",
       inputSchema: {
         type: "object",
         properties: {
