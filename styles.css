@@ -390,6 +390,54 @@ a {
   color: var(--acid);
 }
 
+.info-popover {
+  display: inline-block;
+  position: relative;
+  margin-inline-start: 0.3rem;
+  vertical-align: middle;
+}
+
+.info-popover summary {
+  display: inline-grid;
+  place-items: center;
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 1px solid var(--blue);
+  border-radius: 50%;
+  color: var(--blue);
+  cursor: help;
+  font-size: 0.78rem;
+  line-height: 1;
+  list-style: none;
+}
+
+.info-popover summary::-webkit-details-marker {
+  display: none;
+}
+
+.info-popover summary:hover,
+.info-popover[open] summary {
+  border-color: var(--acid);
+  color: var(--acid);
+}
+
+.info-popover-content {
+  position: absolute;
+  z-index: 10;
+  inset-inline-start: 0;
+  inset-block-start: calc(100% + 0.5rem);
+  width: min(19rem, 75vw);
+  padding: 0.7rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 0.65rem;
+  background: var(--panel);
+  box-shadow: 0 0.8rem 2rem rgb(0 0 0 / 35%);
+  color: var(--ink);
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1.55;
+}
+
 .pill {
   display: inline-flex;
   align-items: center;

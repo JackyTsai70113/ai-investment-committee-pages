@@ -419,7 +419,7 @@ export function bootstrapDashboard(root, payload, base) {
     : () => '<p class="methodology-note" role="status">完整委員會內容將在開啟此分頁時載入。</p>';
 
 
-const researchStatusLabel = (value) => {
+  const researchStatusLabel = (value) => {
   const labels = {
     untested: "尚未驗證",
     partially_tested: "部分驗證",
@@ -436,7 +436,19 @@ const researchStatusLabel = (value) => {
     review: "補充驗證",
     research_only: "補充中",
   };
+
     return labels[value] || String(value || "未分類");
+  };
+
+  const info = (label, description) => `
+    <details class="info-popover">
+      <summary aria-label="${escapeHtml(label)}說明"><span aria-hidden="true">ⓘ</span></summary>
+      <span class="info-popover-content" role="tooltip">${escapeHtml(description)}</span>
+    </details>`;
+
+  const performanceSampleLabel = (status, intervals) => {
+    if (status === "provisional") return `短期觀察中（${intervals} 個完成區間）`;
+    return "樣本已具可評估範圍";
   };
 
   const readinessLabel = (value) => {
@@ -662,21 +674,22 @@ const researchStatusLabel = (value) => {
             <div class="terminal-card-head">
               <div>
                 <span class="section-kicker">風險調整分析</span>
-                <h2>績效統計</h2>
+                <h2>績效統計 ${info("績效統計", "本區是模擬策略的完成交易日觀察值，不是實際交易結果或未來報酬保證。")}</h2>
               </div>
-              <span class="research-status ${escapeHtml(analyticsPerformance.sample_status)}">${escapeHtml(researchStatusLabel(analyticsPerformance.sample_status))}</span>
+              <span class="research-status ${escapeHtml(analyticsPerformance.sample_status)}">${escapeHtml(performanceSampleLabel(analyticsPerformance.sample_status, analyticsPerformance.completed_intervals))}</span>
             </div>
             <div class="terminal-stats">
-              <div><span>淨累積報酬（估計成本後）</span><strong>${statistic(analyticsPerformance.net_total_return_percent, "%")}</strong></div>
-              <div><span>累積報酬（未扣成本）</span><strong>${statistic(analyticsPerformance.total_return_percent, "%")}</strong></div>
-              <div><span>淨最大回撤</span><strong>${statistic(analyticsPerformance.net_maximum_drawdown_percent, "%")}</strong></div>
-              <div><span>同步 SPY／最強基準</span><strong>${statistic(returnObjective.primary_benchmark_return_percent, "%")} / ${statistic(returnObjective.strongest_benchmark_return_percent, "%")}</strong></div>
-              <div><span>超越最強基準</span><strong>${statistic(returnObjective.excess_return_vs_strongest_benchmark_percent, "%")}</strong></div>
-              <div><span>年化報酬／24%目標</span><strong>${statistic(returnObjective.latest_annual_strategy_return_percent, "%")} / ${statistic(returnObjective.annualized_target_percent, "%")}</strong></div>
-              <div><span>基準資料狀態</span><strong>${escapeHtml(returnObjective.benchmark_status === "ready" ? "可比較" : "部分資料")}</strong></div>
-              <div><span>完成交易日區間</span><strong>${escapeHtml(analyticsPerformance.distinct_completed_sessions)}</strong></div>
-              <div><span>夏普比率／日區間勝率</span><strong>${statistic(analyticsPerformance.sharpe_ratio)} / ${statistic(analyticsPerformance.win_rate_percent, "%")}</strong></div>
+              <div><span>淨累積報酬（估計成本後）${info("淨累積報酬", "從起始模擬淨值到目前的變動，扣除已建模的估計交易摩擦；稅務與未建模成本不包含在內。")}</span><strong>${statistic(analyticsPerformance.net_total_return_percent, "%")}</strong></div>
+              <div><span>累積報酬（未扣成本）${info("累積報酬", "從起始模擬淨值到目前的毛報酬率，尚未扣除交易摩擦。")}</span><strong>${statistic(analyticsPerformance.total_return_percent, "%")}</strong></div>
+              <div><span>淨最大回撤${info("淨最大回撤", "觀察期間內，淨模擬淨值從先前高點到後續低點的最大跌幅；不是最大可能損失。")}</span><strong>${statistic(analyticsPerformance.net_maximum_drawdown_percent, "%")}</strong></div>
+              <div><span>同步 SPY／最強基準${info("同步 SPY／最強基準", "SPY 是主要比較基準；最強基準是 SPY、QQQ、IWM、DIA、VTI 中同期報酬最高者。只使用與每個模擬評價點同日封存的收盤資料，缺少任一端資料就不比較。")}</span><strong>${statistic(returnObjective.primary_benchmark_return_percent, "%")} / ${statistic(returnObjective.strongest_benchmark_return_percent, "%")}</strong></div>
+              <div><span>超越最強基準${info("超越最強基準", "同期淨模擬報酬減去比較組內最強基準的報酬。這是當前觀察期的相對結果，並非未來超額報酬的保證。")}</span><strong>${statistic(returnObjective.excess_return_vs_strongest_benchmark_percent, "%")}</strong></div>
+              <div><span>年化報酬／24%目標${info("年化報酬／24%目標", "把目前同步完成交易日的淨模擬報酬換算為每年速度；24% 是研究目標，不是預測或承諾。短樣本的年化換算波動很大，不應視為年度結果。")}</span><strong>${statistic(returnObjective.latest_annual_strategy_return_percent, "%")} / ${statistic(returnObjective.annualized_target_percent, "%")}</strong></div>
+              <div><span>基準資料狀態${info("基準資料狀態", "「可比較」表示 SPY 至少有兩個與模擬評價同日封存的收盤資料，且比較組可計算；「部分資料」表示不足以做完整同期比較，數值會保留為不可用而非補零。")}</span><strong>${escapeHtml(returnObjective.benchmark_status === "ready" ? "可比較" : returnObjective.benchmark_status === "missing" ? "尚無同步資料" : "部分資料")}</strong></div>
+              <div><span>完成交易日區間${info("完成交易日區間", "相鄰兩個已完成市場交易日形成一個報酬區間；同日的重複評價與連續相同估值不重複計入。區間越少，統計數字越容易受單日波動影響。")}</span><strong>${escapeHtml(analyticsPerformance.completed_intervals)}</strong></div>
+              <div><span>夏普比率／日區間勝率${info("夏普比率／日區間勝率", "夏普比率以每日區間平均報酬、每日區間波動與一年 252 個交易日換算；勝率是正報酬區間除以全部完成區間。兩者只反映目前短樣本觀察，樣本不足或波動為零時會顯示不可用。")}</span><strong>${statistic(analyticsPerformance.sharpe_ratio)} / ${statistic(analyticsPerformance.win_rate_percent, "%")}</strong></div>
             </div>
+            <p class="methodology-note">${escapeHtml(analyticsPerformance.methodology)}</p>
           </article>
         </section>
 
@@ -699,11 +712,11 @@ const researchStatusLabel = (value) => {
                   <tr>
                     <th>排名</th>
                     <th>研究員</th>
-                    <th>參與</th>
-                    <th>命中／已評估</th>
-                    <th>命中率</th>
-                    <th>平均信心</th>
-                    <th>狀態</th>
+                    <th>參與${info("參與", "提交結構化研究提案的次數。")}</th>
+                    <th>命中／已評估${info("命中與已評估", "以相鄰研究期的市場方向評估；不是個別標的或實際交易的獲利勝率。")}</th>
+                    <th>命中率${info("命中率", "命中數除以已評估次數。尚無後續市場資料時不能計算，也不顯示為零。")}</th>
+                    <th>平均信心${info("平均信心", "研究員提交提案時的平均自評信心，非機率預測或績效保證。")}</th>
+                    <th>狀態${info("評估狀態", "表示可驗證結果的累積情況，不會改變配置或投票權重。")}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -785,7 +798,7 @@ const researchStatusLabel = (value) => {
             ${riskPlans.length
               ? `<div class="table-wrap strategy-table-wrap risk-plan-table">
                   <table>
-                    <thead><tr><th>部位風險</th><th>參考／失效價</th><th>基本損失</th><th>跳空壓力</th><th>狀態</th></tr></thead>
+                    <thead><tr><th>部位風險${info("部位風險", "本輪模擬目標配置的風險摘要，不是實際券商持倉。")}</th><th>參考／失效價${info("參考與失效價", "以資料截止時的參考價及研究失效價格界線計算；事件或論點型失效沒有價格界線時會維持未量化。")}</th><th>基本損失${info("基本損失", "目標金額、參考價與失效價推算的損失估計；不是最大可能損失。")}</th><th>跳空壓力${info("跳空壓力", "依資產類型的政策壓力比例估算隔夜或事件跳空損失，不假設停損一定成交。")}</th><th>狀態${info("風險狀態", "未量化代表缺少可驗證輸入，絕不代表零風險。")}</th></tr></thead>
                     <tbody>${riskPlans.map((plan) => {
                       const values = riskPlanValues(plan);
                       return `
@@ -1325,6 +1338,28 @@ const researchStatusLabel = (value) => {
         .forEach((section) => overviewPanel.append(section));
     }
     localizeRenderedText(root);
+  root.querySelectorAll(".info-popover").forEach((element) => {
+    let openedByHover = false;
+    element.addEventListener("pointerenter", (event) => {
+      if (event.pointerType === "mouse" && !element.open) {
+        openedByHover = true;
+        element.open = true;
+      }
+    });
+    element.addEventListener("pointerleave", () => {
+      if (openedByHover) {
+        element.open = false;
+        openedByHover = false;
+      }
+    });
+    element.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && element.open) {
+        element.open = false;
+        openedByHover = false;
+        element.querySelector("summary")?.focus();
+      }
+      });
+    });
     root.querySelectorAll(".table-wrap").forEach((tableWrap) => {
       tableWrap.tabIndex = 0;
     });
