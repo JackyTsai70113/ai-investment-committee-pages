@@ -1,78 +1,87 @@
 {
-  "data_cutoff": "2026-09-15T17:57:51.248788+00:00",
+  "build_code_commit": "b6a37dcfbf177a0d8fb61189d597102e8048db40",
+  "data_cutoff": "2026-09-17T15:05:00.173555+00:00",
   "files": {
     "agent_profiles.json": {
       "bytes": 9519,
       "sha256": "60a237616dd3bf900e8ff5f37a7df36ebb6be716dba8ad0423ef114133a6f102"
     },
     "committee.json": {
-      "bytes": 96465,
-      "sha256": "8940f8a55a3fb722deb1f82c28503275395b0a6644058ada68ec47514bdc83c7"
+      "bytes": 85931,
+      "sha256": "8d41d9836c8b3ff21a06f1bab8f1775be5ecb87d2e85e16e6ce8c2f5b2f4d6e9"
     },
     "committee_summary.json": {
-      "bytes": 33342,
-      "sha256": "748bb41e0577986b36d80297ba43773bc38a90ea1ee5e274e92c707df5a2aea2"
+      "bytes": 71959,
+      "sha256": "b98bece8c4250a138b2c398647b11320afa0066cec6ee4c34ae0e25470119bbd"
     },
     "dashboard_analytics.json": {
-      "bytes": 8390,
-      "sha256": "4caba229e92a1d180b722489ec632453c116ebdb19955c640fe2998d4206a4d3"
+      "bytes": 8411,
+      "sha256": "410f4d6b18a8ceddbe08102e7e225e9c4f0f422f55e861ed642f6bbcf62b3a7b"
+    },
+    "decision_comparison.json": {
+      "bytes": 5519,
+      "sha256": "a6890ee7964ffca189a034f0bd4d9ded8aeba3787f35abeb7e7e5d7fc322c734"
     },
     "decision_snapshot.json": {
       "bytes": 89,
-      "sha256": "40998c9bff661ceea93a3e501b58c8e596859cb6c7ec17a2f93bab942f623f60"
+      "sha256": "bd1a033eb78603bc39fc8627b8ed1f77edc0c759bdb78f503989cf92c267d70a"
     },
     "extension_earnings_reviews.json": {
-      "bytes": 219294,
-      "sha256": "ba444d8173fb196dfed1b017f29a3c8c7501ebb02a7f68b5e81de002e9da4db7"
+      "bytes": 222034,
+      "sha256": "12937b0b32d7f7518463a658c02b8646eb754f1ad30a59f32091d190a4c54255"
+    },
+    "freshness_calendar.json": {
+      "bytes": 3363,
+      "sha256": "4f800863a9850fff5383c40775d789ba7d11509aac976c1154a94133c95701a3"
     },
     "learning.json": {
-      "bytes": 7503,
-      "sha256": "979b8109845ba155a16fdbea0b422bc2ebf36f3389227f1fa39597cbe811672c"
+      "bytes": 7024,
+      "sha256": "4d7acaf86cd1d6858ee81fb96708eedb506e060eb071b4c2a9ec3110978ebbdc"
     },
     "market_intelligence.json": {
-      "bytes": 22375,
-      "sha256": "38301f4b97df9a3e227e55d9692b9d34f412020e867f28e2c4f1e08de1884bb8"
+      "bytes": 20432,
+      "sha256": "5254be41fb3ba136750cf41ce5ab124623d97617dfb146dbbcbf61c0c16f1ae2"
     },
     "market_snapshot.json": {
-      "bytes": 127001,
-      "sha256": "4096099ebeabe029441ba67dcfce2da2d4590ade53b4e294eca501bcef79e9b7"
+      "bytes": 137207,
+      "sha256": "c7006ee673c9f0a54a1869cd2e14fe6ee600f872b7ef8a2f043b2491553c1306"
     },
     "performance.json": {
-      "bytes": 8876,
-      "sha256": "499735941c5ad613c23c52306f48e1e63e30bd07873b5cb21389843f38b780cd"
+      "bytes": 10270,
+      "sha256": "f36a6a237e3fe38df8944ba6e153422135068115109fb563e45ffa891b0dda2e"
     },
     "pipeline_health.json": {
-      "bytes": 478,
-      "sha256": "47f81d99f7afe5f24d70a1214788b6e87f3cd89f2c5a27f3731636317fed2f6d"
+      "bytes": 521,
+      "sha256": "733901667be511f34912d348da6e0aeb2d9aa464e5f8b9e24ffc56aa329e58fb"
     },
     "rebalance.json": {
-      "bytes": 2480,
-      "sha256": "c55aad86f056c6dfcbaf63cea91e7017a075348179e8c76eee680cb9b76e1734"
+      "bytes": 2478,
+      "sha256": "ea8bffd9494f3921686c34fb4bbf1bb8568cbdfec03b0bcae46cbebc9dc4c75a"
     },
     "recommendation.json": {
-      "bytes": 38013,
-      "sha256": "d5a0b929793aa11f53b31bebef4f1056c668515cf3adb7ecc817509ddb1a54cc"
+      "bytes": 36737,
+      "sha256": "3543fcd187964c9b0276dceb45cf9998cec60528d7722200e89c9bc01e4719fc"
     },
     "research_extension_status.json": {
       "bytes": 8794,
-      "sha256": "5f1f172bed7a56aa4e3885396344817501006855e27bda5c46bdf6fd6eae3318"
+      "sha256": "094fcc28cec96fe03db7126ad4f2d07d1dfc8865a8249b611ef684fa3b70be42"
     },
     "research_journal.json": {
-      "bytes": 3673,
-      "sha256": "707f7c37d2db9e9dcf001341dc347ee9c44210ebf0711946d2194a3433d19b95"
+      "bytes": 3146,
+      "sha256": "ed736fadb583432919736942eab3d46d27a90d761f6811304b85e3abcb9b2872"
     },
     "system.json": {
       "bytes": 498,
-      "sha256": "bfe0d44e14ee2da5a68bdd2552f249e65ab440045032a26449bbbaa667caa033"
+      "sha256": "8f4d34836409dc63854f93d47e2232efcdf3e798c8942b7ea35b49e159b4f629"
     },
     "thesis_book.json": {
-      "bytes": 79424,
-      "sha256": "01234de513f7d8264ceb0749bfd02232c3ac0a61f628bbb20b0ab6e860c5d891"
+      "bytes": 83498,
+      "sha256": "b099525bca7c06159ae3f4f75cd96a5cac35423db8092a9de96f5a693afcd2b6"
     }
   },
-  "generation_id": "20260915T175808Z",
-  "recommendation_generated_at": "2026-09-15T17:59:04.477165+00:00",
-  "recommendation_run_id": "20260915T175808Z",
+  "generation_id": "20260917T150516Z",
+  "recommendation_generated_at": "2026-09-17T15:06:03.425552+00:00",
+  "recommendation_run_id": "20260917T150516Z",
   "schema_version": "1.0",
-  "source_commit": "d104fa168ef3afc8543a3166ddd49699bf44eb87"
+  "source_commit": "b6a37dcfbf177a0d8fb61189d597102e8048db40"
 }

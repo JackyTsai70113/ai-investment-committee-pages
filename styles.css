@@ -1287,7 +1287,7 @@ a {
   padding: 0.38rem 0.7rem;
   border: 1px solid var(--line);
   border-radius: 999px;
-  color: var(--faint);
+  color: var(--muted);
   background: var(--panel);
   font: 700 0.68rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
 }
@@ -1848,10 +1848,123 @@ a {
 }
 
 .panel-meta {
-  color: var(--faint);
+  color: var(--muted);
   font: 600 0.75rem/1.4 ui-monospace, SFMono-Regular, Menlo, monospace;
   overflow-wrap: anywhere;
   text-align: right;
+}
+
+.decision-evidence-summary {
+  margin: -0.55rem 0 1.15rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.decision-evidence-grid {
+  display: grid;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.decision-evidence-card {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 0.85rem;
+  background: rgba(199, 241, 91, 0.025);
+  overflow: hidden;
+}
+
+.decision-evidence-card details > summary {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-width: 0;
+  padding: 0.85rem 1rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.decision-evidence-card details > summary::-webkit-details-marker { display: none; }
+.decision-evidence-card details > summary::before {
+  content: "＋";
+  color: var(--faint);
+  font-size: 1.1rem;
+}
+.decision-evidence-card details[open] > summary::before { content: "－"; }
+.decision-evidence-card details > summary:focus-visible,
+.decision-comparison-button:focus-visible {
+  outline: 2px solid var(--acid);
+  outline-offset: 2px;
+}
+
+.ticker-chip {
+  min-width: 4.5rem;
+  color: var(--cream);
+  font: 700 0.9rem/1.3 ui-monospace, SFMono-Regular, Menlo, monospace;
+  white-space: nowrap;
+}
+
+.evidence-status {
+  margin-left: auto;
+  padding: 0.22rem 0.48rem;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+.status-supported { color: var(--acid-2); }
+.status-insufficient, .status-unverified { color: var(--warning); }
+.status-constraint { color: var(--danger); }
+
+.decision-evidence-details {
+  display: grid;
+  gap: 0.8rem;
+  margin: 0;
+  padding: 0 1rem 1rem 2.45rem;
+}
+.decision-evidence-detail { min-width: 0; }
+.decision-evidence-detail dt {
+  color: var(--faint);
+  font-size: 0.75rem;
+  font-weight: 650;
+}
+.decision-evidence-detail dd {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+.decision-evidence-detail p { margin: 0; }
+.decision-evidence-detail ul { margin: 0; padding-left: 1.1rem; }
+.decision-evidence-detail a { overflow-wrap: anywhere; }
+
+.decision-comparison-button {
+  margin: 0 1rem 0.9rem 2.45rem;
+  padding: 0.45rem 0.65rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 0.55rem;
+  background: transparent;
+  color: var(--acid);
+  cursor: pointer;
+}
+.decision-comparison-button:disabled { cursor: wait; opacity: 0.7; }
+.decision-comparison {
+  margin: 0 1rem 1rem 2.45rem;
+  padding: 0.75rem;
+  border-left: 2px solid var(--line-strong);
+  background: rgba(103, 183, 255, 0.04);
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+.decision-comparison-copy > p { margin: 0 0 0.45rem; }
+
+@media (max-width: 640px) {
+  .decision-evidence-card details > summary { align-items: flex-start; flex-wrap: wrap; }
+  .decision-evidence-card .evidence-status { margin-left: 0; }
+  .decision-evidence-details,
+  .decision-comparison-button,
+  .decision-comparison { margin-left: 1rem; }
 }
 
 .research-extension-grid {
@@ -1892,6 +2005,141 @@ a {
   grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1.75fr);
   gap: clamp(1.5rem, 4vw, 3.2rem);
   align-items: start;
+}
+
+.exposure-panel {
+  margin-top: 1rem;
+}
+
+.exposure-note {
+  margin: -0.55rem 0 1rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+.exposure-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.exposure-card {
+  min-width: 0;
+  padding: 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.018);
+}
+
+.exposure-card-unknown {
+  border-color: rgba(255, 152, 100, 0.28);
+}
+
+.exposure-card h3 {
+  margin: 0 0 0.6rem;
+  color: var(--cream);
+  font-size: 0.9rem;
+}
+
+.exposure-card h3:not(:first-child) {
+  margin-top: 1rem;
+}
+
+.exposure-card ul {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.exposure-card li {
+  min-width: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.exposure-card li > div,
+.exposure-card li > small {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.65rem;
+}
+
+.exposure-card li strong {
+  flex: 0 0 auto;
+  color: var(--acid);
+  font: 700 0.78rem/1.4 ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.exposure-card li small {
+  margin-top: 0.15rem;
+  color: var(--faint);
+  font-size: 0.7rem;
+  overflow-wrap: anywhere;
+}
+
+.exposure-card .symbol-link {
+  white-space: nowrap;
+}
+
+.kpi-panel {
+  margin-top: 1rem;
+}
+
+.kpi-table {
+  min-width: 760px;
+}
+
+.kpi-table th,
+.kpi-table td {
+  vertical-align: top;
+}
+
+.kpi-table tbody th {
+  color: var(--cream);
+  font: 700 0.85rem/1.4 ui-monospace, SFMono-Regular, Menlo, monospace;
+  white-space: nowrap;
+}
+
+.kpi-table td {
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
+.kpi-status {
+  display: inline-block;
+  padding: 0.18rem 0.42rem;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.kpi-available { color: var(--acid-2); }
+.kpi-not-comparable { color: var(--orange); }
+.kpi-missing { color: var(--faint); }
+
+.physical-risk-panel { margin-top: 1rem; }
+.physical-risk-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.8rem; }
+.physical-risk-card { min-width: 0; padding: 0.9rem; border: 1px solid var(--line); border-radius: 16px; background: rgba(255, 255, 255, 0.018); }
+.physical-risk-heading { display: flex; justify-content: space-between; gap: 0.5rem; align-items: center; }
+.physical-risk-card h3 { margin: 0.45rem 0; color: var(--cream); font-size: 0.9rem; overflow-wrap: anywhere; }
+.physical-risk-card p, .physical-risk-card small { display: block; margin: 0.35rem 0 0; color: var(--muted); font-size: 0.74rem; line-height: 1.45; overflow-wrap: anywhere; }
+.physical-risk-card small { color: var(--faint); }
+.geo-risk-card { min-width: 0; padding: 0.9rem; border: 1px solid rgba(174, 145, 255, 0.32); border-radius: 16px; background: rgba(174, 145, 255, 0.035); }
+.geo-risk-card h3 { margin: 0.45rem 0; color: var(--cream); font-size: 0.9rem; overflow-wrap: anywhere; }
+.geo-risk-card p, .geo-risk-card small { display: block; margin: 0.35rem 0 0; color: var(--muted); font-size: 0.74rem; line-height: 1.45; overflow-wrap: anywhere; }
+.geo-risk-card small { color: var(--faint); }
+
+.kpi-legend {
+  margin: 0.8rem 0 0;
+  color: var(--faint);
+  font-size: 0.72rem;
 }
 
 .simulation-capital-panel {
@@ -2929,6 +3177,33 @@ td {
   font-size: 0.74rem;
 }
 
+.agent-intel-outcomes {
+  min-width: 0;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(12, 25, 21, 0.42);
+}
+
+.agent-intel-outcomes h3 {
+  margin: 0 0 0.55rem;
+  color: var(--acid);
+  font-size: 0.9rem;
+}
+
+.agent-intel-outcomes ul {
+  margin: 0;
+  padding-inline-start: 1.2rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.6;
+}
+
+.agent-intel-outcomes li {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
 .committee-columns {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -3309,6 +3584,10 @@ td {
     grid-template-columns: 1fr;
   }
 
+  .exposure-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .comparison-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -3435,6 +3714,10 @@ td {
     display: block;
   }
 
+  .exposure-grid {
+    grid-template-columns: 1fr;
+  }
+
   .tab-controls {
     position: static;
     display: grid;
@@ -3522,6 +3805,7 @@ td {
   }
 
   .strategy-layout,
+  .physical-risk-grid,
   .allocation-visual,
   .position-risk-cards,
   .risk-grid,
@@ -3771,4 +4055,40 @@ td {
   html {
     scroll-behavior: auto;
   }
+}
+
+/* 官方總體 shadow：沿用風險卡與字體對比，長日期／來源不溢位。 */
+.macro-observation { overflow-wrap: anywhere; }
+.macro-value { font-size: 1.25rem; font-weight: 700; color: var(--text); }
+.macro-derived { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 8px 16px; }
+.macro-derived dd { margin: 0; overflow-wrap: anywhere; }
+.macro-scenario { border-top: 1px solid var(--line); padding: 8px 0; }
+.macro-scenario summary { min-height: 44px; display: list-item; cursor: pointer; padding: 12px 4px; }
+.macro-scenario li { margin: 8px 0; overflow-wrap: anywhere; }
+.macro-scenario summary:focus-visible { outline: 2px solid var(--acid); outline-offset: 2px; }
+
+.freshness-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin: 0 0 1.25rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--line, #55615d);
+  border-radius: 1rem;
+  background: var(--panel, #161e1b);
+}
+.freshness-copy { min-width: 0; flex: 1; }
+.freshness-copy h2 { font-size: 1rem; margin: 0 0 .5rem; }
+.freshness-copy p { font-size: .85rem; line-height: 1.65; overflow-wrap: anywhere; }
+.freshness-copy dl { display: flex; flex-wrap: wrap; gap: .65rem 1.5rem; margin: .75rem 0; }
+.freshness-copy dl div { min-width: 0; }
+.freshness-copy dt { font-size: .75rem; color: var(--muted, #b1beb6); }
+.freshness-copy dd { margin: .25rem 0; font-size: .85rem; overflow-wrap: anywhere; }
+.freshness-links { display: flex; flex-wrap: wrap; gap: .75rem; font-size: .85rem; }
+.freshness-banner button { flex-shrink: 0; min-height: 44px; padding: .5rem .75rem; border: 1px solid #9cae9f; border-radius: .5rem; color: #edf5ed; background: #26382c; cursor: pointer; }
+.freshness-banner button:focus-visible, .freshness-links a:focus-visible { outline: 3px solid #d3f795; outline-offset: 3px; }
+@media (max-width: 767px) {
+  .freshness-banner { flex-direction: column; padding: .9rem; }
+  .freshness-copy dl { flex-direction: column; gap: .6rem; }
+  .freshness-banner button { width: 100%; }
 }

@@ -1,244 +1,244 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-15T17:57:51.248788Z",
+  "generated_at": "2026-09-17T15:05:00.173555Z",
   "mode": "live",
   "source": "Yahoo Finance via yfinance with bounded retry and Nasdaq completed-close fallback",
   "quotes": [
     {
       "symbol": "SPY",
-      "price": "757.36499",
-      "previous_close": "760.880005",
-      "completed_close": "760.880005",
-      "completed_close_session": "2026-09-14",
-      "change_percent": "-0.461967",
-      "volume": 43944500,
-      "as_of": "2026-09-15T17:57:51.248788Z",
-      "price_session": "2026-09-15",
-      "price_timestamp": "2026-09-15T17:57:00Z",
+      "price": "760.619995",
+      "previous_close": "754.049988",
+      "completed_close": "754.049988",
+      "completed_close_session": "2026-09-16",
+      "change_percent": "0.871296",
+      "volume": 58959700,
+      "as_of": "2026-09-17T15:05:00.173555Z",
+      "price_session": "2026-09-17",
+      "price_timestamp": "2026-09-17T15:05:00Z",
       "price_mode": "live_regular_session",
       "session_status": "intraday",
       "source": "Yahoo Finance via yfinance"
     },
     {
       "symbol": "QQQ",
-      "price": "705.155029",
-      "previous_close": "709.179993",
-      "completed_close": "709.179993",
-      "completed_close_session": "2026-09-14",
-      "change_percent": "-0.567552",
-      "volume": 35101000,
-      "as_of": "2026-09-15T17:57:51.248788Z",
-      "price_session": "2026-09-15",
-      "price_timestamp": "2026-09-15T17:57:00Z",
+      "price": "715.059998",
+      "previous_close": "704.719971",
+      "completed_close": "704.719971",
+      "completed_close_session": "2026-09-16",
+      "change_percent": "1.467253",
+      "volume": 35341100,
+      "as_of": "2026-09-17T15:05:00.173555Z",
+      "price_session": "2026-09-17",
+      "price_timestamp": "2026-09-17T15:05:00Z",
       "price_mode": "live_regular_session",
       "session_status": "intraday",
       "source": "Yahoo Finance via yfinance"
     },
     {
       "symbol": "IWM",
-      "price": "285.345001",
-      "previous_close": "287.910004",
-      "completed_close": "287.910004",
-      "completed_close_session": "2026-09-14",
-      "change_percent": "-0.890904",
-      "volume": 26041400,
-      "as_of": "2026-09-15T17:57:51.248788Z",
-      "price_session": "2026-09-15",
-      "price_timestamp": "2026-09-15T17:57:00Z",
+      "price": "286.665009",
+      "previous_close": "283.920013",
+      "completed_close": "283.920013",
+      "completed_close_session": "2026-09-16",
+      "change_percent": "0.96682",
+      "volume": 27522300,
+      "as_of": "2026-09-17T15:05:00.173555Z",
+      "price_session": "2026-09-17",
+      "price_timestamp": "2026-09-17T15:05:00Z",
       "price_mode": "live_regular_session",
       "session_status": "intraday",
       "source": "Yahoo Finance via yfinance"
     },
     {
       "symbol": "DIA",
-      "price": "520.460022",
-      "previous_close": "524.48999",
-      "completed_close": "524.48999",
-      "completed_close_session": "2026-09-14",
-      "change_percent": "-0.768359",
-      "volume": 2698100,
-      "as_of": "2026-09-15T17:57:51.248788Z",
-      "price_session": "2026-09-15",
-      "price_timestamp": "2026-09-15T17:57:00Z",
+      "price": "517.299988",
+      "previous_close": "515.219971",
+      "completed_close": "515.219971",
+      "completed_close_session": "2026-09-16",
+      "change_percent": "0.403714",
+      "volume": 5628800,
+      "as_of": "2026-09-17T15:05:00.173555Z",
+      "price_session": "2026-09-17",
+      "price_timestamp": "2026-09-17T15:04:00Z",
       "price_mode": "live_regular_session",
       "session_status": "intraday",
       "source": "Yahoo Finance via yfinance"
     },
     {
       "symbol": "VTI",
-      "price": "372.915009",
-      "previous_close": "374.679993",
-      "completed_close": "374.679993",
-      "completed_close_session": "2026-09-14",
-      "change_percent": "-0.471064",
-      "volume": 3038200,
-      "as_of": "2026-09-15T17:57:51.248788Z",
-      "price_session": "2026-09-15",
-      "price_timestamp": "2026-09-15T17:57:00Z",
+      "price": "374.459991",
+      "previous_close": "371.26001",
+      "completed_close": "371.26001",
+      "completed_close_session": "2026-09-16",
+      "change_percent": "0.861925",
+      "volume": 3345300,
+      "as_of": "2026-09-17T15:05:00.173555Z",
+      "price_session": "2026-09-17",
+      "price_timestamp": "2026-09-17T15:05:00Z",
       "price_mode": "live_regular_session",
       "session_status": "intraday",
       "source": "Yahoo Finance via yfinance"
     },
     {
       "symbol": "SMH",
-      "price": "541.710022",
-      "previous_close": "541.5",
-      "completed_close": "541.5",
-      "completed_close_session": "2026-09-14",
-      "change_percent": "0.038785",
-      "volume": 10627900,
-      "as_of": "2026-09-15T17:57:51.248788Z",
-      "price_session": "2026-09-15",
-      "price_timestamp": "2026-09-15T17:57:00Z",
+      "price": "559.609985",
+      "previous_close": "545.559998",
+      "completed_close": "545.559998",
+      "completed_close_session": "2026-09-16",
+      "change_percent": "2.575333",
+      "volume": 5970000,
+      "as_of": "2026-09-17T15:05:00.173555Z",
+      "price_session": "2026-09-17",
+      "price_timestamp": "2026-09-17T15:05:00Z",
       "price_mode": "live_regular_session",
       "session_status": "intraday",
       "source": "Yahoo Finance via yfinance"
     },
     {
       "symbol": "SOXL",
-      "price": "101.942902",
-      "previous_close": "101.129997",
-      "completed_close": "101.129997",
-      "completed_close_session": "2026-09-14",
-      "change_percent": "0.803822",
-      "volume": 100374100,
-      "as_of": "2026-09-15T17:57:51.248788Z",
-      "price_session": "2026-09-15",
-      "price_timestamp": "2026-09-15T17:57:00Z",
+      "price": "114.039001",
+      "previous_close": "103.970001",
+      "completed_close": "103.970001",
+      "completed_close_session": "2026-09-16",
+      "change_percent": "9.684524",
+      "volume": 73053600,
+      "as_of": "2026-09-17T15:05:00.173555Z",
+      "price_session": "2026-09-17",
+      "price_timestamp": "2026-09-17T15:05:00Z",
       "price_mode": "live_regular_session",
       "session_status": "intraday",
       "source": "Yahoo Finance via yfinance"
     },
     {
       "symbol": "TQQQ",
-      "price": "68.055",
-      "previous_close": "69.269997",
-      "completed_close": "69.269997",
-      "completed_close_session": "2026-09-14",
-      "change_percent": "-1.754001",
-      "volume": 49708800,
-      "as_of": "2026-09-15T17:57:51.248788Z",
-      "price_session": "2026-09-15",
-      "price_timestamp": "2026-09-15T17:57:00Z",
+      "price": "70.8899",
+      "previous_close": "67.93",
+      "completed_close": "67.93",
+      "completed_close_session": "2026-09-16",
+      "change_percent": "4.357279",
+      "volume": 60257500,
+      "as_of": "2026-09-17T15:05:00.173555Z",
+      "price_session": "2026-09-17",
+      "price_timestamp": "2026-09-17T15:05:00Z",
       "price_mode": "live_regular_session",
       "session_status": "intraday",
       "source": "Yahoo Finance via yfinance"
     },
     {
       "symbol": "NVDA",
-      "price": "211.849899",
-      "previous_close": "210.960007",
-      "completed_close": "210.960007",
-      "completed_close_session": "2026-09-14",
-      "change_percent": "0.42183",
-      "volume": 131942300,
-      "as_of": "2026-09-15T17:57:51.248788Z",
-      "price_session": "2026-09-15",
-      "price_timestamp": "2026-09-15T17:57:00Z",
+      "price": "219.330505",
+      "previous_close": "213.899994",
+      "completed_close": "213.899994",
+      "completed_close_session": "2026-09-16",
+      "change_percent": "2.538808",
+      "volume": 96079300,
+      "as_of": "2026-09-17T15:05:00.173555Z",
+      "price_session": "2026-09-17",
+      "price_timestamp": "2026-09-17T15:05:00Z",
       "price_mode": "live_regular_session",
       "session_status": "intraday",
       "source": "Yahoo Finance via yfinance"
     },
     {
       "symbol": "AMD",
-      "price": "503.579987",
-      "previous_close": "493.410004",
-      "completed_close": "493.410004",
-      "completed_close_session": "2026-09-14",
-      "change_percent": "2.061163",
-      "volume": 24773600,
-      "as_of": "2026-09-15T17:57:51.248788Z",
-      "price_session": "2026-09-15",
-      "price_timestamp": "2026-09-15T17:57:00Z",
+      "price": "542.679993",
+      "previous_close": "512.5",
+      "completed_close": "512.5",
+      "completed_close_session": "2026-09-16",
+      "change_percent": "5.888779",
+      "volume": 22193900,
+      "as_of": "2026-09-17T15:05:00.173555Z",
+      "price_session": "2026-09-17",
+      "price_timestamp": "2026-09-17T15:05:00Z",
       "price_mode": "live_regular_session",
       "session_status": "intraday",
       "source": "Yahoo Finance via yfinance"
     },
     {
       "symbol": "PLTR",
-      "price": "174.445007",
-      "previous_close": "173.309998",
-      "completed_close": "173.309998",
-      "completed_close_session": "2026-09-14",
-      "change_percent": "0.654901",
-      "volume": 29109900,
-      "as_of": "2026-09-15T17:57:51.248788Z",
-      "price_session": "2026-09-15",
-      "price_timestamp": "2026-09-15T17:57:00Z",
+      "price": "176.369995",
+      "previous_close": "174.339996",
+      "completed_close": "174.339996",
+      "completed_close_session": "2026-09-16",
+      "change_percent": "1.164391",
+      "volume": 20903600,
+      "as_of": "2026-09-17T15:05:00.173555Z",
+      "price_session": "2026-09-17",
+      "price_timestamp": "2026-09-17T15:05:00Z",
       "price_mode": "live_regular_session",
       "session_status": "intraday",
       "source": "Yahoo Finance via yfinance"
     },
     {
       "symbol": "ERX",
-      "price": "115.400002",
-      "previous_close": "110.059998",
-      "completed_close": "110.059998",
-      "completed_close_session": "2026-09-14",
-      "change_percent": "4.851903",
-      "volume": 614100,
-      "as_of": "2026-09-15T17:57:51.248788Z",
-      "price_session": "2026-09-15",
-      "price_timestamp": "2026-09-15T17:56:00Z",
+      "price": "107.940002",
+      "previous_close": "108.349998",
+      "completed_close": "108.349998",
+      "completed_close_session": "2026-09-16",
+      "change_percent": "-0.3784",
+      "volume": 352800,
+      "as_of": "2026-09-17T15:05:00.173555Z",
+      "price_session": "2026-09-17",
+      "price_timestamp": "2026-09-17T14:56:00Z",
       "price_mode": "live_regular_session",
       "session_status": "intraday",
       "source": "Yahoo Finance via yfinance"
     },
     {
       "symbol": "GLD",
-      "price": "393.859985",
-      "previous_close": "392.839996",
-      "completed_close": "392.839996",
-      "completed_close_session": "2026-09-14",
-      "change_percent": "0.259645",
-      "volume": 7424200,
-      "as_of": "2026-09-15T17:57:51.248788Z",
-      "price_session": "2026-09-15",
-      "price_timestamp": "2026-09-15T17:57:00Z",
+      "price": "399.244995",
+      "previous_close": "391.73999",
+      "completed_close": "391.73999",
+      "completed_close_session": "2026-09-16",
+      "change_percent": "1.915813",
+      "volume": 15607000,
+      "as_of": "2026-09-17T15:05:00.173555Z",
+      "price_session": "2026-09-17",
+      "price_timestamp": "2026-09-17T15:05:00Z",
       "price_mode": "live_regular_session",
       "session_status": "intraday",
       "source": "Yahoo Finance via yfinance"
     },
     {
       "symbol": "TLT",
-      "price": "80.614998",
-      "previous_close": "80.93",
-      "completed_close": "80.93",
-      "completed_close_session": "2026-09-14",
-      "change_percent": "-0.389228",
-      "volume": 33715900,
-      "as_of": "2026-09-15T17:57:51.248788Z",
-      "price_session": "2026-09-15",
-      "price_timestamp": "2026-09-15T17:57:00Z",
+      "price": "81.510002",
+      "previous_close": "80.879997",
+      "completed_close": "80.879997",
+      "completed_close_session": "2026-09-16",
+      "change_percent": "0.778938",
+      "volume": 56433000,
+      "as_of": "2026-09-17T15:05:00.173555Z",
+      "price_session": "2026-09-17",
+      "price_timestamp": "2026-09-17T15:04:00Z",
       "price_mode": "live_regular_session",
       "session_status": "intraday",
       "source": "Yahoo Finance via yfinance"
     },
     {
       "symbol": "SQQQ",
-      "price": "40.5299",
-      "previous_close": "39.830002",
-      "completed_close": "39.830002",
-      "completed_close_session": "2026-09-14",
-      "change_percent": "1.757213",
-      "volume": 45305400,
-      "as_of": "2026-09-15T17:57:51.248788Z",
-      "price_session": "2026-09-15",
-      "price_timestamp": "2026-09-15T17:57:00Z",
+      "price": "38.830101",
+      "previous_close": "40.610001",
+      "completed_close": "40.610001",
+      "completed_close_session": "2026-09-16",
+      "change_percent": "-4.38291",
+      "volume": 52152100,
+      "as_of": "2026-09-17T15:05:00.173555Z",
+      "price_session": "2026-09-17",
+      "price_timestamp": "2026-09-17T15:04:00Z",
       "price_mode": "live_regular_session",
       "session_status": "intraday",
       "source": "Yahoo Finance via yfinance"
     },
     {
       "symbol": "CL=F",
-      "price": "101.389999",
-      "previous_close": "100.050003",
-      "completed_close": "101.389999",
-      "completed_close_session": "2026-09-14",
-      "change_percent": "1.339327",
-      "volume": 399142,
-      "as_of": "2026-09-15T17:57:51.248788Z",
-      "price_session": "2026-09-14",
+      "price": "102.43",
+      "previous_close": "105.830002",
+      "completed_close": "102.43",
+      "completed_close_session": "2026-09-16",
+      "change_percent": "-3.212701",
+      "volume": 371490,
+      "as_of": "2026-09-17T15:05:00.173555Z",
+      "price_session": "2026-09-16",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
       "session_status": "completed",
@@ -246,14 +246,14 @@
     },
     {
       "symbol": "^VIX",
-      "price": "17.1",
-      "previous_close": "15.84",
-      "completed_close": "17.1",
-      "completed_close_session": "2026-09-14",
-      "change_percent": "7.954547",
+      "price": "17.709999",
+      "previous_close": "17.200001",
+      "completed_close": "17.709999",
+      "completed_close_session": "2026-09-16",
+      "change_percent": "2.965106",
       "volume": 0,
-      "as_of": "2026-09-15T17:57:51.248788Z",
-      "price_session": "2026-09-14",
+      "as_of": "2026-09-17T15:05:00.173555Z",
+      "price_session": "2026-09-16",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
       "session_status": "completed",
@@ -261,14 +261,14 @@
     },
     {
       "symbol": "^TNX",
-      "price": "4.961",
-      "previous_close": "4.975",
-      "completed_close": "4.961",
-      "completed_close_session": "2026-09-14",
-      "change_percent": "-0.281406",
+      "price": "5.006",
+      "previous_close": "4.996",
+      "completed_close": "5.006",
+      "completed_close_session": "2026-09-16",
+      "change_percent": "0.200165",
       "volume": 0,
-      "as_of": "2026-09-15T17:57:51.248788Z",
-      "price_session": "2026-09-14",
+      "as_of": "2026-09-17T15:05:00.173555Z",
+      "price_session": "2026-09-16",
       "price_timestamp": null,
       "price_mode": "completed_regular_close",
       "session_status": "completed",
@@ -276,210 +276,210 @@
     },
     {
       "symbol": "AVGO",
-      "price": "338.859985",
-      "previous_close": "344.720001",
-      "completed_close": "344.720001",
-      "completed_close_session": "2026-09-14",
-      "change_percent": "-1.699935",
-      "volume": 32605300,
-      "as_of": "2026-09-15T17:57:51.248788Z",
-      "price_session": "2026-09-15",
-      "price_timestamp": "2026-09-15T17:57:00Z",
+      "price": "349.595001",
+      "previous_close": "339.51001",
+      "completed_close": "339.51001",
+      "completed_close_session": "2026-09-16",
+      "change_percent": "2.970455",
+      "volume": 23063100,
+      "as_of": "2026-09-17T15:05:00.173555Z",
+      "price_session": "2026-09-17",
+      "price_timestamp": "2026-09-17T15:05:00Z",
       "price_mode": "live_regular_session",
       "session_status": "intraday",
       "source": "Yahoo Finance via yfinance"
     },
     {
       "symbol": "META",
-      "price": "666.340027",
-      "previous_close": "665.599976",
-      "completed_close": "665.599976",
-      "completed_close_session": "2026-09-14",
-      "change_percent": "0.111186",
-      "volume": 19300300,
-      "as_of": "2026-09-15T17:57:51.248788Z",
-      "price_session": "2026-09-15",
-      "price_timestamp": "2026-09-15T17:57:00Z",
+      "price": "672.099976",
+      "previous_close": "673.309998",
+      "completed_close": "673.309998",
+      "completed_close_session": "2026-09-16",
+      "change_percent": "-0.179712",
+      "volume": 17168100,
+      "as_of": "2026-09-17T15:05:00.173555Z",
+      "price_session": "2026-09-17",
+      "price_timestamp": "2026-09-17T15:04:00Z",
       "price_mode": "live_regular_session",
       "session_status": "intraday",
       "source": "Yahoo Finance via yfinance"
     },
     {
       "symbol": "SOXX",
-      "price": "498.204987",
-      "previous_close": "497.399994",
-      "completed_close": "497.399994",
-      "completed_close_session": "2026-09-14",
-      "change_percent": "0.16184",
-      "volume": 11248000,
-      "as_of": "2026-09-15T17:57:51.248788Z",
-      "price_session": "2026-09-15",
-      "price_timestamp": "2026-09-15T17:57:00Z",
+      "price": "518.080017",
+      "previous_close": "502.059998",
+      "completed_close": "502.059998",
+      "completed_close_session": "2026-09-16",
+      "change_percent": "3.190858",
+      "volume": 8327200,
+      "as_of": "2026-09-17T15:05:00.173555Z",
+      "price_session": "2026-09-17",
+      "price_timestamp": "2026-09-17T15:05:00Z",
       "price_mode": "live_regular_session",
       "session_status": "intraday",
       "source": "Yahoo Finance via yfinance"
     },
     {
       "symbol": "XLK",
-      "price": "183.960007",
-      "previous_close": "184.279999",
-      "completed_close": "184.279999",
-      "completed_close_session": "2026-09-14",
-      "change_percent": "-0.173644",
-      "volume": 8532300,
-      "as_of": "2026-09-15T17:57:51.248788Z",
-      "price_session": "2026-09-15",
-      "price_timestamp": "2026-09-15T17:57:00Z",
+      "price": "187.849503",
+      "previous_close": "183.929993",
+      "completed_close": "183.929993",
+      "completed_close_session": "2026-09-16",
+      "change_percent": "2.130979",
+      "volume": 8061600,
+      "as_of": "2026-09-17T15:05:00.173555Z",
+      "price_session": "2026-09-17",
+      "price_timestamp": "2026-09-17T15:05:00Z",
       "price_mode": "live_regular_session",
       "session_status": "intraday",
       "source": "Yahoo Finance via yfinance"
     },
     {
       "symbol": "XLF",
-      "price": "56.615002",
-      "previous_close": "57.029999",
-      "completed_close": "57.029999",
-      "completed_close_session": "2026-09-14",
-      "change_percent": "-0.727682",
-      "volume": 38141700,
-      "as_of": "2026-09-15T17:57:51.248788Z",
-      "price_session": "2026-09-15",
-      "price_timestamp": "2026-09-15T17:57:00Z",
+      "price": "55.720001",
+      "previous_close": "55.93",
+      "completed_close": "55.93",
+      "completed_close_session": "2026-09-16",
+      "change_percent": "-0.375468",
+      "volume": 53035700,
+      "as_of": "2026-09-17T15:05:00.173555Z",
+      "price_session": "2026-09-17",
+      "price_timestamp": "2026-09-17T15:05:00Z",
       "price_mode": "live_regular_session",
       "session_status": "intraday",
       "source": "Yahoo Finance via yfinance"
     },
     {
       "symbol": "XLE",
-      "price": "66.095001",
-      "previous_close": "64.529999",
-      "completed_close": "64.529999",
-      "completed_close_session": "2026-09-14",
-      "change_percent": "2.425232",
-      "volume": 47112000,
-      "as_of": "2026-09-15T17:57:51.248788Z",
-      "price_session": "2026-09-15",
-      "price_timestamp": "2026-09-15T17:57:00Z",
+      "price": "63.939999",
+      "previous_close": "64.029999",
+      "completed_close": "64.029999",
+      "completed_close_session": "2026-09-16",
+      "change_percent": "-0.140559",
+      "volume": 48594700,
+      "as_of": "2026-09-17T15:05:00.173555Z",
+      "price_session": "2026-09-17",
+      "price_timestamp": "2026-09-17T15:05:00Z",
       "price_mode": "live_regular_session",
       "session_status": "intraday",
       "source": "Yahoo Finance via yfinance"
     },
     {
       "symbol": "XLV",
-      "price": "167.600006",
-      "previous_close": "167.75",
-      "completed_close": "167.75",
-      "completed_close_session": "2026-09-14",
-      "change_percent": "-0.089415",
-      "volume": 9414400,
-      "as_of": "2026-09-15T17:57:51.248788Z",
-      "price_session": "2026-09-15",
-      "price_timestamp": "2026-09-15T17:57:00Z",
+      "price": "168.119995",
+      "previous_close": "167.770004",
+      "completed_close": "167.770004",
+      "completed_close_session": "2026-09-16",
+      "change_percent": "0.208613",
+      "volume": 7148200,
+      "as_of": "2026-09-17T15:05:00.173555Z",
+      "price_session": "2026-09-17",
+      "price_timestamp": "2026-09-17T15:04:00Z",
       "price_mode": "live_regular_session",
       "session_status": "intraday",
       "source": "Yahoo Finance via yfinance"
     },
     {
       "symbol": "SOXS",
-      "price": "51.280102",
-      "previous_close": "51.73",
-      "completed_close": "51.73",
-      "completed_close_session": "2026-09-14",
-      "change_percent": "-0.869703",
-      "volume": 62118200,
-      "as_of": "2026-09-15T17:57:51.248788Z",
-      "price_session": "2026-09-15",
-      "price_timestamp": "2026-09-15T17:57:00Z",
+      "price": "45.360001",
+      "previous_close": "50.110001",
+      "completed_close": "50.110001",
+      "completed_close_session": "2026-09-16",
+      "change_percent": "-9.479145",
+      "volume": 57471100,
+      "as_of": "2026-09-17T15:05:00.173555Z",
+      "price_session": "2026-09-17",
+      "price_timestamp": "2026-09-17T15:05:00Z",
       "price_mode": "live_regular_session",
       "session_status": "intraday",
       "source": "Yahoo Finance via yfinance"
     },
     {
       "symbol": "UPRO",
-      "price": "143.964996",
-      "previous_close": "145.990005",
-      "completed_close": "145.990005",
-      "completed_close_session": "2026-09-14",
-      "change_percent": "-1.387088",
-      "volume": 1768400,
-      "as_of": "2026-09-15T17:57:51.248788Z",
-      "price_session": "2026-09-15",
-      "price_timestamp": "2026-09-15T17:57:00Z",
+      "price": "145.690002",
+      "previous_close": "142.100006",
+      "completed_close": "142.100006",
+      "completed_close_session": "2026-09-16",
+      "change_percent": "2.526387",
+      "volume": 2330300,
+      "as_of": "2026-09-17T15:05:00.173555Z",
+      "price_session": "2026-09-17",
+      "price_timestamp": "2026-09-17T15:04:00Z",
       "price_mode": "live_regular_session",
       "session_status": "intraday",
       "source": "Yahoo Finance via yfinance"
     },
     {
       "symbol": "SPXU",
-      "price": "36.084999",
-      "previous_close": "35.580002",
-      "completed_close": "35.580002",
-      "completed_close_session": "2026-09-14",
-      "change_percent": "1.419329",
-      "volume": 7287500,
-      "as_of": "2026-09-15T17:57:51.248788Z",
-      "price_session": "2026-09-15",
-      "price_timestamp": "2026-09-15T17:56:00Z",
+      "price": "35.630001",
+      "previous_close": "36.549999",
+      "completed_close": "36.549999",
+      "completed_close_session": "2026-09-16",
+      "change_percent": "-2.517095",
+      "volume": 8839800,
+      "as_of": "2026-09-17T15:05:00.173555Z",
+      "price_session": "2026-09-17",
+      "price_timestamp": "2026-09-17T15:04:00Z",
       "price_mode": "live_regular_session",
       "session_status": "intraday",
       "source": "Yahoo Finance via yfinance"
     },
     {
       "symbol": "MSFT",
-      "price": "498.815002",
-      "previous_close": "505.410004",
-      "completed_close": "505.410004",
-      "completed_close_session": "2026-09-14",
-      "change_percent": "-1.304882",
-      "volume": 23070000,
-      "as_of": "2026-09-15T17:57:51.248788Z",
-      "price_session": "2026-09-15",
-      "price_timestamp": "2026-09-15T17:57:00Z",
+      "price": "495.220001",
+      "previous_close": "490.299988",
+      "completed_close": "490.299988",
+      "completed_close_session": "2026-09-16",
+      "change_percent": "1.00347",
+      "volume": 16612700,
+      "as_of": "2026-09-17T15:05:00.173555Z",
+      "price_session": "2026-09-17",
+      "price_timestamp": "2026-09-17T15:05:00Z",
       "price_mode": "live_regular_session",
       "session_status": "intraday",
       "source": "Yahoo Finance via yfinance"
     },
     {
       "symbol": "AAPL",
-      "price": "330.515015",
-      "previous_close": "333.079987",
-      "completed_close": "333.079987",
-      "completed_close_session": "2026-09-14",
-      "change_percent": "-0.770077",
-      "volume": 39223900,
-      "as_of": "2026-09-15T17:57:51.248788Z",
-      "price_session": "2026-09-15",
-      "price_timestamp": "2026-09-15T17:57:00Z",
+      "price": "332.834991",
+      "previous_close": "332.410004",
+      "completed_close": "332.410004",
+      "completed_close_session": "2026-09-16",
+      "change_percent": "0.12785",
+      "volume": 35920400,
+      "as_of": "2026-09-17T15:05:00.173555Z",
+      "price_session": "2026-09-17",
+      "price_timestamp": "2026-09-17T15:05:00Z",
       "price_mode": "live_regular_session",
       "session_status": "intraday",
       "source": "Yahoo Finance via yfinance"
     },
     {
       "symbol": "TSLA",
-      "price": "357.410004",
-      "previous_close": "358.970001",
-      "completed_close": "358.970001",
-      "completed_close_session": "2026-09-14",
-      "change_percent": "-0.434576",
-      "volume": 32401500,
-      "as_of": "2026-09-15T17:57:51.248788Z",
-      "price_session": "2026-09-15",
-      "price_timestamp": "2026-09-15T17:57:00Z",
+      "price": "366.575012",
+      "previous_close": "358.079987",
+      "completed_close": "358.079987",
+      "completed_close_session": "2026-09-16",
+      "change_percent": "2.372382",
+      "volume": 32031100,
+      "as_of": "2026-09-17T15:05:00.173555Z",
+      "price_session": "2026-09-17",
+      "price_timestamp": "2026-09-17T15:05:00Z",
       "price_mode": "live_regular_session",
       "session_status": "intraday",
       "source": "Yahoo Finance via yfinance"
     },
     {
       "symbol": "TSM",
-      "price": "413.929993",
-      "previous_close": "418.01001",
-      "completed_close": "418.01001",
-      "completed_close_session": "2026-09-14",
-      "change_percent": "-0.976057",
-      "volume": 14291800,
-      "as_of": "2026-09-15T17:57:51.248788Z",
-      "price_session": "2026-09-15",
-      "price_timestamp": "2026-09-15T17:57:00Z",
+      "price": "424.815002",
+      "previous_close": "417.720001",
+      "completed_close": "417.720001",
+      "completed_close_session": "2026-09-16",
+      "change_percent": "1.698506",
+      "volume": 10454100,
+      "as_of": "2026-09-17T15:05:00.173555Z",
+      "price_session": "2026-09-17",
+      "price_timestamp": "2026-09-17T15:04:00Z",
       "price_mode": "live_regular_session",
       "session_status": "intraday",
       "source": "Yahoo Finance via yfinance"
@@ -488,428 +488,428 @@
   "features": [
     {
       "symbol": "SPY",
-      "data_session": "2026-09-14",
-      "return_1d_percent": "-0.446162",
-      "return_5d_percent": "-1.208792",
-      "return_20d_percent": "-1.991398",
-      "volatility_20d_annualized_percent": "8.827912",
-      "drawdown_20d_percent": "-1.589557",
-      "distance_from_ma20_percent": "-0.68215",
-      "distance_from_ma50_percent": "0.255832",
-      "rsi14": "47.581722",
-      "volume_ratio_20d": "1.156367"
+      "data_session": "2026-09-16",
+      "return_1d_percent": "-0.440992",
+      "return_5d_percent": "-1.09523",
+      "return_20d_percent": "-1.746045",
+      "volatility_20d_annualized_percent": "8.654287",
+      "drawdown_20d_percent": "-2.472936",
+      "distance_from_ma20_percent": "-1.389093",
+      "distance_from_ma50_percent": "-0.676699",
+      "rsi14": "39.587956",
+      "volume_ratio_20d": "1.4984"
     },
     {
       "symbol": "QQQ",
-      "data_session": "2026-09-14",
-      "return_1d_percent": "-0.797338",
-      "return_5d_percent": "-1.360302",
-      "return_20d_percent": "-2.994243",
-      "volatility_20d_annualized_percent": "12.905817",
-      "drawdown_20d_percent": "-2.834752",
-      "distance_from_ma20_percent": "-0.754787",
-      "distance_from_ma50_percent": "-0.163022",
-      "rsi14": "52.291654",
-      "volume_ratio_20d": "1.124814"
+      "data_session": "2026-09-16",
+      "return_1d_percent": "0.025548",
+      "return_5d_percent": "-1.618018",
+      "return_20d_percent": "-1.782559",
+      "volatility_20d_annualized_percent": "11.734584",
+      "drawdown_20d_percent": "-2.272887",
+      "distance_from_ma20_percent": "-1.11518",
+      "distance_from_ma50_percent": "-0.726636",
+      "rsi14": "44.651745",
+      "volume_ratio_20d": "1.157279"
     },
     {
       "symbol": "IWM",
-      "data_session": "2026-09-14",
-      "return_1d_percent": "-0.339233",
-      "return_5d_percent": "-2.736396",
-      "return_20d_percent": "-5.631123",
-      "volatility_20d_annualized_percent": "12.59461",
-      "drawdown_20d_percent": "-5.31145",
-      "distance_from_ma20_percent": "-2.648419",
-      "distance_from_ma50_percent": "-2.761753",
-      "rsi14": "31.775391",
-      "volume_ratio_20d": "1.386122"
+      "data_session": "2026-09-16",
+      "return_1d_percent": "-0.42786",
+      "return_5d_percent": "-2.312139",
+      "return_20d_percent": "-5.432501",
+      "volatility_20d_annualized_percent": "12.341785",
+      "drawdown_20d_percent": "-5.899505",
+      "distance_from_ma20_percent": "-3.422327",
+      "distance_from_ma50_percent": "-3.940428",
+      "rsi14": "25.008359",
+      "volume_ratio_20d": "1.3908"
     },
     {
       "symbol": "DIA",
-      "data_session": "2026-09-14",
-      "return_1d_percent": "-0.247245",
-      "return_5d_percent": "-1.795616",
-      "return_20d_percent": "-2.293219",
-      "volatility_20d_annualized_percent": "10.869984",
-      "drawdown_20d_percent": "-2.316876",
-      "distance_from_ma20_percent": "-1.212781",
-      "distance_from_ma50_percent": "-0.876314",
-      "rsi14": "39.288987",
-      "volume_ratio_20d": "0.858017"
+      "data_session": "2026-09-16",
+      "return_1d_percent": "-1.153044",
+      "return_5d_percent": "-1.688713",
+      "return_20d_percent": "-3.31951",
+      "volatility_20d_annualized_percent": "11.537959",
+      "drawdown_20d_percent": "-4.043362",
+      "distance_from_ma20_percent": "-2.677865",
+      "distance_from_ma50_percent": "-2.546891",
+      "rsi14": "30.770751",
+      "volume_ratio_20d": "1.725237"
     },
     {
       "symbol": "VTI",
-      "data_session": "2026-09-14",
-      "return_1d_percent": "-0.433155",
-      "return_5d_percent": "-1.329897",
-      "return_20d_percent": "-2.388957",
-      "volatility_20d_annualized_percent": "9.18565",
-      "drawdown_20d_percent": "-1.949601",
-      "distance_from_ma20_percent": "-0.84775",
-      "distance_from_ma50_percent": "0.022209",
-      "rsi14": "45.601737",
-      "volume_ratio_20d": "1.017294"
+      "data_session": "2026-09-16",
+      "return_1d_percent": "-0.423771",
+      "return_5d_percent": "-1.144954",
+      "return_20d_percent": "-2.052553",
+      "volatility_20d_annualized_percent": "8.923276",
+      "drawdown_20d_percent": "-2.53852",
+      "distance_from_ma20_percent": "-1.530379",
+      "distance_from_ma50_percent": "-0.905688",
+      "rsi14": "38.158325",
+      "volume_ratio_20d": "1.143092"
     },
     {
       "symbol": "SMH",
-      "data_session": "2026-09-14",
-      "return_1d_percent": "-4.754371",
-      "return_5d_percent": "-4.49904",
-      "return_20d_percent": "-7.879964",
-      "volatility_20d_annualized_percent": "35.017976",
-      "drawdown_20d_percent": "-8.849127",
-      "distance_from_ma20_percent": "-3.498298",
-      "distance_from_ma50_percent": "-4.680261",
-      "rsi14": "48.100091",
-      "volume_ratio_20d": "1.526664"
+      "data_session": "2026-09-16",
+      "return_1d_percent": "0.636404",
+      "return_5d_percent": "-5.002696",
+      "return_20d_percent": "-4.249087",
+      "volatility_20d_annualized_percent": "32.001844",
+      "drawdown_20d_percent": "-5.002696",
+      "distance_from_ma20_percent": "-2.110362",
+      "distance_from_ma50_percent": "-3.632829",
+      "rsi14": "46.203607",
+      "volume_ratio_20d": "0.902841"
     },
     {
       "symbol": "SOXL",
-      "data_session": "2026-09-14",
-      "return_1d_percent": "-16.984077",
-      "return_5d_percent": "-13.770465",
-      "return_20d_percent": "-30.231115",
-      "volatility_20d_annualized_percent": "114.330137",
-      "drawdown_20d_percent": "-33.260742",
-      "distance_from_ma20_percent": "-14.257374",
-      "distance_from_ma50_percent": "-24.870849",
-      "rsi14": "44.349293",
-      "volume_ratio_20d": "1.753764"
+      "data_session": "2026-09-16",
+      "return_1d_percent": "1.612589",
+      "return_5d_percent": "-17.398904",
+      "return_20d_percent": "-19.465533",
+      "volatility_20d_annualized_percent": "101.782945",
+      "drawdown_20d_percent": "-17.398904",
+      "distance_from_ma20_percent": "-8.981081",
+      "distance_from_ma50_percent": "-20.956639",
+      "rsi14": "42.669765",
+      "volume_ratio_20d": "1.276082"
     },
     {
       "symbol": "TQQQ",
-      "data_session": "2026-09-14",
-      "return_1d_percent": "-2.409139",
-      "return_5d_percent": "-4.283551",
-      "return_20d_percent": "-9.792947",
-      "volatility_20d_annualized_percent": "38.466795",
-      "drawdown_20d_percent": "-9.332467",
-      "distance_from_ma20_percent": "-2.832139",
-      "distance_from_ma50_percent": "-2.399234",
-      "rsi14": "50.704974",
-      "volume_ratio_20d": "1.039601"
+      "data_session": "2026-09-16",
+      "return_1d_percent": "0.044181",
+      "return_5d_percent": "-5.059403",
+      "return_20d_percent": "-6.342201",
+      "volatility_20d_annualized_percent": "35.014233",
+      "drawdown_20d_percent": "-7.326061",
+      "distance_from_ma20_percent": "-3.828185",
+      "distance_from_ma50_percent": "-3.940246",
+      "rsi14": "43.090318",
+      "volume_ratio_20d": "1.24969"
     },
     {
       "symbol": "NVDA",
-      "data_session": "2026-09-14",
-      "return_1d_percent": "-3.357912",
-      "return_5d_percent": "-8.421598",
-      "return_20d_percent": "-6.306625",
-      "volatility_20d_annualized_percent": "45.989206",
-      "drawdown_20d_percent": "-8.421598",
-      "distance_from_ma20_percent": "-3.869855",
-      "distance_from_ma50_percent": "-0.914294",
-      "rsi14": "51.640219",
-      "volume_ratio_20d": "1.010803"
+      "data_session": "2026-09-16",
+      "return_1d_percent": "0.815382",
+      "return_5d_percent": "-4.368044",
+      "return_20d_percent": "-2.657692",
+      "volatility_20d_annualized_percent": "45.548256",
+      "drawdown_20d_percent": "-7.145341",
+      "distance_from_ma20_percent": "-2.113554",
+      "distance_from_ma50_percent": "0.150574",
+      "rsi14": "53.003679",
+      "volume_ratio_20d": "0.739555"
     },
     {
       "symbol": "AMD",
-      "data_session": "2026-09-14",
-      "return_1d_percent": "-4.401992",
-      "return_5d_percent": "3.31679",
-      "return_20d_percent": "-4.078619",
-      "volatility_20d_annualized_percent": "49.914793",
-      "drawdown_20d_percent": "-5.313754",
-      "distance_from_ma20_percent": "2.582922",
-      "distance_from_ma50_percent": "-0.534329",
-      "rsi14": "60.360619",
-      "volume_ratio_20d": "1.377983"
+      "data_session": "2026-09-16",
+      "return_1d_percent": "1.64617",
+      "return_5d_percent": "-1.65035",
+      "return_20d_percent": "5.803172",
+      "volatility_20d_annualized_percent": "47.879751",
+      "drawdown_20d_percent": "-1.65035",
+      "distance_from_ma20_percent": "6.261222",
+      "distance_from_ma50_percent": "3.528786",
+      "rsi14": "59.18641",
+      "volume_ratio_20d": "1.249837"
     },
     {
       "symbol": "PLTR",
-      "data_session": "2026-09-14",
-      "return_1d_percent": "3.635712",
-      "return_5d_percent": "-0.5851",
-      "return_20d_percent": "-0.419441",
-      "volatility_20d_annualized_percent": "52.273844",
-      "drawdown_20d_percent": "-7.012559",
-      "distance_from_ma20_percent": "-1.258273",
-      "distance_from_ma50_percent": "11.952301",
-      "rsi14": "48.181048",
-      "volume_ratio_20d": "1.008063"
+      "data_session": "2026-09-16",
+      "return_1d_percent": "1.031525",
+      "return_5d_percent": "2.837255",
+      "return_20d_percent": "1.632274",
+      "volatility_20d_annualized_percent": "52.254181",
+      "drawdown_20d_percent": "-6.459925",
+      "distance_from_ma20_percent": "-0.750889",
+      "distance_from_ma50_percent": "11.46574",
+      "rsi14": "47.588519",
+      "volume_ratio_20d": "0.724499"
     },
     {
       "symbol": "ERX",
-      "data_session": "2026-09-14",
-      "return_1d_percent": "-1.802288",
-      "return_5d_percent": "1.260461",
-      "return_20d_percent": "8.007847",
-      "volatility_20d_annualized_percent": "30.920471",
-      "drawdown_20d_percent": "-2.446377",
-      "distance_from_ma20_percent": "1.854592",
-      "distance_from_ma50_percent": "13.011868",
-      "rsi14": "58.429105",
-      "volume_ratio_20d": "1.957603"
+      "data_session": "2026-09-16",
+      "return_1d_percent": "-5.618471",
+      "return_5d_percent": "-3.962065",
+      "return_20d_percent": "0.762578",
+      "volatility_20d_annualized_percent": "38.150759",
+      "drawdown_20d_percent": "-5.618471",
+      "distance_from_ma20_percent": "-0.261888",
+      "distance_from_ma50_percent": "9.748635",
+      "rsi14": "57.32424",
+      "volume_ratio_20d": "1.107015"
     },
     {
       "symbol": "GLD",
-      "data_session": "2026-09-14",
-      "return_1d_percent": "-1.487071",
-      "return_5d_percent": "-3.424538",
-      "return_20d_percent": "-2.152041",
-      "volatility_20d_annualized_percent": "28.265796",
-      "drawdown_20d_percent": "-8.229965",
-      "distance_from_ma20_percent": "-3.951688",
-      "distance_from_ma50_percent": "0.339453",
-      "rsi14": "28.354015",
-      "volume_ratio_20d": "0.608642"
+      "data_session": "2026-09-16",
+      "return_1d_percent": "-0.611443",
+      "return_5d_percent": "-2.878397",
+      "return_20d_percent": "-1.708693",
+      "volatility_20d_annualized_percent": "27.463809",
+      "drawdown_20d_percent": "-8.486934",
+      "distance_from_ma20_percent": "-4.007648",
+      "distance_from_ma50_percent": "-0.075608",
+      "rsi14": "29.953913",
+      "volume_ratio_20d": "1.268769"
     },
     {
       "symbol": "TLT",
-      "data_session": "2026-09-14",
-      "return_1d_percent": "0.07419",
-      "return_5d_percent": "-1.556987",
-      "return_20d_percent": "-1.352999",
-      "volatility_20d_annualized_percent": "10.726128",
-      "drawdown_20d_percent": "-3.043011",
-      "distance_from_ma20_percent": "-1.478491",
-      "distance_from_ma50_percent": "-2.371881",
-      "rsi14": "31.602741",
-      "volume_ratio_20d": "1.101754"
+      "data_session": "2026-09-16",
+      "return_1d_percent": "0.210628",
+      "return_5d_percent": "-1.040017",
+      "return_20d_percent": "-0.955188",
+      "volatility_20d_annualized_percent": "10.290878",
+      "drawdown_20d_percent": "-3.102916",
+      "distance_from_ma20_percent": "-1.454187",
+      "distance_from_ma50_percent": "-2.23383",
+      "rsi14": "17.646963",
+      "volume_ratio_20d": "1.744624"
     },
     {
       "symbol": "SQQQ",
-      "data_session": "2026-09-14",
-      "return_1d_percent": "2.469779",
-      "return_5d_percent": "4.321638",
-      "return_20d_percent": "9.906181",
-      "volatility_20d_annualized_percent": "38.420532",
-      "drawdown_20d_percent": "-0.895737",
-      "distance_from_ma20_percent": "2.492189",
-      "distance_from_ma50_percent": "-0.080774",
-      "rsi14": "48.228365",
-      "volume_ratio_20d": "1.111472"
+      "data_session": "2026-09-16",
+      "return_1d_percent": "-0.024614",
+      "return_5d_percent": "5.098347",
+      "return_20d_percent": "6.086734",
+      "volatility_20d_annualized_percent": "34.910725",
+      "drawdown_20d_percent": "-0.024614",
+      "distance_from_ma20_percent": "3.628664",
+      "distance_from_ma50_percent": "1.74477",
+      "rsi14": "56.059103",
+      "volume_ratio_20d": "1.271939"
     },
     {
       "symbol": "CL=F",
-      "data_session": "2026-09-14",
-      "return_1d_percent": "1.339327",
-      "return_5d_percent": "10.832964",
-      "return_20d_percent": "23.046113",
-      "volatility_20d_annualized_percent": "38.299429",
-      "drawdown_20d_percent": "-1.063626",
-      "distance_from_ma20_percent": "13.319099",
-      "distance_from_ma50_percent": "20.872464",
-      "rsi14": "80.266082",
-      "volume_ratio_20d": "1.464806"
+      "data_session": "2026-09-16",
+      "return_1d_percent": "-3.212701",
+      "return_5d_percent": "6.642371",
+      "return_20d_percent": "20.591002",
+      "volatility_20d_annualized_percent": "42.660626",
+      "drawdown_20d_percent": "-3.212701",
+      "distance_from_ma20_percent": "12.050669",
+      "distance_from_ma50_percent": "20.128256",
+      "rsi14": "81.444583",
+      "volume_ratio_20d": "1.251543"
     },
     {
       "symbol": "^VIX",
-      "data_session": "2026-09-14",
-      "return_1d_percent": "7.954547",
-      "return_5d_percent": "11.764707",
-      "return_20d_percent": "12.574068",
-      "volatility_20d_annualized_percent": "95.366495",
-      "drawdown_20d_percent": "-4.147981",
-      "distance_from_ma20_percent": "10.006757",
-      "distance_from_ma50_percent": "5.890224",
-      "rsi14": "57.03325",
+      "data_session": "2026-09-16",
+      "return_1d_percent": "2.965106",
+      "return_5d_percent": "7.594168",
+      "return_20d_percent": "18.938876",
+      "volatility_20d_annualized_percent": "91.490276",
+      "drawdown_20d_percent": "-0.728706",
+      "distance_from_ma20_percent": "12.419456",
+      "distance_from_ma50_percent": "9.412835",
+      "rsi14": "64.035083",
       "volume_ratio_20d": null
     },
     {
       "symbol": "^TNX",
-      "data_session": "2026-09-14",
-      "return_1d_percent": "-0.281406",
-      "return_5d_percent": "3.699834",
-      "return_20d_percent": "5.643098",
-      "volatility_20d_annualized_percent": "13.464755",
-      "drawdown_20d_percent": "-0.281406",
-      "distance_from_ma20_percent": "4.075104",
-      "distance_from_ma50_percent": "5.97212",
-      "rsi14": "76.604563",
+      "data_session": "2026-09-16",
+      "return_1d_percent": "0.200165",
+      "return_5d_percent": "3.493904",
+      "return_20d_percent": "6.374845",
+      "volatility_20d_annualized_percent": "13.280774",
+      "drawdown_20d_percent": "0.0",
+      "distance_from_ma20_percent": "4.392799",
+      "distance_from_ma50_percent": "6.481188",
+      "rsi14": "89.041121",
       "volume_ratio_20d": null
     },
     {
       "symbol": "AVGO",
-      "data_session": "2026-09-14",
-      "return_1d_percent": "-4.770847",
-      "return_5d_percent": "-3.682591",
-      "return_20d_percent": "-12.282753",
-      "volatility_20d_annualized_percent": "35.542585",
-      "drawdown_20d_percent": "-12.15758",
-      "distance_from_ma20_percent": "-5.576989",
-      "distance_from_ma50_percent": "-9.94093",
-      "rsi14": "40.533975",
-      "volume_ratio_20d": "1.25889"
+      "data_session": "2026-09-16",
+      "return_1d_percent": "0.070746",
+      "return_5d_percent": "-6.825291",
+      "return_20d_percent": "-10.655261",
+      "volatility_20d_annualized_percent": "34.511558",
+      "drawdown_20d_percent": "-8.620875",
+      "distance_from_ma20_percent": "-5.795812",
+      "distance_from_ma50_percent": "-10.995585",
+      "rsi14": "39.514879",
+      "volume_ratio_20d": "0.881981"
     },
     {
       "symbol": "META",
-      "data_session": "2026-09-14",
-      "return_1d_percent": "2.711286",
-      "return_5d_percent": "7.917044",
-      "return_20d_percent": "12.842249",
-      "volatility_20d_annualized_percent": "37.550499",
+      "data_session": "2026-09-16",
+      "return_1d_percent": "0.458046",
+      "return_5d_percent": "3.001422",
+      "return_20d_percent": "23.845351",
+      "volatility_20d_annualized_percent": "27.965437",
       "drawdown_20d_percent": "0.0",
-      "distance_from_ma20_percent": "12.764913",
-      "distance_from_ma50_percent": "10.462722",
-      "rsi14": "84.780019",
-      "volume_ratio_20d": "1.04763"
+      "distance_from_ma20_percent": "11.882684",
+      "distance_from_ma50_percent": "11.270715",
+      "rsi14": "83.784126",
+      "volume_ratio_20d": "0.951566"
     },
     {
       "symbol": "SOXX",
-      "data_session": "2026-09-14",
-      "return_1d_percent": "-5.629236",
-      "return_5d_percent": "-4.320392",
-      "return_20d_percent": "-9.632642",
-      "volatility_20d_annualized_percent": "38.954398",
-      "drawdown_20d_percent": "-11.038776",
-      "distance_from_ma20_percent": "-3.971459",
-      "distance_from_ma50_percent": "-6.176614",
-      "rsi14": "46.742842",
-      "volume_ratio_20d": "1.526327"
+      "data_session": "2026-09-16",
+      "return_1d_percent": "0.643478",
+      "return_5d_percent": "-5.62782",
+      "return_20d_percent": "-5.51949",
+      "volatility_20d_annualized_percent": "34.739507",
+      "drawdown_20d_percent": "-5.62782",
+      "distance_from_ma20_percent": "-2.226135",
+      "distance_from_ma50_percent": "-4.822605",
+      "rsi14": "44.87789",
+      "volume_ratio_20d": "1.140662"
     },
     {
       "symbol": "XLK",
-      "data_session": "2026-09-14",
-      "return_1d_percent": "-1.806362",
-      "return_5d_percent": "-1.60188",
-      "return_20d_percent": "-3.015629",
-      "volatility_20d_annualized_percent": "21.704838",
-      "drawdown_20d_percent": "-3.173607",
-      "distance_from_ma20_percent": "-0.518784",
-      "distance_from_ma50_percent": "0.809407",
-      "rsi14": "57.567086",
-      "volume_ratio_20d": "1.332068"
+      "data_session": "2026-09-16",
+      "return_1d_percent": "0.1034",
+      "return_5d_percent": "-2.097196",
+      "return_20d_percent": "-0.910464",
+      "volatility_20d_annualized_percent": "19.906323",
+      "drawdown_20d_percent": "-2.481315",
+      "distance_from_ma20_percent": "-0.485592",
+      "distance_from_ma50_percent": "0.563805",
+      "rsi14": "52.105057",
+      "volume_ratio_20d": "1.261799"
     },
     {
       "symbol": "XLF",
-      "data_session": "2026-09-14",
-      "return_1d_percent": "-0.384282",
-      "return_5d_percent": "-1.841652",
-      "return_20d_percent": "-1.942918",
-      "volatility_20d_annualized_percent": "13.175798",
-      "drawdown_20d_percent": "-2.612709",
-      "distance_from_ma20_percent": "-1.061728",
-      "distance_from_ma50_percent": "-0.197053",
-      "rsi14": "38.752342",
-      "volume_ratio_20d": "1.265055"
+      "data_session": "2026-09-16",
+      "return_1d_percent": "-1.618291",
+      "return_5d_percent": "-1.980373",
+      "return_20d_percent": "-3.302213",
+      "volatility_20d_annualized_percent": "13.747526",
+      "drawdown_20d_percent": "-4.491122",
+      "distance_from_ma20_percent": "-2.747347",
+      "distance_from_ma50_percent": "-2.142267",
+      "rsi14": "31.360004",
+      "volume_ratio_20d": "1.724187"
     },
     {
       "symbol": "XLE",
-      "data_session": "2026-09-14",
-      "return_1d_percent": "-0.936446",
-      "return_5d_percent": "0.733689",
-      "return_20d_percent": "4.231948",
-      "volatility_20d_annualized_percent": "15.587404",
-      "drawdown_20d_percent": "-1.194302",
-      "distance_from_ma20_percent": "1.065786",
-      "distance_from_ma50_percent": "6.898983",
-      "rsi14": "59.033075",
-      "volume_ratio_20d": "1.682455"
+      "data_session": "2026-09-16",
+      "return_1d_percent": "-2.881847",
+      "return_5d_percent": "-1.959882",
+      "return_20d_percent": "0.549621",
+      "volatility_20d_annualized_percent": "19.252132",
+      "drawdown_20d_percent": "-2.881847",
+      "distance_from_ma20_percent": "-0.007029",
+      "distance_from_ma50_percent": "5.296565",
+      "rsi14": "58.213546",
+      "volume_ratio_20d": "1.64033"
     },
     {
       "symbol": "XLV",
-      "data_session": "2026-09-14",
-      "return_1d_percent": "1.445331",
-      "return_5d_percent": "-2.158062",
-      "return_20d_percent": "0.227045",
-      "volatility_20d_annualized_percent": "21.12716",
-      "drawdown_20d_percent": "-4.513885",
-      "distance_from_ma20_percent": "-1.845767",
-      "distance_from_ma50_percent": "0.861487",
-      "rsi14": "31.062669",
-      "volume_ratio_20d": "1.191488"
+      "data_session": "2026-09-16",
+      "return_1d_percent": "0.065609",
+      "return_5d_percent": "0.714373",
+      "return_20d_percent": "-1.15477",
+      "volatility_20d_annualized_percent": "20.279582",
+      "drawdown_20d_percent": "-4.502498",
+      "distance_from_ma20_percent": "-1.795275",
+      "distance_from_ma50_percent": "0.764097",
+      "rsi14": "32.202369",
+      "volume_ratio_20d": "0.905699"
     },
     {
       "symbol": "SOXS",
-      "data_session": "2026-09-14",
-      "return_1d_percent": "17.195288",
-      "return_5d_percent": "11.631419",
-      "return_20d_percent": "28.426021",
-      "volatility_20d_annualized_percent": "117.388017",
-      "drawdown_20d_percent": "-0.938341",
-      "distance_from_ma20_percent": "9.336855",
-      "distance_from_ma50_percent": "8.564256",
-      "rsi14": "51.340995",
-      "volume_ratio_20d": "1.228374"
+      "data_session": "2026-09-16",
+      "return_1d_percent": "-1.937374",
+      "return_5d_percent": "15.888064",
+      "return_20d_percent": "13.396701",
+      "volatility_20d_annualized_percent": "104.4304",
+      "drawdown_20d_percent": "-4.040599",
+      "distance_from_ma20_percent": "3.86461",
+      "distance_from_ma50_percent": "4.65879",
+      "rsi14": "52.845071",
+      "volume_ratio_20d": "1.178328"
     },
     {
       "symbol": "UPRO",
-      "data_session": "2026-09-14",
-      "return_1d_percent": "-1.371435",
-      "return_5d_percent": "-3.878061",
-      "return_20d_percent": "-6.793079",
-      "volatility_20d_annualized_percent": "26.314407",
-      "drawdown_20d_percent": "-5.446884",
-      "distance_from_ma20_percent": "-2.551845",
-      "distance_from_ma50_percent": "-0.615948",
-      "rsi14": "45.88236",
-      "volume_ratio_20d": "0.997982"
+      "data_session": "2026-09-16",
+      "return_1d_percent": "-1.298878",
+      "return_5d_percent": "-3.458113",
+      "return_20d_percent": "-6.0123",
+      "volatility_20d_annualized_percent": "25.747129",
+      "drawdown_20d_percent": "-7.565205",
+      "distance_from_ma20_percent": "-4.526425",
+      "distance_from_ma50_percent": "-3.256857",
+      "rsi14": "38.409437",
+      "volume_ratio_20d": "1.304693"
     },
     {
       "symbol": "SPXU",
-      "data_session": "2026-09-14",
-      "return_1d_percent": "1.367531",
-      "return_5d_percent": "3.883217",
-      "return_20d_percent": "7.039711",
-      "volatility_20d_annualized_percent": "26.169076",
-      "drawdown_20d_percent": "-1.084235",
-      "distance_from_ma20_percent": "2.429761",
-      "distance_from_ma50_percent": "-0.143129",
-      "rsi14": "53.825144",
-      "volume_ratio_20d": "1.023489"
+      "data_session": "2026-09-16",
+      "return_1d_percent": "1.302653",
+      "return_5d_percent": "3.482445",
+      "return_20d_percent": "6.157418",
+      "volatility_20d_annualized_percent": "25.617248",
+      "drawdown_20d_percent": "0.0",
+      "distance_from_ma20_percent": "4.554034",
+      "distance_from_ma50_percent": "2.627025",
+      "rsi14": "61.528824",
+      "volume_ratio_20d": "1.385363"
     },
     {
       "symbol": "MSFT",
-      "data_session": "2026-09-14",
-      "return_1d_percent": "1.973246",
-      "return_5d_percent": "1.142684",
-      "return_20d_percent": "2.020591",
-      "volatility_20d_annualized_percent": "22.80419",
-      "drawdown_20d_percent": "-1.581217",
-      "distance_from_ma20_percent": "2.116543",
-      "distance_from_ma50_percent": "10.8435",
-      "rsi14": "60.23061",
-      "volume_ratio_20d": "1.091212"
+      "data_session": "2026-09-16",
+      "return_1d_percent": "-1.371904",
+      "return_5d_percent": "-0.274587",
+      "return_20d_percent": "1.800133",
+      "volatility_20d_annualized_percent": "21.400741",
+      "drawdown_20d_percent": "-4.523599",
+      "distance_from_ma20_percent": "-1.190334",
+      "distance_from_ma50_percent": "6.539706",
+      "rsi14": "46.788698",
+      "volume_ratio_20d": "0.823352"
     },
     {
       "symbol": "AAPL",
-      "data_session": "2026-09-14",
-      "return_1d_percent": "0.243777",
-      "return_5d_percent": "4.097255",
-      "return_20d_percent": "8.874577",
-      "volatility_20d_annualized_percent": "23.864945",
-      "drawdown_20d_percent": "0.0",
-      "distance_from_ma20_percent": "4.74757",
-      "distance_from_ma50_percent": "4.589788",
-      "rsi14": "70.523448",
-      "volume_ratio_20d": "0.910425"
+      "data_session": "2026-09-16",
+      "return_1d_percent": "0.322933",
+      "return_5d_percent": "5.413207",
+      "return_20d_percent": "7.218658",
+      "volatility_20d_annualized_percent": "23.720353",
+      "drawdown_20d_percent": "-0.201148",
+      "distance_from_ma20_percent": "3.751679",
+      "distance_from_ma50_percent": "4.115053",
+      "rsi14": "67.484315",
+      "volume_ratio_20d": "0.857513"
     },
     {
       "symbol": "TSLA",
-      "data_session": "2026-09-14",
-      "return_1d_percent": "-1.770469",
-      "return_5d_percent": "1.381048",
-      "return_20d_percent": "4.879193",
-      "volatility_20d_annualized_percent": "51.338373",
-      "drawdown_20d_percent": "-4.623109",
-      "distance_from_ma20_percent": "0.844185",
-      "distance_from_ma50_percent": "1.458812",
-      "rsi14": "54.125488",
-      "volume_ratio_20d": "0.833149"
+      "data_session": "2026-09-16",
+      "return_1d_percent": "0.420663",
+      "return_5d_percent": "-2.645391",
+      "return_20d_percent": "6.296195",
+      "volatility_20d_annualized_percent": "51.14347",
+      "drawdown_20d_percent": "-4.859582",
+      "distance_from_ma20_percent": "0.053225",
+      "distance_from_ma50_percent": "1.828983",
+      "rsi14": "55.125407",
+      "volume_ratio_20d": "0.814832"
     },
     {
       "symbol": "TSM",
-      "data_session": "2026-09-14",
-      "return_1d_percent": "-3.515368",
-      "return_5d_percent": "-2.541324",
-      "return_20d_percent": "-1.956138",
-      "volatility_20d_annualized_percent": "30.244578",
-      "drawdown_20d_percent": "-4.781319",
-      "distance_from_ma20_percent": "-0.77903",
-      "distance_from_ma50_percent": "-0.143758",
-      "rsi14": "54.540234",
-      "volume_ratio_20d": "1.480533"
+      "data_session": "2026-09-16",
+      "return_1d_percent": "0.959517",
+      "return_5d_percent": "-4.051816",
+      "return_20d_percent": "1.042548",
+      "volatility_20d_annualized_percent": "26.562807",
+      "drawdown_20d_percent": "-4.84738",
+      "distance_from_ma20_percent": "-0.695714",
+      "distance_from_ma50_percent": "0.039756",
+      "rsi14": "50.017132",
+      "volume_ratio_20d": "1.103485"
     }
   ],
   "regime": {
-    "trend": "mixed",
+    "trend": "risk_off",
     "volatility": "normal",
     "rates": "rising",
     "evidence": [
-      "SPY 20 日方向與 50 日均線位置不一致。",
-      "^TNX 五日相對變化 3.699834%。",
+      "SPY 20 日報酬 -1.746045% 且低於 50 日均線 -0.676699%。",
+      "^TNX 五日相對變化 3.493904%。",
       "Cboe VIX curve: level=normal, shape=contango_like。"
     ]
   },
@@ -917,49 +917,49 @@
     "observations": [
       {
         "index": "VIX9D",
-        "value": "17.69",
-        "value_timestamp": "2026-09-15T17:42:32Z",
-        "collected_at": "2026-09-15T17:57:51.248788Z",
+        "value": "14.33",
+        "value_timestamp": "2026-09-17T14:49:16Z",
+        "collected_at": "2026-09-17T15:05:00.173555Z",
         "source_url": "https://cdn.cboe.com/api/global/delayed_quotes/quotes/_VIX9D.json",
         "authority": "official",
         "market_session": "Cboe delayed index session",
         "latency_note": "Official Cboe delayed quote; value and collection timestamps are distinct.",
         "status": "complete",
-        "data_cutoff": "2026-09-15T17:57:51.248788Z"
+        "data_cutoff": "2026-09-17T15:05:00.173555Z"
       },
       {
         "index": "VIX",
-        "value": "17.62",
-        "value_timestamp": "2026-09-15T17:42:31Z",
-        "collected_at": "2026-09-15T17:57:51.248788Z",
+        "value": "15.76",
+        "value_timestamp": "2026-09-17T14:49:16Z",
+        "collected_at": "2026-09-17T15:05:00.173555Z",
         "source_url": "https://cdn.cboe.com/api/global/delayed_quotes/quotes/_VIX.json",
         "authority": "official",
         "market_session": "Cboe delayed index session",
         "latency_note": "Official Cboe delayed quote; value and collection timestamps are distinct.",
         "status": "complete",
-        "data_cutoff": "2026-09-15T17:57:51.248788Z"
+        "data_cutoff": "2026-09-17T15:05:00.173555Z"
       },
       {
         "index": "VIX3M",
-        "value": "19.58",
-        "value_timestamp": "2026-09-15T17:42:31Z",
-        "collected_at": "2026-09-15T17:57:51.248788Z",
+        "value": "18.67",
+        "value_timestamp": "2026-09-17T14:49:16Z",
+        "collected_at": "2026-09-17T15:05:00.173555Z",
         "source_url": "https://cdn.cboe.com/api/global/delayed_quotes/quotes/_VIX3M.json",
         "authority": "official",
         "market_session": "Cboe delayed index session",
         "latency_note": "Official Cboe delayed quote; value and collection timestamps are distinct.",
         "status": "complete",
-        "data_cutoff": "2026-09-15T17:57:51.248788Z"
+        "data_cutoff": "2026-09-17T15:05:00.173555Z"
       }
     ],
     "coverage": "complete",
-    "data_cutoff": "2026-09-15T17:57:51.248788Z",
+    "data_cutoff": "2026-09-17T15:05:00.173555Z",
     "maximum_age_minutes": 30,
     "features": {
-      "vix9d_minus_vix": "0.07",
-      "vix_minus_vix3m": "-1.96",
-      "vix9d_to_vix_ratio": "1.003972758229284903518728717",
-      "vix_to_vix3m_ratio": "0.8998978549540347293156281920",
+      "vix9d_minus_vix": "-1.43",
+      "vix_minus_vix3m": "-2.91",
+      "vix9d_to_vix_ratio": "0.9092639593908629441624365482",
+      "vix_to_vix3m_ratio": "0.8441349758971612212104981253",
       "curve_shape": "contango_like",
       "level_bucket": "normal",
       "methodology_version": "vix-curve-1.0",
@@ -970,16 +970,18 @@
     },
     "note": "All required Cboe observations are aligned and fresh."
   },
+  "macro_observations": [],
+  "macro_state": null,
   "options_positioning": {
     "report_date": null,
     "scope": "OCC exchange option volume and open-interest report",
     "volume": null,
     "open_interest": null,
-    "collected_at": "2026-09-15T17:57:51.248788Z",
+    "collected_at": "2026-09-17T15:05:00.173555Z",
     "source_url": "https://www.theocc.com/market-data/market-data-reports/volume-and-open-interest/exchange-volume-by-class",
     "authority": "official",
     "coverage": "missing",
-    "data_cutoff": "2026-09-15T17:57:51.248788Z",
+    "data_cutoff": "2026-09-17T15:05:00.173555Z",
     "limitation": "Aggregate OCC volume and open interest do not identify investor intent or bullish/bearish direction; this optional evidence gap does not limit equity or ETF direction, allocation, or cash-market liquidity analysis."
   },
   "source_catalog": [],
@@ -1413,7 +1415,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q3",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "AAPL",
@@ -1426,7 +1431,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q3",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "AAPL",
@@ -1439,7 +1447,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q3",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "AAPL",
@@ -1452,7 +1463,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q3",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "AAPL",
@@ -1465,7 +1479,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q3",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "AAPL",
@@ -1478,7 +1495,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q3",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "AAPL",
@@ -1491,7 +1511,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q3",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "AAPL",
@@ -1504,7 +1527,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q3",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "AAPL",
@@ -1517,7 +1543,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q3",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "AAPL",
@@ -1530,7 +1559,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q3",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "AAPL",
@@ -1543,7 +1575,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q3",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "AAPL",
@@ -1556,7 +1591,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q3",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "AAPL",
@@ -1569,7 +1607,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q3",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "AAPL",
@@ -1582,7 +1623,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q3",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "AAPL",
@@ -1595,7 +1639,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q3",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "AAPL",
@@ -1608,7 +1655,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q3",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "AMD",
@@ -1621,7 +1671,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "AMD",
@@ -1634,7 +1687,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "AMD",
@@ -1647,7 +1703,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "AMD",
@@ -1660,7 +1719,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "AMD",
@@ -1673,7 +1735,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "AMD",
@@ -1686,7 +1751,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "AMD",
@@ -1699,7 +1767,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "AMD",
@@ -1712,7 +1783,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "AMD",
@@ -1725,7 +1799,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "AMD",
@@ -1738,7 +1815,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "AMD",
@@ -1751,7 +1831,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "AMD",
@@ -1764,7 +1847,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "AMD",
@@ -1777,7 +1863,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "AMD",
@@ -1790,7 +1879,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "AVGO",
@@ -1803,7 +1895,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q3",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "AVGO",
@@ -1816,7 +1911,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q3",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "AVGO",
@@ -1829,7 +1927,10 @@
       "form": "10-K",
       "fiscal_year": 2024,
       "fiscal_period": "FY",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "AVGO",
@@ -1842,7 +1943,10 @@
       "form": "10-K",
       "fiscal_year": 2024,
       "fiscal_period": "FY",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "AVGO",
@@ -1855,7 +1959,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q3",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "AVGO",
@@ -1868,7 +1975,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q3",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "AVGO",
@@ -1881,7 +1991,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q3",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "AVGO",
@@ -1894,7 +2007,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q3",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "AVGO",
@@ -1907,7 +2023,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q3",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "AVGO",
@@ -1920,7 +2039,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q3",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "AVGO",
@@ -1933,7 +2055,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q3",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "AVGO",
@@ -1946,7 +2071,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q3",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "AVGO",
@@ -1959,7 +2087,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q3",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "AVGO",
@@ -1972,7 +2103,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q3",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "AVGO",
@@ -1985,7 +2119,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q3",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "AVGO",
@@ -1998,7 +2135,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q3",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "META",
@@ -2011,7 +2151,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "META",
@@ -2024,7 +2167,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "META",
@@ -2037,7 +2183,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "META",
@@ -2050,7 +2199,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "META",
@@ -2063,7 +2215,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "META",
@@ -2076,7 +2231,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "META",
@@ -2089,7 +2247,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "META",
@@ -2102,7 +2263,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "META",
@@ -2115,7 +2279,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "META",
@@ -2128,7 +2295,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "META",
@@ -2141,7 +2311,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "META",
@@ -2154,7 +2327,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "META",
@@ -2167,7 +2343,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "META",
@@ -2180,7 +2359,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "META",
@@ -2193,7 +2375,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "META",
@@ -2206,7 +2391,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "MSFT",
@@ -2219,7 +2407,10 @@
       "form": "10-K",
       "fiscal_year": 2026,
       "fiscal_period": "FY",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "MSFT",
@@ -2232,7 +2423,10 @@
       "form": "10-K",
       "fiscal_year": 2026,
       "fiscal_period": "FY",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "MSFT",
@@ -2245,7 +2439,10 @@
       "form": "10-K",
       "fiscal_year": 2026,
       "fiscal_period": "FY",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "MSFT",
@@ -2258,7 +2455,10 @@
       "form": "10-K",
       "fiscal_year": 2026,
       "fiscal_period": "FY",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "MSFT",
@@ -2271,7 +2471,10 @@
       "form": "10-K",
       "fiscal_year": 2026,
       "fiscal_period": "FY",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "MSFT",
@@ -2284,7 +2487,10 @@
       "form": "10-K",
       "fiscal_year": 2026,
       "fiscal_period": "FY",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "MSFT",
@@ -2297,7 +2503,10 @@
       "form": "10-K",
       "fiscal_year": 2026,
       "fiscal_period": "FY",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "MSFT",
@@ -2310,7 +2519,10 @@
       "form": "10-K",
       "fiscal_year": 2026,
       "fiscal_period": "FY",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "MSFT",
@@ -2323,7 +2535,10 @@
       "form": "10-K",
       "fiscal_year": 2026,
       "fiscal_period": "FY",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "MSFT",
@@ -2336,7 +2551,10 @@
       "form": "10-K",
       "fiscal_year": 2026,
       "fiscal_period": "FY",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "MSFT",
@@ -2349,7 +2567,10 @@
       "form": "10-K",
       "fiscal_year": 2026,
       "fiscal_period": "FY",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "MSFT",
@@ -2362,7 +2583,10 @@
       "form": "10-K",
       "fiscal_year": 2026,
       "fiscal_period": "FY",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "MSFT",
@@ -2375,7 +2599,10 @@
       "form": "10-K",
       "fiscal_year": 2026,
       "fiscal_period": "FY",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "MSFT",
@@ -2388,7 +2615,10 @@
       "form": "10-K",
       "fiscal_year": 2026,
       "fiscal_period": "FY",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "MSFT",
@@ -2401,7 +2631,10 @@
       "form": "10-K",
       "fiscal_year": 2026,
       "fiscal_period": "FY",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "MSFT",
@@ -2414,7 +2647,10 @@
       "form": "10-K",
       "fiscal_year": 2026,
       "fiscal_period": "FY",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "NVDA",
@@ -2427,7 +2663,10 @@
       "form": "10-K",
       "fiscal_year": 2022,
       "fiscal_period": "FY",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "NVDA",
@@ -2440,7 +2679,10 @@
       "form": "10-K",
       "fiscal_year": 2022,
       "fiscal_period": "FY",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "NVDA",
@@ -2453,7 +2695,10 @@
       "form": "10-Q",
       "fiscal_year": 2027,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "NVDA",
@@ -2466,7 +2711,10 @@
       "form": "10-Q",
       "fiscal_year": 2027,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "NVDA",
@@ -2479,7 +2727,10 @@
       "form": "10-Q",
       "fiscal_year": 2027,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "NVDA",
@@ -2492,7 +2743,10 @@
       "form": "10-Q",
       "fiscal_year": 2027,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "NVDA",
@@ -2505,7 +2759,10 @@
       "form": "10-Q",
       "fiscal_year": 2027,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "NVDA",
@@ -2518,7 +2775,10 @@
       "form": "10-Q",
       "fiscal_year": 2027,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "NVDA",
@@ -2531,7 +2791,10 @@
       "form": "10-Q",
       "fiscal_year": 2027,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "NVDA",
@@ -2544,7 +2807,10 @@
       "form": "10-Q",
       "fiscal_year": 2027,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "NVDA",
@@ -2557,7 +2823,10 @@
       "form": "10-Q",
       "fiscal_year": 2027,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "NVDA",
@@ -2570,7 +2839,10 @@
       "form": "10-Q",
       "fiscal_year": 2027,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "NVDA",
@@ -2583,7 +2855,10 @@
       "form": "10-Q",
       "fiscal_year": 2027,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "NVDA",
@@ -2596,7 +2871,10 @@
       "form": "10-Q",
       "fiscal_year": 2027,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "NVDA",
@@ -2609,7 +2887,10 @@
       "form": "10-Q",
       "fiscal_year": 2027,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "NVDA",
@@ -2622,7 +2903,10 @@
       "form": "10-Q",
       "fiscal_year": 2027,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "PLTR",
@@ -2635,7 +2919,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "PLTR",
@@ -2648,7 +2935,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "PLTR",
@@ -2661,7 +2951,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "PLTR",
@@ -2674,7 +2967,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "PLTR",
@@ -2687,7 +2983,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "PLTR",
@@ -2700,7 +2999,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "PLTR",
@@ -2713,7 +3015,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "PLTR",
@@ -2726,7 +3031,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "PLTR",
@@ -2739,7 +3047,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "PLTR",
@@ -2752,7 +3063,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "PLTR",
@@ -2765,7 +3079,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "PLTR",
@@ -2778,7 +3095,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "PLTR",
@@ -2791,7 +3111,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "PLTR",
@@ -2804,7 +3127,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "PLTR",
@@ -2817,7 +3143,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "PLTR",
@@ -2830,7 +3159,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "TSLA",
@@ -2843,7 +3175,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "TSLA",
@@ -2856,7 +3191,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "TSLA",
@@ -2869,7 +3207,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "TSLA",
@@ -2882,7 +3223,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "TSLA",
@@ -2895,7 +3239,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "TSLA",
@@ -2908,7 +3255,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "TSLA",
@@ -2921,7 +3271,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "TSLA",
@@ -2934,7 +3287,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "TSLA",
@@ -2947,7 +3303,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "TSLA",
@@ -2960,7 +3319,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "TSLA",
@@ -2973,7 +3335,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "TSLA",
@@ -2986,7 +3351,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "TSLA",
@@ -2999,7 +3367,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "TSLA",
@@ -3012,7 +3383,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "TSLA",
@@ -3025,7 +3399,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "TSLA",
@@ -3038,7 +3415,10 @@
       "form": "10-Q",
       "fiscal_year": 2026,
       "fiscal_period": "Q2",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "TSM",
@@ -3051,7 +3431,10 @@
       "form": "20-F",
       "fiscal_year": 2024,
       "fiscal_period": "FY",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001046179.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001046179.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "TSM",
@@ -3064,7 +3447,10 @@
       "form": "20-F",
       "fiscal_year": 2024,
       "fiscal_period": "FY",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001046179.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001046179.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "TSM",
@@ -3077,7 +3463,10 @@
       "form": "20-F",
       "fiscal_year": 2024,
       "fiscal_period": "FY",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001046179.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001046179.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "TSM",
@@ -3090,7 +3479,10 @@
       "form": "20-F",
       "fiscal_year": 2024,
       "fiscal_period": "FY",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001046179.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001046179.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "TSM",
@@ -3103,7 +3495,10 @@
       "form": "20-F",
       "fiscal_year": 2024,
       "fiscal_period": "FY",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001046179.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001046179.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     },
     {
       "symbol": "TSM",
@@ -3116,12 +3511,15 @@
       "form": "20-F",
       "fiscal_year": 2024,
       "fiscal_period": "FY",
-      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001046179.json"
+      "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001046179.json",
+      "accounting_basis": "gaap",
+      "period_kind": "unknown",
+      "source_concept": null
     }
   ],
   "event_calendar": {
     "schema_version": "1.0",
-    "generated_at": "2026-09-15T13:57:45.046453-04:00",
+    "generated_at": "2026-09-17T11:04:55.377785-04:00",
     "input_mode": "official_snapshot",
     "required_categories": [
       "fomc",
@@ -3133,9 +3531,9 @@
       {
         "category": "fomc",
         "status": "complete",
-        "queried_at": "2026-09-15T17:57:45.254339Z",
-        "data_cutoff": "2026-09-15T17:57:45.254339Z",
-        "coverage_start": "2026-09-16T14:00:00-04:00",
+        "queried_at": "2026-09-17T15:04:55.539815Z",
+        "data_cutoff": "2026-09-17T15:04:55.539815Z",
+        "coverage_start": "2026-10-28T14:00:00-04:00",
         "coverage_end": "2027-12-08T14:00:00-05:00",
         "timezone": "America/New_York",
         "authority": "official",
@@ -3143,14 +3541,18 @@
           "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         ],
         "covered_symbols": [],
-        "content_digest": "4d9f19d5535d681d22e2a98a95a0da41276382428be3b0255586f7aa8dccce4f",
-        "note": "Federal Reserve FOMC calendar"
+        "content_digest": "232e18fd4809ed7e13d5584f18c733268bea7b451d54e915f8c5b7fcbba14a89",
+        "note": "Federal Reserve FOMC calendar",
+        "symbol_coverage": [],
+        "expires_at": null,
+        "retry_reasons": [],
+        "cache_used": false
       },
       {
         "category": "bls",
         "status": "error",
-        "queried_at": "2026-09-15T13:57:45.046453-04:00",
-        "data_cutoff": "2026-09-15T13:57:45.046453-04:00",
+        "queried_at": "2026-09-17T11:04:55.377785-04:00",
+        "data_cutoff": "2026-09-17T11:04:55.377785-04:00",
         "coverage_start": null,
         "coverage_end": null,
         "timezone": "America/New_York",
@@ -3160,13 +3562,17 @@
         ],
         "covered_symbols": [],
         "content_digest": null,
-        "note": "BLS source failure: HTTPError"
+        "note": "BLS source failure: HTTPError",
+        "symbol_coverage": [],
+        "expires_at": null,
+        "retry_reasons": [],
+        "cache_used": false
       },
       {
         "category": "nyse",
         "status": "complete",
-        "queried_at": "2026-09-15T17:57:45.286497Z",
-        "data_cutoff": "2026-09-15T17:57:45.286497Z",
+        "queried_at": "2026-09-17T15:04:55.659469Z",
+        "data_cutoff": "2026-09-17T15:04:55.659469Z",
         "coverage_start": "2026-11-27T13:00:00-05:00",
         "coverage_end": "2028-07-03T13:00:00-04:00",
         "timezone": "America/New_York",
@@ -3176,13 +3582,17 @@
         ],
         "covered_symbols": [],
         "content_digest": "b7c8c2fa1923de735a0bc29a4697b94957a6cc6ad7e219739282fea871d2de6f",
-        "note": "NYSE official hours and calendars"
+        "note": "NYSE official hours and calendars",
+        "symbol_coverage": [],
+        "expires_at": null,
+        "retry_reasons": [],
+        "cache_used": false
       },
       {
         "category": "earnings",
         "status": "missing",
-        "queried_at": "2026-09-15T13:57:48.708727-04:00",
-        "data_cutoff": "2026-09-15T13:57:48.708727-04:00",
+        "queried_at": "2026-09-17T11:04:57.614485-04:00",
+        "data_cutoff": "2026-09-17T11:04:57.614485-04:00",
         "coverage_start": null,
         "coverage_end": null,
         "timezone": "America/New_York",
@@ -3200,23 +3610,14 @@
         ],
         "covered_symbols": [],
         "content_digest": null,
-        "note": "No future dated primary issuer earnings event could be verified; coverage remains a warning."
+        "note": "No future dated primary issuer earnings event could be verified; coverage remains a warning.",
+        "symbol_coverage": [],
+        "expires_at": null,
+        "retry_reasons": [],
+        "cache_used": false
       }
     ],
     "events": [
-      {
-        "event_id": "fomc-20260916",
-        "category": "fomc",
-        "title": "FOMC statement",
-        "starts_at": "2026-09-16T14:00:00-04:00",
-        "ends_at": null,
-        "timezone": "America/New_York",
-        "affected_symbols": [],
-        "authority": "official",
-        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-        "source_as_of": "2026-09-15T17:57:45.254339Z",
-        "content_digest": "4d9f19d5535d681d22e2a98a95a0da41276382428be3b0255586f7aa8dccce4f"
-      },
       {
         "event_id": "fomc-20261028",
         "category": "fomc",
@@ -3227,8 +3628,8 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-        "source_as_of": "2026-09-15T17:57:45.254339Z",
-        "content_digest": "4d9f19d5535d681d22e2a98a95a0da41276382428be3b0255586f7aa8dccce4f"
+        "source_as_of": "2026-09-17T15:04:55.539815Z",
+        "content_digest": "232e18fd4809ed7e13d5584f18c733268bea7b451d54e915f8c5b7fcbba14a89"
       },
       {
         "event_id": "fomc-20261209",
@@ -3240,8 +3641,8 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-        "source_as_of": "2026-09-15T17:57:45.254339Z",
-        "content_digest": "4d9f19d5535d681d22e2a98a95a0da41276382428be3b0255586f7aa8dccce4f"
+        "source_as_of": "2026-09-17T15:04:55.539815Z",
+        "content_digest": "232e18fd4809ed7e13d5584f18c733268bea7b451d54e915f8c5b7fcbba14a89"
       },
       {
         "event_id": "fomc-20270127",
@@ -3253,8 +3654,8 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-        "source_as_of": "2026-09-15T17:57:45.254339Z",
-        "content_digest": "4d9f19d5535d681d22e2a98a95a0da41276382428be3b0255586f7aa8dccce4f"
+        "source_as_of": "2026-09-17T15:04:55.539815Z",
+        "content_digest": "232e18fd4809ed7e13d5584f18c733268bea7b451d54e915f8c5b7fcbba14a89"
       },
       {
         "event_id": "fomc-20270317",
@@ -3266,8 +3667,8 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-        "source_as_of": "2026-09-15T17:57:45.254339Z",
-        "content_digest": "4d9f19d5535d681d22e2a98a95a0da41276382428be3b0255586f7aa8dccce4f"
+        "source_as_of": "2026-09-17T15:04:55.539815Z",
+        "content_digest": "232e18fd4809ed7e13d5584f18c733268bea7b451d54e915f8c5b7fcbba14a89"
       },
       {
         "event_id": "fomc-20270428",
@@ -3279,8 +3680,8 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-        "source_as_of": "2026-09-15T17:57:45.254339Z",
-        "content_digest": "4d9f19d5535d681d22e2a98a95a0da41276382428be3b0255586f7aa8dccce4f"
+        "source_as_of": "2026-09-17T15:04:55.539815Z",
+        "content_digest": "232e18fd4809ed7e13d5584f18c733268bea7b451d54e915f8c5b7fcbba14a89"
       },
       {
         "event_id": "fomc-20270609",
@@ -3292,8 +3693,8 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-        "source_as_of": "2026-09-15T17:57:45.254339Z",
-        "content_digest": "4d9f19d5535d681d22e2a98a95a0da41276382428be3b0255586f7aa8dccce4f"
+        "source_as_of": "2026-09-17T15:04:55.539815Z",
+        "content_digest": "232e18fd4809ed7e13d5584f18c733268bea7b451d54e915f8c5b7fcbba14a89"
       },
       {
         "event_id": "fomc-20270728",
@@ -3305,8 +3706,8 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-        "source_as_of": "2026-09-15T17:57:45.254339Z",
-        "content_digest": "4d9f19d5535d681d22e2a98a95a0da41276382428be3b0255586f7aa8dccce4f"
+        "source_as_of": "2026-09-17T15:04:55.539815Z",
+        "content_digest": "232e18fd4809ed7e13d5584f18c733268bea7b451d54e915f8c5b7fcbba14a89"
       },
       {
         "event_id": "fomc-20270915",
@@ -3318,8 +3719,8 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-        "source_as_of": "2026-09-15T17:57:45.254339Z",
-        "content_digest": "4d9f19d5535d681d22e2a98a95a0da41276382428be3b0255586f7aa8dccce4f"
+        "source_as_of": "2026-09-17T15:04:55.539815Z",
+        "content_digest": "232e18fd4809ed7e13d5584f18c733268bea7b451d54e915f8c5b7fcbba14a89"
       },
       {
         "event_id": "fomc-20271027",
@@ -3331,8 +3732,8 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-        "source_as_of": "2026-09-15T17:57:45.254339Z",
-        "content_digest": "4d9f19d5535d681d22e2a98a95a0da41276382428be3b0255586f7aa8dccce4f"
+        "source_as_of": "2026-09-17T15:04:55.539815Z",
+        "content_digest": "232e18fd4809ed7e13d5584f18c733268bea7b451d54e915f8c5b7fcbba14a89"
       },
       {
         "event_id": "fomc-20271208",
@@ -3344,8 +3745,8 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-        "source_as_of": "2026-09-15T17:57:45.254339Z",
-        "content_digest": "4d9f19d5535d681d22e2a98a95a0da41276382428be3b0255586f7aa8dccce4f"
+        "source_as_of": "2026-09-17T15:04:55.539815Z",
+        "content_digest": "232e18fd4809ed7e13d5584f18c733268bea7b451d54e915f8c5b7fcbba14a89"
       },
       {
         "event_id": "nyse-calendar-20280101",
@@ -3357,7 +3758,7 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.nyse.com/trade/hours-calendars",
-        "source_as_of": "2026-09-15T17:57:45.286497Z",
+        "source_as_of": "2026-09-17T15:04:55.659469Z",
         "content_digest": "b7c8c2fa1923de735a0bc29a4697b94957a6cc6ad7e219739282fea871d2de6f"
       },
       {
@@ -3370,7 +3771,7 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.nyse.com/trade/hours-calendars",
-        "source_as_of": "2026-09-15T17:57:45.286497Z",
+        "source_as_of": "2026-09-17T15:04:55.659469Z",
         "content_digest": "b7c8c2fa1923de735a0bc29a4697b94957a6cc6ad7e219739282fea871d2de6f"
       },
       {
@@ -3383,7 +3784,7 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.nyse.com/trade/hours-calendars",
-        "source_as_of": "2026-09-15T17:57:45.286497Z",
+        "source_as_of": "2026-09-17T15:04:55.659469Z",
         "content_digest": "b7c8c2fa1923de735a0bc29a4697b94957a6cc6ad7e219739282fea871d2de6f"
       },
       {
@@ -3396,7 +3797,7 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.nyse.com/trade/hours-calendars",
-        "source_as_of": "2026-09-15T17:57:45.286497Z",
+        "source_as_of": "2026-09-17T15:04:55.659469Z",
         "content_digest": "b7c8c2fa1923de735a0bc29a4697b94957a6cc6ad7e219739282fea871d2de6f"
       },
       {
@@ -3409,7 +3810,7 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.nyse.com/trade/hours-calendars",
-        "source_as_of": "2026-09-15T17:57:45.286497Z",
+        "source_as_of": "2026-09-17T15:04:55.659469Z",
         "content_digest": "b7c8c2fa1923de735a0bc29a4697b94957a6cc6ad7e219739282fea871d2de6f"
       },
       {
@@ -3422,7 +3823,7 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.nyse.com/trade/hours-calendars",
-        "source_as_of": "2026-09-15T17:57:45.286497Z",
+        "source_as_of": "2026-09-17T15:04:55.659469Z",
         "content_digest": "b7c8c2fa1923de735a0bc29a4697b94957a6cc6ad7e219739282fea871d2de6f"
       },
       {
@@ -3435,7 +3836,7 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.nyse.com/trade/hours-calendars",
-        "source_as_of": "2026-09-15T17:57:45.286497Z",
+        "source_as_of": "2026-09-17T15:04:55.659469Z",
         "content_digest": "b7c8c2fa1923de735a0bc29a4697b94957a6cc6ad7e219739282fea871d2de6f"
       },
       {
@@ -3448,7 +3849,7 @@
         "affected_symbols": [],
         "authority": "official",
         "source_url": "https://www.nyse.com/trade/hours-calendars",
-        "source_as_of": "2026-09-15T17:57:45.286497Z",
+        "source_as_of": "2026-09-17T15:04:55.659469Z",
         "content_digest": "b7c8c2fa1923de735a0bc29a4697b94957a6cc6ad7e219739282fea871d2de6f"
       }
     ],
@@ -3459,59 +3860,67 @@
   },
   "research_evidence": [
     {
-      "evidence_id": "official-7bb4df401e191fdf36bb54bf09883f21",
+      "evidence_id": "official-7fe08df67809ff2d20098b67182c4d07",
       "category": "earnings",
       "region": "US",
-      "title": "NVIDIA 公布 2027 財年第二季度營收、毛利率與 EPS 等 GAAP/Non-GAAP 數字",
-      "summary": "文件指出：NVIDIA 第二季度（截至 2026/7/26）營收為 960.2 億美元、較前季成長 18%、較去年成長 106%；GAAP 與 non-GAAP 毛利率皆為 75.0%；GAAP 與 non-GAAP 稀釋每股盈餘分別為 2.46 與 2.22。",
-      "market_relevance": "營收、毛利率與稀釋 EPS 等條目可作為判斷公司當季獲利能力與需求/定價狀況的直接依據。",
+      "title": "歷史財務數值待核對",
+      "summary": "來源已取得，但歷史財務數值、單位或期間尚未完成來源對齊。本版撤回數值支持；原始歷史證據仍保留，請核對官方公告。",
+      "market_relevance": "這是證據驗證缺口，不構成多空訊號或清倉指令。",
       "source_title": "NVIDIA Announces Financial Results for Second Quarter Fiscal 2027",
       "source_url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
       "published_at": null,
       "affected_symbols": [
         "NVDA"
       ],
+      "numeric_claims": [],
+      "numeric_validation_version": 0,
+      "numeric_support_status": "quarantined",
+      "correction_of": null,
       "retrieval": {
         "document_id": "9bc4950664f1773de163da3dd9058b9373a2a553b8e772949ad5899a0c0436dc",
         "content_hash": "282f517583f249b35d4e497b64c8370439b42034e31fc0f31481753740e73c70",
         "source_query": "https://nvidianews.nvidia.com/news?q=earnings",
         "source_type": "company_ir",
         "authority": "official",
-        "retrieved_at": "2026-09-15T17:58:10.019804Z",
+        "retrieved_at": "2026-09-17T15:05:18.244700Z",
         "publication_date": "2026-08-26",
         "publication_precision": "date",
         "available_at": "2026-08-27T04:00:00Z",
         "content_locator": "已讀 HTML 全文後節選；字元區間：0:6000,8397:11914,18532:22039,24103:27610",
-        "excerpt": "NVIDIA (NASDAQ: NVDA) today reported revenue for the second quarter ended July 26, 2026, of $96.2 billion, up 18% from the previous quarter and up 106% from a year ago. For the quarter, GAAP and non-GAAP gross margins were both 75.0%. GAAP and non-GAAP earnings per diluted share were $2.46 and $2.22, respectively.",
+        "excerpt": "Revenue of $96.2 billion, up 106% from a year ago\nData Center revenue of $89.0 billion, up 117% from a year ago\nAugust 26, 2026\nNVIDIA (NASDAQ: NVDA) today reported revenue for the second quarter ended July 26, 2026, of $96.2 billion, up 18% from the previous quarter and up 106% from a year ago. For the quarter, GAAP and non-GAAP gross margins were both 75.0%. GAAP and non-GAAP earnings per diluted share were $2.46 and $2.22, respectively.",
         "claim_kind": "fact",
         "source_status": "current"
       }
     },
     {
-      "evidence_id": "official-3cf78932de40a878c420429132c0b05a",
-      "category": "company",
+      "evidence_id": "official-2136f2abc8e9307ba20d36ff8b39cc5c",
+      "category": "rates",
       "region": "Global",
-      "title": "NVIDIA 對 2027 財年第三季度的營收、毛利率與費用展望（含未假設中國資料中心 compute）",
-      "summary": "文件提供第三季度展望：預期營收為 1080 億美元（±2%）；並表示展望中不假設中國資料中心 compute revenue；GAAP 與 non-GAAP 毛利率預期為 74.0%（±50 bps）；GAAP 與 non-GAAP 營業費用約 92 億與 90 億美元。",
-      "market_relevance": "公司對下一季營收區間、毛利率與費用的假設，對市場評估成長節奏與獲利率可預期性具有指標意義；其中「不假設中國資料中心 compute」亦是需要納入解讀的前提。",
+      "title": "歷史財務數值待核對",
+      "summary": "來源已取得，但歷史財務數值、單位或期間尚未完成來源對齊。本版撤回數值支持；原始歷史證據仍保留，請核對官方公告。",
+      "market_relevance": "這是證據驗證缺口，不構成多空訊號或清倉指令。",
       "source_title": "NVIDIA Announces Financial Results for Second Quarter Fiscal 2027",
       "source_url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
       "published_at": null,
       "affected_symbols": [
         "NVDA"
       ],
+      "numeric_claims": [],
+      "numeric_validation_version": 0,
+      "numeric_support_status": "quarantined",
+      "correction_of": null,
       "retrieval": {
         "document_id": "9bc4950664f1773de163da3dd9058b9373a2a553b8e772949ad5899a0c0436dc",
         "content_hash": "282f517583f249b35d4e497b64c8370439b42034e31fc0f31481753740e73c70",
         "source_query": "https://nvidianews.nvidia.com/news?q=earnings",
         "source_type": "company_ir",
         "authority": "official",
-        "retrieved_at": "2026-09-15T17:58:10.019804Z",
+        "retrieved_at": "2026-09-17T15:05:18.244700Z",
         "publication_date": "2026-08-26",
         "publication_precision": "date",
         "available_at": "2026-08-27T04:00:00Z",
         "content_locator": "已讀 HTML 全文後節選；字元區間：0:6000,8397:11914,18532:22039,24103:27610",
-        "excerpt": "NVIDIA’s outlook for the third quarter of fiscal 2027 is as follows:\nRevenue is expected to be $108.0 billion, plus or minus 2%. NVIDIA is not assuming any Data Center compute revenue from China in its outlook.\nGAAP and non-GAAP gross margins are expected to be 74.0%, plus or minus 50 basis points.\nGAAP and non-GAAP operating expenses are expected to be approximately $9.2 billion and $9.0 billion, respectively.",
+        "excerpt": "Outlook\nNVIDIA’s outlook for the third quarter of fiscal 2027 is as follows:\nRevenue is expected to be $108.0 billion, plus or minus 2%. NVIDIA is not assuming any Data Center compute revenue from China in its outlook.\nGAAP and non-GAAP gross margins are expected to be 74.0%, plus or minus 50 basis points.\nGAAP and non-GAAP operating expenses are expected to be approximately $9.2 billion and $9.0 billion, respectively.",
         "claim_kind": "company_guidance",
         "source_status": "current"
       }
@@ -3520,22 +3929,26 @@
       "evidence_id": "official-b8fab5fa7ba28afbe0b796f2c1af91ae",
       "category": "earnings",
       "region": "US",
-      "title": "Broadcom 公布 2026 財年第三季度 GAAP/Non-GAAP 營收、營業利益、EPS 與自由現金流",
-      "summary": "文件指出：Broadcom 第三季（截至 2026/8/2）營收為 296 億美元（年增 86%）；GAAP 營業利益 160 億美元、non-GAAP 營業利益 201 億美元；GAAP 稀釋 EPS 2.68、non-GAAP 稀釋 EPS 3.32；營運現金流 142 億美元、資本支出 5 億美元，帶來自由現金流 137 億美元（佔營收 46%）。",
-      "market_relevance": "營收成長、營業利益與自由現金流可用於衡量當季營運績效與現金轉換能力。",
+      "title": "歷史財務數值待核對",
+      "summary": "來源已取得，但歷史財務數值、單位或期間尚未完成來源對齊。本版撤回數值支持；原始歷史證據仍保留，請核對官方公告。",
+      "market_relevance": "這是證據驗證缺口，不構成多空訊號或清倉指令。",
       "source_title": "Broadcom Inc. Announces Third Quarter Fiscal Year 2026 Financial Results and Quarterly Dividend",
       "source_url": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial",
       "published_at": "2026-09-02T20:15:00Z",
       "affected_symbols": [
         "AVGO"
       ],
+      "numeric_claims": [],
+      "numeric_validation_version": 0,
+      "numeric_support_status": "quarantined",
+      "correction_of": null,
       "retrieval": {
         "document_id": "d7f5a8dc40019e48808816686d3bf96dc28d36931f3f8f43536436cdf11ab094",
         "content_hash": "bc1b45a06494921863116e1ba190cf4b063720b85086cff941dd2fcbc2b42012",
         "source_query": "https://investors.broadcom.com/rss/news-releases.xml",
         "source_type": "company_ir",
         "authority": "official",
-        "retrieved_at": "2026-09-15T17:58:11.481888Z",
+        "retrieved_at": "2026-09-17T15:05:19.895617Z",
         "publication_date": "2026-09-02",
         "publication_precision": "datetime",
         "available_at": "2026-09-15T06:31:14Z",
@@ -3546,44 +3959,48 @@
       }
     },
     {
-      "evidence_id": "official-abc15c67ddb4d96ca517f920a12cac30",
+      "evidence_id": "official-fab112358401b30bd10821933491b9c6",
       "category": "company",
       "region": "US",
-      "title": "Broadcom 對 2026 財年第四季度的營收與 Non-GAAP 營業利益展望（僅列指引）",
-      "summary": "文件提供第四季度展望：預期營收約 348 億美元；non-GAAP 營業利益指引約為「預期營收的 66%」。",
-      "market_relevance": "公司下一季營收與 non-GAAP 營業利益率指引是市場用來評估成長與獲利走勢的參考依據；但實際結果可能與指引有差異。",
+      "title": "歷史財務數值待核對",
+      "summary": "來源已取得，但歷史財務數值、單位或期間尚未完成來源對齊。本版撤回數值支持；原始歷史證據仍保留，請核對官方公告。",
+      "market_relevance": "這是證據驗證缺口，不構成多空訊號或清倉指令。",
       "source_title": "Broadcom Inc. Announces Third Quarter Fiscal Year 2026 Financial Results and Quarterly Dividend",
       "source_url": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial",
       "published_at": "2026-09-02T20:15:00Z",
       "affected_symbols": [
         "AVGO"
       ],
+      "numeric_claims": [],
+      "numeric_validation_version": 0,
+      "numeric_support_status": "quarantined",
+      "correction_of": null,
       "retrieval": {
         "document_id": "d7f5a8dc40019e48808816686d3bf96dc28d36931f3f8f43536436cdf11ab094",
         "content_hash": "bc1b45a06494921863116e1ba190cf4b063720b85086cff941dd2fcbc2b42012",
         "source_query": "https://investors.broadcom.com/rss/news-releases.xml",
         "source_type": "company_ir",
         "authority": "official",
-        "retrieved_at": "2026-09-15T17:58:11.481888Z",
+        "retrieved_at": "2026-09-17T15:05:19.895617Z",
         "publication_date": "2026-09-02",
         "publication_precision": "datetime",
         "available_at": "2026-09-15T06:31:14Z",
         "content_locator": "已讀 HTML 全文後節選；字元區間：0:6000,8017:11534",
-        "excerpt": "Fourth quarter fiscal year 2026 revenue guidance of approximately\n$34.8 billion\n, an increase of 93 percent from the prior year period\nFourth quarter fiscal year 2026 Non-GAAP operating income guidance of approximately 66 percent of projected revenue",
+        "excerpt": "Fourth Quarter Fiscal Year 2026 Business Outlook\nBased on current business trends and conditions, the outlook for the fourth quarter of fiscal year 2026, ending\nNovember 1, 2026\n, is expected to be as follows:\nFourth quarter revenue guidance of approximately\n$34.8 billion\n;\nFourth quarter non-GAAP operating income guidance of approximately 66 percent of projected revenue.",
         "claim_kind": "company_guidance",
         "source_status": "revised"
       }
     },
     {
-      "evidence_id": "official-c56fac98536042076b723f844e6e0a60",
+      "evidence_id": "official-56cfdff93d88a4634c2f936d91ec000e",
       "category": "rates",
       "region": "US",
-      "title": "Fed FOMC 維持聯邦基金目標區間 3.5%~3.75% 並維持「充足準備金」政策",
-      "summary": "文件指出：FOMC 以 9–3 表決決議維持聯邦基金利率目標區間在 3-1/2 到 3-3/4 percent；並表示將持續維持銀行體系中的「ample reserves」政策。",
-      "market_relevance": "政策利率目標區間與準備金供應立場會影響無風險利率與金融條件，進而影響資產定價與企業融資環境。",
+      "title": "歷史財務數值待核對",
+      "summary": "來源已取得，但歷史財務數值、單位或期間尚未完成來源對齊。本版撤回數值支持；原始歷史證據仍保留，請核對官方公告。",
+      "market_relevance": "這是證據驗證缺口，不構成多空訊號或清倉指令。",
       "source_title": "Federal Reserve issues FOMC statement",
-      "source_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm",
-      "published_at": "2026-07-29T18:00:00Z",
+      "source_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm",
+      "published_at": "2026-09-16T18:00:00Z",
       "affected_symbols": [
         "AVGO",
         "CASH",
@@ -3592,63 +4009,33 @@
         "NVDA",
         "PLTR"
       ],
+      "numeric_claims": [],
+      "numeric_validation_version": 0,
+      "numeric_support_status": "quarantined",
+      "correction_of": null,
       "retrieval": {
-        "document_id": "e290aabba3caad80496847cfb5424b874694a37d342708327f2fa9dac0b163e6",
-        "content_hash": "c9633bddfb6dbd8821e2145b601fdebb9397387c36f68161facb8de786363086",
+        "document_id": "da3bcbb85f4595d6b859363dce4a60cecd20e7593bb1a729eadc864f44b7a9f9",
+        "content_hash": "24232c69fd6752469f3be65a81b75e20ce095dc05520bbe0d6f2b1e76595e689",
         "source_query": "https://www.federalreserve.gov/feeds/press_monetary.xml",
         "source_type": "macro_release",
         "authority": "official",
-        "retrieved_at": "2026-09-15T17:58:14.328012Z",
-        "publication_date": "2026-07-29",
+        "retrieved_at": "2026-09-17T15:05:22.455612Z",
+        "publication_date": "2026-09-16",
         "publication_precision": "datetime",
-        "available_at": "2026-07-29T18:00:15Z",
+        "available_at": "2026-09-16T18:00:17Z",
         "content_locator": "已讀 HTML 全文；換行分隔文字節點",
-        "excerpt": "The Committee decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent, in support of the Federal Reserve's dual mandate. The Committee is continuing its policy of maintaining ample reserves in the banking system.",
+        "excerpt": "The Committee decided to raise the target range for the federal funds rate by 1/4 percentage point\nto 3-3/4\nto 4 percent, in support of the Federal Reserve's dual mandate. The Committee is continuing its policy of maintaining ample reserves in the banking system.",
         "claim_kind": "fact",
         "source_status": "revised"
       }
     },
     {
-      "evidence_id": "official-5050f4879c6ecaba497aaa21c4b9645d",
-      "category": "social_demand",
-      "region": "US",
-      "title": "Fed FOMC 對經濟活動、就業與通膨的描述（含對中東衝突與供給衝擊的提及）",
-      "summary": "文件表示：經濟活動以穩健速度擴張，但不確定性仍高，部分源於中東衝突；生產率成長與資本投資強；就業成長與勞動供給相符、失業率變化不大；通膨相對 2% 目標仍偏高，部分反映能源等部門的供給衝擊。",
-      "market_relevance": "對成長、就業與通膨的現狀評估會影響政策路徑預期，進而影響利率與風險資產定價。",
-      "source_title": "Federal Reserve issues FOMC statement",
-      "source_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm",
-      "published_at": "2026-07-29T18:00:00Z",
-      "affected_symbols": [
-        "AVGO",
-        "CASH",
-        "GLD",
-        "META",
-        "NVDA",
-        "PLTR"
-      ],
-      "retrieval": {
-        "document_id": "e290aabba3caad80496847cfb5424b874694a37d342708327f2fa9dac0b163e6",
-        "content_hash": "c9633bddfb6dbd8821e2145b601fdebb9397387c36f68161facb8de786363086",
-        "source_query": "https://www.federalreserve.gov/feeds/press_monetary.xml",
-        "source_type": "macro_release",
-        "authority": "official",
-        "retrieved_at": "2026-09-15T17:58:14.328012Z",
-        "publication_date": "2026-07-29",
-        "publication_precision": "datetime",
-        "available_at": "2026-07-29T18:00:15Z",
-        "content_locator": "已讀 HTML 全文；換行分隔文字節點",
-        "excerpt": "Economic activity is expanding at a solid pace despite elevated uncertainty that owes, in part, to the conflict in the Middle East. Productivity growth and capital investment are strong. Job gains have kept pace with the workforce, and the unemployment rate has changed little.\nInflation remains elevated relative to the Committee's 2 percent goal, in part reflecting supply shocks that have driven price increases in certain sectors, including energy. The Committee will deliver price stability.",
-        "claim_kind": "fact",
-        "source_status": "revised"
-      }
-    },
-    {
-      "evidence_id": "official-b33ea29d21403dc04fa464cf55a448e5",
+      "evidence_id": "official-9e43f3d3a8fdf5fac3137644e89026dc",
       "category": "us_economy",
       "region": "US",
-      "title": "BEA：2026 年 7 月個人所得與 PCE、PCE 價格指數的月增幅與年增幅（現值/實質）",
-      "summary": "文件指出：2026 年 7 月個人所得增加 1151 億美元（月增率 0.4%）；可支配個人所得增加 1259 億美元（0.5%）；PCE 增加 363 億美元（0.2%）。同期 PCE 價格指數月增 0.2%，不含食品與能源亦月增 0.2%；與去年同月相比 PCE 價格指數上升 3.7%，不含食品與能源上升 3.3%。",
-      "market_relevance": "消費支出與通膨相關的價格指數（PCE price index）可影響通膨預期、利率預期與消費需求評估。",
+      "title": "歷史財務數值待核對",
+      "summary": "來源已取得，但歷史財務數值、單位或期間尚未完成來源對齊。本版撤回數值支持；原始歷史證據仍保留，請核對官方公告。",
+      "market_relevance": "這是證據驗證缺口，不構成多空訊號或清倉指令。",
       "source_title": "Personal Income and Outlays, July 2026",
       "source_url": "https://www.bea.gov/news/2026/personal-income-and-outlays-july-2026",
       "published_at": null,
@@ -3660,24 +4047,29 @@
         "NVDA",
         "PLTR"
       ],
+      "numeric_claims": [],
+      "numeric_validation_version": 0,
+      "numeric_support_status": "quarantined",
+      "correction_of": null,
       "retrieval": {
         "document_id": "5895968b941e893ae940f010268634dd017bbc4c4058557676a7d36a9b08e05d",
-        "content_hash": "131a34937193d5631ac80c606ab233febeb7cbbb267ac6ccdaf9a091a9fee9f7",
+        "content_hash": "3a27064e283dfb1a113322b50c4a8c3633faf7f346116dfbfcc19467fbcc4059",
         "source_query": "https://www.bea.gov/news/current-releases",
         "source_type": "macro_release",
         "authority": "official",
-        "retrieved_at": "2026-09-15T17:58:16.191040Z",
+        "retrieved_at": "2026-09-17T15:05:23.610963Z",
         "publication_date": "2026-08-26",
         "publication_precision": "date",
-        "available_at": "2026-09-15T16:00:30Z",
+        "available_at": "2026-09-17T12:00:55Z",
         "content_locator": "已讀 HTML 全文；換行分隔文字節點",
-        "excerpt": "Personal income\nincreased $115.1 billion\n(0.4 percent at a monthly rate) in July, according to estimates released today by the U.S. Bureau of Economic Analysis (BEA).\nDisposable personal income (DPI)\n—personal income less personal current taxes—increased $125.9 billion (0.5 percent), and\npersonal consumption expenditures (PCE)\nincreased $36.3 billion (0.2 percent).\nPersonal outlays\n—the sum of PCE, personal interest payments, and personal current transfer payments—increased $36.6 billion in July.\nPersonal saving\nwas $712.0 billion in July, and the\npersonal saving rate\n—personal saving as a percentage of DPI—was 3.0 percent.\n",
+        "excerpt": "Personal income\nincreased $115.1 billion\n(0.4 percent at a monthly rate) in July, according to estimates released today by the U.S. Bureau of Economic Analysis (BEA).\nDisposable personal income (DPI)\n—personal income less personal current taxes—increased $125.9 billion (0.5 percent), and\npersonal consumption expenditures (PCE)\nincreased $36.3 billion (0.2 percent).\nPersonal outlays\n—the sum of PCE, personal interest payments, and personal current transfer payments—increased $36.6 billion in July.\nPersonal saving\nwas $712.0 billion in July, and the\npersonal saving rate\n—personal saving as a percentage of DPI—was 3.0 percent.",
         "claim_kind": "fact",
         "source_status": "revised"
       }
     }
   ],
-  "research_mode": "non_trading_day_survey",
-  "research_generated_at": "2026-09-15T17:58:42.860478Z",
+  "research_mode": "completed_session_review",
+  "research_generated_at": "2026-09-17T15:05:43.287300Z",
+  "completed_adjusted_closes": {},
   "warnings": []
 }

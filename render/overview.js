@@ -1,3 +1,4 @@
+import { installFreshness } from "./freshness.js";
 import {
   assetTypeLabel,
   dateTime,
@@ -10,7 +11,11 @@ import { asList, createAgentProfileRenderers } from "./agent-profiles.js";
 import { createGlossaryRenderer } from "./glossary.js";
 import { installTabNavigation } from "./navigation.js";
 import { createPerformanceRenderer } from "./performance.js";
+import { installDecisionEvidence, renderDecisionEvidencePanel } from "./decision-evidence.js";
 import { createDataLoader } from "../data.js";
+import { renderEventCalendar } from "./event-calendar.js";
+import { renderScenarioStress } from "./scenario-stress.js";
+import { renderMacroState } from "./macro-state.js";
 
 export function allocationScopeNote(recommendation) {
   return recommendation.allocation_scope
@@ -502,6 +507,8 @@ export function bootstrapDashboard(root, payload, base) {
     rebalance,
     researchJournal,
     dashboardAnalytics,
+    freshnessCalendar,
+    healthSignal,
     thesisBook,
     earningsReviews,
     marketIntelligence,
@@ -509,6 +516,204 @@ export function bootstrapDashboard(root, payload, base) {
   }) => {
     const overview = createOverviewModel({ dashboardAnalytics, committee, recommendation });
     const { isLive, investedWeight, cash, modelScore, scoreBand, scoreReason, scoreAngle, donut, committeeSize, health, analyticsPerformance, returnObjective } = overview;
+    const exposureSnapshot = recommendation.exposure_snapshot;
+    const exposureStatusLabel = (status) => ({
+      ready: "已量測",
+      insufficient: "資料不足",
+      partial: "部分資料",
+      stale: "資料過期",
+      unavailable: "無法量測",
+    }[status] || "未提供");
+    const exposurePercent = (value) => value == null ? "—" : percent(value);
+    const renderExposurePanel = () => {
+      if (!exposureSnapshot) return "";
+      const coverage = exposureSnapshot.coverage || {};
+      const clusters = Array.isArray(exposureSnapshot.correlation_clusters)
+        ? exposureSnapshot.correlation_clusters
+        : [];
+      const measuredClusters = clusters.filter((cluster) => cluster.status === "ready");
+      const unknownClusters = clusters.filter((cluster) => cluster.status !== "ready");
+      const issuerItems = (exposureSnapshot.issuer_exposures || []).slice(0, 3);
+      const sectorItems = (exposureSnapshot.sector_exposures || []).slice(0, 3);
+      const exposureItems = (items) => items.length
+        ? items.map((item) => `<li><span>${escapeHtml(item.factor)}</span><strong>${exposurePercent(item.weight)}</strong></li>`).join("")
+        : '<li><span>沒有可用資料</span><strong>—</strong></li>';
+      const measuredItems = measuredClusters.length
+        ? measuredClusters.map((cluster) => `
+            <li>
+              <div><span>${cluster.symbols.map((symbol) => symbolLink(symbol)).join("、")}</span><strong>${cluster.correlation == null ? "—" : Number(cluster.correlation).toFixed(2)}</strong></div>
+              <small>樣本 ${escapeHtml(cluster.sample_size)} · 窗口 ${escapeHtml(cluster.window_sessions)} 日 · 下跌期 ${cluster.downside_correlation == null ? "未足夠" : Number(cluster.downside_correlation).toFixed(2)}（${escapeHtml(cluster.downside_sample_size)} 筆）</small>
+            </li>`).join("")
+        : '<li><span>目前沒有達門檻的已量測群組</span><strong>—</strong></li>';
+      const unknownItems = unknownClusters.length
+        ? unknownClusters.map((cluster) => `
+            <li>
+              <div><span>${cluster.symbols.map((symbol) => symbolLink(symbol)).join("、")}</span><strong>${escapeHtml(exposureStatusLabel(cluster.status))}</strong></div>
+              <small>需要至少 ${escapeHtml(cluster.window_sessions || 60)} 個完成交易日；缺值 ${escapeHtml((cluster.missing_symbols || []).length)}，波動極小 ${escapeHtml((cluster.constant_symbols || []).length)}。</small>
+            </li>`).join("")
+        : '<li><span>沒有未量測標的</span><strong>—</strong></li>';
+      return `
+        <section class="panel exposure-panel" id="exposure" data-tab-section="overview" aria-labelledby="exposure-title">
+          <header class="panel-header">
+            <div>
+              <span class="section-kicker">共同曝險拆解</span>
+              <h2 id="exposure-title">已知集中、未知曝險與實際相關性</h2>
+            </div>
+            <span class="panel-meta">相關性資料：${escapeHtml(exposureStatusLabel(coverage.correlation_status))}</span>
+          </header>
+          <p class="exposure-note">只使用不晚於決策截止時間的完成交易日調整後收盤價；樣本不足不補零，也不把未知資料當成相關性違規。</p>
+          <div class="exposure-grid">
+            <article class="exposure-card">
+              <h3>已知發行人集中</h3>
+              <ul>${exposureItems(issuerItems)}</ul>
+              <h3>已知產業集中</h3>
+              <ul>${exposureItems(sectorItems)}</ul>
+            </article>
+            <article class="exposure-card">
+              <h3>已量測相關性</h3>
+              <ul>${measuredItems}</ul>
+            </article>
+            <article class="exposure-card exposure-card-unknown">
+              <h3>未量測共同曝險</h3>
+              <ul>${unknownItems}</ul>
+            </article>
+          </div>
+        </section>`;
+    };
+    const renderKpiPanel = () => {
+      const reviews = Array.isArray(earningsReviews?.reviews) ? earningsReviews.reviews : [];
+      if (!reviews.length) return "";
+      const targetSymbols = ["NVDA", "AVGO", "META", "PLTR"];
+      const latest = new Map();
+      for (const review of reviews) {
+        if (!targetSymbols.includes(review.symbol) || latest.has(review.symbol)) continue;
+        latest.set(review.symbol, review);
+      }
+      const statusLabel = (status) => ({
+        available: "已取得",
+        not_comparable: "不可比",
+        missing: "缺失",
+      }[status] || "缺失");
+      const statusClass = (status) => status === "available" ? "kpi-available" : status === "not_comparable" ? "kpi-not-comparable" : "kpi-missing";
+      const rows = targetSymbols.map((symbol) => {
+        const review = latest.get(symbol);
+        const coverage = review?.kpi_coverage || [];
+        const available = coverage.filter((item) => item.status === "available").length;
+        const counter = (review?.quality_signals || []).filter((item) => item.direction === "counterevidence");
+        const period = coverage.flatMap((item) => item.period_labels || []).filter(Boolean).slice(0, 2).join("、") || "未提供期間";
+        const basis = [...new Set(coverage.flatMap((item) => item.accounting_bases || []))].join("、") || "未提供口徑";
+        const detail = review
+          ? `${available}/${coverage.length} 項可用 · ${period} · ${basis}`
+          : "尚無可核對的財報事件";
+        return `<tr>
+          <th scope="row">${symbolLink(symbol)}</th>
+          <td>${escapeHtml(detail)}</td>
+          <td><span class="kpi-status ${review ? "kpi-available" : "kpi-missing"}">${review ? "已建立" : "缺失"}</span></td>
+          <td>${counter.length ? counter.map((item) => escapeHtml(item.summary)).join("；") : "目前沒有可核對的反方證據"}</td>
+        </tr>`;
+      }).join("");
+      return `<section class="panel kpi-panel" id="earnings-kpi" data-tab-section="overview" aria-labelledby="earnings-kpi-title">
+        <header class="panel-header">
+          <div>
+            <span class="section-kicker">公司營運品質</span>
+            <h2 id="earnings-kpi-title">四家公司 KPI 覆蓋與現金流檢查</h2>
+          </div>
+          <span class="panel-meta">只呈現已核對資料；缺口不補值</span>
+        </header>
+        <p class="exposure-note">季度、YTD 與 GAAP 口徑分開保存；自由現金流、資本支出與融資租賃付款不跨公司直接混用。反方證據只供審查，不會自動減碼。</p>
+        <div class="table-wrap">
+          <table class="kpi-table">
+            <thead><tr><th scope="col">公司</th><th scope="col">覆蓋範圍</th><th scope="col">事件</th><th scope="col">可追溯反方證據</th></tr></thead>
+            <tbody>${rows}</tbody>
+          </table>
+        </div>
+        <p class="kpi-legend"><span class="kpi-status kpi-available">已取得</span> 可用資料　<span class="kpi-status kpi-not-comparable">不可比</span> 口徑不同　<span class="kpi-status kpi-missing">缺失</span> 尚未取得</p>
+      </section>`;
+    };
+    const renderPhysicalRiskPanel = () => {
+      const risks = Array.isArray(marketIntelligence?.physical_risks)
+        ? marketIntelligence.physical_risks.slice(0, 8)
+        : [];
+      if (!risks.length) return "";
+      const hazardLabel = {
+        weather: "天候",
+        power: "電力",
+        water: "用水",
+        facility: "設施",
+        supply: "供應節點",
+      };
+      const statusLabel = {
+        outlook: "展望",
+        warning: "警示",
+        disruption: "中斷",
+        recovery: "恢復",
+        unknown: "未知",
+      };
+      const dataStatusLabel = { current: "目前", stale: "過期", unknown: "未知" };
+      const rows = risks.map((risk) => {
+        const symbols = (risk.affected_symbols || []).map((symbol) => symbolLink(symbol)).join("、");
+        const period = `${dateTime(risk.valid_from)}${risk.valid_to ? ` 至 ${dateTime(risk.valid_to)}` : " 起"}`;
+        const assumptions = (risk.scenario_assumptions || []).slice(0, 3).map(escapeHtml).join("；") || "未提供情境假設";
+        return `<article class="physical-risk-card">
+          <div class="physical-risk-heading"><span class="section-kicker">${escapeHtml(hazardLabel[risk.hazard] || "營運")}</span><span class="kpi-status ${risk.data_status === "current" ? "kpi-available" : "kpi-not-comparable"}">${escapeHtml(dataStatusLabel[risk.data_status] || "未知")}</span></div>
+          <h3>${escapeHtml(risk.location)}</h3>
+          <p>${escapeHtml(statusLabel[risk.status] || "未知")} · 信心 ${escapeHtml(risk.confidence)} · ${escapeHtml(period)}</p>
+          <p>受影響：${symbols || "未標示"}</p>
+          <small>情境假設：${assumptions}</small>
+        </article>`;
+      }).join("");
+      return `<section class="panel physical-risk-panel" id="physical-risks" data-tab-section="overview" aria-labelledby="physical-risks-title">
+        <header class="panel-header"><div><span class="section-kicker">環境與供應限制</span><h2 id="physical-risks-title">目前模擬部位的實體營運風險</h2></div><span class="panel-meta">僅列有定位與官方來源的事件</span></header>
+        <p class="exposure-note">天候機率不是確定損失或交易訊號；成本增加、營收延遲與供應恢復只在列出的假設下成立。未知與過期資料會保留標示。</p>
+        <div class="physical-risk-grid">${rows}</div>
+      </section>`;
+    };
+    const renderGeopoliticalRiskPanel = () => {
+      const events = Array.isArray(marketIntelligence?.geopolitical_risks)
+        ? marketIntelligence.geopolitical_risks.slice(0, 8)
+        : [];
+      if (!events.length) return "";
+      const statusLabel = {
+        proposed: "提案／尚未生效",
+        effective: "已生效",
+        suspended: "暫停",
+        court_limited: "法院限制",
+        expired: "已失效",
+        unknown: "未知",
+      };
+      const topicLabel = {
+        energy: "能源",
+        shipping: "航運",
+        tariff: "關稅",
+        export_control: "出口限制",
+        geopolitical: "地緣事件",
+        rates: "折現率",
+      };
+      const rows = events.map((event) => {
+        const source = safeExternalUrl(event.source_urls?.[0]);
+        const sourceLink = source
+          ? `<a href="${escapeHtml(source)}" target="_blank" rel="noopener noreferrer">官方來源</a>`
+          : "來源未提供";
+        const scenarioText = (event.scenarios || []).slice(0, 3).map((scenario) =>
+          `${escapeHtml(scenario.label)}（${escapeHtml(scenario.direction)}）：${escapeHtml(scenario.assumptions[0] || "未知假設")}`,
+        ).join("；");
+        const evidence = (event.evidence_ids || []).slice(0, 3).map(escapeHtml).join("、") || "未提供";
+        const conditions = (event.observation_conditions || []).slice(0, 2).map(escapeHtml).join("；") || "未提供";
+        return `<article class="geo-risk-card">
+          <div class="physical-risk-heading"><span class="section-kicker">${escapeHtml(topicLabel[event.topic] || "事件")}</span><span class="kpi-status ${event.status === "effective" ? "kpi-not-comparable" : "kpi-missing"}">${escapeHtml(statusLabel[event.status] || "未知")}</span></div>
+          <h3>${escapeHtml(event.summary)}</h3>
+          <p>區域：${escapeHtml(event.region)} · 公告：${escapeHtml(dateTime(event.announcement_at))}${event.effective_at ? ` · 生效：${escapeHtml(dateTime(event.effective_at))}` : ""}</p>
+          <p>受影響：${(event.affected_symbols || []).map((symbol) => symbolLink(symbol)).join("、")}</p>
+          <p>情境：${scenarioText || "未知"}</p>
+          <small>觀察／失效條件：${conditions} · evidence：${evidence} · ${sourceLink}</small>
+        </article>`;
+      }).join("");
+      return `<section class="panel physical-risk-panel" id="geopolitical-risks" data-tab-section="overview" aria-labelledby="geopolitical-risks-title">
+        <header class="panel-header"><div><span class="section-kicker">政策與地緣傳導</span><h2 id="geopolitical-risks-title">能源、航運與政策情境</h2></div><span class="panel-meta">shadow 研究摘要，不改變正式配置</span></header>
+        <p class="exposure-note">持續、緩解與二次通膨方向分開保存；公告不等於生效，沒有曝險證據的事件不會擴大標的範圍。</p>
+        <div class="physical-risk-grid">${rows}</div>
+      </section>`;
+    };
     const investmentReasons = (recommendation.top_reasons || []).filter(
       (reason) => reason.reason_type !== "policy_explanation",
     );
@@ -727,6 +932,9 @@ export function bootstrapDashboard(root, payload, base) {
       exit: "退出",
     }[action] || "檢視");
     const riskMethodology = (plan) => {
+      if (plan.v1_loss_bound?.schema_version === "1.0") {
+        return { reason: plan.v1_loss_bound.reason, requirement: "價格失效界線與外生假設各自評估，不保證停損成交。" };
+      }
       const methodology = String(plan.methodology || "");
       if (plan.status === "exempt") {
         return {
@@ -799,7 +1007,16 @@ export function bootstrapDashboard(root, payload, base) {
           ? "現金配置不使用價格失效條件。"
           : "事件或研究論點失效時重新檢視；目前沒有價格界線。";
       const baseFraction = plan.status === "quantified" ? plan.base_loss_fraction : "";
-      const stressFraction = plan.status === "quantified" ? plan.portfolio_contribution : "";
+      const gap = plan.v1_gap_stress;
+      const independentGap = gap?.schema_version === "1.0" && gap.mode === "shadow" && gap.unit === "return_fraction";
+      const measuredGap = independentGap && ["measured", "exempt"].includes(gap.status)
+        && gap.loss_contribution_fraction !== null && gap.loss_contribution_fraction !== undefined
+        && Number.isFinite(Number(gap.loss_contribution_fraction));
+      const stressFraction = gap ? measuredGap ? gap.loss_contribution_fraction : ""
+        : plan.status === "quantified" ? plan.portfolio_contribution : "";
+      const stressCopy = gap ? stressFraction !== "" && stressFraction !== null
+        ? `${(Number(stressFraction) * 100).toFixed(2)}%（外生價格假設；不保證停損成交）` : "未知，不能補零"
+        : plan.status === "quantified" ? `${percent(plan.portfolio_contribution)}（政策壓力 ${percent(plan.stress_gap_percent)}）` : "未量化";
       return `
         <article class="position-risk-card ${statusClass}">
           <header>
@@ -807,7 +1024,7 @@ export function bootstrapDashboard(root, payload, base) {
               <span class="section-kicker">${symbolLink(plan.symbol)}</span>
               <h3>${escapeHtml(riskActionLabel(instruction.action || allocation.action || "hold"))}</h3>
             </div>
-            <span class="risk-status">${escapeHtml(riskStatusLabel(plan))}</span>
+            <span class="risk-status">${plan.v1_loss_bound ? "失效界線：" : ""}${escapeHtml(riskStatusLabel(plan))}</span>
           </header>
           <dl class="position-risk-grid">
             <div><dt>前一輪目標</dt><dd>${previousWeight === null ? "未提供" : percent(previousWeight)}</dd></div>
@@ -816,8 +1033,8 @@ export function bootstrapDashboard(root, payload, base) {
             <div><dt>失效條件</dt><dd>${escapeHtml(invalidation)}</dd></div>
             <div><dt>風險輸入</dt><dd>${escapeHtml(riskInputSummary(plan))}</dd></div>
             <div><dt>基本損失比例</dt><dd>${plan.status === "quantified" ? percent(plan.base_loss_fraction) : "未量化"}</dd></div>
-            <div><dt>跳空壓力比例</dt><dd>${plan.status === "quantified" ? `${percent(plan.portfolio_contribution)}（政策壓力 ${percent(plan.stress_gap_percent)}）` : "未量化"}</dd></div>
-            <div><dt>所選本金換算</dt><dd data-sim-risk data-base-fraction="${escapeHtml(baseFraction)}" data-stress-fraction="${escapeHtml(stressFraction)}">${plan.status === "quantified" ? "輸入本金後換算" : "需要量化後才換算"}</dd></div>
+            <div><dt>跳空壓力比例</dt><dd>${stressCopy}</dd></div>
+            <div><dt>所選本金換算</dt><dd data-sim-risk data-base-fraction="${escapeHtml(baseFraction)}" data-stress-fraction="${escapeHtml(stressFraction)}">${baseFraction !== "" || stressFraction !== "" ? "輸入本金後換算" : "需要量化後才換算"}</dd></div>
           </dl>
           <details class="position-risk-details">
             <summary>為什麼是這個狀態</summary>
@@ -879,6 +1096,7 @@ export function bootstrapDashboard(root, payload, base) {
         <div class="app-content">
         <main id="dashboard-main" tabindex="-1">
         <div id="panel-overview" class="tab-panel" role="tabpanel" aria-labelledby="tab-overview" data-tab-panel="overview" tabindex="-1">
+        <section id="freshness-banner" class="freshness-banner" aria-label="研究資料更新狀態" data-tab-section="overview"></section>
         <section class="hero" data-tab-section="overview">
           <div class="hero-main">
             <span class="eyebrow">投資摘要 / ${escapeHtml(recommendation.run_id)}</span>
@@ -984,6 +1202,11 @@ export function bootstrapDashboard(root, payload, base) {
             <p class="methodology-note">${escapeHtml(analyticsPerformance.methodology)}</p>
           </article>
         </section>
+
+        ${renderExposurePanel()}
+        ${renderKpiPanel()}
+        ${renderPhysicalRiskPanel()}
+        ${renderGeopoliticalRiskPanel()}
 
         <div class="dashboard-grid">
           <section class="panel leaderboard" id="leaderboard" data-tab-section="overview">
@@ -1137,6 +1360,9 @@ export function bootstrapDashboard(root, payload, base) {
               : ""}
           </section>
 
+          ${renderEventCalendar(market.event_calendar, { asOf: recommendation.data_cutoff, renderSymbol: symbolLink })}
+          ${renderMacroState(market.macro_state, { asOf: recommendation.data_cutoff, renderSymbol: symbolLink })}
+
           <section class="panel" id="reasons" data-tab-section="overview">
             <header class="panel-header">
               <div>
@@ -1149,6 +1375,7 @@ export function bootstrapDashboard(root, payload, base) {
               ${investmentReasons.length ? investmentReasons.map(reasonCard).join("") : '<p>本輪沒有可追溯的投資理由；資料不足不代表偏多或偏空。</p>'}
             </div>
           </section>
+          ${renderDecisionEvidencePanel(recommendation, { renderSymbol: symbolLink })}
           ${uniquePolicyReasons.length ? `
           <section class="panel" id="policy-explanations" data-tab-section="overview">
             <header class="panel-header">
@@ -1157,13 +1384,14 @@ export function bootstrapDashboard(root, payload, base) {
             </header>
             <div class="reasons-grid risk-policy-grid">${uniquePolicyReasons.map(policyReasonCard).join("")}</div>
           </section>` : ""}
+          ${renderScenarioStress(recommendation, { renderSymbol: symbolLink })}
 
 
         </div>
         </div>
 
         <div id="panel-agent-intel" class="tab-panel" role="tabpanel" aria-labelledby="tab-agent-intel" data-tab-panel="agent-intel" tabindex="-1" hidden>
-          ${renderAgentIntelligencePanel(market, recommendation, learning)}
+          ${renderAgentIntelligencePanel(committee, market)}
         </div>
 
         <div id="panel-glossary" class="tab-panel" role="tabpanel" aria-labelledby="tab-glossary" data-tab-panel="glossary" tabindex="-1" hidden>
@@ -1393,7 +1621,7 @@ export function bootstrapDashboard(root, payload, base) {
                   .join("")}
               </div>
             </div>
-            ${renderAgentDirectory(market, recommendation, learning)}
+            ${renderAgentDirectory()}
           </section>
 
           <section class="panel performance" id="performance" data-tab-section="overview">
@@ -1403,7 +1631,7 @@ export function bootstrapDashboard(root, payload, base) {
                 <h2>假設策略報酬率走勢：研究配置後，結果怎麼變化？</h2>
               </div>
             </header>
-            ${buildPerformanceChart(performance.points)}
+            ${buildPerformanceChart(performance.points, performance)}
           </section>
 
           <section class="panel evidence" id="evidence" data-tab-section="overview">
@@ -1709,8 +1937,8 @@ export function bootstrapDashboard(root, payload, base) {
           node.textContent = "需要量化後才換算";
           return;
         }
-        const base = simulatedMoney(node.dataset.baseFraction, capital);
-        const stress = simulatedMoney(node.dataset.stressFraction, capital);
+        const base = node.dataset.baseFraction ? simulatedMoney(node.dataset.baseFraction, capital) : "未知";
+        const stress = node.dataset.stressFraction ? simulatedMoney(node.dataset.stressFraction, capital) : "未知";
         node.textContent = capital === null ? "輸入本金後換算" : `基本 ${base}／跳空 ${stress}`;
       });
     };
@@ -1726,6 +1954,8 @@ export function bootstrapDashboard(root, payload, base) {
     installPerformanceChart(root, performance.points);
     localizeRenderedText(root);
     const loader = createDataLoader(dataBase);
+    installDecisionEvidence(root, recommendation, loader.loadDecisionComparison);
+    installFreshness(root, recommendation, freshnessCalendar, healthSignal, loader.loadHealthSignal);
     const showLazyTabError = (target, error) => {
       const section = root.querySelector(`[data-tab-section="${target}"]`);
       if (!section) return;
@@ -1748,7 +1978,11 @@ export function bootstrapDashboard(root, payload, base) {
               root,
               {
                 ...payload,
-                committee: fullCommittee,
+                committee: {
+                  ...fullCommittee,
+                  role_insights: committee.role_insights,
+                  review_outcomes: committee.review_outcomes,
+                },
                 committeeRendererFactory: module.createCommitteeRenderer,
               },
               dataBase,

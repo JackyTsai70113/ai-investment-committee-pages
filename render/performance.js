@@ -1,4 +1,5 @@
 import { dateTime, escapeHtml } from "../formatters.js";
+import { renderCashMethod } from "./cash-method.js";
 
 const signedReturn = (value) => {
   const numeric = Number(value || 0);
@@ -31,7 +32,7 @@ export const orderPerformancePoints = (points) =>
     .map(({ item }) => item);
 
 export function createPerformanceRenderer() {
-  const buildChart = (points) => {
+  const buildChart = (points, methodData = {}) => {
     const safePoints = orderPerformancePoints(points);
     if (safePoints.length === 0) {
       safePoints.push({ as_of: new Date().toISOString(), return_percent: 0 });
@@ -82,6 +83,7 @@ export function createPerformanceRenderer() {
     ];
     const latestIndex = safePoints.length - 1;
     return `
+      ${renderCashMethod(methodData)}
       <div class="performance-chart-shell" data-performance-chart>
         <div class="chart-tooltip" data-chart-tooltip role="status" aria-live="polite">
           <span data-chart-date>${escapeHtml(dateTime(safePoints[latestIndex].as_of))}</span>

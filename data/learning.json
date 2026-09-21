@@ -1,122 +1,18 @@
 {
   "schema_version": "1.1",
-  "review_id": "learning-20260915T175842Z",
-  "reviewed_run_id": "20260915T150502Z",
-  "generated_at": "2026-09-15T17:58:42.891558Z",
-  "evaluation_cutoff": "2026-09-15T17:57:51.248788Z",
+  "review_id": "learning-20260917T150543Z",
+  "reviewed_run_id": "20260916T150138Z",
+  "generated_at": "2026-09-17T15:05:43.318830Z",
+  "evaluation_cutoff": "2026-09-17T15:05:00.173555Z",
   "evidence_source": "Yahoo Finance via yfinance with bounded retry and Nasdaq completed-close fallback",
   "knowledge_items": [
     {
-      "claim_key": "run-20260915_hold-review_missing_shortwindow-verification",
+      "claim_key": "run-20260916_live_hold-review_single_point_attribution_limit_verification",
       "kind": "inference",
-      "text": "上一輪各標的以 return_driver_kind=insufficient_evidence 進行「維持持倉」，但本次事後驗證僅提供單點『確定性計算貢獻』；缺少同口徑的 3/7 completed-days short-window 聚合統計（positive_windows、latest_return_percent 等）。因此只能把結果解讀為該評價點的價格結果，無法將任何研究假設升級為 supported/mixed/challenged。",
-      "evidence_refs": [],
-      "symbols": [
-        "AVGO",
-        "GLD",
-        "META",
-        "NVDA",
-        "PLTR"
+      "text": "本輪事後驗證僅提供單點「確定性計算貢獻」與各標的由 previous_price→current_price 的加權貢獻符號（NVDA、AVGO、PLTR 為正；META、GLD 為負；CASH 為 0），但仍缺少同口徑 completed-days（例如 3/7 completed-days）聚合，因此不足以把上一輪『return_driver_kind=insufficient_evidence 的維持/減碼決策』升級為 supported/mixed/challenged。",
+      "evidence_refs": [
+        "確定性計算證據"
       ],
-      "horizon": "缺口：3/7 completed-days 完成交易日尺度",
-      "contradicts": [],
-      "supersedes": [],
-      "item_id": "0d6fdc9d25d80242ad04a7dda74673a11ee2d3a651c60c5f825e6b17b80438cc",
-      "source_run_ids": [
-        "20260915T150502Z"
-      ],
-      "as_of": null,
-      "policy_digest": "0938a6862a6ef8af53f3deac2f071e5fe22014d659127a5d1a4a5a623c9410ab",
-      "status": "pending",
-      "evidence_quotes": {},
-      "evidence_identities": {},
-      "validation_notes": [
-        "尚未連結可驗證引用；模型研究內容不具政策權限。"
-      ]
-    },
-    {
-      "claim_key": "run-20260915_single_point_attribution_limit",
-      "kind": "inference",
-      "text": "依你提供的『確定性計算證據』（以單點前後價格、按既定權重計算加權貢獻），NVDA/AVGO/META/GLD 為負、PLTR 為正；這更像是短窗內的分檔與風格/因子相對表現變動（尤其科技/風險資產端），不構成對上一輪維持持倉中『各標的獨立阿爾法/因果』的驗證。",
-      "evidence_refs": [],
-      "symbols": [
-        "AVGO",
-        "GLD",
-        "META",
-        "NVDA",
-        "PLTR"
-      ],
-      "horizon": "單點評價（非可重複勝率/因果驗證）",
-      "contradicts": [],
-      "supersedes": [],
-      "item_id": "640e8a75fe92c83548e1cdc4f9c21cf9aefd11304b7e10b6fa56c06e0a5c61ed",
-      "source_run_ids": [
-        "20260915T150502Z"
-      ],
-      "as_of": null,
-      "policy_digest": "0938a6862a6ef8af53f3deac2f071e5fe22014d659127a5d1a4a5a623c9410ab",
-      "status": "pending",
-      "evidence_quotes": {},
-      "evidence_identities": {},
-      "validation_notes": [
-        "尚未連結可驗證引用；模型研究內容不具政策權限。"
-      ]
-    },
-    {
-      "claim_key": "run-20260915_macro_regime_context_inference_only",
-      "kind": "inference",
-      "text": "最新市場快照顯示 SPY/QQQ/IWM 仍偏負向（日變動皆為負），同時 VIX 曲線呈 contango_like 且 level bucket=normal；在缺少完成交易日尺度與事件對齊之前，這只能支撐『近端可能存在共同衝擊/風格壓力的觀察性背景』，不能把它當作對個股研究結論的支持證據。",
-      "evidence_refs": [],
-      "symbols": [
-        "IWM",
-        "QQQ",
-        "SPY"
-      ],
-      "horizon": "近端背景（需完成日尺度驗證）",
-      "contradicts": [],
-      "supersedes": [],
-      "item_id": "ca95068751dce548bcf6c6f225195a81369a1dc83b42b5759bd79b339b7e99e5",
-      "source_run_ids": [
-        "20260915T150502Z"
-      ],
-      "as_of": null,
-      "policy_digest": "0938a6862a6ef8af53f3deac2f071e5fe22014d659127a5d1a4a5a623c9410ab",
-      "status": "pending",
-      "evidence_quotes": {},
-      "evidence_identities": {},
-      "validation_notes": [
-        "尚未連結可驗證引用；模型研究內容不具政策權限。"
-      ]
-    },
-    {
-      "claim_key": "run-20260915_policy_check_not_thesis_warrant",
-      "kind": "inference",
-      "text": "既有風險政策的重點在於限制與風控門檻（例如單一股票上限 0.25 的 hard enforcement）。本輪雖有 NVDA 既有權重超限的情境處理，但本次事後驗證仍不足以把任何「風險合規」解讀成「研究論點有效」。政策合規/例外只能影響是否能加碼或必須調整，不自動等於 thesis 的正向驗證。",
-      "evidence_refs": [],
-      "symbols": [
-        "NVDA"
-      ],
-      "horizon": "政策約束解讀（非績效證據）",
-      "contradicts": [],
-      "supersedes": [],
-      "item_id": "d8173bb63c75cca046e066f06718029007d34f9a9ceb7eefd66a75bc19d47df6",
-      "source_run_ids": [
-        "20260915T150502Z"
-      ],
-      "as_of": null,
-      "policy_digest": "0938a6862a6ef8af53f3deac2f071e5fe22014d659127a5d1a4a5a623c9410ab",
-      "status": "pending",
-      "evidence_quotes": {},
-      "evidence_identities": {},
-      "validation_notes": [
-        "尚未連結可驗證引用；模型研究內容不具政策權限。"
-      ]
-    },
-    {
-      "claim_key": "run-20260915_next_research_split_output_layers",
-      "kind": "research_improvement",
-      "text": "下一輪委員會審查建議把『單點確定性計算貢獻』與『可重複的 3/7 completed-days 統計』分層：前者僅作情境/歸因敘事；後者才可用於 supported/mixed/challenged 升級。並在報告中明確定義 completed-days（以何交易所規則判定日完成）及列出資料完成度（避免 BLS/earnings 對齊缺口導致事件歸因過度）。",
-      "evidence_refs": [],
       "symbols": [
         "AVGO",
         "CASH",
@@ -125,12 +21,12 @@
         "NVDA",
         "PLTR"
       ],
-      "horizon": "下一輪（完成交易日統計 + 事件對齊門檻）",
+      "horizon": "缺口：3/7 completed-days 同口徑聚合",
       "contradicts": [],
       "supersedes": [],
-      "item_id": "285a807670d6996af1d73747a394b7a9920400700d08194756e8ebeb5111a4c0",
+      "item_id": "72bc6fb8d47141dd4d82b12838eebb768f6ab995450992c3eeb0e24dd67c2337",
       "source_run_ids": [
-        "20260915T150502Z"
+        "20260916T150138Z"
       ],
       "as_of": null,
       "policy_digest": "0938a6862a6ef8af53f3deac2f071e5fe22014d659127a5d1a4a5a623c9410ab",
@@ -138,7 +34,98 @@
       "evidence_quotes": {},
       "evidence_identities": {},
       "validation_notes": [
-        "尚未連結可驗證引用；模型研究內容不具政策權限。"
+        "部分引用不存在、已失效或晚於本輪截止時間，不具已驗證證據資格。"
+      ]
+    },
+    {
+      "claim_key": "run-20260916_event_linkage_limit_due_to_event_data_gaps",
+      "kind": "inference",
+      "text": "事件歸因能力在當輪仍受限：事件日曆中 BLS 類別為 error、earnings 類別為 missing，故即使市場在近端出現風險偏好變動，也只能降低對『就業/通膨→估值→個股表現』之可驗證因果敘事的置信度，並不構成對各標的先前未驗證收益來源假設的推翻或取代。",
+      "evidence_refs": [
+        "最新市場：event_calendar（BLS error；earnings missing）"
+      ],
+      "symbols": [
+        "AVGO",
+        "GLD",
+        "META",
+        "NVDA",
+        "PLTR"
+      ],
+      "horizon": "當輪事件因果驗證",
+      "contradicts": [],
+      "supersedes": [],
+      "item_id": "8d86295040e748f31e01a0a65c144960fec076138c26871410f2ae4f02175a32",
+      "source_run_ids": [
+        "20260916T150138Z"
+      ],
+      "as_of": null,
+      "policy_digest": "0938a6862a6ef8af53f3deac2f071e5fe22014d659127a5d1a4a5a623c9410ab",
+      "status": "pending",
+      "evidence_quotes": {},
+      "evidence_identities": {},
+      "validation_notes": [
+        "部分引用不存在、已失效或晚於本輪截止時間，不具已驗證證據資格。"
+      ]
+    },
+    {
+      "claim_key": "run-20260916_risk_regime_and_rate_shock_context",
+      "kind": "inference",
+      "text": "當輪宏觀背景呈 risk_off：SPY/QQQ/IWM 在提供的完成交易日量化特徵中顯示偏弱/壓力，且聯準會 FOMC 聲明為加息（1/4 至 3-3/4 到 4%），因此即便上一輪多數標的採取『缺乏足夠證據』的防禦式維持/減碼，這與『成長/科技風險因子承壓』的背景相容；但仍不能將此背景直接升級成各標的獨立收益驗證。",
+      "evidence_refs": [
+        "最新市場：regime",
+        "research_evidence：official-56cfdff93d88a4634c2f936d91ec000e"
+      ],
+      "symbols": [
+        "AVGO",
+        "META",
+        "NVDA",
+        "PLTR"
+      ],
+      "horizon": "近端（需 completed-days 後驗證是否可重複）",
+      "contradicts": [],
+      "supersedes": [],
+      "item_id": "5d4c30432fa1088220dd299b18fe691f4146c01f089a78c9913ca3213f4adeba",
+      "source_run_ids": [
+        "20260916T150138Z"
+      ],
+      "as_of": null,
+      "policy_digest": "0938a6862a6ef8af53f3deac2f071e5fe22014d659127a5d1a4a5a623c9410ab",
+      "status": "pending",
+      "evidence_quotes": {},
+      "evidence_identities": {},
+      "validation_notes": [
+        "部分引用不存在、已失效或晚於本輪截止時間，不具已驗證證據資格。"
+      ]
+    },
+    {
+      "claim_key": "run-20260916_research_improvement_event_alignment_and_window_definition",
+      "kind": "research_improvement",
+      "text": "下一輪委員會審查應把『單點貢獻敘事』與『可重複的 completed-days 窗口統計』再次分層：定義 completed-days（用同一市場規則判定日 bar 完成）、補齊 3/7 completed-days 的 positive_windows 與 latest_return_percent；同時在 BLS/earnings 缺口未修復前，事件歸因只能停留在情境背景，不得作為更新減碼/維持結論的主要證據來源。",
+      "evidence_refs": [
+        "上一輪：return_driver_kind=insufficient_evidence 與研究觀察標準",
+        "最新市場：event_calendar（BLS error；earnings missing）"
+      ],
+      "symbols": [
+        "AVGO",
+        "GLD",
+        "META",
+        "NVDA",
+        "PLTR"
+      ],
+      "horizon": "下一輪（完成交易日統計 + 事件對齊門檻）",
+      "contradicts": [],
+      "supersedes": [],
+      "item_id": "922ef6ead3caa0fb090d1fae40e4b0e6493f209acf7f13978aa3f0bf395dd189",
+      "source_run_ids": [
+        "20260916T150138Z"
+      ],
+      "as_of": null,
+      "policy_digest": "0938a6862a6ef8af53f3deac2f071e5fe22014d659127a5d1a4a5a623c9410ab",
+      "status": "pending",
+      "evidence_quotes": {},
+      "evidence_identities": {},
+      "validation_notes": [
+        "部分引用不存在、已失效或晚於本輪截止時間，不具已驗證證據資格。"
       ]
     }
   ],
@@ -148,7 +135,7 @@
       "title": "先看方向，再決定要不要調整",
       "evidence": "市場每天都會波動；單日漲跌不代表配置方向已經改變。",
       "implication": "走勢持續轉弱或快速改變時，重新檢查配置比例。",
-      "confidence": 86,
+      "confidence": 78,
       "affected_assets": [
         "NVDA",
         "AVGO",
@@ -161,13 +148,14 @@
       "title": "把價格變化放回配置一起看",
       "evidence": "價格上漲不一定代表該加碼；下跌也不一定要立刻賣出。",
       "implication": "每次調整前，同時檢查風險、配置比例與最新市場走勢。",
-      "confidence": 78,
+      "confidence": 74,
       "affected_assets": [
         "NVDA",
         "AVGO",
         "META",
         "PLTR",
-        "GLD"
+        "GLD",
+        "CASH"
       ]
     }
   ],
