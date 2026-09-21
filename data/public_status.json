@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "observed_at": "2026-09-21T10:16:47.299405+00:00",
+  "observed_at": "2026-09-21T10:19:55.780405+00:00",
   "research": {
     "status": "unknown",
     "attempted_at": "2026-09-21T09:35:07+00:00",
@@ -12,9 +12,9 @@
     "data_cutoff": "2026-09-17T15:05:00.173555+00:00"
   },
   "publication": {
-    "status": "verified",
-    "attempted_at": "2026-09-15T23:15:56.727297+08:00",
-    "run_url": null,
-    "recommendation_run_id": "20260915T150502Z"
+    "status": "failed",
+    "attempted_at": "2026-09-21T10:19:55.780405+00:00",
+    "run_url": "https://github.com/JackyTsai70113/ai-investment-committee/actions/runs/35588032068",
+    "recommendation_run_id": "20260917T150516Z"
   }
 }
