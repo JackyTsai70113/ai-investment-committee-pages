@@ -1,10 +1,11 @@
 {
   "schema_version": "1.0",
-  "observed_at": "2026-09-21T10:39:08.740597+00:00",
+  "observed_at": "2026-09-21T16:32:59.884344+00:00",
   "research": {
-    "status": "unknown",
-    "attempted_at": "2026-09-21T09:35:07+00:00",
-    "run_url": "https://github.com/JackyTsai70113/ai-investment-committee/actions/runs/35584102738"
+    "status": "failure",
+    "attempted_at": "2026-09-21T16:32:20.498030+00:00",
+    "run_url": "https://github.com/JackyTsai70113/ai-investment-committee/actions/runs/35625933635",
+    "failure_kind": "repair_budget"
   },
   "last_successful_research": {
     "run_id": "20260917T150516Z",
