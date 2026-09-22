@@ -64,6 +64,30 @@ export function freshnessState(recommendation, calendar, signal, now = Date.now(
   return { state, title, detail, age, expected, trusted };
 }
 
+const researchFailureCopy = {
+  none: "無",
+  credential_missing: "研究服務憑證未設定",
+  provider_unavailable: "研究服務暫時無法使用",
+  provider_rate_limited: "研究服務請求受到限制",
+  provider_rpm_limit: "研究服務每分鐘請求額度已滿",
+  provider_tpm_limit: "研究服務處理額度已滿",
+  provider_daily_quota: "研究服務每日額度已滿",
+  provider_plan_or_billing_quota: "研究服務方案或帳務額度不足",
+  provider_model_capacity: "研究模型暫時沒有可用容量",
+  provider_auth: "研究服務驗證失敗",
+  provider_invalid_request: "研究服務拒絕本輪請求",
+  provider_invalid_response: "研究服務回應格式無法採用",
+  artifact_validation: "本輪資料驗證未通過",
+  committee_error: "研究流程發生未分類錯誤",
+  candidate_domain: "候選配置不符合資料或配置規則",
+  candidate_validation: "候選配置驗證未通過",
+  repair_timeout: "候選配置修復逾時",
+  repair_provider: "候選配置修復服務失敗",
+  repair_validation: "候選配置修復結果未通過驗證",
+  repair_budget: "候選配置修復額度不足",
+  research_extensions: "研究延伸資料的完整性檢查未通過",
+};
+
 function runLink(url, label) {
   try {
     const parsed = new URL(url);
@@ -75,6 +99,9 @@ function runLink(url, label) {
 export function renderFreshness(recommendation, calendar, signal, now = Date.now()) {
   const result = freshnessState(recommendation, calendar, signal, now);
   const researchCopy = result.trusted ? {success: "成功", failure: "失敗", unknown: "未知"}[signal.research.status] : "未知";
+  const failureCopy = result.trusted && signal.research.status === "failure"
+    ? researchFailureCopy[signal.research.failure_kind] || "失敗原因尚未分類"
+    : null;
   const publicationCopy = result.trusted ? {verified: "已核對發布", failed: "失敗", unknown: "未知"}[signal.publication.status] : "未知";
   const age = result.age === null ? "未知" : result.age < 1 ? "不到 1 小時" : result.age < 24 ? `${result.age} 小時` : `${Math.floor(result.age / 24)} 天 ${result.age % 24} 小時`;
   return `<div class="freshness-copy" role="status" aria-live="polite" aria-atomic="true">
@@ -83,6 +110,7 @@ export function renderFreshness(recommendation, calendar, signal, now = Date.now
     <div><dt>本頁資料截至</dt><dd>${escapeHtml(dateTime(recommendation.data_cutoff))}</dd></div>
     <div><dt>資料年齡</dt><dd>${escapeHtml(age)}</dd></div>
     <div><dt>最新研究狀態</dt><dd>${researchCopy}${result.trusted ? `<br>${escapeHtml(dateTime(signal.research.attempted_at))}` : ""}</dd></div><div><dt>最新發布狀態</dt><dd>${publicationCopy}${result.trusted && signal.publication.attempted_at ? `<br>${escapeHtml(dateTime(signal.publication.attempted_at))}` : ""}</dd></div></dl>
+    ${failureCopy ? `<p class="freshness-limits"><strong>已知原因：</strong>${escapeHtml(failureCopy)}</p>` : ""}
     <p class="freshness-limits">${result.trusted ? `健康訊號觀測於 ${escapeHtml(dateTime(signal.observed_at))}。` : "最新健康訊號未知。"}每日排程為世界標準時間 10:17，交易日寬限 3 小時；日曆有效至 ${escapeHtml(calendar?.valid_until || "未知")}。時間判斷依裝置時鐘，僅提示可能過期。</p>
     <div class="freshness-links">${result.trusted ? runLink(signal.research.run_url, "研究執行紀錄") + runLink(signal.publication.run_url, "網站發布紀錄") : ""}</div>
     </div><button type="button" data-refresh-health>重新檢查狀態</button>`;

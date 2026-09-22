@@ -5,7 +5,6 @@
   "pricing_session": "2026-09-17",
   "from_run_id": "20260916T150138Z",
   "to_run_id": "20260917T150516Z",
-  "capital_usd": "10739.85",
   "status": "research_only",
   "comparison_basis": "actual_to_target",
   "sizing_status": "not_requested",
@@ -17,60 +16,60 @@
       "action": "hold",
       "reference_close_usd": "213.899994",
       "reference_price_usd": "219.330505",
-      "previous_target_usd": "3215.26",
-      "new_target_usd": "3289.96",
-      "change_usd": "0.00",
-      "sizing_status": "not_requested"
+      "sizing_status": "not_requested",
+      "previous_target_weight": "0.3023710935920379856472334107",
+      "new_target_weight": "0.3063320251213936879937801738",
+      "change_weight": "0.0039609315293557023465467631"
     },
     {
       "symbol": "GLD",
       "action": "hold",
       "reference_close_usd": "391.73999",
       "reference_price_usd": "399.244995",
-      "previous_target_usd": "1195.53",
-      "new_target_usd": "1197.73",
-      "change_usd": "0.00",
-      "sizing_status": "not_requested"
+      "sizing_status": "not_requested",
+      "previous_target_weight": "0.1124306318997807869288446220",
+      "new_target_weight": "0.1115220417417375475448912229",
+      "change_weight": "-0.0009085901580432393839533991"
     },
     {
       "symbol": "AVGO",
       "action": "hold",
       "reference_close_usd": "339.51001",
       "reference_price_usd": "349.595001",
-      "previous_target_usd": "2396.03",
-      "new_target_usd": "2447.17",
-      "change_usd": "0.00",
-      "sizing_status": "not_requested"
+      "sizing_status": "not_requested",
+      "previous_target_weight": "0.2253286550323553226645250054",
+      "new_target_weight": "0.2278588620883904337583858248",
+      "change_weight": "0.0025302070560351110938608194"
     },
     {
       "symbol": "PLTR",
       "action": "hold",
       "reference_close_usd": "174.339996",
       "reference_price_usd": "176.369995",
-      "previous_target_usd": "859.25",
-      "new_target_usd": "881.85",
-      "change_usd": "0.00",
-      "sizing_status": "not_requested"
+      "sizing_status": "not_requested",
+      "previous_target_weight": "0.08080601947244037470294324817",
+      "new_target_weight": "0.08211008533638737971200715094",
+      "change_weight": "0.00130406586394700500906390277"
     },
     {
       "symbol": "META",
       "action": "hold",
       "reference_close_usd": "673.309998",
       "reference_price_usd": "672.099976",
-      "previous_target_usd": "2022.62",
-      "new_target_usd": "2016.30",
-      "change_usd": "0.00",
-      "sizing_status": "not_requested"
+      "sizing_status": "not_requested",
+      "previous_target_weight": "0.1902122445217891774008345332",
+      "new_target_weight": "0.1877400522353664157320632970",
+      "change_weight": "-0.0024721922864227616687712362"
     },
     {
       "symbol": "CASH",
       "action": "hold",
       "reference_close_usd": null,
       "reference_price_usd": null,
-      "previous_target_usd": "944.80",
-      "new_target_usd": "906.84",
-      "change_usd": "0.00",
-      "sizing_status": "not_requested"
+      "sizing_status": "not_requested",
+      "previous_target_weight": "0.08885135548159635265561918053",
+      "new_target_weight": "0.08443693347672453525887233062",
+      "change_weight": "-0.00441442200487181739674684991"
     }
   ],
   "warnings": [

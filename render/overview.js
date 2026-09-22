@@ -709,7 +709,7 @@ export function bootstrapDashboard(root, payload, base) {
         </article>`;
       }).join("");
       return `<section class="panel physical-risk-panel" id="geopolitical-risks" data-tab-section="overview" aria-labelledby="geopolitical-risks-title">
-        <header class="panel-header"><div><span class="section-kicker">政策與地緣傳導</span><h2 id="geopolitical-risks-title">能源、航運與政策情境</h2></div><span class="panel-meta">shadow 研究摘要，不改變正式配置</span></header>
+        <header class="panel-header"><div><span class="section-kicker">政策與地緣傳導</span><h2 id="geopolitical-risks-title">能源、航運與政策情境</h2></div><span class="panel-meta">情境研究摘要，不改變正式配置</span></header>
         <p class="exposure-note">持續、緩解與二次通膨方向分開保存；公告不等於生效，沒有曝險證據的事件不會擴大標的範圍。</p>
         <div class="physical-risk-grid">${rows}</div>
       </section>`;
@@ -772,14 +772,26 @@ export function bootstrapDashboard(root, payload, base) {
         .find((source) => source.note) ||
       (reason.artifact_refs || []).map(artifactSource)[0] ||
       { label: "來源：最終推薦", note: "", href: `${dataBase}/data/recommendation.json` };
-    const readablePolicyNote = (note) => String(note || "")
-      .replace("Position-risk shadow:", "部位風險影子紀錄：")
-      .replace("Position-risk shadow warning:", "部位風險影子警示：")
-      .replace("Exposure shadow warning:", "共同曝險影子警示：")
-      .replace("Exposure shadow:", "共同曝險影子紀錄：")
-      .replace("correlation cluster", "相關性群組")
-      .replace("weight", "權重")
-      .replace("exceeds", "高於");
+    const readablePolicyNote = (note) => {
+      const raw = String(note || "");
+      const positionMatch = raw.match(/(?:Position-risk shadow(?: warning)?:|部位風險影子紀錄：?)\s*(\d+)\s*個風險部位/i);
+      if (positionMatch) {
+        return `${positionMatch[1]} 個模擬風險部位尚未量化或超過單筆研究損失預算。`;
+      }
+      const exposureMatch = raw.match(/(?:Exposure shadow(?: warning)?:|共同曝險影子警示：?)\s*correlation cluster\s+([^\s]+)\s+weight\s+([0-9.]+)\s+exceeds\s+([0-9.]+)/i);
+      if (exposureMatch) {
+        const symbols = exposureMatch[1].split(",").join("、");
+        return `相關性群組 ${symbols} 的目標比例為 ${percent(exposureMatch[2])}，高於政策門檻 ${percent(exposureMatch[3])}。`;
+      }
+      return raw
+        .replace("Position-risk shadow:", "部位風險監測紀錄：")
+        .replace("Position-risk shadow warning:", "部位風險監測警示：")
+        .replace("Exposure shadow warning:", "共同曝險監測警示：")
+        .replace("Exposure shadow:", "共同曝險監測紀錄：")
+        .replace("correlation cluster", "相關性群組")
+        .replace("weight", "目標比例")
+        .replace("exceeds", "高於");
+    };
     const affectedPolicyAssets = (reason) => {
       const symbols = reason.affected_assets?.length
         ? reason.affected_assets
@@ -801,8 +813,8 @@ export function bootstrapDashboard(root, payload, base) {
     };
     const policyActionTaken = (reason, sourceNote) => {
       const text = `${reason.title || ""} ${reason.summary || ""} ${sourceNote || ""}`.toLowerCase();
-      if (text.includes("shadow") || text.includes("影子")) {
-        return "列為影子風險紀錄，未啟用硬性限制；這表示資料或政策尚未達到阻擋條件。";
+      if (text.includes("shadow") || text.includes("影子") || text.includes("監測")) {
+        return "列為風險監測紀錄，未啟用硬性限制；這表示資料或政策尚未達到阻擋條件，不代表風險為零。";
       }
       if (text.includes("硬性") || text.includes("binding")) {
         return "列入硬性限制或可檢查約束；最終配置必須遵守這項條件。";
@@ -810,10 +822,10 @@ export function bootstrapDashboard(root, payload, base) {
       return "列為風控檢查紀錄；是否交易仍以最終配置與再平衡指示為準。";
     };
     const policyDisplayTitle = (reason, sourceNote) => {
-      const original = reason.title || "本輪風控檢查紀錄";
+      const original = (reason.title || "本輪風控檢查紀錄").replace("影子", "監測");
       if (!["本輪研究風險警示", "本輪風控檢查紀錄"].includes(original)) return original;
-      if (sourceNote.includes("部位風險")) return "部位風險影子警示";
-      if (sourceNote.includes("共同曝險")) return "共同曝險影子警示";
+      if (sourceNote.includes("部位風險")) return "部位風險監測警示";
+      if (sourceNote.includes("共同曝險")) return "共同曝險監測警示";
       if (sourceNote.includes("硬性") || sourceNote.toLowerCase().includes("binding")) {
         return "風控硬性限制";
       }
@@ -913,11 +925,6 @@ export function bootstrapDashboard(root, payload, base) {
     const hasNewTrade = (rebalance.instructions || []).some(
       (instruction) => instruction.action !== "hold",
     );
-    const ratioFromUsd = (value, capital) => {
-      const parsed = toNumber(value);
-      const denominator = toNumber(capital);
-      return parsed === null || denominator === null || denominator <= 0 ? null : parsed / denominator;
-    };
     const signedPercent = (value) => {
       const parsed = toNumber(value);
       if (parsed === null) return "未提供";
@@ -932,9 +939,6 @@ export function bootstrapDashboard(root, payload, base) {
       exit: "退出",
     }[action] || "檢視");
     const riskMethodology = (plan) => {
-      if (plan.v1_loss_bound?.schema_version === "1.0") {
-        return { reason: plan.v1_loss_bound.reason, requirement: "價格失效界線與外生假設各自評估，不保證停損成交。" };
-      }
       const methodology = String(plan.methodology || "");
       if (plan.status === "exempt") {
         return {
@@ -966,6 +970,12 @@ export function bootstrapDashboard(root, payload, base) {
           requirement: "需要明確失效價或保守價格代理，才會計算基本損失。",
         };
       }
+      if (plan.v1_loss_bound?.schema_version === "1.0") {
+        return {
+          reason: plan.v1_loss_bound.reason,
+          requirement: "價格失效界線與外生假設各自評估，不保證停損成交。",
+        };
+      }
       if (methodology.includes("not below")) {
         return {
           reason: "失效價未低於多頭參考價，不能形成保守損失估算。",
@@ -985,7 +995,7 @@ export function bootstrapDashboard(root, payload, base) {
     };
     const riskInputSummary = (plan) => {
       if (plan.status === "exempt") return "現金不需要價格失效輸入。";
-      if (plan.status !== "quantified") return riskMethodology(plan).reason;
+      if (plan.status !== "quantified") return `尚缺：${riskMethodology(plan).reason}`;
       return `參考價 ${money(plan.reference_price)}，失效價 ${money(plan.invalidation_price)}，資料 ${dateTime(plan.reference_timestamp)}`;
     };
     const riskStatusLabel = (plan) => {
@@ -996,7 +1006,7 @@ export function bootstrapDashboard(root, payload, base) {
     const riskPlanCard = (plan) => {
       const allocation = allocationBySymbol.get(plan.symbol) || {};
       const instruction = rebalanceBySymbol.get(plan.symbol) || {};
-      const previousWeight = ratioFromUsd(instruction.previous_target_usd, rebalance.capital_usd);
+      const previousWeight = toNumber(instruction.previous_target_weight);
       const currentWeight = toNumber(allocation.target_weight);
       const change = previousWeight === null || currentWeight === null ? null : currentWeight - previousWeight;
       const methodology = riskMethodology(plan);
@@ -1017,6 +1027,11 @@ export function bootstrapDashboard(root, payload, base) {
       const stressCopy = gap ? stressFraction !== "" && stressFraction !== null
         ? `${(Number(stressFraction) * 100).toFixed(2)}%（外生價格假設；不保證停損成交）` : "未知，不能補零"
         : plan.status === "quantified" ? `${percent(plan.portfolio_contribution)}（政策壓力 ${percent(plan.stress_gap_percent)}）` : "未量化";
+      const statusSummary = plan.status === "quantified"
+        ? "已量化；資料、失效價或配置變動時會重新計算。"
+        : plan.status === "exempt"
+          ? "免估算；現金沒有價格失效曝險。"
+          : `未量化：${methodology.reason} 可量化所需資料：${methodology.requirement}`;
       return `
         <article class="position-risk-card ${statusClass}">
           <header>
@@ -1027,14 +1042,15 @@ export function bootstrapDashboard(root, payload, base) {
             <span class="risk-status">${plan.v1_loss_bound ? "失效界線：" : ""}${escapeHtml(riskStatusLabel(plan))}</span>
           </header>
           <dl class="position-risk-grid">
-            <div><dt>前一輪目標</dt><dd>${previousWeight === null ? "未提供" : percent(previousWeight)}</dd></div>
-            <div><dt>本輪目標</dt><dd>${currentWeight === null ? "未提供" : percent(currentWeight)}</dd></div>
-            <div><dt>配置變化</dt><dd>${signedPercent(change)}</dd></div>
-            <div><dt>失效條件</dt><dd>${escapeHtml(invalidation)}</dd></div>
-            <div><dt>風險輸入</dt><dd>${escapeHtml(riskInputSummary(plan))}</dd></div>
-            <div><dt>基本損失比例</dt><dd>${plan.status === "quantified" ? percent(plan.base_loss_fraction) : "未量化"}</dd></div>
-            <div><dt>跳空壓力比例</dt><dd>${stressCopy}</dd></div>
-            <div><dt>所選本金換算</dt><dd data-sim-risk data-base-fraction="${escapeHtml(baseFraction)}" data-stress-fraction="${escapeHtml(stressFraction)}">${baseFraction !== "" || stressFraction !== "" ? "輸入本金後換算" : "需要量化後才換算"}</dd></div>
+            <div><dt>前一輪目標 ${info("前一輪目標", "前一輪公開模擬研究的目標比例；不是券商或使用者實際持倉。")}</dt><dd>${previousWeight === null ? "未提供" : percent(previousWeight)}</dd></div>
+            <div><dt>本輪目標 ${info("本輪目標", "本輪公開模擬研究建議的目標比例；可用上方所選本金換算金額。")}</dt><dd>${currentWeight === null ? "未提供" : percent(currentWeight)}</dd></div>
+            <div><dt>配置變化 ${info("配置變化", "本輪目標比例減去前一輪目標比例。正數為加碼、負數為減碼，不代表已執行真實交易。")}</dt><dd>${signedPercent(change)}</dd></div>
+            <div><dt>失效條件 ${info("失效條件", "若此條件成立，原研究論點要重新檢視。只有價格型失效條件才能計算基本損失。")}</dt><dd>${escapeHtml(invalidation)}</dd></div>
+            <div><dt>風險輸入 ${info("風險輸入", "量化基本損失需要同一資料截止時間的參考價、失效價與時間戳；缺少任何一項就保持未知。")}</dt><dd>${escapeHtml(riskInputSummary(plan))}</dd></div>
+            <div><dt>基本損失比例 ${info("基本損失比例", "以本輪目標比例、參考價與失效價估算到達失效價前的損失比例；不是最大可能損失，也不保證停損成交。")}</dt><dd>${plan.status === "quantified" ? percent(plan.base_loss_fraction) : `未量化：${escapeHtml(methodology.reason)}`}</dd></div>
+            <div><dt>跳空壓力比例 ${info("跳空壓力比例", "以政策設定的外生跳空假設估算隔夜或事件衝擊；不是預測，也不假設停損一定成交。")}</dt><dd>${stressCopy}</dd></div>
+            <div><dt>狀態 ${info("狀態", "說明此部位是否已量化；未量化不等於零風險，並會指出可量化所需資料。")}</dt><dd>${escapeHtml(statusSummary)}</dd></div>
+            <div><dt>所選本金換算 ${info("所選本金換算", "只依瀏覽器中的模擬本金換算，不會上傳、不會讀取或揭露真實帳戶本金。")}</dt><dd data-sim-risk data-base-fraction="${escapeHtml(baseFraction)}" data-stress-fraction="${escapeHtml(stressFraction)}">${baseFraction !== "" || stressFraction !== "" ? "輸入本金後換算" : "需要量化後才換算"}</dd></div>
           </dl>
           <details class="position-risk-details">
             <summary>為什麼是這個狀態</summary>

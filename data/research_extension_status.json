@@ -144,6 +144,8 @@
     "thesis-state:insufficient_initial_evidence",
     "thesis-state:insufficient_initial_evidence"
   ],
+  "total_gap_count": 0,
+  "omitted_gap_count": 0,
   "finance_agent_pack_enabled": true,
   "decision_context_mode": "decision_context"
 }

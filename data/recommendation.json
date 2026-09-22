@@ -4,7 +4,6 @@
   "generated_at": "2026-09-17T15:06:03.425552Z",
   "data_cutoff": "2026-09-17T15:05:00.173555Z",
   "status": "live",
-  "capital_usd": "10739.85",
   "allocation_scope": {
     "active_sleeve_symbols": [
       "NVDA",
@@ -41,9 +40,7 @@
       "cost_tradeoff": "NVDA 本輪不交易，估計交易成本為零；原草案另存稽核。",
       "evidence_refs": [],
       "evidence_observations": [],
-      "evidence_status": "insufficient",
-      "candidate_cost_usd": "0E-31",
-      "proposed_cost_usd": "0.3024987499999999999999999998"
+      "evidence_status": "insufficient"
     },
     {
       "symbol": "AVGO",
@@ -62,9 +59,7 @@
       "cost_tradeoff": "AVGO 本輪不交易，估計交易成本為零；原草案另存稽核。",
       "evidence_refs": [],
       "evidence_observations": [],
-      "evidence_status": "insufficient",
-      "candidate_cost_usd": "0E-31",
-      "proposed_cost_usd": "0.3024987499999999999999999998"
+      "evidence_status": "insufficient"
     },
     {
       "symbol": "META",
@@ -83,9 +78,7 @@
       "cost_tradeoff": "META 本輪不交易，估計交易成本為零；原草案另存稽核。",
       "evidence_refs": [],
       "evidence_observations": [],
-      "evidence_status": "insufficient",
-      "candidate_cost_usd": "0E-31",
-      "proposed_cost_usd": "0.3024987499999999999999999998"
+      "evidence_status": "insufficient"
     },
     {
       "symbol": "PLTR",
@@ -104,9 +97,7 @@
       "cost_tradeoff": "PLTR 本輪不交易，估計交易成本為零；原草案另存稽核。",
       "evidence_refs": [],
       "evidence_observations": [],
-      "evidence_status": "insufficient",
-      "candidate_cost_usd": "0E-31",
-      "proposed_cost_usd": "0.3024987499999999999999999998"
+      "evidence_status": "insufficient"
     },
     {
       "symbol": "GLD",
@@ -125,9 +116,7 @@
       "cost_tradeoff": "GLD 本輪不交易，估計交易成本為零；原草案另存稽核。",
       "evidence_refs": [],
       "evidence_observations": [],
-      "evidence_status": "insufficient",
-      "candidate_cost_usd": "0E-31",
-      "proposed_cost_usd": "0.3024987499999999999999999998"
+      "evidence_status": "insufficient"
     },
     {
       "symbol": "CASH",
@@ -146,9 +135,7 @@
       "cost_tradeoff": "CASH 本輪不交易，估計交易成本為零；原草案另存稽核。",
       "evidence_refs": [],
       "evidence_observations": [],
-      "evidence_status": "insufficient",
-      "candidate_cost_usd": "0E-31",
-      "proposed_cost_usd": "0.3024987499999999999999999998"
+      "evidence_status": "insufficient"
     }
   ],
   "model_score": 88,
@@ -160,7 +147,6 @@
       "symbol": "NVDA",
       "asset_type": "stock",
       "target_weight": "0.3063320251213936879937801738",
-      "target_amount_usd": "3289.96",
       "action": "hold",
       "note": "維持確認股數與現金，不新增交易。"
     },
@@ -168,7 +154,6 @@
       "symbol": "AVGO",
       "asset_type": "stock",
       "target_weight": "0.2278588620883904337583858248",
-      "target_amount_usd": "2447.17",
       "action": "hold",
       "note": "維持確認股數與現金，不新增交易。"
     },
@@ -176,7 +161,6 @@
       "symbol": "META",
       "asset_type": "stock",
       "target_weight": "0.1877400522353664157320632970",
-      "target_amount_usd": "2016.30",
       "action": "hold",
       "note": "維持確認股數與現金，不新增交易。"
     },
@@ -184,7 +168,6 @@
       "symbol": "PLTR",
       "asset_type": "stock",
       "target_weight": "0.08211008533638737971200715094",
-      "target_amount_usd": "881.85",
       "action": "hold",
       "note": "維持確認股數與現金，不新增交易。"
     },
@@ -192,7 +175,6 @@
       "symbol": "GLD",
       "asset_type": "commodity_etf",
       "target_weight": "0.1115220417417375475448912229",
-      "target_amount_usd": "1197.73",
       "action": "hold",
       "note": "維持確認股數與現金，不新增交易。"
     },
@@ -200,7 +182,6 @@
       "symbol": "CASH",
       "asset_type": "cash",
       "target_weight": "0.08443693347672453525887233062",
-      "target_amount_usd": "906.84",
       "action": "hold",
       "note": "維持確認股數與現金，不新增交易。"
     }
@@ -213,10 +194,8 @@
       "invalidation_type": "thesis",
       "invalidation_price": null,
       "status": "unquantified",
-      "base_loss_usd": "0",
       "base_loss_fraction": "0",
       "stress_gap_percent": "0",
-      "stress_loss_usd": "0",
       "portfolio_contribution": "0",
       "methodology": "Event/thesis invalidation lacks a conservative price proxy.",
       "v1_loss_bound": null,
@@ -230,10 +209,8 @@
       "invalidation_type": "thesis",
       "invalidation_price": null,
       "status": "unquantified",
-      "base_loss_usd": "0",
       "base_loss_fraction": "0",
       "stress_gap_percent": "0",
-      "stress_loss_usd": "0",
       "portfolio_contribution": "0",
       "methodology": "Event/thesis invalidation lacks a conservative price proxy.",
       "v1_loss_bound": null,
@@ -247,10 +224,8 @@
       "invalidation_type": "thesis",
       "invalidation_price": null,
       "status": "unquantified",
-      "base_loss_usd": "0",
       "base_loss_fraction": "0",
       "stress_gap_percent": "0",
-      "stress_loss_usd": "0",
       "portfolio_contribution": "0",
       "methodology": "Event/thesis invalidation lacks a conservative price proxy.",
       "v1_loss_bound": null,
@@ -264,10 +239,8 @@
       "invalidation_type": "thesis",
       "invalidation_price": null,
       "status": "unquantified",
-      "base_loss_usd": "0",
       "base_loss_fraction": "0",
       "stress_gap_percent": "0",
-      "stress_loss_usd": "0",
       "portfolio_contribution": "0",
       "methodology": "Event/thesis invalidation lacks a conservative price proxy.",
       "v1_loss_bound": null,
@@ -281,10 +254,8 @@
       "invalidation_type": "thesis",
       "invalidation_price": null,
       "status": "unquantified",
-      "base_loss_usd": "0",
       "base_loss_fraction": "0",
       "stress_gap_percent": "0",
-      "stress_loss_usd": "0",
       "portfolio_contribution": "0",
       "methodology": "Event/thesis invalidation lacks a conservative price proxy.",
       "v1_loss_bound": null,
@@ -298,10 +269,8 @@
       "invalidation_type": "cash",
       "invalidation_price": null,
       "status": "exempt",
-      "base_loss_usd": "0",
       "base_loss_fraction": "0",
       "stress_gap_percent": "0",
-      "stress_loss_usd": "0",
       "portfolio_contribution": "0",
       "methodology": "CASH is exempt from position-loss estimation.",
       "v1_loss_bound": null,

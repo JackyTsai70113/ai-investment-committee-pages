@@ -1,5 +1,5 @@
 {
-  "build_code_commit": "b6a37dcfbf177a0d8fb61189d597102e8048db40",
+  "build_code_commit": "8d67054595e718c4ae8a41cf066551f3407ae868",
   "data_cutoff": "2026-09-17T15:05:00.173555+00:00",
   "files": {
     "agent_profiles.json": {
@@ -51,20 +51,20 @@
       "sha256": "f36a6a237e3fe38df8944ba6e153422135068115109fb563e45ffa891b0dda2e"
     },
     "pipeline_health.json": {
-      "bytes": 521,
-      "sha256": "733901667be511f34912d348da6e0aeb2d9aa464e5f8b9e24ffc56aa329e58fb"
+      "bytes": 504,
+      "sha256": "3ffaf52a1ce98e01d3926ba299431bcd205beeef92158d46a907817f05c49622"
     },
     "rebalance.json": {
-      "bytes": 2478,
-      "sha256": "ea8bffd9494f3921686c34fb4bbf1bb8568cbdfec03b0bcae46cbebc9dc4c75a"
+      "bytes": 2948,
+      "sha256": "8aeb9f9b2a5dd08cb2bd96f713a6bc1ec9082822a436269615308c8e1d3ea360"
     },
     "recommendation.json": {
-      "bytes": 36737,
-      "sha256": "3543fcd187964c9b0276dceb45cf9998cec60528d7722200e89c9bc01e4719fc"
+      "bytes": 35546,
+      "sha256": "cc0b42f564bbadfbc82e2709aa0891f2e0865c1a66b0d8fde431151588bcdbef"
     },
     "research_extension_status.json": {
-      "bytes": 8794,
-      "sha256": "094fcc28cec96fe03db7126ad4f2d07d1dfc8865a8249b611ef684fa3b70be42"
+      "bytes": 8844,
+      "sha256": "6f0219089ce8c2492f2fe8b6a4e1e79cfedf0fec9199f4567e8ee8452a307340"
     },
     "research_journal.json": {
       "bytes": 3146,
@@ -72,7 +72,7 @@
     },
     "system.json": {
       "bytes": 498,
-      "sha256": "8f4d34836409dc63854f93d47e2232efcdf3e798c8942b7ea35b49e159b4f629"
+      "sha256": "70543136ed007b706d6176f535f261da45a11d9ccd4eca29c60b8816db20208a"
     },
     "thesis_book.json": {
       "bytes": 83498,
@@ -83,5 +83,5 @@
   "recommendation_generated_at": "2026-09-17T15:06:03.425552+00:00",
   "recommendation_run_id": "20260917T150516Z",
   "schema_version": "1.0",
-  "source_commit": "b6a37dcfbf177a0d8fb61189d597102e8048db40"
+  "source_commit": "2d453cde4d72c402350a4a387929301bcc70afac"
 }
