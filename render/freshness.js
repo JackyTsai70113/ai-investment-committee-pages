@@ -138,11 +138,19 @@ export function installFreshness(root, recommendation, calendar, initialSignal, 
   banner.addEventListener("click", async (event) => {
     const button = event.target.closest("[data-refresh-health]");
     if (!button) return;
+    const label = button.textContent;
     button.disabled = true;
-    signal = await loadSignal();
-    button.disabled = false;
-    paint();
-    banner.querySelector("[data-refresh-health]").focus();
+    button.textContent = "檢查中…";
+    banner.setAttribute("aria-busy", "true");
+    try {
+      signal = await loadSignal();
+    } finally {
+      button.disabled = false;
+      button.textContent = label;
+      banner.removeAttribute("aria-busy");
+      paint();
+      banner.querySelector("[data-refresh-health]").focus();
+    }
   });
   if (root.freshnessTimer) clearInterval(root.freshnessTimer);
   root.freshnessTimer = setInterval(paint, 60000);

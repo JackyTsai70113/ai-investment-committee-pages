@@ -108,22 +108,13 @@
     "boundary": "不取代最終決策；批判必須具體、可驗證並提出必要修正。"
   },
   "cio": {
-    "title": "最終決策整合者",
-    "summary": "整合研究與批判後形成唯一最終建議。",
+    "title": "候選配置整合者",
+    "summary": "整合研究與批判後產生唯一候選配置，不具政策覆寫權。",
     "responsibility": "整合提案、批判、協商、硬性政策與風險限制。",
     "inputs": "結構化研究摘要、兩位審查員意見及約束條件。",
     "purpose": "讓委員會只有一份一致、可稽核的結論。",
-    "goal": "輸出合規配置、風險、期限、失效條件與有來源、最多十項且不湊數的投資理由。",
-    "boundary": "不能忽略硬性政策、捏造共識或把建議描述成已執行交易。"
-  },
-  "ai_capex_concentration": {
-    "title": "AI 資本支出與集中風險研究員",
-    "summary": "檢查 AI 資本支出、供應鏈與多部位重疊曝險。",
-    "responsibility": "分析 hyperscaler capex、融資與 counterparty risk、替代供應鏈及 factor overlap。",
-    "inputs": "正規化的 competitive、factor exposure、catalyst 與 provenance artifacts。",
-    "purpose": "辨識同一 AI event 對個股與 ETF 組合造成的集中風險。",
-    "goal": "提出 evidence-backed concentration caveat，不把風險 gate 當成研究結論。",
-    "boundary": "不執行 exposure gate、不直接配置，也不取得 broker、MCP 或其他外部工具。"
+    "goal": "輸出候選配置、風險、期限、失效條件與有來源、最多十項且不湊數的投資理由。",
+    "boundary": "不具政策覆寫權；候選須通過確定性風控檢查，必要時接受最終審核。不能捏造共識或把建議描述成已執行交易。"
   },
   "thesis_delta": {
     "title": "Thesis 變化研究員",
@@ -142,5 +133,14 @@
     "purpose": "分辨好公司但價格過高，以及便宜但競爭力惡化。",
     "goal": "提出可追溯的 relative valuation 判斷與主要競爭風險。",
     "boundary": "不做完整 DCF、不抽取 raw filings，也不產生短線技術訊號。"
+  },
+  "ai_capex_concentration": {
+    "title": "AI 資本支出與集中風險研究員",
+    "summary": "檢查 AI 資本支出、供應鏈與多部位重疊曝險。",
+    "responsibility": "分析 hyperscaler capex、融資與 counterparty risk、替代供應鏈及 factor overlap。",
+    "inputs": "正規化的 competitive、factor exposure、catalyst 與 provenance artifacts。",
+    "purpose": "辨識同一 AI event 對個股與 ETF 組合造成的集中風險。",
+    "goal": "提出 evidence-backed concentration caveat，不把風險 gate 當成研究結論。",
+    "boundary": "不執行 exposure gate、不直接配置，也不取得 broker、MCP 或其他外部工具。"
   }
 }

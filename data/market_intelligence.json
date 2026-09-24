@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "run_id": "20260917T150516Z",
-  "data_cutoff": "2026-09-17T15:05:00.173555Z",
+  "run_id": "20260924T114411Z",
+  "data_cutoff": "2026-09-24T11:43:55.447364Z",
   "peer_universe": {
     "theme": "已蒐集市場研究",
     "sector": "跨產業",
@@ -13,14 +13,14 @@
         "evidence_ids": [
           "sec:AAPL:10-Q:2026-07-31:assets:instant:2026-06-27",
           "sec:AAPL:10-Q:2026-07-31:assets:instant:2025-09-27",
+          "sec:AAPL:10-Q:2026-07-31:capital_expenditures:2025-09-28:2026-06-27",
+          "sec:AAPL:10-Q:2026-07-31:capital_expenditures:2024-09-29:2025-06-28",
           "sec:AAPL:10-Q:2026-07-31:cash:instant:2026-06-27",
           "sec:AAPL:10-Q:2026-07-31:cash:instant:2025-09-27",
           "sec:AAPL:10-Q:2026-07-31:diluted_eps:2025-09-28:2026-06-27",
           "sec:AAPL:10-Q:2026-07-31:diluted_eps:2026-03-29:2026-06-27",
-          "sec:AAPL:10-Q:2026-07-31:liabilities:instant:2026-06-27",
-          "sec:AAPL:10-Q:2026-07-31:liabilities:instant:2025-09-27",
-          "sec:AAPL:10-Q:2026-07-31:net_income:2025-09-28:2026-06-27",
-          "sec:AAPL:10-Q:2026-07-31:net_income:2026-03-29:2026-06-27"
+          "sec:AAPL:10-Q:2026-07-31:diluted_shares:2025-09-28:2026-06-27",
+          "sec:AAPL:10-Q:2026-07-31:diluted_shares:2026-03-29:2026-06-27"
         ]
       },
       {
@@ -30,14 +30,14 @@
         "evidence_ids": [
           "sec:AMD:10-Q:2026-08-05:assets:instant:2026-06-27",
           "sec:AMD:10-Q:2026-08-05:assets:instant:2025-12-27",
+          "sec:AMD:10-Q:2026-08-05:capital_expenditures:2025-12-28:2026-06-27",
+          "sec:AMD:10-Q:2026-08-05:capital_expenditures:2024-12-29:2025-06-28",
           "sec:AMD:10-Q:2026-08-05:cash:instant:2026-06-27",
           "sec:AMD:10-Q:2026-08-05:cash:instant:2025-12-27",
           "sec:AMD:10-Q:2026-08-05:diluted_eps:2025-12-28:2026-06-27",
           "sec:AMD:10-Q:2026-08-05:diluted_eps:2026-03-29:2026-06-27",
-          "sec:AMD:10-Q:2026-08-05:net_income:2025-12-28:2026-06-27",
-          "sec:AMD:10-Q:2026-08-05:net_income:2026-03-29:2026-06-27",
-          "sec:AMD:10-Q:2026-08-05:operating_cash_flow:2025-12-28:2026-06-27",
-          "sec:AMD:10-Q:2026-08-05:operating_cash_flow:2024-12-29:2025-06-28"
+          "sec:AMD:10-Q:2026-08-05:diluted_shares:2025-12-28:2026-06-27",
+          "sec:AMD:10-Q:2026-08-05:diluted_shares:2026-03-29:2026-06-27"
         ]
       },
       {
@@ -49,12 +49,12 @@
           "sec:AVGO:10-K:2024-12-20:net_income:2022-10-31:2023-10-29",
           "sec:AVGO:10-Q:2026-09-10:assets:instant:2026-08-02",
           "sec:AVGO:10-Q:2026-09-10:assets:instant:2025-11-02",
+          "sec:AVGO:10-Q:2026-09-10:capital_expenditures:2025-11-03:2026-08-02",
+          "sec:AVGO:10-Q:2026-09-10:capital_expenditures:2024-11-04:2025-08-03",
           "sec:AVGO:10-Q:2026-09-10:cash:instant:2026-08-02",
           "sec:AVGO:10-Q:2026-09-10:cash:instant:2025-11-02",
           "sec:AVGO:10-Q:2026-09-10:diluted_eps:2025-11-03:2026-08-02",
-          "sec:AVGO:10-Q:2026-09-10:diluted_eps:2026-05-04:2026-08-02",
-          "sec:AVGO:10-Q:2026-09-10:liabilities:instant:2026-08-02",
-          "sec:AVGO:10-Q:2026-09-10:liabilities:instant:2025-11-02"
+          "sec:AVGO:10-Q:2026-09-10:diluted_eps:2026-05-04:2026-08-02"
         ]
       },
       {
@@ -64,14 +64,14 @@
         "evidence_ids": [
           "sec:META:10-Q:2026-07-30:assets:instant:2026-06-30",
           "sec:META:10-Q:2026-07-30:assets:instant:2025-12-31",
+          "sec:META:10-Q:2026-07-30:capital_expenditures:2026-01-01:2026-06-30",
+          "sec:META:10-Q:2026-07-30:capital_expenditures:2025-01-01:2025-06-30",
           "sec:META:10-Q:2026-07-30:cash:instant:2026-06-30",
           "sec:META:10-Q:2026-07-30:cash:instant:2025-12-31",
           "sec:META:10-Q:2026-07-30:diluted_eps:2026-01-01:2026-06-30",
           "sec:META:10-Q:2026-07-30:diluted_eps:2026-04-01:2026-06-30",
-          "sec:META:10-Q:2026-07-30:liabilities:instant:2026-06-30",
-          "sec:META:10-Q:2026-07-30:liabilities:instant:2025-12-31",
-          "sec:META:10-Q:2026-07-30:net_income:2026-01-01:2026-06-30",
-          "sec:META:10-Q:2026-07-30:net_income:2026-04-01:2026-06-30"
+          "sec:META:10-Q:2026-07-30:diluted_shares:2026-01-01:2026-06-30",
+          "sec:META:10-Q:2026-07-30:diluted_shares:2026-04-01:2026-06-30"
         ]
       },
       {
@@ -81,14 +81,14 @@
         "evidence_ids": [
           "sec:MSFT:10-K:2026-07-29:assets:instant:2026-06-30",
           "sec:MSFT:10-K:2026-07-29:assets:instant:2025-06-30",
+          "sec:MSFT:10-K:2026-07-29:capital_expenditures:2025-07-01:2026-06-30",
+          "sec:MSFT:10-K:2026-07-29:capital_expenditures:2024-07-01:2025-06-30",
           "sec:MSFT:10-K:2026-07-29:cash:instant:2026-06-30",
           "sec:MSFT:10-K:2026-07-29:cash:instant:2025-06-30",
           "sec:MSFT:10-K:2026-07-29:diluted_eps:2025-07-01:2026-06-30",
           "sec:MSFT:10-K:2026-07-29:diluted_eps:2024-07-01:2025-06-30",
-          "sec:MSFT:10-K:2026-07-29:liabilities:instant:2026-06-30",
-          "sec:MSFT:10-K:2026-07-29:liabilities:instant:2025-06-30",
-          "sec:MSFT:10-K:2026-07-29:net_income:2025-07-01:2026-06-30",
-          "sec:MSFT:10-K:2026-07-29:net_income:2024-07-01:2025-06-30"
+          "sec:MSFT:10-K:2026-07-29:diluted_shares:2025-07-01:2026-06-30",
+          "sec:MSFT:10-K:2026-07-29:diluted_shares:2024-07-01:2025-06-30"
         ]
       },
       {
@@ -96,6 +96,8 @@
         "role": "申報公司",
         "inclusion_reason": "已有可追溯的公司申報或基本面資料。",
         "evidence_ids": [
+          "sec:NVDA:10-Q:2020-08-19:capital_expenditures:2020-01-27:2020-07-26",
+          "sec:NVDA:10-Q:2020-08-19:capital_expenditures:2019-01-28:2019-07-28",
           "sec:NVDA:10-K:2022-03-18:revenue:2021-02-01:2022-01-30",
           "sec:NVDA:10-K:2022-03-18:revenue:2020-01-27:2021-01-31",
           "sec:NVDA:10-Q:2026-08-26:assets:instant:2026-07-26",
@@ -103,9 +105,7 @@
           "sec:NVDA:10-Q:2026-08-26:cash:instant:2026-07-26",
           "sec:NVDA:10-Q:2026-08-26:cash:instant:2026-01-25",
           "sec:NVDA:10-Q:2026-08-26:diluted_eps:2026-01-26:2026-07-26",
-          "sec:NVDA:10-Q:2026-08-26:diluted_eps:2026-04-27:2026-07-26",
-          "sec:NVDA:10-Q:2026-08-26:liabilities:instant:2026-07-26",
-          "sec:NVDA:10-Q:2026-08-26:liabilities:instant:2026-01-25"
+          "sec:NVDA:10-Q:2026-08-26:diluted_eps:2026-04-27:2026-07-26"
         ]
       },
       {
@@ -115,14 +115,14 @@
         "evidence_ids": [
           "sec:PLTR:10-Q:2026-08-04:assets:instant:2026-06-30",
           "sec:PLTR:10-Q:2026-08-04:assets:instant:2025-12-31",
+          "sec:PLTR:10-Q:2026-08-04:capital_expenditures:2026-01-01:2026-06-30",
+          "sec:PLTR:10-Q:2026-08-04:capital_expenditures:2025-01-01:2025-06-30",
           "sec:PLTR:10-Q:2026-08-04:cash:instant:2026-06-30",
           "sec:PLTR:10-Q:2026-08-04:cash:instant:2025-12-31",
           "sec:PLTR:10-Q:2026-08-04:diluted_eps:2026-01-01:2026-06-30",
           "sec:PLTR:10-Q:2026-08-04:diluted_eps:2026-04-01:2026-06-30",
-          "sec:PLTR:10-Q:2026-08-04:liabilities:instant:2026-06-30",
-          "sec:PLTR:10-Q:2026-08-04:liabilities:instant:2025-12-31",
-          "sec:PLTR:10-Q:2026-08-04:net_income:2026-01-01:2026-06-30",
-          "sec:PLTR:10-Q:2026-08-04:net_income:2026-04-01:2026-06-30"
+          "sec:PLTR:10-Q:2026-08-04:diluted_shares:2026-01-01:2026-06-30",
+          "sec:PLTR:10-Q:2026-08-04:diluted_shares:2026-04-01:2026-06-30"
         ]
       },
       {
@@ -132,14 +132,14 @@
         "evidence_ids": [
           "sec:TSLA:10-Q:2026-07-23:assets:instant:2026-06-30",
           "sec:TSLA:10-Q:2026-07-23:assets:instant:2025-12-31",
+          "sec:TSLA:10-Q:2026-07-23:capital_expenditures:2026-01-01:2026-06-30",
+          "sec:TSLA:10-Q:2026-07-23:capital_expenditures:2025-01-01:2025-06-30",
           "sec:TSLA:10-Q:2026-07-23:cash:instant:2026-06-30",
           "sec:TSLA:10-Q:2026-07-23:cash:instant:2025-12-31",
           "sec:TSLA:10-Q:2026-07-23:diluted_eps:2026-01-01:2026-06-30",
           "sec:TSLA:10-Q:2026-07-23:diluted_eps:2026-04-01:2026-06-30",
-          "sec:TSLA:10-Q:2026-07-23:liabilities:instant:2026-06-30",
-          "sec:TSLA:10-Q:2026-07-23:liabilities:instant:2025-12-31",
-          "sec:TSLA:10-Q:2026-07-23:net_income:2026-01-01:2026-06-30",
-          "sec:TSLA:10-Q:2026-07-23:net_income:2026-04-01:2026-06-30"
+          "sec:TSLA:10-Q:2026-07-23:diluted_shares:2026-01-01:2026-06-30",
+          "sec:TSLA:10-Q:2026-07-23:diluted_shares:2026-04-01:2026-06-30"
         ]
       },
       {
@@ -149,6 +149,8 @@
         "evidence_ids": [
           "sec:TSM:20-F:2025-04-17:assets:instant:2024-12-31",
           "sec:TSM:20-F:2025-04-17:assets:instant:2023-12-31",
+          "sec:TSM:20-F:2025-04-17:gross_profit:2024-01-01:2024-12-31",
+          "sec:TSM:20-F:2025-04-17:gross_profit:2023-01-01:2023-12-31",
           "sec:TSM:20-F:2025-04-17:liabilities:instant:2024-12-31",
           "sec:TSM:20-F:2025-04-17:liabilities:instant:2023-12-31",
           "sec:TSM:20-F:2025-04-17:net_income:2024-01-01:2024-12-31",
@@ -166,180 +168,7 @@
   "physical_risks": [],
   "geopolitical_risks": [],
   "ideas_shortlist": [],
-  "source_observations": [
-    {
-      "evidence_id": "official-2136f2abc8e9307ba20d36ff8b39cc5c",
-      "source_url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
-      "published_at": null,
-      "available_at": "2026-08-27T04:00:00Z",
-      "retrieval": {
-        "document_id": "9bc4950664f1773de163da3dd9058b9373a2a553b8e772949ad5899a0c0436dc",
-        "content_hash": "282f517583f249b35d4e497b64c8370439b42034e31fc0f31481753740e73c70",
-        "source_query": "https://nvidianews.nvidia.com/news?q=earnings",
-        "source_type": "company_ir",
-        "authority": "official",
-        "retrieved_at": "2026-09-17T15:05:18.244700Z",
-        "publication_date": "2026-08-26",
-        "publication_precision": "date",
-        "available_at": "2026-08-27T04:00:00Z",
-        "content_locator": "已讀 HTML 全文後節選；字元區間：0:6000,8397:11914,18532:22039,24103:27610",
-        "excerpt": "Outlook\nNVIDIA’s outlook for the third quarter of fiscal 2027 is as follows:\nRevenue is expected to be $108.0 billion, plus or minus 2%. NVIDIA is not assuming any Data Center compute revenue from China in its outlook.\nGAAP and non-GAAP gross margins are expected to be 74.0%, plus or minus 50 basis points.\nGAAP and non-GAAP operating expenses are expected to be approximately $9.2 billion and $9.0 billion, respectively.",
-        "claim_kind": "company_guidance",
-        "source_status": "current"
-      },
-      "symbols": [
-        "NVDA"
-      ],
-      "summary": "文件提供 NVIDIA 2027 財年第三季展望，包含：營收預期為 108.0 億美元（±2%）；並明確表示其指引不假設來自中國的數據中心運算收入。亦列出毛利率、營運費用等預期範圍/數字。",
-      "market_relevance": "若市場關注中國數據中心需求，指引中「不假設中國 compute」的措辭可能反映管理層對區域需求/供應能見度的保守或排除假設。",
-      "interpretation": "untrusted_observation"
-    },
-    {
-      "evidence_id": "official-56cfdff93d88a4634c2f936d91ec000e",
-      "source_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm",
-      "published_at": "2026-09-16T18:00:00Z",
-      "available_at": "2026-09-16T18:00:17Z",
-      "retrieval": {
-        "document_id": "da3bcbb85f4595d6b859363dce4a60cecd20e7593bb1a729eadc864f44b7a9f9",
-        "content_hash": "24232c69fd6752469f3be65a81b75e20ce095dc05520bbe0d6f2b1e76595e689",
-        "source_query": "https://www.federalreserve.gov/feeds/press_monetary.xml",
-        "source_type": "macro_release",
-        "authority": "official",
-        "retrieved_at": "2026-09-17T15:05:22.455612Z",
-        "publication_date": "2026-09-16",
-        "publication_precision": "datetime",
-        "available_at": "2026-09-16T18:00:17Z",
-        "content_locator": "已讀 HTML 全文；換行分隔文字節點",
-        "excerpt": "The Committee decided to raise the target range for the federal funds rate by 1/4 percentage point\nto 3-3/4\nto 4 percent, in support of the Federal Reserve's dual mandate. The Committee is continuing its policy of maintaining ample reserves in the banking system.",
-        "claim_kind": "fact",
-        "source_status": "revised"
-      },
-      "symbols": [
-        "AVGO",
-        "CASH",
-        "GLD",
-        "META",
-        "NVDA",
-        "PLTR"
-      ],
-      "summary": "文件為聯準會 FOMC 聲明，內容指出委員會以 12–0 投票決定將聯邦基金利率目標區間上調 1/4 個百分點至 3-3/4 到 4%。並提及將繼續維持銀行體系充裕準備金。",
-      "market_relevance": "政策利率目標上調會影響無風險利率與資金成本，進而影響包括科技成長股在內的估值與風險資產定價。",
-      "interpretation": "untrusted_observation"
-    },
-    {
-      "evidence_id": "official-7fe08df67809ff2d20098b67182c4d07",
-      "source_url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
-      "published_at": null,
-      "available_at": "2026-08-27T04:00:00Z",
-      "retrieval": {
-        "document_id": "9bc4950664f1773de163da3dd9058b9373a2a553b8e772949ad5899a0c0436dc",
-        "content_hash": "282f517583f249b35d4e497b64c8370439b42034e31fc0f31481753740e73c70",
-        "source_query": "https://nvidianews.nvidia.com/news?q=earnings",
-        "source_type": "company_ir",
-        "authority": "official",
-        "retrieved_at": "2026-09-17T15:05:18.244700Z",
-        "publication_date": "2026-08-26",
-        "publication_precision": "date",
-        "available_at": "2026-08-27T04:00:00Z",
-        "content_locator": "已讀 HTML 全文後節選；字元區間：0:6000,8397:11914,18532:22039,24103:27610",
-        "excerpt": "Revenue of $96.2 billion, up 106% from a year ago\nData Center revenue of $89.0 billion, up 117% from a year ago\nAugust 26, 2026\nNVIDIA (NASDAQ: NVDA) today reported revenue for the second quarter ended July 26, 2026, of $96.2 billion, up 18% from the previous quarter and up 106% from a year ago. For the quarter, GAAP and non-GAAP gross margins were both 75.0%. GAAP and non-GAAP earnings per diluted share were $2.46 and $2.22, respectively.",
-        "claim_kind": "fact",
-        "source_status": "current"
-      },
-      "symbols": [
-        "NVDA"
-      ],
-      "summary": "文件指出，NVIDIA（第二季截至 2026-07-26）營收為 960.2 億美元，年增；同時 GAAP 與非 GAAP 毛利率均為 75.0%。並列出相應的 GAAP 與非 GAAP 稀釋每股盈餘數字。",
-      "market_relevance": "營收規模與毛利率屬於公司獲利能力的直接財務訊號，可能影響市場對其 AI 基礎設施需求強度與成本結構的評估。",
-      "interpretation": "untrusted_observation"
-    },
-    {
-      "evidence_id": "official-9e43f3d3a8fdf5fac3137644e89026dc",
-      "source_url": "https://www.bea.gov/news/2026/personal-income-and-outlays-july-2026",
-      "published_at": null,
-      "available_at": "2026-09-17T12:00:55Z",
-      "retrieval": {
-        "document_id": "5895968b941e893ae940f010268634dd017bbc4c4058557676a7d36a9b08e05d",
-        "content_hash": "3a27064e283dfb1a113322b50c4a8c3633faf7f346116dfbfcc19467fbcc4059",
-        "source_query": "https://www.bea.gov/news/current-releases",
-        "source_type": "macro_release",
-        "authority": "official",
-        "retrieved_at": "2026-09-17T15:05:23.610963Z",
-        "publication_date": "2026-08-26",
-        "publication_precision": "date",
-        "available_at": "2026-09-17T12:00:55Z",
-        "content_locator": "已讀 HTML 全文；換行分隔文字節點",
-        "excerpt": "Personal income\nincreased $115.1 billion\n(0.4 percent at a monthly rate) in July, according to estimates released today by the U.S. Bureau of Economic Analysis (BEA).\nDisposable personal income (DPI)\n—personal income less personal current taxes—increased $125.9 billion (0.5 percent), and\npersonal consumption expenditures (PCE)\nincreased $36.3 billion (0.2 percent).\nPersonal outlays\n—the sum of PCE, personal interest payments, and personal current transfer payments—increased $36.6 billion in July.\nPersonal saving\nwas $712.0 billion in July, and the\npersonal saving rate\n—personal saving as a percentage of DPI—was 3.0 percent.",
-        "claim_kind": "fact",
-        "source_status": "revised"
-      },
-      "symbols": [
-        "AVGO",
-        "CASH",
-        "GLD",
-        "META",
-        "NVDA",
-        "PLTR"
-      ],
-      "summary": "文件指出 BEA 估計 2026 年 7 月個人收入增加 1151 億美元（按月增率 0.4%）；並同時提供可支配個人收入、個人消費支出（PCE）與個人儲蓄/儲蓄率等數字。",
-      "market_relevance": "個人收入與消費支出變化是衡量需求韌性的宏觀指標，可能影響市場對整體經濟成長與風險偏好（含消費與投資）之判斷。",
-      "interpretation": "untrusted_observation"
-    },
-    {
-      "evidence_id": "official-b8fab5fa7ba28afbe0b796f2c1af91ae",
-      "source_url": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial",
-      "published_at": "2026-09-02T20:15:00Z",
-      "available_at": "2026-09-15T06:31:14Z",
-      "retrieval": {
-        "document_id": "d7f5a8dc40019e48808816686d3bf96dc28d36931f3f8f43536436cdf11ab094",
-        "content_hash": "bc1b45a06494921863116e1ba190cf4b063720b85086cff941dd2fcbc2b42012",
-        "source_query": "https://investors.broadcom.com/rss/news-releases.xml",
-        "source_type": "company_ir",
-        "authority": "official",
-        "retrieved_at": "2026-09-17T15:05:19.895617Z",
-        "publication_date": "2026-09-02",
-        "publication_precision": "datetime",
-        "available_at": "2026-09-15T06:31:14Z",
-        "content_locator": "已讀 HTML 全文後節選；字元區間：0:6000,8017:11534",
-        "excerpt": "Revenue of\n$29.6 billion\nfor the third quarter, up 86 percent from the prior year period\nGAAP operating income of\n$16.0 billion\nfor the third quarter; Non-GAAP operating income of\n$20.1 billion\nfor the third quarter\nGAAP diluted EPS of\n$2.68\nfor the third quarter; Non-GAAP diluted EPS of\n$3.32\nfor the third quarter\nCash from operations of\n$14.2 billion\nfor the third quarter, less capital expenditures of\n$0.5 billion\n, resulted in\n$13.7 billion\nof free cash flow, or 46 percent of revenue",
-        "claim_kind": "fact",
-        "source_status": "revised"
-      },
-      "symbols": [
-        "AVGO"
-      ],
-      "summary": "文件指出 Broadcom（截至 2026-08-02 的 FY2026 第三季）營收為 296 億美元（年增 86%）；並分別列出 GAAP 與非 GAAP 的營運淨利與稀釋 EPS。另提及營運現金流與自由現金流的數字。",
-      "market_relevance": "公司在同一文件中同時呈現 GAAP/非 GAAP 的獲利與現金流，可能被用來判斷獲利品質與現金產生能力。",
-      "interpretation": "untrusted_observation"
-    },
-    {
-      "evidence_id": "official-fab112358401b30bd10821933491b9c6",
-      "source_url": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial",
-      "published_at": "2026-09-02T20:15:00Z",
-      "available_at": "2026-09-15T06:31:14Z",
-      "retrieval": {
-        "document_id": "d7f5a8dc40019e48808816686d3bf96dc28d36931f3f8f43536436cdf11ab094",
-        "content_hash": "bc1b45a06494921863116e1ba190cf4b063720b85086cff941dd2fcbc2b42012",
-        "source_query": "https://investors.broadcom.com/rss/news-releases.xml",
-        "source_type": "company_ir",
-        "authority": "official",
-        "retrieved_at": "2026-09-17T15:05:19.895617Z",
-        "publication_date": "2026-09-02",
-        "publication_precision": "datetime",
-        "available_at": "2026-09-15T06:31:14Z",
-        "content_locator": "已讀 HTML 全文後節選；字元區間：0:6000,8017:11534",
-        "excerpt": "Fourth Quarter Fiscal Year 2026 Business Outlook\nBased on current business trends and conditions, the outlook for the fourth quarter of fiscal year 2026, ending\nNovember 1, 2026\n, is expected to be as follows:\nFourth quarter revenue guidance of approximately\n$34.8 billion\n;\nFourth quarter non-GAAP operating income guidance of approximately 66 percent of projected revenue.",
-        "claim_kind": "company_guidance",
-        "source_status": "revised"
-      },
-      "symbols": [
-        "AVGO"
-      ],
-      "summary": "文件提供 Broadcom 2026 財年第四季（截至 2026-11-01）的業務展望：第四季營收指引約 348 億美元；並給出非 GAAP 營運淨利指引為預期營收的約 66%。",
-      "market_relevance": "營收與非 GAAP 營運利潤率（以「約為預期營收的 66%」表述）是市場評估需求動能與獲利能力的關鍵公司假設。",
-      "interpretation": "untrusted_observation"
-    }
-  ],
+  "source_observations": [],
   "diagnostics": [
     "competition: 已保留來源觀察，但缺少可比的競爭地位與價值鏈分析。",
     "valuation: 缺少同期間及會計口徑的可追溯估值數值。",

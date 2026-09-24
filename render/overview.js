@@ -11,7 +11,10 @@ import { asList, createAgentProfileRenderers } from "./agent-profiles.js";
 import { createGlossaryRenderer } from "./glossary.js";
 import { installTabNavigation } from "./navigation.js";
 import { createPerformanceRenderer } from "./performance.js";
-import { installDecisionEvidence, renderDecisionEvidencePanel } from "./decision-evidence.js";
+import {
+  installDecisionEvidence,
+  renderDecisionEvidencePanel,
+} from "./decision-evidence.js";
 import { createDataLoader } from "../data.js";
 import { renderEventCalendar } from "./event-calendar.js";
 import { renderScenarioStress } from "./scenario-stress.js";
@@ -23,16 +26,31 @@ export function allocationScopeNote(recommendation) {
     : "本輪為未記錄可調整範圍的舊制建議，不代表現行可調整部位政策。";
 }
 
-
-const colors = ["#c7f15b", "#67b7ff", "#ae91ff", "#ff9864", "#7ecb83", "#f3f0d8"];
+const colors = [
+  "#c7f15b",
+  "#67b7ff",
+  "#ae91ff",
+  "#ff9864",
+  "#7ecb83",
+  "#f3f0d8",
+];
 const LEADERBOARD_VISIBLE_LIMIT = 5;
 
-function createOverviewModel({ dashboardAnalytics, committee, recommendation }) {
+function createOverviewModel({
+  dashboardAnalytics,
+  committee,
+  recommendation,
+}) {
   const investedWeight = recommendation.allocations
     .filter((item) => item.symbol !== "CASH")
     .reduce((total, item) => total + Number(item.target_weight), 0);
-  const cash = recommendation.allocations.find((item) => item.symbol === "CASH");
-  const modelScore = Math.max(0, Math.min(100, Number(recommendation.model_score) || 0));
+  const cash = recommendation.allocations.find(
+    (item) => item.symbol === "CASH",
+  );
+  const modelScore = Math.max(
+    0,
+    Math.min(100, Number(recommendation.model_score) || 0),
+  );
   const scoreBand =
     modelScore >= 80
       ? "高度共識"
@@ -72,7 +90,8 @@ export function bootstrapDashboard(root, payload, base) {
 
   const dataBase = base || ".";
 
-  const { agentProfiles: loadedAgentProfiles, committeeRendererFactory } = payload;
+  const { agentProfiles: loadedAgentProfiles, committeeRendererFactory } =
+    payload;
   const agentProfiles = loadedAgentProfiles || {};
   const simulationCapitalExamples = [4000, 6000, 10000];
   const toNumber = (value) => {
@@ -85,7 +104,9 @@ export function bootstrapDashboard(root, payload, base) {
   };
   const simulatedMoney = (fraction, capital) => {
     const parsed = toNumber(fraction);
-    return parsed === null || capital === null ? "輸入本金後換算" : money(parsed * capital);
+    return parsed === null || capital === null
+      ? "輸入本金後換算"
+      : money(parsed * capital);
   };
 
   const findQuote = (market, symbol) =>
@@ -110,7 +131,7 @@ export function bootstrapDashboard(root, payload, base) {
         ? "風險收斂"
         : value === "stressed"
           ? "壓力上升"
-      : value || "未足夠";
+          : value || "未足夠";
 
   const latestResearchForCategory = (market, categories, limit = 3) =>
     (market.research_evidence || [])
@@ -139,7 +160,10 @@ export function bootstrapDashboard(root, payload, base) {
     return parsed === null ? "—" : parsed.toFixed(digits);
   };
 
-  const { buildChart: buildPerformanceChart, installChart: installPerformanceChart } = createPerformanceRenderer();
+  const {
+    buildChart: buildPerformanceChart,
+    installChart: installPerformanceChart,
+  } = createPerformanceRenderer();
 
   const safeExternalUrl = (value) => {
     try {
@@ -181,26 +205,39 @@ export function bootstrapDashboard(root, payload, base) {
   };
 
   const renderTickerText = (value) => {
-    const symbols = Object.keys(googleFinanceExchange).sort((left, right) => right.length - left.length);
+    const symbols = Object.keys(googleFinanceExchange).sort(
+      (left, right) => right.length - left.length,
+    );
     const pattern = new RegExp(`\\b(${symbols.join("|")})\\b`, "g");
     return String(value ?? "")
       .split(pattern)
-      .map((part) => (googleFinanceExchange[part] ? symbolLink(part) : escapeHtml(part)))
+      .map((part) =>
+        googleFinanceExchange[part] ? symbolLink(part) : escapeHtml(part),
+      )
       .join("");
   };
 
-  const { applyLinks: glossaryText, render: renderGlossary } = createGlossaryRenderer(escapeHtml);
-  const renderList = (items, emptyMessage = "未提供", transform = escapeHtml) => {
+  const { applyLinks: glossaryText, render: renderGlossary } =
+    createGlossaryRenderer(escapeHtml);
+  const renderList = (
+    items,
+    emptyMessage = "未提供",
+    transform = escapeHtml,
+  ) => {
     const values = Array.isArray(items) ? items : [];
-    if (values.length === 0) return `<li class="empty-item">${escapeHtml(emptyMessage)}</li>`;
+    if (values.length === 0)
+      return `<li class="empty-item">${escapeHtml(emptyMessage)}</li>`;
     const renderItem = typeof transform === "function" ? transform : escapeHtml;
     return values.map((item) => `<li>${renderItem(item)}</li>`).join("");
   };
 
   const renderAssetTags = (items) => {
     const values = Array.isArray(items) ? items : [];
-    if (values.length === 0) return `<span class="asset-tag muted">未指定</span>`;
-    return values.map((item) => `<span class="asset-tag">${escapeHtml(item)}</span>`).join("");
+    if (values.length === 0)
+      return `<span class="asset-tag muted">未指定</span>`;
+    return values
+      .map((item) => `<span class="asset-tag">${escapeHtml(item)}</span>`)
+      .join("");
   };
 
   const renderSourceLinks = (urls) => {
@@ -298,35 +335,50 @@ export function bootstrapDashboard(root, payload, base) {
       cadence: "申報發布時即時更新",
       latency: "結構化財務資料通常少於一分鐘",
       use: "查核 10-K、10-Q、8-K 與標準化公司財務數據。",
-      limits: ["公司原始申報可能含錯誤或後續修正。", "不同公司的會計概念與期間不一定能直接比較。"],
+      limits: [
+        "公司原始申報可能含錯誤或後續修正。",
+        "不同公司的會計概念與期間不一定能直接比較。",
+      ],
     },
     sec_form4: {
       name: "美國證券交易委員會表格 3、4、5",
       cadence: "事件發生時更新",
       latency: "多數內部人交易須在兩個工作日內申報",
       use: "理解內部人持股變化與公開市場買賣背景。",
-      limits: ["必須區分買賣、獎酬、執行、贈與與稅款扣繳。", "申報本身不能證明內部人交易能預測未來報酬。"],
+      limits: [
+        "必須區分買賣、獎酬、執行、贈與與稅款扣繳。",
+        "申報本身不能證明內部人交易能預測未來報酬。",
+      ],
     },
     sec_13f: {
       name: "美國證券交易委員會 13F 資料集",
       cadence: "每季更新",
       latency: "季末後最長可延遲 45 天",
       use: "追蹤機構持股、集中度與季對季變化。",
-      limits: ["不是即時機構資金流訊號。", "無法涵蓋所有資產、空頭部位、避險或季中交易。"],
+      limits: [
+        "不是即時機構資金流訊號。",
+        "無法涵蓋所有資產、空頭部位、避險或季中交易。",
+      ],
     },
     company_ir: {
       name: "公司投資人關係公告",
       cadence: "事件發生時更新",
       latency: "公司正式發布時",
       use: "交叉核對財報、財測、簡報與重大公司事件。",
-      limits: ["公司資料可能偏重有利敘事。", "與正式申報不同時，以監管申報為準。"],
+      limits: [
+        "公司資料可能偏重有利敘事。",
+        "與正式申報不同時，以監管申報為準。",
+      ],
     },
     fred_alfred: {
       name: "聖路易聯邦準備銀行 FRED 與 ALFRED",
       cadence: "依各資料序列而定",
       latency: "依序列而定，許多數值後續會修正",
       use: "查核利率、信用利差、就業、通膨、流動性與金融情勢。",
-      limits: ["各原始發布單位的時間表不同。", "回測應使用 ALFRED 歷史版本，避免後見偏誤。"],
+      limits: [
+        "各原始發布單位的時間表不同。",
+        "回測應使用 ALFRED 歷史版本，避免後見偏誤。",
+      ],
     },
     us_treasury_rates: {
       name: "美國財政部每日殖利率曲線",
@@ -354,35 +406,50 @@ export function bootstrapDashboard(root, payload, base) {
       cadence: "盤中及每日更新",
       latency: "公開顯示可能延遲",
       use: "判斷標普 500 選擇權隱含波動與尾端風險環境。",
-      limits: ["VIX 不是投資組合損失的直接預測。", "VIX 相關產品還受均值回歸與期貨期限結構影響。"],
+      limits: [
+        "VIX 不是投資組合損失的直接預測。",
+        "VIX 相關產品還受均值回歸與期貨期限結構影響。",
+      ],
     },
     cboe_vix_term_structure: {
       name: "芝加哥選擇權交易所 VIX 期限結構",
       cadence: "盤中更新",
       latency: "公開顯示可能延遲",
       use: "比較不同天期波動指數，判讀事件壓力與波動曲線環境。",
-      limits: ["指數水位不等於可直接成交的避險成本。", "不同天期資料必須與決策時間對齊。"],
+      limits: [
+        "指數水位不等於可直接成交的避險成本。",
+        "不同天期資料必須與決策時間對齊。",
+      ],
     },
     occ_options_open_interest: {
       name: "美國選擇權結算公司成交量與未平倉量",
       cadence: "每日更新",
       latency: "依報告時程而定",
       use: "分析選擇權活動、擁擠程度、避險需求與事件風險。",
-      limits: ["彙總成交量無法辨認投資人意圖或方向。", "未平倉量必須搭配履約價、到期日與標的判讀。"],
+      limits: [
+        "彙總成交量無法辨認投資人意圖或方向。",
+        "未平倉量必須搭配履約價、到期日與標的判讀。",
+      ],
     },
     finra_short: {
       name: "美國金融業監管局空頭資料",
       cadence: "放空成交量每日更新；空頭餘額每月兩次",
       latency: "依資料集而定",
       use: "理解空頭背景與場外放空成交活動。",
-      limits: ["每日放空成交量不等於空頭餘額。", "資料未整合所有交易所，且可能包含當日已平倉部位。"],
+      limits: [
+        "每日放空成交量不等於空頭餘額。",
+        "資料未整合所有交易所，且可能包含當日已平倉部位。",
+      ],
     },
     cftc_cot: {
       name: "美國商品期貨交易委員會交易人持倉報告",
       cadence: "每週更新",
       latency: "通常週五公布週二持倉",
       use: "分析股指、利率、能源、金屬與匯率期貨持倉。",
-      limits: ["彙總分類不是個別股票資金流。", "週二至週五的延遲限制短線時點用途。"],
+      limits: [
+        "彙總分類不是個別股票資金流。",
+        "週二至週五的延遲限制短線時點用途。",
+      ],
     },
     eia: {
       name: "美國能源資訊署開放資料",
@@ -396,7 +463,10 @@ export function bootstrapDashboard(root, payload, base) {
       cadence: "事件發生時更新",
       latency: "官方發布時",
       use: "追蹤直接影響公司或產業的制裁、關稅與監管措施。",
-      limits: ["官方措施不能涵蓋所有地緣政治發展與市場解讀。", "公司曝險仍須用已查核的地區與供應鏈資料對照。"],
+      limits: [
+        "官方措施不能涵蓋所有地緣政治發展與市場解讀。",
+        "公司曝險仍須用已查核的地區與供應鏈資料對照。",
+      ],
     },
     yahoo_market: {
       name: "Yahoo Finance 市場資料",
@@ -430,32 +500,35 @@ export function bootstrapDashboard(root, payload, base) {
         renderList,
         symbolLink,
       })
-    : () => '<p class="methodology-note" role="status">完整委員會內容將在開啟此分頁時載入。</p>';
-
+    : () =>
+        '<p class="methodology-note" role="status">完整委員會內容將在開啟此分頁時載入。</p>';
 
   const researchStatusLabel = (value) => {
-  const labels = {
-    untested: "尚未驗證",
-    partially_tested: "部分驗證",
-    supported: "暫時支持",
-    challenged: "受到挑戰",
-    invalidated: "已失效",
-    mixed: "證據混合",
-    too_early: "尚未開始",
-    no_evidence: "尚無可驗證結果",
-    accumulating: "結果累積中",
-    insufficient: "樣本不足",
-    provisional: "暫定",
-    usable: "可評估",
-    review: "補充驗證",
-    research_only: "補充中",
-  };
+    const labels = {
+      untested: "尚未驗證",
+      partially_tested: "部分驗證",
+      supported: "暫時支持",
+      challenged: "受到挑戰",
+      invalidated: "已失效",
+      mixed: "證據混合",
+      too_early: "尚未開始",
+      no_evidence: "尚無可驗證結果",
+      accumulating: "結果累積中",
+      insufficient: "樣本不足",
+      provisional: "暫定",
+      usable: "可評估",
+      review: "補充驗證",
+      research_only: "補充中",
+    };
 
     return labels[value] || String(value || "未分類");
   };
 
   const leaderboardStatusLabel = (item) => {
-    const pending = Math.max(Number(item.participation_calls) - Number(item.evaluated_calls), 0);
+    const pending = Math.max(
+      Number(item.participation_calls) - Number(item.evaluated_calls),
+      0,
+    );
     if (item.evaluated_calls) {
       return `評估樣本累積中（已評估 ${item.evaluated_calls}，待評估 ${pending}）`;
     }
@@ -464,12 +537,13 @@ export function bootstrapDashboard(root, payload, base) {
 
   const info = (label, description) => `
     <details class="info-popover">
-      <summary aria-label="${escapeHtml(label)}說明"><span aria-hidden="true">ⓘ</span></summary>
+      <summary aria-label="${escapeHtml(label)}說明"><span class="info-mark" aria-hidden="true">i</span></summary>
       <span class="info-popover-content" role="tooltip">${escapeHtml(description)}</span>
     </details>`;
 
   const performanceSampleLabel = (status, intervals) => {
-    if (status === "provisional") return `短期觀察中（${intervals} 個完成區間）`;
+    if (status === "provisional")
+      return `短期觀察中（${intervals} 個完成區間）`;
     return "樣本已具可評估範圍";
   };
 
@@ -514,44 +588,80 @@ export function bootstrapDashboard(root, payload, base) {
     marketIntelligence,
     extensionStatus,
   }) => {
-    const overview = createOverviewModel({ dashboardAnalytics, committee, recommendation });
-    const { isLive, investedWeight, cash, modelScore, scoreBand, scoreReason, scoreAngle, donut, committeeSize, health, analyticsPerformance, returnObjective } = overview;
+    const overview = createOverviewModel({
+      dashboardAnalytics,
+      committee,
+      recommendation,
+    });
+    const {
+      isLive,
+      investedWeight,
+      cash,
+      modelScore,
+      scoreBand,
+      scoreReason,
+      scoreAngle,
+      donut,
+      committeeSize,
+      health,
+      analyticsPerformance,
+      returnObjective,
+    } = overview;
     const exposureSnapshot = recommendation.exposure_snapshot;
-    const exposureStatusLabel = (status) => ({
-      ready: "已量測",
-      insufficient: "資料不足",
-      partial: "部分資料",
-      stale: "資料過期",
-      unavailable: "無法量測",
-    }[status] || "未提供");
-    const exposurePercent = (value) => value == null ? "—" : percent(value);
+    const exposureStatusLabel = (status) =>
+      ({
+        ready: "已量測",
+        insufficient: "資料不足",
+        partial: "部分資料",
+        stale: "資料過期",
+        unavailable: "無法量測",
+      })[status] || "未提供";
+    const exposurePercent = (value) => (value == null ? "—" : percent(value));
     const renderExposurePanel = () => {
       if (!exposureSnapshot) return "";
       const coverage = exposureSnapshot.coverage || {};
       const clusters = Array.isArray(exposureSnapshot.correlation_clusters)
         ? exposureSnapshot.correlation_clusters
         : [];
-      const measuredClusters = clusters.filter((cluster) => cluster.status === "ready");
-      const unknownClusters = clusters.filter((cluster) => cluster.status !== "ready");
+      const measuredClusters = clusters.filter(
+        (cluster) => cluster.status === "ready",
+      );
+      const unknownClusters = clusters.filter(
+        (cluster) => cluster.status !== "ready",
+      );
       const issuerItems = (exposureSnapshot.issuer_exposures || []).slice(0, 3);
       const sectorItems = (exposureSnapshot.sector_exposures || []).slice(0, 3);
-      const exposureItems = (items) => items.length
-        ? items.map((item) => `<li><span>${escapeHtml(item.factor)}</span><strong>${exposurePercent(item.weight)}</strong></li>`).join("")
-        : '<li><span>沒有可用資料</span><strong>—</strong></li>';
+      const exposureItems = (items) =>
+        items.length
+          ? items
+              .map(
+                (item) =>
+                  `<li><span>${escapeHtml(item.factor)}</span><strong>${exposurePercent(item.weight)}</strong></li>`,
+              )
+              .join("")
+          : "<li><span>沒有可用資料</span><strong>—</strong></li>";
       const measuredItems = measuredClusters.length
-        ? measuredClusters.map((cluster) => `
+        ? measuredClusters
+            .map(
+              (cluster) => `
             <li>
               <div><span>${cluster.symbols.map((symbol) => symbolLink(symbol)).join("、")}</span><strong>${cluster.correlation == null ? "—" : Number(cluster.correlation).toFixed(2)}</strong></div>
               <small>樣本 ${escapeHtml(cluster.sample_size)} · 窗口 ${escapeHtml(cluster.window_sessions)} 日 · 下跌期 ${cluster.downside_correlation == null ? "未足夠" : Number(cluster.downside_correlation).toFixed(2)}（${escapeHtml(cluster.downside_sample_size)} 筆）</small>
-            </li>`).join("")
-        : '<li><span>目前沒有達門檻的已量測群組</span><strong>—</strong></li>';
+            </li>`,
+            )
+            .join("")
+        : "<li><span>目前沒有達門檻的已量測群組</span><strong>—</strong></li>";
       const unknownItems = unknownClusters.length
-        ? unknownClusters.map((cluster) => `
+        ? unknownClusters
+            .map(
+              (cluster) => `
             <li>
               <div><span>${cluster.symbols.map((symbol) => symbolLink(symbol)).join("、")}</span><strong>${escapeHtml(exposureStatusLabel(cluster.status))}</strong></div>
               <small>需要至少 ${escapeHtml(cluster.window_sessions || 60)} 個完成交易日；缺值 ${escapeHtml((cluster.missing_symbols || []).length)}，波動極小 ${escapeHtml((cluster.constant_symbols || []).length)}。</small>
-            </li>`).join("")
-        : '<li><span>沒有未量測標的</span><strong>—</strong></li>';
+            </li>`,
+            )
+            .join("")
+        : "<li><span>沒有未量測標的</span><strong>—</strong></li>";
       return `
         <section class="panel exposure-panel" id="exposure" data-tab-section="overview" aria-labelledby="exposure-title">
           <header class="panel-header">
@@ -581,37 +691,62 @@ export function bootstrapDashboard(root, payload, base) {
         </section>`;
     };
     const renderKpiPanel = () => {
-      const reviews = Array.isArray(earningsReviews?.reviews) ? earningsReviews.reviews : [];
+      const reviews = Array.isArray(earningsReviews?.reviews)
+        ? earningsReviews.reviews
+        : [];
       if (!reviews.length) return "";
       const targetSymbols = ["NVDA", "AVGO", "META", "PLTR"];
       const latest = new Map();
       for (const review of reviews) {
-        if (!targetSymbols.includes(review.symbol) || latest.has(review.symbol)) continue;
+        if (!targetSymbols.includes(review.symbol) || latest.has(review.symbol))
+          continue;
         latest.set(review.symbol, review);
       }
-      const statusLabel = (status) => ({
-        available: "已取得",
-        not_comparable: "不可比",
-        missing: "缺失",
-      }[status] || "缺失");
-      const statusClass = (status) => status === "available" ? "kpi-available" : status === "not_comparable" ? "kpi-not-comparable" : "kpi-missing";
-      const rows = targetSymbols.map((symbol) => {
-        const review = latest.get(symbol);
-        const coverage = review?.kpi_coverage || [];
-        const available = coverage.filter((item) => item.status === "available").length;
-        const counter = (review?.quality_signals || []).filter((item) => item.direction === "counterevidence");
-        const period = coverage.flatMap((item) => item.period_labels || []).filter(Boolean).slice(0, 2).join("、") || "未提供期間";
-        const basis = [...new Set(coverage.flatMap((item) => item.accounting_bases || []))].join("、") || "未提供口徑";
-        const detail = review
-          ? `${available}/${coverage.length} 項可用 · ${period} · ${basis}`
-          : "尚無可核對的財報事件";
-        return `<tr>
+      const statusLabel = (status) =>
+        ({
+          available: "已取得",
+          not_comparable: "不可比",
+          missing: "缺失",
+        })[status] || "缺失";
+      const statusClass = (status) =>
+        status === "available"
+          ? "kpi-available"
+          : status === "not_comparable"
+            ? "kpi-not-comparable"
+            : "kpi-missing";
+      const rows = targetSymbols
+        .map((symbol) => {
+          const review = latest.get(symbol);
+          const coverage = review?.kpi_coverage || [];
+          const available = coverage.filter(
+            (item) => item.status === "available",
+          ).length;
+          const counter = (review?.quality_signals || []).filter(
+            (item) => item.direction === "counterevidence",
+          );
+          const period =
+            coverage
+              .flatMap((item) => item.period_labels || [])
+              .filter(Boolean)
+              .slice(0, 2)
+              .join("、") || "未提供期間";
+          const basis =
+            [
+              ...new Set(
+                coverage.flatMap((item) => item.accounting_bases || []),
+              ),
+            ].join("、") || "未提供口徑";
+          const detail = review
+            ? `${available}/${coverage.length} 項可用 · ${period} · ${basis}`
+            : "尚無可核對的財報事件";
+          return `<tr>
           <th scope="row">${symbolLink(symbol)}</th>
           <td>${escapeHtml(detail)}</td>
           <td><span class="kpi-status ${review ? "kpi-available" : "kpi-missing"}">${review ? "已建立" : "缺失"}</span></td>
           <td>${counter.length ? counter.map((item) => escapeHtml(item.summary)).join("；") : "目前沒有可核對的反方證據"}</td>
         </tr>`;
-      }).join("");
+        })
+        .join("");
       return `<section class="panel kpi-panel" id="earnings-kpi" data-tab-section="overview" aria-labelledby="earnings-kpi-title">
         <header class="panel-header">
           <div>
@@ -649,19 +784,31 @@ export function bootstrapDashboard(root, payload, base) {
         recovery: "恢復",
         unknown: "未知",
       };
-      const dataStatusLabel = { current: "目前", stale: "過期", unknown: "未知" };
-      const rows = risks.map((risk) => {
-        const symbols = (risk.affected_symbols || []).map((symbol) => symbolLink(symbol)).join("、");
-        const period = `${dateTime(risk.valid_from)}${risk.valid_to ? ` 至 ${dateTime(risk.valid_to)}` : " 起"}`;
-        const assumptions = (risk.scenario_assumptions || []).slice(0, 3).map(escapeHtml).join("；") || "未提供情境假設";
-        return `<article class="physical-risk-card">
+      const dataStatusLabel = {
+        current: "目前",
+        stale: "過期",
+        unknown: "未知",
+      };
+      const rows = risks
+        .map((risk) => {
+          const symbols = (risk.affected_symbols || [])
+            .map((symbol) => symbolLink(symbol))
+            .join("、");
+          const period = `${dateTime(risk.valid_from)}${risk.valid_to ? ` 至 ${dateTime(risk.valid_to)}` : " 起"}`;
+          const assumptions =
+            (risk.scenario_assumptions || [])
+              .slice(0, 3)
+              .map(escapeHtml)
+              .join("；") || "未提供情境假設";
+          return `<article class="physical-risk-card">
           <div class="physical-risk-heading"><span class="section-kicker">${escapeHtml(hazardLabel[risk.hazard] || "營運")}</span><span class="kpi-status ${risk.data_status === "current" ? "kpi-available" : "kpi-not-comparable"}">${escapeHtml(dataStatusLabel[risk.data_status] || "未知")}</span></div>
           <h3>${escapeHtml(risk.location)}</h3>
           <p>${escapeHtml(statusLabel[risk.status] || "未知")} · 信心 ${escapeHtml(risk.confidence)} · ${escapeHtml(period)}</p>
           <p>受影響：${symbols || "未標示"}</p>
           <small>情境假設：${assumptions}</small>
         </article>`;
-      }).join("");
+        })
+        .join("");
       return `<section class="panel physical-risk-panel" id="physical-risks" data-tab-section="overview" aria-labelledby="physical-risks-title">
         <header class="panel-header"><div><span class="section-kicker">環境與供應限制</span><h2 id="physical-risks-title">目前模擬部位的實體營運風險</h2></div><span class="panel-meta">僅列有定位與官方來源的事件</span></header>
         <p class="exposure-note">天候機率不是確定損失或交易訊號；成本增加、營收延遲與供應恢復只在列出的假設下成立。未知與過期資料會保留標示。</p>
@@ -689,17 +836,28 @@ export function bootstrapDashboard(root, payload, base) {
         geopolitical: "地緣事件",
         rates: "折現率",
       };
-      const rows = events.map((event) => {
-        const source = safeExternalUrl(event.source_urls?.[0]);
-        const sourceLink = source
-          ? `<a href="${escapeHtml(source)}" target="_blank" rel="noopener noreferrer">官方來源</a>`
-          : "來源未提供";
-        const scenarioText = (event.scenarios || []).slice(0, 3).map((scenario) =>
-          `${escapeHtml(scenario.label)}（${escapeHtml(scenario.direction)}）：${escapeHtml(scenario.assumptions[0] || "未知假設")}`,
-        ).join("；");
-        const evidence = (event.evidence_ids || []).slice(0, 3).map(escapeHtml).join("、") || "未提供";
-        const conditions = (event.observation_conditions || []).slice(0, 2).map(escapeHtml).join("；") || "未提供";
-        return `<article class="geo-risk-card">
+      const rows = events
+        .map((event) => {
+          const source = safeExternalUrl(event.source_urls?.[0]);
+          const sourceLink = source
+            ? `<a href="${escapeHtml(source)}" target="_blank" rel="noopener noreferrer">官方來源</a>`
+            : "來源未提供";
+          const scenarioText = (event.scenarios || [])
+            .slice(0, 3)
+            .map(
+              (scenario) =>
+                `${escapeHtml(scenario.label)}（${escapeHtml(scenario.direction)}）：${escapeHtml(scenario.assumptions[0] || "未知假設")}`,
+            )
+            .join("；");
+          const evidence =
+            (event.evidence_ids || []).slice(0, 3).map(escapeHtml).join("、") ||
+            "未提供";
+          const conditions =
+            (event.observation_conditions || [])
+              .slice(0, 2)
+              .map(escapeHtml)
+              .join("；") || "未提供";
+          return `<article class="geo-risk-card">
           <div class="physical-risk-heading"><span class="section-kicker">${escapeHtml(topicLabel[event.topic] || "事件")}</span><span class="kpi-status ${event.status === "effective" ? "kpi-not-comparable" : "kpi-missing"}">${escapeHtml(statusLabel[event.status] || "未知")}</span></div>
           <h3>${escapeHtml(event.summary)}</h3>
           <p>區域：${escapeHtml(event.region)} · 公告：${escapeHtml(dateTime(event.announcement_at))}${event.effective_at ? ` · 生效：${escapeHtml(dateTime(event.effective_at))}` : ""}</p>
@@ -707,7 +865,8 @@ export function bootstrapDashboard(root, payload, base) {
           <p>情境：${scenarioText || "未知"}</p>
           <small>觀察／失效條件：${conditions} · evidence：${evidence} · ${sourceLink}</small>
         </article>`;
-      }).join("");
+        })
+        .join("");
       return `<section class="panel physical-risk-panel" id="geopolitical-risks" data-tab-section="overview" aria-labelledby="geopolitical-risks-title">
         <header class="panel-header"><div><span class="section-kicker">政策與地緣傳導</span><h2 id="geopolitical-risks-title">能源、航運與政策情境</h2></div><span class="panel-meta">情境研究摘要，不改變正式配置</span></header>
         <p class="exposure-note">持續、緩解與二次通膨方向分開保存；公告不等於生效，沒有曝險證據的事件不會擴大標的範圍。</p>
@@ -721,19 +880,23 @@ export function bootstrapDashboard(root, payload, base) {
       (reason) => reason.reason_type === "policy_explanation",
     );
     const actionLabel = (action) =>
-      ({ increase: "加碼", hold: "維持", reduce: "減碼", exit: "退出" }[action] || "檢視");
-    const reasonActions = (reason) => Object.entries(reason.final_action || {}).map(
-      ([symbol, action]) => {
-        const weight = (reason.final_weight || {})[symbol];
-        const weightLabel = weight == null ? "權重未提供" : percent(weight);
-        return `${symbolLink(symbol)} ${escapeHtml(actionLabel(action))} ${escapeHtml(weightLabel)}`;
-      },
-    ).join("、");
-    const reasonSourceLabel = (reason) => reason.reason_type === "investment_evidence"
-      ? "來源觀測"
-      : reason.reason_type === "policy_explanation"
-        ? "風控紀錄"
-        : "歷史理由／未保存可核對來源";
+      ({ increase: "加碼", hold: "維持", reduce: "減碼", exit: "退出" })[
+        action
+      ] || "檢視";
+    const reasonActions = (reason) =>
+      Object.entries(reason.final_action || {})
+        .map(([symbol, action]) => {
+          const weight = (reason.final_weight || {})[symbol];
+          const weightLabel = weight == null ? "權重未提供" : percent(weight);
+          return `${symbolLink(symbol)} ${escapeHtml(actionLabel(action))} ${escapeHtml(weightLabel)}`;
+        })
+        .join("、");
+    const reasonSourceLabel = (reason) =>
+      reason.reason_type === "investment_evidence"
+        ? "來源觀測"
+        : reason.reason_type === "policy_explanation"
+          ? "風控紀錄"
+          : "歷史理由／未保存可核對來源";
     const reasonCard = (reason) => `
       <article class="reason-card">
         <span class="reason-number">${String(reason.id).padStart(2, "0")}</span>
@@ -744,7 +907,9 @@ export function bootstrapDashboard(root, payload, base) {
         ${renderSourceLinks(reason.source_urls)}
       </article>`;
     const artifactSource = (artifactRef) => {
-      const policyMatch = String(artifactRef || "").match(/committee\.json#\/policy_override_notes\/(\d+)/);
+      const policyMatch = String(artifactRef || "").match(
+        /committee\.json#\/policy_override_notes\/(\d+)/,
+      );
       if (policyMatch) {
         const index = Number(policyMatch[1]);
         return {
@@ -770,15 +935,22 @@ export function bootstrapDashboard(root, payload, base) {
       (reason.artifact_refs || [])
         .map(artifactSource)
         .find((source) => source.note) ||
-      (reason.artifact_refs || []).map(artifactSource)[0] ||
-      { label: "來源：最終推薦", note: "", href: `${dataBase}/data/recommendation.json` };
+      (reason.artifact_refs || []).map(artifactSource)[0] || {
+        label: "來源：最終推薦",
+        note: "",
+        href: `${dataBase}/data/recommendation.json`,
+      };
     const readablePolicyNote = (note) => {
       const raw = String(note || "");
-      const positionMatch = raw.match(/(?:Position-risk shadow(?: warning)?:|部位風險影子紀錄：?)\s*(\d+)\s*個風險部位/i);
+      const positionMatch = raw.match(
+        /(?:Position-risk shadow(?: warning)?:|部位風險影子紀錄：?)\s*(\d+)\s*個風險部位/i,
+      );
       if (positionMatch) {
         return `${positionMatch[1]} 個模擬風險部位尚未量化或超過單筆研究損失預算。`;
       }
-      const exposureMatch = raw.match(/(?:Exposure shadow(?: warning)?:|共同曝險影子警示：?)\s*correlation cluster\s+([^\s]+)\s+weight\s+([0-9.]+)\s+exceeds\s+([0-9.]+)/i);
+      const exposureMatch = raw.match(
+        /(?:Exposure shadow(?: warning)?:|共同曝險影子警示：?)\s*correlation cluster\s+([^\s]+)\s+weight\s+([0-9.]+)\s+exceeds\s+([0-9.]+)/i,
+      );
       if (exposureMatch) {
         const symbols = exposureMatch[1].split(",").join("、");
         return `相關性群組 ${symbols} 的目標比例為 ${percent(exposureMatch[2])}，高於政策門檻 ${percent(exposureMatch[3])}。`;
@@ -797,23 +969,36 @@ export function bootstrapDashboard(root, payload, base) {
         ? reason.affected_assets
         : Object.keys(reason.final_action || {});
       return symbols.length
-        ? symbols.map((symbol) => `<span class="ticker-chip">${symbolLink(symbol)}</span>`).join("")
+        ? symbols
+            .map(
+              (symbol) =>
+                `<span class="ticker-chip">${symbolLink(symbol)}</span>`,
+            )
+            .join("")
         : '<span class="muted-copy">未標示特定標的，視為整體配置風險。</span>';
     };
     const policyImpact = (reason) => {
       const entries = Object.entries(reason.final_action || {});
       if (!entries.length) return "本輪沒有記錄配置動作；以最終推薦權重為準。";
       const changed = entries.filter(([, action]) => action !== "hold");
-      if (!changed.length) return "本輪沒有新增買賣動作；受影響配置維持在最終目標比例。";
-      return `本輪動作：${changed.map(([symbol, action]) => {
-        const weight = (reason.final_weight || {})[symbol];
-        const weightText = weight == null ? "權重未提供" : percent(weight);
-        return `${symbolLink(symbol)} ${escapeHtml(actionLabel(action))} ${escapeHtml(weightText)}`;
-      }).join("、")}。`;
+      if (!changed.length)
+        return "本輪沒有新增買賣動作；受影響配置維持在最終目標比例。";
+      return `本輪動作：${changed
+        .map(([symbol, action]) => {
+          const weight = (reason.final_weight || {})[symbol];
+          const weightText = weight == null ? "權重未提供" : percent(weight);
+          return `${symbolLink(symbol)} ${escapeHtml(actionLabel(action))} ${escapeHtml(weightText)}`;
+        })
+        .join("、")}。`;
     };
     const policyActionTaken = (reason, sourceNote) => {
-      const text = `${reason.title || ""} ${reason.summary || ""} ${sourceNote || ""}`.toLowerCase();
-      if (text.includes("shadow") || text.includes("影子") || text.includes("監測")) {
+      const text =
+        `${reason.title || ""} ${reason.summary || ""} ${sourceNote || ""}`.toLowerCase();
+      if (
+        text.includes("shadow") ||
+        text.includes("影子") ||
+        text.includes("監測")
+      ) {
         return "列為風險監測紀錄，未啟用硬性限制；這表示資料或政策尚未達到阻擋條件，不代表風險為零。";
       }
       if (text.includes("硬性") || text.includes("binding")) {
@@ -822,11 +1007,18 @@ export function bootstrapDashboard(root, payload, base) {
       return "列為風控檢查紀錄；是否交易仍以最終配置與再平衡指示為準。";
     };
     const policyDisplayTitle = (reason, sourceNote) => {
-      const original = (reason.title || "本輪風控檢查紀錄").replace("影子", "監測");
-      if (!["本輪研究風險警示", "本輪風控檢查紀錄"].includes(original)) return original;
+      const original = (reason.title || "本輪風控檢查紀錄").replace(
+        "影子",
+        "監測",
+      );
+      if (!["本輪研究風險警示", "本輪風控檢查紀錄"].includes(original))
+        return original;
       if (sourceNote.includes("部位風險")) return "部位風險監測警示";
       if (sourceNote.includes("共同曝險")) return "共同曝險監測警示";
-      if (sourceNote.includes("硬性") || sourceNote.toLowerCase().includes("binding")) {
+      if (
+        sourceNote.includes("硬性") ||
+        sourceNote.toLowerCase().includes("binding")
+      ) {
         return "風控硬性限制";
       }
       return original;
@@ -837,7 +1029,8 @@ export function bootstrapDashboard(root, payload, base) {
         : "來源未提供完整量化輸入；未顯示限制不代表沒有風險。";
     const policyReviewCondition = (reason) => {
       const invalidations = recommendation.invalidation_conditions || [];
-      if (invalidations.length) return invalidations.slice(0, 2).map(escapeHtml).join("；");
+      if (invalidations.length)
+        return invalidations.slice(0, 2).map(escapeHtml).join("；");
       return "下一輪資料更新、風控政策觸發或來源證據改變時重新檢視。";
     };
     const policyReasonKey = (reason) => {
@@ -869,14 +1062,18 @@ export function bootstrapDashboard(root, payload, base) {
         unique.push(source);
       }
       if (!unique.length) return '<span class="muted-copy">來源未標示</span>';
-      return unique.map((source) => (
-        `<a href="${escapeHtml(source.href)}" target="_blank" rel="noopener noreferrer">${escapeHtml(source.label)}</a>`
-      )).join("");
+      return unique
+        .map(
+          (source) =>
+            `<a href="${escapeHtml(source.href)}" target="_blank" rel="noopener noreferrer">${escapeHtml(source.label)}</a>`,
+        )
+        .join("");
     };
     const policyReasonCard = (reason, index) => {
       const source = policyReasonSource(reason);
       const sourceNote = readablePolicyNote(source.note);
-      const trigger = sourceNote || reason.summary || "本輪有風控紀錄，但缺少可讀來源摘要。";
+      const trigger =
+        sourceNote || reason.summary || "本輪有風控紀錄，但缺少可讀來源摘要。";
       return `
         <article class="reason-card risk-policy-card">
           <span class="reason-number">${String(index + 1).padStart(2, "0")}</span>
@@ -931,13 +1128,14 @@ export function bootstrapDashboard(root, payload, base) {
       if (Math.abs(parsed) < 0.0000001) return "0%";
       return `${parsed > 0 ? "+" : ""}${percent(parsed)}`;
     };
-    const riskActionLabel = (action) => ({
-      add: "加碼",
-      increase: "加碼",
-      hold: "維持",
-      reduce: "減碼",
-      exit: "退出",
-    }[action] || "檢視");
+    const riskActionLabel = (action) =>
+      ({
+        add: "加碼",
+        increase: "加碼",
+        hold: "維持",
+        reduce: "減碼",
+        exit: "退出",
+      })[action] || "檢視";
     const riskMethodology = (plan) => {
       const methodology = String(plan.methodology || "");
       if (plan.status === "exempt") {
@@ -995,7 +1193,8 @@ export function bootstrapDashboard(root, payload, base) {
     };
     const riskInputSummary = (plan) => {
       if (plan.status === "exempt") return "現金不需要價格失效輸入。";
-      if (plan.status !== "quantified") return `尚缺：${riskMethodology(plan).reason}`;
+      if (plan.status !== "quantified")
+        return `尚缺：${riskMethodology(plan).reason}`;
       return `參考價 ${money(plan.reference_price)}，失效價 ${money(plan.invalidation_price)}，資料 ${dateTime(plan.reference_timestamp)}`;
     };
     const riskStatusLabel = (plan) => {
@@ -1008,30 +1207,56 @@ export function bootstrapDashboard(root, payload, base) {
       const instruction = rebalanceBySymbol.get(plan.symbol) || {};
       const previousWeight = toNumber(instruction.previous_target_weight);
       const currentWeight = toNumber(allocation.target_weight);
-      const change = previousWeight === null || currentWeight === null ? null : currentWeight - previousWeight;
+      const change =
+        previousWeight === null || currentWeight === null
+          ? null
+          : currentWeight - previousWeight;
       const methodology = riskMethodology(plan);
-      const statusClass = plan.status === "quantified" ? "quantified" : plan.status === "exempt" ? "exempt" : "unquantified";
-      const invalidation = plan.invalidation_type === "price" && plan.invalidation_price
-        ? `價格低於 ${money(plan.invalidation_price)} 時重新檢視。`
-        : plan.invalidation_type === "cash"
-          ? "現金配置不使用價格失效條件。"
-          : "事件或研究論點失效時重新檢視；目前沒有價格界線。";
-      const baseFraction = plan.status === "quantified" ? plan.base_loss_fraction : "";
+      const statusClass =
+        plan.status === "quantified"
+          ? "quantified"
+          : plan.status === "exempt"
+            ? "exempt"
+            : "unquantified";
+      const invalidation =
+        plan.invalidation_type === "price" && plan.invalidation_price
+          ? `價格低於 ${money(plan.invalidation_price)} 時重新檢視。`
+          : plan.invalidation_type === "cash"
+            ? "現金配置不使用價格失效條件。"
+            : "事件或研究論點失效時重新檢視；目前沒有價格界線。";
+      const baseFraction =
+        plan.status === "quantified" ? plan.base_loss_fraction : "";
       const gap = plan.v1_gap_stress;
-      const independentGap = gap?.schema_version === "1.0" && gap.mode === "shadow" && gap.unit === "return_fraction";
-      const measuredGap = independentGap && ["measured", "exempt"].includes(gap.status)
-        && gap.loss_contribution_fraction !== null && gap.loss_contribution_fraction !== undefined
-        && Number.isFinite(Number(gap.loss_contribution_fraction));
-      const stressFraction = gap ? measuredGap ? gap.loss_contribution_fraction : ""
-        : plan.status === "quantified" ? plan.portfolio_contribution : "";
-      const stressCopy = gap ? stressFraction !== "" && stressFraction !== null
-        ? `${(Number(stressFraction) * 100).toFixed(2)}%（外生價格假設；不保證停損成交）` : "未知，不能補零"
-        : plan.status === "quantified" ? `${percent(plan.portfolio_contribution)}（政策壓力 ${percent(plan.stress_gap_percent)}）` : "未量化";
-      const statusSummary = plan.status === "quantified"
-        ? "已量化；資料、失效價或配置變動時會重新計算。"
-        : plan.status === "exempt"
-          ? "免估算；現金沒有價格失效曝險。"
-          : `未量化：${methodology.reason} 可量化所需資料：${methodology.requirement}`;
+      const independentGap =
+        gap?.schema_version === "1.0" &&
+        gap.mode === "shadow" &&
+        gap.unit === "return_fraction";
+      const measuredGap =
+        independentGap &&
+        ["measured", "exempt"].includes(gap.status) &&
+        gap.loss_contribution_fraction !== null &&
+        gap.loss_contribution_fraction !== undefined &&
+        Number.isFinite(Number(gap.loss_contribution_fraction));
+      const stressFraction = gap
+        ? measuredGap
+          ? gap.loss_contribution_fraction
+          : ""
+        : plan.status === "quantified"
+          ? plan.portfolio_contribution
+          : "";
+      const stressCopy = gap
+        ? stressFraction !== "" && stressFraction !== null
+          ? `${(Number(stressFraction) * 100).toFixed(2)}%（外生價格假設；不保證停損成交）`
+          : "未知，不能補零"
+        : plan.status === "quantified"
+          ? `${percent(plan.portfolio_contribution)}（政策壓力 ${percent(plan.stress_gap_percent)}）`
+          : "未量化";
+      const statusSummary =
+        plan.status === "quantified"
+          ? "已量化；資料、失效價或配置變動時會重新計算。"
+          : plan.status === "exempt"
+            ? "免估算；現金沒有價格失效曝險。"
+            : `未量化：${methodology.reason} 可量化所需資料：${methodology.requirement}`;
       return `
         <article class="position-risk-card ${statusClass}">
           <header>
@@ -1231,11 +1456,14 @@ export function bootstrapDashboard(root, payload, base) {
                 <span class="section-kicker">研究員判斷追蹤</span>
                 <h2>研究員判斷與結果追蹤</h2>
               </div>
-              ${dashboardAnalytics.agent_leaderboard.length > LEADERBOARD_VISIBLE_LIMIT
-                ? `<button type="button" class="leaderboard-more" data-leaderboard-more aria-expanded="false">
+              ${
+                dashboardAnalytics.agent_leaderboard.length >
+                LEADERBOARD_VISIBLE_LIMIT
+                  ? `<button type="button" class="leaderboard-more" data-leaderboard-more aria-expanded="false">
                     顯示更多
                   </button>`
-                : ""}
+                  : ""
+              }
             </header>
             <div class="table-wrap leaderboard-table-wrap">
               <table>
@@ -1362,8 +1590,9 @@ export function bootstrapDashboard(root, payload, base) {
                 </table>
               </div>
             </div>
-            ${riskPlans.length
-              ? `<section class="position-risk-summary" aria-label="模擬配置轉換與部位風險摘要">
+            ${
+              riskPlans.length
+                ? `<section class="position-risk-summary" aria-label="模擬配置轉換與部位風險摘要">
                   <header>
                     <div>
                       <span class="section-kicker">模擬配置轉換</span>
@@ -1373,7 +1602,8 @@ export function bootstrapDashboard(root, payload, base) {
                   </header>
                   <div class="position-risk-cards">${riskPlans.map(riskPlanCard).join("")}</div>
                 </section>`
-              : ""}
+                : ""
+            }
           </section>
 
           ${renderEventCalendar(market.event_calendar, { asOf: recommendation.data_cutoff, renderSymbol: symbolLink })}
@@ -1388,18 +1618,22 @@ export function bootstrapDashboard(root, payload, base) {
               <span class="panel-meta">${investmentReasons.length} 項</span>
             </header>
             <div class="reasons-grid">
-              ${investmentReasons.length ? investmentReasons.map(reasonCard).join("") : '<p>本輪沒有可追溯的投資理由；資料不足不代表偏多或偏空。</p>'}
+              ${investmentReasons.length ? investmentReasons.map(reasonCard).join("") : "<p>本輪沒有可追溯的投資理由；資料不足不代表偏多或偏空。</p>"}
             </div>
           </section>
           ${renderDecisionEvidencePanel(recommendation, { renderSymbol: symbolLink })}
-          ${uniquePolicyReasons.length ? `
+          ${
+            uniquePolicyReasons.length
+              ? `
           <section class="panel" id="policy-explanations" data-tab-section="overview">
             <header class="panel-header">
               <div><span class="section-kicker">風控紀錄</span><h2>風控與動作說明</h2></div>
               <span class="panel-meta">${uniquePolicyReasons.length} 項</span>
             </header>
             <div class="reasons-grid risk-policy-grid">${uniquePolicyReasons.map(policyReasonCard).join("")}</div>
-          </section>` : ""}
+          </section>`
+              : ""
+          }
           ${renderScenarioStress(recommendation, { renderSymbol: symbolLink })}
 
 
@@ -1541,65 +1775,6 @@ export function bootstrapDashboard(root, payload, base) {
                   )
                   .join("")}
               </div>
-              ${
-                (committee.reconciliation_responses || []).length
-                  ? `
-                    <div class="reconciliation-section">
-                      <header class="subsection-header">
-                        <span class="section-kicker">協商關卡</span>
-                        <h3>否決後協商與第二次裁決</h3>
-                      </header>
-                      <div class="reconciliation-grid">
-                        ${(committee.reconciliation_responses || [])
-                          .map((response, index) => {
-                            const resolution = (committee.critique_resolutions || [])[index];
-                            const audit = (committee.final_decision_audits || []).find(
-                              (item) => item.reviewer === response.reviewer,
-                            );
-                            return `
-                              <article class="critique-card reconciliation-card">
-                                <div class="critique-heading">
-                                  ${agentLink(response.reviewer)}
-                                  <span class="veto-chip ${resolution?.veto_maintained ? "veto" : ""}">
-                                    ${
-                                      resolution?.consensus_reached
-                                        ? "已取得共識"
-                                        : resolution?.veto_maintained
-                                          ? "維持否決"
-                                          : "等待裁決"
-                                    }
-                                  </span>
-                                </div>
-                                <div class="committee-columns">
-                                  <section class="committee-block">
-                                    <h3>提案者承認與修正</h3>
-                                    <ul>${renderList(response.conceded_points, "未提供", glossaryText)}</ul>
-                                    <ul>${renderList(response.proposed_changes, "未提供", glossaryText)}</ul>
-                                  </section>
-                                  <section class="committee-block">
-                                    <h3>證據式反駁</h3>
-                                    <ul>${renderList(response.rebuttals, "未提供", glossaryText)}</ul>
-                                  </section>
-                                  <section class="committee-block">
-                                    <h3>第二次裁決</h3>
-                                    <p>${escapeHtml(resolution?.resolution_summary || "尚無裁決")}</p>
-                                    <ul>${renderList(resolution?.binding_constraints, "沒有未解除的硬性限制")}</ul>
-                                  </section>
-                                </div>
-                                ${
-                                  audit
-                                    ? `<p class="final-audit ${audit.decision_acceptable ? "accepted" : "rejected"}">
-                                        最終審核：${escapeHtml(audit.audit_summary)}
-                                      </p>`
-                                    : ""
-                                }
-                              </article>`;
-                          })
-                          .join("")}
-                      </div>
-                    </div>`
-                  : ""
-              }
             </div>
 
             <div class="cio-decision">
@@ -1818,10 +1993,10 @@ export function bootstrapDashboard(root, payload, base) {
                 <div class="journal-cards">
                   ${researchJournal.assumptions
                     .map(
-                      (item) => `
+                      (item, index) => `
                         <article class="journal-card">
                           <div class="journal-card-head">
-                            <strong>${escapeHtml(item.hypothesis_id)}</strong>
+                            <strong>研究假設 ${index + 1}</strong>
                             <span class="research-status ${escapeHtml(item.status)}">${escapeHtml(researchStatusLabel(item.status))}</span>
                           </div>
                           <p>${escapeHtml(item.statement)}</p>
@@ -1907,26 +2082,26 @@ export function bootstrapDashboard(root, payload, base) {
         .forEach((section) => overviewPanel.append(section));
     }
     localizeRenderedText(root);
-  root.querySelectorAll(".info-popover").forEach((element) => {
-    let openedByHover = false;
-    element.addEventListener("pointerenter", (event) => {
-      if (event.pointerType === "mouse" && !element.open) {
-        openedByHover = true;
-        element.open = true;
-      }
-    });
-    element.addEventListener("pointerleave", () => {
-      if (openedByHover) {
-        element.open = false;
-        openedByHover = false;
-      }
-    });
-    element.addEventListener("keydown", (event) => {
-      if (event.key === "Escape" && element.open) {
-        element.open = false;
-        openedByHover = false;
-        element.querySelector("summary")?.focus();
-      }
+    root.querySelectorAll(".info-popover").forEach((element) => {
+      let openedByHover = false;
+      element.addEventListener("pointerenter", (event) => {
+        if (event.pointerType === "mouse" && !element.open) {
+          openedByHover = true;
+          element.open = true;
+        }
+      });
+      element.addEventListener("pointerleave", () => {
+        if (openedByHover) {
+          element.open = false;
+          openedByHover = false;
+        }
+      });
+      element.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && element.open) {
+          element.open = false;
+          openedByHover = false;
+          element.querySelector("summary")?.focus();
+        }
       });
     });
     root.querySelectorAll(".table-wrap").forEach((tableWrap) => {
@@ -1953,33 +2128,52 @@ export function bootstrapDashboard(root, payload, base) {
           node.textContent = "需要量化後才換算";
           return;
         }
-        const base = node.dataset.baseFraction ? simulatedMoney(node.dataset.baseFraction, capital) : "未知";
-        const stress = node.dataset.stressFraction ? simulatedMoney(node.dataset.stressFraction, capital) : "未知";
-        node.textContent = capital === null ? "輸入本金後換算" : `基本 ${base}／跳空 ${stress}`;
+        const base = node.dataset.baseFraction
+          ? simulatedMoney(node.dataset.baseFraction, capital)
+          : "未知";
+        const stress = node.dataset.stressFraction
+          ? simulatedMoney(node.dataset.stressFraction, capital)
+          : "未知";
+        node.textContent =
+          capital === null ? "輸入本金後換算" : `基本 ${base}／跳空 ${stress}`;
       });
     };
     capitalInput?.addEventListener("input", updateSimulationAmounts);
-    root.querySelectorAll("[data-simulation-capital-choice]").forEach((button) => {
-      button.addEventListener("click", () => {
-        if (!capitalInput) return;
-        capitalInput.value = button.dataset.simulationCapitalChoice || "";
-        updateSimulationAmounts();
+    root
+      .querySelectorAll("[data-simulation-capital-choice]")
+      .forEach((button) => {
+        button.addEventListener("click", () => {
+          if (!capitalInput) return;
+          capitalInput.value = button.dataset.simulationCapitalChoice || "";
+          updateSimulationAmounts();
+        });
       });
-    });
     updateSimulationAmounts();
     installPerformanceChart(root, performance.points);
     localizeRenderedText(root);
     const loader = createDataLoader(dataBase);
-    installDecisionEvidence(root, recommendation, loader.loadDecisionComparison);
-    installFreshness(root, recommendation, freshnessCalendar, healthSignal, loader.loadHealthSignal);
+    installDecisionEvidence(
+      root,
+      recommendation,
+      loader.loadDecisionComparison,
+    );
+    installFreshness(
+      root,
+      recommendation,
+      freshnessCalendar,
+      healthSignal,
+      loader.loadHealthSignal,
+    );
     const showLazyTabError = (target, error) => {
       const section = root.querySelector(`[data-tab-section="${target}"]`);
       if (!section) return;
       section.hidden = false;
       section.innerHTML = `<section class="error-state" role="alert"><span class="section-kicker">資料載入失敗</span><h2>無法載入此區段</h2><p>${escapeHtml(error.message)}</p><button type="button" data-retry-lazy-tab="${target}">重試</button></section>`;
-      section.querySelector("[data-retry-lazy-tab]")?.addEventListener("click", () => {
-        root.querySelector(`[data-tab-target="${target}"]`)?.click();
-      });
+      section
+        .querySelector("[data-retry-lazy-tab]")
+        ?.addEventListener("click", () => {
+          root.querySelector(`[data-tab-target="${target}"]`)?.click();
+        });
     };
     const restoreLazyTab = (target) => {
       const trigger = root.querySelector(`[data-tab-target="${target}"]`);
@@ -2011,7 +2205,11 @@ export function bootstrapDashboard(root, payload, base) {
         loader
           .loadAgentProfiles()
           .then((profiles) => {
-            bootstrapDashboard(root, { ...payload, agentProfiles: profiles }, dataBase);
+            bootstrapDashboard(
+              root,
+              { ...payload, agentProfiles: profiles },
+              dataBase,
+            );
             restoreLazyTab("agent-intel");
           })
           .catch((error) => showLazyTabError("agent-intel", error));

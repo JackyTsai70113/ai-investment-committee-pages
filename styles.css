@@ -400,13 +400,13 @@ a {
 .info-popover summary {
   display: inline-grid;
   place-items: center;
-  width: 1.2rem;
-  height: 1.2rem;
-  border: 1px solid var(--blue);
+  width: 1.75rem;
+  height: 1.75rem;
+  border: 0;
   border-radius: 50%;
-  color: var(--blue);
-  cursor: help;
-  font-size: 0.78rem;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
   line-height: 1;
   list-style: none;
 }
@@ -415,10 +415,29 @@ a {
   display: none;
 }
 
-.info-popover summary:hover,
-.info-popover[open] summary {
-  border-color: var(--acid);
-  color: var(--acid);
+.info-mark {
+  display: inline-grid;
+  width: 1.2rem;
+  height: 1.2rem;
+  place-items: center;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.76rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.info-popover summary:hover .info-mark,
+.info-popover[open] summary .info-mark {
+  border-color: var(--ink);
+  background: rgb(240 245 234 / 8%);
+  color: var(--ink);
+}
+
+.info-popover summary:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
 }
 
 .info-popover-content {
@@ -1788,26 +1807,9 @@ a {
   border-color: rgba(255, 152, 100, 0.35);
 }
 
-.reconciliation-section {
-  display: grid;
-  gap: 1rem;
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--line);
-}
-
 .subsection-header h3 {
   margin: 0.35rem 0 0;
   font-size: 1.15rem;
-}
-
-.reconciliation-grid {
-  display: grid;
-  gap: 1rem;
-}
-
-.reconciliation-card {
-  border-color: rgba(103, 183, 255, 0.28);
 }
 
 .final-audit {
@@ -4086,6 +4088,10 @@ td {
 .freshness-copy dd { margin: .25rem 0; font-size: .85rem; overflow-wrap: anywhere; }
 .freshness-links { display: flex; flex-wrap: wrap; gap: .75rem; font-size: .85rem; }
 .freshness-banner button { flex-shrink: 0; min-height: 44px; padding: .5rem .75rem; border: 1px solid #9cae9f; border-radius: .5rem; color: #edf5ed; background: #26382c; cursor: pointer; }
+@media (hover: hover) {
+  .freshness-banner button:hover:not(:disabled) { border-color: #d3f795; background: #314b39; }
+}
+.freshness-banner button:disabled { cursor: wait; opacity: .72; }
 .freshness-banner button:focus-visible, .freshness-links a:focus-visible { outline: 3px solid #d3f795; outline-offset: 3px; }
 @media (max-width: 767px) {
   .freshness-banner { flex-direction: column; padding: .9rem; }

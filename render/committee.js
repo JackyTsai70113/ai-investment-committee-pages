@@ -12,13 +12,16 @@ export function createCommitteeRenderer({
   symbolLink,
 }) {
   const renderCommitteeChat = (committee, recommendation) => {
-    const proposals = Array.isArray(committee.proposals) ? committee.proposals : [];
-    const critiques = Array.isArray(committee.critiques) ? committee.critiques : [];
-    const crossExaminationResponses = Array.isArray(committee.cross_examination_responses)
-      ? committee.cross_examination_responses
+    const proposals = Array.isArray(committee.proposals)
+      ? committee.proposals
       : [];
-    const responses = Array.isArray(committee.reconciliation_responses)
-      ? committee.reconciliation_responses
+    const critiques = Array.isArray(committee.critiques)
+      ? committee.critiques
+      : [];
+    const crossExaminationResponses = Array.isArray(
+      committee.cross_examination_responses,
+    )
+      ? committee.cross_examination_responses
       : [];
     const resolutions = Array.isArray(committee.critique_resolutions)
       ? committee.critique_resolutions
@@ -29,7 +32,10 @@ export function createCommitteeRenderer({
         (proposal) => `
           <article class="chat-message">
             <div class="chat-avatar" aria-hidden="true">${escapeHtml(
-              (agentProfiles[normalizeAgentName(proposal.agent)]?.title || proposal.agent).slice(0, 1),
+              (
+                agentProfiles[normalizeAgentName(proposal.agent)]?.title ||
+                proposal.agent
+              ).slice(0, 1),
             )}</div>
             <div class="chat-bubble">
               <header>
@@ -47,7 +53,9 @@ export function createCommitteeRenderer({
                 }
               </div>
               <p class="chat-opening">${escapeHtml(
-                proposal.opening_statement || (proposal.arguments || [])[0] || "本輪沒有可公開摘要。",
+                proposal.opening_statement ||
+                  (proposal.arguments || [])[0] ||
+                  "本輪沒有可公開摘要。",
               )}</p>
               <div class="asset-tags">${renderAssetTags(proposal.preferred_assets)}</div>
               <details class="chat-details">
@@ -69,8 +77,11 @@ export function createCommitteeRenderer({
         const questions = Array.isArray(critique.direct_questions)
           ? critique.direct_questions
           : [];
-        const resolution = resolutions.find((item) => item.reviewer === critique.reviewer);
-        const opening = critique.opening_statement || critique.strongest_objection;
+        const resolution = resolutions.find(
+          (item) => item.reviewer === critique.reviewer,
+        );
+        const opening =
+          critique.opening_statement || critique.strongest_objection;
         const questionThreads = questions
           .map((question) => {
             const answer = crossExaminationResponses.find(
@@ -97,8 +108,9 @@ export function createCommitteeRenderer({
                     <article class="chat-message answer-message">
                       <div class="chat-avatar" aria-hidden="true">${escapeHtml(
                         (
-                          agentProfiles[normalizeAgentName(answer.responding_agent)]?.title ||
-                          answer.responding_agent
+                          agentProfiles[
+                            normalizeAgentName(answer.responding_agent)
+                          ]?.title || answer.responding_agent
                         ).slice(0, 1),
                       )}</div>
                       <div class="chat-bubble">
@@ -199,28 +211,6 @@ export function createCommitteeRenderer({
       })
       .join("");
 
-    const reconciliationMessages = responses
-      .map((response, index) => {
-        const resolution = resolutions[index];
-        return `
-          <article class="chat-message reviewer-message">
-            <div class="chat-avatar" aria-hidden="true">議</div>
-            <div class="chat-bubble">
-              <header>
-                <strong>${agentLink(response.reviewer)}</strong>
-                <span>協商與第二次裁決</span>
-              </header>
-              <strong>提案者承認與修正</strong>
-              <ul>${renderList(response.conceded_points, "未提供", glossaryText)}</ul>
-              <ul>${renderList(response.proposed_changes, "未提供", glossaryText)}</ul>
-              <strong>證據式反駁</strong>
-              <ul>${renderList(response.rebuttals, "未提供", glossaryText)}</ul>
-              <p>${escapeHtml(resolution?.resolution_summary || "尚無第二次裁決")}</p>
-            </div>
-          </article>`;
-      })
-      .join("");
-
     const finalDecision = committee.final_decision;
     return `
       <section class="committee-chat" aria-label="投資委員會群組對話">
@@ -244,11 +234,6 @@ export function createCommitteeRenderer({
         ${proposalMessages}
         <div class="chat-stage-label">第二階段 · 質詢、回應與裁決</div>
         ${critiqueThreads}
-        ${
-          reconciliationMessages
-            ? `<div class="chat-stage-label">第三階段 · 協商修正</div>${reconciliationMessages}`
-            : ""
-        }
         <div class="chat-stage-label">最終階段 · 整合裁決</div>
         <article class="chat-message cio-message">
           <div class="chat-avatar" aria-hidden="true">決</div>
@@ -268,7 +253,8 @@ export function createCommitteeRenderer({
               }
             </div>
             <p class="chat-opening">${escapeHtml(
-              finalDecision.opening_statement || finalDecision.model_score_reason,
+              finalDecision.opening_statement ||
+                finalDecision.model_score_reason,
             )}</p>
             <details class="chat-details">
               <summary>查看共識度計算</summary>

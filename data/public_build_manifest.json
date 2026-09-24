@@ -1,87 +1,87 @@
 {
-  "build_code_commit": "77857583ef07f5655bba38baf34bd94b575faeeb",
-  "data_cutoff": "2026-09-17T15:05:00.173555+00:00",
+  "build_code_commit": "37ddea692fdc6b0cf0a14fc8f7974b4d32fd4842",
+  "data_cutoff": "2026-09-24T11:43:55.447364+00:00",
   "files": {
     "agent_profiles.json": {
-      "bytes": 9519,
-      "sha256": "60a237616dd3bf900e8ff5f37a7df36ebb6be716dba8ad0423ef114133a6f102"
+      "bytes": 9615,
+      "sha256": "ba7e5609b20f52253432057d18ec35563d1aae92864a71cbd345f32f2dca37c0"
     },
     "committee.json": {
-      "bytes": 85931,
-      "sha256": "8d41d9836c8b3ff21a06f1bab8f1775be5ecb87d2e85e16e6ce8c2f5b2f4d6e9"
+      "bytes": 90757,
+      "sha256": "de0a128155278eea605b6f88ee9d8cbfc3cb23dfe43c14c393990367c222ba30"
     },
     "committee_summary.json": {
-      "bytes": 71959,
-      "sha256": "b98bece8c4250a138b2c398647b11320afa0066cec6ee4c34ae0e25470119bbd"
+      "bytes": 67495,
+      "sha256": "931175f2097b206a65a8461c12fc64c18e09719215fb1faa2900424d77a9c40a"
     },
     "dashboard_analytics.json": {
-      "bytes": 8411,
-      "sha256": "410f4d6b18a8ceddbe08102e7e225e9c4f0f422f55e861ed642f6bbcf62b3a7b"
+      "bytes": 8414,
+      "sha256": "3c6fe9644d093036e34fb725205a8f2640f343fb5f78226c4310681651cfae90"
     },
     "decision_comparison.json": {
-      "bytes": 5519,
-      "sha256": "a6890ee7964ffca189a034f0bd4d9ded8aeba3787f35abeb7e7e5d7fc322c734"
+      "bytes": 5295,
+      "sha256": "cbb2ad15bb957db5e5e499e6e0b8fd03b850c438d986dd793071b8a53540a9fa"
     },
     "decision_snapshot.json": {
       "bytes": 89,
-      "sha256": "bd1a033eb78603bc39fc8627b8ed1f77edc0c759bdb78f503989cf92c267d70a"
+      "sha256": "e83aebbe4bc618105aed0f3a2f0002d28d12a8f39bcf16f6c48f0fecbd443aae"
     },
     "extension_earnings_reviews.json": {
-      "bytes": 222034,
-      "sha256": "12937b0b32d7f7518463a658c02b8646eb754f1ad30a59f32091d190a4c54255"
+      "bytes": 357600,
+      "sha256": "987f6b629e36a9908a9502f9a5f087723be9d0895fb9508b1b952e9b43de351e"
     },
     "freshness_calendar.json": {
-      "bytes": 3363,
-      "sha256": "4f800863a9850fff5383c40775d789ba7d11509aac976c1154a94133c95701a3"
+      "bytes": 3387,
+      "sha256": "b1221c691b330924dae6addfcbd0b4963424aaf6eedafce31938d203dff1c040"
     },
     "learning.json": {
-      "bytes": 7024,
-      "sha256": "4d7acaf86cd1d6858ee81fb96708eedb506e060eb071b4c2a9ec3110978ebbdc"
+      "bytes": 10089,
+      "sha256": "569ba1b66a5831743627000f80424620938d7e844a8e1b128ebdbc8abd338538"
     },
     "market_intelligence.json": {
-      "bytes": 20432,
-      "sha256": "5254be41fb3ba136750cf41ce5ab124623d97617dfb146dbbcbf61c0c16f1ae2"
+      "bytes": 8814,
+      "sha256": "7eb566a76fe6a8e92b6f83a492658189c551d880a9ffe1cf9d4d5503334b7145"
     },
     "market_snapshot.json": {
-      "bytes": 137207,
-      "sha256": "c7006ee673c9f0a54a1869cd2e14fe6ee600f872b7ef8a2f043b2491553c1306"
+      "bytes": 169104,
+      "sha256": "452001bc58ecd4aa65621909a27bb6bf9c0e9d9ed11bb909e27a80db126b53e7"
     },
     "performance.json": {
-      "bytes": 10270,
-      "sha256": "f36a6a237e3fe38df8944ba6e153422135068115109fb563e45ffa891b0dda2e"
+      "bytes": 18345,
+      "sha256": "29b75b656f404c2f9b6d97a39e523243176b507fe3d8af18563d9952ffb7ff8e"
     },
     "pipeline_health.json": {
-      "bytes": 504,
-      "sha256": "3ffaf52a1ce98e01d3926ba299431bcd205beeef92158d46a907817f05c49622"
+      "bytes": 469,
+      "sha256": "1998cc7fe97c48182c704feef2753696115646cd5d0a2789b09056b956e88caa"
     },
     "rebalance.json": {
-      "bytes": 2948,
-      "sha256": "8aeb9f9b2a5dd08cb2bd96f713a6bc1ec9082822a436269615308c8e1d3ea360"
+      "bytes": 2931,
+      "sha256": "0dfcb12f54c79901260f2f3c9a271008e9efdfd6fc2b64d6987290dc4a6c75db"
     },
     "recommendation.json": {
-      "bytes": 35546,
-      "sha256": "cc0b42f564bbadfbc82e2709aa0891f2e0865c1a66b0d8fde431151588bcdbef"
+      "bytes": 50166,
+      "sha256": "364933629f23d97f788c2b4d41b073f269062307068b8f884091645f01081d20"
     },
     "research_extension_status.json": {
-      "bytes": 8844,
-      "sha256": "6f0219089ce8c2492f2fe8b6a4e1e79cfedf0fec9199f4567e8ee8452a307340"
+      "bytes": 10602,
+      "sha256": "180c464f2b1098d6fd69366351c2a778c1e47e1d1d2777f69061a9db44dbd898"
     },
     "research_journal.json": {
-      "bytes": 3146,
-      "sha256": "ed736fadb583432919736942eab3d46d27a90d761f6811304b85e3abcb9b2872"
+      "bytes": 3144,
+      "sha256": "07683c098f7bc272a30a3ebd310a90a5edfd23d5ceef27d3937650791d6ece0e"
     },
     "system.json": {
       "bytes": 498,
-      "sha256": "70543136ed007b706d6176f535f261da45a11d9ccd4eca29c60b8816db20208a"
+      "sha256": "495413b02d8b7926b269ed4dc285d4687f5ce83621df40f9557a2e2959202b12"
     },
     "thesis_book.json": {
-      "bytes": 83498,
-      "sha256": "b099525bca7c06159ae3f4f75cd96a5cac35423db8092a9de96f5a693afcd2b6"
+      "bytes": 90269,
+      "sha256": "c8cd3cb0c669d8ac5f1d6073934960a5d89ee0a9babec42fdd01d86146f3033c"
     }
   },
-  "generation_id": "20260917T150516Z",
-  "recommendation_generated_at": "2026-09-17T15:06:03.425552+00:00",
-  "recommendation_run_id": "20260917T150516Z",
+  "generation_id": "20260924T114411Z",
+  "recommendation_generated_at": "2026-09-24T11:45:05.013166+00:00",
+  "recommendation_run_id": "20260924T114411Z",
   "schema_version": "1.0",
-  "source_commit": "2d453cde4d72c402350a4a387929301bcc70afac"
+  "source_commit": "37ddea692fdc6b0cf0a14fc8f7974b4d32fd4842"
 }
