@@ -873,6 +873,113 @@ export function bootstrapDashboard(root, payload, base) {
         <div class="physical-risk-grid">${rows}</div>
       </section>`;
     };
+    const renderMarketDriversPanel = (extension = marketIntelligence) => {
+      const drivers = Array.isArray(extension?.market_drivers)
+        ? extension.market_drivers.slice(0, 10)
+        : [];
+      const positions = Array.isArray(recommendation.active_sleeve_tradeoffs)
+        ? recommendation.active_sleeve_tradeoffs
+        : [];
+      const relevanceLabels = {
+        supporting: "支持證據",
+        counterevidence: "反方證據",
+        context_only: "背景脈絡",
+        unknown: "關聯未知",
+      };
+      const pricedLabels = {
+        not_priced: "尚未反映（研究判斷）",
+        partially_priced: "部分反映（研究判斷）",
+        mostly_priced: "大致反映（研究判斷）",
+        unknown: "反映程度未知",
+      };
+      const importanceLabels = {
+        low: "低",
+        medium: "中",
+        high: "高",
+        critical: "關鍵",
+        unknown: "未知",
+      };
+      const persistenceLabels = {
+        short: "短期",
+        medium: "中期",
+        long: "長期",
+        unknown: "未知",
+      };
+      const breadthLabels = {
+        single_name: "單一公司",
+        sector: "單一產業",
+        multi_sector: "多個產業",
+        market_wide: "整體市場",
+      };
+      const driverRows = drivers.length
+        ? drivers.map((driver, index) => {
+            const sourceLinks = (driver.source_urls || [])
+              .map((value) => {
+                const safe = safeExternalUrl(value);
+                if (!safe) return "";
+                const parsed = new URL(safe);
+                if (parsed.username || parsed.password || parsed.search || parsed.hash) return "";
+                return `<a href="${escapeHtml(safe)}" target="_blank" rel="noopener noreferrer">來源 ${index + 1}</a>`;
+              })
+              .filter(Boolean)
+              .join("、");
+            const linkedPositions = positions
+              .flatMap((position) => (position.driver_links || [])
+                .filter((link) => link.driver_id === driver.driver_id)
+                .map((link) => `<li>${symbolLink(position.symbol)}：${escapeHtml(relevanceLabels[link.relevance] || "關聯未知")}；${escapeHtml(link.rationale_zh)}</li>`))
+              .join("");
+            const chain = (driver.causal_chain_zh || []).map(escapeHtml).join(" → ");
+            const facts = (driver.facts || [])
+              .map((fact) => `<li>${escapeHtml(fact.label_zh)}：實際 ${escapeHtml(fact.actual || "未提供")}；共識 ${escapeHtml(fact.consensus || "未提供")}；前值 ${escapeHtml(fact.previous || "未提供")}</li>`)
+              .join("");
+            const triggers = (driver.triggers_zh || []).map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+            const importance = driver.importance || {};
+            const importanceCopy = `市場影響 ${importanceLabels[importance.market_impact] || "未知"} · 持續時間 ${persistenceLabels[importance.persistence] || "未知"} · 發生可能性 ${importanceLabels[importance.probability] || "未知"} · 影響範圍 ${breadthLabels[importance.breadth] || "未知"} · 可能損益影響 ${importanceLabels[importance.pnl_impact] || "未知"}`;
+            const sources = sourceLinks || "本輪沒有可公開的安全來源連結";
+            return `<details class="market-driver-card" ${index < 3 ? "open" : ""}>
+              <summary><span class="driver-rank">${index + 1}</span><span><strong>${escapeHtml(driver.title_zh)}</strong><small>${escapeHtml(driver.fact_summary_zh)}</small></span></summary>
+              <div class="market-driver-content">
+                <p><strong>事實：</strong>${escapeHtml(driver.fact_summary_zh)}</p>
+                <p><strong>解讀：</strong>${escapeHtml(driver.interpretation_zh)}</p>
+                <p><strong>分析：</strong>${escapeHtml(driver.analysis_zh)}</p>
+                <p><strong>重要性分類：</strong>${escapeHtml(importanceCopy)}</p>
+                <p><strong>資料時間：</strong>${escapeHtml(dateTime(driver.as_of))}</p>
+                <p><strong>可能傳導：</strong>${chain || "尚無足夠資料"}</p>
+                <p><strong>理論反應：</strong>${escapeHtml(driver.theoretical_reaction_zh || "未知")}</p>
+                <p><strong>同期行情：</strong>${escapeHtml(driver.market_reaction_zh)} ${driver.market_reaction_status === "observed" ? "（共時變化，不代表因果）" : ""}</p>
+                <p><strong>可能受影響：</strong>${(driver.affected_symbols || []).map(symbolLink).join("、") || "尚未確認"}${(driver.affected_sectors_zh || []).length ? `；${driver.affected_sectors_zh.map(escapeHtml).join("、")}` : ""}</p>
+                <p><strong>市場反映程度：</strong>${escapeHtml(pricedLabels[driver.priced_in] || pricedLabels.unknown)}</p>
+                ${facts ? `<ul class="driver-facts">${facts}</ul>` : "<p>實際值、共識與前值：本輪沒有足夠來源，未填數值。</p>"}
+                <p><strong>支持情境：</strong>${escapeHtml(driver.bull_case_zh)}</p>
+                <p><strong>反方情境：</strong>${escapeHtml(driver.bear_case_zh)}</p>
+                ${triggers ? `<p><strong>接下來觀察：</strong></p><ul>${triggers}</ul>` : ""}
+                <p><strong>現在可以做：</strong>${(driver.do_now_zh || []).map(escapeHtml).join("；")}</p>
+                <p><strong>避免誤判：</strong>${(driver.avoid_zh || []).map(escapeHtml).join("；")}</p>
+                <p><strong>不確定之處：</strong>${(driver.uncertainty_zh || []).map(escapeHtml).join("；")}</p>
+                <ul class="driver-position-links">${linkedPositions || "<li>本輪沒有足夠的部位關聯證據。</li>"}</ul>
+                <p class="driver-sources"><strong>來源：</strong>${sources}</p>
+              </div>
+            </details>`;
+          }).join("")
+        : "<p class=\"market-driver-empty\">本輪沒有足夠、符合來源與分類門檻的市場主線；這代表證據不足，不代表偏多或偏空。</p>";
+      const positionRows = positions.map((position) => {
+        const links = position.driver_links || [];
+        const detail = links.length
+          ? `<ul>${links.map((link) => `<li>${escapeHtml(relevanceLabels[link.relevance] || "關聯未知")}：${escapeHtml(link.rationale_zh)}</li>`).join("")}</ul>`
+          : `<p>本輪沒有足夠的市場主線證據解釋這項${position.decision === "hold" ? "維持" : "調整"}；不可把資料缺口當成方向。</p>`;
+        const hold = position.decision === "hold"
+          ? `<p><strong>為何維持：</strong>${escapeHtml(position.advantage_over_hold)}</p>`
+          : "";
+        const decisionLabel = { increase: "增加", hold: "維持", reduce: "減少", exit: "退出" }[position.decision] || "檢視";
+        return `<article class="position-driver-card"><h3>${symbolLink(position.symbol)} · ${decisionLabel}</h3>${detail}${hold}</article>`;
+      }).join("");
+      return `<section class="panel market-driver-panel" id="market-drivers" data-tab-section="overview" aria-labelledby="market-drivers-title">
+        <header class="panel-header"><div><span class="section-kicker">今日研究主線</span><h2 id="market-drivers-title">影響美股的市場主線</h2></div><span class="panel-meta">最多 10 項；依分類優先順序排列</span></header>
+        <p class="exposure-note">排名是研究優先順序，不是報酬預測。理論反應與同期行情分開；同期變化不代表因果。資料只供研究觀察，不會直接改變配置或產生交易指令。</p>
+        <div class="market-drivers-grid">${driverRows}</div>
+        <div class="position-driver-section"><h3>這些主線如何連到目前部位</h3><div class="position-driver-grid">${positionRows || "<p>本輪沒有逐檔取捨資料。</p>"}</div></div>
+      </section>`;
+    };
     const investmentReasons = (recommendation.top_reasons || []).filter(
       (reason) => reason.reason_type !== "policy_explanation",
     );
@@ -1608,6 +1715,7 @@ export function bootstrapDashboard(root, payload, base) {
 
           ${renderEventCalendar(market.event_calendar, { asOf: recommendation.data_cutoff, renderSymbol: symbolLink })}
           ${renderMacroState(market.macro_state, { asOf: recommendation.data_cutoff, renderSymbol: symbolLink })}
+          ${renderMarketDriversPanel()}
 
           <section class="panel" id="reasons" data-tab-section="overview">
             <header class="panel-header">
@@ -2074,6 +2182,13 @@ export function bootstrapDashboard(root, payload, base) {
     </div>
   </div>
     `;
+    root.updateMarketDrivers = (extension) => {
+      const panel = root.querySelector("#market-drivers");
+      if (!panel) return;
+      const replacement = document.createElement("div");
+      replacement.innerHTML = renderMarketDriversPanel(extension);
+      panel.replaceWith(replacement.firstElementChild);
+    };
     const overviewPanel = root.querySelector('[data-tab-panel="overview"]');
     const committeePanel = root.querySelector('[data-tab-panel="committee"]');
     if (overviewPanel && committeePanel) {
@@ -2164,6 +2279,22 @@ export function bootstrapDashboard(root, payload, base) {
       healthSignal,
       loader.loadHealthSignal,
     );
+    if (root.dataset.researchExtensionsState !== "loaded"
+      && root.dataset.researchExtensionsState !== "loading") {
+      root.dataset.researchExtensionsState = "loading";
+      loader.loadResearchExtensions(payload.decisionIdentity)
+        .then(({ marketIntelligence }) => {
+          root.dataset.researchExtensionsState = "loaded";
+          root.updateMarketDrivers?.(marketIntelligence);
+        })
+        .catch((error) => {
+          root.dataset.researchExtensionsState = "failed";
+          const content = root.querySelector("#market-drivers .market-drivers-grid");
+          if (content) {
+            content.innerHTML = `<p class="market-driver-empty" role="status">市場主線資料載入失敗，不能沿用其他輪次資料：${escapeHtml(error.message)}</p>`;
+          }
+        });
+    }
     const showLazyTabError = (target, error) => {
       const section = root.querySelector(`[data-tab-section="${target}"]`);
       if (!section) return;

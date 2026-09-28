@@ -4093,8 +4093,36 @@ td {
 }
 .freshness-banner button:disabled { cursor: wait; opacity: .72; }
 .freshness-banner button:focus-visible, .freshness-links a:focus-visible { outline: 3px solid #d3f795; outline-offset: 3px; }
+
+.market-driver-panel,
+.market-driver-card,
+.position-driver-card { min-width: 0; overflow-wrap: anywhere; }
+.market-drivers-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.market-driver-card,
+.position-driver-card { border: 1px solid var(--line, #55615d); border-radius: .85rem; background: var(--panel, #161e1b); }
+.market-driver-card summary { display: flex; align-items: flex-start; gap: .85rem; min-height: 56px; padding: 1rem; cursor: pointer; list-style-position: inside; }
+.market-driver-card summary:focus-visible { outline: 3px solid #d3f795; outline-offset: 3px; }
+.market-driver-card summary span:last-child { display: grid; gap: .45rem; min-width: 0; }
+.market-driver-card summary small { color: var(--muted, #b1beb6); line-height: 1.55; }
+.driver-rank { display: grid; flex: 0 0 2rem; width: 2rem; height: 2rem; place-items: center; border-radius: 50%; background: #d3f795; color: #172018; font-weight: 800; }
+.market-driver-content { padding: 0 1rem 1rem; line-height: 1.65; }
+.market-driver-content p { overflow-wrap: anywhere; }
+.market-driver-content ul { padding-inline-start: 1.3rem; }
+.market-driver-content li { margin-block: .4rem; overflow-wrap: anywhere; }
+.market-driver-content a { overflow-wrap: anywhere; }
+.driver-position-links, .driver-facts { border-top: 1px solid var(--line, #55615d); padding-top: .6rem; }
+.position-driver-section { margin-top: 1.5rem; }
+.position-driver-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+.position-driver-card { padding: 1rem; }
+.position-driver-card h3 { margin-top: 0; overflow-wrap: anywhere; }
+.position-driver-card ul { padding-inline-start: 1.2rem; }
+.market-driver-empty { padding: 1rem; border: 1px dashed var(--line, #55615d); border-radius: .75rem; line-height: 1.7; }
+
 @media (max-width: 767px) {
   .freshness-banner { flex-direction: column; padding: .9rem; }
   .freshness-copy dl { flex-direction: column; gap: .6rem; }
   .freshness-banner button { width: 100%; }
+  .market-drivers-grid, .position-driver-grid { grid-template-columns: minmax(0, 1fr); }
+  .market-driver-card summary { padding: .85rem; }
+  .market-driver-content { padding: 0 .85rem .85rem; }
 }

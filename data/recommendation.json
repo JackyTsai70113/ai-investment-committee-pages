@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "run_id": "20260924T114411Z",
-  "generated_at": "2026-09-24T11:45:05.013166Z",
-  "data_cutoff": "2026-09-24T11:43:55.447364Z",
+  "run_id": "20260928T135200Z",
+  "generated_at": "2026-09-28T13:54:00.807776Z",
+  "data_cutoff": "2026-09-28T13:51:42.574958Z",
   "status": "live",
   "allocation_scope": {
     "active_sleeve_symbols": [
@@ -24,24 +24,6 @@
   },
   "active_sleeve_tradeoffs": [
     {
-      "symbol": "NVDA",
-      "decision": "hold",
-      "return_driver_kind": "capital_preservation",
-      "expected_return_driver": "NVDA 的模型目標受硬性政策上限限制；超額比例保留為現金，不宣稱提高期望報酬。",
-      "downside": "NVDA 受限後仍承擔既有市場風險，政策限制不保證降低損失。",
-      "invalidation": "NVDA 的政策上限或確認持倉改變時重新計算允許權重。",
-      "alternative_symbols": [
-        "CASH",
-        "GLD"
-      ],
-      "opportunity_cost": "NVDA 放棄超過硬性上限的未核准新增曝險。",
-      "advantage_over_hold": "NVDA 不增加超過政策允許的曝險，限制優先於模型收益比較。",
-      "cost_tradeoff": "NVDA 只計算受限後配置的模擬交易成本。",
-      "evidence_refs": [],
-      "evidence_observations": [],
-      "evidence_status": "constraint"
-    },
-    {
       "symbol": "AVGO",
       "decision": "increase",
       "return_driver_kind": "insufficient_evidence",
@@ -60,6 +42,29 @@
       "cost_tradeoff": "AVGO 本輪不交易，估計交易成本為零；原草案另存稽核。",
       "evidence_refs": [],
       "evidence_observations": [],
+      "driver_links": [],
+      "evidence_status": "insufficient"
+    },
+    {
+      "symbol": "GLD",
+      "decision": "increase",
+      "return_driver_kind": "insufficient_evidence",
+      "expected_return_driver": "GLD 未採用缺少證據的變動；其他已驗證標的仍依本輪市場判斷調整。",
+      "downside": "GLD 維持前一輪模擬曝險，不代表風險較低。",
+      "invalidation": "GLD 若有新的有效收益證據或硬性風控觸發，須重新評估前一輪模擬配置。",
+      "alternative_symbols": [
+        "CASH",
+        "AVGO",
+        "META",
+        "NVDA",
+        "PLTR"
+      ],
+      "opportunity_cost": "GLD 暫不轉向其他可調整部位或現金，放棄其尚未證實的相對收益。",
+      "advantage_over_hold": "GLD 草案文字稱維持，但目標權重相較前一輪模擬目標要求減碼；方向互相矛盾，無法採用該標的收益取捨。",
+      "cost_tradeoff": "GLD 本輪不交易，估計交易成本為零；原草案另存稽核。",
+      "evidence_refs": [],
+      "evidence_observations": [],
+      "driver_links": [],
       "evidence_status": "insufficient"
     },
     {
@@ -81,6 +86,29 @@
       "cost_tradeoff": "META 本輪不交易，估計交易成本為零；原草案另存稽核。",
       "evidence_refs": [],
       "evidence_observations": [],
+      "driver_links": [],
+      "evidence_status": "insufficient"
+    },
+    {
+      "symbol": "NVDA",
+      "decision": "reduce",
+      "return_driver_kind": "insufficient_evidence",
+      "expected_return_driver": "NVDA 未採用缺少證據的變動；其他已驗證標的仍依本輪市場判斷調整。",
+      "downside": "NVDA 維持前一輪模擬曝險，不代表風險較低。",
+      "invalidation": "NVDA 若有新的有效收益證據或硬性風控觸發，須重新評估前一輪模擬配置。",
+      "alternative_symbols": [
+        "AVGO",
+        "META",
+        "PLTR",
+        "GLD",
+        "CASH"
+      ],
+      "opportunity_cost": "NVDA 暫不轉向其他可調整部位或現金，放棄其尚未證實的相對收益。",
+      "advantage_over_hold": "NVDA 原候選依賴 AVGO、GLD、META、PLTR 的同步換倉，該換倉缺少支持，維持原倉可避免未獲支持的交易成本。",
+      "cost_tradeoff": "NVDA 本輪不交易，估計交易成本為零；原草案另存稽核。",
+      "evidence_refs": [],
+      "evidence_observations": [],
+      "driver_links": [],
       "evidence_status": "insufficient"
     },
     {
@@ -102,36 +130,16 @@
       "cost_tradeoff": "PLTR 本輪不交易，估計交易成本為零；原草案另存稽核。",
       "evidence_refs": [],
       "evidence_observations": [],
-      "evidence_status": "insufficient"
-    },
-    {
-      "symbol": "GLD",
-      "decision": "increase",
-      "return_driver_kind": "insufficient_evidence",
-      "expected_return_driver": "GLD 未採用缺少證據的變動；其他已驗證標的仍依本輪市場判斷調整。",
-      "downside": "GLD 維持前一輪模擬曝險，不代表風險較低。",
-      "invalidation": "GLD 若有新的有效收益證據或硬性風控觸發，須重新評估前一輪模擬配置。",
-      "alternative_symbols": [
-        "CASH",
-        "NVDA",
-        "AVGO",
-        "META",
-        "PLTR"
-      ],
-      "opportunity_cost": "GLD 暫不轉向其他可調整部位或現金，放棄其尚未證實的相對收益。",
-      "advantage_over_hold": "GLD 草案文字稱維持，但目標權重相較前一輪模擬目標要求減碼；方向互相矛盾，無法採用該標的收益取捨。",
-      "cost_tradeoff": "GLD 本輪不交易，估計交易成本為零；原草案另存稽核。",
-      "evidence_refs": [],
-      "evidence_observations": [],
+      "driver_links": [],
       "evidence_status": "insufficient"
     },
     {
       "symbol": "CASH",
       "decision": "increase",
-      "return_driver_kind": "capital_preservation",
-      "expected_return_driver": "CASH 的模型目標受硬性政策上限限制；超額比例保留為現金，不宣稱提高期望報酬。",
-      "downside": "CASH 受限後仍承擔既有市場風險，政策限制不保證降低損失。",
-      "invalidation": "CASH 的政策上限或確認持倉改變時重新計算允許權重。",
+      "return_driver_kind": "insufficient_evidence",
+      "expected_return_driver": "CASH 未採用缺少證據的變動；其他已驗證標的仍依本輪市場判斷調整。",
+      "downside": "CASH 維持前一輪模擬曝險，不代表風險較低。",
+      "invalidation": "CASH 若有新的有效收益證據或硬性風控觸發，須重新評估前一輪模擬配置。",
       "alternative_symbols": [
         "GLD",
         "NVDA",
@@ -139,30 +147,31 @@
         "META",
         "PLTR"
       ],
-      "opportunity_cost": "CASH 放棄超過硬性上限的未核准新增曝險。",
-      "advantage_over_hold": "CASH 不增加超過政策允許的曝險，限制優先於模型收益比較。",
-      "cost_tradeoff": "CASH 只計算受限後配置的模擬交易成本。",
+      "opportunity_cost": "CASH 暫不轉向其他可調整部位或現金，放棄其尚未證實的相對收益。",
+      "advantage_over_hold": "CASH 原候選依賴 AVGO、GLD、META、PLTR 的同步換倉，該換倉缺少支持，維持原倉可避免未獲支持的交易成本。",
+      "cost_tradeoff": "CASH 本輪不交易，估計交易成本為零；原草案另存稽核。",
       "evidence_refs": [],
       "evidence_observations": [],
-      "evidence_status": "constraint"
+      "driver_links": [],
+      "evidence_status": "insufficient"
     }
   ],
-  "model_score": 100,
-  "model_score_reason": "方向一致度 100/100；13 位提案委員按信心加權，0 項協商後否決仍未解除，扣除 0 分。",
+  "model_score": 96,
+  "model_score_reason": "方向一致度 96/100；13 位提案委員按信心加權，0 項協商後否決仍未解除，扣除 0 分。",
   "risk_level": "very_high",
-  "expected_horizon": "候選配置；待補齊當輪政策例外、事件覆蓋、波動曲線及同口徑 3/7 日統計後重新審核，不設定固定持有期限。",
+  "expected_horizon": "待事件覆蓋、完成交易日統計與壓力損失計算補齊後重新評估；不代表固定持有期限或已成交。",
   "allocations": [
-    {
-      "symbol": "NVDA",
-      "asset_type": "stock",
-      "target_weight": "0.3035315779980994785679867125",
-      "action": "hold",
-      "note": "維持確認股數與現金，不新增交易。"
-    },
     {
       "symbol": "AVGO",
       "asset_type": "stock",
       "target_weight": "0.2278588620883904337583858248",
+      "action": "buy",
+      "note": "提高此部位的研究目標，交易尚未執行。"
+    },
+    {
+      "symbol": "GLD",
+      "asset_type": "commodity_etf",
+      "target_weight": "0.1115220417417375475448912229",
       "action": "buy",
       "note": "提高此部位的研究目標，交易尚未執行。"
     },
@@ -174,6 +183,13 @@
       "note": "降低此部位的研究目標，交易尚未執行。"
     },
     {
+      "symbol": "NVDA",
+      "asset_type": "stock",
+      "target_weight": "0.25",
+      "action": "reduce",
+      "note": "降低此部位的研究目標，交易尚未執行。"
+    },
+    {
       "symbol": "PLTR",
       "asset_type": "stock",
       "target_weight": "0.08211008533638737971200715094",
@@ -181,117 +197,30 @@
       "note": "降低此部位的研究目標，交易尚未執行。"
     },
     {
-      "symbol": "GLD",
-      "asset_type": "commodity_etf",
-      "target_weight": "0.1115220417417375475448912229",
-      "action": "buy",
-      "note": "提高此部位的研究目標，交易尚未執行。"
-    },
-    {
       "symbol": "CASH",
       "asset_type": "cash",
-      "target_weight": "0.0872373806000187446846657919",
+      "target_weight": "0.1407689585981182232526525044",
       "action": "buy",
       "note": "提高此部位的研究目標，交易尚未執行。"
     }
   ],
   "position_risk_plans": [
     {
-      "symbol": "NVDA",
-      "reference_price": "225.509995",
-      "reference_timestamp": "2026-09-24T11:43:55.447364Z",
-      "invalidation_type": "price",
-      "invalidation_price": "202.96",
-      "status": "quantified",
-      "base_loss_fraction": "0.03035180576452610559993452852",
-      "stress_gap_percent": "0.08",
-      "portfolio_contribution": "0.02428252623984795828543893700",
-      "methodology": "Research estimate only: target amount/reference price × max(reference price − invalidation price, 0); gap stress does not assume stop execution.",
-      "v1_loss_bound": {
-        "schema_version": "1.0",
-        "status": "quantified",
-        "loss_fraction": "0.03035180576452610559993452852",
-        "reason": "價格失效界線僅作研究估算，不保證停損成交。"
-      },
-      "v1_gap_stress": {
-        "schema_version": "1.0",
-        "scenario_id": "generic_gap",
-        "version": "1.0",
-        "title": "既有跳空壓力假設",
-        "status": "measured",
-        "unit": "return_fraction",
-        "mode": "shadow",
-        "target_weight": "0.3035315779980994785679867125",
-        "shock_return_fraction": "-0.08",
-        "loss_contribution_fraction": "0.02428252623984795828543893700",
-        "assumption_label": "既有政策的外生跳空研究假設，並非預期報酬或停損成交保證。",
-        "source_ref": "config/policy.json#/position_risk_gate/gap_stress_percent_by_asset_type",
-        "reason": "權重乘以明確外生衝擊；不是停損保護、預期報酬或可預測最大損失。"
-      },
-      "v1_scenario_stress": [
-        {
-          "schema_version": "1.0",
-          "scenario_id": "rates_energy",
-          "version": "1.0",
-          "title": "利率／能源衝擊",
-          "status": "unknown",
-          "unit": "return_fraction",
-          "mode": "shadow",
-          "target_weight": "0.3035315779980994785679867125",
-          "shock_return_fraction": null,
-          "loss_contribution_fraction": null,
-          "assumption_label": "情境研究假設尚未提供",
-          "source_ref": null,
-          "reason": "沒有有限且合格的外生衝擊比例，不能補零。"
-        },
-        {
-          "schema_version": "1.0",
-          "scenario_id": "ai_capex",
-          "version": "1.0",
-          "title": "AI資本支出放緩",
-          "status": "unknown",
-          "unit": "return_fraction",
-          "mode": "shadow",
-          "target_weight": "0.3035315779980994785679867125",
-          "shock_return_fraction": null,
-          "loss_contribution_fraction": null,
-          "assumption_label": "情境研究假設尚未提供",
-          "source_ref": null,
-          "reason": "沒有有限且合格的外生衝擊比例，不能補零。"
-        },
-        {
-          "schema_version": "1.0",
-          "scenario_id": "liquidity_selloff",
-          "version": "1.0",
-          "title": "流動性同跌",
-          "status": "unknown",
-          "unit": "return_fraction",
-          "mode": "shadow",
-          "target_weight": "0.3035315779980994785679867125",
-          "shock_return_fraction": null,
-          "loss_contribution_fraction": null,
-          "assumption_label": "情境研究假設尚未提供",
-          "source_ref": null,
-          "reason": "沒有有限且合格的外生衝擊比例，不能補零。"
-        }
-      ]
-    },
-    {
       "symbol": "AVGO",
-      "reference_price": "354.98999",
-      "reference_timestamp": "2026-09-24T11:43:55.447364Z",
-      "invalidation_type": "price",
-      "invalidation_price": "319.49",
-      "status": "quantified",
-      "base_loss_fraction": "0.02278652230602119094828099011",
+      "reference_price": null,
+      "reference_timestamp": null,
+      "invalidation_type": "thesis",
+      "invalidation_price": null,
+      "status": "unquantified",
+      "base_loss_fraction": null,
       "stress_gap_percent": "0.08",
       "portfolio_contribution": "0.01822870896707123470067086598",
-      "methodology": "Research estimate only: target amount/reference price × max(reference price − invalidation price, 0); gap stress does not assume stop execution.",
+      "methodology": "Event/thesis invalidation lacks a conservative price proxy.",
       "v1_loss_bound": {
         "schema_version": "1.0",
-        "status": "quantified",
-        "loss_fraction": "0.02278652230602119094828099011",
-        "reason": "價格失效界線僅作研究估算，不保證停損成交。"
+        "status": "unknown",
+        "loss_fraction": null,
+        "reason": "沒有可驗證的價格失效界線，基本損失保持未知。"
       },
       "v1_gap_stress": {
         "schema_version": "1.0",
@@ -357,21 +286,101 @@
       ]
     },
     {
-      "symbol": "META",
-      "reference_price": "744.099976",
-      "reference_timestamp": "2026-09-24T11:43:55.447364Z",
-      "invalidation_type": "price",
-      "invalidation_price": "669.69",
-      "status": "quantified",
-      "base_loss_fraction": "0.01877399977375131825811112828",
-      "stress_gap_percent": "0.08",
-      "portfolio_contribution": "0.01501920417882931325856506376",
-      "methodology": "Research estimate only: target amount/reference price × max(reference price − invalidation price, 0); gap stress does not assume stop execution.",
+      "symbol": "GLD",
+      "reference_price": null,
+      "reference_timestamp": null,
+      "invalidation_type": "thesis",
+      "invalidation_price": null,
+      "status": "unquantified",
+      "base_loss_fraction": null,
+      "stress_gap_percent": "0.06",
+      "portfolio_contribution": "0.006691322504504252852693473374",
+      "methodology": "Event/thesis invalidation lacks a conservative price proxy.",
       "v1_loss_bound": {
         "schema_version": "1.0",
-        "status": "quantified",
-        "loss_fraction": "0.01877399977375131825811112828",
-        "reason": "價格失效界線僅作研究估算，不保證停損成交。"
+        "status": "unknown",
+        "loss_fraction": null,
+        "reason": "沒有可驗證的價格失效界線，基本損失保持未知。"
+      },
+      "v1_gap_stress": {
+        "schema_version": "1.0",
+        "scenario_id": "generic_gap",
+        "version": "1.0",
+        "title": "既有跳空壓力假設",
+        "status": "measured",
+        "unit": "return_fraction",
+        "mode": "shadow",
+        "target_weight": "0.1115220417417375475448912229",
+        "shock_return_fraction": "-0.06",
+        "loss_contribution_fraction": "0.006691322504504252852693473374",
+        "assumption_label": "既有政策的外生跳空研究假設，並非預期報酬或停損成交保證。",
+        "source_ref": "config/policy.json#/position_risk_gate/gap_stress_percent_by_asset_type",
+        "reason": "權重乘以明確外生衝擊；不是停損保護、預期報酬或可預測最大損失。"
+      },
+      "v1_scenario_stress": [
+        {
+          "schema_version": "1.0",
+          "scenario_id": "rates_energy",
+          "version": "1.0",
+          "title": "利率／能源衝擊",
+          "status": "unknown",
+          "unit": "return_fraction",
+          "mode": "shadow",
+          "target_weight": "0.1115220417417375475448912229",
+          "shock_return_fraction": null,
+          "loss_contribution_fraction": null,
+          "assumption_label": "情境研究假設尚未提供",
+          "source_ref": null,
+          "reason": "沒有有限且合格的外生衝擊比例，不能補零。"
+        },
+        {
+          "schema_version": "1.0",
+          "scenario_id": "ai_capex",
+          "version": "1.0",
+          "title": "AI資本支出放緩",
+          "status": "unknown",
+          "unit": "return_fraction",
+          "mode": "shadow",
+          "target_weight": "0.1115220417417375475448912229",
+          "shock_return_fraction": null,
+          "loss_contribution_fraction": null,
+          "assumption_label": "情境研究假設尚未提供",
+          "source_ref": null,
+          "reason": "沒有有限且合格的外生衝擊比例，不能補零。"
+        },
+        {
+          "schema_version": "1.0",
+          "scenario_id": "liquidity_selloff",
+          "version": "1.0",
+          "title": "流動性同跌",
+          "status": "unknown",
+          "unit": "return_fraction",
+          "mode": "shadow",
+          "target_weight": "0.1115220417417375475448912229",
+          "shock_return_fraction": null,
+          "loss_contribution_fraction": null,
+          "assumption_label": "情境研究假設尚未提供",
+          "source_ref": null,
+          "reason": "沒有有限且合格的外生衝擊比例，不能補零。"
+        }
+      ]
+    },
+    {
+      "symbol": "META",
+      "reference_price": null,
+      "reference_timestamp": null,
+      "invalidation_type": "thesis",
+      "invalidation_price": null,
+      "status": "unquantified",
+      "base_loss_fraction": null,
+      "stress_gap_percent": "0.08",
+      "portfolio_contribution": "0.01501920417882931325856506376",
+      "methodology": "Event/thesis invalidation lacks a conservative price proxy.",
+      "v1_loss_bound": {
+        "schema_version": "1.0",
+        "status": "unknown",
+        "loss_fraction": null,
+        "reason": "沒有可驗證的價格失效界線，基本損失保持未知。"
       },
       "v1_gap_stress": {
         "schema_version": "1.0",
@@ -437,20 +446,100 @@
       ]
     },
     {
-      "symbol": "PLTR",
-      "reference_price": "191.789993",
-      "reference_timestamp": "2026-09-24T11:43:55.447364Z",
+      "symbol": "NVDA",
+      "reference_price": "232.020004",
+      "reference_timestamp": "2026-09-28T13:51:00Z",
       "invalidation_type": "price",
-      "invalidation_price": "172.61",
+      "invalidation_price": "220",
       "status": "quantified",
-      "base_loss_fraction": "0.008211433961423172835532869387",
+      "base_loss_fraction": "0.01295147378757910891166091007",
+      "stress_gap_percent": "0.08",
+      "portfolio_contribution": "0.0200",
+      "methodology": "Research estimate only: target amount/reference price × max(reference price − invalidation price, 0); gap stress does not assume stop execution.",
+      "v1_loss_bound": {
+        "schema_version": "1.0",
+        "status": "quantified",
+        "loss_fraction": "0.01295147378757910891166091007",
+        "reason": "價格失效界線僅作研究估算，不保證停損成交。"
+      },
+      "v1_gap_stress": {
+        "schema_version": "1.0",
+        "scenario_id": "generic_gap",
+        "version": "1.0",
+        "title": "既有跳空壓力假設",
+        "status": "measured",
+        "unit": "return_fraction",
+        "mode": "shadow",
+        "target_weight": "0.25",
+        "shock_return_fraction": "-0.08",
+        "loss_contribution_fraction": "0.0200",
+        "assumption_label": "既有政策的外生跳空研究假設，並非預期報酬或停損成交保證。",
+        "source_ref": "config/policy.json#/position_risk_gate/gap_stress_percent_by_asset_type",
+        "reason": "權重乘以明確外生衝擊；不是停損保護、預期報酬或可預測最大損失。"
+      },
+      "v1_scenario_stress": [
+        {
+          "schema_version": "1.0",
+          "scenario_id": "rates_energy",
+          "version": "1.0",
+          "title": "利率／能源衝擊",
+          "status": "unknown",
+          "unit": "return_fraction",
+          "mode": "shadow",
+          "target_weight": "0.25",
+          "shock_return_fraction": null,
+          "loss_contribution_fraction": null,
+          "assumption_label": "情境研究假設尚未提供",
+          "source_ref": null,
+          "reason": "沒有有限且合格的外生衝擊比例，不能補零。"
+        },
+        {
+          "schema_version": "1.0",
+          "scenario_id": "ai_capex",
+          "version": "1.0",
+          "title": "AI資本支出放緩",
+          "status": "unknown",
+          "unit": "return_fraction",
+          "mode": "shadow",
+          "target_weight": "0.25",
+          "shock_return_fraction": null,
+          "loss_contribution_fraction": null,
+          "assumption_label": "情境研究假設尚未提供",
+          "source_ref": null,
+          "reason": "沒有有限且合格的外生衝擊比例，不能補零。"
+        },
+        {
+          "schema_version": "1.0",
+          "scenario_id": "liquidity_selloff",
+          "version": "1.0",
+          "title": "流動性同跌",
+          "status": "unknown",
+          "unit": "return_fraction",
+          "mode": "shadow",
+          "target_weight": "0.25",
+          "shock_return_fraction": null,
+          "loss_contribution_fraction": null,
+          "assumption_label": "情境研究假設尚未提供",
+          "source_ref": null,
+          "reason": "沒有有限且合格的外生衝擊比例，不能補零。"
+        }
+      ]
+    },
+    {
+      "symbol": "PLTR",
+      "reference_price": "187.089996",
+      "reference_timestamp": "2026-09-28T13:51:00Z",
+      "invalidation_type": "price",
+      "invalidation_price": "170",
+      "status": "quantified",
+      "base_loss_fraction": "0.007500459992305088155160810212",
       "stress_gap_percent": "0.08",
       "portfolio_contribution": "0.006568806826910990376960572075",
       "methodology": "Research estimate only: target amount/reference price × max(reference price − invalidation price, 0); gap stress does not assume stop execution.",
       "v1_loss_bound": {
         "schema_version": "1.0",
         "status": "quantified",
-        "loss_fraction": "0.008211433961423172835532869387",
+        "loss_fraction": "0.007500459992305088155160810212",
         "reason": "價格失效界線僅作研究估算，不保證停損成交。"
       },
       "v1_gap_stress": {
@@ -517,86 +606,6 @@
       ]
     },
     {
-      "symbol": "GLD",
-      "reference_price": "392.880005",
-      "reference_timestamp": "2026-09-24T11:43:55.447364Z",
-      "invalidation_type": "price",
-      "invalidation_price": "353.59",
-      "status": "quantified",
-      "base_loss_fraction": "0.01115277316707190774884691287",
-      "stress_gap_percent": "0.06",
-      "portfolio_contribution": "0.006691322504504252852693473374",
-      "methodology": "Research estimate only: target amount/reference price × max(reference price − invalidation price, 0); gap stress does not assume stop execution.",
-      "v1_loss_bound": {
-        "schema_version": "1.0",
-        "status": "quantified",
-        "loss_fraction": "0.01115277316707190774884691287",
-        "reason": "價格失效界線僅作研究估算，不保證停損成交。"
-      },
-      "v1_gap_stress": {
-        "schema_version": "1.0",
-        "scenario_id": "generic_gap",
-        "version": "1.0",
-        "title": "既有跳空壓力假設",
-        "status": "measured",
-        "unit": "return_fraction",
-        "mode": "shadow",
-        "target_weight": "0.1115220417417375475448912229",
-        "shock_return_fraction": "-0.06",
-        "loss_contribution_fraction": "0.006691322504504252852693473374",
-        "assumption_label": "既有政策的外生跳空研究假設，並非預期報酬或停損成交保證。",
-        "source_ref": "config/policy.json#/position_risk_gate/gap_stress_percent_by_asset_type",
-        "reason": "權重乘以明確外生衝擊；不是停損保護、預期報酬或可預測最大損失。"
-      },
-      "v1_scenario_stress": [
-        {
-          "schema_version": "1.0",
-          "scenario_id": "rates_energy",
-          "version": "1.0",
-          "title": "利率／能源衝擊",
-          "status": "unknown",
-          "unit": "return_fraction",
-          "mode": "shadow",
-          "target_weight": "0.1115220417417375475448912229",
-          "shock_return_fraction": null,
-          "loss_contribution_fraction": null,
-          "assumption_label": "情境研究假設尚未提供",
-          "source_ref": null,
-          "reason": "沒有有限且合格的外生衝擊比例，不能補零。"
-        },
-        {
-          "schema_version": "1.0",
-          "scenario_id": "ai_capex",
-          "version": "1.0",
-          "title": "AI資本支出放緩",
-          "status": "unknown",
-          "unit": "return_fraction",
-          "mode": "shadow",
-          "target_weight": "0.1115220417417375475448912229",
-          "shock_return_fraction": null,
-          "loss_contribution_fraction": null,
-          "assumption_label": "情境研究假設尚未提供",
-          "source_ref": null,
-          "reason": "沒有有限且合格的外生衝擊比例，不能補零。"
-        },
-        {
-          "schema_version": "1.0",
-          "scenario_id": "liquidity_selloff",
-          "version": "1.0",
-          "title": "流動性同跌",
-          "status": "unknown",
-          "unit": "return_fraction",
-          "mode": "shadow",
-          "target_weight": "0.1115220417417375475448912229",
-          "shock_return_fraction": null,
-          "loss_contribution_fraction": null,
-          "assumption_label": "情境研究假設尚未提供",
-          "source_ref": null,
-          "reason": "沒有有限且合格的外生衝擊比例，不能補零。"
-        }
-      ]
-    },
-    {
       "symbol": "CASH",
       "reference_price": null,
       "reference_timestamp": null,
@@ -621,7 +630,7 @@
         "status": "exempt",
         "unit": "return_fraction",
         "mode": "shadow",
-        "target_weight": "0.0872373806000187446846657919",
+        "target_weight": "0.1407689585981182232526525044",
         "shock_return_fraction": "0",
         "loss_contribution_fraction": "0",
         "assumption_label": "既有政策的外生跳空研究假設，並非預期報酬或停損成交保證。",
@@ -637,7 +646,7 @@
           "status": "exempt",
           "unit": "return_fraction",
           "mode": "shadow",
-          "target_weight": "0.0872373806000187446846657919",
+          "target_weight": "0.1407689585981182232526525044",
           "shock_return_fraction": "0",
           "loss_contribution_fraction": "0",
           "assumption_label": "情境研究假設尚未提供",
@@ -652,7 +661,7 @@
           "status": "exempt",
           "unit": "return_fraction",
           "mode": "shadow",
-          "target_weight": "0.0872373806000187446846657919",
+          "target_weight": "0.1407689585981182232526525044",
           "shock_return_fraction": "0",
           "loss_contribution_fraction": "0",
           "assumption_label": "情境研究假設尚未提供",
@@ -667,7 +676,7 @@
           "status": "exempt",
           "unit": "return_fraction",
           "mode": "shadow",
-          "target_weight": "0.0872373806000187446846657919",
+          "target_weight": "0.1407689585981182232526525044",
           "shock_return_fraction": "0",
           "loss_contribution_fraction": "0",
           "assumption_label": "情境研究假設尚未提供",
@@ -686,10 +695,10 @@
       "mode": "shadow",
       "unit": "portfolio_loss_fraction",
       "status": "complete",
-      "known_subtotal_loss_fraction": "0.07079056871716374947432891219",
-      "known_downside_fraction": "0.07079056871716374947432891219",
+      "known_subtotal_loss_fraction": "0.06650804247731579118888997518",
+      "known_downside_fraction": "0.06650804247731579118888997518",
       "known_upside_fraction": "0",
-      "total_loss_fraction": "0.07079056871716374947432891219",
+      "total_loss_fraction": "0.06650804247731579118888997518",
       "unknown_symbols": [],
       "unknown_weight_fraction": "0",
       "weights_valid": true,
@@ -711,13 +720,13 @@
       "known_upside_fraction": "0",
       "total_loss_fraction": null,
       "unknown_symbols": [
-        "NVDA",
         "AVGO",
+        "GLD",
         "META",
-        "PLTR",
-        "GLD"
+        "NVDA",
+        "PLTR"
       ],
-      "unknown_weight_fraction": "0.9127626193999812553153342081",
+      "unknown_weight_fraction": "0.8592310414018817767473474956",
       "weights_valid": true,
       "source_refs": [],
       "assumption_label": "情境研究假設尚未提供"
@@ -735,13 +744,13 @@
       "known_upside_fraction": "0",
       "total_loss_fraction": null,
       "unknown_symbols": [
-        "NVDA",
         "AVGO",
+        "GLD",
         "META",
-        "PLTR",
-        "GLD"
+        "NVDA",
+        "PLTR"
       ],
-      "unknown_weight_fraction": "0.9127626193999812553153342081",
+      "unknown_weight_fraction": "0.8592310414018817767473474956",
       "weights_valid": true,
       "source_refs": [],
       "assumption_label": "情境研究假設尚未提供"
@@ -759,13 +768,13 @@
       "known_upside_fraction": "0",
       "total_loss_fraction": null,
       "unknown_symbols": [
-        "NVDA",
         "AVGO",
+        "GLD",
         "META",
-        "PLTR",
-        "GLD"
+        "NVDA",
+        "PLTR"
       ],
-      "unknown_weight_fraction": "0.9127626193999812553153342081",
+      "unknown_weight_fraction": "0.8592310414018817767473474956",
       "weights_valid": true,
       "source_refs": [],
       "assumption_label": "情境研究假設尚未提供"
@@ -775,15 +784,15 @@
     {
       "id": 1,
       "title": "部位風險影子警示",
-      "summary": "部位風險影子紀錄： 3 個風險部位未量化或超過每筆 US$167.16 研究損失預算。；本輪列為影子紀錄，未啟用硬性限制。這不代表風險為零，也不代表買賣建議。",
+      "summary": "部位風險影子紀錄： 3 個風險部位未量化或超過每筆 US$166.41 研究損失預算。；本輪列為影子紀錄，未啟用硬性限制。這不代表風險為零，也不代表買賣建議。",
       "confidence": null,
       "category": "policy",
       "affected_assets": [
-        "NVDA",
         "AVGO",
-        "META",
-        "PLTR",
         "GLD",
+        "META",
+        "NVDA",
+        "PLTR",
         "CASH"
       ],
       "reason_type": "policy_explanation",
@@ -791,20 +800,20 @@
       "evidence_refs": [],
       "source_observations": {},
       "final_action": {
-        "NVDA": "hold",
         "AVGO": "increase",
-        "META": "reduce",
-        "PLTR": "reduce",
         "GLD": "increase",
+        "META": "reduce",
+        "NVDA": "reduce",
+        "PLTR": "reduce",
         "CASH": "increase"
       },
       "final_weight": {
-        "NVDA": "0.3035315779980994785679867125",
         "AVGO": "0.2278588620883904337583858248",
-        "META": "0.1877400522353664157320632970",
-        "PLTR": "0.08211008533638737971200715094",
         "GLD": "0.1115220417417375475448912229",
-        "CASH": "0.0872373806000187446846657919"
+        "META": "0.1877400522353664157320632970",
+        "NVDA": "0.25",
+        "PLTR": "0.08211008533638737971200715094",
+        "CASH": "0.1407689585981182232526525044"
       },
       "policy_digest": "0938a6862a6ef8af53f3deac2f071e5fe22014d659127a5d1a4a5a623c9410ab",
       "artifact_refs": [
@@ -821,11 +830,11 @@
       "confidence": null,
       "category": "policy",
       "affected_assets": [
-        "NVDA",
         "AVGO",
-        "META",
-        "PLTR",
         "GLD",
+        "META",
+        "NVDA",
+        "PLTR",
         "CASH"
       ],
       "reason_type": "policy_explanation",
@@ -833,20 +842,20 @@
       "evidence_refs": [],
       "source_observations": {},
       "final_action": {
-        "NVDA": "hold",
         "AVGO": "increase",
-        "META": "reduce",
-        "PLTR": "reduce",
         "GLD": "increase",
+        "META": "reduce",
+        "NVDA": "reduce",
+        "PLTR": "reduce",
         "CASH": "increase"
       },
       "final_weight": {
-        "NVDA": "0.3035315779980994785679867125",
         "AVGO": "0.2278588620883904337583858248",
-        "META": "0.1877400522353664157320632970",
-        "PLTR": "0.08211008533638737971200715094",
         "GLD": "0.1115220417417375475448912229",
-        "CASH": "0.0872373806000187446846657919"
+        "META": "0.1877400522353664157320632970",
+        "NVDA": "0.25",
+        "PLTR": "0.08211008533638737971200715094",
+        "CASH": "0.1407689585981182232526525044"
       },
       "policy_digest": "0938a6862a6ef8af53f3deac2f071e5fe22014d659127a5d1a4a5a623c9410ab",
       "artifact_refs": [
@@ -861,7 +870,7 @@
     {
       "kind": "data_quality",
       "severity": "low",
-      "summary": "本輪 2026-09-24T11:43:55.447364+00:00 市場快照含有行情：AVGO、GLD、META、NVDA、PLTR",
+      "summary": "本輪 2026-09-28T13:51:42.574958+00:00 市場快照含有行情：AVGO、GLD、META、NVDA、PLTR",
       "effect": "這是全市場快照的覆蓋事實；個別研究角色的輸入缺口不等於全系統缺行情。",
       "affected_claims": [
         "AVGO",
@@ -884,111 +893,13 @@
       "source_urls": []
     },
     {
-      "kind": "policy_constraint",
-      "severity": "high",
-      "summary": "NVDA 既有權重 0.3035315779980994785679867125 超過單一股票上限 0.25；本輪僅保留或降低至 0.3035315779980994785679867125，不宣稱符合曝險上限。",
-      "effect": "僅容許確認部位的既有超限未增加；不是整體風險已合規或損失已量化的證據。",
-      "affected_claims": [],
-      "source_urls": []
-    },
-    {
       "kind": "evidence_gap",
       "severity": "medium",
       "summary": "未驗證的研究主張不可作已證實結論；仍可依現有基本面與行情分析配置。",
       "effect": "此限制僅依已記錄適用範圍處理，原始模型意見另存草案供稽核。",
       "affected_claims": [
-        "NVDA"
-      ],
-      "source_urls": []
-    },
-    {
-      "kind": "evidence_gap",
-      "severity": "medium",
-      "summary": "未驗證的研究主張不可作已證實結論；仍可依現有基本面與行情分析配置。",
-      "effect": "此限制僅依已記錄適用範圍處理，原始模型意見另存草案供稽核。",
-      "affected_claims": [
-        "NVDA",
-        "AVGO",
         "META",
-        "PLTR",
-        "GLD",
-        "CASH"
-      ],
-      "source_urls": []
-    },
-    {
-      "kind": "policy_constraint",
-      "severity": "medium",
-      "summary": "最終候選已不包含此限制指定的部位、動作或研究主張。",
-      "effect": "此限制僅依已記錄適用範圍處理，原始模型意見另存草案供稽核。",
-      "affected_claims": [
         "NVDA",
-        "AVGO",
-        "META",
-        "PLTR",
-        "GLD",
-        "CASH"
-      ],
-      "source_urls": []
-    },
-    {
-      "kind": "evidence_gap",
-      "severity": "medium",
-      "summary": "未驗證的研究主張不可作已證實結論；仍可依現有基本面與行情分析配置。",
-      "effect": "此限制僅依已記錄適用範圍處理，原始模型意見另存草案供稽核。",
-      "affected_claims": [
-        "GLD",
-        "CASH"
-      ],
-      "source_urls": []
-    },
-    {
-      "kind": "evidence_gap",
-      "severity": "medium",
-      "summary": "未驗證的研究主張不可作已證實結論；仍可依現有基本面與行情分析配置。",
-      "effect": "此限制僅依已記錄適用範圍處理，原始模型意見另存草案供稽核。",
-      "affected_claims": [
-        "GLD",
-        "CASH"
-      ],
-      "source_urls": []
-    },
-    {
-      "kind": "policy_constraint",
-      "severity": "medium",
-      "summary": "最終候選已不包含此限制指定的部位、動作或研究主張。",
-      "effect": "此限制僅依已記錄適用範圍處理，原始模型意見另存草案供稽核。",
-      "affected_claims": [],
-      "source_urls": []
-    },
-    {
-      "kind": "policy_constraint",
-      "severity": "medium",
-      "summary": "最終候選已不包含此限制指定的部位、動作或研究主張。",
-      "effect": "此限制僅依已記錄適用範圍處理，原始模型意見另存草案供稽核。",
-      "affected_claims": [
-        "NVDA"
-      ],
-      "source_urls": []
-    },
-    {
-      "kind": "evidence_gap",
-      "severity": "medium",
-      "summary": "未驗證的研究主張不可作已證實結論；仍可依現有基本面與行情分析配置。",
-      "effect": "此限制僅依已記錄適用範圍處理，原始模型意見另存草案供稽核。",
-      "affected_claims": [
-        "NVDA"
-      ],
-      "source_urls": []
-    },
-    {
-      "kind": "evidence_gap",
-      "severity": "medium",
-      "summary": "未驗證的研究主張不可作已證實結論；仍可依現有基本面與行情分析配置。",
-      "effect": "此限制僅依已記錄適用範圍處理，原始模型意見另存草案供稽核。",
-      "affected_claims": [
-        "NVDA",
-        "META",
         "PLTR"
       ],
       "source_urls": []
@@ -999,8 +910,8 @@
       "summary": "最終候選已不包含此限制指定的部位、動作或研究主張。",
       "effect": "此限制僅依已記錄適用範圍處理，原始模型意見另存草案供稽核。",
       "affected_claims": [
-        "NVDA",
         "META",
+        "NVDA",
         "PLTR"
       ],
       "source_urls": []
@@ -1014,39 +925,57 @@
       "source_urls": []
     },
     {
-      "kind": "policy_constraint",
+      "kind": "evidence_gap",
       "severity": "medium",
-      "summary": "最終候選已不包含此限制指定的部位、動作或研究主張。",
-      "effect": "此限制僅依已記錄適用範圍處理，原始模型意見另存草案供稽核。",
-      "affected_claims": [],
-      "source_urls": []
-    },
-    {
-      "kind": "policy_constraint",
-      "severity": "medium",
-      "summary": "最終候選已不包含此限制指定的部位、動作或研究主張。",
-      "effect": "此限制僅依已記錄適用範圍處理，原始模型意見另存草案供稽核。",
-      "affected_claims": [],
-      "source_urls": []
-    },
-    {
-      "kind": "policy_constraint",
-      "severity": "medium",
-      "summary": "最終候選已不包含此限制指定的部位、動作或研究主張。",
+      "summary": "未驗證的研究主張不可作已證實結論；仍可依現有基本面與行情分析配置。",
       "effect": "此限制僅依已記錄適用範圍處理，原始模型意見另存草案供稽核。",
       "affected_claims": [
-        "NVDA"
+        "META",
+        "NVDA",
+        "PLTR"
+      ],
+      "source_urls": []
+    },
+    {
+      "kind": "evidence_gap",
+      "severity": "medium",
+      "summary": "未驗證的研究主張不可作已證實結論；仍可依現有基本面與行情分析配置。",
+      "effect": "此限制僅依已記錄適用範圍處理，原始模型意見另存草案供稽核。",
+      "affected_claims": [
+        "META",
+        "NVDA",
+        "PLTR"
       ],
       "source_urls": []
     },
     {
       "kind": "policy_constraint",
       "severity": "medium",
-      "summary": "未綁定既有政策不變量，僅保留模型意見供稽核。",
+      "summary": "最終候選已不包含此限制指定的部位、動作或研究主張。",
       "effect": "此限制僅依已記錄適用範圍處理，原始模型意見另存草案供稽核。",
       "affected_claims": [
-        "NVDA",
         "META",
+        "NVDA",
+        "PLTR"
+      ],
+      "source_urls": []
+    },
+    {
+      "kind": "policy_constraint",
+      "severity": "medium",
+      "summary": "最終候選已不包含此限制指定的部位、動作或研究主張。",
+      "effect": "此限制僅依已記錄適用範圍處理，原始模型意見另存草案供稽核。",
+      "affected_claims": [],
+      "source_urls": []
+    },
+    {
+      "kind": "evidence_gap",
+      "severity": "medium",
+      "summary": "未驗證的研究主張不可作已證實結論；仍可依現有基本面與行情分析配置。",
+      "effect": "此限制僅依已記錄適用範圍處理，原始模型意見另存草案供稽核。",
+      "affected_claims": [
+        "META",
+        "NVDA",
         "PLTR"
       ],
       "source_urls": []
@@ -1065,7 +994,85 @@
       "summary": "未驗證的研究主張不可作已證實結論；仍可依現有基本面與行情分析配置。",
       "effect": "此限制僅依已記錄適用範圍處理，原始模型意見另存草案供稽核。",
       "affected_claims": [
-        "NVDA"
+        "META",
+        "NVDA",
+        "PLTR"
+      ],
+      "source_urls": []
+    },
+    {
+      "kind": "policy_constraint",
+      "severity": "medium",
+      "summary": "最終候選已不包含此限制指定的部位、動作或研究主張。",
+      "effect": "此限制僅依已記錄適用範圍處理，原始模型意見另存草案供稽核。",
+      "affected_claims": [
+        "META",
+        "NVDA",
+        "PLTR"
+      ],
+      "source_urls": []
+    },
+    {
+      "kind": "policy_constraint",
+      "severity": "medium",
+      "summary": "最終候選已不包含此限制指定的部位、動作或研究主張。",
+      "effect": "此限制僅依已記錄適用範圍處理，原始模型意見另存草案供稽核。",
+      "affected_claims": [],
+      "source_urls": []
+    },
+    {
+      "kind": "evidence_gap",
+      "severity": "medium",
+      "summary": "未驗證的研究主張不可作已證實結論；仍可依現有基本面與行情分析配置。",
+      "effect": "此限制僅依已記錄適用範圍處理，原始模型意見另存草案供稽核。",
+      "affected_claims": [
+        "META",
+        "NVDA",
+        "PLTR"
+      ],
+      "source_urls": []
+    },
+    {
+      "kind": "evidence_gap",
+      "severity": "medium",
+      "summary": "未驗證的研究主張不可作已證實結論；仍可依現有基本面與行情分析配置。",
+      "effect": "此限制僅依已記錄適用範圍處理，原始模型意見另存草案供稽核。",
+      "affected_claims": [
+        "META",
+        "NVDA",
+        "PLTR"
+      ],
+      "source_urls": []
+    },
+    {
+      "kind": "policy_constraint",
+      "severity": "medium",
+      "summary": "最終候選已不包含此限制指定的部位、動作或研究主張。",
+      "effect": "此限制僅依已記錄適用範圍處理，原始模型意見另存草案供稽核。",
+      "affected_claims": [
+        "META",
+        "NVDA",
+        "PLTR"
+      ],
+      "source_urls": []
+    },
+    {
+      "kind": "policy_constraint",
+      "severity": "medium",
+      "summary": "最終候選已不包含此限制指定的部位、動作或研究主張。",
+      "effect": "此限制僅依已記錄適用範圍處理，原始模型意見另存草案供稽核。",
+      "affected_claims": [],
+      "source_urls": []
+    },
+    {
+      "kind": "evidence_gap",
+      "severity": "medium",
+      "summary": "未驗證的研究主張不可作已證實結論；仍可依現有基本面與行情分析配置。",
+      "effect": "此限制僅依已記錄適用範圍處理，原始模型意見另存草案供稽核。",
+      "affected_claims": [
+        "META",
+        "NVDA",
+        "PLTR"
       ],
       "source_urls": []
     }
@@ -1073,49 +1080,10 @@
   "exposure_snapshot": {
     "schema_version": "1.0",
     "methodology_version": "1.0",
-    "run_id": "20260924T114411Z",
-    "generated_at": "2026-09-24T11:51:28.505990Z",
-    "data_cutoff": "2026-09-24T11:43:55.447364Z",
+    "run_id": "20260928T135200Z",
+    "generated_at": "2026-09-28T14:00:14.669245Z",
+    "data_cutoff": "2026-09-28T13:51:42.574958Z",
     "instruments": [
-      {
-        "symbol": "NVDA",
-        "direct_weight": "0.3035315779980994785679867125",
-        "underlying_equivalent_weight": "0.3035315779980994785679867125",
-        "asset_class": "stock",
-        "underlying": "NVIDIA",
-        "coverage_status": "ready",
-        "source_url": "https://investor.nvidia.com/",
-        "source_authority": "issuer",
-        "source_timestamp": null,
-        "effective_date": null,
-        "limitations": [],
-        "issuer_contributions": [
-          {
-            "label": "NVDA",
-            "weight": "0.3035315779980994785679867125",
-            "gross_weight": "0.3035315779980994785679867125"
-          }
-        ],
-        "sector_contributions": [
-          {
-            "label": "semiconductors",
-            "weight": "0.3035315779980994785679867125",
-            "gross_weight": "0.3035315779980994785679867125"
-          }
-        ],
-        "factor_contributions": [
-          {
-            "label": "equity_beta",
-            "weight": "0.3035315779980994785679867125",
-            "gross_weight": "0.3035315779980994785679867125"
-          },
-          {
-            "label": "mega_cap",
-            "weight": "0.3035315779980994785679867125",
-            "gross_weight": "0.3035315779980994785679867125"
-          }
-        ]
-      },
       {
         "symbol": "AVGO",
         "direct_weight": "0.2278588620883904337583858248",
@@ -1152,6 +1120,34 @@
             "label": "mega_cap",
             "weight": "0.2278588620883904337583858248",
             "gross_weight": "0.2278588620883904337583858248"
+          }
+        ]
+      },
+      {
+        "symbol": "GLD",
+        "direct_weight": "0.1115220417417375475448912229",
+        "underlying_equivalent_weight": "0.1115220417417375475448912229",
+        "asset_class": "commodity_etf",
+        "underlying": "Gold bullion",
+        "coverage_status": "unavailable",
+        "source_url": "https://www.ssga.com/us/en/intermediary/etfs/spdr-gold-shares-gld",
+        "source_authority": "State Street",
+        "source_timestamp": null,
+        "effective_date": null,
+        "limitations": [],
+        "issuer_contributions": [],
+        "sector_contributions": [
+          {
+            "label": "gold",
+            "weight": "0.1115220417417375475448912229",
+            "gross_weight": "0.1115220417417375475448912229"
+          }
+        ],
+        "factor_contributions": [
+          {
+            "label": "gold_commodity",
+            "weight": "0.1115220417417375475448912229",
+            "gross_weight": "0.1115220417417375475448912229"
           }
         ]
       },
@@ -1195,6 +1191,45 @@
         ]
       },
       {
+        "symbol": "NVDA",
+        "direct_weight": "0.25",
+        "underlying_equivalent_weight": "0.25",
+        "asset_class": "stock",
+        "underlying": "NVIDIA",
+        "coverage_status": "ready",
+        "source_url": "https://investor.nvidia.com/",
+        "source_authority": "issuer",
+        "source_timestamp": null,
+        "effective_date": null,
+        "limitations": [],
+        "issuer_contributions": [
+          {
+            "label": "NVDA",
+            "weight": "0.25",
+            "gross_weight": "0.25"
+          }
+        ],
+        "sector_contributions": [
+          {
+            "label": "semiconductors",
+            "weight": "0.25",
+            "gross_weight": "0.25"
+          }
+        ],
+        "factor_contributions": [
+          {
+            "label": "equity_beta",
+            "weight": "0.25",
+            "gross_weight": "0.25"
+          },
+          {
+            "label": "mega_cap",
+            "weight": "0.25",
+            "gross_weight": "0.25"
+          }
+        ]
+      },
+      {
         "symbol": "PLTR",
         "direct_weight": "0.08211008533638737971200715094",
         "underlying_equivalent_weight": "0.08211008533638737971200715094",
@@ -1227,34 +1262,6 @@
             "gross_weight": "0.08211008533638737971200715094"
           }
         ]
-      },
-      {
-        "symbol": "GLD",
-        "direct_weight": "0.1115220417417375475448912229",
-        "underlying_equivalent_weight": "0.1115220417417375475448912229",
-        "asset_class": "commodity_etf",
-        "underlying": "Gold bullion",
-        "coverage_status": "unavailable",
-        "source_url": "https://www.ssga.com/us/en/intermediary/etfs/spdr-gold-shares-gld",
-        "source_authority": "State Street",
-        "source_timestamp": null,
-        "effective_date": null,
-        "limitations": [],
-        "issuer_contributions": [],
-        "sector_contributions": [
-          {
-            "label": "gold",
-            "weight": "0.1115220417417375475448912229",
-            "gross_weight": "0.1115220417417375475448912229"
-          }
-        ],
-        "factor_contributions": [
-          {
-            "label": "gold_commodity",
-            "weight": "0.1115220417417375475448912229",
-            "gross_weight": "0.1115220417417375475448912229"
-          }
-        ]
       }
     ],
     "issuer_exposures": [
@@ -1268,7 +1275,7 @@
       },
       {
         "factor": "NVDA",
-        "weight": "0.3035315779980994785679867125"
+        "weight": "0.25"
       },
       {
         "factor": "PLTR",
@@ -1282,7 +1289,7 @@
       },
       {
         "factor": "semiconductors",
-        "weight": "0.5313904400864899123263725373"
+        "weight": "0.4778588620883904337583858248"
       },
       {
         "factor": "technology",
@@ -1292,7 +1299,7 @@
     "factor_exposures": [
       {
         "factor": "equity_beta",
-        "weight": "0.8012405776582437077704429852"
+        "weight": "0.7477089996601442292024562727"
       },
       {
         "factor": "gold_commodity",
@@ -1300,7 +1307,7 @@
       },
       {
         "factor": "mega_cap",
-        "weight": "0.7191304923218563280584358343"
+        "weight": "0.6655989143237568494904491218"
       }
     ],
     "correlation_clusters": [],
@@ -1308,7 +1315,7 @@
       "taxonomy_status": "ready",
       "lookthrough_status": "unavailable",
       "correlation_status": "ready",
-      "decision_cutoff": "2026-09-24T11:43:55.447364Z",
+      "decision_cutoff": "2026-09-28T13:51:42.574958Z",
       "limitations": []
     }
   },

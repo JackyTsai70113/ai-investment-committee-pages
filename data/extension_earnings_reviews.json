@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "run_id": "20260924T114411Z",
-  "data_cutoff": "2026-09-24T11:43:55.447364Z",
+  "run_id": "20260928T135200Z",
+  "data_cutoff": "2026-09-28T13:51:42.574958Z",
   "reviews": [
     {
       "schema_version": "1.0",
@@ -12,7 +12,7 @@
       "event_time": "2026-08-01T00:00:00-04:00",
       "publication_date": "2026-07-31",
       "publication_precision": "date",
-      "data_cutoff": "2026-09-24T11:43:55.447364Z",
+      "data_cutoff": "2026-09-28T13:51:42.574958Z",
       "observations": [
         {
           "metric_name": "capital_expenditures",
@@ -126,7 +126,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
             "published_at": null,
             "as_of": "2025-06-28T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -149,7 +149,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
             "published_at": null,
             "as_of": "2025-06-28T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -172,7 +172,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
             "published_at": null,
             "as_of": "2025-06-28T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -351,7 +351,7 @@
       "event_time": "2026-08-01T00:00:00-04:00",
       "publication_date": "2026-07-31",
       "publication_precision": "date",
-      "data_cutoff": "2026-09-24T11:43:55.447364Z",
+      "data_cutoff": "2026-09-28T13:51:42.574958Z",
       "observations": [
         {
           "metric_name": "assets",
@@ -465,7 +465,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
             "published_at": null,
             "as_of": "2025-09-27T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -488,7 +488,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
             "published_at": null,
             "as_of": "2025-09-27T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -511,7 +511,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
             "published_at": null,
             "as_of": "2025-09-27T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -669,7 +669,7 @@
       "event_time": "2026-08-01T00:00:00-04:00",
       "publication_date": "2026-07-31",
       "publication_precision": "date",
-      "data_cutoff": "2026-09-24T11:43:55.447364Z",
+      "data_cutoff": "2026-09-28T13:51:42.574958Z",
       "observations": [
         {
           "metric_name": "assets",
@@ -1053,7 +1053,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
             "published_at": null,
             "as_of": "2026-06-27T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -1076,7 +1076,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
             "published_at": null,
             "as_of": "2026-06-27T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -1099,7 +1099,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
             "published_at": null,
             "as_of": "2026-06-27T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -1122,7 +1122,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
             "published_at": null,
             "as_of": "2026-06-27T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -1145,7 +1145,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
             "published_at": null,
             "as_of": "2026-06-27T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -1168,7 +1168,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
             "published_at": null,
             "as_of": "2026-06-27T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -1191,7 +1191,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
             "published_at": null,
             "as_of": "2026-06-27T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -1214,7 +1214,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
             "published_at": null,
             "as_of": "2026-06-27T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -1237,7 +1237,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
             "published_at": null,
             "as_of": "2026-06-27T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -1260,7 +1260,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
             "published_at": null,
             "as_of": "2026-06-27T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -1283,7 +1283,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
             "published_at": null,
             "as_of": "2026-06-27T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -1306,7 +1306,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
             "published_at": null,
             "as_of": "2026-06-27T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -1509,7 +1509,7 @@
       "event_time": "2026-08-06T00:00:00-04:00",
       "publication_date": "2026-08-05",
       "publication_precision": "date",
-      "data_cutoff": "2026-09-24T11:43:55.447364Z",
+      "data_cutoff": "2026-09-28T13:51:42.574958Z",
       "observations": [
         {
           "metric_name": "capital_expenditures",
@@ -1623,7 +1623,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
             "published_at": null,
             "as_of": "2025-06-28T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -1646,7 +1646,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
             "published_at": null,
             "as_of": "2025-06-28T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -1669,7 +1669,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
             "published_at": null,
             "as_of": "2025-06-28T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -1848,7 +1848,7 @@
       "event_time": "2026-08-06T00:00:00-04:00",
       "publication_date": "2026-08-05",
       "publication_precision": "date",
-      "data_cutoff": "2026-09-24T11:43:55.447364Z",
+      "data_cutoff": "2026-09-28T13:51:42.574958Z",
       "observations": [
         {
           "metric_name": "assets",
@@ -1932,7 +1932,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
             "published_at": null,
             "as_of": "2025-12-27T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -1955,7 +1955,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
             "published_at": null,
             "as_of": "2025-12-27T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -2113,7 +2113,7 @@
       "event_time": "2026-08-06T00:00:00-04:00",
       "publication_date": "2026-08-05",
       "publication_precision": "date",
-      "data_cutoff": "2026-09-24T11:43:55.447364Z",
+      "data_cutoff": "2026-09-28T13:51:42.574958Z",
       "observations": [
         {
           "metric_name": "assets",
@@ -2467,7 +2467,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
             "published_at": null,
             "as_of": "2026-06-27T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -2490,7 +2490,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
             "published_at": null,
             "as_of": "2026-06-27T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -2513,7 +2513,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
             "published_at": null,
             "as_of": "2026-06-27T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -2536,7 +2536,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
             "published_at": null,
             "as_of": "2026-06-27T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -2559,7 +2559,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
             "published_at": null,
             "as_of": "2026-06-27T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -2582,7 +2582,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
             "published_at": null,
             "as_of": "2026-06-27T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -2605,7 +2605,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
             "published_at": null,
             "as_of": "2026-06-27T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -2628,7 +2628,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
             "published_at": null,
             "as_of": "2026-06-27T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -2651,7 +2651,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
             "published_at": null,
             "as_of": "2026-06-27T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -2674,7 +2674,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
             "published_at": null,
             "as_of": "2026-06-27T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -2697,7 +2697,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
             "published_at": null,
             "as_of": "2026-06-27T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -2900,7 +2900,7 @@
       "event_time": "2026-09-11T00:00:00-04:00",
       "publication_date": "2026-09-10",
       "publication_precision": "date",
-      "data_cutoff": "2026-09-24T11:43:55.447364Z",
+      "data_cutoff": "2026-09-28T13:51:42.574958Z",
       "observations": [
         {
           "metric_name": "capital_expenditures",
@@ -3014,7 +3014,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
             "published_at": null,
             "as_of": "2025-08-03T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -3037,7 +3037,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
             "published_at": null,
             "as_of": "2025-08-03T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -3060,7 +3060,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
             "published_at": null,
             "as_of": "2025-08-03T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -3239,7 +3239,7 @@
       "event_time": "2026-09-11T00:00:00-04:00",
       "publication_date": "2026-09-10",
       "publication_precision": "date",
-      "data_cutoff": "2026-09-24T11:43:55.447364Z",
+      "data_cutoff": "2026-09-28T13:51:42.574958Z",
       "observations": [
         {
           "metric_name": "assets",
@@ -3353,7 +3353,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
             "published_at": null,
             "as_of": "2025-11-02T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -3376,7 +3376,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
             "published_at": null,
             "as_of": "2025-11-02T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -3399,7 +3399,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
             "published_at": null,
             "as_of": "2025-11-02T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -3557,7 +3557,7 @@
       "event_time": "2026-09-11T00:00:00-04:00",
       "publication_date": "2026-09-10",
       "publication_precision": "date",
-      "data_cutoff": "2026-09-24T11:43:55.447364Z",
+      "data_cutoff": "2026-09-28T13:51:42.574958Z",
       "observations": [
         {
           "metric_name": "assets",
@@ -3911,7 +3911,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
             "published_at": null,
             "as_of": "2026-08-02T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -3934,7 +3934,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
             "published_at": null,
             "as_of": "2026-08-02T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -3957,7 +3957,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
             "published_at": null,
             "as_of": "2026-08-02T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -3980,7 +3980,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
             "published_at": null,
             "as_of": "2026-08-02T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -4003,7 +4003,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
             "published_at": null,
             "as_of": "2026-08-02T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -4026,7 +4026,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
             "published_at": null,
             "as_of": "2026-08-02T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -4049,7 +4049,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
             "published_at": null,
             "as_of": "2026-08-02T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -4072,7 +4072,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
             "published_at": null,
             "as_of": "2026-08-02T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -4095,7 +4095,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
             "published_at": null,
             "as_of": "2026-08-02T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -4118,7 +4118,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
             "published_at": null,
             "as_of": "2026-08-02T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -4141,7 +4141,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
             "published_at": null,
             "as_of": "2026-08-02T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -4344,7 +4344,7 @@
       "event_time": "2026-07-31T00:00:00-04:00",
       "publication_date": "2026-07-30",
       "publication_precision": "date",
-      "data_cutoff": "2026-09-24T11:43:55.447364Z",
+      "data_cutoff": "2026-09-28T13:51:42.574958Z",
       "observations": [
         {
           "metric_name": "capital_expenditures",
@@ -4458,7 +4458,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
             "published_at": null,
             "as_of": "2025-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -4481,7 +4481,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
             "published_at": null,
             "as_of": "2025-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -4504,7 +4504,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
             "published_at": null,
             "as_of": "2025-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -4683,7 +4683,7 @@
       "event_time": "2026-07-31T00:00:00-04:00",
       "publication_date": "2026-07-30",
       "publication_precision": "date",
-      "data_cutoff": "2026-09-24T11:43:55.447364Z",
+      "data_cutoff": "2026-09-28T13:51:42.574958Z",
       "observations": [
         {
           "metric_name": "assets",
@@ -4797,7 +4797,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
             "published_at": null,
             "as_of": "2025-12-31T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -4820,7 +4820,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
             "published_at": null,
             "as_of": "2025-12-31T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -4843,7 +4843,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
             "published_at": null,
             "as_of": "2025-12-31T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -5001,7 +5001,7 @@
       "event_time": "2026-07-31T00:00:00-04:00",
       "publication_date": "2026-07-30",
       "publication_precision": "date",
-      "data_cutoff": "2026-09-24T11:43:55.447364Z",
+      "data_cutoff": "2026-09-28T13:51:42.574958Z",
       "observations": [
         {
           "metric_name": "assets",
@@ -5355,7 +5355,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
             "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -5378,7 +5378,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
             "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -5401,7 +5401,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
             "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -5424,7 +5424,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
             "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -5447,7 +5447,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
             "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -5470,7 +5470,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
             "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -5493,7 +5493,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
             "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -5516,7 +5516,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
             "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -5539,7 +5539,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
             "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -5562,7 +5562,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
             "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -5585,7 +5585,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
             "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -5778,7 +5778,7 @@
       "event_time": "2026-07-30T00:00:00-04:00",
       "publication_date": "2026-07-29",
       "publication_precision": "date",
-      "data_cutoff": "2026-09-24T11:43:55.447364Z",
+      "data_cutoff": "2026-09-28T13:51:42.574958Z",
       "observations": [
         {
           "metric_name": "assets",
@@ -6162,7 +6162,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
             "published_at": null,
             "as_of": "2025-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -6185,7 +6185,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
             "published_at": null,
             "as_of": "2025-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -6208,7 +6208,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
             "published_at": null,
             "as_of": "2025-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -6231,7 +6231,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
             "published_at": null,
             "as_of": "2025-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -6254,7 +6254,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
             "published_at": null,
             "as_of": "2025-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -6277,7 +6277,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
             "published_at": null,
             "as_of": "2025-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -6300,7 +6300,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
             "published_at": null,
             "as_of": "2025-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -6323,7 +6323,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
             "published_at": null,
             "as_of": "2025-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -6346,7 +6346,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
             "published_at": null,
             "as_of": "2025-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -6369,7 +6369,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
             "published_at": null,
             "as_of": "2025-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -6392,7 +6392,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
             "published_at": null,
             "as_of": "2025-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -6415,7 +6415,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
             "published_at": null,
             "as_of": "2025-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -6618,7 +6618,7 @@
       "event_time": "2026-07-30T00:00:00-04:00",
       "publication_date": "2026-07-29",
       "publication_precision": "date",
-      "data_cutoff": "2026-09-24T11:43:55.447364Z",
+      "data_cutoff": "2026-09-28T13:51:42.574958Z",
       "observations": [
         {
           "metric_name": "assets",
@@ -7002,7 +7002,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
             "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -7025,7 +7025,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
             "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -7048,7 +7048,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
             "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -7071,7 +7071,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
             "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -7094,7 +7094,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
             "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -7117,7 +7117,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
             "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -7140,7 +7140,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
             "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -7163,7 +7163,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
             "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -7186,7 +7186,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
             "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -7209,7 +7209,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
             "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -7232,7 +7232,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
             "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -7255,7 +7255,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
             "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -7458,7 +7458,7 @@
       "event_time": "2026-08-27T00:00:00-04:00",
       "publication_date": "2026-08-26",
       "publication_precision": "date",
-      "data_cutoff": "2026-09-24T11:43:55.447364Z",
+      "data_cutoff": "2026-09-28T13:51:42.574958Z",
       "observations": [
         {
           "metric_name": "operating_cash_flow",
@@ -7542,7 +7542,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
             "published_at": null,
             "as_of": "2025-07-27T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -7565,7 +7565,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
             "published_at": null,
             "as_of": "2025-07-27T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -7737,7 +7737,7 @@
       "event_time": "2026-08-27T00:00:00-04:00",
       "publication_date": "2026-08-26",
       "publication_precision": "date",
-      "data_cutoff": "2026-09-24T11:43:55.447364Z",
+      "data_cutoff": "2026-09-28T13:51:42.574958Z",
       "observations": [
         {
           "metric_name": "assets",
@@ -7851,7 +7851,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
             "published_at": null,
             "as_of": "2026-01-25T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -7874,7 +7874,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
             "published_at": null,
             "as_of": "2026-01-25T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -7897,7 +7897,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
             "published_at": null,
             "as_of": "2026-01-25T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -8055,7 +8055,7 @@
       "event_time": "2026-08-27T00:00:00-04:00",
       "publication_date": "2026-08-26",
       "publication_precision": "date",
-      "data_cutoff": "2026-09-24T11:43:55.447364Z",
+      "data_cutoff": "2026-09-28T13:51:42.574958Z",
       "observations": [
         {
           "metric_name": "assets",
@@ -8379,7 +8379,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
             "published_at": null,
             "as_of": "2026-07-26T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -8402,7 +8402,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
             "published_at": null,
             "as_of": "2026-07-26T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -8425,7 +8425,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
             "published_at": null,
             "as_of": "2026-07-26T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -8448,7 +8448,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
             "published_at": null,
             "as_of": "2026-07-26T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -8471,7 +8471,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
             "published_at": null,
             "as_of": "2026-07-26T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -8494,7 +8494,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
             "published_at": null,
             "as_of": "2026-07-26T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -8517,7 +8517,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
             "published_at": null,
             "as_of": "2026-07-26T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -8540,7 +8540,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
             "published_at": null,
             "as_of": "2026-07-26T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -8563,7 +8563,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
             "published_at": null,
             "as_of": "2026-07-26T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -8586,7 +8586,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
             "published_at": null,
             "as_of": "2026-07-26T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -8772,7 +8772,7 @@
       "event_time": "2026-08-05T00:00:00-04:00",
       "publication_date": "2026-08-04",
       "publication_precision": "date",
-      "data_cutoff": "2026-09-24T11:43:55.447364Z",
+      "data_cutoff": "2026-09-28T13:51:42.574958Z",
       "observations": [
         {
           "metric_name": "capital_expenditures",
@@ -8886,7 +8886,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
             "published_at": null,
             "as_of": "2025-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -8909,7 +8909,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
             "published_at": null,
             "as_of": "2025-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -8932,7 +8932,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
             "published_at": null,
             "as_of": "2025-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -9111,7 +9111,7 @@
       "event_time": "2026-08-05T00:00:00-04:00",
       "publication_date": "2026-08-04",
       "publication_precision": "date",
-      "data_cutoff": "2026-09-24T11:43:55.447364Z",
+      "data_cutoff": "2026-09-28T13:51:42.574958Z",
       "observations": [
         {
           "metric_name": "assets",
@@ -9225,7 +9225,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
             "published_at": null,
             "as_of": "2025-12-31T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -9248,7 +9248,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
             "published_at": null,
             "as_of": "2025-12-31T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -9271,7 +9271,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
             "published_at": null,
             "as_of": "2025-12-31T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -9429,7 +9429,7 @@
       "event_time": "2026-08-05T00:00:00-04:00",
       "publication_date": "2026-08-04",
       "publication_precision": "date",
-      "data_cutoff": "2026-09-24T11:43:55.447364Z",
+      "data_cutoff": "2026-09-28T13:51:42.574958Z",
       "observations": [
         {
           "metric_name": "assets",
@@ -9813,7 +9813,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
             "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -9836,7 +9836,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
             "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -9859,7 +9859,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
             "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -9882,7 +9882,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
             "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -9905,7 +9905,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
             "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -9928,7 +9928,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
             "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -9951,7 +9951,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
             "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -9974,7 +9974,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
             "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -9997,7 +9997,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
             "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -10020,7 +10020,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
             "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -10043,7 +10043,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
             "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [
@@ -10066,7 +10066,7 @@
             "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json",
             "published_at": null,
             "as_of": "2026-06-30T00:00:00Z",
-            "retrieved_at": "2026-09-24T11:43:55.447364Z",
+            "retrieved_at": "2026-09-28T13:51:42.574958Z",
             "semantics": "delayed",
             "license_note": null,
             "affected_symbols": [

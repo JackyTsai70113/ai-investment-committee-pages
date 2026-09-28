@@ -1,7 +1,7 @@
 {
   "schema_version": "public-normalized-1.0",
   "status": "hypothetical",
-  "updated_at": "2026-09-24T11:43:55.447364+00:00",
+  "updated_at": "2026-09-28T13:51:42.574958+00:00",
   "basis": "percent_return_from_initial_simulated_index",
   "cash_methodology": "正式模擬現金採明示零息假設；影子機會成本不代表券商實得利率。",
   "cash_carry_points": [
@@ -33,6 +33,12 @@
       "shadow_return_percent": "3.7659979212732160267308763",
       "method_id": "cash-carry-v2-24457322ca738657e00630a5b88c19232c9f78f4048854fd8432e7265dd60747",
       "max_observation_age_days": 7,
+      "status": "fallback_non_interest",
+      "gap_reasons": [
+        "缺少當時已可用的可靠利率，該區間明示毛收益零息並扣已知年費；未補Fed目標或券商收益。"
+      ],
+      "product_assumption": "正式模擬現金維持明示零息；短期國債參考僅為影子機會成本，不代表券商實得利率或持有國債產品。",
+      "note": "v2影子序列以100起算，評價只標記應計，跨UTC日才再投資；既有歷史績效不重算，名義權重參考貢獻不等於持倉實際應計歸因。",
       "gold_context": {
         "version": "1.0",
         "mode": "shadow",
@@ -42,12 +48,9 @@
         "real_10y_percent_per_annum": null,
         "nominal_status": "unknown",
         "real_status": "unknown",
-        "reference_ids": [],
-        "source_urls": [],
         "assumption": "正式現金維持零息；短期國債僅為影子機會成本，不是券商實得利率或預期報酬。",
         "gold_limitations": "黃金沒有票息；實質利率、美元、能源與流動性需共同評估，不能宣稱必然避險。"
       },
-      "status": "fallback_non_interest",
       "segments": [
         {
           "starts_at": "2026-09-17T15:05:00.173555Z",
@@ -59,8 +62,6 @@
           "year_fraction": "0.001017878819285895484525621512",
           "annual_fee_fraction": "0",
           "observation_id": null,
-          "source_url": null,
-          "source_ref": null,
           "available_at": null,
           "first_observed_at": null,
           "effective_date": null,
@@ -76,8 +77,6 @@
           "year_fraction": "0.002739726027397260273972602740",
           "annual_fee_fraction": "0",
           "observation_id": null,
-          "source_url": null,
-          "source_ref": null,
           "available_at": null,
           "first_observed_at": null,
           "effective_date": null,
@@ -93,8 +92,6 @@
           "year_fraction": "0.002739726027397260273972602740",
           "annual_fee_fraction": "0",
           "observation_id": null,
-          "source_url": null,
-          "source_ref": null,
           "available_at": null,
           "first_observed_at": null,
           "effective_date": null,
@@ -110,8 +107,6 @@
           "year_fraction": "0.002739726027397260273972602740",
           "annual_fee_fraction": "0",
           "observation_id": null,
-          "source_url": null,
-          "source_ref": null,
           "available_at": null,
           "first_observed_at": null,
           "effective_date": null,
@@ -127,8 +122,6 @@
           "year_fraction": "0.002739726027397260273972602740",
           "annual_fee_fraction": "0",
           "observation_id": null,
-          "source_url": null,
-          "source_ref": null,
           "available_at": null,
           "first_observed_at": null,
           "effective_date": null,
@@ -144,8 +137,6 @@
           "year_fraction": "0.002739726027397260273972602740",
           "annual_fee_fraction": "0",
           "observation_id": null,
-          "source_url": null,
-          "source_ref": null,
           "available_at": null,
           "first_observed_at": null,
           "effective_date": null,
@@ -161,8 +152,6 @@
           "year_fraction": "0.002739726027397260273972602740",
           "annual_fee_fraction": "0",
           "observation_id": null,
-          "source_url": null,
-          "source_ref": null,
           "available_at": null,
           "first_observed_at": null,
           "effective_date": null,
@@ -178,19 +167,138 @@
           "year_fraction": "0.001339277250253678335870116692",
           "annual_fee_fraction": "0",
           "observation_id": null,
-          "source_url": null,
-          "source_ref": null,
           "available_at": null,
           "first_observed_at": null,
           "effective_date": null,
           "availability_basis": null
         }
-      ],
+      ]
+    },
+    {
+      "version": "2.0",
+      "run_id": "learning-20260928T135343Z",
+      "as_of": "2026-09-28T13:51:42.574958Z",
+      "interval_start": "2026-09-24T11:43:55.447364Z",
+      "baseline_mode": "non_interest",
+      "parallel_mode": "treasury_reference",
+      "mode": "shadow",
+      "cash_weight": "0.0872373806000187446846657919",
+      "cash_return_fraction": "0",
+      "cash_contribution_fraction": "0E-28",
+      "cash_accrual_contribution_fraction": "0E-32",
+      "accrual_state": {
+        "version": "1.0",
+        "as_of": "2026-09-28T13:51:42.574958Z",
+        "utc_day": "2026-09-28",
+        "declared_cash_weight": "0.0872373806000187446846657919",
+        "cash_principal_index": "9.052273853998865444020006714",
+        "cash_accrued_interest_index": "0E-57",
+        "non_cash_index": "94.27388273508466866080611800",
+        "benchmark_cash_principal_index": "100.0000000000000000000000000",
+        "benchmark_cash_accrued_interest_index": "0E-55",
+        "holding_path_notes": [
+          "明示目標權重改變：只調整未含當日應計利息的影子資本；不代表成交，不提前再投資利息。"
+        ]
+      },
+      "shadow_index": "103.3261565890835341048261247",
+      "shadow_return_percent": "3.3261565890835341048261247",
+      "method_id": "cash-carry-v2-24457322ca738657e00630a5b88c19232c9f78f4048854fd8432e7265dd60747",
+      "max_observation_age_days": 7,
+      "status": "fallback_non_interest",
       "gap_reasons": [
         "缺少當時已可用的可靠利率，該區間明示毛收益零息並扣已知年費；未補Fed目標或券商收益。"
       ],
       "product_assumption": "正式模擬現金維持明示零息；短期國債參考僅為影子機會成本，不代表券商實得利率或持有國債產品。",
-      "note": "v2影子序列以100起算，評價只標記應計，跨UTC日才再投資；既有歷史績效不重算，名義權重參考貢獻不等於持倉實際應計歸因。"
+      "note": "v2影子序列以100起算，評價只標記應計，跨UTC日才再投資；既有歷史績效不重算，名義權重參考貢獻不等於持倉實際應計歸因。",
+      "gold_context": {
+        "version": "1.0",
+        "mode": "shadow",
+        "data_cutoff": "2026-09-28T13:51:42.574958Z",
+        "cash_baseline_mode": "non_interest",
+        "nominal_3m_percent_per_annum": null,
+        "real_10y_percent_per_annum": null,
+        "nominal_status": "unknown",
+        "real_status": "unknown",
+        "assumption": "正式現金維持零息；短期國債僅為影子機會成本，不是券商實得利率或預期報酬。",
+        "gold_limitations": "黃金沒有票息；實質利率、美元、能源與流動性需共同評估，不能宣稱必然避險。"
+      },
+      "segments": [
+        {
+          "starts_at": "2026-09-24T11:43:55.447364Z",
+          "ends_at": "2026-09-25T00:00:00Z",
+          "status": "fallback_non_interest",
+          "annual_rate_fraction": null,
+          "cash_return_fraction": "0E-30",
+          "day_count": "ACT/365F",
+          "year_fraction": "0.001400448777143581938102486048",
+          "annual_fee_fraction": "0",
+          "observation_id": null,
+          "available_at": null,
+          "first_observed_at": null,
+          "effective_date": null,
+          "availability_basis": null
+        },
+        {
+          "starts_at": "2026-09-25T00:00:00Z",
+          "ends_at": "2026-09-26T00:00:00Z",
+          "status": "fallback_non_interest",
+          "annual_rate_fraction": null,
+          "cash_return_fraction": "0E-30",
+          "day_count": "ACT/365F",
+          "year_fraction": "0.002739726027397260273972602740",
+          "annual_fee_fraction": "0",
+          "observation_id": null,
+          "available_at": null,
+          "first_observed_at": null,
+          "effective_date": null,
+          "availability_basis": null
+        },
+        {
+          "starts_at": "2026-09-26T00:00:00Z",
+          "ends_at": "2026-09-27T00:00:00Z",
+          "status": "fallback_non_interest",
+          "annual_rate_fraction": null,
+          "cash_return_fraction": "0E-30",
+          "day_count": "ACT/365F",
+          "year_fraction": "0.002739726027397260273972602740",
+          "annual_fee_fraction": "0",
+          "observation_id": null,
+          "available_at": null,
+          "first_observed_at": null,
+          "effective_date": null,
+          "availability_basis": null
+        },
+        {
+          "starts_at": "2026-09-27T00:00:00Z",
+          "ends_at": "2026-09-28T00:00:00Z",
+          "status": "fallback_non_interest",
+          "annual_rate_fraction": null,
+          "cash_return_fraction": "0E-30",
+          "day_count": "ACT/365F",
+          "year_fraction": "0.002739726027397260273972602740",
+          "annual_fee_fraction": "0",
+          "observation_id": null,
+          "available_at": null,
+          "first_observed_at": null,
+          "effective_date": null,
+          "availability_basis": null
+        },
+        {
+          "starts_at": "2026-09-28T00:00:00Z",
+          "ends_at": "2026-09-28T13:51:42.574958Z",
+          "status": "fallback_non_interest",
+          "annual_rate_fraction": null,
+          "cash_return_fraction": "0E-30",
+          "day_count": "ACT/365F",
+          "year_fraction": "0.001582400271372399797057331304",
+          "annual_fee_fraction": "0",
+          "observation_id": null,
+          "available_at": null,
+          "first_observed_at": null,
+          "effective_date": null,
+          "availability_basis": null
+        }
+      ]
     }
   ],
   "methodology": "公開績效只發布相對起始模擬指數的報酬率，不發布或依賴固定美元本金。讀者在頁面輸入的本金只用於本機換算，不改變此績效序列。",
@@ -470,6 +578,21 @@
         "GLD": "0.1115220417417375475448912229",
         "META": "0.1877400522353664157320632970",
         "NVDA": "0.3063320251213936879937801738",
+        "PLTR": "0.08211008533638737971200715094"
+      }
+    },
+    {
+      "as_of": "2026-09-28T13:51:42.574958+00:00",
+      "run_id": "learning-20260928T135343Z",
+      "price_session": "2026-09-28",
+      "return_percent": "2.3312",
+      "note": "依上一輪建議權重與最新可得行情計算；假設績效，不代表實際成交。",
+      "target_weights": {
+        "AVGO": "0.2278588620883904337583858248",
+        "CASH": "0.0872373806000187446846657919",
+        "GLD": "0.1115220417417375475448912229",
+        "META": "0.1877400522353664157320632970",
+        "NVDA": "0.3035315779980994785679867125",
         "PLTR": "0.08211008533638737971200715094"
       }
     }

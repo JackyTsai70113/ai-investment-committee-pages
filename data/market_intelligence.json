@@ -1,7 +1,8 @@
 {
   "schema_version": "1.0",
-  "run_id": "20260924T114411Z",
-  "data_cutoff": "2026-09-24T11:43:55.447364Z",
+  "run_id": "20260928T135200Z",
+  "data_cutoff": "2026-09-28T13:51:42.574958Z",
+  "market_driver_context_mode": "shadow_only",
   "peer_universe": {
     "theme": "已蒐集市場研究",
     "sector": "跨產業",
@@ -169,11 +170,13 @@
   "geopolitical_risks": [],
   "ideas_shortlist": [],
   "source_observations": [],
+  "market_drivers": [],
   "diagnostics": [
     "competition: 已保留來源觀察，但缺少可比的競爭地位與價值鏈分析。",
     "valuation: 缺少同期間及會計口徑的可追溯估值數值。",
     "concentration: 缺少營收、客戶或供應鏈共同曝險的可追溯分析。",
     "catalyst: 缺少可核實事件時間與影響的催化資料。",
-    "ideas: 缺少完整可反證論點與估值依據，未產生候選建議。"
+    "ideas: 缺少完整可反證論點與估值依據，未產生候選建議。",
+    "market_drivers: 本輪沒有達到來源與分類門檻的市場主線；不以缺資料推導多空。"
   ]
 }
