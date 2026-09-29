@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "journal_id": "generation-20260928T135200Z",
-  "generated_at": "2026-09-28T13:54:00.807776Z",
-  "data_cutoff": "2026-09-28T13:51:42.574958Z",
+  "journal_id": "generation-20260929T125104Z",
+  "generated_at": "2026-09-29T12:52:40.289830Z",
+  "data_cutoff": "2026-09-29T12:50:46.798415Z",
   "readiness": "not_ready_for_event_driven_trading",
   "readiness_summary": "先看市場走勢，再看模擬配置比例與風險；需要調整時，會把原因說清楚。",
   "performance": {

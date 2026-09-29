@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-28T13:54:00.807776Z",
-  "data_cutoff": "2026-09-28T13:51:42.574958Z",
+  "generated_at": "2026-09-29T12:52:40.289830Z",
+  "data_cutoff": "2026-09-29T12:50:46.798415Z",
   "portfolio_health": {
     "score": 60,
     "grade": "caution",

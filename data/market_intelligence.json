@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "run_id": "20260928T135200Z",
-  "data_cutoff": "2026-09-28T13:51:42.574958Z",
+  "run_id": "20260929T125104Z",
+  "data_cutoff": "2026-09-29T12:50:46.798415Z",
   "market_driver_context_mode": "shadow_only",
   "peer_universe": {
     "theme": "已蒐集市場研究",
