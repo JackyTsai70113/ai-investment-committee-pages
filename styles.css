@@ -390,63 +390,47 @@ a {
   color: var(--acid);
 }
 
-.info-popover {
-  display: inline-block;
-  position: relative;
+.info-trigger {
+  display: inline-grid;
   margin-inline-start: 0.3rem;
   vertical-align: middle;
-}
-
-.info-popover summary {
-  display: inline-grid;
+  padding: 0;
   place-items: center;
-  width: 1.75rem;
-  height: 1.75rem;
+  width: 1.5rem;
+  height: 1.5rem;
   border: 0;
   border-radius: 50%;
   background: transparent;
-  color: var(--muted);
+  color: var(--blue);
   cursor: pointer;
-  line-height: 1;
-  list-style: none;
-}
-
-.info-popover summary::-webkit-details-marker {
-  display: none;
 }
 
 .info-mark {
-  display: inline-grid;
-  width: 1.2rem;
-  height: 1.2rem;
-  place-items: center;
-  border: 1px solid currentColor;
-  border-radius: 50%;
-  font-family: ui-sans-serif, system-ui, sans-serif;
-  font-size: 0.76rem;
-  font-weight: 700;
-  line-height: 1;
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
-.info-popover summary:hover .info-mark,
-.info-popover[open] summary .info-mark {
-  border-color: var(--ink);
-  background: rgb(240 245 234 / 8%);
-  color: var(--ink);
+.info-trigger:hover,
+.info-trigger[aria-expanded="true"] {
+  color: var(--acid);
 }
 
-.info-popover summary:focus-visible {
+.info-trigger:focus-visible {
   outline: 2px solid var(--blue);
   outline-offset: 2px;
 }
 
-.info-popover-content {
-  position: absolute;
-  z-index: 10;
-  inset-inline-start: 0;
-  inset-block-start: calc(100% + 0.5rem);
-  width: min(19rem, 75vw);
-  padding: 0.7rem 0.8rem;
+.dashboard-tooltip {
+  position: fixed;
+  z-index: 10000;
+  box-sizing: border-box;
+  padding: 0.75rem 0.9rem;
   border: 1px solid var(--line);
   border-radius: 0.65rem;
   background: var(--panel);
@@ -455,6 +439,13 @@ a {
   font-size: 0.8rem;
   font-weight: 500;
   line-height: 1.55;
+  overflow-y: auto;
+  overflow-wrap: anywhere;
+  pointer-events: none;
+}
+
+.dashboard-tooltip[hidden] {
+  display: none;
 }
 
 .pill {
@@ -4069,30 +4060,6 @@ td {
 .macro-scenario li { margin: 8px 0; overflow-wrap: anywhere; }
 .macro-scenario summary:focus-visible { outline: 2px solid var(--acid); outline-offset: 2px; }
 
-.freshness-banner {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  margin: 0 0 1.25rem;
-  padding: 1rem 1.25rem;
-  border: 1px solid var(--line, #55615d);
-  border-radius: 1rem;
-  background: var(--panel, #161e1b);
-}
-.freshness-copy { min-width: 0; flex: 1; }
-.freshness-copy h2 { font-size: 1rem; margin: 0 0 .5rem; }
-.freshness-copy p { font-size: .85rem; line-height: 1.65; overflow-wrap: anywhere; }
-.freshness-copy dl { display: flex; flex-wrap: wrap; gap: .65rem 1.5rem; margin: .75rem 0; }
-.freshness-copy dl div { min-width: 0; }
-.freshness-copy dt { font-size: .75rem; color: var(--muted, #b1beb6); }
-.freshness-copy dd { margin: .25rem 0; font-size: .85rem; overflow-wrap: anywhere; }
-.freshness-links { display: flex; flex-wrap: wrap; gap: .75rem; font-size: .85rem; }
-.freshness-banner button { flex-shrink: 0; min-height: 44px; padding: .5rem .75rem; border: 1px solid #9cae9f; border-radius: .5rem; color: #edf5ed; background: #26382c; cursor: pointer; }
-@media (hover: hover) {
-  .freshness-banner button:hover:not(:disabled) { border-color: #d3f795; background: #314b39; }
-}
-.freshness-banner button:disabled { cursor: wait; opacity: .72; }
-.freshness-banner button:focus-visible, .freshness-links a:focus-visible { outline: 3px solid #d3f795; outline-offset: 3px; }
 
 .market-driver-panel,
 .market-driver-card,
@@ -4119,9 +4086,6 @@ td {
 .market-driver-empty { padding: 1rem; border: 1px dashed var(--line, #55615d); border-radius: .75rem; line-height: 1.7; }
 
 @media (max-width: 767px) {
-  .freshness-banner { flex-direction: column; padding: .9rem; }
-  .freshness-copy dl { flex-direction: column; gap: .6rem; }
-  .freshness-banner button { width: 100%; }
   .market-drivers-grid, .position-driver-grid { grid-template-columns: minmax(0, 1fr); }
   .market-driver-card summary { padding: .85rem; }
   .market-driver-content { padding: 0 .85rem .85rem; }

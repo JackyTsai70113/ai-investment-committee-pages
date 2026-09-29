@@ -1,5 +1,5 @@
 {
-  "build_code_commit": "ce2a94a890f3b16f8d9eb4f4fa542e0c97b5a1f4",
+  "build_code_commit": "6e5e854cf15ff09a8677b0419380552de51c6019",
   "data_cutoff": "2026-09-29T12:50:46.798415+00:00",
   "files": {
     "agent_profiles.json": {
@@ -29,10 +29,6 @@
     "extension_earnings_reviews.json": {
       "bytes": 357600,
       "sha256": "39b5b59d4f2834207b37ac4c717b9fd47984bee073377a64d56f452f37e8fe0c"
-    },
-    "freshness_calendar.json": {
-      "bytes": 3363,
-      "sha256": "ce7ff94c740ecd88e668f110493a0fed64de48a4e6b198c033ead95b4f2aeaa5"
     },
     "learning.json": {
       "bytes": 5330,

@@ -1,4 +1,3 @@
-import { installFreshness } from "./freshness.js";
 import {
   assetTypeLabel,
   dateTime,
@@ -35,6 +34,97 @@ const colors = [
   "#f3f0d8",
 ];
 const LEADERBOARD_VISIBLE_LIMIT = 5;
+
+function installInfoTooltips(root) {
+  if (root.dataset.infoTooltipsInstalled === "true") return;
+  root.dataset.infoTooltipsInstalled = "true";
+  let active = null;
+  let dismissed = null;
+  const tooltip = document.createElement("div");
+  tooltip.className = "dashboard-tooltip";
+  tooltip.id = "dashboard-tooltip";
+  tooltip.setAttribute("role", "tooltip");
+  tooltip.hidden = true;
+  document.body.append(tooltip);
+
+  const hide = () => {
+    if (!active) return;
+    const previous = active;
+    active = null;
+    tooltip.hidden = true;
+    previous.removeAttribute("aria-describedby");
+    previous.setAttribute("aria-expanded", "false");
+  };
+  const show = (element) => {
+    if (active !== element) hide();
+    dismissed = null;
+    active = element;
+    tooltip.textContent = element.dataset.tooltip || "";
+    tooltip.hidden = false;
+    element.setAttribute("aria-describedby", tooltip.id);
+    element.setAttribute("aria-expanded", "true");
+    const bounds = element.getBoundingClientRect();
+    const margin = 12;
+    const width = Math.min(320, window.innerWidth - margin * 2);
+    tooltip.style.width = `${width}px`;
+    tooltip.style.maxHeight = `${Math.max(120, window.innerHeight - margin * 2)}px`;
+    const height = tooltip.getBoundingClientRect().height;
+    const left = Math.max(margin, Math.min(bounds.left + bounds.width / 2 - width / 2, window.innerWidth - width - margin));
+    const below = bounds.bottom + 10;
+    const top = below + height <= window.innerHeight - margin
+      ? below
+      : Math.max(margin, bounds.top - height - 10);
+    tooltip.style.left = `${left}px`;
+    tooltip.style.top = `${top}px`;
+  };
+
+  let touchTrigger = null;
+  let lastPointerType = null;
+  document.addEventListener("pointerover", (event) => {
+    const trigger = event.target.closest?.(".info-trigger");
+    if (!trigger || trigger.contains(event.relatedTarget)) return;
+    if (event.pointerType === "touch") return;
+    show(trigger);
+  });
+  document.addEventListener("pointerout", (event) => {
+    const trigger = event.target.closest?.(".info-trigger");
+    if (trigger && !trigger.contains(event.relatedTarget) && document.activeElement !== trigger) hide();
+  });
+  document.addEventListener("focusin", (event) => {
+    const trigger = event.target.closest?.(".info-trigger");
+    if (trigger && trigger !== dismissed && trigger !== touchTrigger) show(trigger);
+  });
+  document.addEventListener("focusout", (event) => {
+    if (event.target.matches?.(".info-trigger")) {
+      if (dismissed === event.target) dismissed = null;
+      hide();
+    }
+  });
+  document.addEventListener("click", (event) => {
+    const trigger = event.target.closest?.(".info-trigger");
+    if (!trigger) return;
+    if (touchTrigger === trigger || lastPointerType === "touch" || event.detail === 0) {
+      if (active === trigger) hide();
+      else show(trigger);
+    } else if (active !== trigger) show(trigger);
+    touchTrigger = null;
+    lastPointerType = null;
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape" || !active) return;
+    dismissed = active;
+    hide();
+  });
+  document.addEventListener("pointerdown", (event) => {
+    lastPointerType = event.pointerType;
+    touchTrigger = event.pointerType === "touch"
+      ? event.target.closest?.(".info-trigger") || null
+      : null;
+    if (active && active !== event.target && !active.contains(event.target)) hide();
+  });
+  window.addEventListener("scroll", () => { if (active) show(active); }, true);
+  window.addEventListener("resize", () => { if (active) show(active); });
+}
 
 function createOverviewModel({
   dashboardAnalytics,
@@ -536,10 +626,7 @@ export function bootstrapDashboard(root, payload, base) {
   };
 
   const info = (label, description) => `
-    <details class="info-popover">
-      <summary aria-label="${escapeHtml(label)}說明"><span class="info-mark" aria-hidden="true">i</span></summary>
-      <span class="info-popover-content" role="tooltip">${escapeHtml(description)}</span>
-    </details>`;
+    <button type="button" class="info-trigger" data-tooltip="${escapeHtml(description)}" aria-label="${escapeHtml(label)}說明" aria-expanded="false"><svg class="info-mark" aria-hidden="true" viewBox="0 0 20 20" focusable="false" stroke-width="1.5"><circle cx="10" cy="10" r="7.25"/><path d="M10 9v5m0-8h.01"/></svg></button>`;
 
   const performanceSampleLabel = (status, intervals) => {
     if (status === "provisional")
@@ -581,8 +668,6 @@ export function bootstrapDashboard(root, payload, base) {
     rebalance,
     researchJournal,
     dashboardAnalytics,
-    freshnessCalendar,
-    healthSignal,
     thesisBook,
     earningsReviews,
     marketIntelligence,
@@ -1444,7 +1529,6 @@ export function bootstrapDashboard(root, payload, base) {
         <div class="app-content">
         <main id="dashboard-main" tabindex="-1">
         <div id="panel-overview" class="tab-panel" role="tabpanel" aria-labelledby="tab-overview" data-tab-panel="overview" tabindex="-1">
-        <section id="freshness-banner" class="freshness-banner" aria-label="研究資料更新狀態" data-tab-section="overview"></section>
         <section class="hero" data-tab-section="overview">
           <div class="hero-main">
             <span class="eyebrow">投資摘要 / ${escapeHtml(recommendation.run_id)}</span>
@@ -2197,28 +2281,7 @@ export function bootstrapDashboard(root, payload, base) {
         .forEach((section) => overviewPanel.append(section));
     }
     localizeRenderedText(root);
-    root.querySelectorAll(".info-popover").forEach((element) => {
-      let openedByHover = false;
-      element.addEventListener("pointerenter", (event) => {
-        if (event.pointerType === "mouse" && !element.open) {
-          openedByHover = true;
-          element.open = true;
-        }
-      });
-      element.addEventListener("pointerleave", () => {
-        if (openedByHover) {
-          element.open = false;
-          openedByHover = false;
-        }
-      });
-      element.addEventListener("keydown", (event) => {
-        if (event.key === "Escape" && element.open) {
-          element.open = false;
-          openedByHover = false;
-          element.querySelector("summary")?.focus();
-        }
-      });
-    });
+    installInfoTooltips(root);
     root.querySelectorAll(".table-wrap").forEach((tableWrap) => {
       tableWrap.tabIndex = 0;
     });
@@ -2271,13 +2334,6 @@ export function bootstrapDashboard(root, payload, base) {
       root,
       recommendation,
       loader.loadDecisionComparison,
-    );
-    installFreshness(
-      root,
-      recommendation,
-      freshnessCalendar,
-      healthSignal,
-      loader.loadHealthSignal,
     );
     if (root.dataset.researchExtensionsState !== "loaded"
       && root.dataset.researchExtensionsState !== "loading") {

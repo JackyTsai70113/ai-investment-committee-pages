@@ -42,16 +42,6 @@ export function createDataLoader(base) {
   const loadDecisionComparison = () =>
     fetchOptionalJson("decision_comparison.json", { immutable: true });
 
-  const loadHealthSignal = async () => {
-    try {
-      const response = await fetch(`${base}/data/public_status.json`, { cache: "no-store", signal: AbortSignal.timeout(3000) });
-      if (!response.ok) return null;
-      const text = await response.text();
-      if (new TextEncoder().encode(text).length > 12000) return null;
-      return JSON.parse(text);
-    } catch { return null; }
-  };
-
   const loadOverviewPayload = async () => {
 
   const [
@@ -65,8 +55,6 @@ export function createDataLoader(base) {
     researchJournal,
     dashboardAnalytics,
     decisionSnapshot,
-    freshnessCalendar,
-    healthSignal,
   ] = await Promise.all([
     fetchJson("recommendation.json"),
     fetchJson("committee_summary.json"),
@@ -78,12 +66,10 @@ export function createDataLoader(base) {
     fetchJson("research_journal.json"),
     fetchJson("dashboard_analytics.json"),
     fetchJson("decision_snapshot.json"),
-    fetchOptionalJson("freshness_calendar.json").catch(() => null),
-    loadHealthSignal(),
   ]);
 
     const decisionIdentity = assertDecisionIdentity(decisionSnapshot, recommendation, committee);
-    return { recommendation, committee, market, system, learning, performance, rebalance, researchJournal, dashboardAnalytics, decisionIdentity, freshnessCalendar, healthSignal, agentProfiles: {} };
+    return { recommendation, committee, market, system, learning, performance, rebalance, researchJournal, dashboardAnalytics, decisionIdentity, agentProfiles: {} };
   };
 
   const loadCommitteePayload = () => fetchJson("committee.json");
@@ -107,7 +93,6 @@ export function createDataLoader(base) {
 
   return {
     loadDecisionComparison,
-    loadHealthSignal,
     loadOverviewPayload,
     loadCommitteePayload,
     loadAgentProfiles,
