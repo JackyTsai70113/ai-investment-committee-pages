@@ -1087,11 +1087,11 @@ export function bootstrapDashboard(root, payload, base) {
         ${reportReady ? "" : `<section class="report-readiness" aria-label="報告準備狀態" data-tab-section="overview">
           <div>
             <span class="section-kicker">本輪結論</span>
-            <h2>暫不調整部位</h2>
+            <h2>本輪沒有新配置建議</h2>
           </div>
           <p>${comparison?.result === "hold_no_net_advantage"
-            ? "本輪比較後，換倉沒有足夠依據抵銷成本；暫不提出新的調整。"
-            : "本輪研究未形成可靠的新調整理由。"}</p>
+            ? "比較後，尚未證實換倉效益足以抵銷成本。"
+            : "目前研究不足以支持新的配置建議。"}</p>
           ${currentWeightsReady ? (comparison.over_limit_reviews || []).slice(0, 2).map((item) => `<p>${symbolLink(item.symbol)} 目前約 ${escapeHtml(percent(item.observed_weight))}，高於研究上限 ${escapeHtml(percent(item.policy_limit))}。</p>`).join("") : ""}
         </section>`}
 
