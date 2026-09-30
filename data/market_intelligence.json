@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "run_id": "20260929T125104Z",
-  "data_cutoff": "2026-09-29T12:50:46.798415Z",
+  "run_id": "20260930T111637Z",
+  "data_cutoff": "2026-09-30T11:16:21.569090Z",
   "market_driver_context_mode": "shadow_only",
   "peer_universe": {
     "theme": "已蒐集市場研究",
@@ -12,16 +12,16 @@
         "role": "申報公司",
         "inclusion_reason": "已有可追溯的公司申報或基本面資料。",
         "evidence_ids": [
+          "sec:AAPL:10-Q:2026-05-01:assets:instant:2026-03-28",
+          "sec:AAPL:10-Q:2026-05-01:capital_expenditures:2025-09-28:2026-03-28",
+          "sec:AAPL:10-Q:2026-05-01:cash:instant:2026-03-28",
+          "sec:AAPL:10-Q:2026-05-01:liabilities:instant:2026-03-28",
+          "sec:AAPL:10-Q:2026-05-01:operating_cash_flow:2025-09-28:2026-03-28",
+          "sec:AAPL:10-Q:2026-05-01:stock_based_compensation:2025-09-28:2026-03-28",
           "sec:AAPL:10-Q:2026-07-31:assets:instant:2026-06-27",
-          "sec:AAPL:10-Q:2026-07-31:assets:instant:2025-09-27",
           "sec:AAPL:10-Q:2026-07-31:capital_expenditures:2025-09-28:2026-06-27",
-          "sec:AAPL:10-Q:2026-07-31:capital_expenditures:2024-09-29:2025-06-28",
           "sec:AAPL:10-Q:2026-07-31:cash:instant:2026-06-27",
-          "sec:AAPL:10-Q:2026-07-31:cash:instant:2025-09-27",
-          "sec:AAPL:10-Q:2026-07-31:diluted_eps:2025-09-28:2026-06-27",
-          "sec:AAPL:10-Q:2026-07-31:diluted_eps:2026-03-29:2026-06-27",
-          "sec:AAPL:10-Q:2026-07-31:diluted_shares:2025-09-28:2026-06-27",
-          "sec:AAPL:10-Q:2026-07-31:diluted_shares:2026-03-29:2026-06-27"
+          "sec:AAPL:10-Q:2026-07-31:diluted_eps:2026-03-29:2026-06-27"
         ]
       },
       {
@@ -29,16 +29,16 @@
         "role": "申報公司",
         "inclusion_reason": "已有可追溯的公司申報或基本面資料。",
         "evidence_ids": [
+          "sec:AMD:10-Q:2026-05-06:assets:instant:2026-03-28",
+          "sec:AMD:10-Q:2026-05-06:capital_expenditures:2025-12-28:2026-03-28",
+          "sec:AMD:10-Q:2026-05-06:cash:instant:2026-03-28",
+          "sec:AMD:10-Q:2026-05-06:operating_cash_flow:2025-12-28:2026-03-28",
+          "sec:AMD:10-Q:2026-05-06:stock_based_compensation:2025-12-28:2026-03-28",
           "sec:AMD:10-Q:2026-08-05:assets:instant:2026-06-27",
-          "sec:AMD:10-Q:2026-08-05:assets:instant:2025-12-27",
           "sec:AMD:10-Q:2026-08-05:capital_expenditures:2025-12-28:2026-06-27",
-          "sec:AMD:10-Q:2026-08-05:capital_expenditures:2024-12-29:2025-06-28",
           "sec:AMD:10-Q:2026-08-05:cash:instant:2026-06-27",
-          "sec:AMD:10-Q:2026-08-05:cash:instant:2025-12-27",
-          "sec:AMD:10-Q:2026-08-05:diluted_eps:2025-12-28:2026-06-27",
           "sec:AMD:10-Q:2026-08-05:diluted_eps:2026-03-29:2026-06-27",
-          "sec:AMD:10-Q:2026-08-05:diluted_shares:2025-12-28:2026-06-27",
-          "sec:AMD:10-Q:2026-08-05:diluted_shares:2026-03-29:2026-06-27"
+          "sec:AMD:10-Q:2026-08-05:diluted_eps:2025-12-28:2026-06-27"
         ]
       },
       {
@@ -46,15 +46,15 @@
         "role": "申報公司",
         "inclusion_reason": "已有可追溯的公司申報或基本面資料。",
         "evidence_ids": [
-          "sec:AVGO:10-K:2024-12-20:net_income:2023-10-30:2024-11-03",
-          "sec:AVGO:10-K:2024-12-20:net_income:2022-10-31:2023-10-29",
+          "sec:AVGO:10-Q:2026-06-09:assets:instant:2026-05-03",
+          "sec:AVGO:10-Q:2026-06-09:capital_expenditures:2025-11-03:2026-05-03",
+          "sec:AVGO:10-Q:2026-06-09:cash:instant:2026-05-03",
+          "sec:AVGO:10-Q:2026-06-09:liabilities:instant:2026-05-03",
+          "sec:AVGO:10-Q:2026-06-09:operating_cash_flow:2025-11-03:2026-05-03",
+          "sec:AVGO:10-Q:2026-06-09:stock_based_compensation:2025-11-03:2026-05-03",
           "sec:AVGO:10-Q:2026-09-10:assets:instant:2026-08-02",
-          "sec:AVGO:10-Q:2026-09-10:assets:instant:2025-11-02",
           "sec:AVGO:10-Q:2026-09-10:capital_expenditures:2025-11-03:2026-08-02",
-          "sec:AVGO:10-Q:2026-09-10:capital_expenditures:2024-11-04:2025-08-03",
           "sec:AVGO:10-Q:2026-09-10:cash:instant:2026-08-02",
-          "sec:AVGO:10-Q:2026-09-10:cash:instant:2025-11-02",
-          "sec:AVGO:10-Q:2026-09-10:diluted_eps:2025-11-03:2026-08-02",
           "sec:AVGO:10-Q:2026-09-10:diluted_eps:2026-05-04:2026-08-02"
         ]
       },
@@ -63,16 +63,16 @@
         "role": "申報公司",
         "inclusion_reason": "已有可追溯的公司申報或基本面資料。",
         "evidence_ids": [
+          "sec:META:10-Q:2026-04-30:assets:instant:2026-03-31",
+          "sec:META:10-Q:2026-04-30:capital_expenditures:2026-01-01:2026-03-31",
+          "sec:META:10-Q:2026-04-30:cash:instant:2026-03-31",
+          "sec:META:10-Q:2026-04-30:liabilities:instant:2026-03-31",
+          "sec:META:10-Q:2026-04-30:operating_cash_flow:2026-01-01:2026-03-31",
+          "sec:META:10-Q:2026-04-30:stock_based_compensation:2026-01-01:2026-03-31",
           "sec:META:10-Q:2026-07-30:assets:instant:2026-06-30",
-          "sec:META:10-Q:2026-07-30:assets:instant:2025-12-31",
           "sec:META:10-Q:2026-07-30:capital_expenditures:2026-01-01:2026-06-30",
-          "sec:META:10-Q:2026-07-30:capital_expenditures:2025-01-01:2025-06-30",
           "sec:META:10-Q:2026-07-30:cash:instant:2026-06-30",
-          "sec:META:10-Q:2026-07-30:cash:instant:2025-12-31",
-          "sec:META:10-Q:2026-07-30:diluted_eps:2026-01-01:2026-06-30",
-          "sec:META:10-Q:2026-07-30:diluted_eps:2026-04-01:2026-06-30",
-          "sec:META:10-Q:2026-07-30:diluted_shares:2026-01-01:2026-06-30",
-          "sec:META:10-Q:2026-07-30:diluted_shares:2026-04-01:2026-06-30"
+          "sec:META:10-Q:2026-07-30:diluted_eps:2026-04-01:2026-06-30"
         ]
       },
       {
@@ -80,16 +80,16 @@
         "role": "申報公司",
         "inclusion_reason": "已有可追溯的公司申報或基本面資料。",
         "evidence_ids": [
-          "sec:MSFT:10-K:2026-07-29:assets:instant:2026-06-30",
-          "sec:MSFT:10-K:2026-07-29:assets:instant:2025-06-30",
-          "sec:MSFT:10-K:2026-07-29:capital_expenditures:2025-07-01:2026-06-30",
-          "sec:MSFT:10-K:2026-07-29:capital_expenditures:2024-07-01:2025-06-30",
-          "sec:MSFT:10-K:2026-07-29:cash:instant:2026-06-30",
-          "sec:MSFT:10-K:2026-07-29:cash:instant:2025-06-30",
-          "sec:MSFT:10-K:2026-07-29:diluted_eps:2025-07-01:2026-06-30",
-          "sec:MSFT:10-K:2026-07-29:diluted_eps:2024-07-01:2025-06-30",
-          "sec:MSFT:10-K:2026-07-29:diluted_shares:2025-07-01:2026-06-30",
-          "sec:MSFT:10-K:2026-07-29:diluted_shares:2024-07-01:2025-06-30"
+          "sec:MSFT:10-Q:2026-04-29:assets:instant:2026-03-31",
+          "sec:MSFT:10-Q:2026-04-29:capital_expenditures:2026-01-01:2026-03-31",
+          "sec:MSFT:10-Q:2026-04-29:cash:instant:2026-03-31",
+          "sec:MSFT:10-Q:2026-04-29:diluted_eps:2026-01-01:2026-03-31",
+          "sec:MSFT:10-Q:2026-04-29:diluted_shares:2026-01-01:2026-03-31",
+          "sec:MSFT:10-Q:2026-04-29:gross_profit:2026-01-01:2026-03-31",
+          "sec:MSFT:10-Q:2026-04-29:liabilities:instant:2026-03-31",
+          "sec:MSFT:10-Q:2026-04-29:net_income:2026-01-01:2026-03-31",
+          "sec:MSFT:10-Q:2026-04-29:operating_cash_flow:2026-01-01:2026-03-31",
+          "sec:MSFT:10-Q:2026-04-29:operating_income:2026-01-01:2026-03-31"
         ]
       },
       {
@@ -97,15 +97,15 @@
         "role": "申報公司",
         "inclusion_reason": "已有可追溯的公司申報或基本面資料。",
         "evidence_ids": [
+          "sec:NVDA:10-Q:2020-05-21:capital_expenditures:2020-01-27:2020-04-26",
           "sec:NVDA:10-Q:2020-08-19:capital_expenditures:2020-01-27:2020-07-26",
-          "sec:NVDA:10-Q:2020-08-19:capital_expenditures:2019-01-28:2019-07-28",
-          "sec:NVDA:10-K:2022-03-18:revenue:2021-02-01:2022-01-30",
-          "sec:NVDA:10-K:2022-03-18:revenue:2020-01-27:2021-01-31",
+          "sec:NVDA:10-Q:2026-05-20:assets:instant:2026-04-26",
+          "sec:NVDA:10-Q:2026-05-20:cash:instant:2026-04-26",
+          "sec:NVDA:10-Q:2026-05-20:liabilities:instant:2026-04-26",
+          "sec:NVDA:10-Q:2026-05-20:operating_cash_flow:2026-01-26:2026-04-26",
+          "sec:NVDA:10-Q:2026-05-20:stock_based_compensation:2026-01-26:2026-04-26",
           "sec:NVDA:10-Q:2026-08-26:assets:instant:2026-07-26",
-          "sec:NVDA:10-Q:2026-08-26:assets:instant:2026-01-25",
           "sec:NVDA:10-Q:2026-08-26:cash:instant:2026-07-26",
-          "sec:NVDA:10-Q:2026-08-26:cash:instant:2026-01-25",
-          "sec:NVDA:10-Q:2026-08-26:diluted_eps:2026-01-26:2026-07-26",
           "sec:NVDA:10-Q:2026-08-26:diluted_eps:2026-04-27:2026-07-26"
         ]
       },
@@ -114,16 +114,16 @@
         "role": "申報公司",
         "inclusion_reason": "已有可追溯的公司申報或基本面資料。",
         "evidence_ids": [
+          "sec:PLTR:10-Q:2026-05-05:assets:instant:2026-03-31",
+          "sec:PLTR:10-Q:2026-05-05:capital_expenditures:2026-01-01:2026-03-31",
+          "sec:PLTR:10-Q:2026-05-05:cash:instant:2026-03-31",
+          "sec:PLTR:10-Q:2026-05-05:liabilities:instant:2026-03-31",
+          "sec:PLTR:10-Q:2026-05-05:operating_cash_flow:2026-01-01:2026-03-31",
+          "sec:PLTR:10-Q:2026-05-05:stock_based_compensation:2026-01-01:2026-03-31",
           "sec:PLTR:10-Q:2026-08-04:assets:instant:2026-06-30",
-          "sec:PLTR:10-Q:2026-08-04:assets:instant:2025-12-31",
           "sec:PLTR:10-Q:2026-08-04:capital_expenditures:2026-01-01:2026-06-30",
-          "sec:PLTR:10-Q:2026-08-04:capital_expenditures:2025-01-01:2025-06-30",
           "sec:PLTR:10-Q:2026-08-04:cash:instant:2026-06-30",
-          "sec:PLTR:10-Q:2026-08-04:cash:instant:2025-12-31",
-          "sec:PLTR:10-Q:2026-08-04:diluted_eps:2026-01-01:2026-06-30",
-          "sec:PLTR:10-Q:2026-08-04:diluted_eps:2026-04-01:2026-06-30",
-          "sec:PLTR:10-Q:2026-08-04:diluted_shares:2026-01-01:2026-06-30",
-          "sec:PLTR:10-Q:2026-08-04:diluted_shares:2026-04-01:2026-06-30"
+          "sec:PLTR:10-Q:2026-08-04:diluted_eps:2026-04-01:2026-06-30"
         ]
       },
       {
@@ -131,16 +131,16 @@
         "role": "申報公司",
         "inclusion_reason": "已有可追溯的公司申報或基本面資料。",
         "evidence_ids": [
+          "sec:TSLA:10-Q:2026-04-23:assets:instant:2026-03-31",
+          "sec:TSLA:10-Q:2026-04-23:capital_expenditures:2026-01-01:2026-03-31",
+          "sec:TSLA:10-Q:2026-04-23:cash:instant:2026-03-31",
+          "sec:TSLA:10-Q:2026-04-23:liabilities:instant:2026-03-31",
+          "sec:TSLA:10-Q:2026-04-23:operating_cash_flow:2026-01-01:2026-03-31",
+          "sec:TSLA:10-Q:2026-04-23:stock_based_compensation:2026-01-01:2026-03-31",
           "sec:TSLA:10-Q:2026-07-23:assets:instant:2026-06-30",
-          "sec:TSLA:10-Q:2026-07-23:assets:instant:2025-12-31",
           "sec:TSLA:10-Q:2026-07-23:capital_expenditures:2026-01-01:2026-06-30",
-          "sec:TSLA:10-Q:2026-07-23:capital_expenditures:2025-01-01:2025-06-30",
           "sec:TSLA:10-Q:2026-07-23:cash:instant:2026-06-30",
-          "sec:TSLA:10-Q:2026-07-23:cash:instant:2025-12-31",
-          "sec:TSLA:10-Q:2026-07-23:diluted_eps:2026-01-01:2026-06-30",
-          "sec:TSLA:10-Q:2026-07-23:diluted_eps:2026-04-01:2026-06-30",
-          "sec:TSLA:10-Q:2026-07-23:diluted_shares:2026-01-01:2026-06-30",
-          "sec:TSLA:10-Q:2026-07-23:diluted_shares:2026-04-01:2026-06-30"
+          "sec:TSLA:10-Q:2026-07-23:diluted_eps:2026-04-01:2026-06-30"
         ]
       },
       {

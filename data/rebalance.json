@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-29T12:52:40.289830Z",
-  "pricing_cutoff": "2026-09-29T12:50:46.798415Z",
-  "pricing_session": "2026-09-28",
-  "from_run_id": "20260928T135200Z",
-  "to_run_id": "20260929T125104Z",
+  "generated_at": "2026-09-30T11:18:49.274336Z",
+  "pricing_cutoff": "2026-09-30T11:16:21.569090Z",
+  "pricing_session": "2026-09-29",
+  "from_run_id": "20260929T125104Z",
+  "to_run_id": "20260930T111637Z",
   "status": "research_only",
   "comparison_basis": "actual_to_target",
   "sizing_status": "not_requested",
@@ -12,54 +12,54 @@
   "basis": "以確認股數與現金的本輪估值為比較基準，差額股數採相同估值價格估算。",
   "instructions": [
     {
-      "symbol": "META",
+      "symbol": "NVDA",
       "action": "reduce",
-      "reference_close_usd": "715.619995",
-      "reference_price_usd": "715.619995",
+      "reference_close_usd": "227.210007",
+      "reference_price_usd": "227.210007",
       "sizing_status": "not_requested",
-      "previous_target_weight": "0.1877399885346322609488853716",
-      "new_target_weight": "0.1877403514128483050909064474",
-      "change_weight": "3.628782160441420210758E-7"
-    },
-    {
-      "symbol": "AVGO",
-      "action": "add",
-      "reference_close_usd": "349.570007",
-      "reference_price_usd": "349.570007",
-      "sizing_status": "not_requested",
-      "previous_target_weight": "0.2278588606020399701467783398",
-      "new_target_weight": "0.2278585915861557586199376268",
-      "change_weight": "-2.690158842115268407130E-7"
-    },
-    {
-      "symbol": "GLD",
-      "action": "add",
-      "reference_close_usd": "377.910004",
-      "reference_price_usd": "377.910004",
-      "sizing_status": "not_requested",
-      "previous_target_weight": "0.1115223340315910541287942976",
-      "new_target_weight": "0.1115221468606198067738206879",
-      "change_weight": "-1.871709712473549736097E-7"
+      "previous_target_weight": "0.25",
+      "new_target_weight": "0.2500004504269146296860164063",
+      "change_weight": "4.504269146296860164063E-7"
     },
     {
       "symbol": "PLTR",
       "action": "reduce",
-      "reference_close_usd": "187.479996",
-      "reference_price_usd": "187.479996",
+      "reference_close_usd": "186.970001",
+      "reference_price_usd": "186.970001",
       "sizing_status": "not_requested",
-      "previous_target_weight": "0.08210988004629412634258374586",
-      "new_target_weight": "0.08211022179573855581968464441",
-      "change_weight": "3.4174944442947710089855E-7"
+      "previous_target_weight": "0.08211022179573855581968464441",
+      "new_target_weight": "0.08211012397550398267477915568",
+      "change_weight": "-9.782023457314490548873E-8"
     },
     {
-      "symbol": "NVDA",
+      "symbol": "META",
       "action": "reduce",
-      "reference_close_usd": "228.860001",
-      "reference_price_usd": "228.860001",
+      "reference_close_usd": "738.789978",
+      "reference_price_usd": "738.789978",
       "sizing_status": "not_requested",
-      "previous_target_weight": "0.25",
-      "new_target_weight": "0.25",
-      "change_weight": "0.00"
+      "previous_target_weight": "0.1877403514128483050909064474",
+      "new_target_weight": "0.1877397397253116503822322798",
+      "change_weight": "-6.116875366547086741676E-7"
+    },
+    {
+      "symbol": "GLD",
+      "action": "add",
+      "reference_close_usd": "382.890015",
+      "reference_price_usd": "382.890015",
+      "sizing_status": "not_requested",
+      "previous_target_weight": "0.1115221468606198067738206879",
+      "new_target_weight": "0.1115221006469932201740809940",
+      "change_weight": "-4.62136265865997396939E-8"
+    },
+    {
+      "symbol": "AVGO",
+      "action": "add",
+      "reference_close_usd": "355.100006",
+      "reference_price_usd": "355.100006",
+      "sizing_status": "not_requested",
+      "previous_target_weight": "0.2278585915861557586199376268",
+      "new_target_weight": "0.2278592650113777838635458688",
+      "change_weight": "6.734252220252436082420E-7"
     },
     {
       "symbol": "CASH",
@@ -67,9 +67,9 @@
       "reference_close_usd": null,
       "reference_price_usd": null,
       "sizing_status": "not_requested",
-      "previous_target_weight": "0.1407689367854425884329582451",
-      "new_target_weight": "0.1407686883446375736956505936",
-      "change_weight": "-2.484408050147373076515E-7"
+      "previous_target_weight": "0.1407686883446375736956505936",
+      "new_target_weight": "0.1407683202138987332193452955",
+      "change_weight": "-3.681307388404763052981E-7"
     }
   ],
   "warnings": [

@@ -1,34 +1,31 @@
 {
-  "run_id": "20260929T125104Z",
+  "run_id": "20260930T111637Z",
   "mode": "live",
   "decision_origin": "model",
   "policy_override_notes": [
-    "Position-risk shadow: 5 個風險部位未量化或超過每筆 US$165.07 研究損失預算。",
+    "Position-risk shadow: 3 個風險部位未量化或超過每筆 US$166.51 研究損失預算。",
     "Position-risk aggregate gap stress exceeds configured portfolio cap."
   ],
   "role_insights": [
     {
       "agent": "macro",
       "stance": "neutral",
-      "confidence": 44,
-      "opening_statement": "我目前偏向中性偏防禦：在僅看到 rates=rising 與風險資產短線回撤、但缺少通膨/美元/油價與 Fed 可驗證更新的前提下，我更願意先保留現金與黃金的保險價值，而不是積極加碼風險資產。",
+      "confidence": 35,
+      "opening_statement": "我目前偏向中性：在「利率仍偏上行、風險資產估值面臨貼現率壓力」尚未被多日證據推翻前，我更願意以 GLD 與現金維持保險與機動，而不是用宏觀理由去追逐高報酬風險資產加碼。",
       "preferred_assets": [
-        "CASH",
         "GLD",
-        "NVDA",
-        "PLTR",
-        "META"
+        "CASH"
       ],
       "cash_preference": 0.25,
       "observations": [
-        "(利率/通膨/美元—風險資產壓力的方向性判斷屬於『偏不利』但證據不足) 本輪市場快照僅給到 regime 標記 rates=rising，且明確顯示 VIX 為 normal（但期限結構屬 stale、屬 lower-confidence fallback），因此我只能說『利率上行環境可能提高估值/流動性壓力』；但缺少同口徑的通膨與美元/實質利率序列，無法把它升級成對風險資產的決定性因果或優先排序依據。",
-        "(流動性/波動—短線風險偏『已被定價一部分』) 快照中 ^VIX 近端上行（features 顯示當日相對前日為正，且波動年化水平在指標端顯示上行），同時 SPY、IWM、DIA 多數呈現當日下跌與短期回撤（例如 SPY -0.74%、IWM -0.69%、DIA -0.67%），表示市場在風險資產端承受一定壓力；但由於波動狀態仍標記 normal、且未提供更長天期風險溢酬或信用指標，我傾向採取『保留流動性緩衝』而不是積極加碼高 beta。"
+        "就政策與流動性壓力而言，市場 regime 標記為「rates=rising、volatility=normal、trend=mixed」，且觀察到 TLT（-0.496% 當日、-4.306% 過去5日；RSI14=25.14 且距離MA20/MA50皆偏弱）呈現利率仍偏上行/價格偏弱的狀態；在缺乏完成多日事件對齊證據前，這對風險資產估值（貼現率）構成持續上方壓力，因此我不把風險資產加碼作為本輪宏觀主結論。",
+        "通膨/美元/油價的邊際訊號偏向「緩和但不夠定論」：快照中 CL=F 油價當日約 -3.48%、5日約 -5.51%，若該方向延續通常有助於降低短期通膨壓力敘事；但目前我只有油價價格動能、沒有美元與通膨/利率預期的同口徑證據，因此只能把它視為降低一部分通膨風險的背景，而不是足以推翻「rates rising」的貼現率壓力。"
       ],
       "risks": [
-        "(證據不足風險) 本輪沒有提供能直接驗證『Fed/通膨/美元/油價』當前狀態的可追溯數據（filing_events、fundamental_facts、macro_observations 為空），因此我對利率上行如何傳導到估值與流動性的強度判斷偏弱；這會直接降低主動增減的信心。"
+        "資料截止與事件對齊不足：本輪沒有提供完成的 research_evidence、也缺少完成多日聚合與 macro 變數（例如美元、實質利率、通膨預期）的同口徑證據，因此我只能從快照與 regime 的有限訊號做壓力測試；若缺口在下一輪被補齊，結論可能需要調整。"
       ],
       "invalidation_conditions": [
-        "若後續取得並在同口徑完成的證據顯示：利率上行不再成立（例如政策預期/實質利率方向明確轉折），則『以現金緩衝為主、避免進一步擴風險』的必要性下降。"
+        "若下一輪同口徑證據顯示「rates rising」已轉為明確轉折（例如長端/實質利率壓力回落）且與風險資產的多日表現一致，那麼目前偏中性的宏觀約束可被削弱，需重新評估是否要提高風險曝險而非以 GLD/CASH 為主。"
       ],
       "questions": [],
       "responses": []
@@ -36,39 +33,38 @@
     {
       "agent": "technical",
       "stance": "neutral",
-      "confidence": 42,
-      "opening_statement": "我這輪以技術面證據更偏向謹慎中性：SPY 仍在均線附近且 RSI 接近中性、風險資產分化大（IWM 過度偏弱但也不利追空），因此我會把可調整部位更多放在 CASH 與 GLD 以等待下一次趨勢確認。",
+      "confidence": 38,
+      "opening_statement": "我目前採取偏謹慎的中立立場：在本輪快照缺乏 NVDA/AVGO/META/PLTR/GLD 的可追溯技術證據下，我不主動加碼主動部位，而是提高 CASH 以等待有完成日與同標的指標支持的下一步。",
       "preferred_assets": [
-        "CASH",
-        "GLD"
+        "CASH"
       ],
-      "cash_preference": 0.65,
+      "cash_preference": 0.7,
       "observations": [
-        "以已提供的 completed regular session 日線特徵看，SPY 在 20 日均線附近（distance_from_ma20_percent=0.058352）且 RSI14=49.72 接近中性；1 日下跌約 -0.74%、5 日與 20 日累計也僅呈輕度走弱（features：return_5d_percent=-1.02、return_20d_percent=-0.49），缺乏『單邊下行趨勢』的價格證據。",
-        "風險資產內部分化明顯：QQQ 仍高於 20/50 日均線（distance_from_ma20_percent=2.029498、distance_from_ma50_percent=3.230996）且 RSI14=60.46 偏強，但單日仍下挫（-1.07%），更像是回檔/震盪而非趨勢破壞；同時 IWM 極端偏弱（distance_from_ma20_percent=-2.711216、distance_from_ma50_percent=-4.66509、RSI14=22.76），顯示小盤在承壓但也增加短線反彈的非線性機率，讓『趨勢跟隨型偏空倉位』缺乏穩定勝率基礎。"
+        "本輪唯一可用的價格/技術特徵是 SPY/QQQ/IWM/DIA/VTI/SMH；regime 被標記為 trend=mixed、rates=rising、volatility=normal，但 SPY 與 IWM/ DIA 的 1d、5d、20d 表現並不一致（SPY：1d -0.18%、20d -0.37%；IWM：20d -5.08%、RSI14=25.64；DIA：20d -3.52%、RSI14=37.55）。這使得「風險資產普遍上行」的技術敘事不足，偏向先不加碼任何需要個股/板塊方向證據的主動部位。",
+        "在 active_sleeve_symbols 中，我本輪缺少 NVDA/AVGO/META/PLTR/GLD 的 quotes 與 features（快照 features 僅覆蓋 SPY/QQQ/IWM/DIA/VTI/SMH/SOXL），因此無法依規範完成「相對於維持原倉（或既有允許部位）所需的同標的可追溯技術優勢」論證；在缺乏當輪技術證據時，最符合風控精神的選擇是提高現金占比以降低未知損失風險並保留後續證據更新彈性。"
       ],
       "risks": [
-        "GLD 與 CASH 在本輪快照中缺少可用的價格/均線/成交量 features（僅有允許配置名單與風控規則），因此我無法用同口徑技術證據判斷 GLD 是否已形成明確趨勢性支撐；這會降低對『保險價值是否正在提高』的可驗證度。"
+        "若 NVDA/AVGO/META/PLTR 在本輪未提供資料的另一來源/另一時間點實際已出現明確趨勢改善（例如重新站上 MA20/MA50且量能相對回升），本輪直接提高 CASH 可能錯過有證據支持的上行；但我目前無法用「快照中存在的 features」來確認。"
       ],
       "invalidation_conditions": [
-        "若下一個 completed regular session，SPY 與 QQQ 的價格相對 20/50 日均線的距離同向改善（distance_from_ma20_percent、distance_from_ma50_percent 同時上升）且 RSI14 明顯偏離中性區（SPY 穩定 >50 且 QQQ 維持在偏高區），則本次偏防禦（CASH/GLD）配置的必要性下降。"
+        "若下次每日檢視中，active_sleeve_symbols（NVDA/AVGO/META/PLTR/GLD）的 quotes 與 features 出現：相對於各自 MA20/MA50 的距離同步改善（由負轉正或顯著收斂）、RSI 回到更有利區間、且 volume_ratio_20d 至少不再偏弱，則提高 CASH 的理由會被削弱，需再做同標的相對優勢評估。"
       ],
       "questions": [
         {
           "reviewer": "devil_advocate",
-          "question": "你在本輪對 GLD/CASH 說“缺少可用的價格/均線/成交量 features”而降低可驗證度；但快照中 GLD 已有 completed close、RSI14、distance_from_ma20/ma50、以及可用的 return_1d/5d/20d 與波動等欄位。你同意或不同意：你對 GLD 的“缺少技術可驗證 features”判斷與本輪快照不一致？若不同意，請列出你認為缺失的是哪些必要特徵、以及它們缺失如何具體影響“保險價",
-          "why_it_matters": "因為技術角色若錯誤聲稱缺資料，就可能導致錯誤的相對排序與錯配；同時也會削弱對 GLD 相對現金機會成本與下行失效門檻的對稱比較能力。"
+          "question": "你在缺少 active_sleeve_symbols（NVDA/AVGO/META/PLTR/GLD）可比較的 quotes/features（你自己也指出缺資料）且本輪 earnings/event-calendar 對齊缺口很大的情況下，主張“偏 CASH/不提高風險曝險”的研究結論，是否同意必須降級為“證據不足→不能升級股票部位；除非下一輪用 completed-days 且同口徑補齊這些標的的技術/收益來源證據”，而不是用僅有的",
+          "why_it_matters": "這會決定本輪建議是否符合你們政策的當輪可追溯證據標準；若仍可被證明為只靠缺口補假設，就應強制收斂到“維持/降風險”的受限範圍，避免回看偏誤與樣本不足造成錯誤升級。"
         }
       ],
       "responses": [
         {
           "reviewer": "devil_advocate",
-          "answer": "我同意：我先前那句「GLD 缺少可用的同口徑技術 features」的表述，在這次審查材料對不上。\n以你提供的本輪研究快照內容來看，至少存在 GLD 的 completed close/RSI14/distance_from_ma20/ma50/return 與波動等欄位；因此我不應把 GLD 的可驗證度主要歸因於“缺資料”。我應該改成：即便 GLD 有技術欄位，我仍在本輪沒有把 GLD 與 CASH 的相對“保險價值（相對下行抗跌能力）”做足同口徑比較，所以結論信心低是因為缺少/未使用的比較與失效條件對稱檢驗，而不是因為 GLD 本身沒有指標。",
+          "answer": "同意，我應把本輪的立場明確降級為「證據不足→不升級股票/GLD曝險」，而不是把 regime 或指數單點技術特徵當作可用於升級到 NVDA/AVGO/META/PLTR/GLD 的同口徑支持。換句話說：目前只能用可追溯的『風險資產相對壓力仍在、且預期回饋來源未被同標的證據證實』來維持/減少主動曝險，但不能把這當成對缺資料標的的方向性研究升級。",
           "conceded_points": [
-            "我承認表述不嚴謹：在本次審查材料可看見 GLD 至少有同口徑技術欄位時，我將其歸因為“缺少可用 features”是錯配的，需修正為“我沒有在本輪完成 GLD vs CASH 的對稱比較/失效條件檢驗”。"
+            "我在論述中使用了 regime 與 SPY/QQQ/IWM/DIA/S MH 的技術背景，這容易讓人誤解為“對 NVDA/AVGO/META/PLTR/GLD 的方向性支持”。在本輪缺乏這些 active_sleeve_symbols 的同口徑 quotes/features（且 earnings/event-calendar 對齊缺口大）時，這種表述強度需要下修。"
           ],
           "proposed_changes": [
-            "把 GLD/CASH 的研究風險敘述改成：本輪（1）使用風險資產的技術證據評估為 mixed 且偏防禦，(2）但 GLD 相對“保險價值”尚未完成與 CASH 的同口徑對稱測試（例如以 GLD 的 distance_from_ma20/ma50、RSI 的偏離程度、以及 GLD 在風險資產下跌窗口的相對跌幅/波動擴張表現作為比較），因此信心較低。"
+            "把本輪結論改寫為硬標準版本：『只能判定證據不足→不得對 NVDA/AVGO/META/PLTR/GLD 作方向性加碼或升級；若既有允許部位需調整，只能以風控降曝險/不增加為主，且不引用指數 regime 作為同標的升級理由。』同時把 confidence 從 38 下修（例如≤30）並明示原因是 active_sleeve 同口徑缺失 + 事件/波動證據未完成。"
           ],
           "unresolved_disagreement": null
         }
@@ -78,21 +74,20 @@
       "agent": "momentum",
       "stance": "neutral",
       "confidence": 35,
-      "opening_statement": "我在本輪偏向中性，因為我手上只有指數層級的動能證據，卻缺少 active_sleeve（NVDA/AVGO/META/PLTR）的可驗證價格特徵；因此更傾向用 CASH/GLD 保留彈性而非在動能缺口下積極加碼。",
+      "opening_statement": "我目前選擇偏保守：在本輪可追溯的價格動能證據不足（缺少 NVDA/AVGO/META/PLTR/GLD 同口徑 features 與事件驗證）下，我無法用 momentum 的相對強度邏輯支持加碼，因此以 CASH 作為主要建議配置。",
       "preferred_assets": [
-        "CASH",
-        "GLD"
+        "CASH"
       ],
-      "cash_preference": 0.65,
+      "cash_preference": 0.7,
       "observations": [
-        "本輪可驗證的價格/動能證據只覆蓋 SPY、QQQ、IWM、DIA、VTI、SMH；在這些完成交易日特徵中，科技鏈（SMH：return_20d=+8.48%、distance_from_ma20=+5.05%、RSI14=59.71）呈現相對強於大盤與中小型（IWM：return_20d=-5.32%、distance_from_ma20=-2.71%、RSI14=22.76），但這只是總體風格輪動背景，無法直接映射到 active_sleeve 的單一標的（NVDA/AVGO/META/PLTR）因本快照沒有其 quotes 或 features。",
-        "由於缺資料無法滿足動能角色的「相對強度可驗證」標準，我傾向不把『風格領先（SMH/QQQ）』提升成『active_sleeve 內的持續性勝率提升』，因此立場是偏向維持/中性，而不是積極加碼風險資產。"
+        "本輪可用的可驗證價格/技術 features 只涵蓋 SPY、QQQ、IWM、DIA、VTI、SMH；但我的 active sleeve 可比較標的（NVDA/AVGO/META/PLTR/GLD/CASH）中，除 CASH 外缺少這些相同口徑的 quotes 與 features，因此無法用「相對強度 + 趨勢延續」作出同標的動能排序或支持加碼的證據。",
+        "市場 regime 標記為 trend=mixed、rates=rising、volatility=normal；且 SPY/ IWM / DIA 在 20d 與/或近端呈現走弱或回撤（例如 IWM return_20d_percent=-5.076033、SPY return_20d_percent=-0.37155），而 SMH 與 QQQ 則呈現較強（SMH return_20d_percent=9.031137；QQQ distance_from_ma20_percent=2.073759、RSI14=62.54059）。由於缺少 NVDA/AVGO/META/PLTR 對應的相同動能指標，我無法將「科技板塊強」可靠外推為「個股/可配置標的也在趨勢延續」。"
       ],
       "risks": [
-        "若 active_sleeve 中實際上有與 SMH 類似的相對強度/價格趨勢延續（但本快照未提供其可驗證 quotes/features），則偏向 CASH/GLD 可能錯失較高報酬機會。"
+        "若實際上 NVDA/AVGO/META/PLTR 已在內部延續動能，但本輪缺資料導致我保守持有現金，可能錯失上行（機會成本）與動能延續的收益來源。"
       ],
       "invalidation_conditions": [
-        "一旦本輪同標的補上 active_sleeve（NVDA/AVGO/META/PLTR）之 quotes 或可驗證 features，且其顯示出相對強度延續（例如仍在/高於關鍵均線、RSI 與相對收益維持強勢，且不只是單日），我才會考慮調高風險資產權重。"
+        "若後續同口徑提供 NVDA/AVGO/META/PLTR（或 GLD）在 completed regular session 的 quotes 與 features（至少 RSI、距離 MA20/MA50、return_5d/20d、volatility_20d、drawdown_20d），且顯示與板塊（如 SMH/QQQ）相一致的相對強弱共振，我會提高動能配置，而不再主要依賴現金。"
       ],
       "questions": [],
       "responses": []
@@ -101,68 +96,64 @@
       "agent": "news",
       "stance": "neutral",
       "confidence": 38,
-      "opening_statement": "我目前採取中性偏保守的立場：在本輪沒有可驗證的基本面收益證據、且僅能依市場快照技術特徵分層的情況下，我更傾向用 NVDA/AVGO 的相對技術狀態搭配 GLD 與 CASH 的保險價值，而不做強烈加碼結論。",
+      "opening_statement": "我目前較傾向採取謹慎中性：在本輪缺乏可驗證的財報/事件與基本面證據下，我不應把「追求較高報酬」押在高波動科技股上，因此優先偏好保留現金與 GLD 作為等待新證據的風險緩衝。",
       "preferred_assets": [
-        "NVDA",
-        "AVGO",
-        "META",
-        "GLD",
-        "CASH"
+        "CASH",
+        "GLD"
       ],
-      "cash_preference": 0.18,
+      "cash_preference": 0.55,
       "observations": [
-        "結論先說：在缺乏可驗證的收益/估值/指引細節（本輪未提供 fundamental_facts，也缺 earnings 事件日曆覆蓋）下，我只能用市場快照的「短線狀態特徵」做研究分層；因此我傾向採取偏保守的維持/小幅上修優先序，而非強烈加碼任何單一高波動成長股。",
-        "NVDA（228.86，1d +1.68%）在 features 上呈現相對溫和：rsi14=53.79（未過熱）、volatility_20d_annualized=28.03（相對中低）、距離 MA20/MA50 為 +2.94% / +5.71%（仍在均線附近到略偏強），相較於同組高 RSI 標的，更不像是單日急拉後的脆弱狀態。且 NVDA 有近期 SEC 事件文件（例如 8-K： https://www.sec.gov/Archives/edgar/data/1045810/000104581026000078/nvda-20260902.htm ），但本輪未讀取其內容，因此只能把它視為「資訊即將/已更新」的低證據強度訊號。"
+        "基於資料截止時間（2026-09-30T11:16Z）僅拿到完成交易日的價格/成交量與 deterministic technical features；fundamental_facts 為空，且 earnings/事件日曆在本輪對多檔（NVDA/META/AVGO/PLTR）呈 unavailable，導致缺少可驗證的「收益來源/估值/事件催化」證據，因此不宜對高波動個股做偏向性加碼建議。",
+        "風險背景方面，regime 標記為 trend=mixed、rates=rising、volatility=normal；同時 VIX 曲線顯示 stale（最大年齡/期限結構 fallback），使宏觀風險信號可信度較低。此情境下，若要追求較高報酬也需要更明確的個股層級或事件層級證據；本輪缺乏該證據，較合理的做法是保留彈性。"
       ],
       "risks": [
-        "缺資料風險：本輪 fundamental_facts 為空、research_evidence 為空，且 earnings 事件日曆覆蓋對 NVDA/AVGO/META/PLTR 顯示 unavailable或缺失，導致任何『基本面驅動』的結論都可能失真；因此我只能做短線特徵層級的研究建議。"
+        "資料面風險：本輪 fundamental_facts 為空、且 earnings/事件覆蓋對多檔顯示 unavailable；技術指標可能無法替代估值/盈利路徑，導致對「何時應轉向個股」的時機判斷偏慢。"
       ],
       "invalidation_conditions": [
-        "若後續能抽取並驗證 NVDA/AVGO/META/PLTR 的最新財報/指引/重大事實（例如在對應 SEC 表單或公司投資人頁面中有明確可引用的營收、毛利、展望、成本或需求指標改變），且其方向與本輪『僅由快照特徵推導』不一致，則本輪排序需重做。"
+        "若下一輪取得並驗證 NVDA/META/AVGO/PLTR 的 earnings/重大事件清單（事件日曆由 available 轉可用，且能交叉對應到 filings/公司公告來源），並能提供可比較的收益來源（估值/指引/可檢驗催化）與 completed-days 層級證據，則本輪「不方向性加碼」建議需修正。"
       ],
       "questions": [],
       "responses": []
     },
     {
       "agent": "earnings",
-      "stance": "neutral",
-      "confidence": 42,
-      "opening_statement": "我在目前證據條件下採取偏保守的中性立場：我較願意用 NVDA、AVGO 的“已驗證現金與營運效率”當作研究底盤，同時用 GLD 與較高 CASH 來緩衝事件/財測不確定性，而不把短期市場狀態直接升級為加碼理由。",
+      "stance": "bullish",
+      "confidence": 52,
+      "opening_statement": "我目前偏向採取謹慎的偏多立場：在本輪僅有可驗證的 NVDA 與 AVGO 財務/現金證據支持下，我會把它們列為主要研究優先，但同時保留現金，因為缺乏本期法說與完整估值/財測證據。",
       "preferred_assets": [
         "NVDA",
         "AVGO",
-        "GLD",
         "CASH"
       ],
-      "cash_preference": 0.35,
+      "cash_preference": 0.25,
       "observations": [
-        "（已驗證的獲利/營運效率）NVDA：從公司申報資料可見，2026 財年 Q2（截至 2026-07-26）的淨利 596.88 億美元、營業利益 637.34 億美元、稀釋 EPS 2.46；同期間有較高現金產生能力：營業現金流 744.21 億美元、期末現金 224.43 億美元。這類現金/獲利同向的證據，較支持其作為效率與基本面底盤，而非僅靠市場情緒。（資料來源：公司 facts，filed_at=2026-08-26，https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json）",
-        "（已驗證的獲利/成本效率線索）AVGO：2026 財年 Q3（截至 2026-08-02）收入 710.89 億美元、營業利益 353.06 億美元、淨利未在快照中完整列示但有同口徑毛利 490.28 億美元；且營運現金流 329.50 億美元、期末現金 239.75 億美元、資本支出 10.13 億美元（反映擴產/維持成本相對有限的“需要證據範圍內”效率觀測）。若未來財測/指引未惡化，這些硬證據使其相對適合用來承擔主動部位的一部分風險。（資料來源：公司 facts，filed_at=2026-09-10，https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json）"
+        "（資料面限制）本輪針對 NVDA/AVGO 的營收、淨利、現金流與部分成本/效率指標，可從 companyfacts（SEC XBRL facts API）取得；但對 META、PLTR、以及 GLD 只看到市場快照與事件/申報清單，缺乏可用的已驗證獲利/成本效率數據，因此我不把它們納入主要『財報證據』結論。（信心因此打折）",
+        "（營收與淨利動能：AVGO）AVGO 在已披露區間（GAAP、10-Q Q3 期間）顯示營收由 2025/11/03-2026/08/02 的 71.089B USD，提升至 2026/05/04-2026/08/02 的 29.591B USD；同期間淨利由 29.747B USD 增至 13.088B USD（兩者分屬不同起訖窗口，因此更偏向『近期盈利能力仍高』而非直接同口徑同比比較）。其營業現金流（operating cash flow）在 2025/11/03-2026/08/02 為 32.950B USD，顯示盈利與現金創造具有支撐。（來源：SEC companyfacts，見 https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json）"
       ],
       "risks": [
-        "（證據缺口造成的“方向不確定”）本輪快照沒有提供 NVDA/AVGO 的完整財測（例如未來指引、同口徑毛利率變化、費用率趨勢）與估值倍數，因此我只能用已驗證的歷史硬指標支撐“效率底盤”，但無法確認未來盈餘成長是否能延續。"
+        "（證據不完整）本輪沒有取得 META/PLTR 的已驗證營收、淨利、毛利/現金流成本效率數據；因此若市場把『AI/平台故事』重新定價，這些標的仍可能上行，但我無法用本輪財報證據支持其在 active_sleeve 內的相對優先級。"
       ],
       "invalidation_conditions": [
-        "（NVDA/AVGO 出現同口徑負面轉折）若後續申報或同口徑資料顯示營業現金流顯著轉弱、毛利/營業利益率惡化（需回到公司 facts 或相同 GAAP 口徑 filings 驗證），則“效率底盤”假設需降級。"
+        "（指引失效）若在後續可追溯的 10-Q/8-K 或可取得的法說材料中，NVDA 或 AVGO 公開表示：未來期間需求/毛利率/現金流品質惡化，且可用文字或財務表達明確反映（需同標的可追溯）。"
       ],
       "questions": [
         {
-          "reviewer": "devil_advocate",
-          "question": "你在本輪為 NVDA/AVGO 提到“公司申報資料可見”且給出具體財務數字；但本輪 event_calendar 顯示 earnings=missing、AVGO/NVDA 事件頁不可用（unavailable），且 research_evidence/filing_events/fundamental_facts 皆為空。你要同意或不同意：在這套 input 下你給的數字是否仍可追溯到本輪允許的證據來源？若不同意，請逐項指出你必須改用",
-          "why_it_matters": "因為一旦基本面“已驗證”其實不可追溯，就會把缺證據的敘事升級為調整依據，直接破壞本專案的證據標準與事件對齊要求。"
+          "reviewer": "risk",
+          "question": "你以 earnings/基本面語言偏 bullish（例如 AVGO 動能）但本輪 filings/fundamental_facts 與 earnings 事件日曆皆顯示 unavailable/missing。请明確同意/不同意：在這種證據缺口下，你是否仍建議把 NVDA/AVGO 作為可新增風險的主結論（而非僅允許維持或保守降風險）？若同意，請指出你依據的可追溯收益來源在本輪資料截止時間內有哪些具體欄位與時間戳；若不同意，請給出你",
+          "why_it_matters": "政策要求收益來源必須可驗證並可對齊失效條件；在 earnings 缺失與 VIX 曲線 stale 的情況下，若仍把基本面敘事轉為加碼依據，會違反風險委員會的證據標準與事件風險閘門。"
         }
       ],
       "responses": [
         {
-          "reviewer": "devil_advocate",
-          "answer": "我不同意「本輪 input 下我的財務數字不可追溯」。就此回合提供的資料看，NVDA/AVGO 的關鍵財務數字是可追溯的：它們並非依賴 event_calendar 的 earnings 覆蓋，而是依賴 companyfacts/SEC XBRL 的 fundamental_facts（已附具体指标與 filed_at）。但我承認我上一輪表述把「event_calendar 缺失」與「財務硬數字可用」的邊界講得不夠精準，因而違反你所要求的 event-time 對齊嚴格口徑；我需要把措辭修正為“可追溯到 filings-derived facts，但 event_calendar earnings 仍缺失，故不能用於事件窗口/下一次",
+          "reviewer": "risk",
+          "answer": "我不同意把 NVDA/AVGO 在本輪證據缺口下「作為可新增風險的主結論/加碼依據」。在 earnings 事件覆蓋 missing 的前提下，我只能把它們列為「允許維持、避免主動加碼」的研究優先標的；其收益論點只能落在已驗證的 SEC companyfacts（財務數字與期間）上，而不足以升級到『新增風險』層級。",
           "conceded_points": [
-            "我上一輪把“已驗證”這個詞用得太像整段事件流程都已驗證，忽略了本輪 event_calendar 對 earnings 類事件列表是 missing/unavailable；因此語句需要更嚴格區分：財務數字可追溯到 SEC facts，但事件日曆/事件時間對齊仍缺失。"
+            "我先前把語氣表述為偏 bullish（甚至暗示優先）容易被解讀成加碼結論；但政策要求新增/升級需有可驗證的收益與失效條件對齊，本輪 earnings 日曆覆蓋確實 missing。"
           ],
           "proposed_changes": [
-            "修正語句與證據邊界：將 NVDA/AVGO 的“已驗證”限定為“SEC filings-derived fundamental_facts 可追溯的歷史 GAAP 指標”，明確寫明“event_calendar earnings missing/issuer events unavailable → 事件窗口/事件時間對齊仍未驗證”。同時把 confidence 再下修（例如從 42% 下調到 35%）並把更新理由降級為維持/背景，而非觸發調整。"
+            "把 NVDA/AVGO 的本輪決策語句從「偏 bullish / 可新增風險主結論」改為「研究優先 + 允許維持、禁止主動加碼」，直到 earnings 事件覆蓋可驗證（或至少補齊相同標的在 24h 內的可追溯指引/法說內容）。"
           ],
-          "unresolved_disagreement": "我拒絕把“event_calendar earnings missing”解讀為“財務數字不可追溯”；但我同意需修正措辭與限制推論範圍，並將這部分視為合規改動，而非否定財務 facts 的可追溯性。"
+          "unresolved_disagreement": null
         }
       ]
     },
@@ -170,24 +161,21 @@
       "agent": "etf",
       "stance": "neutral",
       "confidence": 56,
-      "opening_statement": "我在本輪快照下採取中性但偏保護的立場：大盤與科技槓桿同日偏弱、波動仍屬常態且反向/槓桿的每日重設路徑風險不利機會不低，因此我更傾向先用現金與黃金承擔保護角色，再等可驗證的事件/趨勢延續證據出現後才提升報酬追求。",
+      "opening_statement": "我採取中性立場：在目前 regime=trend=mixed、波動狀態 normal 且事件/波動資料不夠完整的情況下，我不把槓桿或反向 ETF 當作主要收益來源，而是以 CASH 兼顧機動性、以 GLD 做保險角色。",
       "preferred_assets": [
         "CASH",
-        "GLD",
-        "NVDA",
-        "META",
-        "PLTR"
+        "GLD"
       ],
-      "cash_preference": 0.42,
+      "cash_preference": 0.55,
       "observations": [
-        "（立場與市場狀態）我對「追求較高報酬」的想法是謹慎的：就本輪快照的 completed regular close 而言，大盤代表（SPY 765.61，1d -0.744%）與中型/工業（IWM 280.02，1d -0.692%；DIA 514.02，1d -0.671%）同日走弱；同時 regime 標記為 trend=mixed、volatility=normal、rates=rising，且波動仍未進入明顯壓力（VIX 相關曲線狀態為 stale，降低我對「尾部/恐慌正在擴大」的把握力）。在這種情境下，我更傾向把資金分配先放在「可選擇的保護/流動性」而不是直接用槓桿或反向去押方向。",
-        "（每日重設與路徑風險：槓桿ETF vs 反向ETF的效率差異）本輪快照顯示科技槓桿（SOXL 142.29，1d -6.048%）與納指槓桿（TQQQ 77.04，1d -3.216%）在單日出現顯著跌幅；這種「高路徑風險」更可能在日內波動/方向來回時被放大。相對地，若要用反向（SQQQ/SOXS/SPXU）承接同類題材的下行，其每日重設使得回報對「你押的方向是否持續」高度敏感：一旦市場短線反轉，反向也會同樣在每日重設機制下產生路徑不利（即便單日最終仍是小跌/混合走勢）。因此在 regime=mixed 且大盤同日偏弱但未呈現明顯持續性崩跌的證據下，槓桿/反向的「表達效率」通常不如現金/低波動保護來得穩健。"
+        "市場表達效率：以本輪已完成日特徵看，SPY（764.2，1d -0.184%）與 IWM（279.01，1d -0.361%）均偏弱，但 SMH 明顯相對偏強（606.9，1d +1.148%，且距離 MA20/MA50 為正、RSI14=61.51）。整體 regime 標記為 trend=mixed、volatility=normal、rates=rising，表示「大盤與產業分化」而非單邊趨勢，因此槓桿/反向 ETF（每日重設）難以長期穩定轉化為可預期的方向性收益。",
+        "槓桿與反向的路徑風險（每日重設）：SOXL（147，1d +3.31%，20d +30.33%）與 TQQQ（77.46，20d +7.70%）顯示科技/納指類因子近期波動與上漲動能明顯，但 SOXL 波動年化（115.70%）也同樣極高；若後續進入「震盪/回撤」而非單邊延續，這類 leveraged ETF 的路徑效應會放大累積誤差與回撤速度。反向同理：在沒有已驗證偏空趨勢延續證據前，用 SQQQ/SOXS/SPXU 追求方向性收益，會把「時間維度」轉成額外的路徑成本。"
       ],
       "risks": [
-        "（資料缺口降低可驗證性：反向ETF與GLD缺 quotes/features）本輪快照未提供 SQQQ、SOXS、SPXU、GLD 的 quotes 與 features；因此我無法完成它們在『同日/近端』的定量比較。這會使「哪一個反向工具的表達效率最好」的研究落點只能停留在暴露對應邏輯層級，信心需下修。"
+        "若市場很快從 mixed 轉成連續偏空（例如風險資產同步下破、VIX regime 明顯上行），則僅持有 CASH/GLD 可能錯失反向 ETF 的時間敏感上行（研究上的成本是方向性機會成本）。"
       ],
       "invalidation_conditions": [
-        "若後續（在新的快照資料中）大盤連續多日明確走弱、且與之相對應的尾部/波動指標由 stale 轉為可用並顯示升溫（例如 VIX 曲線可驗證且上行），則反向工具（SQQQ/SOXS/SPXU）相對 CASH/GLD 的期望價值應被重新評估。"
+        "若後續取得可追溯的偏空證據，使 regime 明確轉為 trend=down 或風險波動 regime 非 normal（且波動曲線不再 stale），則本輪將 CASH/GLD 的相對優勢削弱，需重新評估 SQQQ/SOXS/SPXU 作為短期方向性工具的合理性。"
       ],
       "questions": [],
       "responses": []
@@ -195,23 +183,23 @@
     {
       "agent": "ownership",
       "stance": "neutral",
-      "confidence": 36,
-      "opening_statement": "我目前採取中性偏保守立場：在缺乏 13F/Form 4/持股交易的一致性證據且事件覆蓋不完整的前提下，只把 NVDA 當作首要觀察對象、其餘以 GLD 與現金緩衝不確定性，而不主張積極加碼。",
+      "confidence": 35,
+      "opening_statement": "我在缺少 13F / Form 4 / FINRA 與可驗證持股一致性證據的前提下，對 NVDA/AVGO/META/PLTR 的方向只給中性結論，並把研究重心放在 CASH 與 GLD 的風險緩衝價值上。",
       "preferred_assets": [
-        "NVDA",
+        "CASH",
         "GLD",
-        "CASH"
+        "NVDA"
       ],
-      "cash_preference": 0.35,
+      "cash_preference": 0.45,
       "observations": [
-        "就『可確認的證據』而言：本輪資料中並沒有提供任何 13F/Form 4/持股交易的實際持倉或一致性加減碼紀錄（fundamental_facts 為空、filing_events 只有公司層級的公開文件事件清單，並不足以推導機構/內部人對特定標的的方向性持股信號）。因此我不把『持股一致性』當作可用的收益證據，只能以市場快照的 deterministic features 作為短期研究風向。",
-        "在可用的快照特徵上，NVDA 的 2026-09-28 完成日資料顯示：1d+1.6839%、5d+0.6509%、20d+5.1988%，且 distance_from_ma20=+2.94%、distance_from_ma50=+5.71%，RSI14=53.79（未到明顯過熱），波動年化 20d=28.03%、回撤(20d)=-0.65%。相對而言，AMD 在同期間 RSI14=70.72 且波動更高（57.31%）與回撤（-3.61%）顯著，顯示我在『研究優先順序』上更傾向把 NVDA 視為較能承受波動的觀察對象，而不是立刻把高波動/過熱型特徵當成加碼勝率依據。"
+        "本輪我看不到你要求的「13F / Form 4 / FINRA / 持股交易證據」之任何可用內容（本次輸入的 filing_events 與 alerts 也未提供所有者層級的持股一致性或增減幅資料），因此無法把機構/內部人行為當作真正的持股信號；在缺乏可驗證持股一致性證據下，我傾向不做明確加碼結論，而是以風險與資料可得性做中性處置。",
+        "市場狀態（截至 2026-09-30T11:16:21Z 的 completed regular close）顯示 regime=trend mixed、volatility normal、rates rising，且各標的短期動能分歧：NVDA 1d -0.72%、距離 MA20 約 +2.05%、距離 MA50 約 +4.72%、RSI14=54.33（偏中性）；AMD 1d 幾乎持平但波動率顯著更高（volatility 20d annualized 57.53%、RSI14=68.69，代表短期更擠壓的風險而非明確的獨立阿爾法）。在「缺少持股證據」情況下，這些只支持我把短線方向性信心降級。"
       ],
       "risks": [
-        "缺資料導致無法驗證『真正一致性持股信號』：本輪未提供 13F 的持倉變動、Form 4 的實際交易方向與規模、也未給出可追溯的持股交易證據；filing_events 只是公司文件事件，不等同於持股一致性或淨買入/淨賣出。"
+        "持股一致性風險：本輪沒有任何可用的 13F / Form 4 / FINRA 或持股交易明細來驗證同一類持有者（或同一持有者）對 NVDA/AVGO/META/PLTR 的一致性加減，若實際存在強一致信號，則我目前的中性結論會偏保守。"
       ],
       "invalidation_conditions": [
-        "若後續補齊可追溯的持股證據（例如：13F 顯示該名機構對 NVDA/AVGO/META/PLTR 的一致性增持或減持，或 Form 4 顯示內部人持續性買入/賣出），且其方向能與本輪價格特徵形成更高一致性，則我會調整研究優先順序（提高或降低 NVDA 權重研究）。"
+        "一旦你提供可驗證的 13F / Form 4 / FINRA 或持股交易證據，顯示 NVDA/AVGO/META/PLTR 在同一期間存在明確『一致增持或一致減持』（而非單一事件或單點交易），我才有條件把 stance 從 neutral 調整為 bullish/bearish。"
       ],
       "questions": [],
       "responses": []
@@ -220,68 +208,47 @@
       "agent": "liquidity",
       "stance": "neutral",
       "confidence": 38,
-      "opening_statement": "我更偏向謹慎的流動性立場：在本輪缺少核心持倉（NVDA/AVGO/META/PLTR/GLD）可追溯價差與事件覆蓋的情況下，我不支持積極進出，只建議維持並以小幅現金緩衝成本與跳空風險。",
-      "preferred_assets": [
-        "NVDA",
-        "AVGO",
-        "META",
-        "PLTR",
-        "GLD"
-      ],
-      "cash_preference": 0.18,
-      "observations": [
-        "就「可否按現實交易節奏進出」而言：本輪提供的市場快照只包含 SPY/QQQ/IWM/DIA/VTI/SMH 的 completed-regular-close 價量與技術特徵，未包含 NVDA/AVGO/META/PLTR/GLD 的 quotes 與買賣盤資訊；因此我只能判斷大盤流動性型態（成交量屬高流動 ETF），但無法對你組合內各單一標的的即時價差/深度做證據化評估，會把研究結論降到「偏中性」。",
-        "從可觀測到的風險環境來看：regime 標記為 mixed、volatility=normal 且明確提到 rates=rising；在沒有完成的 VIX 曲線（volatility_curve_gate=stale）的前提下，我不認定一定有流動性惡化，但可以合理預期「風險資產波動與共同因子」帶來的流動性壓力上升可能性仍存在，會要求進出動作更克制、成本更敏感。"
-      ],
-      "risks": [
-        "核心標的缺資料：本輪未提供 NVDA/AVGO/META/PLTR/GLD 的 quotes 與可操作價差/成交深度代理；任何關於『實際可成交』的判斷都會偏推測，信心因此下修。"
-      ],
-      "invalidation_conditions": [
-        "若後續補齊本輪截止後的 NVDA/AVGO/META/PLTR/GLD quotes 與可用的價差/成交深度代理（或等價的可追溯交易摩擦資料），且顯示在預期交易節奏下流動性足夠、摩擦顯著低於政策假設，則我對『不積極進出』的中性判斷可上調為更可執行的積極度。"
-      ],
-      "questions": [
-        {
-          "reviewer": "risk",
-          "question": "我需要你明確站隊：在本輪 active_sleeve 含 NVDA/AVGO/META/PLTR/GLD/CASH，但快照僅對部分市場指數給出可用 quotes/features，且 earnings 覆蓋為 missing、BLS error、VIX curve stale。請你回覆同意/不同意——你是否已完成政策要求的“隔夜跳空/事件風險下的 gap-stress 與最大可能損失（以美元估算）”檢查？若不同意，請給出你缺失的具體輸入",
-          "why_it_matters": "流動性與事件跳空會決定失效價/停損缺口後的實際損失尺度；沒有可計算的 gap-stress，就無法證明提案在風險預算內可行。"
-        }
-      ],
-      "responses": [
-        {
-          "reviewer": "risk",
-          "answer": "不同意：在本次資料截止時間（2026-09-29T12:50:46Z）下，我沒有完成政策要求的隔夜跳空/事件風險 gap-stress 與「最大可能損失（美元）」的可計算檢查，因為缺少必要的可追溯事件日/公司事件覆蓋、核心標的可核對的報價/交易摩擦代理，以及美元損失所需的部位規模或等價輸入。",
-          "conceded_points": [
-            "我沒有拿到 NVDA/AVGO/META/PLTR/GLD 的 quotes/可操作價差或成交深度代理，因此無法把 gap-stress 轉成可驗證的失效價—停損距離—最大可能損失（美元）鏈條。"
-          ],
-          "proposed_changes": [
-            "（1）補齊 gap-stress 的最小必要輸入：為 NVDA/AVGO/META/PLTR/GLD/CASH 提供同口徑的部位規模或等價的 active_sleeve_nav 分配基礎、以及可驗證的下一個隔夜/事件時間窗清單（至少完成 fomc、bls、nyse、earnings 四類在 required_categories 的覆蓋狀態更新，並把其 source_as_of 與 snapshot_age 落在 24h 內）。"
-          ],
-          "unresolved_disagreement": null
-        }
-      ]
-    },
-    {
-      "agent": "learning",
-      "stance": "neutral",
-      "confidence": 42,
-      "opening_statement": "我在本輪只能採取中性、偏保守的研究立場：因為快照缺少 NVDA/AVGO/META/PLTR/GLD 的可驗證當輪資料與事件覆蓋，我不應升級任何主動標的的收益因果，而應把工作重點放在補齊 completed-days 與事件對齊門檻。",
+      "opening_statement": "我以流動性與可在現實節奏下進出的角度偏保守：本輪缺少關鍵的價差/事件/波動曲線驗證資料，因此我不主張大幅調整個股部位，而更傾向保留調整彈性在 CASH 與 GLD 上。",
       "preferred_assets": [
         "CASH",
         "GLD",
         "NVDA",
-        "AVGO",
-        "META"
+        "META",
+        "PLTR"
       ],
-      "cash_preference": 0.55,
+      "cash_preference": 0.35,
       "observations": [
-        "本輪可用的可追溯證據僅包含 SPY/QQQ/IWM/DIA 的 completed daily 特徵與 regime/波動曲線狀態；但 active_sleeve_symbols（NVDA/AVGO/META/PLTR/GLD/CASH）在市場快照中沒有對應 quotes、filing_events、fundamental_facts 或 deterministic features，因此我無法基於這份快照對個別主動標的做『可重複的收益來源/估值/事件』升級判斷，只能採取以風控與資料覆蓋為中心的研究結論。",
-        "從風險情境角度，regime 標記為 trend=mixed、volatility=normal、rates=rising；同時 VIX 曲線資料狀態為 stale（要求的 VIX9D/VIX/VIX3M 仍屬最大不確定度來源），因此任何把『利率上行→風險資產共同波動』直接當作收益解釋的因果強度都偏低。這支持我把本輪重點放在：先補齊 completed-days 與事件對齊門檻，而非推導勝率或提高風險資產倉位。"
+        "以本輪快照可驗證的流動性/交易摩擦證據來看：NVDA/META/PLTR皆為個股（需面對單一標的波動與可能的跳空/事件風險），而GLD、CASH在風險控制與出入場的執行摩擦上通常較可控；但本次快照未提供 bid-ask、選擇權隱含流動性或成交深度，因此「可順利進出」只能以標的型態作低置信度推斷。",
+        "價格與技術特徵（僅用已完成 regular session）顯示短線分化：IWM、DIA、SPY當日偏弱（-0.36%~-0.22%），QQQ當日偏強（+0.19%）；在 regime=trend mixed、volatility=normal、rates=rising 的背景下，若以共同波動而非個股阿爾法主導短期，個股部位的相對進出成本可能高於ETF/現金（但此仍缺少本輪「交易摩擦參數」如價差與實際滑價）。"
       ],
       "risks": [
-        "（證據不足風險）缺少 NVDA/AVGO/META/PLTR/GLD 在本快照中的 quotes 與 features，使得任何針對這些標的的估值或事件有效性都可能只是外推；我因此把信心下調，避免把市場 ETF 的走勢誤當成個股/主題的可重複收益證據。"
+        "本輪缺少 bid-ask、成交量深度、期權市場流動性或實際滑價/價差資料；因此對「現實交易節奏下能否以預期成本進出」的判斷屬標的型態推斷，可信度偏低。"
       ],
       "invalidation_conditions": [
-        "若下一輪能補齊：NVDA/AVGO/META/PLTR/GLD 的當輪 completed daily quotes/features（或同口徑的研究用 deterministic features），並完成與先前同口徑的 completed-days 3/7 聚合（明確 positive/negative windows 與最新回報），則我對『待驗證』的立場可被推翻並允許升級為 supported/mixed。"
+        "若下一輪能補齊：同一標的（NVDA/META/PLTR/GLD）在最近完成日的實證價差/成交深度或可追溯滑價觀測，且證明出入場成本低於/不劣於 CASH/GLD 的相對水位，則我對個股可調整性的保守程度需下修。"
+      ],
+      "questions": [],
+      "responses": []
+    },
+    {
+      "agent": "learning",
+      "stance": "neutral",
+      "confidence": 34,
+      "opening_statement": "我目前採取偏謹慎的中立立場：在缺少 NVDA/AVGO/META/PLTR 的可追溯財務/事件證據且本輪事件覆蓋有缺口前，我不主動加碼個股風險，而是把可調整部位較偏向 CASH 並配置少量 GLD 當作保險彈性。",
+      "preferred_assets": [
+        "CASH",
+        "GLD"
+      ],
+      "cash_preference": 0.6,
+      "observations": [
+        "本輪我只能信任「市場快照中的 deterministic features/quotes」與風控政策本身；但快照中沒有提供 NVDA/AVGO/META/PLTR 的 fundamental_facts 或 filing_events，且 research_evidence 為空，因此對主動增配這些 active_sleeve 個股缺少可追溯、可重複的收益驅動證據，只能先避免把背景推斷升級為收益論點。",
+        "在風險/事件證據面：event_calendar 顯示 earnings 覆蓋整體 unavailable、且 BLS 來源失敗（缺口存在），使我對「近端事件對齊」與「可驗證期限」的信心下降；在缺證下，將可調整部位偏向保險/流動性資產（CASH、GLD）更符合避免重複失誤的學習目標。"
+      ],
+      "risks": [
+        "若後續補齊 NVDA/AVGO/META/PLTR 的 earnings/filing 與估值/事件因果證據，現階段偏向 CASH/GLD 可能帶來相對收益落後（機會成本風險）。"
+      ],
+      "invalidation_conditions": [
+        "出現對 NVDA/AVGO/META/PLTR 可追溯的 filing_events 或 fundamental_facts（本快照欄位需實際提供），並能清楚對應到可驗證的收益驅動與失效條件；否則我不會把單點市場背景推斷升級為加碼理由。"
       ],
       "questions": [],
       "responses": []
@@ -289,44 +256,60 @@
     {
       "agent": "portfolio",
       "stance": "neutral",
-      "confidence": 42,
-      "opening_statement": "我目前採取中性且偏保守的做法：先把超出硬上限的 NVDA 降回 ≤25%，把釋放的部位轉入現金以補足風險緩衝，其餘標的維持不額外押注，因為本輪缺乏能把研究假設升級為可驗證收益證據的完整資料。",
+      "confidence": 35,
+      "opening_statement": "我會以風控硬限制與證據缺口為主導，對現有組合做溫和的風險再平衡：優先把超限的 NVDA 下調至上限附近，提升現金緩衝，同時維持對 AVGO、META、GLD 的配置，但不做缺乏當輪收益證據的激進換倉。",
       "preferred_assets": [
         "NVDA",
         "AVGO",
         "META",
-        "PLTR",
+        "GLD",
         "CASH"
       ],
-      "cash_preference": 0.144,
+      "cash_preference": 0.16,
       "observations": [
-        "我在不假設其他委員結論的前提下，先做風控硬約束檢查：目前組合中 NVDA 權重約 0.312，超過風控政策單一標的上限 0.25（denominator 為 active_sleeve_nav，且本輪被標為 hard gate）。因此必須將 NVDA 降至 ≤0.25，並用對稱證據標準處理再分配（本輪缺乏 NVDA 單點收益/事件優勢的可驗證升級證據，只能用風控超限的被動修正邏輯）。",
-        "在完成 NVDA 降權的前提下，其餘 active sleeve：AVGO 約 0.222、META 約 0.195、PLTR 約 0.085 都未超過單一上限 0.25；GLD 約 0.103 也未超過上限。不過本次 preferred_assets 受欄位上限影響，我將集中把「可調整資金」放到現金，避免在缺乏收益證據升級（同口徑 completed-days 聚合與事件對齊仍缺）下，額外引入新的配置決策成本。"
+        "現有主動帳成分（NVDA/AVGO/META/PLTR/GLD/CASH）之中，NVDA 目前權重約 30.7%，高於政策硬限制的單一股票上限 0.25（注意：現況屬既有超限保留例外；但在本輪研究建議中，仍應把它視為『需要修正的集中度風險』而不是加碼理由）。",
+        "市場快照顯示 regime=trend mixed、rates=rising、volatility=normal；在缺少可驗證的公司/估值/事件研究證據（本輪 research_evidence 為空、且 filing_events/fundamental_facts 為空）下，我不把這個環境直接升級為『提高高 beta 科技阿爾法』的充分理由，因此傾向採取溫和再平衡、而非大幅換倉追求較高報酬。"
       ],
       "risks": [
-        "資料限制風險：本輪提供的是市場指數層級 features 與 regime，缺少 NVDA/AVGO/META/PLTR/GLD 的當輪 completed-days 或公司層級 filing_events / fundamental_facts，可驗證的收益來源不足，因此任何「維持」或「輕微調整」都只能降低而非提升研究置信度。"
+        "本輪無可用的研究型證據：research_evidence 為空，且 filing_events/fundamental_facts 皆為空；因此對各標的『收益來源（估值/事件/現金流驅動）』無法做當輪驗證，只能做風險與約束導向的配置調整。"
       ],
       "invalidation_conditions": [
-        "若政策系統確認單一標的上限（0.25）或其 denominator 不是 active_sleeve_nav，則本次因超限而做的 NVDA 降權必要性需重算。"
+        "出現可追溯的當輪可驗證研究證據（例如對 NVDA/AVGO/META/GLD 的 filing_events、fundamental_facts 或研究摘要提供 supported/mixed 的證據鏈），足以證明在同等風險預算下降低 NVDA 或提高現金會犧牲淨優勢。"
       ],
       "questions": [
         {
           "reviewer": "risk",
-          "question": "我不同意目前把 NVDA 權重約 0.312 與 single_stock_max_weight=0.25 的結論當作“已滿足硬閘”的隱含前提：請你確認並回覆同意/不同意——本輪研究材料中是否提供了可追溯的實際權重與 denominator=active_sleeve_nav 的來源/計算？若沒有，請列出缺哪兩個最小輸入，並說明在缺失未補齊前你允不允許做任何權重調整。",
-          "why_it_matters": "這直接決定是否已遵守 hard gate；若分母或權重不可核對，就無法確認風控閘門在資料截止時間內被滿足。"
+          "question": "你在本輪明確指出 NVDA 權重約 30.7% 超過單一股票硬限制 0.25。请明確同意/不同意：本輪提案若包含任何方向性強化（加碼或再平衡到更高 NVDA 比例），是否已用同口徑量化證據證明『不突破硬限制/且在失效與隔夜跳空下的美元損失』仍落在風控門檻內？若不同意，請指出你建議的實際行動是「僅維持既有超限但不新增」或「主動降到上限」，以及用什麼可追溯輸入計算。",
+          "why_it_matters": "集中度與失效後美元損失是硬風控核心；在缺少 completed-days 與事件/波動可用證據時，任何未量化的集中度擴張都會讓風險閘門形同失效。"
+        },
+        {
+          "reviewer": "devil_advocate",
+          "question": "你指出 NVDA 權重超過 single_stock_max_weight=0.25 但又說屬既有超限保留例外；在本輪 research_evidence=[]、filing_events/fundamental_facts=[]、且 earnings missing 的情況下，請你明確同意/不同意：本輪僅能做“集中度修正/風險門檻導向”的保守調整，且不得把 regime 標記（尤其 VIX 曲線 stale）或單日價格結果當作 NV/",
+          "why_it_matters": "這能檢查委員會是否把“既有例外”誤當成本輪可行的配置理由；若不同意，將需要提供可驗證同口徑證據支持相對優勢，否則建議必須收回或改成證據不足的維持/降風險版本。"
         }
       ],
       "responses": [
         {
           "reviewer": "risk",
-          "answer": "結論：我不同意“已滿足硬閘”的表述；就本次你提供的研究材料而言，我無法可追溯核對出 NVDA 權重 0.312 以及 denominator=active_sleeve_nav 的計算來源/口徑，因此在缺失未補齊前，我不應把這個硬閘結論當作已驗證。對應的做法是把我先前的 NVDA→0.25 調整改為「暫停/條件化」，等待補齊最小輸入後再執行硬閘修正。",
+          "answer": "結論：不同意。以目前資料截止（本輪 research_evidence 空、且 filing_events/fundamental_facts 皆空、BLS/earnings 覆蓋缺口、VIX 曲線 stale）的狀態下，我不能聲稱已用同口徑量化證據證明任何「方向性強化（尤其是加碼或提高 NVDA 目標權重）」仍落在『硬限制 + 失效/隔夜跳空美元損失』的風控門檻內；因此本輪我建議的實際行動應是「主動降到單一股票硬上限附近（<=0.25）」，而不是維持或提高超限部位。",
           "conceded_points": [
-            "本輪材料中沒有提供 NVDA=0.312 的可追溯權重來源（例如 active sleeve 當日權重表/portfolio position snapshot/分母定義計算式），因此我先前以“硬閘必須修正”的語氣，確實超出資料可核對範圍。"
+            "我同意批判點：在缺乏當輪可追溯的失效/隔夜跳空美元損失量化計算輸入與結果（同口徑 stress / gap-to-loss mapping）前，不能支撐任何提高 NVDA 比例的『仍在門檻內』說法。"
           ],
           "proposed_changes": [
-            "(1) 立即把 NVDA 的 0.312→0.25 調整從“已完成硬閘修正”降級為“待核對後修正”：在 CIO 檢查補齊下列最小輸入（見下一條）前，不對任何 active_sleeve 的權重做進一步調整；可維持現有現金比例或僅做與風控無關的呈現層變更。"
+            "(1) 將本輪 NVDA 調整目標明確限定為『不高於 0.25（active_sleeve_nav 分母）』：只允許減碼到上限附近；禁止任何增加 NVDA 目標權重的動作，直到完成同口徑的失效/隔夜跳空美元損失量化與門檻對齊。可由 CIO 檢查：輸入為 NVDA 目標權重（<=0.25）、單一股票硬限制參數、以及本政策中的 loss/gate 定義（使用已生效風控配置）。"
           ],
-          "unresolved_disagreement": "若內部系統其實已保存可核對的 active_sleeve_nav 權重快照（但你本次未貼出），我可以承認 hard gate 實際上已滿足；但就目前你提供的資料輸入不足，我維持：先前“硬閘已滿足”的表述需撤回並改為條件化等待核對。"
+          "unresolved_disagreement": null
+        },
+        {
+          "reviewer": "devil_advocate",
+          "answer": "我同意：在 research_evidence、filing_events、fundamental_facts 與 earnings 皆缺失的本輪，我們只能把調整理由限制在“集中度修正/風險門檻導向”的保守路徑；regime 標記與 VIX 曲線 stale 只能當作低信心背景，不得用來升級對 NVDA/其相對收益來源的立場，更不能當作減碼或維持的收益證據替代。",
+          "conceded_points": [
+            "我先前提案中，雖然以“風控硬限制”作核心，但確實混入了 regime/VIX 與市場狀態的敘事，容易被稽核解讀為把背景因子當作當輪配置依據；此點我接受需要更嚴格切割：背景只能降低信心或用於風險監測，不能支撐對 NVDA 的相對收益判斷。"
+          ],
+          "proposed_changes": [
+            "將提案文字與決策約束改寫為：NVDA 減碼僅因“集中度違反 hard gate”導致的風險預算修正（不引用 regime/VIX 或任何單日價格特徵作為收益/相對優勢證據）。同時明確設定目標：NVDA 調整至 ≤0.25（上限附近），並把差額轉入 CASH 以提升緩衝。"
+          ],
+          "unresolved_disagreement": null
         }
       ]
     },
@@ -334,22 +317,24 @@
       "agent": "thesis_delta",
       "stance": "neutral",
       "confidence": 35,
-      "opening_statement": "我在這輪不會把任何先前的『維持/調整』論點升級成可驗證投資支柱，因為快照缺失可追溯的個股/事件資料並且事件日曆覆蓋有硬缺口。",
+      "opening_statement": "我目前的立場是：在本輪快照提供的可驗證 per-symbol 基本面/事件證據缺口下，我不把任何先前的 watch 想法升級為加碼或確定性 thesis break，而是更偏向以 CASH/保護性資產等待下一輪可追溯證據。",
       "preferred_assets": [
         "CASH",
         "GLD",
-        "NVDA"
+        "NVDA",
+        "META",
+        "PLTR"
       ],
       "cash_preference": 0.65,
       "observations": [
-        "本輪我無法把任何『收益來源＝可驗證研究支柱』升級：快照中 quotes、features、filing_events、fundamental_facts 都是空陣列/缺失，且事件因果對齊又受限（event_calendar 內 BLS 為 error、earnings 為 missing）。在這種資料狀態下，任何先前以『維持/調整』的論述若依賴事件或歸因強度，都缺少可追溯的研究證據支撐，因此我只能維持偏保守/等待強化證據，而不是提高風險資產期望報酬。",
-        "先前委員會 items 的主要假設是『risk-on/利率上行可能提高共同行為或共同波動』，但其自身 validation_notes 明確寫了仍停留在待驗證層級、需 completed-days 多日聚合與事件對齊。就本輪快照而言，VIX 曲線亦顯示 coverage=stale（Cboe 延遲資料超過最大年齡），所以連用波動端做加權都會被降級；因此該假設目前更像『風險背景待驗證』，不足以成為可交易化的收益支柱。"
+        "本輪市場快照中，實際可用的 per-symbol 證據幾乎為空：quotes、features、fundamental_facts、filing_events 都是空陣列，且 deterministic features 亦未提供。這使得我無法辨識任何對 NVDA/AVGO/META/PLTR/GLD 的「收益來源」或「估值/事件驅動」是否在更新中被支援或削弱（因此只能維持研究層級的保守立場）。",
+        "風險因子層面的『削弱性』證據反而明確：VIX 曲線顯示 stale（資料延遲/不完整），且 options positioning 的 OCC 覆蓋缺失；同時事件日曆的 earnings 類別為 missing、BLS source error。這代表我對短期事件對齊與波動定價只能做背景推斷，無法把任何既有「維持/調整」論點升級為 supported。"
       ],
       "risks": [
-        "資料面最大風險是『誤把價格波動當作 thesis break』：由於 quotes/features/fundamental_facts/filling_events 在快照中缺失，我無法判斷目前波動是噪音還是論點已失效，任何以價格本身做因果升級都可能違反我要求的證據標準。"
+        "未知的公司/ETF 具體催化劑：earnings 事件覆蓋缺失，使我無法確認 NVDA/META/PLTR/GLD 近期是否存在會改變估值或風險敘事的事件（這是研究層面的資訊風險）。"
       ],
       "invalidation_conditions": [
-        "一旦能取得本輪同口徑 completed-days（例如 3/7 completed-days 的 completed_windows、positive_windows、latest_return_percent 等）且能與事件日對齊成功，並顯示對 NVDA/AVGO/META/PLTR 的『收益來源與失效條件』在扣除成本後呈現相對優勢，先前我對『待驗證/不升級』的保守結論才會被推翻。"
+        "若下一輪快照補齊同標的的 fundamental_facts 或 filing_events（例如最新財報/重大揭露），且能對應先前 watch 狀態應有的 thesis 驅動與失效條件，我才會考慮把支柱從『缺資料』升級為『supported/mixed/challenged』。"
       ],
       "questions": [],
       "responses": []
@@ -357,25 +342,24 @@
     {
       "agent": "valuation_competition",
       "stance": "neutral",
-      "confidence": 28,
-      "opening_statement": "我目前的結論是中性：在本輪快照缺少可追溯的估值與財務/事件數據下，我無法負責地做出 NVDA/AVGO/META/PLTR 的相對估值偏多或偏空排序，只能建議以 CASH 作為等待並把研究重點放到下一輪可驗證資料補齊後再升級判斷。",
+      "confidence": 22,
+      "opening_statement": "在目前快照缺少可驗證的公司估值與事件證據下，我的結論是：我不會在 NVDA/AVGO 上升級相對估值判斷，研究上更偏向把資金機會成本先交給 CASH、並以 GLD 作為保險緩衝而非主要期望報酬來源。",
       "preferred_assets": [
+        "CASH",
+        "GLD",
         "NVDA",
-        "AVGO",
-        "META",
-        "PLTR",
-        "CASH"
+        "AVGO"
       ],
-      "cash_preference": 0.35,
+      "cash_preference": 0.62,
       "observations": [
-        "本輪可用的快照資料幾乎無法支撐「相對估值」的可追溯計算：market snapshot 的 quotes、features、filing_events、fundamental_facts 皆為空；事件日曆雖提供 FOMC/NYSE，但 BLS 類別為 error、earnings 類別為 missing，導致我無法把任何價格/波動變化可靠歸因到可驗證的催化或財報路徑。資料不足下，只能把結論降到“研究性中性”。",
-        "在 metric 分層上：我目前看不到能分開 growth、value capture 與 price paid 的關鍵數字（例如同口徑的估值倍數、近期財測/成長驅動、或估值變動的事件對齊）。因此我不會升級任何個股的“supported”立場；最多只能維持：把現有 active sleeve 放在研究雷達中，並用現金作為機會成本可控的等待狀態（因為風控的 event-risk gate 對 missing/錯誤來源會降低可驗證性）。"
+        "本輪市場快照只提供：regime=trend mixed、rates=rising、volatility=normal（但 VIX 曲線標註 stale/低可信度）；同時 options positioning 與多數關鍵財務/估值資料缺失（quotes=[]、features=[]、fundamental_facts=[]、filing_events=[]）。因此無法在『同口徑』下完成相對估值所需的 pricing、成長/價值捕獲拆分與事件影響驗證；在此資料約束下，我的結論只能是「暫不升級任何相對估值判斷」，較偏向防守而非加碼押注單一標的的相對優勢。",
+        "在缺乏公司估值指標與可追溯基本面/事件資料的情況下，NVDA/AVGO 的相對估值只能落回到：它們屬於 active_sleeve_symbols、且在市場層面我們未取得可用於證明其競爭位置或定價能力正在轉化為估值溢價的直接證據；同時，未提供 earnings 或其即將影響財務的事件時間點/內容（event_calendar 中 earnings 覆蓋缺失），使得『growth vs value capture vs price paid』的必要拆分無法完成。"
       ],
       "risks": [
-        "缺資料風險：本輪無 quotes/features/fundamental_facts/filing_events，任何“估值便宜/昂貴”的結論都會缺乏可追溯證據支撐，可能導致研究誤判；因此我維持 neutral 而非偏多/偏空。"
+        "若後續補齊資料顯示 NVDA/AVGO 存在明確的價值捕獲改善或估值折價收斂機會，本輪偏保守的立場可能錯過上行（但這不是保證，只是資料缺口導致的研究不對稱）。"
       ],
       "invalidation_conditions": [
-        "若下一輪補齊可追溯的同口徑 estimates（quotes/features）與 earnings/BLS 對齊，且能計算/驗證“growth 與 value capture 的相對差距”與“price paid 的相對溢折”（例如同口徑倍數與事件對齊），我對 NVDA/AVGO/META/PLTR 的相對排序立場可被推翻或升級。"
+        "補齊 NVDA/AVGO/GLD 的可追溯 quotes、fundamental_facts 或 filing_events，且能在同口徑 completed-days（完成交易日尺度）下提供可驗證的相對估值優劣與收益來源拆分（growth vs value capture vs price paid）。"
       ],
       "questions": [],
       "responses": []
@@ -383,22 +367,22 @@
     {
       "agent": "ai_capex_concentration",
       "stance": "neutral",
-      "confidence": 38,
-      "opening_statement": "我在本輪會採取保守中性立場：由於快照缺乏可驗證的 capex/AI 融資/事件對齊與重疊因子曝險證據，我不應以未驗證的 AI 事件敘事去加碼高集中供應鏈部位，而是把可調整資金更偏向現金與保險價值資產等待可證實資料出現。",
+      "confidence": 36,
+      "opening_statement": "我這輪以證據充分性為核心立場：目前快照缺少可追溯的事件/財務資料來驗證 hyperscaler capex 與 AI 融資如何在 NVDA/AVGO/META/PLTR 上形成同一事件的集中風險，因此我採取中性、偏向防禦（CASH/GLD）而不強化集中押注。",
       "preferred_assets": [
         "CASH",
         "GLD"
       ],
-      "cash_preference": 0.7,
+      "cash_preference": 0.55,
       "observations": [
-        "我認為目前最主要的判斷不是去加碼任何 hyperscaler/AI 供應鏈股票，而是先承認本輪快照缺乏可驗證的「capex/融資/counterparty/供應鏈替代/重疊因子暴露」證據，因此集中風險評估只能停在定性與風控層級：快照中 filing_events 與 fundamental_facts 為空、quotes 與 features 也為空，無法支撐任何同一 AI 事件同時影響多個部位的量化結論。",
-        "就事件風險與集中風險的「機制」來說，hyperscaler capex 與 AI 融資常會透過（1）供應鏈採購節奏，（2）資本支出與資金成本，（3）交付/需求的協同變化，對多個標的形成同向衝擊；但本輪事件日曆僅提供 FOMC/NYSE 行事曆與 BLS 錯誤、earnings 類別缺失（AVGO/META/NVDA/PLTR 事件皆 unavailable），因此無法把任何已發生的 AI 事件與部位損益來源對齊。"
+        "本輪快照缺少可用於「同一 AI 事件→多部位集中風險」的關鍵證據：filing_events、fundamental_facts、quotes 與 features 皆為空（僅有 regime 與風險指標的背景），因此我無法用資料證明 hyperscaler capex 或 AI 融資鏈條在 NVDA/AVGO/META/PLTR 上存在同時衝擊的時間對齊關係；在缺少可追溯的事件/財務數據下，任何『該集中上/下』的收益判斷都會超出研究證據強度。",
+        "雖然缺資料，但集中風險本身的監測理由是存在的：active_sleeve_symbols 同時覆蓋多家 AI 供應鏈/終端應用（NVDA、AVGO、META、PLTR）與防禦資產（GLD、CASH），而 regime 顯示 rates=rising、volatility=normal 且 trend=mixed；在利率上行的宏觀環境下，這類高 beta 因子資產更容易出現『同向下跌的機率上升』（但我僅把它當作風險監測背景，不能直接升級為收益論點）。"
       ],
       "risks": [
-        "資料缺口風險：本輪快照中 quotes、features、filing_events、fundamental_facts 皆空，會使任何關於 hyperscaler capex 結構性變化、AI 融資條件或 counterparty risk 的結論都偏弱；因此我的偏保守配置可能低估未來補齊資料後的上行空間。"
+        "事件對齊證據缺口：若下一輪資料補上了可追溯的 filing_events 或 quotes/features（例如同一 AI capex/financing 相關公告造成多方同時 re-rating），則我目前偏防禦/中性會可能錯過有證據支持的上行配置機會。"
       ],
       "invalidation_conditions": [
-        "若下一輪快照能提供對應標的的可驗證 filing_events/fundamental_facts，並且事件日曆中原本 earnings missing 的覆蓋被修復（至少能把 NVDA/AVGO/META/PLTR 的關鍵 AI 事件對齊到可追溯來源），我會重新評估是否需要把風險從 CASH/GLD 轉移到特定供應鏈/融資受益部位。"
+        "出現可追溯的 filing_events 或 quotes/features，能明確連結某一『AI capex/融資』事件到 NVDA/AVGO/META/PLTR 多方的同向影響，且能在 completed-days/可驗證事件窗口上形成 supported/mixed/challenged 的相對優勢判定。"
       ],
       "questions": [],
       "responses": []
@@ -408,25 +392,25 @@
     {
       "reviewer": "risk",
       "outcome": "維持否決",
-      "summary": "我在第二次裁決仍維持否決：portfolio 允許“暫停/條件化”但沒有在資料截止時間內補上 active_sleeve_nav 分母口徑與 NVDA=0.312 的可追溯核對；liquidity 也明確未完成隔夜跳空/事件 gap-stress 與最大可能損失（美元）鏈條，因此 position_risk_gate 的映射檢查無法被證明通過。我仍額外擔心 leveraged/反向ETF 的每日重設與路徑耗損是否被有效排除，以及 GLD vs CASH 的同口徑機會成本分解仍未交付可核對輸入；在這些缺口未補齊前，我不能放行硬閘。",
+      "summary": "我被兩位研究員的“降級加碼語句、並要求 NVDA 不得高於<=0.25”這件事說服，至少承認目前缺口下不能用來證明仍在門檻內。然而我仍不能撤回否決：他們沒有補上我要求的同口徑 gap/隔夜跳空→失效後美元損失量化、也沒有把事件風險閘門落到 blackout 期間可檢查的最大新增敞口數值，更缺少 completed-days 對齊與 GLD vs CASH 的保守界線；在這些未被補齊前，我無法確認政策證據門檻真的被過關。",
       "accepted_changes": [
-        "portfolio 同意撤回“已滿足硬閘”的表述，並把 NVDA 權重調整降級為「待核對後修正/暫停條件化」",
-        "liquidity 同意本輪未完成 gap-stress 與最大可能損失（美元）的可計算檢查，並將研究狀態升級為「臨時不過/待補」"
+        "接受把 NVDA/AVGO 的本輪語句從「可新增風險主結論/加碼依據」降級為「研究優先、禁止主動加碼」的方向",
+        "同意在目前 earnings/事件覆蓋缺口與波動曲線 stale 下，不應以「仍在門檻內」來支撐任何方向性強化"
       ],
       "unresolved_objections": [
-        "portfolio 雖提出“等補齊最小輸入再做硬閘修正”，但在我要求的本輪資料截止時間內，仍未提供可追溯的 active_sleeve_nav denominator 定義/計算口徑，也未提供 NVDA=0.312 權重與分母的核對證據；因此硬閘合規性仍不可驗證"
+        "portfolio 已同意「不同意以現有缺口證明仍在風控門檻內」且主張降到<=0.25，但**未提供我原批判要求的同口徑 gap/隔夜跳空→失效後美元損失估算**（含輸入時間戳與相對 active_sleeve_nav 的損失百分比）；因此風險閘門（硬限制+失效/跳空損失映射）的可審計性仍不足。"
       ]
     },
     {
       "reviewer": "devil_advocate",
       "outcome": "維持否決",
-      "summary": "我被兩點改動部分說服：earnings 已把『事件日曆缺失』與『filings-derived 硬財務可追溯』的邊界拉開；technical 也撤回「GLD 缺特徵」的錯配，改為承認本輪缺的是 GLD vs CASH 的對稱比較與失效條件。但我仍維持否決，因為 VIX 曲線 stale 的硬門檻完全沒被處理，且 GLD/CASH 論證仍未補足對稱、扣機會成本後的淨優勢證明；在我們要求的證據可追溯性下，這不足以允許用同一套理由支撐任何調整。",
+      "summary": "我被兩位研究員明確承認“本輪證據不足→不得升級 NVDA/AVGO/META/PLTR/GLD、regime/VIX stale 不能當作收益證據”這點說服，因此我接受把敘事強度降下來、並以 single_stock_max_weight hard gate 作為集中度修正的主要理由。但我仍不能撤回否決，因為你們回應沒有把你要求的“完成日/3/7 completed-days 時間對齊”用同等可稽核方式落地，也沒有在 earnings/event 不可用時提供替代驗證路徑；此外 portfolio 對 CASH 的上修在本輪缺乏 GLD vs CASH 機會成本對照下，仍可能被視為未完成證據標準的配置上修。",
       "accepted_changes": [
-        "earnings 研究員同意並修正「已驗證」措辭邊界：硬財務數字可追溯到 filings-derived fundamental_facts，但 event_calendar 的 earnings 缺失仍代表事件時間對齊/事件窗口推論不得升級。",
-        "technical 研究員同意撤回/改寫「GLD 缺少可用技術 features」的說法，改為承認關鍵問題是本輪尚未完成 GLD vs CASH 的同口徑對稱比較與失效條件檢驗。"
+        "同意將本輪對 NVDA/AVGO/META/PLTR/GLD 的任何“方向性升級”明確降級為「證據不足→不得升級/不增加風險曝險」",
+        "同意把 regime 標記與 VIX/stale 曲線僅視為低信心背景（不得當作同標的相對收益證據）"
       ],
       "unresolved_objections": [
-        "VIX 曲線 stale 的核心風險未被任何研究員實質處理：兩份回應都沒有對照政策要求，說明如何降權或替代（以 VIX9D/VIX/VIX3M 的實際可用證據，或明確寫出不用它的理由與失效條件）。因此原反對意見中『不可把期限結構用來支持風險偏好』的要求仍未滿足。"
+        "技術/時間對齊仍未被“硬處理”到你原批判要求的等同強度：回應雖提到 completed-days/同口徑，但沒有明確採用本輪同一完成日（2026-09-29 regular close）與 3/7 聚合口徑來約束任何可驗證的升級/不升級判斷。"
       ]
     }
   ],
@@ -437,58 +421,58 @@
   "final_decision_audits": [],
   "final_decision": {
     "opening_statement": "本輪以全部風控完成後的配置為準，依列示差額調整；尚未執行任何交易。",
-    "tone": "concerned",
+    "tone": "cautious",
     "market_stance": "neutral",
-    "model_score": 100,
-    "model_score_reason": "方向一致度 100/100；13 位提案委員按信心加權，0 項協商後否決仍未解除，扣除 0 分。",
-    "risk_level": "very_high",
-    "expected_horizon": "待補齊分母、事件窗口與壓力測試資料後重新評估；不代表固定持有期間或已成交。",
+    "model_score": 97,
+    "model_score_reason": "方向一致度 97/100；13 位提案委員按信心加權，0 項協商後否決仍未解除，扣除 0 分。",
+    "risk_level": "high",
+    "expected_horizon": "每日取得新資料後重新評估；本候選不設定固定持有天數，且在風控閘門通過前不構成最終建議。",
     "allocations": [
       {
         "symbol": "NVDA",
         "asset_type": "stock",
         "target_weight": "0.25",
-        "note": "降低此部位的研究目標，交易尚未執行。",
-        "invalidation_type": "thesis",
-        "invalidation_price": null
+        "note": "降低此部位的研究目標。",
+        "invalidation_type": "price",
+        "invalidation_price": "204.49"
       },
       {
         "symbol": "AVGO",
         "asset_type": "stock",
         "target_weight": "0.2278588620883904337583858248",
-        "note": "提高此部位的研究目標，交易尚未執行。",
-        "invalidation_type": "thesis",
-        "invalidation_price": null
+        "note": "提高此部位的研究目標。",
+        "invalidation_type": "price",
+        "invalidation_price": "319.59"
       },
       {
         "symbol": "META",
         "asset_type": "stock",
         "target_weight": "0.1877400522353664157320632970",
-        "note": "降低此部位的研究目標，交易尚未執行。",
-        "invalidation_type": "thesis",
-        "invalidation_price": null
+        "note": "降低此部位的研究目標。",
+        "invalidation_type": "price",
+        "invalidation_price": "664.91"
       },
       {
         "symbol": "PLTR",
         "asset_type": "stock",
         "target_weight": "0.08211008533638737971200715094",
-        "note": "降低此部位的研究目標，交易尚未執行。",
-        "invalidation_type": "thesis",
-        "invalidation_price": null
+        "note": "降低此部位的研究目標。",
+        "invalidation_type": "price",
+        "invalidation_price": "168.27"
       },
       {
         "symbol": "GLD",
         "asset_type": "commodity_etf",
         "target_weight": "0.1115220417417375475448912229",
-        "note": "提高此部位的研究目標，交易尚未執行。",
-        "invalidation_type": "thesis",
-        "invalidation_price": null
+        "note": "提高此部位的研究目標。",
+        "invalidation_type": "price",
+        "invalidation_price": "344.6"
       },
       {
         "symbol": "CASH",
         "asset_type": "cash",
         "target_weight": "0.1407689585981182232526525044",
-        "note": "提高此部位的研究目標，交易尚未執行。",
+        "note": "提高此部位的研究目標。",
         "invalidation_type": "cash",
         "invalidation_price": null
       }
@@ -496,8 +480,134 @@
     "top_reasons": [
       {
         "id": 1,
+        "title": "AVGO 的投資觀測",
+        "summary": "營收：29591000000 美元（2026-05-04 至 2026-08-02）。；淨利（損）：13088000000 美元（2026-05-04 至 2026-08-02）。；營業活動淨現金流量：32950000000 美元（2025-11-03 至 2026-08-02）。",
+        "confidence": null,
+        "category": "valuation",
+        "affected_assets": [
+          "AVGO"
+        ],
+        "reason_type": "investment_evidence",
+        "support_status": "supported",
+        "evidence_refs": [
+          "fact:AVGO:revenue:2026-05-04:2026-08-02:2026-09-10:10-Q:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "fact:AVGO:net_income:2026-05-04:2026-08-02:2026-09-10:10-Q:ProfitLoss",
+          "fact:AVGO:operating_cash_flow:2025-11-03:2026-08-02:2026-09-10:10-Q:NetCashProvidedByUsedInOperatingActivities"
+        ],
+        "source_observations": {
+          "fact:AVGO:revenue:2026-05-04:2026-08-02:2026-09-10:10-Q:RevenueFromContractWithCustomerExcludingAssessedTax": "revenue（2026-05-04 至 2026-08-02）：29591000000 USD；申報日 2026-09-10",
+          "fact:AVGO:net_income:2026-05-04:2026-08-02:2026-09-10:10-Q:ProfitLoss": "net_income（2026-05-04 至 2026-08-02）：13088000000 USD；申報日 2026-09-10",
+          "fact:AVGO:operating_cash_flow:2025-11-03:2026-08-02:2026-09-10:10-Q:NetCashProvidedByUsedInOperatingActivities": "operating_cash_flow（2025-11-03 至 2026-08-02）：32950000000 USD；申報日 2026-09-10"
+        },
+        "final_action": {
+          "AVGO": "increase"
+        },
+        "final_weight": {
+          "AVGO": "0.2278588620883904337583858248"
+        },
+        "policy_digest": null,
+        "artifact_refs": [
+          "evidence:fact:AVGO:revenue:2026-05-04:2026-08-02:2026-09-10:10-Q:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "evidence:fact:AVGO:net_income:2026-05-04:2026-08-02:2026-09-10:10-Q:ProfitLoss",
+          "evidence:fact:AVGO:operating_cash_flow:2025-11-03:2026-08-02:2026-09-10:10-Q:NetCashProvidedByUsedInOperatingActivities"
+        ],
+        "claim_ids": [
+          "fact:AVGO:revenue:2026-05-04:2026-08-02:2026-09-10:10-Q:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "fact:AVGO:net_income:2026-05-04:2026-08-02:2026-09-10:10-Q:ProfitLoss",
+          "fact:AVGO:operating_cash_flow:2025-11-03:2026-08-02:2026-09-10:10-Q:NetCashProvidedByUsedInOperatingActivities"
+        ],
+        "source_urls": [
+          "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json"
+        ]
+      },
+      {
+        "id": 2,
+        "title": "META 的投資觀測",
+        "summary": "營收：60801000000 美元（2026-04-01 至 2026-06-30）。；淨利（損）：15848000000 美元（2026-04-01 至 2026-06-30）。；營業活動淨現金流量：64088000000 美元（2026-01-01 至 2026-06-30）。",
+        "confidence": null,
+        "category": "valuation",
+        "affected_assets": [
+          "META"
+        ],
+        "reason_type": "investment_evidence",
+        "support_status": "supported",
+        "evidence_refs": [
+          "fact:META:revenue:2026-04-01:2026-06-30:2026-07-30:10-Q:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "fact:META:net_income:2026-04-01:2026-06-30:2026-07-30:10-Q:NetIncomeLoss",
+          "fact:META:operating_cash_flow:2026-01-01:2026-06-30:2026-07-30:10-Q:NetCashProvidedByUsedInOperatingActivities"
+        ],
+        "source_observations": {
+          "fact:META:revenue:2026-04-01:2026-06-30:2026-07-30:10-Q:RevenueFromContractWithCustomerExcludingAssessedTax": "revenue（2026-04-01 至 2026-06-30）：60801000000 USD；申報日 2026-07-30",
+          "fact:META:net_income:2026-04-01:2026-06-30:2026-07-30:10-Q:NetIncomeLoss": "net_income（2026-04-01 至 2026-06-30）：15848000000 USD；申報日 2026-07-30",
+          "fact:META:operating_cash_flow:2026-01-01:2026-06-30:2026-07-30:10-Q:NetCashProvidedByUsedInOperatingActivities": "operating_cash_flow（2026-01-01 至 2026-06-30）：64088000000 USD；申報日 2026-07-30"
+        },
+        "final_action": {
+          "META": "reduce"
+        },
+        "final_weight": {
+          "META": "0.1877400522353664157320632970"
+        },
+        "policy_digest": null,
+        "artifact_refs": [
+          "evidence:fact:META:revenue:2026-04-01:2026-06-30:2026-07-30:10-Q:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "evidence:fact:META:net_income:2026-04-01:2026-06-30:2026-07-30:10-Q:NetIncomeLoss",
+          "evidence:fact:META:operating_cash_flow:2026-01-01:2026-06-30:2026-07-30:10-Q:NetCashProvidedByUsedInOperatingActivities"
+        ],
+        "claim_ids": [
+          "fact:META:revenue:2026-04-01:2026-06-30:2026-07-30:10-Q:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "fact:META:net_income:2026-04-01:2026-06-30:2026-07-30:10-Q:NetIncomeLoss",
+          "fact:META:operating_cash_flow:2026-01-01:2026-06-30:2026-07-30:10-Q:NetCashProvidedByUsedInOperatingActivities"
+        ],
+        "source_urls": [
+          "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json"
+        ]
+      },
+      {
+        "id": 3,
+        "title": "PLTR 的投資觀測",
+        "summary": "營收：1935464000 美元（2026-04-01 至 2026-06-30）。；淨利（損）：1061890000 美元（2026-04-01 至 2026-06-30）。；營業活動淨現金流量：2115332000 美元（2026-01-01 至 2026-06-30）。",
+        "confidence": null,
+        "category": "valuation",
+        "affected_assets": [
+          "PLTR"
+        ],
+        "reason_type": "investment_evidence",
+        "support_status": "supported",
+        "evidence_refs": [
+          "fact:PLTR:revenue:2026-04-01:2026-06-30:2026-08-04:10-Q:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "fact:PLTR:net_income:2026-04-01:2026-06-30:2026-08-04:10-Q:NetIncomeLoss",
+          "fact:PLTR:operating_cash_flow:2026-01-01:2026-06-30:2026-08-04:10-Q:NetCashProvidedByUsedInOperatingActivities"
+        ],
+        "source_observations": {
+          "fact:PLTR:revenue:2026-04-01:2026-06-30:2026-08-04:10-Q:RevenueFromContractWithCustomerExcludingAssessedTax": "revenue（2026-04-01 至 2026-06-30）：1935464000 USD；申報日 2026-08-04",
+          "fact:PLTR:net_income:2026-04-01:2026-06-30:2026-08-04:10-Q:NetIncomeLoss": "net_income（2026-04-01 至 2026-06-30）：1061890000 USD；申報日 2026-08-04",
+          "fact:PLTR:operating_cash_flow:2026-01-01:2026-06-30:2026-08-04:10-Q:NetCashProvidedByUsedInOperatingActivities": "operating_cash_flow（2026-01-01 至 2026-06-30）：2115332000 USD；申報日 2026-08-04"
+        },
+        "final_action": {
+          "PLTR": "reduce"
+        },
+        "final_weight": {
+          "PLTR": "0.08211008533638737971200715094"
+        },
+        "policy_digest": null,
+        "artifact_refs": [
+          "evidence:fact:PLTR:revenue:2026-04-01:2026-06-30:2026-08-04:10-Q:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "evidence:fact:PLTR:net_income:2026-04-01:2026-06-30:2026-08-04:10-Q:NetIncomeLoss",
+          "evidence:fact:PLTR:operating_cash_flow:2026-01-01:2026-06-30:2026-08-04:10-Q:NetCashProvidedByUsedInOperatingActivities"
+        ],
+        "claim_ids": [
+          "fact:PLTR:revenue:2026-04-01:2026-06-30:2026-08-04:10-Q:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "fact:PLTR:net_income:2026-04-01:2026-06-30:2026-08-04:10-Q:NetIncomeLoss",
+          "fact:PLTR:operating_cash_flow:2026-01-01:2026-06-30:2026-08-04:10-Q:NetCashProvidedByUsedInOperatingActivities"
+        ],
+        "source_urls": [
+          "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json"
+        ]
+      },
+      {
+        "id": 4,
         "title": "部位風險影子警示",
-        "summary": "部位風險影子紀錄： 5 個風險部位未量化或超過每筆 US$165.07 研究損失預算。；本輪列為影子紀錄，未啟用硬性限制。這不代表風險為零，也不代表買賣建議。",
+        "summary": "部位風險影子紀錄： 3 個風險部位未量化或超過每筆 US$166.51 研究損失預算。；本輪列為影子紀錄，未啟用硬性限制。這不代表風險為零，也不代表買賣建議。",
         "confidence": null,
         "category": "policy",
         "affected_assets": [
@@ -537,7 +647,7 @@
         "source_urls": []
       },
       {
-        "id": 2,
+        "id": 5,
         "title": "部位風險影子警示",
         "summary": "Position-risk aggregate gap stress 高於 configured portfolio cap.；本輪保留為風控檢查紀錄，是否改變部位以最終動作及權重為準。檢查資訊不能單獨證明收益提高。",
         "confidence": null,
@@ -583,7 +693,7 @@
       {
         "kind": "data_quality",
         "severity": "low",
-        "summary": "本輪 2026-09-29T12:50:46.798415+00:00 市場快照含有行情：AVGO、GLD、META、NVDA、PLTR",
+        "summary": "本輪 2026-09-30T11:16:21.569090+00:00 市場快照含有行情：AVGO、GLD、META、NVDA、PLTR",
         "effect": "這是全市場快照的覆蓋事實；個別研究角色的輸入缺口不等於全系統缺行情。",
         "affected_claims": [
           "AVGO",
@@ -616,9 +726,9 @@
         "source_urls": []
       },
       {
-        "kind": "evidence_gap",
+        "kind": "policy_constraint",
         "severity": "medium",
-        "summary": "未驗證的研究主張不可作已證實結論；仍可依現有基本面與行情分析配置。",
+        "summary": "最終候選已不包含此限制指定的部位、動作或研究主張。",
         "effect": "此限制僅依已記錄適用範圍處理，原始模型意見另存草案供稽核。",
         "affected_claims": [
           "NVDA",
@@ -650,24 +760,8 @@
         "effect": "此限制僅依已記錄適用範圍處理，原始模型意見另存草案供稽核。",
         "affected_claims": [
           "NVDA",
-          "AVGO",
           "META",
           "PLTR"
-        ],
-        "source_urls": []
-      },
-      {
-        "kind": "policy_constraint",
-        "severity": "medium",
-        "summary": "最終候選已不包含此限制指定的部位、動作或研究主張。",
-        "effect": "此限制僅依已記錄適用範圍處理，原始模型意見另存草案供稽核。",
-        "affected_claims": [
-          "NVDA",
-          "AVGO",
-          "META",
-          "PLTR",
-          "GLD",
-          "CASH"
         ],
         "source_urls": []
       },
@@ -677,8 +771,9 @@
         "summary": "未驗證的研究主張不可作已證實結論；仍可依現有基本面與行情分析配置。",
         "effect": "此限制僅依已記錄適用範圍處理，原始模型意見另存草案供稽核。",
         "affected_claims": [
-          "GLD",
-          "CASH"
+          "NVDA",
+          "META",
+          "PLTR"
         ],
         "source_urls": []
       },
@@ -693,9 +788,9 @@
         "source_urls": []
       },
       {
-        "kind": "evidence_gap",
+        "kind": "policy_constraint",
         "severity": "medium",
-        "summary": "未驗證的研究主張不可作已證實結論；仍可依現有基本面與行情分析配置。",
+        "summary": "最終候選已不包含此限制指定的部位、動作或研究主張。",
         "effect": "此限制僅依已記錄適用範圍處理，原始模型意見另存草案供稽核。",
         "affected_claims": [
           "NVDA",
@@ -727,7 +822,18 @@
         "effect": "此限制僅依已記錄適用範圍處理，原始模型意見另存草案供稽核。",
         "affected_claims": [
           "NVDA",
-          "AVGO",
+          "META",
+          "PLTR"
+        ],
+        "source_urls": []
+      },
+      {
+        "kind": "evidence_gap",
+        "severity": "medium",
+        "summary": "未驗證的研究主張不可作已證實結論；仍可依現有基本面與行情分析配置。",
+        "effect": "此限制僅依已記錄適用範圍處理，原始模型意見另存草案供稽核。",
+        "affected_claims": [
+          "NVDA",
           "META",
           "PLTR"
         ],
@@ -740,23 +846,17 @@
         "effect": "此限制僅依已記錄適用範圍處理，原始模型意見另存草案供稽核。",
         "affected_claims": [
           "NVDA",
-          "AVGO",
           "META",
-          "PLTR",
-          "GLD",
-          "CASH"
+          "PLTR"
         ],
         "source_urls": []
       },
       {
-        "kind": "evidence_gap",
+        "kind": "policy_constraint",
         "severity": "medium",
-        "summary": "未驗證的研究主張不可作已證實結論；仍可依現有基本面與行情分析配置。",
+        "summary": "最終候選已不包含此限制指定的部位、動作或研究主張。",
         "effect": "此限制僅依已記錄適用範圍處理，原始模型意見另存草案供稽核。",
-        "affected_claims": [
-          "GLD",
-          "CASH"
-        ],
+        "affected_claims": [],
         "source_urls": []
       },
       {
@@ -778,9 +878,9 @@
         "source_urls": []
       },
       {
-        "kind": "evidence_gap",
+        "kind": "policy_constraint",
         "severity": "medium",
-        "summary": "未驗證的研究主張不可作已證實結論；仍可依現有基本面與行情分析配置。",
+        "summary": "最終候選已不包含此限制指定的部位、動作或研究主張。",
         "effect": "此限制僅依已記錄適用範圍處理，原始模型意見另存草案供稽核。",
         "affected_claims": [
           "NVDA",
@@ -811,249 +911,202 @@
         "symbol": "NVDA",
         "decision": "reduce",
         "return_driver_kind": "insufficient_evidence",
-        "expected_return_driver": "NVDA 未採用缺少證據的變動；其他已驗證標的仍依本輪市場判斷調整。",
-        "downside": "NVDA 維持前一輪模擬曝險，不代表風險較低。",
-        "invalidation": "NVDA 若有新的有效收益證據或硬性風控觸發，須重新評估前一輪模擬配置。",
+        "expected_return_driver": "NVDA 本輪差額未超過交易門檻，維持原倉而未採用換倉論點。",
+        "downside": "NVDA 維持現有曝險，仍承擔原部位的市場下行風險。",
+        "invalidation": "NVDA 新證據或足以形成實際調整的配置改變時重新評估。",
         "alternative_symbols": [
-          "CASH",
-          "GLD",
-          "AVGO"
-        ],
-        "opportunity_cost": "NVDA 暫不轉向其他可調整部位或現金，放棄其尚未證實的相對收益。",
-        "advantage_over_hold": "NVDA 原候選依賴 AVGO、META、PLTR、GLD 的同步換倉，該換倉缺少支持，維持原倉可避免未獲支持的交易成本。",
-        "cost_tradeoff": "NVDA 本輪不交易，估計交易成本為零；原草案另存稽核。",
-        "evidence_refs": [],
-        "evidence_observations": [],
-        "driver_links": [],
-        "evidence_status": "insufficient",
-        "candidate_cost_usd": "0.4611824805500076816715317257",
-        "proposed_cost_usd": "0.1203224802554740816715317255"
-      },
-      {
-        "symbol": "AVGO",
-        "decision": "increase",
-        "return_driver_kind": "insufficient_evidence",
-        "expected_return_driver": "AVGO 未採用缺少證據的變動；其他已驗證標的仍依本輪市場判斷調整。",
-        "downside": "AVGO 維持前一輪模擬曝險，不代表風險較低。",
-        "invalidation": "AVGO 若有新的有效收益證據或硬性風控觸發，須重新評估前一輪模擬配置。",
-        "alternative_symbols": [
-          "NVDA",
-          "META",
-          "GLD",
-          "CASH"
-        ],
-        "opportunity_cost": "AVGO 暫不轉向其他可調整部位或現金，放棄其尚未證實的相對收益。",
-        "advantage_over_hold": "AVGO 草案文字稱維持，但目標權重相較前一輪模擬目標要求減碼；方向互相矛盾，無法採用該標的收益取捨。",
-        "cost_tradeoff": "AVGO 本輪不交易，估計交易成本為零；原草案另存稽核。",
-        "evidence_refs": [],
-        "evidence_observations": [],
-        "driver_links": [],
-        "evidence_status": "insufficient",
-        "candidate_cost_usd": "0.4611824805500076816715317257",
-        "proposed_cost_usd": "0.1203224802554740816715317255"
-      },
-      {
-        "symbol": "META",
-        "decision": "reduce",
-        "return_driver_kind": "insufficient_evidence",
-        "expected_return_driver": "META 未採用缺少證據的變動；其他已驗證標的仍依本輪市場判斷調整。",
-        "downside": "META 維持前一輪模擬曝險，不代表風險較低。",
-        "invalidation": "META 若有新的有效收益證據或硬性風控觸發，須重新評估前一輪模擬配置。",
-        "alternative_symbols": [
-          "NVDA",
-          "AVGO",
-          "GLD",
-          "CASH"
-        ],
-        "opportunity_cost": "META 暫不轉向其他可調整部位或現金，放棄其尚未證實的相對收益。",
-        "advantage_over_hold": "META 草案文字稱維持，但目標權重相較前一輪模擬目標要求加碼；方向互相矛盾，無法採用該標的收益取捨。",
-        "cost_tradeoff": "META 本輪不交易，估計交易成本為零；原草案另存稽核。",
-        "evidence_refs": [],
-        "evidence_observations": [],
-        "driver_links": [],
-        "evidence_status": "insufficient",
-        "candidate_cost_usd": "0.4611824805500076816715317257",
-        "proposed_cost_usd": "0.1203224802554740816715317255"
-      },
-      {
-        "symbol": "PLTR",
-        "decision": "reduce",
-        "return_driver_kind": "insufficient_evidence",
-        "expected_return_driver": "PLTR 未採用缺少證據的變動；其他已驗證標的仍依本輪市場判斷調整。",
-        "downside": "PLTR 維持前一輪模擬曝險，不代表風險較低。",
-        "invalidation": "PLTR 若有新的有效收益證據或硬性風控觸發，須重新評估前一輪模擬配置。",
-        "alternative_symbols": [
-          "NVDA",
-          "AVGO",
-          "META",
-          "CASH"
-        ],
-        "opportunity_cost": "PLTR 暫不轉向其他可調整部位或現金，放棄其尚未證實的相對收益。",
-        "advantage_over_hold": "PLTR 草案文字稱維持，但目標權重相較前一輪模擬目標要求加碼；方向互相矛盾，無法採用該標的收益取捨。",
-        "cost_tradeoff": "PLTR 本輪不交易，估計交易成本為零；原草案另存稽核。",
-        "evidence_refs": [],
-        "evidence_observations": [],
-        "driver_links": [],
-        "evidence_status": "insufficient",
-        "candidate_cost_usd": "0.4611824805500076816715317257",
-        "proposed_cost_usd": "0.1203224802554740816715317255"
-      },
-      {
-        "symbol": "GLD",
-        "decision": "increase",
-        "return_driver_kind": "insufficient_evidence",
-        "expected_return_driver": "GLD 未採用缺少證據的變動；其他已驗證標的仍依本輪市場判斷調整。",
-        "downside": "GLD 維持前一輪模擬曝險，不代表風險較低。",
-        "invalidation": "GLD 若有新的有效收益證據或硬性風控觸發，須重新評估前一輪模擬配置。",
-        "alternative_symbols": [
-          "CASH",
-          "NVDA",
-          "AVGO"
-        ],
-        "opportunity_cost": "GLD 暫不轉向其他可調整部位或現金，放棄其尚未證實的相對收益。",
-        "advantage_over_hold": "GLD 草案文字稱維持，但目標權重相較前一輪模擬目標要求減碼；方向互相矛盾，無法採用該標的收益取捨。",
-        "cost_tradeoff": "GLD 本輪不交易，估計交易成本為零；原草案另存稽核。",
-        "evidence_refs": [],
-        "evidence_observations": [],
-        "driver_links": [],
-        "evidence_status": "insufficient",
-        "candidate_cost_usd": "0.4611824805500076816715317257",
-        "proposed_cost_usd": "0.1203224802554740816715317255"
-      },
-      {
-        "symbol": "CASH",
-        "decision": "increase",
-        "return_driver_kind": "insufficient_evidence",
-        "expected_return_driver": "CASH 未採用缺少證據的變動；其他已驗證標的仍依本輪市場判斷調整。",
-        "downside": "CASH 維持前一輪模擬曝險，不代表風險較低。",
-        "invalidation": "CASH 若有新的有效收益證據或硬性風控觸發，須重新評估前一輪模擬配置。",
-        "alternative_symbols": [
-          "GLD",
-          "NVDA",
-          "AVGO"
-        ],
-        "opportunity_cost": "CASH 暫不轉向其他可調整部位或現金，放棄其尚未證實的相對收益。",
-        "advantage_over_hold": "CASH 原候選依賴 AVGO、META、PLTR、GLD 的同步換倉，該換倉缺少支持，維持原倉可避免未獲支持的交易成本。",
-        "cost_tradeoff": "CASH 本輪不交易，估計交易成本為零；原草案另存稽核。",
-        "evidence_refs": [],
-        "evidence_observations": [],
-        "driver_links": [],
-        "evidence_status": "insufficient",
-        "candidate_cost_usd": "0.4611824805500076816715317257",
-        "proposed_cost_usd": "0.1203224802554740816715317255"
-      }
-    ],
-    "scoped_constraints": [
-      {
-        "constraint_id": "sc-single-stock-max-weight-active-sleeve-nav",
-        "scope": "asset_type",
-        "symbols": [
-          "NVDA"
-        ],
-        "actions": [
-          "reduce",
-          "hold"
-        ],
-        "asset_types": [
-          "stock"
-        ],
-        "claims": [
-          "hard_gate_single_stock_max_weight_compliance"
-        ],
-        "requirement": "policy_invariant",
-        "policy_key": "single_stock_max_weight",
-        "evidence_ids": [
-          "missing_weight_denominator_input_chain"
-        ],
-        "basis": "NVDA 候選降至 25%，但 active_sleeve_nav 分母與逐項核對仍須本地 deterministic gate 驗證，不能宣稱硬閘已通過。"
-      },
-      {
-        "constraint_id": "sc-gap-stress-event-window-max-loss-usd",
-        "scope": "action",
-        "symbols": [
-          "NVDA",
           "AVGO",
           "META",
           "PLTR",
           "GLD",
           "CASH"
         ],
-        "actions": [
-          "hold",
-          "reduce"
-        ],
-        "asset_types": [
-          "stock",
-          "commodity_etf",
-          "cash"
-        ],
-        "claims": [
-          "position_risk_gate_stress_mapping"
-        ],
-        "requirement": "research_evidence",
-        "policy_key": "position_risk_gate.aggregate_stress_cap_fraction",
-        "evidence_ids": [
-          "earnings_missing",
-          "bls_error",
-          "vol_curve_stale",
-          "missing_gap_stress_inputs",
-          "missing_max_loss_usd_chain"
-        ],
-        "basis": "未完成事件窗口、跳空百分比、失效距離與最大損失美元的可追溯鏈條，5%壓力上限不能核驗。"
+        "opportunity_cost": "NVDA 尚未轉向替代配置，仍保留其原先持倉機會成本。",
+        "advantage_over_hold": "NVDA 還原表示精度或一分錢以內的差額，維持確認持倉。",
+        "cost_tradeoff": "NVDA 本輪維持原倉，不產生交易成本。",
+        "evidence_refs": [],
+        "evidence_observations": [],
+        "driver_links": [],
+        "evidence_status": "insufficient",
+        "candidate_cost_usd": "0.4474500147385671122036155069",
+        "proposed_cost_usd": "0E-31"
       },
       {
-        "constraint_id": "sc-leveraged-etf-path-risk-reset-drift",
-        "scope": "claim",
-        "symbols": [
-          "SOXL",
-          "TQQQ",
-          "SQQQ",
-          "SOXS",
-          "SPXU"
-        ],
-        "actions": [
-          "hold"
-        ],
-        "asset_types": [
-          "leveraged_etf"
-        ],
-        "claims": [
-          "no_unchecked_reset_drift_risk_mechanism"
-        ],
-        "requirement": "policy_invariant",
-        "policy_key": "effective_risk_profile+position_risk_gate_consistency",
-        "evidence_ids": [
-          "not_provided_path_exposure_rationale"
-        ],
-        "basis": "本候選不配置槓桿或反向 ETF，因此不新增該機制曝險；相關檢查仍未形成通過聲明。"
-      },
-      {
-        "constraint_id": "sc-gld-vs-cash-opportunity-cost-same-basis",
-        "scope": "claim",
-        "symbols": [
+        "symbol": "AVGO",
+        "decision": "increase",
+        "return_driver_kind": "earnings",
+        "expected_return_driver": "已申報營收、淨利與營業現金流提供保留研究曝險的基本面依據，但不構成本輪加碼授權。",
+        "downside": "若AI相關需求、毛利或現金流品質惡化，個股可能因估值與事件風險下跌；缺少本輪同口徑跳空損失量化。",
+        "invalidation": "若後續申報或公司指引顯示需求、毛利率或現金流品質顯著惡化，或價格跌破319.59美元，應重新評估。",
+        "alternative_symbols": [
+          "NVDA",
+          "META",
+          "PLTR",
           "GLD",
           "CASH"
         ],
-        "actions": [
-          "hold"
+        "opportunity_cost": "維持AVGO會放棄CASH的流動性與保險彈性，也放棄將曝險集中於已完成風控修正後的NVDA或其他標的。",
+        "advantage_over_hold": "本輪沒有足夠淨優勢支持相對前輪目標調整，因此維持可避免無證據交易與額外摩擦成本。",
+        "cost_tradeoff": "維持不產生候選交易成本，但承擔個股跳空與事件資料缺口；未將未知損失填為零。",
+        "evidence_refs": [
+          "fact:AVGO:revenue:2026-05-04:2026-08-02:2026-09-10:10-Q:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "fact:AVGO:net_income:2026-05-04:2026-08-02:2026-09-10:10-Q:ProfitLoss",
+          "fact:AVGO:operating_cash_flow:2025-11-03:2026-08-02:2026-09-10:10-Q:NetCashProvidedByUsedInOperatingActivities"
         ],
-        "asset_types": [
-          "commodity_etf",
-          "cash"
+        "evidence_observations": [
+          "revenue（2026-05-04 至 2026-08-02）：29591000000 USD；申報日 2026-09-10",
+          "net_income（2026-05-04 至 2026-08-02）：13088000000 USD；申報日 2026-09-10",
+          "operating_cash_flow（2025-11-03 至 2026-08-02）：32950000000 USD；申報日 2026-09-10"
         ],
-        "claims": [
-          "gld_insurance_value_vs_opportunity_cost_breakdown"
-        ],
-        "requirement": "short_window_evidence",
-        "policy_key": "research_warnings: GLD 与 CASH simultaneous evaluation",
-        "evidence_ids": [
-          "missing_same_basis_opportunity_cost_inputs"
-        ],
-        "basis": "GLD 與 CASH 尚未完成同窗口保險價值、下行情境與機會成本的對稱分解。"
+        "driver_links": [],
+        "evidence_status": "supported",
+        "candidate_cost_usd": "0.4474500147385671122036155069",
+        "proposed_cost_usd": "0E-31"
       },
       {
-        "constraint_id": "EVT_TIME_EVENT_WINDOW_ALIGNMENT",
+        "symbol": "META",
+        "decision": "reduce",
+        "return_driver_kind": "earnings",
+        "expected_return_driver": "已申報營收、淨利與營業現金流支持保留研究曝險；缺少估值與近期事件證據，不能支持加碼。",
+        "downside": "資本支出、估值或盈利預期若惡化，META可能出現個股重估；本輪沒有同口徑跳空損失與估值壓力量化。",
+        "invalidation": "若後續財報或指引顯示盈利品質顯著惡化，或價格跌破664.91美元，應重新評估。",
+        "alternative_symbols": [
+          "NVDA",
+          "AVGO",
+          "PLTR",
+          "GLD",
+          "CASH"
+        ],
+        "opportunity_cost": "維持META會放棄CASH的彈性，也可能錯過其他標的在資料補齊後的相對收益；但替代證據目前不足。",
+        "advantage_over_hold": "沒有證據證明減碼扣除成本後優於維持，因此維持原目標避免以資料缺口推導負向結論。",
+        "cost_tradeoff": "維持無新增交易成本，但保留個股事件與估值未知風險；不宣稱其分散效果或預期報酬。",
+        "evidence_refs": [
+          "fact:META:revenue:2026-04-01:2026-06-30:2026-07-30:10-Q:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "fact:META:net_income:2026-04-01:2026-06-30:2026-07-30:10-Q:NetIncomeLoss",
+          "fact:META:operating_cash_flow:2026-01-01:2026-06-30:2026-07-30:10-Q:NetCashProvidedByUsedInOperatingActivities"
+        ],
+        "evidence_observations": [
+          "revenue（2026-04-01 至 2026-06-30）：60801000000 USD；申報日 2026-07-30",
+          "net_income（2026-04-01 至 2026-06-30）：15848000000 USD；申報日 2026-07-30",
+          "operating_cash_flow（2026-01-01 至 2026-06-30）：64088000000 USD；申報日 2026-07-30"
+        ],
+        "driver_links": [],
+        "evidence_status": "supported",
+        "candidate_cost_usd": "0.4474500147385671122036155069",
+        "proposed_cost_usd": "0E-31"
+      },
+      {
+        "symbol": "PLTR",
+        "decision": "reduce",
+        "return_driver_kind": "earnings",
+        "expected_return_driver": "已申報營收、淨利、毛利與營業現金流提供保留研究曝險依據，但缺少估值、分部營收與事件驗證。",
+        "downside": "高估值或股票薪酬、分部成長不及預期可能造成較大重估；本輪沒有相對維持原倉的短窗淨優勢。",
+        "invalidation": "若後續申報顯示營收、現金流或盈利品質惡化，或價格跌破168.27美元，應重新評估。",
+        "alternative_symbols": [
+          "NVDA",
+          "AVGO",
+          "META",
+          "GLD",
+          "CASH"
+        ],
+        "opportunity_cost": "維持PLTR會放棄CASH的彈性，亦可能放棄AVGO或NVDA的已申報規模優勢；但現有資料不足以支持換倉。",
+        "advantage_over_hold": "無可驗證的扣成本相對優勢支持主動減碼，因此維持原目標比無證據換倉更可審計。",
+        "cost_tradeoff": "維持無新增交易成本，但承擔估值、事件與個股跳空風險；不把未知損失視為零。",
+        "evidence_refs": [
+          "fact:PLTR:revenue:2026-04-01:2026-06-30:2026-08-04:10-Q:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "fact:PLTR:net_income:2026-04-01:2026-06-30:2026-08-04:10-Q:NetIncomeLoss",
+          "fact:PLTR:operating_cash_flow:2026-01-01:2026-06-30:2026-08-04:10-Q:NetCashProvidedByUsedInOperatingActivities"
+        ],
+        "evidence_observations": [
+          "revenue（2026-04-01 至 2026-06-30）：1935464000 USD；申報日 2026-08-04",
+          "net_income（2026-04-01 至 2026-06-30）：1061890000 USD；申報日 2026-08-04",
+          "operating_cash_flow（2026-01-01 至 2026-06-30）：2115332000 USD；申報日 2026-08-04"
+        ],
+        "driver_links": [],
+        "evidence_status": "supported",
+        "candidate_cost_usd": "0.4474500147385671122036155069",
+        "proposed_cost_usd": "0E-31"
+      },
+      {
+        "symbol": "GLD",
+        "decision": "increase",
+        "return_driver_kind": "insufficient_evidence",
+        "expected_return_driver": "GLD可保留作為既有組合中的保險選項，但本輪沒有證據證明其保險價值高於CASH或足以支持加碼。",
+        "downside": "若利率上升或風險資產續強，GLD可能落後CASH；近期價格與技術資料不能單獨證明未來收益。",
+        "invalidation": "若後續同口徑資料顯示GLD的保險價值不再符合組合需求，或價格跌破344.60美元，應重估。",
+        "alternative_symbols": [
+          "CASH",
+          "NVDA",
+          "AVGO",
+          "META",
+          "PLTR"
+        ],
+        "opportunity_cost": "維持GLD會放棄CASH的即時彈性與零價格波動；但退出也會放棄未被量化的避險選項。",
+        "advantage_over_hold": "本輪沒有足夠證據證明調整後淨報酬優於維持，因此維持原目標，避免以單日價格或缺資料宣稱保護優勢。",
+        "cost_tradeoff": "維持無交易成本；承擔GLD相對CASH的機會成本，且保險價值與共同衝擊仍未量化。",
+        "evidence_refs": [
+          "fact:NVDA:revenue:2026-04-27:2026-07-26:2026-08-26:10-Q:Revenues"
+        ],
+        "evidence_observations": [
+          "revenue（2026-04-27 至 2026-07-26）：96221000000 USD；申報日 2026-08-26"
+        ],
+        "driver_links": [],
+        "evidence_status": "insufficient",
+        "candidate_cost_usd": "0.4474500147385671122036155069",
+        "proposed_cost_usd": "0E-31"
+      },
+      {
+        "symbol": "CASH",
+        "decision": "increase",
+        "return_driver_kind": "capital_preservation",
+        "expected_return_driver": "CASH提供流動性與等待新證據的選擇權；本輪不宣稱其具有超越其他資產的預期報酬。",
+        "downside": "若股票或GLD上行，CASH承擔機會成本；其保本特性也不代表可抵銷通膨或匯率等未納入因素。",
+        "invalidation": "若後續完成風控、事件與短窗證據，並證明重新配置的扣成本淨優勢，應重新評估CASH權重。",
+        "alternative_symbols": [
+          "GLD",
+          "NVDA",
+          "AVGO",
+          "META",
+          "PLTR"
+        ],
+        "opportunity_cost": "持有CASH會放棄股票與GLD的可能上行或保險價值；目前資料不足以量化哪一項更優。",
+        "advantage_over_hold": "保留CASH可避免在事件、波動與標的資料缺口下被迫新增風險，並保留後續人工審核的流動性。",
+        "cost_tradeoff": "本輪維持CASH無估計交易成本，但機會成本未量化，不應被解讀為市場看空。",
+        "evidence_refs": [],
+        "evidence_observations": [],
+        "driver_links": [],
+        "evidence_status": "insufficient",
+        "candidate_cost_usd": "0.4474500147385671122036155069",
+        "proposed_cost_usd": "0E-31"
+      }
+    ],
+    "scoped_constraints": [
+      {
+        "constraint_id": "SC-1-NVDA-concentration-risk-quant",
         "scope": "action",
+        "symbols": [
+          "NVDA"
+        ],
+        "actions": [
+          "reduce",
+          "hold",
+          "exit"
+        ],
+        "asset_types": [
+          "stock"
+        ],
+        "claims": [
+          "short_window_evidence",
+          "research_evidence"
+        ],
+        "requirement": "research_evidence",
+        "policy_key": "single_stock_max_weight",
+        "evidence_ids": [],
+        "basis": "NVDA目標權重不得高於active_sleeve_nav的25%；本輪未完成隔夜跳空至失效後美元損失的同口徑量化。"
+      },
+      {
+        "constraint_id": "SC-2-event-gate-blackout-landing",
+        "scope": "claim",
         "symbols": [
           "NVDA",
           "AVGO",
@@ -1061,7 +1114,6 @@
           "PLTR"
         ],
         "actions": [
-          "increase",
           "reduce",
           "hold",
           "exit"
@@ -1070,31 +1122,25 @@
           "stock"
         ],
         "claims": [
-          "earnings-driven_or_event-window_upgrade"
+          "short_window_evidence"
         ],
         "requirement": "policy_invariant",
-        "policy_key": "event_risk_policy.event_calendar.earnings_effective_through=null",
-        "evidence_ids": [
-          "NVDA fundamental_facts (source_url=SEC companyfacts CIK0001045810, filed_at=2026-08-26)",
-          "AVGO fundamental_facts (source_url=SEC companyfacts CIK0001730168, filed_at=2026-09-10)"
-        ],
-        "basis": "申報硬數字可追溯，但 earnings 事件時間缺失，不得將其升級為事件窗口收益證明。"
+        "policy_key": "event_risk_policy.event_calendar / execution_stress_gate",
+        "evidence_ids": [],
+        "basis": "earnings缺失、BLS來源失敗且VIX曲線stale；不得用事件敘事或未量化事件風險支持新增敞口。"
       },
       {
-        "constraint_id": "VOLATILITY_CURVE_STALE_RESTRICTION",
+        "constraint_id": "SC-3-completed-days-evidence-alignment",
         "scope": "claim",
         "symbols": [
           "NVDA",
           "AVGO",
           "META",
           "PLTR",
-          "GLD",
-          "CASH"
+          "GLD"
         ],
         "actions": [
-          "hold",
-          "reduce",
-          "increase"
+          "hold"
         ],
         "asset_types": [
           "stock",
@@ -1102,43 +1148,92 @@
           "cash"
         ],
         "claims": [
-          "term_structure_risk_premium_or_market_stress_direction"
+          "research_evidence"
         ],
-        "requirement": "policy_invariant",
-        "policy_key": "event_risk_policy.volatility_curve_gate",
+        "requirement": "research_evidence",
+        "policy_key": null,
         "evidence_ids": [],
-        "basis": "VIX9D、VIX、VIX3M 均標記 stale；本候選不以期限結構推導市場壓力方向。"
+        "basis": "未提供同口徑3日或7日completed-days聚合；持有主張不得升級為已驗證短窗績效。"
       },
       {
-        "constraint_id": "GLD_VS_CASH_SYMMETRIC_INSURANCE_TEST",
-        "scope": "symbol",
+        "constraint_id": "SC-4-gld-vs-cash-opportunity-cost-boundary",
+        "scope": "claim",
         "symbols": [
           "GLD",
           "CASH"
         ],
         "actions": [
-          "increase",
-          "reduce",
-          "hold",
-          "exit"
+          "hold"
         ],
         "asset_types": [
           "commodity_etf",
           "cash"
         ],
         "claims": [
-          "insurance_value_relative_to_cash",
-          "downside_failure_condition"
+          "research_evidence"
+        ],
+        "requirement": "quote",
+        "policy_key": "performance_evaluation / research_warnings(GLD vs CASH)",
+        "evidence_ids": [],
+        "basis": "缺少GLD與CASH保險價值、流動性彈性及機會成本的同口徑比較。"
+      },
+      {
+        "constraint_id": "SC1-evidence-no-upgrade",
+        "scope": "symbol",
+        "symbols": [
+          "NVDA",
+          "AVGO",
+          "META",
+          "PLTR",
+          "GLD"
+        ],
+        "actions": [
+          "reduce",
+          "hold",
+          "exit"
+        ],
+        "asset_types": [
+          "stock",
+          "commodity_etf"
+        ],
+        "claims": [
+          "short_window_evidence"
         ],
         "requirement": "research_evidence",
         "policy_key": null,
-        "evidence_ids": [
-          "GLD snapshot technical fields（completed close、RSI14、distance_from_ma20/ma50、return_1d/5d/20d、volatility）"
+        "evidence_ids": [],
+        "basis": "本輪不得因缺資料而推導利多或利空，只能維持或降低曝險，不得方向性升級。"
+      },
+      {
+        "constraint_id": "SC2-event-time-alignment",
+        "scope": "action",
+        "symbols": [
+          "NVDA",
+          "AVGO",
+          "META",
+          "PLTR",
+          "GLD"
         ],
-        "basis": "GLD 技術欄位存在，但尚未完成相對 CASH 的同窗口下行保護與機會成本量化。"
+        "actions": [
+          "hold",
+          "reduce"
+        ],
+        "asset_types": [
+          "stock",
+          "commodity_etf"
+        ],
+        "claims": [
+          "policy_invariant"
+        ],
+        "requirement": "policy_invariant",
+        "policy_key": null,
+        "evidence_ids": [],
+        "basis": "可追溯市場技術資料限於2026-09-29 completed regular close；不得混用未完成日或stale波動曲線作為升級依據。"
       }
     ],
-    "evidence_claims": [],
+    "evidence_claims": [
+      "claim:reported_financials_support_hold_not_increase"
+    ],
     "risk_veto": false,
     "veto_reason": null,
     "decision_outcome": "model_decision",
@@ -1146,36 +1241,36 @@
   },
   "allocation_comparison": {
     "status": "available",
-    "run_id": "20260929T125104Z",
-    "data_cutoff": "2026-09-29T12:50:46.798415Z",
-    "result": "hold_no_net_advantage",
+    "run_id": "20260930T111637Z",
+    "data_cutoff": "2026-09-30T11:16:21.569090Z",
+    "result": "candidate_with_qualitative_support",
     "candidates": [
       {
         "name": "hold",
         "allocations": [
           {
             "symbol": "AVGO",
-            "target_weight": "0.2223582244709542814356021780"
+            "target_weight": "0.2239252363390021061962528084"
           },
           {
             "symbol": "GLD",
-            "target_weight": "0.1030221577650317318387019388"
+            "target_weight": "0.1034783768055362872930963968"
           },
           {
             "symbol": "META",
-            "target_weight": "0.1950853815453732580201949709"
+            "target_weight": "0.1996625401555594392365083626"
           },
           {
             "symbol": "NVDA",
-            "target_weight": "0.3119479641462935903866704469"
+            "target_weight": "0.3070244978190328793630603086"
           },
           {
             "symbol": "PLTR",
-            "target_weight": "0.08518163115463183070537005939"
+            "target_weight": "0.08421632022831239448749524800"
           },
           {
             "symbol": "CASH",
-            "target_weight": "0.08240464091771530761346040608"
+            "target_weight": "0.08169302865255689342358687564"
           }
         ]
       }
@@ -1183,7 +1278,7 @@
     "over_limit_reviews": [
       {
         "symbol": "NVDA",
-        "observed_weight": "0.3119479641462935903866704469",
+        "observed_weight": "0.3070244978190328793630603086",
         "policy_limit": "0.25"
       }
     ]

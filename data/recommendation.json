@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "run_id": "20260929T125104Z",
-  "generated_at": "2026-09-29T12:52:40.289830Z",
-  "data_cutoff": "2026-09-29T12:50:46.798415Z",
+  "run_id": "20260930T111637Z",
+  "generated_at": "2026-09-30T11:18:49.274336Z",
+  "data_cutoff": "2026-09-30T11:16:21.569090Z",
   "status": "live",
   "allocation_scope": {
     "active_sleeve_symbols": [
@@ -27,17 +27,19 @@
       "symbol": "NVDA",
       "decision": "reduce",
       "return_driver_kind": "insufficient_evidence",
-      "expected_return_driver": "NVDA 未採用缺少證據的變動；其他已驗證標的仍依本輪市場判斷調整。",
-      "downside": "NVDA 維持前一輪模擬曝險，不代表風險較低。",
-      "invalidation": "NVDA 若有新的有效收益證據或硬性風控觸發，須重新評估前一輪模擬配置。",
+      "expected_return_driver": "NVDA 本輪差額未超過交易門檻，維持原倉而未採用換倉論點。",
+      "downside": "NVDA 維持現有曝險，仍承擔原部位的市場下行風險。",
+      "invalidation": "NVDA 新證據或足以形成實際調整的配置改變時重新評估。",
       "alternative_symbols": [
-        "CASH",
+        "AVGO",
+        "META",
+        "PLTR",
         "GLD",
-        "AVGO"
+        "CASH"
       ],
-      "opportunity_cost": "NVDA 暫不轉向其他可調整部位或現金，放棄其尚未證實的相對收益。",
-      "advantage_over_hold": "NVDA 原候選依賴 AVGO、META、PLTR、GLD 的同步換倉，該換倉缺少支持，維持原倉可避免未獲支持的交易成本。",
-      "cost_tradeoff": "NVDA 本輪不交易，估計交易成本為零；原草案另存稽核。",
+      "opportunity_cost": "NVDA 尚未轉向替代配置，仍保留其原先持倉機會成本。",
+      "advantage_over_hold": "NVDA 還原表示精度或一分錢以內的差額，維持確認持倉。",
+      "cost_tradeoff": "NVDA 本輪維持原倉，不產生交易成本。",
       "evidence_refs": [],
       "evidence_observations": [],
       "driver_links": [],
@@ -46,172 +48,207 @@
     {
       "symbol": "AVGO",
       "decision": "increase",
-      "return_driver_kind": "insufficient_evidence",
-      "expected_return_driver": "AVGO 未採用缺少證據的變動；其他已驗證標的仍依本輪市場判斷調整。",
-      "downside": "AVGO 維持前一輪模擬曝險，不代表風險較低。",
-      "invalidation": "AVGO 若有新的有效收益證據或硬性風控觸發，須重新評估前一輪模擬配置。",
+      "return_driver_kind": "earnings",
+      "expected_return_driver": "已申報營收、淨利與營業現金流提供保留研究曝險的基本面依據，但不構成本輪加碼授權。",
+      "downside": "若AI相關需求、毛利或現金流品質惡化，個股可能因估值與事件風險下跌；缺少本輪同口徑跳空損失量化。",
+      "invalidation": "若後續申報或公司指引顯示需求、毛利率或現金流品質顯著惡化，或價格跌破319.59美元，應重新評估。",
       "alternative_symbols": [
         "NVDA",
         "META",
+        "PLTR",
         "GLD",
         "CASH"
       ],
-      "opportunity_cost": "AVGO 暫不轉向其他可調整部位或現金，放棄其尚未證實的相對收益。",
-      "advantage_over_hold": "AVGO 草案文字稱維持，但目標權重相較前一輪模擬目標要求減碼；方向互相矛盾，無法採用該標的收益取捨。",
-      "cost_tradeoff": "AVGO 本輪不交易，估計交易成本為零；原草案另存稽核。",
-      "evidence_refs": [],
-      "evidence_observations": [],
+      "opportunity_cost": "維持AVGO會放棄CASH的流動性與保險彈性，也放棄將曝險集中於已完成風控修正後的NVDA或其他標的。",
+      "advantage_over_hold": "本輪沒有足夠淨優勢支持相對前輪目標調整，因此維持可避免無證據交易與額外摩擦成本。",
+      "cost_tradeoff": "維持不產生候選交易成本，但承擔個股跳空與事件資料缺口；未將未知損失填為零。",
+      "evidence_refs": [
+        "fact:AVGO:revenue:2026-05-04:2026-08-02:2026-09-10:10-Q:RevenueFromContractWithCustomerExcludingAssessedTax",
+        "fact:AVGO:net_income:2026-05-04:2026-08-02:2026-09-10:10-Q:ProfitLoss",
+        "fact:AVGO:operating_cash_flow:2025-11-03:2026-08-02:2026-09-10:10-Q:NetCashProvidedByUsedInOperatingActivities"
+      ],
+      "evidence_observations": [
+        "revenue（2026-05-04 至 2026-08-02）：29591000000 USD；申報日 2026-09-10",
+        "net_income（2026-05-04 至 2026-08-02）：13088000000 USD；申報日 2026-09-10",
+        "operating_cash_flow（2025-11-03 至 2026-08-02）：32950000000 USD；申報日 2026-09-10"
+      ],
       "driver_links": [],
-      "evidence_status": "insufficient"
+      "evidence_status": "supported"
     },
     {
       "symbol": "META",
       "decision": "reduce",
-      "return_driver_kind": "insufficient_evidence",
-      "expected_return_driver": "META 未採用缺少證據的變動；其他已驗證標的仍依本輪市場判斷調整。",
-      "downside": "META 維持前一輪模擬曝險，不代表風險較低。",
-      "invalidation": "META 若有新的有效收益證據或硬性風控觸發，須重新評估前一輪模擬配置。",
+      "return_driver_kind": "earnings",
+      "expected_return_driver": "已申報營收、淨利與營業現金流支持保留研究曝險；缺少估值與近期事件證據，不能支持加碼。",
+      "downside": "資本支出、估值或盈利預期若惡化，META可能出現個股重估；本輪沒有同口徑跳空損失與估值壓力量化。",
+      "invalidation": "若後續財報或指引顯示盈利品質顯著惡化，或價格跌破664.91美元，應重新評估。",
       "alternative_symbols": [
         "NVDA",
         "AVGO",
+        "PLTR",
         "GLD",
         "CASH"
       ],
-      "opportunity_cost": "META 暫不轉向其他可調整部位或現金，放棄其尚未證實的相對收益。",
-      "advantage_over_hold": "META 草案文字稱維持，但目標權重相較前一輪模擬目標要求加碼；方向互相矛盾，無法採用該標的收益取捨。",
-      "cost_tradeoff": "META 本輪不交易，估計交易成本為零；原草案另存稽核。",
-      "evidence_refs": [],
-      "evidence_observations": [],
+      "opportunity_cost": "維持META會放棄CASH的彈性，也可能錯過其他標的在資料補齊後的相對收益；但替代證據目前不足。",
+      "advantage_over_hold": "沒有證據證明減碼扣除成本後優於維持，因此維持原目標避免以資料缺口推導負向結論。",
+      "cost_tradeoff": "維持無新增交易成本，但保留個股事件與估值未知風險；不宣稱其分散效果或預期報酬。",
+      "evidence_refs": [
+        "fact:META:revenue:2026-04-01:2026-06-30:2026-07-30:10-Q:RevenueFromContractWithCustomerExcludingAssessedTax",
+        "fact:META:net_income:2026-04-01:2026-06-30:2026-07-30:10-Q:NetIncomeLoss",
+        "fact:META:operating_cash_flow:2026-01-01:2026-06-30:2026-07-30:10-Q:NetCashProvidedByUsedInOperatingActivities"
+      ],
+      "evidence_observations": [
+        "revenue（2026-04-01 至 2026-06-30）：60801000000 USD；申報日 2026-07-30",
+        "net_income（2026-04-01 至 2026-06-30）：15848000000 USD；申報日 2026-07-30",
+        "operating_cash_flow（2026-01-01 至 2026-06-30）：64088000000 USD；申報日 2026-07-30"
+      ],
       "driver_links": [],
-      "evidence_status": "insufficient"
+      "evidence_status": "supported"
     },
     {
       "symbol": "PLTR",
       "decision": "reduce",
-      "return_driver_kind": "insufficient_evidence",
-      "expected_return_driver": "PLTR 未採用缺少證據的變動；其他已驗證標的仍依本輪市場判斷調整。",
-      "downside": "PLTR 維持前一輪模擬曝險，不代表風險較低。",
-      "invalidation": "PLTR 若有新的有效收益證據或硬性風控觸發，須重新評估前一輪模擬配置。",
+      "return_driver_kind": "earnings",
+      "expected_return_driver": "已申報營收、淨利、毛利與營業現金流提供保留研究曝險依據，但缺少估值、分部營收與事件驗證。",
+      "downside": "高估值或股票薪酬、分部成長不及預期可能造成較大重估；本輪沒有相對維持原倉的短窗淨優勢。",
+      "invalidation": "若後續申報顯示營收、現金流或盈利品質惡化，或價格跌破168.27美元，應重新評估。",
       "alternative_symbols": [
         "NVDA",
         "AVGO",
         "META",
+        "GLD",
         "CASH"
       ],
-      "opportunity_cost": "PLTR 暫不轉向其他可調整部位或現金，放棄其尚未證實的相對收益。",
-      "advantage_over_hold": "PLTR 草案文字稱維持，但目標權重相較前一輪模擬目標要求加碼；方向互相矛盾，無法採用該標的收益取捨。",
-      "cost_tradeoff": "PLTR 本輪不交易，估計交易成本為零；原草案另存稽核。",
-      "evidence_refs": [],
-      "evidence_observations": [],
+      "opportunity_cost": "維持PLTR會放棄CASH的彈性，亦可能放棄AVGO或NVDA的已申報規模優勢；但現有資料不足以支持換倉。",
+      "advantage_over_hold": "無可驗證的扣成本相對優勢支持主動減碼，因此維持原目標比無證據換倉更可審計。",
+      "cost_tradeoff": "維持無新增交易成本，但承擔估值、事件與個股跳空風險；不把未知損失視為零。",
+      "evidence_refs": [
+        "fact:PLTR:revenue:2026-04-01:2026-06-30:2026-08-04:10-Q:RevenueFromContractWithCustomerExcludingAssessedTax",
+        "fact:PLTR:net_income:2026-04-01:2026-06-30:2026-08-04:10-Q:NetIncomeLoss",
+        "fact:PLTR:operating_cash_flow:2026-01-01:2026-06-30:2026-08-04:10-Q:NetCashProvidedByUsedInOperatingActivities"
+      ],
+      "evidence_observations": [
+        "revenue（2026-04-01 至 2026-06-30）：1935464000 USD；申報日 2026-08-04",
+        "net_income（2026-04-01 至 2026-06-30）：1061890000 USD；申報日 2026-08-04",
+        "operating_cash_flow（2026-01-01 至 2026-06-30）：2115332000 USD；申報日 2026-08-04"
+      ],
       "driver_links": [],
-      "evidence_status": "insufficient"
+      "evidence_status": "supported"
     },
     {
       "symbol": "GLD",
       "decision": "increase",
       "return_driver_kind": "insufficient_evidence",
-      "expected_return_driver": "GLD 未採用缺少證據的變動；其他已驗證標的仍依本輪市場判斷調整。",
-      "downside": "GLD 維持前一輪模擬曝險，不代表風險較低。",
-      "invalidation": "GLD 若有新的有效收益證據或硬性風控觸發，須重新評估前一輪模擬配置。",
+      "expected_return_driver": "GLD可保留作為既有組合中的保險選項，但本輪沒有證據證明其保險價值高於CASH或足以支持加碼。",
+      "downside": "若利率上升或風險資產續強，GLD可能落後CASH；近期價格與技術資料不能單獨證明未來收益。",
+      "invalidation": "若後續同口徑資料顯示GLD的保險價值不再符合組合需求，或價格跌破344.60美元，應重估。",
       "alternative_symbols": [
         "CASH",
         "NVDA",
-        "AVGO"
+        "AVGO",
+        "META",
+        "PLTR"
       ],
-      "opportunity_cost": "GLD 暫不轉向其他可調整部位或現金，放棄其尚未證實的相對收益。",
-      "advantage_over_hold": "GLD 草案文字稱維持，但目標權重相較前一輪模擬目標要求減碼；方向互相矛盾，無法採用該標的收益取捨。",
-      "cost_tradeoff": "GLD 本輪不交易，估計交易成本為零；原草案另存稽核。",
-      "evidence_refs": [],
-      "evidence_observations": [],
+      "opportunity_cost": "維持GLD會放棄CASH的即時彈性與零價格波動；但退出也會放棄未被量化的避險選項。",
+      "advantage_over_hold": "本輪沒有足夠證據證明調整後淨報酬優於維持，因此維持原目標，避免以單日價格或缺資料宣稱保護優勢。",
+      "cost_tradeoff": "維持無交易成本；承擔GLD相對CASH的機會成本，且保險價值與共同衝擊仍未量化。",
+      "evidence_refs": [
+        "fact:NVDA:revenue:2026-04-27:2026-07-26:2026-08-26:10-Q:Revenues"
+      ],
+      "evidence_observations": [
+        "revenue（2026-04-27 至 2026-07-26）：96221000000 USD；申報日 2026-08-26"
+      ],
       "driver_links": [],
       "evidence_status": "insufficient"
     },
     {
       "symbol": "CASH",
       "decision": "increase",
-      "return_driver_kind": "insufficient_evidence",
-      "expected_return_driver": "CASH 未採用缺少證據的變動；其他已驗證標的仍依本輪市場判斷調整。",
-      "downside": "CASH 維持前一輪模擬曝險，不代表風險較低。",
-      "invalidation": "CASH 若有新的有效收益證據或硬性風控觸發，須重新評估前一輪模擬配置。",
+      "return_driver_kind": "capital_preservation",
+      "expected_return_driver": "CASH提供流動性與等待新證據的選擇權；本輪不宣稱其具有超越其他資產的預期報酬。",
+      "downside": "若股票或GLD上行，CASH承擔機會成本；其保本特性也不代表可抵銷通膨或匯率等未納入因素。",
+      "invalidation": "若後續完成風控、事件與短窗證據，並證明重新配置的扣成本淨優勢，應重新評估CASH權重。",
       "alternative_symbols": [
         "GLD",
         "NVDA",
-        "AVGO"
+        "AVGO",
+        "META",
+        "PLTR"
       ],
-      "opportunity_cost": "CASH 暫不轉向其他可調整部位或現金，放棄其尚未證實的相對收益。",
-      "advantage_over_hold": "CASH 原候選依賴 AVGO、META、PLTR、GLD 的同步換倉，該換倉缺少支持，維持原倉可避免未獲支持的交易成本。",
-      "cost_tradeoff": "CASH 本輪不交易，估計交易成本為零；原草案另存稽核。",
+      "opportunity_cost": "持有CASH會放棄股票與GLD的可能上行或保險價值；目前資料不足以量化哪一項更優。",
+      "advantage_over_hold": "保留CASH可避免在事件、波動與標的資料缺口下被迫新增風險，並保留後續人工審核的流動性。",
+      "cost_tradeoff": "本輪維持CASH無估計交易成本，但機會成本未量化，不應被解讀為市場看空。",
       "evidence_refs": [],
       "evidence_observations": [],
       "driver_links": [],
       "evidence_status": "insufficient"
     }
   ],
-  "model_score": 100,
-  "model_score_reason": "方向一致度 100/100；13 位提案委員按信心加權，0 項協商後否決仍未解除，扣除 0 分。",
-  "risk_level": "very_high",
-  "expected_horizon": "待補齊分母、事件窗口與壓力測試資料後重新評估；不代表固定持有期間或已成交。",
+  "model_score": 97,
+  "model_score_reason": "方向一致度 97/100；13 位提案委員按信心加權，0 項協商後否決仍未解除，扣除 0 分。",
+  "risk_level": "high",
+  "expected_horizon": "每日取得新資料後重新評估；本候選不設定固定持有天數，且在風控閘門通過前不構成最終建議。",
   "allocations": [
     {
       "symbol": "NVDA",
       "asset_type": "stock",
       "target_weight": "0.25",
       "action": "reduce",
-      "note": "降低此部位的研究目標，交易尚未執行。"
+      "note": "降低此部位的研究目標。"
     },
     {
       "symbol": "AVGO",
       "asset_type": "stock",
       "target_weight": "0.2278588620883904337583858248",
       "action": "buy",
-      "note": "提高此部位的研究目標，交易尚未執行。"
+      "note": "提高此部位的研究目標。"
     },
     {
       "symbol": "META",
       "asset_type": "stock",
       "target_weight": "0.1877400522353664157320632970",
       "action": "reduce",
-      "note": "降低此部位的研究目標，交易尚未執行。"
+      "note": "降低此部位的研究目標。"
     },
     {
       "symbol": "PLTR",
       "asset_type": "stock",
       "target_weight": "0.08211008533638737971200715094",
       "action": "reduce",
-      "note": "降低此部位的研究目標，交易尚未執行。"
+      "note": "降低此部位的研究目標。"
     },
     {
       "symbol": "GLD",
       "asset_type": "commodity_etf",
       "target_weight": "0.1115220417417375475448912229",
       "action": "buy",
-      "note": "提高此部位的研究目標，交易尚未執行。"
+      "note": "提高此部位的研究目標。"
     },
     {
       "symbol": "CASH",
       "asset_type": "cash",
       "target_weight": "0.1407689585981182232526525044",
       "action": "buy",
-      "note": "提高此部位的研究目標，交易尚未執行。"
+      "note": "提高此部位的研究目標。"
     }
   ],
   "position_risk_plans": [
     {
       "symbol": "NVDA",
-      "reference_price": null,
-      "reference_timestamp": null,
-      "invalidation_type": "thesis",
-      "invalidation_price": null,
-      "status": "unquantified",
-      "base_loss_fraction": null,
+      "reference_price": "227.210007",
+      "reference_timestamp": "2026-09-30T11:16:21.569090Z",
+      "invalidation_type": "price",
+      "invalidation_price": "204.49",
+      "status": "quantified",
+      "base_loss_fraction": "0.02499890662826307645859981863",
       "stress_gap_percent": "0.08",
       "portfolio_contribution": "0.0200",
-      "methodology": "Event/thesis invalidation lacks a conservative price proxy.",
+      "methodology": "Research estimate only: target amount/reference price × max(reference price − invalidation price, 0); gap stress does not assume stop execution.",
       "v1_loss_bound": {
         "schema_version": "1.0",
-        "status": "unknown",
-        "loss_fraction": null,
-        "reason": "沒有可驗證的價格失效界線，基本損失保持未知。"
+        "status": "quantified",
+        "loss_fraction": "0.02499890662826307645859981863",
+        "reason": "價格失效界線僅作研究估算，不保證停損成交。"
       },
       "v1_gap_stress": {
         "schema_version": "1.0",
@@ -278,20 +315,20 @@
     },
     {
       "symbol": "AVGO",
-      "reference_price": null,
-      "reference_timestamp": null,
-      "invalidation_type": "thesis",
-      "invalidation_price": null,
-      "status": "unquantified",
-      "base_loss_fraction": null,
+      "reference_price": "355.100006",
+      "reference_timestamp": "2026-09-30T11:16:21.569090Z",
+      "invalidation_type": "price",
+      "invalidation_price": "319.59",
+      "status": "quantified",
+      "base_loss_fraction": "0.02278588967388504305770944760",
       "stress_gap_percent": "0.08",
       "portfolio_contribution": "0.01822870896707123470067086598",
-      "methodology": "Event/thesis invalidation lacks a conservative price proxy.",
+      "methodology": "Research estimate only: target amount/reference price × max(reference price − invalidation price, 0); gap stress does not assume stop execution.",
       "v1_loss_bound": {
         "schema_version": "1.0",
-        "status": "unknown",
-        "loss_fraction": null,
-        "reason": "沒有可驗證的價格失效界線，基本損失保持未知。"
+        "status": "quantified",
+        "loss_fraction": "0.02278588967388504305770944760",
+        "reason": "價格失效界線僅作研究估算，不保證停損成交。"
       },
       "v1_gap_stress": {
         "schema_version": "1.0",
@@ -358,20 +395,20 @@
     },
     {
       "symbol": "META",
-      "reference_price": null,
-      "reference_timestamp": null,
-      "invalidation_type": "thesis",
-      "invalidation_price": null,
-      "status": "unquantified",
-      "base_loss_fraction": null,
+      "reference_price": "738.789978",
+      "reference_timestamp": "2026-09-30T11:16:21.569090Z",
+      "invalidation_type": "price",
+      "invalidation_price": "664.91",
+      "status": "quantified",
+      "base_loss_fraction": "0.01877425431029293363833867584",
       "stress_gap_percent": "0.08",
       "portfolio_contribution": "0.01501920417882931325856506376",
-      "methodology": "Event/thesis invalidation lacks a conservative price proxy.",
+      "methodology": "Research estimate only: target amount/reference price × max(reference price − invalidation price, 0); gap stress does not assume stop execution.",
       "v1_loss_bound": {
         "schema_version": "1.0",
-        "status": "unknown",
-        "loss_fraction": null,
-        "reason": "沒有可驗證的價格失效界線，基本損失保持未知。"
+        "status": "quantified",
+        "loss_fraction": "0.01877425431029293363833867584",
+        "reason": "價格失效界線僅作研究估算，不保證停損成交。"
       },
       "v1_gap_stress": {
         "schema_version": "1.0",
@@ -438,20 +475,20 @@
     },
     {
       "symbol": "PLTR",
-      "reference_price": null,
-      "reference_timestamp": null,
-      "invalidation_type": "thesis",
-      "invalidation_price": null,
-      "status": "unquantified",
-      "base_loss_fraction": null,
+      "reference_price": "186.970001",
+      "reference_timestamp": "2026-09-30T11:16:21.569090Z",
+      "invalidation_type": "price",
+      "invalidation_price": "168.27",
+      "status": "quantified",
+      "base_loss_fraction": "0.008212326414334935672391173785",
       "stress_gap_percent": "0.08",
       "portfolio_contribution": "0.006568806826910990376960572075",
-      "methodology": "Event/thesis invalidation lacks a conservative price proxy.",
+      "methodology": "Research estimate only: target amount/reference price × max(reference price − invalidation price, 0); gap stress does not assume stop execution.",
       "v1_loss_bound": {
         "schema_version": "1.0",
-        "status": "unknown",
-        "loss_fraction": null,
-        "reason": "沒有可驗證的價格失效界線，基本損失保持未知。"
+        "status": "quantified",
+        "loss_fraction": "0.008212326414334935672391173785",
+        "reason": "價格失效界線僅作研究估算，不保證停損成交。"
       },
       "v1_gap_stress": {
         "schema_version": "1.0",
@@ -518,20 +555,20 @@
     },
     {
       "symbol": "GLD",
-      "reference_price": null,
-      "reference_timestamp": null,
-      "invalidation_type": "thesis",
-      "invalidation_price": null,
-      "status": "unquantified",
-      "base_loss_fraction": null,
+      "reference_price": "382.890015",
+      "reference_timestamp": "2026-09-30T11:16:21.569090Z",
+      "invalidation_type": "price",
+      "invalidation_price": "344.6",
+      "status": "quantified",
+      "base_loss_fraction": "0.01115249937014355629398457439",
       "stress_gap_percent": "0.06",
       "portfolio_contribution": "0.006691322504504252852693473374",
-      "methodology": "Event/thesis invalidation lacks a conservative price proxy.",
+      "methodology": "Research estimate only: target amount/reference price × max(reference price − invalidation price, 0); gap stress does not assume stop execution.",
       "v1_loss_bound": {
         "schema_version": "1.0",
-        "status": "unknown",
-        "loss_fraction": null,
-        "reason": "沒有可驗證的價格失效界線，基本損失保持未知。"
+        "status": "quantified",
+        "loss_fraction": "0.01115249937014355629398457439",
+        "reason": "價格失效界線僅作研究估算，不保證停損成交。"
       },
       "v1_gap_stress": {
         "schema_version": "1.0",
@@ -774,8 +811,134 @@
   "top_reasons": [
     {
       "id": 1,
+      "title": "AVGO 的投資觀測",
+      "summary": "營收：29591000000 美元（2026-05-04 至 2026-08-02）。；淨利（損）：13088000000 美元（2026-05-04 至 2026-08-02）。；營業活動淨現金流量：32950000000 美元（2025-11-03 至 2026-08-02）。",
+      "confidence": null,
+      "category": "valuation",
+      "affected_assets": [
+        "AVGO"
+      ],
+      "reason_type": "investment_evidence",
+      "support_status": "supported",
+      "evidence_refs": [
+        "fact:AVGO:revenue:2026-05-04:2026-08-02:2026-09-10:10-Q:RevenueFromContractWithCustomerExcludingAssessedTax",
+        "fact:AVGO:net_income:2026-05-04:2026-08-02:2026-09-10:10-Q:ProfitLoss",
+        "fact:AVGO:operating_cash_flow:2025-11-03:2026-08-02:2026-09-10:10-Q:NetCashProvidedByUsedInOperatingActivities"
+      ],
+      "source_observations": {
+        "fact:AVGO:revenue:2026-05-04:2026-08-02:2026-09-10:10-Q:RevenueFromContractWithCustomerExcludingAssessedTax": "revenue（2026-05-04 至 2026-08-02）：29591000000 USD；申報日 2026-09-10",
+        "fact:AVGO:net_income:2026-05-04:2026-08-02:2026-09-10:10-Q:ProfitLoss": "net_income（2026-05-04 至 2026-08-02）：13088000000 USD；申報日 2026-09-10",
+        "fact:AVGO:operating_cash_flow:2025-11-03:2026-08-02:2026-09-10:10-Q:NetCashProvidedByUsedInOperatingActivities": "operating_cash_flow（2025-11-03 至 2026-08-02）：32950000000 USD；申報日 2026-09-10"
+      },
+      "final_action": {
+        "AVGO": "increase"
+      },
+      "final_weight": {
+        "AVGO": "0.2278588620883904337583858248"
+      },
+      "policy_digest": null,
+      "artifact_refs": [
+        "evidence:fact:AVGO:revenue:2026-05-04:2026-08-02:2026-09-10:10-Q:RevenueFromContractWithCustomerExcludingAssessedTax",
+        "evidence:fact:AVGO:net_income:2026-05-04:2026-08-02:2026-09-10:10-Q:ProfitLoss",
+        "evidence:fact:AVGO:operating_cash_flow:2025-11-03:2026-08-02:2026-09-10:10-Q:NetCashProvidedByUsedInOperatingActivities"
+      ],
+      "claim_ids": [
+        "fact:AVGO:revenue:2026-05-04:2026-08-02:2026-09-10:10-Q:RevenueFromContractWithCustomerExcludingAssessedTax",
+        "fact:AVGO:net_income:2026-05-04:2026-08-02:2026-09-10:10-Q:ProfitLoss",
+        "fact:AVGO:operating_cash_flow:2025-11-03:2026-08-02:2026-09-10:10-Q:NetCashProvidedByUsedInOperatingActivities"
+      ],
+      "source_urls": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "META 的投資觀測",
+      "summary": "營收：60801000000 美元（2026-04-01 至 2026-06-30）。；淨利（損）：15848000000 美元（2026-04-01 至 2026-06-30）。；營業活動淨現金流量：64088000000 美元（2026-01-01 至 2026-06-30）。",
+      "confidence": null,
+      "category": "valuation",
+      "affected_assets": [
+        "META"
+      ],
+      "reason_type": "investment_evidence",
+      "support_status": "supported",
+      "evidence_refs": [
+        "fact:META:revenue:2026-04-01:2026-06-30:2026-07-30:10-Q:RevenueFromContractWithCustomerExcludingAssessedTax",
+        "fact:META:net_income:2026-04-01:2026-06-30:2026-07-30:10-Q:NetIncomeLoss",
+        "fact:META:operating_cash_flow:2026-01-01:2026-06-30:2026-07-30:10-Q:NetCashProvidedByUsedInOperatingActivities"
+      ],
+      "source_observations": {
+        "fact:META:revenue:2026-04-01:2026-06-30:2026-07-30:10-Q:RevenueFromContractWithCustomerExcludingAssessedTax": "revenue（2026-04-01 至 2026-06-30）：60801000000 USD；申報日 2026-07-30",
+        "fact:META:net_income:2026-04-01:2026-06-30:2026-07-30:10-Q:NetIncomeLoss": "net_income（2026-04-01 至 2026-06-30）：15848000000 USD；申報日 2026-07-30",
+        "fact:META:operating_cash_flow:2026-01-01:2026-06-30:2026-07-30:10-Q:NetCashProvidedByUsedInOperatingActivities": "operating_cash_flow（2026-01-01 至 2026-06-30）：64088000000 USD；申報日 2026-07-30"
+      },
+      "final_action": {
+        "META": "reduce"
+      },
+      "final_weight": {
+        "META": "0.1877400522353664157320632970"
+      },
+      "policy_digest": null,
+      "artifact_refs": [
+        "evidence:fact:META:revenue:2026-04-01:2026-06-30:2026-07-30:10-Q:RevenueFromContractWithCustomerExcludingAssessedTax",
+        "evidence:fact:META:net_income:2026-04-01:2026-06-30:2026-07-30:10-Q:NetIncomeLoss",
+        "evidence:fact:META:operating_cash_flow:2026-01-01:2026-06-30:2026-07-30:10-Q:NetCashProvidedByUsedInOperatingActivities"
+      ],
+      "claim_ids": [
+        "fact:META:revenue:2026-04-01:2026-06-30:2026-07-30:10-Q:RevenueFromContractWithCustomerExcludingAssessedTax",
+        "fact:META:net_income:2026-04-01:2026-06-30:2026-07-30:10-Q:NetIncomeLoss",
+        "fact:META:operating_cash_flow:2026-01-01:2026-06-30:2026-07-30:10-Q:NetCashProvidedByUsedInOperatingActivities"
+      ],
+      "source_urls": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "PLTR 的投資觀測",
+      "summary": "營收：1935464000 美元（2026-04-01 至 2026-06-30）。；淨利（損）：1061890000 美元（2026-04-01 至 2026-06-30）。；營業活動淨現金流量：2115332000 美元（2026-01-01 至 2026-06-30）。",
+      "confidence": null,
+      "category": "valuation",
+      "affected_assets": [
+        "PLTR"
+      ],
+      "reason_type": "investment_evidence",
+      "support_status": "supported",
+      "evidence_refs": [
+        "fact:PLTR:revenue:2026-04-01:2026-06-30:2026-08-04:10-Q:RevenueFromContractWithCustomerExcludingAssessedTax",
+        "fact:PLTR:net_income:2026-04-01:2026-06-30:2026-08-04:10-Q:NetIncomeLoss",
+        "fact:PLTR:operating_cash_flow:2026-01-01:2026-06-30:2026-08-04:10-Q:NetCashProvidedByUsedInOperatingActivities"
+      ],
+      "source_observations": {
+        "fact:PLTR:revenue:2026-04-01:2026-06-30:2026-08-04:10-Q:RevenueFromContractWithCustomerExcludingAssessedTax": "revenue（2026-04-01 至 2026-06-30）：1935464000 USD；申報日 2026-08-04",
+        "fact:PLTR:net_income:2026-04-01:2026-06-30:2026-08-04:10-Q:NetIncomeLoss": "net_income（2026-04-01 至 2026-06-30）：1061890000 USD；申報日 2026-08-04",
+        "fact:PLTR:operating_cash_flow:2026-01-01:2026-06-30:2026-08-04:10-Q:NetCashProvidedByUsedInOperatingActivities": "operating_cash_flow（2026-01-01 至 2026-06-30）：2115332000 USD；申報日 2026-08-04"
+      },
+      "final_action": {
+        "PLTR": "reduce"
+      },
+      "final_weight": {
+        "PLTR": "0.08211008533638737971200715094"
+      },
+      "policy_digest": null,
+      "artifact_refs": [
+        "evidence:fact:PLTR:revenue:2026-04-01:2026-06-30:2026-08-04:10-Q:RevenueFromContractWithCustomerExcludingAssessedTax",
+        "evidence:fact:PLTR:net_income:2026-04-01:2026-06-30:2026-08-04:10-Q:NetIncomeLoss",
+        "evidence:fact:PLTR:operating_cash_flow:2026-01-01:2026-06-30:2026-08-04:10-Q:NetCashProvidedByUsedInOperatingActivities"
+      ],
+      "claim_ids": [
+        "fact:PLTR:revenue:2026-04-01:2026-06-30:2026-08-04:10-Q:RevenueFromContractWithCustomerExcludingAssessedTax",
+        "fact:PLTR:net_income:2026-04-01:2026-06-30:2026-08-04:10-Q:NetIncomeLoss",
+        "fact:PLTR:operating_cash_flow:2026-01-01:2026-06-30:2026-08-04:10-Q:NetCashProvidedByUsedInOperatingActivities"
+      ],
+      "source_urls": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json"
+      ]
+    },
+    {
+      "id": 4,
       "title": "部位風險影子警示",
-      "summary": "部位風險影子紀錄： 5 個風險部位未量化或超過每筆 US$165.07 研究損失預算。；本輪列為影子紀錄，未啟用硬性限制。這不代表風險為零，也不代表買賣建議。",
+      "summary": "部位風險影子紀錄： 3 個風險部位未量化或超過每筆 US$166.51 研究損失預算。；本輪列為影子紀錄，未啟用硬性限制。這不代表風險為零，也不代表買賣建議。",
       "confidence": null,
       "category": "policy",
       "affected_assets": [
@@ -815,7 +978,7 @@
       "source_urls": []
     },
     {
-      "id": 2,
+      "id": 5,
       "title": "部位風險影子警示",
       "summary": "Position-risk aggregate gap stress 高於 configured portfolio cap.；本輪保留為風控檢查紀錄，是否改變部位以最終動作及權重為準。檢查資訊不能單獨證明收益提高。",
       "confidence": null,
@@ -861,7 +1024,7 @@
     {
       "kind": "data_quality",
       "severity": "low",
-      "summary": "本輪 2026-09-29T12:50:46.798415+00:00 市場快照含有行情：AVGO、GLD、META、NVDA、PLTR",
+      "summary": "本輪 2026-09-30T11:16:21.569090+00:00 市場快照含有行情：AVGO、GLD、META、NVDA、PLTR",
       "effect": "這是全市場快照的覆蓋事實；個別研究角色的輸入缺口不等於全系統缺行情。",
       "affected_claims": [
         "AVGO",
@@ -894,9 +1057,9 @@
       "source_urls": []
     },
     {
-      "kind": "evidence_gap",
+      "kind": "policy_constraint",
       "severity": "medium",
-      "summary": "未驗證的研究主張不可作已證實結論；仍可依現有基本面與行情分析配置。",
+      "summary": "最終候選已不包含此限制指定的部位、動作或研究主張。",
       "effect": "此限制僅依已記錄適用範圍處理，原始模型意見另存草案供稽核。",
       "affected_claims": [
         "NVDA",
@@ -928,24 +1091,8 @@
       "effect": "此限制僅依已記錄適用範圍處理，原始模型意見另存草案供稽核。",
       "affected_claims": [
         "NVDA",
-        "AVGO",
         "META",
         "PLTR"
-      ],
-      "source_urls": []
-    },
-    {
-      "kind": "policy_constraint",
-      "severity": "medium",
-      "summary": "最終候選已不包含此限制指定的部位、動作或研究主張。",
-      "effect": "此限制僅依已記錄適用範圍處理，原始模型意見另存草案供稽核。",
-      "affected_claims": [
-        "NVDA",
-        "AVGO",
-        "META",
-        "PLTR",
-        "GLD",
-        "CASH"
       ],
       "source_urls": []
     },
@@ -955,8 +1102,9 @@
       "summary": "未驗證的研究主張不可作已證實結論；仍可依現有基本面與行情分析配置。",
       "effect": "此限制僅依已記錄適用範圍處理，原始模型意見另存草案供稽核。",
       "affected_claims": [
-        "GLD",
-        "CASH"
+        "NVDA",
+        "META",
+        "PLTR"
       ],
       "source_urls": []
     },
@@ -971,9 +1119,9 @@
       "source_urls": []
     },
     {
-      "kind": "evidence_gap",
+      "kind": "policy_constraint",
       "severity": "medium",
-      "summary": "未驗證的研究主張不可作已證實結論；仍可依現有基本面與行情分析配置。",
+      "summary": "最終候選已不包含此限制指定的部位、動作或研究主張。",
       "effect": "此限制僅依已記錄適用範圍處理，原始模型意見另存草案供稽核。",
       "affected_claims": [
         "NVDA",
@@ -1005,7 +1153,18 @@
       "effect": "此限制僅依已記錄適用範圍處理，原始模型意見另存草案供稽核。",
       "affected_claims": [
         "NVDA",
-        "AVGO",
+        "META",
+        "PLTR"
+      ],
+      "source_urls": []
+    },
+    {
+      "kind": "evidence_gap",
+      "severity": "medium",
+      "summary": "未驗證的研究主張不可作已證實結論；仍可依現有基本面與行情分析配置。",
+      "effect": "此限制僅依已記錄適用範圍處理，原始模型意見另存草案供稽核。",
+      "affected_claims": [
+        "NVDA",
         "META",
         "PLTR"
       ],
@@ -1018,23 +1177,17 @@
       "effect": "此限制僅依已記錄適用範圍處理，原始模型意見另存草案供稽核。",
       "affected_claims": [
         "NVDA",
-        "AVGO",
         "META",
-        "PLTR",
-        "GLD",
-        "CASH"
+        "PLTR"
       ],
       "source_urls": []
     },
     {
-      "kind": "evidence_gap",
+      "kind": "policy_constraint",
       "severity": "medium",
-      "summary": "未驗證的研究主張不可作已證實結論；仍可依現有基本面與行情分析配置。",
+      "summary": "最終候選已不包含此限制指定的部位、動作或研究主張。",
       "effect": "此限制僅依已記錄適用範圍處理，原始模型意見另存草案供稽核。",
-      "affected_claims": [
-        "GLD",
-        "CASH"
-      ],
+      "affected_claims": [],
       "source_urls": []
     },
     {
@@ -1056,9 +1209,9 @@
       "source_urls": []
     },
     {
-      "kind": "evidence_gap",
+      "kind": "policy_constraint",
       "severity": "medium",
-      "summary": "未驗證的研究主張不可作已證實結論；仍可依現有基本面與行情分析配置。",
+      "summary": "最終候選已不包含此限制指定的部位、動作或研究主張。",
       "effect": "此限制僅依已記錄適用範圍處理，原始模型意見另存草案供稽核。",
       "affected_claims": [
         "NVDA",
@@ -1079,9 +1232,9 @@
   "exposure_snapshot": {
     "schema_version": "1.0",
     "methodology_version": "1.0",
-    "run_id": "20260929T125104Z",
-    "generated_at": "2026-09-29T12:59:47.552889Z",
-    "data_cutoff": "2026-09-29T12:50:46.798415Z",
+    "run_id": "20260930T111637Z",
+    "generated_at": "2026-09-30T11:25:54.126177Z",
+    "data_cutoff": "2026-09-30T11:16:21.569090Z",
     "instruments": [
       {
         "symbol": "NVDA",
@@ -1314,7 +1467,7 @@
       "taxonomy_status": "ready",
       "lookthrough_status": "unavailable",
       "correlation_status": "ready",
-      "decision_cutoff": "2026-09-29T12:50:46.798415Z",
+      "decision_cutoff": "2026-09-30T11:16:21.569090Z",
       "limitations": []
     }
   },
