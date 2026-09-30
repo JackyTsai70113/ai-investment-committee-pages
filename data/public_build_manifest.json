@@ -1,5 +1,5 @@
 {
-  "build_code_commit": "577fe860e08c74d6ba8a73c8f2ca668f4f076f4e",
+  "build_code_commit": "60b10ff3b5d755410dccef9defe2b128debcd9cb",
   "data_cutoff": "2026-09-29T12:50:46.798415+00:00",
   "files": {
     "agent_profiles.json": {
@@ -11,8 +11,8 @@
       "sha256": "a872a5924a8c59ad6c8e5b4ce0ab4e2adadf219e8c9ebbfbcd7af8298aebfbaa"
     },
     "committee_summary.json": {
-      "bytes": 68061,
-      "sha256": "1bfae11fad9768461c973f62967179529a1bff34cd955e293cc95c9be31cba19"
+      "bytes": 69217,
+      "sha256": "ce9dfa658ecbc3a16f920488ab46d4dddc398d7b8d8f6ce6ec92402ee6a5e268"
     },
     "dashboard_analytics.json": {
       "bytes": 8407,

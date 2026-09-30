@@ -944,13 +944,44 @@ export function bootstrapDashboard(root, payload, base) {
         && plan.base_loss_fraction != null
         && toNumber(plan.base_loss_fraction) >= 0,
     ).length;
+    const comparison = committee.allocation_comparison;
+    const holdCandidate = comparison?.candidates?.find((item) => item.name === "hold");
+    const holdAllocations = Array.isArray(holdCandidate?.allocations)
+      ? holdCandidate.allocations : [];
+    const recommendationSymbols = new Set(recommendation.allocations.map((item) => item.symbol));
+    const currentWeightsReady = comparison?.status === "available"
+      && comparison.run_id === recommendation.run_id
+      && comparison.data_cutoff === recommendation.data_cutoff
+      && holdAllocations.length === recommendationSymbols.size
+      && new Set(holdAllocations.map((item) => item.symbol)).size === holdAllocations.length
+      && holdAllocations.every((item) => recommendationSymbols.has(item.symbol)
+        && toNumber(item.target_weight) !== null
+        && toNumber(item.target_weight) >= 0)
+      && Math.abs(holdAllocations.reduce((sum, item) => sum + Number(item.target_weight), 0) - 1) < 0.0001;
+    const rebalanceInstructions = Array.isArray(rebalance.instructions) ? rebalance.instructions : [];
+    const rebalanceBySymbol = new Map(rebalanceInstructions.map((item) => [item.symbol, item]));
+    const rebalanceCapital = toNumber(rebalance.capital_usd);
+    const changeFraction = (symbol) => {
+      const instruction = rebalanceBySymbol.get(symbol);
+      if (!instruction) return null;
+      if (instruction.change_weight != null) return toNumber(instruction.change_weight);
+      const dollars = toNumber(instruction.change_usd);
+      return dollars !== null && rebalanceCapital > 0 ? dollars / rebalanceCapital : null;
+    };
+    const rebalanceReady = rebalance.to_run_id === recommendation.run_id
+      && recommendation.allocations.every((item) => changeFraction(item.symbol) !== null);
     const reportReady = Number(committee.final_decision?.model_score) >= 80
       && Number(recommendation.model_score) >= 80
       && investmentReasons.length > 0
       && activeTradeoffs.length > 0
       && supportedTradeoffs === activeTradeoffs.length
       && priceRiskPlans.length > 0
-      && quantifiedRiskPlans === priceRiskPlans.length;
+      && quantifiedRiskPlans === priceRiskPlans.length
+      && rebalanceReady;
+    const visibleAllocations = reportReady ? recommendation.allocations
+      : currentWeightsReady ? holdAllocations : recommendation.allocations;
+    const allocationLabel = reportReady ? "建議比例"
+      : currentWeightsReady ? "目前比例" : "既有研究目標";
     const marketHighlights = ["SPY", "QQQ"]
       .map((symbol) => findQuote(market, symbol))
       .filter((quote) => quote?.change_percent != null
@@ -969,15 +1000,12 @@ export function bootstrapDashboard(root, payload, base) {
       falling: "美國公債殖利率近五日回落",
     }[market.regime?.rates];
     if (ratesSummary) marketHighlights.push(escapeHtml(ratesSummary));
-    const rebalanceBySymbol = new Map(
-      (rebalance.instructions || []).map((item) => [item.symbol, item]),
-    );
-    const hasMeaningfulChange = (rebalance.instructions || []).some(
-      (instruction) => Math.abs(Number(instruction.change_weight)) >= 0.0005,
+    const hasMeaningfulChange = recommendation.allocations.some(
+      (item) => Math.abs(changeFraction(item.symbol) || 0) >= 0.0005,
     );
     const displayedAction = (item) => {
-      const change = Number(rebalanceBySymbol.get(item.symbol)?.change_weight);
-      if (!Number.isFinite(change)) return "待確認";
+      const change = changeFraction(item.symbol);
+      if (change === null) return "待確認";
       if (change >= 0.0005) return "加碼";
       if (change <= -0.0005) return "減碼";
       return "維持";
@@ -1061,7 +1089,10 @@ export function bootstrapDashboard(root, payload, base) {
             <span class="section-kicker">本輪結論</span>
             <h2>暫不調整部位</h2>
           </div>
-          <p>本輪研究未形成可靠的新調整理由。下方比例供追蹤，待研究完成再更新建議。</p>
+          <p>${comparison?.result === "hold_no_net_advantage"
+            ? "本輪比較後，換倉沒有足夠依據抵銷成本；暫不提出新的調整。"
+            : "本輪研究未形成可靠的新調整理由。"}</p>
+          ${currentWeightsReady ? (comparison.over_limit_reviews || []).slice(0, 2).map((item) => `<p>${symbolLink(item.symbol)} 目前約 ${escapeHtml(percent(item.observed_weight))}，高於研究上限 ${escapeHtml(percent(item.policy_limit))}。</p>`).join("") : ""}
         </section>`}
 
         <section class="terminal-grid" aria-label="彭博風格策略分析" data-tab-section="overview">
@@ -1108,7 +1139,7 @@ export function bootstrapDashboard(root, payload, base) {
           </article>
         </section>
 
-        ${renderExposurePanel()}
+        ${reportReady ? renderExposurePanel() : ""}
         ${renderKpiPanel()}
         ${renderPhysicalRiskPanel()}
         ${renderGeopoliticalRiskPanel()}
@@ -1118,7 +1149,7 @@ export function bootstrapDashboard(root, payload, base) {
             <header class="panel-header">
               <div>
                 <span class="section-kicker">部位配置</span>
-                <h2>${reportReady ? "本輪部位建議" : "目前追蹤比例"}</h2>
+                <h2>${reportReady ? "本輪部位建議" : currentWeightsReady ? "目前部位比例" : "既有研究目標"}</h2>
               </div>
             </header>
             <div class="simulation-capital-panel">
@@ -1140,18 +1171,18 @@ export function bootstrapDashboard(root, payload, base) {
                   <thead>
                     <tr>
                       <th>標的</th>
-                      <th>${reportReady ? "建議比例" : "追蹤比例"}</th>
+                      <th>${allocationLabel}</th>
                       <th>換算金額</th>
                       ${reportReady ? "<th>本輪調整</th>" : ""}
                     </tr>
                   </thead>
                   <tbody>
-                    ${recommendation.allocations
+                    ${visibleAllocations
                       .map(
                         (item) => `
                           <tr>
                             <td data-label="標的">${symbolLink(item.symbol)}</td>
-                            <td data-label="${reportReady ? "建議比例" : "追蹤比例"}">${percent(item.target_weight)}</td>
+                            <td data-label="${allocationLabel}">${percent(item.target_weight)}</td>
                             <td data-label="換算金額" data-sim-amount data-weight="${escapeHtml(item.target_weight)}"></td>
                             ${reportReady ? `<td data-label="本輪調整" class="allocation-note">${escapeHtml(displayedAction(item))}</td>` : ""}
                           </tr>`,

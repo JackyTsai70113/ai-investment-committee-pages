@@ -1144,6 +1144,50 @@
     "decision_outcome": "model_decision",
     "override_origin": null
   },
+  "allocation_comparison": {
+    "status": "available",
+    "run_id": "20260929T125104Z",
+    "data_cutoff": "2026-09-29T12:50:46.798415Z",
+    "result": "hold_no_net_advantage",
+    "candidates": [
+      {
+        "name": "hold",
+        "allocations": [
+          {
+            "symbol": "AVGO",
+            "target_weight": "0.2223582244709542814356021780"
+          },
+          {
+            "symbol": "GLD",
+            "target_weight": "0.1030221577650317318387019388"
+          },
+          {
+            "symbol": "META",
+            "target_weight": "0.1950853815453732580201949709"
+          },
+          {
+            "symbol": "NVDA",
+            "target_weight": "0.3119479641462935903866704469"
+          },
+          {
+            "symbol": "PLTR",
+            "target_weight": "0.08518163115463183070537005939"
+          },
+          {
+            "symbol": "CASH",
+            "target_weight": "0.08240464091771530761346040608"
+          }
+        ]
+      }
+    ],
+    "over_limit_reviews": [
+      {
+        "symbol": "NVDA",
+        "observed_weight": "0.3119479641462935903866704469",
+        "policy_limit": "0.25"
+      }
+    ]
+  },
   "summary_counts": {
     "proposals": 13,
     "critiques": 2
