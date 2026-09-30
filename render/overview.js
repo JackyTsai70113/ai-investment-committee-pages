@@ -1305,6 +1305,22 @@ export function bootstrapDashboard(root, payload, base) {
         </article>`;
     };
     const riskPlans = recommendation.position_risk_plans || [];
+    const activeTradeoffs = Array.isArray(recommendation.active_sleeve_tradeoffs)
+      ? recommendation.active_sleeve_tradeoffs
+      : [];
+    const supportedTradeoffs = activeTradeoffs.filter(
+      (tradeoff) => tradeoff.evidence_status === "supported",
+    ).length;
+    const priceRiskPlans = riskPlans.filter((plan) => plan.status !== "exempt");
+    const quantifiedRiskPlans = priceRiskPlans.filter(
+      (plan) => plan.status === "quantified",
+    ).length;
+    const reportReady = investmentReasons.length > 0
+      && supportedTradeoffs === activeTradeoffs.length
+      && quantifiedRiskPlans === priceRiskPlans.length;
+    const reportReadiness = reportReady
+      ? "投資理由、逐檔證據與風險量化均已齊備。"
+      : `尚未形成可採用的部位建議：${supportedTradeoffs}/${activeTradeoffs.length} 檔具足夠證據、${investmentReasons.length} 項可追溯投資理由、${quantifiedRiskPlans}/${priceRiskPlans.length} 個價格風險已量化。`;
     const allocationBySymbol = new Map(
       (recommendation.allocations || []).map((item) => [item.symbol, item]),
     );
@@ -1328,6 +1344,15 @@ export function bootstrapDashboard(root, payload, base) {
         reduce: "減碼",
         exit: "退出",
       })[action] || "檢視";
+    const allocationNote = (item) =>
+      ({
+        add: "提高研究目標。",
+        buy: "提高研究目標。",
+        increase: "提高研究目標。",
+        hold: "維持研究目標。",
+        reduce: "降低研究目標。",
+        exit: "退出研究目標。",
+      })[item.action] || item.note;
     const riskMethodology = (plan) => {
       const methodology = String(plan.methodology || "");
       if (plan.status === "exempt") {
@@ -1461,19 +1486,19 @@ export function bootstrapDashboard(root, payload, base) {
           <dl class="position-risk-grid">
             <div><dt>前一輪目標 ${info("前一輪目標", "前一輪公開模擬研究的目標比例；不是券商或使用者實際持倉。")}</dt><dd>${previousWeight === null ? "未提供" : percent(previousWeight)}</dd></div>
             <div><dt>本輪目標 ${info("本輪目標", "本輪公開模擬研究建議的目標比例；可用上方所選本金換算金額。")}</dt><dd>${currentWeight === null ? "未提供" : percent(currentWeight)}</dd></div>
-            <div><dt>配置變化 ${info("配置變化", "本輪目標比例減去前一輪目標比例。正數為加碼、負數為減碼，不代表已執行真實交易。")}</dt><dd>${signedPercent(change)}</dd></div>
+            <div><dt>配置變化 ${info("配置變化", "本輪目標比例減去前一輪目標比例；正數為加碼、負數為減碼。")}</dt><dd>${signedPercent(change)}</dd></div>
             <div><dt>失效條件 ${info("失效條件", "若此條件成立，原研究論點要重新檢視。只有價格型失效條件才能計算基本損失。")}</dt><dd>${escapeHtml(invalidation)}</dd></div>
             <div><dt>風險輸入 ${info("風險輸入", "量化基本損失需要同一資料截止時間的參考價、失效價與時間戳；缺少任何一項就保持未知。")}</dt><dd>${escapeHtml(riskInputSummary(plan))}</dd></div>
             <div><dt>基本損失比例 ${info("基本損失比例", "以本輪目標比例、參考價與失效價估算到達失效價前的損失比例；不是最大可能損失，也不保證停損成交。")}</dt><dd>${plan.status === "quantified" ? percent(plan.base_loss_fraction) : `未量化：${escapeHtml(methodology.reason)}`}</dd></div>
             <div><dt>跳空壓力比例 ${info("跳空壓力比例", "以政策設定的外生跳空假設估算隔夜或事件衝擊；不是預測，也不假設停損一定成交。")}</dt><dd>${stressCopy}</dd></div>
             <div><dt>狀態 ${info("狀態", "說明此部位是否已量化；未量化不等於零風險，並會指出可量化所需資料。")}</dt><dd>${escapeHtml(statusSummary)}</dd></div>
-            <div><dt>所選本金換算 ${info("所選本金換算", "只依瀏覽器中的模擬本金換算，不會上傳、不會讀取或揭露真實帳戶本金。")}</dt><dd data-sim-risk data-base-fraction="${escapeHtml(baseFraction)}" data-stress-fraction="${escapeHtml(stressFraction)}">${baseFraction !== "" || stressFraction !== "" ? "輸入本金後換算" : "需要量化後才換算"}</dd></div>
+            <div><dt>所選本金換算</dt><dd data-sim-risk data-base-fraction="${escapeHtml(baseFraction)}" data-stress-fraction="${escapeHtml(stressFraction)}">${baseFraction !== "" || stressFraction !== "" ? "輸入本金後換算" : "需要量化後才換算"}</dd></div>
           </dl>
           <details class="position-risk-details">
             <summary>為什麼是這個狀態</summary>
             <p>${escapeHtml(methodology.reason)}</p>
             <p>${escapeHtml(methodology.requirement)}</p>
-            <p>這是模擬組合風險摘要，不代表真實帳戶，也不保證停損一定成交。</p>
+            <p>風險摘要會隨資料、失效價或配置變動重新計算。</p>
           </details>
         </article>`;
     };
@@ -1555,18 +1580,18 @@ export function bootstrapDashboard(root, payload, base) {
               <span class="score-caption">委員方向共識度</span>
             </div>
             <div class="score-explainer">
-              <strong>${escapeHtml(scoreBand)}</strong>
-              <p>${escapeHtml(scoreReason)}</p>
-              <small>分數越高，代表委員方向越一致，且沒有維持中的批判否決。</small>
+              <strong>${escapeHtml(reportReady ? scoreBand : "資料待補")}</strong>
+              <p>${escapeHtml(reportReady ? scoreReason : "委員方向一致不等於逐檔證據、投資理由與風險量化已齊備。")}</p>
+              <small>${reportReady ? "分數越高，代表委員方向越一致，且沒有維持中的批判否決。" : "先補齊報告必要資料，才可將共識度納入部位判斷。"}</small>
             </div>
           </aside>
         </section>
 
         <section class="metrics" aria-label="投資組合總覽" data-tab-section="overview">
           <article class="metric">
-            <span class="metric-label">本輪市場立場</span>
-            <strong class="metric-value">${escapeHtml(decisionLabel(recommendation.market_stance))}</strong>
-            <span class="metric-foot">研究方向，不代表交易指令</span>
+            <span class="metric-label">${reportReady ? "本輪市場立場" : "報告狀態"}</span>
+            <strong class="metric-value">${escapeHtml(reportReady ? decisionLabel(recommendation.market_stance) : "資料待補")}</strong>
+            <span class="metric-foot">${reportReady ? "研究方向" : "尚未形成可採用的部位建議"}</span>
           </article>
           <article class="metric">
             <span class="metric-label">風險資產</span>
@@ -1584,6 +1609,14 @@ export function bootstrapDashboard(root, payload, base) {
             <span class="metric-foot">${escapeHtml(committee.summary_counts?.proposals ?? committee.proposals.length)} 位研究員 · ${escapeHtml(committee.summary_counts?.critiques ?? committee.critiques.length)} 份批判</span>
           </article>
         </section>
+
+        ${reportReady ? "" : `<section class="report-readiness" aria-label="報告準備狀態" data-tab-section="overview">
+          <div>
+            <span class="section-kicker">資料待補</span>
+            <h2>本輪尚未形成可採用的部位建議</h2>
+          </div>
+          <p>${escapeHtml(reportReadiness)} 下方比例僅供研究追蹤；補齊逐檔證據、可追溯理由與風險輸入後，才會形成完整報告。</p>
+        </section>`}
 
         <section class="terminal-grid" aria-label="彭博風格策略分析" data-tab-section="overview">
           <article class="terminal-card health-terminal">
@@ -1692,8 +1725,8 @@ export function bootstrapDashboard(root, payload, base) {
           <section class="panel strategy" id="portfolio" data-tab-section="overview">
             <header class="panel-header">
               <div>
-                <span class="section-kicker">短期配置</span>
-                <h2>本輪研究配置</h2>
+                <span class="section-kicker">${reportReady ? "短期配置" : "研究追蹤"}</span>
+                <h2>${reportReady ? "本輪研究配置" : "目前研究追蹤"}</h2>
               </div>
               <span class="panel-meta">建議版本 ${escapeHtml(recommendation.run_id)}</span>
             </header>
@@ -1702,9 +1735,6 @@ export function bootstrapDashboard(root, payload, base) {
               <div>
                 <span class="section-kicker">本機換算</span>
                 <h3 id="simulation-capital-title">選擇模擬本金</h3>
-                <p>
-                  配置、報酬、回撤與風控判斷都以比例為準；本金只在瀏覽器中換算顯示金額，不寫入公開資料。
-                </p>
               </div>
               <label class="simulation-capital-input">
                 <span>模擬本金（USD）</span>
@@ -1715,7 +1745,6 @@ export function bootstrapDashboard(root, payload, base) {
                   step="100"
                   placeholder="例如 10000"
                   data-simulation-capital
-                  aria-describedby="simulation-capital-help"
                 />
               </label>
               <div class="simulation-capital-actions" aria-label="常用模擬本金">
@@ -1728,9 +1757,6 @@ export function bootstrapDashboard(root, payload, base) {
                   )
                   .join("")}
               </div>
-              <p id="simulation-capital-help" class="simulation-capital-help">
-                變更本金只改變本頁金額換算，不改變任何標的權重或研究結論。
-              </p>
             </div>
             <div class="strategy-layout">
               <div class="allocation-visual">
@@ -1739,18 +1765,6 @@ export function bootstrapDashboard(root, payload, base) {
                     <strong>100%</strong>
                     <span>配置比例</span>
                   </div>
-                </div>
-                <div class="legend">
-                  ${recommendation.allocations
-                    .map(
-                      (item, index) => `
-                        <div class="legend-row">
-                          <span class="swatch" style="--swatch:${colors[index % colors.length]}"></span>
-                          <strong>${escapeHtml(item.symbol)}</strong>
-                          <span>${percent(item.target_weight)}</span>
-                        </div>`,
-                    )
-                    .join("")}
                 </div>
               </div>
               <div class="table-wrap strategy-table-wrap">
@@ -1773,7 +1787,7 @@ export function bootstrapDashboard(root, payload, base) {
                             <td data-label="目標比例">${percent(item.target_weight)}</td>
                             <td data-label="所選本金換算" data-sim-amount data-weight="${escapeHtml(item.target_weight)}">輸入本金後換算</td>
                             <td data-label="類型"><span class="asset-type">${escapeHtml(assetTypeLabel(item.asset_type))}</span></td>
-                            <td data-label="研究／風控備註" class="allocation-note">${glossaryText(item.note)}</td>
+                            <td data-label="研究／風控備註" class="allocation-note">${reportReady ? glossaryText(allocationNote(item)) : "證據待補"}</td>
                           </tr>`,
                       )
                       .join("")}
@@ -1786,12 +1800,14 @@ export function bootstrapDashboard(root, payload, base) {
                 ? `<section class="position-risk-summary" aria-label="模擬配置轉換與部位風險摘要">
                   <header>
                     <div>
-                      <span class="section-kicker">模擬配置轉換</span>
-                      <h3>部位風險摘要 ${info("部位風險摘要", "本區比較前一輪與本輪模擬目標比例，並列出可量化與不可量化的風險輸入；不是實際券商持倉。")}</h3>
+                      <h3>部位風險摘要 ${info("部位風險摘要", "本區列出各部位的風險量化狀態與所需輸入；未量化代表沒有足夠資料判斷該部位的價格風險。")}</h3>
                     </div>
-                    <p>金額只依上方所選模擬本金換算；核心判斷保存為比例與百分比。</p>
+                    <p>${quantifiedRiskPlans}/${priceRiskPlans.length} 個價格風險已量化</p>
                   </header>
-                  <div class="position-risk-cards">${riskPlans.map(riskPlanCard).join("")}</div>
+                  <details class="position-risk-disclosure">
+                    <summary>查看逐檔風險資料</summary>
+                    <div class="position-risk-cards">${riskPlans.map(riskPlanCard).join("")}</div>
+                  </details>
                 </section>`
                 : ""
             }

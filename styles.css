@@ -653,6 +653,35 @@ a {
   margin-bottom: 1rem;
 }
 
+.report-readiness {
+  display: grid;
+  grid-template-columns: minmax(14rem, 0.7fr) minmax(0, 1.3fr);
+  gap: 1rem;
+  align-items: center;
+  margin: 1rem 0;
+  padding: 1rem 1.15rem;
+  border: 1px solid rgba(255, 152, 100, 0.38);
+  border-radius: 16px;
+  background: rgba(255, 152, 100, 0.055);
+}
+
+.report-readiness h2,
+.report-readiness p {
+  margin: 0;
+}
+
+.report-readiness h2 {
+  margin-top: 0.2rem;
+  color: var(--cream);
+  font-size: 1.05rem;
+}
+
+.report-readiness p {
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.6;
+}
+
 .terminal-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2209,10 +2238,6 @@ a {
   background: rgba(199, 241, 91, 0.08);
 }
 
-.simulation-capital-help {
-  grid-column: 1 / -1;
-}
-
 .risk-plan-table {
   margin-top: 0.75rem;
 }
@@ -2230,16 +2255,26 @@ a {
   gap: 1rem;
 }
 
-.position-risk-summary h3 {
-  margin: 0.15rem 0 0;
+.position-risk-summary > header p {
+  margin: 0;
+  color: var(--orange);
+  font: 700 0.76rem/1.4 ui-monospace, SFMono-Regular, Menlo, monospace;
+  text-align: right;
 }
 
-.position-risk-summary > header p {
-  max-width: 26rem;
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.78rem;
-  line-height: 1.55;
+.position-risk-disclosure > summary {
+  color: var(--blue);
+  cursor: pointer;
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.position-risk-disclosure[open] > summary {
+  margin-bottom: 0.85rem;
+}
+
+.position-risk-summary h3 {
+  margin: 0.15rem 0 0;
 }
 
 .position-risk-cards {
@@ -2378,36 +2413,6 @@ a {
   color: var(--faint);
   font: 650 0.75rem/1.4 ui-monospace, SFMono-Regular, Menlo, monospace;
   text-transform: uppercase;
-}
-
-.legend {
-  display: grid;
-  gap: 0.62rem;
-}
-
-.legend-row {
-  display: grid;
-  grid-template-columns: 0.55rem 1fr auto;
-  gap: 0.65rem;
-  align-items: center;
-  padding: 0.4rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.045);
-}
-
-.swatch {
-  width: 0.55rem;
-  height: 0.55rem;
-  border-radius: 50%;
-  background: var(--swatch);
-}
-
-.legend-row strong {
-  font-size: 0.82rem;
-}
-
-.legend-row span:last-child {
-  color: var(--muted);
-  font: 650 0.75rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
 .table-wrap {

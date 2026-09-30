@@ -29,6 +29,21 @@ const eventName = (event) => {
   if (/Employment Situation/i.test(event.title)) return "美國就業公告";
   return "官方重要事件";
 };
+const eventIdentity = (event) => [
+  event.category || "",
+  Date.parse(event.starts_at),
+  (event.title || "").trim().toLocaleLowerCase("en-US"),
+  [...(event.affected_symbols || [])].sort().join(","),
+].join("|");
+const uniqueEvents = (events) => {
+  const identities = new Set();
+  return events.filter((event) => {
+    const identity = eventIdentity(event);
+    if (identities.has(identity)) return false;
+    identities.add(identity);
+    return true;
+  });
+};
 const ticker = (symbol) => {
   const exchange = { NVDA: "NASDAQ", AVGO: "NASDAQ", META: "NASDAQ", PLTR: "NASDAQ", GLD: "NYSEARCA" }[symbol];
   if (symbol === "CASH") return `<strong>${escapeHtml(symbol)}</strong>`;
@@ -43,9 +58,10 @@ export function renderEventCalendar(calendar, { asOf, renderSymbol = ticker } = 
     && Date.parse(event.source_as_of) <= cutoff && Date.parse(event.starts_at) >= cutoff
     && ((event.category === "earnings" && event.authority === "primary_issuer")
       || (event.category !== "earnings" && event.authority === "official")))
-    .sort((a, b) => Date.parse(a.starts_at) - Date.parse(b.starts_at)).slice(0, 6);
+    .sort((a, b) => Date.parse(a.starts_at) - Date.parse(b.starts_at));
+  const visibleEvents = uniqueEvents(events).slice(0, 6);
   const symbols = calendar?.coverage?.find((item) => item.category === "earnings")?.symbol_coverage || [];
-  const cards = events.map((event) => `<article class="position-risk-card">
+  const cards = visibleEvents.map((event) => `<article class="position-risk-card">
     <h3>${(event.affected_symbols || []).map(symbol).join(" ")} ${eventName(event)}</h3>
     <p>台北 ${escapeHtml(formatTime(event.starts_at, "Asia/Taipei"))}<br>
     美東 ${escapeHtml(formatTime(event.starts_at, "America/New_York"))}</p>
