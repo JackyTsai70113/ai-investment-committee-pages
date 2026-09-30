@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "observed_at": "2026-09-30T05:43:04.943587+00:00",
+  "observed_at": "2026-09-30T05:45:35.210585+00:00",
   "research": {
     "status": "success",
     "attempted_at": "2026-09-29T12:59:50.626951+00:00",
@@ -14,8 +14,8 @@
   },
   "publication": {
     "status": "verified",
-    "attempted_at": "2026-09-30T13:31:23.800910+08:00",
-    "run_url": null,
+    "attempted_at": "2026-09-30T13:44:46.601388+08:00",
+    "run_url": "https://github.com/JackyTsai70113/ai-investment-committee/actions/runs/36674771725",
     "recommendation_run_id": "20260929T125104Z"
   }
 }
