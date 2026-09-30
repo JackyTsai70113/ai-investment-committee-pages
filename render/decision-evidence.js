@@ -21,7 +21,7 @@ const actionLabel = (value) => actionLabels[value] || "檢視";
 
 function evidenceText(tradeoff) {
   const observations = (tradeoff.evidence_observations || []).filter(Boolean);
-  if (!observations.length) return "本輪沒有可驗證的新證據；共識度不代表交易訊號。";
+  if (!observations.length) return "本輪沒有可驗證的新證據。";
   return observations.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
 }
 
@@ -63,9 +63,6 @@ export function renderDecisionEvidencePanel(recommendation, { renderSymbol } = {
     ? recommendation.active_sleeve_tradeoffs
     : [];
   const supported = tradeoffs.filter((item) => item.evidence_status === "supported").length;
-  const score = Number.isFinite(Number(recommendation?.model_score))
-    ? Number(recommendation.model_score)
-    : null;
   const cards = tradeoffs.map((tradeoff) => `
     <article class="decision-evidence-card" data-decision-evidence-card data-symbol="${escapeHtml(tradeoff.symbol)}">
       <details>
@@ -87,13 +84,12 @@ export function renderDecisionEvidencePanel(recommendation, { renderSymbol } = {
         <div class="decision-comparison" data-decision-comparison hidden aria-live="polite"></div>
       </details>
     </article>`).join("");
-  const empty = "<p>本輪沒有逐檔證據摘要；資料不足時不把共識度解讀為交易訊號。</p>";
+  const empty = "<p>本輪沒有可採用的逐檔證據。</p>";
   return `<section class="panel decision-evidence" id="decision-evidence" data-tab-section="overview" aria-labelledby="decision-evidence-title">
     <header class="panel-header">
-      <div><span class="section-kicker">逐檔決策證據</span><h2 id="decision-evidence-title">共識度、資料品質與不交易原因</h2></div>
+      <div><span class="section-kicker">逐檔決策證據</span><h2 id="decision-evidence-title">部位調整依據</h2></div>
       <span class="panel-meta">${supported}/${tradeoffs.length} 檔證據足夠</span>
     </header>
-    <p class="decision-evidence-summary">本輪共識度 ${score === null ? "未知" : `${score}/100`}；逐檔證據覆蓋與政策限制分開顯示。證據不足時維持未知，不自行推導買賣方向。</p>
     <div class="decision-evidence-grid">${cards || empty}</div>
   </section>`;
 }

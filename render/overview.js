@@ -1,5 +1,4 @@
 import {
-  assetTypeLabel,
   dateTime,
   escapeHtml,
   localizeRenderedText,
@@ -15,25 +14,12 @@ import {
   renderDecisionEvidencePanel,
 } from "./decision-evidence.js";
 import { createDataLoader } from "../data.js";
-import { renderEventCalendar } from "./event-calendar.js";
-import { renderScenarioStress } from "./scenario-stress.js";
-import { renderMacroState } from "./macro-state.js";
 
 export function allocationScopeNote(recommendation) {
   return recommendation.allocation_scope
     ? "可調整部位：固定核心不納入本輪配置分母，也不產生交易建議。"
     : "本輪為未記錄可調整範圍的舊制建議，不代表現行可調整部位政策。";
 }
-
-const colors = [
-  "#c7f15b",
-  "#67b7ff",
-  "#ae91ff",
-  "#ff9864",
-  "#7ecb83",
-  "#f3f0d8",
-];
-const LEADERBOARD_VISIBLE_LIMIT = 5;
 
 function installInfoTooltips(root) {
   if (root.dataset.infoTooltipsInstalled === "true") return;
@@ -128,50 +114,11 @@ function installInfoTooltips(root) {
 
 function createOverviewModel({
   dashboardAnalytics,
-  committee,
-  recommendation,
 }) {
-  const investedWeight = recommendation.allocations
-    .filter((item) => item.symbol !== "CASH")
-    .reduce((total, item) => total + Number(item.target_weight), 0);
-  const cash = recommendation.allocations.find(
-    (item) => item.symbol === "CASH",
-  );
-  const modelScore = Math.max(
-    0,
-    Math.min(100, Number(recommendation.model_score) || 0),
-  );
-  const scoreBand =
-    modelScore >= 80
-      ? "高度共識"
-      : modelScore >= 60
-        ? "中度共識"
-        : modelScore >= 40
-          ? "明顯分歧"
-          : "低共識／高不確定";
-  let cursor = 0;
-  const segments = recommendation.allocations.map((item, index) => {
-    const start = cursor;
-    cursor += Number(item.target_weight) * 100;
-    return `${colors[index % colors.length]} ${start}% ${cursor}%`;
-  });
   return {
     analyticsPerformance: dashboardAnalytics.performance,
-    cash,
-    committeeSize:
-      (committee.summary_counts?.proposals ?? committee.proposals.length) +
-      (committee.summary_counts?.critiques ?? committee.critiques.length),
-    donut: `conic-gradient(${segments.join(",")})`,
     health: dashboardAnalytics.portfolio_health,
-    investedWeight,
-    isLive: recommendation.status === "live",
-    modelScore,
     returnObjective: dashboardAnalytics.return_objective,
-    scoreAngle: `${modelScore * 3.6}deg`,
-    scoreBand,
-    scoreReason:
-      recommendation.model_score_reason ||
-      "舊制資料沒有保存評分理由；不可用這個數字判斷配置好壞。",
   };
 }
 
@@ -183,7 +130,6 @@ export function bootstrapDashboard(root, payload, base) {
   const { agentProfiles: loadedAgentProfiles, committeeRendererFactory } =
     payload;
   const agentProfiles = loadedAgentProfiles || {};
-  const simulationCapitalExamples = [4000, 6000, 10000];
   const toNumber = (value) => {
     const parsed = Number(value);
     return Number.isFinite(parsed) ? parsed : null;
@@ -194,9 +140,7 @@ export function bootstrapDashboard(root, payload, base) {
   };
   const simulatedMoney = (fraction, capital) => {
     const parsed = toNumber(fraction);
-    return parsed === null || capital === null
-      ? "輸入本金後換算"
-      : money(parsed * capital);
+    return parsed === null || capital === null ? "" : money(parsed * capital);
   };
 
   const findQuote = (market, symbol) =>
@@ -258,7 +202,7 @@ export function bootstrapDashboard(root, payload, base) {
   const safeExternalUrl = (value) => {
     try {
       const parsed = new URL(String(value));
-      return parsed.protocol === "https:" ? parsed.href : null;
+      return parsed.protocol === "https:" && !parsed.username && !parsed.password ? parsed.href : null;
     } catch {
       return null;
     }
@@ -335,13 +279,17 @@ export function bootstrapDashboard(root, payload, base) {
       .map((url) => safeExternalUrl(url))
       .filter(Boolean);
     if (safeUrls.length === 0) return "";
+    const sourceName = (url) => {
+      const host = new URL(url).hostname.replace(/^www\./, "");
+      return { "sec.gov": "美國證管會", "bls.gov": "美國勞工統計局", "federalreserve.gov": "聯準會" }[host] || host;
+    };
     return `
       <div class="reason-sources" aria-label="資料來源">
         ${safeUrls
           .map(
-            (url, index) => `
+            (url) => `
               <a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">
-                來源 ${index + 1}
+                ${escapeHtml(sourceName(url))}
               </a>`,
           )
           .join("")}
@@ -374,6 +322,7 @@ export function bootstrapDashboard(root, payload, base) {
       risk_on: "風險偏好",
       risk_off: "風險趨避",
       high: "高",
+      very_high: "很高",
       moderate: "中等",
       low: "低",
       live: "研究建議",
@@ -580,7 +529,6 @@ export function bootstrapDashboard(root, payload, base) {
     ? committeeRendererFactory({
         agentLink,
         agentProfiles,
-        dateTime,
         decisionLabel,
         escapeHtml,
         glossaryText,
@@ -612,17 +560,6 @@ export function bootstrapDashboard(root, payload, base) {
     };
 
     return labels[value] || String(value || "未分類");
-  };
-
-  const leaderboardStatusLabel = (item) => {
-    const pending = Math.max(
-      Number(item.participation_calls) - Number(item.evaluated_calls),
-      0,
-    );
-    if (item.evaluated_calls) {
-      return `評估樣本累積中（已評估 ${item.evaluated_calls}，待評估 ${pending}）`;
-    }
-    return `尚無可驗證結果（待評估 ${pending}）`;
   };
 
   const info = (label, description) => `
@@ -675,19 +612,8 @@ export function bootstrapDashboard(root, payload, base) {
   }) => {
     const overview = createOverviewModel({
       dashboardAnalytics,
-      committee,
-      recommendation,
     });
     const {
-      isLive,
-      investedWeight,
-      cash,
-      modelScore,
-      scoreBand,
-      scoreReason,
-      scoreAngle,
-      donut,
-      committeeSize,
       health,
       analyticsPerformance,
       returnObjective,
@@ -704,7 +630,6 @@ export function bootstrapDashboard(root, payload, base) {
     const exposurePercent = (value) => (value == null ? "—" : percent(value));
     const renderExposurePanel = () => {
       if (!exposureSnapshot) return "";
-      const coverage = exposureSnapshot.coverage || {};
       const clusters = Array.isArray(exposureSnapshot.correlation_clusters)
         ? exposureSnapshot.correlation_clusters
         : [];
@@ -716,12 +641,13 @@ export function bootstrapDashboard(root, payload, base) {
       );
       const issuerItems = (exposureSnapshot.issuer_exposures || []).slice(0, 3);
       const sectorItems = (exposureSnapshot.sector_exposures || []).slice(0, 3);
-      const exposureItems = (items) =>
+      const sectorLabels = { gold: "黃金", semiconductors: "半導體", technology: "科技" };
+      const exposureItems = (items, kind) =>
         items.length
           ? items
               .map(
                 (item) =>
-                  `<li><span>${escapeHtml(item.factor)}</span><strong>${exposurePercent(item.weight)}</strong></li>`,
+                  `<li><span>${kind === "issuer" ? symbolLink(item.factor) : escapeHtml(sectorLabels[item.factor] || item.factor)}</span><strong>${exposurePercent(item.weight)}</strong></li>`,
               )
               .join("")
           : "<li><span>沒有可用資料</span><strong>—</strong></li>";
@@ -749,29 +675,22 @@ export function bootstrapDashboard(root, payload, base) {
         : "<li><span>沒有未量測標的</span><strong>—</strong></li>";
       return `
         <section class="panel exposure-panel" id="exposure" data-tab-section="overview" aria-labelledby="exposure-title">
-          <header class="panel-header">
-            <div>
-              <span class="section-kicker">共同曝險拆解</span>
-              <h2 id="exposure-title">已知集中、未知曝險與實際相關性</h2>
-            </div>
-            <span class="panel-meta">相關性資料：${escapeHtml(exposureStatusLabel(coverage.correlation_status))}</span>
-          </header>
-          <p class="exposure-note">只使用不晚於決策截止時間的完成交易日調整後收盤價；樣本不足不補零，也不把未知資料當成相關性違規。</p>
+          <header class="panel-header"><div><span class="section-kicker">部位風險</span><h2 id="exposure-title">目前集中在哪裡</h2></div></header>
           <div class="exposure-grid">
             <article class="exposure-card">
               <h3>已知發行人集中</h3>
-              <ul>${exposureItems(issuerItems)}</ul>
+              <ul>${exposureItems(issuerItems, "issuer")}</ul>
               <h3>已知產業集中</h3>
-              <ul>${exposureItems(sectorItems)}</ul>
+              <ul>${exposureItems(sectorItems, "sector")}</ul>
             </article>
-            <article class="exposure-card">
+            ${measuredClusters.length ? `<article class="exposure-card">
               <h3>已量測相關性</h3>
               <ul>${measuredItems}</ul>
-            </article>
-            <article class="exposure-card exposure-card-unknown">
+            </article>` : ""}
+            ${unknownClusters.length ? `<article class="exposure-card exposure-card-unknown">
               <h3>未量測共同曝險</h3>
               <ul>${unknownItems}</ul>
-            </article>
+            </article>` : ""}
           </div>
         </section>`;
     };
@@ -960,129 +879,39 @@ export function bootstrapDashboard(root, payload, base) {
     };
     const renderMarketDriversPanel = (extension = marketIntelligence) => {
       const drivers = Array.isArray(extension?.market_drivers)
-        ? extension.market_drivers.slice(0, 10)
+        ? extension.market_drivers.slice(0, 3)
         : [];
-      const positions = Array.isArray(recommendation.active_sleeve_tradeoffs)
-        ? recommendation.active_sleeve_tradeoffs
-        : [];
-      const relevanceLabels = {
-        supporting: "支持證據",
-        counterevidence: "反方證據",
-        context_only: "背景脈絡",
-        unknown: "關聯未知",
-      };
-      const pricedLabels = {
-        not_priced: "尚未反映（研究判斷）",
-        partially_priced: "部分反映（研究判斷）",
-        mostly_priced: "大致反映（研究判斷）",
-        unknown: "反映程度未知",
-      };
-      const importanceLabels = {
-        low: "低",
-        medium: "中",
-        high: "高",
-        critical: "關鍵",
-        unknown: "未知",
-      };
-      const persistenceLabels = {
-        short: "短期",
-        medium: "中期",
-        long: "長期",
-        unknown: "未知",
-      };
-      const breadthLabels = {
-        single_name: "單一公司",
-        sector: "單一產業",
-        multi_sector: "多個產業",
-        market_wide: "整體市場",
-      };
-      const driverRows = drivers.length
-        ? drivers.map((driver, index) => {
-            const sourceLinks = (driver.source_urls || [])
-              .map((value) => {
-                const safe = safeExternalUrl(value);
-                if (!safe) return "";
-                const parsed = new URL(safe);
-                if (parsed.username || parsed.password || parsed.search || parsed.hash) return "";
-                return `<a href="${escapeHtml(safe)}" target="_blank" rel="noopener noreferrer">來源 ${index + 1}</a>`;
-              })
-              .filter(Boolean)
-              .join("、");
-            const linkedPositions = positions
-              .flatMap((position) => (position.driver_links || [])
-                .filter((link) => link.driver_id === driver.driver_id)
-                .map((link) => `<li>${symbolLink(position.symbol)}：${escapeHtml(relevanceLabels[link.relevance] || "關聯未知")}；${escapeHtml(link.rationale_zh)}</li>`))
-              .join("");
-            const chain = (driver.causal_chain_zh || []).map(escapeHtml).join(" → ");
-            const facts = (driver.facts || [])
-              .map((fact) => `<li>${escapeHtml(fact.label_zh)}：實際 ${escapeHtml(fact.actual || "未提供")}；共識 ${escapeHtml(fact.consensus || "未提供")}；前值 ${escapeHtml(fact.previous || "未提供")}</li>`)
-              .join("");
-            const triggers = (driver.triggers_zh || []).map((item) => `<li>${escapeHtml(item)}</li>`).join("");
-            const importance = driver.importance || {};
-            const importanceCopy = `市場影響 ${importanceLabels[importance.market_impact] || "未知"} · 持續時間 ${persistenceLabels[importance.persistence] || "未知"} · 發生可能性 ${importanceLabels[importance.probability] || "未知"} · 影響範圍 ${breadthLabels[importance.breadth] || "未知"} · 可能損益影響 ${importanceLabels[importance.pnl_impact] || "未知"}`;
-            const sources = sourceLinks || "本輪沒有可公開的安全來源連結";
-            return `<details class="market-driver-card" ${index < 3 ? "open" : ""}>
-              <summary><span class="driver-rank">${index + 1}</span><span><strong>${escapeHtml(driver.title_zh)}</strong><small>${escapeHtml(driver.fact_summary_zh)}</small></span></summary>
-              <div class="market-driver-content">
-                <p><strong>事實：</strong>${escapeHtml(driver.fact_summary_zh)}</p>
-                <p><strong>解讀：</strong>${escapeHtml(driver.interpretation_zh)}</p>
-                <p><strong>分析：</strong>${escapeHtml(driver.analysis_zh)}</p>
-                <p><strong>重要性分類：</strong>${escapeHtml(importanceCopy)}</p>
-                <p><strong>資料時間：</strong>${escapeHtml(dateTime(driver.as_of))}</p>
-                <p><strong>可能傳導：</strong>${chain || "尚無足夠資料"}</p>
-                <p><strong>理論反應：</strong>${escapeHtml(driver.theoretical_reaction_zh || "未知")}</p>
-                <p><strong>同期行情：</strong>${escapeHtml(driver.market_reaction_zh)} ${driver.market_reaction_status === "observed" ? "（共時變化，不代表因果）" : ""}</p>
-                <p><strong>可能受影響：</strong>${(driver.affected_symbols || []).map(symbolLink).join("、") || "尚未確認"}${(driver.affected_sectors_zh || []).length ? `；${driver.affected_sectors_zh.map(escapeHtml).join("、")}` : ""}</p>
-                <p><strong>市場反映程度：</strong>${escapeHtml(pricedLabels[driver.priced_in] || pricedLabels.unknown)}</p>
-                ${facts ? `<ul class="driver-facts">${facts}</ul>` : "<p>實際值、共識與前值：本輪沒有足夠來源，未填數值。</p>"}
-                <p><strong>支持情境：</strong>${escapeHtml(driver.bull_case_zh)}</p>
-                <p><strong>反方情境：</strong>${escapeHtml(driver.bear_case_zh)}</p>
-                ${triggers ? `<p><strong>接下來觀察：</strong></p><ul>${triggers}</ul>` : ""}
-                <p><strong>現在可以做：</strong>${(driver.do_now_zh || []).map(escapeHtml).join("；")}</p>
-                <p><strong>避免誤判：</strong>${(driver.avoid_zh || []).map(escapeHtml).join("；")}</p>
-                <p><strong>不確定之處：</strong>${(driver.uncertainty_zh || []).map(escapeHtml).join("；")}</p>
-                <ul class="driver-position-links">${linkedPositions || "<li>本輪沒有足夠的部位關聯證據。</li>"}</ul>
-                <p class="driver-sources"><strong>來源：</strong>${sources}</p>
-              </div>
-            </details>`;
-          }).join("")
-        : "<p class=\"market-driver-empty\">本輪沒有足夠、符合來源與分類門檻的市場主線；這代表證據不足，不代表偏多或偏空。</p>";
-      const positionRows = positions.map((position) => {
-        const links = position.driver_links || [];
-        const detail = links.length
-          ? `<ul>${links.map((link) => `<li>${escapeHtml(relevanceLabels[link.relevance] || "關聯未知")}：${escapeHtml(link.rationale_zh)}</li>`).join("")}</ul>`
-          : `<p>本輪沒有足夠的市場主線證據解釋這項${position.decision === "hold" ? "維持" : "調整"}；不可把資料缺口當成方向。</p>`;
-        const hold = position.decision === "hold"
-          ? `<p><strong>為何維持：</strong>${escapeHtml(position.advantage_over_hold)}</p>`
-          : "";
-        const decisionLabel = { increase: "增加", hold: "維持", reduce: "減少", exit: "退出" }[position.decision] || "檢視";
-        return `<article class="position-driver-card"><h3>${symbolLink(position.symbol)} · ${decisionLabel}</h3>${detail}${hold}</article>`;
+      if (!drivers.length) return "";
+      const cards = drivers.map((driver) => {
+        const source = (driver.source_urls || [])
+          .map(safeExternalUrl)
+          .find((url) => {
+            if (!url) return false;
+            const parsed = new URL(url);
+            return !parsed.username && !parsed.password && !parsed.search && !parsed.hash;
+          });
+        const related = (recommendation.active_sleeve_tradeoffs || [])
+          .filter((position) => (position.driver_links || []).some((link) => link.driver_id === driver.driver_id))
+          .slice(0, 4);
+        return `<article class="market-driver-card">
+          <h3>${escapeHtml(driver.title_zh)}</h3>
+          <p>${escapeHtml(driver.fact_summary_zh)}</p>
+          <p>${escapeHtml(driver.interpretation_zh)}</p>
+          ${related.length ? `<p>相關部位：${related.map((position) => symbolLink(position.symbol)).join("、")}</p>` : ""}
+          ${source ? `<a href="${escapeHtml(source)}" target="_blank" rel="noopener noreferrer">查看來源</a>` : ""}
+        </article>`;
       }).join("");
       return `<section class="panel market-driver-panel" id="market-drivers" data-tab-section="overview" aria-labelledby="market-drivers-title">
-        <header class="panel-header"><div><span class="section-kicker">今日研究主線</span><h2 id="market-drivers-title">影響美股的市場主線</h2></div><span class="panel-meta">最多 10 項；依分類優先順序排列</span></header>
-        <p class="exposure-note">排名是研究優先順序，不是報酬預測。理論反應與同期行情分開；同期變化不代表因果。資料只供研究觀察，不會直接改變配置或產生交易指令。</p>
-        <div class="market-drivers-grid">${driverRows}</div>
-        <div class="position-driver-section"><h3>這些主線如何連到目前部位</h3><div class="position-driver-grid">${positionRows || "<p>本輪沒有逐檔取捨資料。</p>"}</div></div>
+        <header class="panel-header"><div><span class="section-kicker">市場觀察</span><h2 id="market-drivers-title">影響部位的市場主線</h2></div></header>
+        <div class="market-drivers-grid">${cards}</div>
       </section>`;
     };
     const investmentReasons = (recommendation.top_reasons || []).filter(
-      (reason) => reason.reason_type !== "policy_explanation",
+      (reason) => reason.reason_type === "investment_evidence"
+        && reason.support_status === "supported"
+        && reason.category !== "policy"
+        && (reason.source_urls || []).some(safeExternalUrl),
     );
-    const policyReasons = (recommendation.top_reasons || []).filter(
-      (reason) => reason.reason_type === "policy_explanation",
-    );
-    const actionLabel = (action) =>
-      ({ increase: "加碼", hold: "維持", reduce: "減碼", exit: "退出" })[
-        action
-      ] || "檢視";
-    const reasonActions = (reason) =>
-      Object.entries(reason.final_action || {})
-        .map(([symbol, action]) => {
-          const weight = (reason.final_weight || {})[symbol];
-          const weightLabel = weight == null ? "權重未提供" : percent(weight);
-          return `${symbolLink(symbol)} ${escapeHtml(actionLabel(action))} ${escapeHtml(weightLabel)}`;
-        })
-        .join("、");
     const reasonSourceLabel = (reason) =>
       reason.reason_type === "investment_evidence"
         ? "來源觀測"
@@ -1094,415 +923,72 @@ export function bootstrapDashboard(root, payload, base) {
         <span class="reason-number">${String(reason.id).padStart(2, "0")}</span>
         <h3>${escapeHtml(reason.title)}</h3>
         <p>${glossaryText(reason.summary)}</p>
-        ${Object.keys(reason.final_action || {}).length ? `<p>最終配置：${reasonActions(reason)}</p>` : ""}
         <div class="reason-meta"><span>${escapeHtml(decisionLabel(reason.category))}</span><span>${reasonSourceLabel(reason)}</span></div>
         ${renderSourceLinks(reason.source_urls)}
       </article>`;
-    const artifactSource = (artifactRef) => {
-      const policyMatch = String(artifactRef || "").match(
-        /committee\.json#\/policy_override_notes\/(\d+)/,
-      );
-      if (policyMatch) {
-        const index = Number(policyMatch[1]);
-        return {
-          label: `來源：風控紀錄 ${index + 1}`,
-          note: committee.policy_override_notes?.[index] || "",
-          href: `${dataBase}/data/committee_summary.json`,
-        };
-      }
-      if (String(artifactRef || "").includes("effective_risk_profile")) {
-        return {
-          label: "來源：有效風險設定",
-          note: "",
-          href: `${dataBase}/data/committee_summary.json`,
-        };
-      }
-      return {
-        label: `來源：${String(artifactRef || "未標示")}`,
-        note: "",
-        href: `${dataBase}/data/committee_summary.json`,
-      };
-    };
-    const policyReasonSource = (reason) =>
-      (reason.artifact_refs || [])
-        .map(artifactSource)
-        .find((source) => source.note) ||
-      (reason.artifact_refs || []).map(artifactSource)[0] || {
-        label: "來源：最終推薦",
-        note: "",
-        href: `${dataBase}/data/recommendation.json`,
-      };
-    const readablePolicyNote = (note) => {
-      const raw = String(note || "");
-      const positionMatch = raw.match(
-        /(?:Position-risk shadow(?: warning)?:|部位風險影子紀錄：?)\s*(\d+)\s*個風險部位/i,
-      );
-      if (positionMatch) {
-        return `${positionMatch[1]} 個模擬風險部位尚未量化或超過單筆研究損失預算。`;
-      }
-      const exposureMatch = raw.match(
-        /(?:Exposure shadow(?: warning)?:|共同曝險影子警示：?)\s*correlation cluster\s+([^\s]+)\s+weight\s+([0-9.]+)\s+exceeds\s+([0-9.]+)/i,
-      );
-      if (exposureMatch) {
-        const symbols = exposureMatch[1].split(",").join("、");
-        return `相關性群組 ${symbols} 的目標比例為 ${percent(exposureMatch[2])}，高於政策門檻 ${percent(exposureMatch[3])}。`;
-      }
-      return raw
-        .replace("Position-risk shadow:", "部位風險監測紀錄：")
-        .replace("Position-risk shadow warning:", "部位風險監測警示：")
-        .replace("Exposure shadow warning:", "共同曝險監測警示：")
-        .replace("Exposure shadow:", "共同曝險監測紀錄：")
-        .replace("correlation cluster", "相關性群組")
-        .replace("weight", "目標比例")
-        .replace("exceeds", "高於");
-    };
-    const affectedPolicyAssets = (reason) => {
-      const symbols = reason.affected_assets?.length
-        ? reason.affected_assets
-        : Object.keys(reason.final_action || {});
-      return symbols.length
-        ? symbols
-            .map(
-              (symbol) =>
-                `<span class="ticker-chip">${symbolLink(symbol)}</span>`,
-            )
-            .join("")
-        : '<span class="muted-copy">未標示特定標的，視為整體配置風險。</span>';
-    };
-    const policyImpact = (reason) => {
-      const entries = Object.entries(reason.final_action || {});
-      if (!entries.length) return "本輪沒有記錄配置動作；以最終推薦權重為準。";
-      const changed = entries.filter(([, action]) => action !== "hold");
-      if (!changed.length)
-        return "本輪沒有新增買賣動作；受影響配置維持在最終目標比例。";
-      return `本輪動作：${changed
-        .map(([symbol, action]) => {
-          const weight = (reason.final_weight || {})[symbol];
-          const weightText = weight == null ? "權重未提供" : percent(weight);
-          return `${symbolLink(symbol)} ${escapeHtml(actionLabel(action))} ${escapeHtml(weightText)}`;
-        })
-        .join("、")}。`;
-    };
-    const policyActionTaken = (reason, sourceNote) => {
-      const text =
-        `${reason.title || ""} ${reason.summary || ""} ${sourceNote || ""}`.toLowerCase();
-      if (
-        text.includes("shadow") ||
-        text.includes("影子") ||
-        text.includes("監測")
-      ) {
-        return "列為風險監測紀錄，未啟用硬性限制；這表示資料或政策尚未達到阻擋條件，不代表風險為零。";
-      }
-      if (text.includes("硬性") || text.includes("binding")) {
-        return "列入硬性限制或可檢查約束；最終配置必須遵守這項條件。";
-      }
-      return "列為風控檢查紀錄；是否交易仍以最終配置與再平衡指示為準。";
-    };
-    const policyDisplayTitle = (reason, sourceNote) => {
-      const original = (reason.title || "本輪風控檢查紀錄").replace(
-        "影子",
-        "監測",
-      );
-      if (!["本輪研究風險警示", "本輪風控檢查紀錄"].includes(original))
-        return original;
-      if (sourceNote.includes("部位風險")) return "部位風險監測警示";
-      if (sourceNote.includes("共同曝險")) return "共同曝險監測警示";
-      if (
-        sourceNote.includes("硬性") ||
-        sourceNote.toLowerCase().includes("binding")
-      ) {
-        return "風控硬性限制";
-      }
-      return original;
-    };
-    const policyResidualRisk = (sourceNote) =>
-      sourceNote
-        ? "未量化、超出門檻或缺少同口徑資料的部分仍存在；沒有啟用硬性限制不代表風險為零。"
-        : "來源未提供完整量化輸入；未顯示限制不代表沒有風險。";
-    const policyReviewCondition = (reason) => {
-      const invalidations = recommendation.invalidation_conditions || [];
-      if (invalidations.length)
-        return invalidations.slice(0, 2).map(escapeHtml).join("；");
-      return "下一輪資料更新、風控政策觸發或來源證據改變時重新檢視。";
-    };
-    const policyReasonKey = (reason) => {
-      const source = policyReasonSource(reason);
-      return JSON.stringify([
-        reason.title || "",
-        reason.summary || "",
-        source.note || "",
-        Object.entries(reason.final_action || {}),
-        Object.entries(reason.final_weight || {}),
-      ]);
-    };
-    const uniquePolicyReasons = [];
-    const seenPolicyReasons = new Set();
-    for (const reason of policyReasons) {
-      const key = policyReasonKey(reason);
-      if (seenPolicyReasons.has(key)) continue;
-      seenPolicyReasons.add(key);
-      uniquePolicyReasons.push(reason);
-    }
-    const renderArtifactLinks = (reason) => {
-      const sources = (reason.artifact_refs || []).map(artifactSource);
-      const unique = [];
-      const seen = new Set();
-      for (const source of sources) {
-        const key = `${source.label}|${source.href}`;
-        if (seen.has(key)) continue;
-        seen.add(key);
-        unique.push(source);
-      }
-      if (!unique.length) return '<span class="muted-copy">來源未標示</span>';
-      return unique
-        .map(
-          (source) =>
-            `<a href="${escapeHtml(source.href)}" target="_blank" rel="noopener noreferrer">${escapeHtml(source.label)}</a>`,
-        )
-        .join("");
-    };
-    const policyReasonCard = (reason, index) => {
-      const source = policyReasonSource(reason);
-      const sourceNote = readablePolicyNote(source.note);
-      const trigger =
-        sourceNote || reason.summary || "本輪有風控紀錄，但缺少可讀來源摘要。";
-      return `
-        <article class="reason-card risk-policy-card">
-          <span class="reason-number">${String(index + 1).padStart(2, "0")}</span>
-          <h3>${escapeHtml(policyDisplayTitle(reason, sourceNote))}</h3>
-          <dl class="risk-policy-list">
-            <div>
-              <dt>風險／觸發原因</dt>
-              <dd>${glossaryText(trigger)}</dd>
-            </div>
-            <div>
-              <dt>受影響標的或配置</dt>
-              <dd class="ticker-chip-list">${affectedPolicyAssets(reason)}</dd>
-            </div>
-            <div>
-              <dt>對本輪決策的實際影響</dt>
-              <dd>${policyImpact(reason)}</dd>
-            </div>
-            <div>
-              <dt>已採取動作</dt>
-              <dd>${escapeHtml(policyActionTaken(reason, sourceNote))}</dd>
-            </div>
-            <div>
-              <dt>未消除的剩餘風險</dt>
-              <dd>${escapeHtml(policyResidualRisk(sourceNote))}</dd>
-            </div>
-            <div>
-              <dt>重新檢視條件</dt>
-              <dd>${policyReviewCondition(reason)}</dd>
-            </div>
-          </dl>
-          <details class="risk-policy-details">
-            <summary>查看來源與完整配置</summary>
-            <p>${escapeHtml(reason.summary || "未提供補充摘要。")}</p>
-            <p class="risk-policy-source-links">${renderArtifactLinks(reason)}</p>
-            ${Object.keys(reason.final_action || {}).length ? `<p>最終配置：${reasonActions(reason)}</p>` : ""}
-          </details>
-        </article>`;
-    };
     const riskPlans = recommendation.position_risk_plans || [];
     const activeTradeoffs = Array.isArray(recommendation.active_sleeve_tradeoffs)
       ? recommendation.active_sleeve_tradeoffs
       : [];
     const supportedTradeoffs = activeTradeoffs.filter(
-      (tradeoff) => tradeoff.evidence_status === "supported",
+      (tradeoff) => tradeoff.evidence_status === "supported"
+        && (tradeoff.evidence_observations || []).length > 0
+        && (tradeoff.evidence_refs || []).length > 0,
     ).length;
     const priceRiskPlans = riskPlans.filter((plan) => plan.status !== "exempt");
     const quantifiedRiskPlans = priceRiskPlans.filter(
-      (plan) => plan.status === "quantified",
+      (plan) => plan.status === "quantified"
+        && toNumber(plan.reference_price) > 0
+        && toNumber(plan.invalidation_price) > 0
+        && toNumber(plan.invalidation_price) < toNumber(plan.reference_price)
+        && plan.base_loss_fraction != null
+        && toNumber(plan.base_loss_fraction) >= 0,
     ).length;
-    const reportReady = investmentReasons.length > 0
+    const reportReady = Number(committee.final_decision?.model_score) >= 80
+      && Number(recommendation.model_score) >= 80
+      && investmentReasons.length > 0
+      && activeTradeoffs.length > 0
       && supportedTradeoffs === activeTradeoffs.length
+      && priceRiskPlans.length > 0
       && quantifiedRiskPlans === priceRiskPlans.length;
-    const reportReadiness = reportReady
-      ? "投資理由、逐檔證據與風險量化均已齊備。"
-      : `尚未形成可採用的部位建議：${supportedTradeoffs}/${activeTradeoffs.length} 檔具足夠證據、${investmentReasons.length} 項可追溯投資理由、${quantifiedRiskPlans}/${priceRiskPlans.length} 個價格風險已量化。`;
-    const allocationBySymbol = new Map(
-      (recommendation.allocations || []).map((item) => [item.symbol, item]),
-    );
+    const marketHighlights = ["SPY", "QQQ"]
+      .map((symbol) => findQuote(market, symbol))
+      .filter((quote) => quote?.change_percent != null
+        && quote.session_status === "completed"
+        && /^\d{4}-\d{2}-\d{2}$/.test(quote.completed_close_session || "")
+        && Number.isFinite(Number(quote.change_percent)))
+      .map((quote) => {
+        const change = Number(quote.change_percent);
+        const session = /^\d{4}-\d{2}-\d{2}$/.test(quote.completed_close_session || "")
+          ? quote.completed_close_session.slice(5).replace("-", "/")
+          : "最近收盤";
+        return `${symbolLink(quote.symbol)} ${escapeHtml(session)} ${change > 0 ? "+" : ""}${change.toFixed(2)}%`;
+      });
+    const ratesSummary = {
+      rising: "美國公債殖利率近五日走升",
+      falling: "美國公債殖利率近五日回落",
+    }[market.regime?.rates];
+    if (ratesSummary) marketHighlights.push(escapeHtml(ratesSummary));
     const rebalanceBySymbol = new Map(
       (rebalance.instructions || []).map((item) => [item.symbol, item]),
     );
-    const hasNewTrade = (rebalance.instructions || []).some(
-      (instruction) => instruction.action !== "hold",
+    const hasMeaningfulChange = (rebalance.instructions || []).some(
+      (instruction) => Math.abs(Number(instruction.change_weight)) >= 0.0005,
     );
-    const signedPercent = (value) => {
-      const parsed = toNumber(value);
-      if (parsed === null) return "未提供";
-      if (Math.abs(parsed) < 0.0000001) return "0%";
-      return `${parsed > 0 ? "+" : ""}${percent(parsed)}`;
-    };
-    const riskActionLabel = (action) =>
-      ({
-        add: "加碼",
-        increase: "加碼",
-        hold: "維持",
-        reduce: "減碼",
-        exit: "退出",
-      })[action] || "檢視";
-    const allocationNote = (item) =>
-      ({
-        add: "提高研究目標。",
-        buy: "提高研究目標。",
-        increase: "提高研究目標。",
-        hold: "維持研究目標。",
-        reduce: "降低研究目標。",
-        exit: "退出研究目標。",
-      })[item.action] || item.note;
-    const riskMethodology = (plan) => {
-      const methodology = String(plan.methodology || "");
-      if (plan.status === "exempt") {
-        return {
-          reason: "現金不適用價格失效估算。",
-          requirement: "若現金轉為風險資產，才需要報價與失效條件。",
-        };
-      }
-      if (methodology.includes("Zero target allocation")) {
-        return {
-          reason: "本輪目標比例為 0%，沒有新增風險預算。",
-          requirement: "若重新配置為風險資產，需提供報價與失效條件。",
-        };
-      }
-      if (methodology.includes("Missing or non-positive market quote")) {
-        return {
-          reason: "缺少可用市場報價或報價不是正數。",
-          requirement: "需要同一資料截止時間的有效參考價。",
-        };
-      }
-      if (methodology.includes("stale")) {
-        return {
-          reason: "報價逾時，不符合 position_risk_gate 的新鮮度要求。",
-          requirement: "需要未逾時的參考價與時間戳。",
-        };
-      }
-      if (methodology.includes("Event/thesis")) {
-        return {
-          reason: "失效條件為事件或論點，尚無可檢查價格界線。",
-          requirement: "需要明確失效價或保守價格代理，才會計算基本損失。",
-        };
-      }
-      if (plan.v1_loss_bound?.schema_version === "1.0") {
-        return {
-          reason: plan.v1_loss_bound.reason,
-          requirement: "價格失效界線與外生假設各自評估，不保證停損成交。",
-        };
-      }
-      if (methodology.includes("not below")) {
-        return {
-          reason: "失效價未低於多頭參考價，不能形成保守損失估算。",
-          requirement: "需要低於參考價的失效價或改列非價格型失效。",
-        };
-      }
-      if (plan.status === "quantified") {
-        return {
-          reason: "已使用參考價、失效價與政策跳空壓力估算。",
-          requirement: "若報價或失效價改變，下一輪重新計算。",
-        };
-      }
-      return {
-        reason: "資料不足，維持 fail-closed。",
-        requirement: "需要可驗證報價、時間戳與失效條件。",
-      };
-    };
-    const riskInputSummary = (plan) => {
-      if (plan.status === "exempt") return "現金不需要價格失效輸入。";
-      if (plan.status !== "quantified")
-        return `尚缺：${riskMethodology(plan).reason}`;
-      return `參考價 ${money(plan.reference_price)}，失效價 ${money(plan.invalidation_price)}，資料 ${dateTime(plan.reference_timestamp)}`;
-    };
-    const riskStatusLabel = (plan) => {
-      if (plan.status === "quantified") return "已量化";
-      if (plan.status === "exempt") return "免估算";
-      return "未量化";
+    const displayedAction = (item) => {
+      const change = Number(rebalanceBySymbol.get(item.symbol)?.change_weight);
+      if (!Number.isFinite(change)) return "待確認";
+      if (change >= 0.0005) return "加碼";
+      if (change <= -0.0005) return "減碼";
+      return "維持";
     };
     const riskPlanCard = (plan) => {
-      const allocation = allocationBySymbol.get(plan.symbol) || {};
-      const instruction = rebalanceBySymbol.get(plan.symbol) || {};
-      const previousWeight = toNumber(instruction.previous_target_weight);
-      const currentWeight = toNumber(allocation.target_weight);
-      const change =
-        previousWeight === null || currentWeight === null
-          ? null
-          : currentWeight - previousWeight;
-      const methodology = riskMethodology(plan);
-      const statusClass =
-        plan.status === "quantified"
-          ? "quantified"
-          : plan.status === "exempt"
-            ? "exempt"
-            : "unquantified";
-      const invalidation =
-        plan.invalidation_type === "price" && plan.invalidation_price
-          ? `價格低於 ${money(plan.invalidation_price)} 時重新檢視。`
-          : plan.invalidation_type === "cash"
-            ? "現金配置不使用價格失效條件。"
-            : "事件或研究論點失效時重新檢視；目前沒有價格界線。";
-      const baseFraction =
-        plan.status === "quantified" ? plan.base_loss_fraction : "";
-      const gap = plan.v1_gap_stress;
-      const independentGap =
-        gap?.schema_version === "1.0" &&
-        gap.mode === "shadow" &&
-        gap.unit === "return_fraction";
-      const measuredGap =
-        independentGap &&
-        ["measured", "exempt"].includes(gap.status) &&
-        gap.loss_contribution_fraction !== null &&
-        gap.loss_contribution_fraction !== undefined &&
-        Number.isFinite(Number(gap.loss_contribution_fraction));
-      const stressFraction = gap
-        ? measuredGap
-          ? gap.loss_contribution_fraction
-          : ""
-        : plan.status === "quantified"
-          ? plan.portfolio_contribution
-          : "";
-      const stressCopy = gap
-        ? stressFraction !== "" && stressFraction !== null
-          ? `${(Number(stressFraction) * 100).toFixed(2)}%（外生價格假設；不保證停損成交）`
-          : "未知，不能補零"
-        : plan.status === "quantified"
-          ? `${percent(plan.portfolio_contribution)}（政策壓力 ${percent(plan.stress_gap_percent)}）`
-          : "未量化";
-      const statusSummary =
-        plan.status === "quantified"
-          ? "已量化；資料、失效價或配置變動時會重新計算。"
-          : plan.status === "exempt"
-            ? "免估算；現金沒有價格失效曝險。"
-            : `未量化：${methodology.reason} 可量化所需資料：${methodology.requirement}`;
       return `
-        <article class="position-risk-card ${statusClass}">
-          <header>
-            <div>
-              <span class="section-kicker">${symbolLink(plan.symbol)}</span>
-              <h3>${escapeHtml(riskActionLabel(instruction.action || allocation.action || "hold"))}</h3>
-            </div>
-            <span class="risk-status">${plan.v1_loss_bound ? "失效界線：" : ""}${escapeHtml(riskStatusLabel(plan))}</span>
-          </header>
-          <dl class="position-risk-grid">
-            <div><dt>前一輪目標 ${info("前一輪目標", "前一輪公開模擬研究的目標比例；不是券商或使用者實際持倉。")}</dt><dd>${previousWeight === null ? "未提供" : percent(previousWeight)}</dd></div>
-            <div><dt>本輪目標 ${info("本輪目標", "本輪公開模擬研究建議的目標比例；可用上方所選本金換算金額。")}</dt><dd>${currentWeight === null ? "未提供" : percent(currentWeight)}</dd></div>
-            <div><dt>配置變化 ${info("配置變化", "本輪目標比例減去前一輪目標比例；正數為加碼、負數為減碼。")}</dt><dd>${signedPercent(change)}</dd></div>
-            <div><dt>失效條件 ${info("失效條件", "若此條件成立，原研究論點要重新檢視。只有價格型失效條件才能計算基本損失。")}</dt><dd>${escapeHtml(invalidation)}</dd></div>
-            <div><dt>風險輸入 ${info("風險輸入", "量化基本損失需要同一資料截止時間的參考價、失效價與時間戳；缺少任何一項就保持未知。")}</dt><dd>${escapeHtml(riskInputSummary(plan))}</dd></div>
-            <div><dt>基本損失比例 ${info("基本損失比例", "以本輪目標比例、參考價與失效價估算到達失效價前的損失比例；不是最大可能損失，也不保證停損成交。")}</dt><dd>${plan.status === "quantified" ? percent(plan.base_loss_fraction) : `未量化：${escapeHtml(methodology.reason)}`}</dd></div>
-            <div><dt>跳空壓力比例 ${info("跳空壓力比例", "以政策設定的外生跳空假設估算隔夜或事件衝擊；不是預測，也不假設停損一定成交。")}</dt><dd>${stressCopy}</dd></div>
-            <div><dt>狀態 ${info("狀態", "說明此部位是否已量化；未量化不等於零風險，並會指出可量化所需資料。")}</dt><dd>${escapeHtml(statusSummary)}</dd></div>
-            <div><dt>所選本金換算</dt><dd data-sim-risk data-base-fraction="${escapeHtml(baseFraction)}" data-stress-fraction="${escapeHtml(stressFraction)}">${baseFraction !== "" || stressFraction !== "" ? "輸入本金後換算" : "需要量化後才換算"}</dd></div>
-          </dl>
-          <details class="position-risk-details">
-            <summary>為什麼是這個狀態</summary>
-            <p>${escapeHtml(methodology.reason)}</p>
-            <p>${escapeHtml(methodology.requirement)}</p>
-            <p>風險摘要會隨資料、失效價或配置變動重新計算。</p>
-          </details>
+        <article class="position-risk-card quantified">
+          <header><h4>${symbolLink(plan.symbol)}</h4><span class="risk-status">失效價 ${escapeHtml(money(plan.invalidation_price))}</span></header>
+          <p>跌至失效價時，估計影響組合 ${escapeHtml(percent(plan.base_loss_fraction))}。</p>
         </article>`;
     };
-    const statusLabel = "研究建議 · 研究用途";
     root.innerHTML = `
       <div class="app-shell">
         <a class="skip-link" href="#dashboard-main">跳到主要內容</a>
@@ -1538,7 +1024,6 @@ export function bootstrapDashboard(root, payload, base) {
             </div>
           </nav>
           <footer class="sidebar-footer">
-            <span class="sidebar-footer-note">研究用途</span>
             <button
               type="button"
               class="sidebar-toggle"
@@ -1556,70 +1041,35 @@ export function bootstrapDashboard(root, payload, base) {
         <div id="panel-overview" class="tab-panel" role="tabpanel" aria-labelledby="tab-overview" data-tab-panel="overview" tabindex="-1">
         <section class="hero" data-tab-section="overview">
           <div class="hero-main">
-            <span class="eyebrow">投資摘要 / ${escapeHtml(recommendation.run_id)}</span>
-            <h1>市場研究，<span>一個可稽核的決策。</span></h1>
+            <span class="eyebrow">投資委員會研究</span>
+            <h1>市場變化與<span>部位建議</span></h1>
             <p class="hero-lede">
-              十個專業研究角色與兩位批判者，把市場觀點壓縮成一份
-              可驗證的目標配置。
+              ${escapeHtml(reportReady
+                ? hasMeaningfulChange ? "本輪研究支持調整部位；配置與理由列於下方。" : "本輪研究支持維持目前配置。"
+                : "本輪研究尚未支持新的部位調整，先維持觀察。")}
             </p>
             <div class="hero-strip">
               <span class="pill">資料截止 ${escapeHtml(dateTime(recommendation.data_cutoff))}</span>
-              <span class="pill">風險 ${escapeHtml(decisionLabel(recommendation.risk_level))}</span>
-              <span class="pill">主動研究配置 ${escapeHtml(percent(investedWeight))}</span>
-              <span class="pill">${escapeHtml(hasNewTrade ? "本輪含調整建議" : "本輪無新交易建議")}</span>
-              <span class="pill">定價基準 ${escapeHtml(rebalance.pricing_session || "未提供")}</span>
             </div>
           </div>
-          <aside class="hero-side">
-            <div
-              class="score-orbit"
-              style="--score-angle:${escapeHtml(scoreAngle)}"
-              aria-label="委員立場共識 ${escapeHtml(recommendation.model_score)}，滿分 100"
-            >
-              <span class="score-number">${escapeHtml(modelScore)}<small>/100</small></span>
-              <span class="score-caption">委員方向共識度</span>
-            </div>
-            <div class="score-explainer">
-              <strong>${escapeHtml(reportReady ? scoreBand : "資料待補")}</strong>
-              <p>${escapeHtml(reportReady ? scoreReason : "委員方向一致不等於逐檔證據、投資理由與風險量化已齊備。")}</p>
-              <small>${reportReady ? "分數越高，代表委員方向越一致，且沒有維持中的批判否決。" : "先補齊報告必要資料，才可將共識度納入部位判斷。"}</small>
-            </div>
+          <aside class="market-pulse" aria-label="本輪市場變化">
+            <h2>本輪市場變化</h2>
+            ${marketHighlights.length
+              ? `<ul>${marketHighlights.map((item) => `<li>${item}</li>`).join("")}</ul>`
+              : "<p>目前沒有足夠資料判斷市場方向。</p>"}
           </aside>
-        </section>
-
-        <section class="metrics" aria-label="投資組合總覽" data-tab-section="overview">
-          <article class="metric">
-            <span class="metric-label">${reportReady ? "本輪市場立場" : "報告狀態"}</span>
-            <strong class="metric-value">${escapeHtml(reportReady ? decisionLabel(recommendation.market_stance) : "資料待補")}</strong>
-            <span class="metric-foot">${reportReady ? "研究方向" : "尚未形成可採用的部位建議"}</span>
-          </article>
-          <article class="metric">
-            <span class="metric-label">風險資產</span>
-            <strong class="metric-value">${percent(investedWeight)}</strong>
-            <span class="metric-foot">本輪研究配置比例</span>
-          </article>
-          <article class="metric">
-            <span class="metric-label">預留現金</span>
-            <strong class="metric-value">${percent(cash?.target_weight || 0)}</strong>
-            <span class="metric-foot">可依下一輪研究調整</span>
-          </article>
-          <article class="metric">
-            <span class="metric-label">委員會</span>
-            <strong class="metric-value">${escapeHtml(committeeSize)}</strong>
-            <span class="metric-foot">${escapeHtml(committee.summary_counts?.proposals ?? committee.proposals.length)} 位研究員 · ${escapeHtml(committee.summary_counts?.critiques ?? committee.critiques.length)} 份批判</span>
-          </article>
         </section>
 
         ${reportReady ? "" : `<section class="report-readiness" aria-label="報告準備狀態" data-tab-section="overview">
           <div>
-            <span class="section-kicker">資料待補</span>
-            <h2>本輪尚未形成可採用的部位建議</h2>
+            <span class="section-kicker">本輪結論</span>
+            <h2>暫不調整部位</h2>
           </div>
-          <p>${escapeHtml(reportReadiness)} 下方比例僅供研究追蹤；補齊逐檔證據、可追溯理由與風險輸入後，才會形成完整報告。</p>
+          <p>本輪研究未形成可靠的新調整理由。下方比例供追蹤，待研究完成再更新建議。</p>
         </section>`}
 
         <section class="terminal-grid" aria-label="彭博風格策略分析" data-tab-section="overview">
-          <article class="terminal-card health-terminal">
+          ${reportReady ? `<article class="terminal-card health-terminal">
             <div class="terminal-card-head">
               <div>
                 <span class="section-kicker">配置風險重點</span>
@@ -1643,13 +1093,13 @@ export function bootstrapDashboard(root, payload, base) {
                 )
                 .join("")}
             </div>
-          </article>
+          </article>` : ""}
 
           <article class="terminal-card performance-terminal">
             <div class="terminal-card-head">
               <div>
                 <span class="section-kicker">風險調整分析</span>
-                <h2>績效統計 ${info("績效統計", "本區是模擬策略的完成交易日觀察值，不是實際交易結果或未來報酬保證。")}</h2>
+                <h2>績效統計 ${info("績效統計", "以完成交易日計算的策略觀察值，不代表未來報酬。")}</h2>
               </div>
               <span class="research-status ${escapeHtml(analyticsPerformance.sample_status)}">${escapeHtml(performanceSampleLabel(analyticsPerformance.sample_status, analyticsPerformance.completed_intervals))}</span>
             </div>
@@ -1674,70 +1124,16 @@ export function bootstrapDashboard(root, payload, base) {
         ${renderGeopoliticalRiskPanel()}
 
         <div class="dashboard-grid">
-          <section class="panel leaderboard" id="leaderboard" data-tab-section="overview">
-            <header class="panel-header leaderboard-header">
-              <div>
-                <span class="section-kicker">研究員判斷追蹤</span>
-                <h2>研究員判斷與結果追蹤</h2>
-              </div>
-              ${
-                dashboardAnalytics.agent_leaderboard.length >
-                LEADERBOARD_VISIBLE_LIMIT
-                  ? `<button type="button" class="leaderboard-more" data-leaderboard-more aria-expanded="false">
-                    顯示更多
-                  </button>`
-                  : ""
-              }
-            </header>
-            <div class="table-wrap leaderboard-table-wrap">
-              <table>
-                <thead>
-                  <tr>
-                    <th>排名</th>
-                    <th>研究員</th>
-                    <th>提案數${info("提案數", "提交結構化研究提案的累計次數；它不等於已產生市場結果的次數。")}</th>
-                    <th>方向命中／已評估${info("方向命中／已評估", "以相鄰研究期的市場方向評估，左側是方向判斷符合的次數，右側是已有後續市場快照可評估的次數；不是個別標的或實際交易的獲利勝率。")}</th>
-                    <th>方向命中率${info("方向命中率", "方向命中數除以已評估次數。尚無後續市場快照時無法計算，會顯示不可用而不是 0%。")}</th>
-                    <th>平均自評信心${info("平均自評信心", "研究員提交提案時的平均自評信心；它不是機率預測，也不代表已驗證的績效。")}</th>
-                    <th>評估狀態${info("評估狀態", "「待評估」是已有提案但尚未有下一個相鄰市場快照的次數。狀態只說明樣本累積，不會改變投票權重或配置決策。")}</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  ${dashboardAnalytics.agent_leaderboard
-                    .map(
-                      (item, index) => `
-                        <tr${index >= LEADERBOARD_VISIBLE_LIMIT ? ' hidden data-leaderboard-extra="true"' : ""}>
-                          <td>${escapeHtml(item.rank)}</td>
-                          <td>${agentLink(item.agent)}</td>
-                          <td>${escapeHtml(item.participation_calls)}</td>
-                          <td>${item.evaluated_calls ? `${escapeHtml(item.correct_calls)} / ${escapeHtml(item.evaluated_calls)}` : "尚無可驗證結果"}</td>
-                          <td>${statistic(item.hit_rate_percent, "%")}</td>
-                          <td>${statistic(item.average_confidence)}</td>
-                          <td><span class="research-status ${escapeHtml(item.status)}">${escapeHtml(leaderboardStatusLabel(item))}</span></td>
-                        </tr>`,
-                    )
-                    .join("")}
-                </tbody>
-              </table>
-            </div>
-          </section>
-
           <section class="panel strategy" id="portfolio" data-tab-section="overview">
             <header class="panel-header">
               <div>
-                <span class="section-kicker">${reportReady ? "短期配置" : "研究追蹤"}</span>
-                <h2>${reportReady ? "本輪研究配置" : "目前研究追蹤"}</h2>
+                <span class="section-kicker">部位配置</span>
+                <h2>${reportReady ? "本輪部位建議" : "目前追蹤比例"}</h2>
               </div>
-              <span class="panel-meta">建議版本 ${escapeHtml(recommendation.run_id)}</span>
             </header>
-            <p class="panel-meta">${allocationScopeNote(recommendation)}</p>
-            <div class="simulation-capital-panel" aria-labelledby="simulation-capital-title">
-              <div>
-                <span class="section-kicker">本機換算</span>
-                <h3 id="simulation-capital-title">選擇模擬本金</h3>
-              </div>
+            <div class="simulation-capital-panel">
               <label class="simulation-capital-input">
-                <span>模擬本金（USD）</span>
+                <span>本金（美元）</span>
                 <input
                   type="number"
                   inputmode="decimal"
@@ -1747,35 +1143,16 @@ export function bootstrapDashboard(root, payload, base) {
                   data-simulation-capital
                 />
               </label>
-              <div class="simulation-capital-actions" aria-label="常用模擬本金">
-                ${simulationCapitalExamples
-                  .map(
-                    (value) => `
-                      <button type="button" data-simulation-capital-choice="${escapeHtml(value)}">
-                        ${escapeHtml(money(value))}
-                      </button>`,
-                  )
-                  .join("")}
-              </div>
             </div>
             <div class="strategy-layout">
-              <div class="allocation-visual">
-                <div class="donut" style="--donut:${escapeHtml(donut)}">
-                  <div class="donut-center">
-                    <strong>100%</strong>
-                    <span>配置比例</span>
-                  </div>
-                </div>
-              </div>
               <div class="table-wrap strategy-table-wrap">
                 <table>
                   <thead>
                     <tr>
                       <th>標的</th>
-                      <th>目標比例</th>
-                      <th>所選本金換算</th>
-                      <th>類型</th>
-                      <th>研究／風控備註</th>
+                      <th>${reportReady ? "建議比例" : "追蹤比例"}</th>
+                      <th>換算金額</th>
+                      ${reportReady ? "<th>本輪調整</th>" : ""}
                     </tr>
                   </thead>
                   <tbody>
@@ -1784,10 +1161,9 @@ export function bootstrapDashboard(root, payload, base) {
                         (item) => `
                           <tr>
                             <td data-label="標的">${symbolLink(item.symbol)}</td>
-                            <td data-label="目標比例">${percent(item.target_weight)}</td>
-                            <td data-label="所選本金換算" data-sim-amount data-weight="${escapeHtml(item.target_weight)}">輸入本金後換算</td>
-                            <td data-label="類型"><span class="asset-type">${escapeHtml(assetTypeLabel(item.asset_type))}</span></td>
-                            <td data-label="研究／風控備註" class="allocation-note">${reportReady ? glossaryText(allocationNote(item)) : "證據待補"}</td>
+                            <td data-label="${reportReady ? "建議比例" : "追蹤比例"}">${percent(item.target_weight)}</td>
+                            <td data-label="換算金額" data-sim-amount data-weight="${escapeHtml(item.target_weight)}"></td>
+                            ${reportReady ? `<td data-label="本輪調整" class="allocation-note">${escapeHtml(displayedAction(item))}</td>` : ""}
                           </tr>`,
                       )
                       .join("")}
@@ -1795,29 +1171,17 @@ export function bootstrapDashboard(root, payload, base) {
                 </table>
               </div>
             </div>
-            ${
-              riskPlans.length
-                ? `<section class="position-risk-summary" aria-label="模擬配置轉換與部位風險摘要">
-                  <header>
-                    <div>
-                      <h3>部位風險摘要 ${info("部位風險摘要", "本區列出各部位的風險量化狀態與所需輸入；未量化代表沒有足夠資料判斷該部位的價格風險。")}</h3>
-                    </div>
-                    <p>${quantifiedRiskPlans}/${priceRiskPlans.length} 個價格風險已量化</p>
-                  </header>
-                  <details class="position-risk-disclosure">
-                    <summary>查看逐檔風險資料</summary>
-                    <div class="position-risk-cards">${riskPlans.map(riskPlanCard).join("")}</div>
-                  </details>
+            ${riskPlans.length && reportReady
+              ? `<section class="position-risk-summary" aria-label="部位風險摘要">
+                  <h3>主要風險</h3>
+                  <div class="position-risk-cards">${riskPlans.filter((plan) => plan.status === "quantified").sort((left, right) => Number(right.base_loss_fraction) - Number(left.base_loss_fraction)).slice(0, 3).map(riskPlanCard).join("")}</div>
                 </section>`
-                : ""
-            }
+              : ""}
           </section>
 
-          ${renderEventCalendar(market.event_calendar, { asOf: recommendation.data_cutoff, renderSymbol: symbolLink })}
-          ${renderMacroState(market.macro_state, { asOf: recommendation.data_cutoff, renderSymbol: symbolLink })}
           ${renderMarketDriversPanel()}
 
-          <section class="panel" id="reasons" data-tab-section="overview">
+          ${reportReady && investmentReasons.length ? `<section class="panel" id="reasons" data-tab-section="overview">
             <header class="panel-header">
               <div>
                 <span class="section-kicker">委員會理由</span>
@@ -1826,23 +1190,10 @@ export function bootstrapDashboard(root, payload, base) {
               <span class="panel-meta">${investmentReasons.length} 項</span>
             </header>
             <div class="reasons-grid">
-              ${investmentReasons.length ? investmentReasons.map(reasonCard).join("") : "<p>本輪沒有可追溯的投資理由；資料不足不代表偏多或偏空。</p>"}
+              ${investmentReasons.map(reasonCard).join("")}
             </div>
-          </section>
-          ${renderDecisionEvidencePanel(recommendation, { renderSymbol: symbolLink })}
-          ${
-            uniquePolicyReasons.length
-              ? `
-          <section class="panel" id="policy-explanations" data-tab-section="overview">
-            <header class="panel-header">
-              <div><span class="section-kicker">風控紀錄</span><h2>風控與動作說明</h2></div>
-              <span class="panel-meta">${uniquePolicyReasons.length} 項</span>
-            </header>
-            <div class="reasons-grid risk-policy-grid">${uniquePolicyReasons.map(policyReasonCard).join("")}</div>
-          </section>`
-              : ""
-          }
-          ${renderScenarioStress(recommendation, { renderSymbol: symbolLink })}
+          </section>` : ""}
+          ${reportReady ? renderDecisionEvidencePanel(recommendation, { renderSymbol: symbolLink }) : ""}
 
 
         </div>
@@ -1911,7 +1262,7 @@ export function bootstrapDashboard(root, payload, base) {
                 <small>${escapeHtml(decisionLabel(committee.final_decision.market_stance))}</small>
               </article>
             </div>
-            ${renderCommitteeChat(committee, recommendation)}
+            ${renderCommitteeChat(committee)}
             <div class="committee-list proposal-list">
               ${committee.proposals
                 .map(
@@ -1990,10 +1341,6 @@ export function bootstrapDashboard(root, payload, base) {
                 <div>
                   <span class="section-kicker">最終整合</span>
                   <h3>${agentLink("cio")} · 最終結論</h3>
-                </div>
-                <div class="cio-score">
-                  <strong>${escapeHtml(committee.final_decision.model_score)}</strong>
-                  <span>委員共識度</span>
                 </div>
               </header>
               <div class="decision-facts">
@@ -2115,7 +1462,7 @@ export function bootstrapDashboard(root, payload, base) {
             }
           </section>
 
-          <section class="panel learning" id="market-survey" data-tab-section="overview">
+          ${(market.research_evidence || []).length ? `<section class="panel learning" id="market-survey" data-tab-section="overview">
             <header class="panel-header">
               <div>
                 <span class="section-kicker">有來源市場調查</span>
@@ -2151,9 +1498,9 @@ export function bootstrapDashboard(root, payload, base) {
                     <p>目前顯示上一份成功配置；下一輪端到端流程完成後才會加入可驗證來源。</p>
                   </div>`
             }
-          </section>
+          </section>` : ""}
 
-          <section class="panel learning" id="learning" data-tab-section="overview">
+          ${reportReady ? `<section class="panel learning" id="learning" data-tab-section="overview">
             <header class="panel-header">
               <div>
                 <span class="section-kicker">白話研究回顧</span>
@@ -2178,9 +1525,9 @@ export function bootstrapDashboard(root, payload, base) {
                 )
                 .join("")}
             </div>
-          </section>
+          </section>` : ""}
 
-          <section class="panel research-journal" id="research-journal" data-tab-section="overview">
+          ${reportReady ? `<section class="panel research-journal" id="research-journal" data-tab-section="overview">
             <header class="panel-header">
               <div>
                 <span class="section-kicker">研究怎麼累積</span>
@@ -2249,15 +1596,14 @@ export function bootstrapDashboard(root, payload, base) {
                 </ol>
               </section>
             </div>
-          </section>
+          </section>` : ""}
 
-          <section class="panel" id="risk" data-tab-section="overview">
+          ${reportReady ? `<section class="panel" id="risk" data-tab-section="overview">
             <header class="panel-header">
               <div>
                 <span class="section-kicker">風險提醒</span>
                 <h2>什麼情況需要重新看？</h2>
               </div>
-              <span class="panel-meta">${escapeHtml(committee.final_decision.risk_veto ? "暫停調整" : "目前可執行")}<br />風險檢查</span>
             </header>
             <div class="risk-grid">
               <div class="risk-box">
@@ -2269,7 +1615,7 @@ export function bootstrapDashboard(root, payload, base) {
                 <ul>${recommendation.invalidation_conditions.map((item) => `<li>${renderTickerText(item)}</li>`).join("")}</ul>
               </div>
             </div>
-          </section>
+          </section>` : ""}
         </div>
         </main>
 
@@ -2284,10 +1630,15 @@ export function bootstrapDashboard(root, payload, base) {
     `;
     root.updateMarketDrivers = (extension) => {
       const panel = root.querySelector("#market-drivers");
-      if (!panel) return;
+      const html = renderMarketDriversPanel(extension);
+      if (!html) {
+        panel?.remove();
+        return;
+      }
       const replacement = document.createElement("div");
-      replacement.innerHTML = renderMarketDriversPanel(extension);
-      panel.replaceWith(replacement.firstElementChild);
+      replacement.innerHTML = html;
+      if (panel) panel.replaceWith(replacement.firstElementChild);
+      else root.querySelector("#portfolio")?.after(replacement.firstElementChild);
     };
     const overviewPanel = root.querySelector('[data-tab-panel="overview"]');
     const committeePanel = root.querySelector('[data-tab-panel="committee"]');
@@ -2296,20 +1647,14 @@ export function bootstrapDashboard(root, payload, base) {
         .filter((child) => child.dataset.tabSection === "overview")
         .forEach((section) => overviewPanel.append(section));
     }
+    const portfolio = root.querySelector("#portfolio");
+    portfolio && root.querySelector(".terminal-grid")?.before(portfolio);
+    const detailGrid = root.querySelector(".dashboard-grid");
+    if (detailGrid && !detailGrid.children.length) detailGrid.remove();
     localizeRenderedText(root);
     installInfoTooltips(root);
     root.querySelectorAll(".table-wrap").forEach((tableWrap) => {
       tableWrap.tabIndex = 0;
-    });
-    root.querySelectorAll("[data-leaderboard-more]").forEach((button) => {
-      button.addEventListener("click", () => {
-        const expanded = button.getAttribute("aria-expanded") === "true";
-        root.querySelectorAll("[data-leaderboard-extra]").forEach((row) => {
-          row.hidden = expanded;
-        });
-        button.setAttribute("aria-expanded", String(!expanded));
-        button.textContent = expanded ? "顯示更多" : "顯示更少";
-      });
     });
     const capitalInput = root.querySelector("[data-simulation-capital]");
     const updateSimulationAmounts = () => {
@@ -2317,31 +1662,8 @@ export function bootstrapDashboard(root, payload, base) {
       root.querySelectorAll("[data-sim-amount]").forEach((node) => {
         node.textContent = simulatedMoney(node.dataset.weight, capital);
       });
-      root.querySelectorAll("[data-sim-risk]").forEach((node) => {
-        if (!node.dataset.baseFraction && !node.dataset.stressFraction) {
-          node.textContent = "需要量化後才換算";
-          return;
-        }
-        const base = node.dataset.baseFraction
-          ? simulatedMoney(node.dataset.baseFraction, capital)
-          : "未知";
-        const stress = node.dataset.stressFraction
-          ? simulatedMoney(node.dataset.stressFraction, capital)
-          : "未知";
-        node.textContent =
-          capital === null ? "輸入本金後換算" : `基本 ${base}／跳空 ${stress}`;
-      });
     };
     capitalInput?.addEventListener("input", updateSimulationAmounts);
-    root
-      .querySelectorAll("[data-simulation-capital-choice]")
-      .forEach((button) => {
-        button.addEventListener("click", () => {
-          if (!capitalInput) return;
-          capitalInput.value = button.dataset.simulationCapitalChoice || "";
-          updateSimulationAmounts();
-        });
-      });
     updateSimulationAmounts();
     installPerformanceChart(root, performance.points);
     localizeRenderedText(root);

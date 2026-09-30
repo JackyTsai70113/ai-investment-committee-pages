@@ -1,7 +1,6 @@
 export function createCommitteeRenderer({
   agentLink,
   agentProfiles,
-  dateTime,
   decisionLabel,
   escapeHtml,
   glossaryText,
@@ -11,7 +10,7 @@ export function createCommitteeRenderer({
   renderList,
   symbolLink,
 }) {
-  const renderCommitteeChat = (committee, recommendation) => {
+  const renderCommitteeChat = (committee) => {
     const proposals = Array.isArray(committee.proposals)
       ? committee.proposals
       : [];
@@ -219,17 +218,7 @@ export function createCommitteeRenderer({
             <span class="live-dot" aria-hidden="true"></span>
             <strong>投資委員會群組</strong>
           </div>
-          <span>研究編號 ${escapeHtml(committee.run_id)}</span>
         </header>
-        <article class="chat-message system-message">
-          <div class="chat-bubble">
-            <strong>系統訊息</strong>
-            <p>
-              資料已封存至 ${escapeHtml(dateTime(recommendation.data_cutoff))}。
-              以下內容是各角色公開提交的結構化摘要、批判與裁決，不包含隱藏思考鏈。
-            </p>
-          </div>
-        </article>
         <div class="chat-stage-label">第一階段 · 獨立研究</div>
         ${proposalMessages}
         <div class="chat-stage-label">第二階段 · 質詢、回應與裁決</div>
@@ -245,7 +234,6 @@ export function createCommitteeRenderer({
             <div class="chat-meta">
               <span>市場立場：${escapeHtml(decisionLabel(finalDecision.market_stance))}</span>
               <span>風險：${escapeHtml(decisionLabel(finalDecision.risk_level))}</span>
-              <span>共識度：${escapeHtml(finalDecision.model_score)}/100</span>
               ${
                 finalDecision.tone
                   ? `<span>語氣：${escapeHtml(decisionLabel(finalDecision.tone))}</span>`
@@ -253,13 +241,8 @@ export function createCommitteeRenderer({
               }
             </div>
             <p class="chat-opening">${escapeHtml(
-              finalDecision.opening_statement ||
-                finalDecision.model_score_reason,
+              finalDecision.opening_statement || "本輪研究結論詳見配置建議。",
             )}</p>
-            <details class="chat-details">
-              <summary>查看共識度計算</summary>
-              <p>${escapeHtml(finalDecision.model_score_reason)}</p>
-            </details>
             <div class="final-allocation-grid">
               ${(finalDecision.allocations || [])
                 .map(

@@ -491,6 +491,7 @@ a {
 
 .hero-main,
 .hero-side,
+.market-pulse,
 .panel,
 .metric {
   border: 1px solid var(--line);
@@ -502,7 +503,7 @@ a {
 
 .hero-main {
   min-width: 0;
-  min-height: 430px;
+  min-height: 260px;
   padding: clamp(1.5rem, 4vw, 4rem);
   border-radius: 34px;
 }
@@ -565,6 +566,19 @@ a {
     linear-gradient(180deg, rgba(199, 241, 91, 0.07), transparent 48%),
     var(--panel-2);
 }
+
+.market-pulse {
+  min-width: 0;
+  padding: 1.5rem;
+  border-radius: 34px;
+  background: linear-gradient(180deg, rgba(199, 241, 91, 0.07), transparent 65%), var(--panel-2);
+}
+
+.market-pulse h2 { margin: 0 0 1rem; font-size: 1.1rem; }
+.market-pulse ul { display: grid; gap: 0.8rem; margin: 0; padding-left: 1.1rem; color: var(--cream); line-height: 1.5; }
+.market-pulse p { margin: 0; color: var(--muted); line-height: 1.5; }
+
+#portfolio { margin-bottom: 1rem; }
 
 .score-orbit {
   position: relative;
@@ -688,6 +702,8 @@ a {
   gap: 1rem;
   margin-bottom: 1rem;
 }
+
+.terminal-grid > :only-child { grid-column: 1 / -1; }
 
 .terminal-card {
   min-width: 0;
@@ -886,6 +902,8 @@ a {
 }
 
 @media (max-width: 640px) {
+  .report-readiness { grid-template-columns: 1fr; }
+
   .dashboard-grid {
     width: 100%;
     min-width: 0;
@@ -2024,7 +2042,7 @@ a {
 
 .strategy-layout {
   display: grid;
-  grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1.75fr);
+  grid-template-columns: minmax(0, 1fr);
   gap: clamp(1.5rem, 4vw, 3.2rem);
   align-items: start;
 }
@@ -2166,7 +2184,8 @@ a {
 
 .simulation-capital-panel {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(13rem, 0.34fr);
+  grid-template-columns: minmax(0, 20rem);
+  width: min(100%, 22rem);
   gap: 0.9rem 1rem;
   align-items: end;
   margin: 0 0 1.15rem;
@@ -3695,7 +3714,8 @@ td {
   }
 
   .hero-main,
-  .hero-side {
+  .hero-side,
+  .market-pulse {
     border-radius: 24px;
   }
 
@@ -4072,6 +4092,10 @@ td {
 .market-drivers-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
 .market-driver-card,
 .position-driver-card { border: 1px solid var(--line, #55615d); border-radius: .85rem; background: var(--panel, #161e1b); }
+.market-driver-card { padding: 1rem; }
+.market-driver-card h3 { margin: 0 0 .6rem; font-size: 1rem; }
+.market-driver-card p { margin: .45rem 0; color: var(--muted); line-height: 1.55; }
+.market-driver-card a { display: inline-block; margin-top: .55rem; color: var(--blue); }
 .market-driver-card summary { display: flex; align-items: flex-start; gap: .85rem; min-height: 56px; padding: 1rem; cursor: pointer; list-style-position: inside; }
 .market-driver-card summary:focus-visible { outline: 3px solid #d3f795; outline-offset: 3px; }
 .market-driver-card summary span:last-child { display: grid; gap: .45rem; min-width: 0; }
