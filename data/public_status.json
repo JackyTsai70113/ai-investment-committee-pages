@@ -1,21 +1,21 @@
 {
   "schema_version": "1.0",
-  "observed_at": "2026-09-30T08:04:40.691002+00:00",
+  "observed_at": "2026-09-30T11:27:23.093054+00:00",
   "research": {
-    "status": "failure",
-    "attempted_at": "2026-09-30T08:03:59.307241+00:00",
-    "run_url": "https://github.com/JackyTsai70113/ai-investment-committee/actions/runs/36687264748",
-    "failure_kind": "provider_auth"
+    "status": "success",
+    "attempted_at": "2026-09-30T11:25:56.928697+00:00",
+    "run_url": "https://github.com/JackyTsai70113/ai-investment-committee/actions/runs/36707411532",
+    "failure_kind": "none"
   },
   "last_successful_research": {
-    "run_id": "20260929T125104Z",
-    "generated_at": "2026-09-29T12:52:40.289830+00:00",
-    "data_cutoff": "2026-09-29T12:50:46.798415+00:00"
+    "run_id": "20260930T111637Z",
+    "generated_at": "2026-09-30T11:18:49.274336+00:00",
+    "data_cutoff": "2026-09-30T11:16:21.569090+00:00"
   },
   "publication": {
     "status": "verified",
-    "attempted_at": "2026-09-30T14:22:07.591625+08:00",
-    "run_url": null,
-    "recommendation_run_id": "20260929T125104Z"
+    "attempted_at": "2026-09-30T19:26:46.727157+08:00",
+    "run_url": "https://github.com/JackyTsai70113/ai-investment-committee/actions/runs/36708514896",
+    "recommendation_run_id": "20260930T111637Z"
   }
 }
