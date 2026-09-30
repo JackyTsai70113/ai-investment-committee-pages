@@ -1043,11 +1043,7 @@ export function bootstrapDashboard(root, payload, base) {
           <div class="hero-main">
             <span class="eyebrow">投資委員會研究</span>
             <h1>市場變化與<span>部位建議</span></h1>
-            <p class="hero-lede">
-              ${escapeHtml(reportReady
-                ? hasMeaningfulChange ? "本輪研究支持調整部位；配置與理由列於下方。" : "本輪研究支持維持目前配置。"
-                : "本輪研究尚未支持新的部位調整，先維持觀察。")}
-            </p>
+            ${reportReady ? `<p class="hero-lede">${escapeHtml(hasMeaningfulChange ? "本輪研究支持調整部位；配置與理由列於下方。" : "本輪研究支持維持目前配置。")}</p>` : ""}
             <div class="hero-strip">
               <span class="pill">資料截止 ${escapeHtml(dateTime(recommendation.data_cutoff))}</span>
             </div>
@@ -1105,14 +1101,8 @@ export function bootstrapDashboard(root, payload, base) {
             </div>
             <div class="terminal-stats">
               <div><span>淨累積報酬（估計成本後）${info("淨累積報酬", "從起始模擬淨值到目前的變動，扣除已建模的估計交易摩擦；稅務與未建模成本不包含在內。")}</span><strong>${statistic(analyticsPerformance.net_total_return_percent, "%")}</strong></div>
-              <div><span>累積報酬（未扣成本）${info("累積報酬", "從起始模擬淨值到目前的毛報酬率，尚未扣除交易摩擦。")}</span><strong>${statistic(analyticsPerformance.total_return_percent, "%")}</strong></div>
               <div><span>淨最大回撤${info("淨最大回撤", "觀察期間內，淨模擬淨值從先前高點到後續低點的最大跌幅；不是最大可能損失。")}</span><strong>${statistic(analyticsPerformance.net_maximum_drawdown_percent, "%")}</strong></div>
-              <div><span>同步 SPY／最強基準${info("同步 SPY／最強基準", "SPY 是主要比較基準；最強基準是 SPY、QQQ、IWM、DIA、VTI 中同期報酬最高者。只使用與每個模擬評價點同日封存的收盤資料，缺少任一端資料就不比較。")}</span><strong>${statistic(returnObjective.primary_benchmark_return_percent, "%")} / ${statistic(returnObjective.strongest_benchmark_return_percent, "%")}</strong></div>
-              <div><span>超越最強基準${info("超越最強基準", "同期淨模擬報酬減去比較組內最強基準的報酬。這是當前觀察期的相對結果，並非未來超額報酬的保證。")}</span><strong>${statistic(returnObjective.excess_return_vs_strongest_benchmark_percent, "%")}</strong></div>
-              <div><span>年化報酬／24%目標${info("年化報酬／24%目標", "把目前同步完成交易日的淨模擬報酬換算為每年速度；24% 是研究目標，不是預測或承諾。短樣本的年化換算波動很大，不應視為年度結果。")}</span><strong>${statistic(returnObjective.latest_annual_strategy_return_percent, "%")} / ${statistic(returnObjective.annualized_target_percent, "%")}</strong></div>
-              <div><span>基準資料狀態${info("基準資料狀態", "「可比較」表示 SPY 至少有兩個與模擬評價同日封存的收盤資料，且比較組可計算；「部分資料」表示不足以做完整同期比較，數值會保留為不可用而非補零。")}</span><strong>${escapeHtml(returnObjective.benchmark_status === "ready" ? "可比較" : returnObjective.benchmark_status === "missing" ? "尚無同步資料" : "部分資料")}</strong></div>
-              <div><span>完成交易日區間${info("完成交易日區間", "相鄰兩個已完成市場交易日形成一個報酬區間；同日的重複評價與連續相同估值不重複計入。區間越少，統計數字越容易受單日波動影響。")}</span><strong>${escapeHtml(analyticsPerformance.completed_intervals)}</strong></div>
-              <div><span>夏普比率／日區間勝率${info("夏普比率／日區間勝率", "夏普比率以每日區間平均報酬、每日區間波動與一年 252 個交易日換算；勝率是正報酬區間除以全部完成區間。兩者只反映目前短樣本觀察，樣本不足或波動為零時會顯示不可用。")}</span><strong>${statistic(analyticsPerformance.sharpe_ratio)} / ${statistic(analyticsPerformance.win_rate_percent, "%")}</strong></div>
+              <div><span>同期 SPY 報酬${info("同期 SPY 報酬", "只用與模擬評價同日封存的收盤資料比較；缺少同步資料時保留未知。")}</span><strong>${statistic(returnObjective.primary_benchmark_return_percent, "%")}</strong></div>
             </div>
             <p class="methodology-note">${escapeHtml(analyticsPerformance.methodology)}</p>
           </article>
@@ -1380,7 +1370,7 @@ export function bootstrapDashboard(root, payload, base) {
             ${buildPerformanceChart(performance.points, performance)}
           </section>
 
-          <section class="panel evidence" id="evidence" data-tab-section="overview">
+          <section class="panel evidence" id="evidence" data-tab-section="committee">
             <header class="panel-header">
               <div>
                 <span class="section-kicker">證據引擎</span>
@@ -1462,7 +1452,7 @@ export function bootstrapDashboard(root, payload, base) {
             }
           </section>
 
-          ${(market.research_evidence || []).length ? `<section class="panel learning" id="market-survey" data-tab-section="overview">
+          ${(market.research_evidence || []).length ? `<section class="panel learning" id="market-survey" data-tab-section="committee">
             <header class="panel-header">
               <div>
                 <span class="section-kicker">有來源市場調查</span>
@@ -1500,7 +1490,7 @@ export function bootstrapDashboard(root, payload, base) {
             }
           </section>` : ""}
 
-          ${reportReady ? `<section class="panel learning" id="learning" data-tab-section="overview">
+          ${reportReady ? `<section class="panel learning" id="learning" data-tab-section="committee">
             <header class="panel-header">
               <div>
                 <span class="section-kicker">白話研究回顧</span>
@@ -1527,7 +1517,7 @@ export function bootstrapDashboard(root, payload, base) {
             </div>
           </section>` : ""}
 
-          ${reportReady ? `<section class="panel research-journal" id="research-journal" data-tab-section="overview">
+          ${reportReady ? `<section class="panel research-journal" id="research-journal" data-tab-section="committee">
             <header class="panel-header">
               <div>
                 <span class="section-kicker">研究怎麼累積</span>
